@@ -1,0 +1,323 @@
+@charset "utf-8";
+
+/*-----------------------------
+  ナビ
+------------------------------*/
+div.confirmNavigation {
+  width: 100%;
+  display: table;
+}
+
+/*-----------------------------
+  ナビ　タイトル
+------------------------------*/
+div.confirmNavigationTitle,div.confirmNavigationImg {
+  vertical-align: middle;
+}
+
+div.confirmNavigationTitle,div.confirmNavigationImg img {
+  width: 80%;
+  max-width: 438px;
+  margin-bottom: 20px;
+}
+
+/*-----------------------------
+  ナビ　画像
+------------------------------*/
+div.confirmNavigationImg {
+  text-align: center;
+}
+
+/*-----------------------------
+  お支払い方法エリア
+------------------------------*/
+#confirmPaymentMethodArea,
+#confirmPaymentMethodArea_sp {
+  margin-top: 20px;
+}
+
+/*-----------------------------
+  注文詳細
+------------------------------*/
+#confirmMainArea .linkBlock {
+  overflow: hidden;
+}
+
+/*-----------------------------
+  注文内容エリア データ側
+------------------------------*/
+.linkBlock td {
+  padding-right: 5px;
+}
+
+#confirmInfoArea .txt_r {
+  width: 60%;
+}
+
+/*-----------------------------
+  お届け先エリア
+------------------------------*/
+
+#confirmMain dl dt {
+  background-image: url(../../commonfiles/images/icon_minus.png);
+  background-position: right 10px top 50%;
+  background-repeat: no-repeat;
+}
+
+#confirmMain dl dt.closeTtl {
+  background-image: url(../../commonfiles/images/icon_plus.png);
+  background-position: right 10px top 50%;
+  background-repeat: no-repeat;
+}
+
+.addName{
+  font-size: 18px;
+  background: url(../../commonfiles/images/line_h1.gif) bottom left repeat-x;
+  padding: 0 10px 10px 10px;
+  margin-bottom: 20px;
+  text-align:left;
+  cursor:pointer;
+}
+
+.addName:hover{
+  opacity:0.7;
+}
+
+.addName input{
+  font-size:12px;
+}
+
+.deliveryUpdateButton {
+  font-weight: normal;
+}
+
+/*-----------------------------
+  商品名、ショップ名
+------------------------------*/
+.shippingShopName{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.shippingListData{
+}
+
+#commodityListArea {
+}
+
+.shopShippingTitle {
+  vertical-align: middle;
+  width: 100%;
+
+}
+
+.shopShippingTitle>.shopName {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/*-----------------------------
+  PopUp
+------------------------------*/
+.noshiMessagePopUpLink,.withReturnPolicyLink {
+  cursor: pointer;
+}
+
+.noshiMessagePopUp {
+  max-width: 500px;
+}
+/*-----------------------------
+  連絡事項
+------------------------------*/
+div.messageData {
+  padding: 5px 5px 5px 5px;
+  width: 100%;
+}
+
+/*-----------------------------
+  付帯サービスエリア
+-----------------------------*/
+.listTbl .incWorkArea td {
+  padding-bottom: 3px;
+  padding-top: 0;
+  word-break: break-all;
+}
+
+/*-----------------------------
+  付帯サービス名
+-----------------------------*/
+li.incWorkName {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+/*-----------------------------
+  付帯サービス金額
+-----------------------------*/
+li.incWorkPrice {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-align: right;
+}
+
+.incWorkNot{
+  padding-right: 10px;
+}
+
+.incWorkNot td{
+  padding: 10px !important;
+}
+
+/*-----------------------------
+  付帯自由入力欄
+-----------------------------*/
+li.incFreeText {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 20px;
+  width: 100%;
+  word-break: break-all;
+  white-space: normal;
+}
+
+/*-----------------------------
+  日時
+------------------------------*/
+.deliveryAppointedDateArea {
+  margin: 0px 20px 5px 20px;
+}
+
+/*-----------------------------
+  ボタンエリア
+------------------------------*/
+#buttonArea {
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+span.withReturnPolicyLink {
+  cursor: pointer;
+  color: #001789;
+}
+
+span.withReturnPolicyLink:hover {
+  text-decoration: underline;
+}
+
+.backButtonArea {
+  float: left;
+}
+
+.backButtonArea input {
+  width: 100px;
+}
+
+.fixButtonArea {
+  float: right;
+}
+
+/*-----------------------------
+  一括指定
+------------------------------*/
+.cartTbl th{
+  width: 75%;
+  text-align: right;
+}
+
+.cartTotal tr {
+  border-bottom: 1px solid #cccccc;
+}
+/*-----------------------------
+  991px以上(md)で表示
+------------------------------*/
+@media screen and (min-width:992px) {
+  #confirmInfoArea {
+    float: right;
+    width: 30%;
+  }
+  
+  #confirmBasicInfoArea {
+    float: left;
+    width: 68%;
+  }
+  
+  #middleButtonArea {
+    float: right;
+    clear: both;
+    margin: 10px 0;
+    overflow: hidden;
+    clear: both;
+  }
+}
+/*-----------------------------
+  990px以下(xs,sm)で表示
+------------------------------*/
+@media screen and (max-width:991px) {
+  #confirmInfoArea .txt_r {
+    width: auto;
+  }
+  
+  #middleButtonArea{
+    text-align:center;
+  }
+  
+  #middleButtonArea input {
+    width: 95%;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .commodityListArea li.quantityCol {
+    padding-bottom: 0;
+  }
+  
+  .commodityListArea li.subTotalCol {
+    padding-top: 0;
+  }
+  
+  #confirmInfoArea {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .fixButtonArea {
+    float: none;
+  }
+  
+  .fixButtonArea input,.backButtonArea input {
+    width: 95%;
+    height: 40px;
+  }
+  
+  .backButtonArea {
+    float: none;
+    display: block;
+  }
+  
+  .cartTbl {
+    border-bottom: 1px solid #cccccc;
+  }
+  
+  .cartTbl td {
+    padding: 10px !important;
+    display: table-cell;
+    border-right: 1px solid #cccccc;
+  }
+  
+  .cartTbl th{
+    width:75%;}
+}
+
+/*-----------------------------
+  480px以下で表示
+------------------------------*/
+@media screen and (max-width:480px) {
+  .shopShippingTitle {
+    width: 100%;
+  }
+  
+  .shopShippingTxt {
+    width: 100%;
+  }
+}

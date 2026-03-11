@@ -1,0 +1,88 @@
+@charset "utf-8";
+#socialLoginArea {
+  padding: 20px;
+  margin-bottom: 10px;
+  border: solid 2px #cccccc;
+}
+.socialButtonGrid {
+  margin-top: 20px;
+  display: flex;
+  flex: 2;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  position: relative;
+}
+.socialLoginButtonArea {
+  margin: 10px 20px;
+}
+.btn-login-social {
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.4);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border: 1px solid #e6e6e6;
+  padding: 6px 10px;
+  width: 270px;
+  text-align: center;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  background-color: #fcfcfc;
+  font-size: 14px;
+  line-height: 1.42857143;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.btn-login-social:not(.disable):hover,.btn-login-social:not(.disable):focus {
+  background-color: #f2f2f2;
+}
+.btn-login-social:not(.disable):active {
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.4);
+}
+.btn-login-facebook {
+  background-image: url(../../../files/systemfiles/images/social_facebook_logo.png);
+}
+.btn-login-yahoo {
+  background-image: url(../../../files/systemfiles/images/social_yahoo_logo.png);
+}
+.btn-login-twitter {
+  background-image: url(../../../files/systemfiles/images/social_twitter_logo.png);
+}
+.btn-login-mixi {
+  background-image: url(../../../files/systemfiles/images/social_mixi_logo.png);
+}
+.btn-login-line {
+  background-image: url(../../../files/systemfiles/images/social_line_logo.png);
+}
+.btn-login-rakuten {
+  background-image: url(../../../files/systemfiles/images/social_rakuten_logo.png);
+}
+.btn-login-paypal {
+  background-image: url(../../../files/systemfiles/images/social_paypal_logo.png);
+}
+
+/*SPで表示*/
+
+@media screen and (max-width:767px) {
+  .socialLoginButtonArea {
+    margin: 10px 0px;
+    width: 100%;
+  }
+  .btn-login-social {
+    width: 100%;
+  }
+}

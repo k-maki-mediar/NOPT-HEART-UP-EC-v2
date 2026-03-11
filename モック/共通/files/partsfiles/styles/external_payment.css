@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+#buttonArea {
+  overflow: hidden;
+}
+
+div.frameBody {
+  padding: 30px 10px;
+  text-align: center;
+}
+
+div.frame {
+  margin: 0 auto;
+  width: 100%;
+}
+
+#externalPaymentMain {
+  text-align: center;
+}
+
+/*-----------------------------
+  768px(xs)以下で表示
+-----------------------------*/
+@media screen and (max-width:767px) {
+  div.frameBody {
+    border: 0;
+  }
+}

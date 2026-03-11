@@ -1,0 +1,58 @@
+<th:block th:fragment="wsparts-include">
+<th:block th:if="${LoginInfoResultBean.customer}">
+	<script th:inline="javascript">
+	    /*<![CDATA[*/
+
+	    var customer = /*[[${LoginInfoResultBean.customer}]]*/ '';
+        var customerAddress = /*[[${LoginInfoResultBean.customerAddress}]]*/ null;
+
+        var name = customer.lastName + customer.firstName;
+        var subscription = Boolean(customer.requestMailType);
+        var create_date = /*[[${#dates.format(LoginInfoResultBean.customer.createdDatetime,'yyyy/MM/dd')}]]*/ null;
+        var age = /*[[${#wsUtil.getCustomerAge(LoginInfoResultBean.customer.birthDate)}]]*/ null;
+        var gender = /*[[${#wsUtil.getSexName(LoginInfoResultBean.customer.sex)}]]*/ '';
+        var birth_month = /*[[${#wsUtil.getMM(LoginInfoResultBean.customer.birthDate)}]]*/ '';
+        var birth_year = /*[[${#wsUtil.getYYYY(LoginInfoResultBean.customer.birthDate)}]]*/ '';
+        var birth_date = /*[[${#wsUtil.toDateString(LoginInfoResultBean.customer.birthDate)}]]*/ '';
+        var country = '日本';
+        var address = customerAddress.address1 + customerAddress.address2 + customerAddress.address3;
+        address = customerAddress.address4 ? address + customerAddress.address4 : address;
+
+           try {
+
+               tracker.user({
+                   user_id: customer.customerCode,
+                   name: name,
+                   email: customer.email,
+                   subscription: subscription,
+                   create_date: create_date,
+                   age: age,
+                   gender: gender,
+                   birth_month: birth_month,
+                   birth_year: birth_year,
+                   birth_date: birth_date,
+                   phone: customerAddress.phoneNumber,
+                   first_name: customer.firstName,
+                   last_name: customer.lastName,
+                   country: country,
+                   pref: customerAddress.prefectureCode,
+                   zip: customerAddress.postalCode,
+                   address: address,
+                   point: customer.restPoint,
+                   rank: customer.customerGroupCode
+
+               });
+
+           } catch (e) {
+               if ('tracker' in window) {
+                   tracker.track('_error', {
+                       message: e.message
+                   });
+               }
+           }
+
+
+	    /*]]>*/
+	</script>
+</th:block>
+</th:block>

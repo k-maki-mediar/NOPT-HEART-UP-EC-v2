@@ -1,0 +1,20 @@
+<th:block th:fragment="wsparts-include">
+	<div id="flipdesk-cart" data-cart=""></div>
+	<script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var bean = /*[[${MiniCartResultBean}]]*/'';
+        var skus_query_string = '';
+
+        $(bean.miniCartShopBeanList).each(function() {
+            $(this.miniCartCommodityBeanList).each(function() {
+                var commodityName = webReceptionUtil.getConvertCommodityName( 'cart', this );
+                commodityName = webReceptionUtil.halfWidthToFullWidth(commodityName);
+                skus_query_string += '__' + this.skuCode + ',' + commodityName + ',' + this.commodityQuantity + ',' + this.retailPrice + ',,';
+            });
+        });
+
+        $('#flipdesk-cart').attr('data-cart', skus_query_string);
+        /*]]>*/
+    </script>
+</th:block>

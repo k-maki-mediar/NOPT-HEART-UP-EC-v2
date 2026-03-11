@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+@media screen and (min-width:481px) {
+  #postScoreButton {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width:480px) {
+  #reviewListArea h3 {
+    font-size:12px;
+  }
+
+  #postScoreButton {
+    width: 80px;
+    padding: 0px 10px;
+    font-size:10px;
+  }
+
+  #postScoreButton span {
+    display: inline-block;
+  }
+}
+
+.review_area {
+  border-bottom: 1px dashed #cdcdcd;
+}
+
+.review_txt {
+/*  border-bottom: 1px dashed #cdcdcd;*/
+  padding-top: 10px;
+  padding-bottom: 20px;
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+.reply_area {
+  background-color: rgb(249, 237, 232);
+  border-bottom: 1px dashed #cdcdcd;
+}
+
+.reply_txt {
+/*  border-bottom: 1px dashed #cdcdcd;*/
+  padding-top: 10px;
+  padding-bottom: 20px;
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+.moreLead {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.moreLead:hover {
+  opacity: 0.7;
+  filter: alpha(opacity = 70); /* ie lt 8 */
+  -ms-filter: "alpha(opacity=70)"; /* ie 8 */
+  -moz-opacity: 0.7; /* FF lt 1.5, Netscape */
+  -khtml-opacity: 0.7; /* Safari 1.x */
+}

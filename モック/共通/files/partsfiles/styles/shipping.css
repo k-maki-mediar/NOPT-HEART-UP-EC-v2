@@ -1,0 +1,823 @@
+@charset "utf-8";
+
+/*-----------------------------
+  ナビ
+------------------------------*/
+div.shippingNavigation {
+  width: 100%;
+  display: table;
+}
+
+/*-----------------------------
+  ナビ タイトル
+------------------------------*/
+div.shippingNavigationTitle,div.shippingNavigationImg {
+  vertical-align: middle;
+}
+
+div.shippingNavigationTitle,div.shippingNavigationImg  img {
+  width: 80%;
+  max-width: 438px;
+  margin-bottom: 20px;
+}
+
+/*-----------------------------
+  ナビ 画像
+------------------------------*/
+div.shippingNavigationImg {
+  text-align: center;
+}
+
+div.listTitle,ul.tableHeader {
+  height: 30px;
+}
+
+/*-----------------------------
+  お届け先名
+------------------------------*/
+.shippingAddressLabelCol {
+  width: 80px;
+}
+
+/*-----------------------------
+  お届け先リスト
+------------------------------*/
+.shippingAddressCol {
+  width: 150px;
+}
+.deliveryAppointArea{
+  border-top:1px solid #cccccc;
+  border-right:1px solid #cccccc;
+  border-left:1px solid #cccccc;
+}
+
+/*-----------------------------
+  お届け先変更
+------------------------------*/
+.shippingAddressUpdateCol {
+  width: 150px;
+}
+
+/*-----------------------------
+  商品リスト
+------------------------------*/
+.listTbl{
+  background-color:#ffffff;
+}
+div.shippingDtailTemplateArea {
+  clear: both;
+  border-bottom: none;
+}
+
+div.linkBlock {
+  overflow: hidden;
+  display: block;
+}
+#shippingMainArea .frameBody {
+  clear: both;
+}
+
+.shopNameHeader .frameBody {
+  backgtound-color: #ffffff;
+  border-bottom: none;
+  border-top: none;
+  margin-bottom:30px;
+}
+
+.frameBody .normal {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.frameBody ul.tableBody:last-child {
+  border-top: none;
+}
+
+.tableBody {
+  list-style: none;
+}
+
+.listTbl tr.commodityListTemplateArea{
+  border-bottom:1px solid #cccccc;
+}
+/*-----------------------------
+  ショップ名
+------------------------------*/
+.shopNameHeader {
+  border-bottom: 1px solid #cccccc;
+  background-color:#f9f9f9;
+  padding:0 20px;
+}
+.shopShippingTitle {
+  margin:10px 0;
+}
+
+.shopShippingTitle>.shopName {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.freeShippingChargeDiff {
+  padding-top: 10px;
+}
+
+/*-----------------------------
+  商品画像
+------------------------------*/
+.commodityImageCol {
+  width: 80px;
+  white-space: normal;
+  word-break: break-all;
+  float:left;
+}
+
+/*-----------------------------
+  商品名
+------------------------------*/
+.commodityNameCol {
+  width: 80%;
+  white-space: normal;
+  word-break: break-all;
+  float:left;
+}
+
+.commodityNameCol span {
+  white-space: normal;
+  word-break: break-all;
+}
+
+/*-----------------------------
+  付帯サービス
+------------------------------*/
+.incFreeText {
+  padding-left: 20px;
+}
+
+/*-----------------------------
+  規格名
+------------------------------*/
+.commodityStandardNameCol {
+  white-space: normal;
+  word-break: break-all;
+}
+
+/*-----------------------------
+  規格名1
+------------------------------*/
+.commodityStandardName1Col {
+  width: 60px;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.commodityStandardName1Col span {
+  white-space: normal;
+  word-break: break-all;
+}
+
+/*-----------------------------
+  規格名2
+------------------------------*/
+.commodityStandardName2Col {
+  width: 60px;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.commodityStandardName2Col span {
+  white-space: normal;
+  word-break: break-all;
+}
+
+/*-----------------------------
+  のし・ギフト
+------------------------------*/
+.popUpButtonArea{
+  padding: 10px;
+  overflow: hidden;
+}
+
+.noshiGiftName {
+  word-wrap: break-word;
+}
+
+#giftRadioForm li{
+  float:left;
+}
+
+/*-----------------------------
+  お届け別合計金額
+------------------------------*/
+.shippingDeliverTotal {
+  padding: 0 20px;
+}
+
+div.shippingTotal {
+  clear: both;
+  overflow: hidden;
+  padding: 10px 20px 50px 10px;
+  text-align: right;
+  border-top: solid 2px #cccccc;
+}
+
+div.shippingTotal .shippingTotalHeader {
+  padding: 5px 5px 5px 5px;
+}
+
+div.shippingTotal .shippingTotalPrice {
+  width: 80px;
+  display: inline-block;
+}
+
+#shippingAddress div.leftTitle {
+  padding: 5px 5px 5px 0px;
+  width: 150px;
+  background-color: #FFFFFF;
+  text-align: left;
+}
+
+div.shippingAddressTitle {
+  font-size: 80%;
+}
+
+/*-----------------------------
+  構成品
+-----------------------------*/
+div.compositionListArea {
+  font-size: 10px;
+  margin: 0px;
+  padding-left: 5px;
+}
+
+/*-----------------------------
+  お届け希望
+------------------------------*/
+.deliveryArea{
+  border:1px solid #cccccc;
+  margin-bottom:20px;
+
+}
+.deliveryAppoint{
+  background-color: #dcdcdc;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.deliveryBlock {
+  padding: 10px;
+  background-color:#ffffff;
+}
+
+.deliveryInfo{
+  padding:10px;
+}
+
+/*-----------------------------
+  カレンダー
+------------------------------*/
+.deliveryBlock .ui-datepicker-inline {
+  margin:20px auto;
+}
+
+.deliveryBlock .ui-widget-content{
+  background: #ffffff;
+  border:1px solid #cccccc;
+  color: #333333;
+  padding:10px;
+}
+
+.deliveryBlock .ui-widget-header{
+  background:#eeeeee;
+}
+
+.deliveryBlock .ui-corner-all, .deliveryBlock .ui-corner-top, .deliveryBlock .ui-corner-left, .deliveryBlock .ui-corner-tl,
+.deliveryBlock .ui-corner-all, .deliveryBlock .ui-corner-top, .deliveryBlock .ui-corner-right, .deliveryBlock .ui-corner-tr,
+.deliveryBlock .ui-corner-all, .deliveryBlock .ui-corner-bottom, .deliveryBlock .ui-corner-left, .deliveryBlock .ui-corner-bl,
+.deliveryBlock .ui-corner-all, .deliveryBlock .ui-corner-bottom, .deliveryBlock .ui-corner-right, .deliveryBlock .ui-corner-br {
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
+}
+
+.deliveryBlock .ui-datepicker.ui-datepicker-multi{
+  width:60% !important;
+}
+
+.deliveryBlock .ui-state-active, .deliveryBlock .ui-widget-content .ui-state-active, .deliveryBlock .ui-widget-header .ui-state-active{
+  background:#DD7E17;
+  color:#ffffff;
+}
+
+.deliveryBlock .ui-datepicker-header{
+  border:1px solid #cccccc !important;
+}
+
+/*-----------------------------
+  宛先追加ボタン
+------------------------------*/
+#addAdressArea {
+  text-align: right;
+  padding: 5px;
+}
+
+/*-----------------------------
+連絡事項
+-----------------------------*/
+.MessageArea {
+  border-bottom: solid 2px #cccccc;
+  margin-top:50px;
+}
+
+.MessageArea #textArea {
+  padding: 10px;
+}
+
+textarea {
+  width: 100%;
+}
+
+/*-----------------------------
+ 熨斗
+------------------------------*/
+#noshiListArea {
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+}
+
+#noshiListArea .frameBody{
+    margin-bottom:0;
+}
+
+#noshiListArea h3,
+#giftListArea h3{
+    margin:0;
+}
+
+#noshiListArea .frameBody {
+  text-align: left;
+}
+
+#noshiListArea .noshiHeader {
+  background-color: #dcdcdc;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+}
+
+#noshiListArea .noshiInfoTemplate {
+  width: 100%;
+  padding:10px;
+  border-bottom: 1px dashed #ccc;
+  cursor: pointer;
+}
+
+#noshiListArea .noshiInfoTemplate:hover {
+  background-color: #f9f9f9;
+}
+
+#noshiListArea .noNoshiArea {
+  padding: 10px;
+  border-bottom: 1px dashed #ccc;
+  cursor: pointer;
+}
+
+#noshiListArea .noNoshiArea:hover {
+  background-color: #f9f9f9;
+}
+
+#noshiListArea .noshiPrice {
+  text-align: right;
+}
+
+#noshiListArea .noshiDescription {
+  display: inline-block;
+  vertical-align: top;
+  word-break:break-all;
+  width: 80%;
+  padding: 5px;
+}
+
+#noshiListArea .noshiImage {
+  width: 70px;
+  height: 70px;
+  margin-top: 5px;
+}
+
+#noshiListArea #noshiInfoList {
+  height: 200px;
+  overflow-y: auto;
+}
+
+#noshiListArea #noshiInputArea {
+  padding: 10px;
+}
+
+#noshiListArea #noshiInputArea input,textarea {
+  display: inline-block;
+  width: 100%;
+}
+
+#noshiListArea #noshiNameplateLabel {
+  padding-right: 10px;
+}
+
+#noshiListArea #noshiNameplateCaution {
+  text-align: left;
+}
+
+.deliverDate{
+  border: 1px solid #cccccc;
+  margin: 10px;
+  padding:20px 10px;
+  text-align: center;
+  background-color: #eeeeee;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.deliverDateIn{
+  font-size: large;
+}
+
+.shippingCycle{
+  margin: 10px;
+}
+
+.shippingCycleArea{
+  border-bottom: solid 1px #cccccc;
+}
+.shippingCycle input{
+    margin-right:5px;
+}
+
+/*-----------------------------
+  ボタンエリア
+------------------------------*/
+.addShippingButton {
+  padding: 10px;
+}
+
+.popUpLink {
+  cursor: pointer;
+}
+
+#addGift {
+  text-align: left;
+  max-width: 650px;
+  font-size: 15px;
+}
+
+#addGift div.tableBody li.priceCell {
+  text-align: right;
+  width: 80px;
+  padding: 5px 0px 5px 0px;
+}
+
+#addGift #giftList ul:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+#addGift div.tableBody li.imageCell {
+  width: 120px;
+  padding: 5px 0px 5px 5px;
+}
+
+#addGift {
+  width: 800px;
+  background-color: #fff;
+}
+
+#giftListArea {
+  width: 600px;
+  background-color: #fff;
+
+}
+
+#giftListArea .giftHeader {
+  background-color: #dcdcdc;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+}
+
+.giftListAreaLabel {
+    font-weight: normal;
+}
+
+#giftListArea .listBody {
+  max-height: 500px;
+}
+
+#giftListArea #giftList {
+  overflow-y: auto;
+  height: 450px;
+}
+
+#giftListArea div.frameHeader {
+  text-align: left;
+}
+
+#giftListArea img.giftImage {
+  height: 80px;
+  width: 80px;
+  margin-top: 5px;
+}
+
+#giftListArea #giftList ul:hover ,
+#giftRadioForm .tableBody:hover{
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+#giftRadioForm label{
+  margin:0;
+  display: inline;
+}
+
+#giftRadioForm .tableBody{
+  padding:10px 10px;
+  overflow:hidden;
+  border-bottom:1px dashed #cccccc;
+}
+
+#giftListArea div.frameBody li.imageCell {
+  width: 20%;
+  padding: 5px 0px 5px 5px;
+}
+
+#giftListArea .giftListCell {
+  text-align: left;
+  list-style-position: inside;
+  white-space: normal;
+  word-wrap: break-word;
+  margin-bottom: 5px;
+}
+
+#giftListArea .giftNameCell {
+  width: 500px;
+}
+
+#giftListArea .giftDescCell {
+  width: 480px;
+}
+
+#giftListArea .giftNameTitle {
+  font-weight: bold;
+}
+
+.selectGiftName {
+  font-weight: bold;
+}
+
+.giftListDescroption {
+  /* margin: 10px 0px 10px 0px; */
+  padding : 5px 5px 5px 10px;
+}
+
+.giftListPrice {
+  margin: 25px 0px 15px 0px;
+  text-align: right;
+}
+
+.selectGiftPrice {
+  font-weight: bold;
+}
+
+#giftListArea .radioCell {
+  width: 20px;
+}
+
+.disabledMovePaymentArea {
+  float: right;
+}
+.backButtonArea input {
+  width: 100px;
+}
+
+/*-----------------------------
+  テーブル
+-----------------------------*/
+.shippingBorder{
+  border-top:1px solid #cccccc;
+}
+
+.shopCartBeanTemplateArea {
+  border: 1px solid #cccccc;
+  margin-bottom: 40px;
+  background: #f9f9f9;
+}
+
+.shopCartBeanTemplateArea .cartCover {
+  padding: 0 20px;
+  margin-top: 20px;
+}
+.incFreeText {
+  display: inline-block;
+}
+
+.incWorkPrice {
+  float: right;
+}
+/*合計*/
+.cartTotal{
+  margin:20px 0;
+}
+
+.cartTotal tr {
+  border-bottom: 1px solid #cccccc;
+}
+
+.cartTotal td {
+  width: 25%;
+  text-align: right;
+  font-size: 1.5em;
+  padding: 15px;
+}
+
+.cartTotal th {
+  width: 75%;
+  text-align: right;
+}
+
+.cartTotal tbody,.cartTotal tr {
+  width: 100%;
+}
+
+.address2 {
+  width: 250px;
+}
+
+#address4, #address3{
+  width:400px;
+}
+
+.address4, .address3 {
+  width:500px;
+}
+
+#shippingMainArea div.rightData input.name {
+  width: 100px;
+}
+
+/*-----------------------------
+  990px以下(xs,sm)で表示
+------------------------------*/
+@media screen and (max-width:991px) {
+  #addAdressArea {
+    text-align: center;
+    margin-bottom:30px;
+  }
+  
+  #addAdressArea input {
+    width: 49.5%;
+  }
+  
+  #giftListArea div.frameBody li.imageCell,#giftListArea div.frameBody li.radioCell
+    {
+    float: left;
+  }
+  
+  .sp_login {
+    right: 0 !important;
+  }
+  
+  .cartTblmini {
+    width: 100%;
+  }
+  
+  .itemName {
+    padding: 0 10px;
+  }
+  
+  .priceCol {
+    width: 25%;
+  }
+  
+  .cmdtyCol {
+    width: 75%;
+  }
+  
+  .cartTblIcon {
+    width: 60%;
+  }
+  
+  .cartTblmini .tbl_img {
+    vertical-align: top;
+  }
+  
+  .ageLimitArea {
+    padding: 0 10px;
+  }
+  
+  .cartTbl {
+    border-bottom: 1px solid #cccccc;
+  }
+  
+  .cartTbl td {
+    padding: 10px !important;
+    display: table-cell;
+    border-right: 1px solid #cccccc;
+  }
+  
+  .deleteButton,.favoriteButton {
+    display: inline-block;
+  }
+  
+  .commodityCartBean {
+    border-bottom: 1px dashed #cccccc;
+    margin-bottom: 20px;
+  }
+  
+  .commodityCartBean:last-child {
+    border: none;
+  }
+  
+  .disabledMovePaymentArea {
+    float: none
+  }
+  
+  .frameBody li{
+    float:left;
+  }
+  
+  .deliveryBlock .ui-datepicker.ui-datepicker-multi{
+    width:80% !important;
+  }
+}
+
+/*-----------------------------
+  767px以下(xs)で表示
+------------------------------*/
+@media screen and (max-width:767px) {
+  #giftListArea {
+    width: 80%;
+  }
+  
+  #addressAlias, #address2, #address3, #address4{
+    width: 80%;
+  }
+  
+  #giftListArea .giftListAreaLabel {
+    width: 100%;
+  }
+  
+  #giftListArea .giftNameCell {
+    width: 90%;
+    float: left;
+  }
+  
+  #giftListArea .giftDescCell {
+    width: 80%;
+    float: left;
+  }
+  
+  .frameBody .normal {
+    max-height: 300px;
+  }
+  
+  #noshiListArea .noshiInfoTemplate {
+    width: 100%;
+  }
+
+  .ui-datepicker-group {
+    float: none!important;
+  }
+  
+  .ui-widget-content {
+    border:none!important;
+  }
+  
+  .deliverDate span{
+    display:inline-block;
+  }
+  
+  .deliveryBlock .ui-datepicker-multi-2 .ui-datepicker-group{
+    width:auto !important;
+  }
+  
+  .cartTotal td {
+    width: 25%;
+    text-align: right;
+    font-size: 1em;
+    padding: 15px;
+  }
+  /*-----------------------------
+  商品名
+  ------------------------------*/
+  .commodityNameCol {
+    width: 70%;
+  }
+  
+  .address2 {
+    width: 175px;
+  }
+  
+  .address4, .address3 {
+    width:250px;
+  }
+}

@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+#addressEditArea #addressInfoArea {
+  margin: 0px 0px 0px 0px;
+}
+
+#addressEditArea div.rightData input.name {
+  width: 100px;
+}
+

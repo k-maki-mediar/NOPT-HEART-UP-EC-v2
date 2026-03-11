@@ -1,0 +1,71 @@
+<th:block th:fragment="wsparts-include">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var config = /*[[${config}]]*/ '';
+        var context = /*[[${#ctx.getExchange().getRequest().getContextPath()}]]*/'';
+        var bean = /*[[${FavoriteListResultBean}]]*/'';
+
+        var contentDate = new Date().toISOString();
+
+        _sna_dam.push(['behaviorType', 14]);
+
+        if (bean && bean.list && bean.list.length > 0) {
+            for (var i = 0; i < bean.list.length; i++) {
+                var item = bean.list[i];
+
+                var stockStatus = 1;
+                var stockCount = 0;
+
+                switch (item.stockManagementType) {
+                    case '0':
+                        stockStatus = 1;
+                        break;
+                    case '1':
+                        stockCount = item.availableStockQuantity || 0;
+                        if (stockCount <= 0) {
+                            stockStatus = 0;
+                        } else if (item.stockSufficientThreshold && stockCount <= item.stockSufficientThreshold) {
+                            stockStatus = 2;
+                        } else {
+                            stockStatus = 1;
+                        }
+                        break;
+                    case '2':
+                        stockStatus = 1;
+                        break;
+                    default:
+                        stockStatus = 1;
+                }
+
+                var code = item.skuCode || item.commodityCode || '';
+
+                var itemAttributes = {
+                    'name': item.commodityName || '',
+                    'status': 1,
+                    'stockStatus': stockStatus,
+                    'stockCount': stockCount,
+                    'contentDate': contentDate,
+                    'currency': '円'
+                };
+
+                if (item.commodityPageUrl) itemAttributes.url1 = item.commodityPageUrl;
+                if (item.commodityImagePath) itemAttributes.imageUrl1 = webReceptionUtil.convertCommodityImagePath(item.commodityImagePath, config, context);
+                if (item.shortDescription) itemAttributes.description = item.shortDescription;
+                if (item.commoditySalesSituation) itemAttributes.saleStage = item.commoditySalesSituation;
+
+                var reservationPrice = item.reservedPriceNoTax;
+                var discountPrice = item.discountPriceNoTax;
+                var unitPrice = item.unitPriceNoTax;
+
+                itemAttributes.price1 = reservationPrice ? reservationPrice : discountPrice ? discountPrice : unitPrice;
+                itemAttributes.price2 = unitPrice;
+
+                _sna_dam.push(['item', {
+                    'attributes': itemAttributes,
+                    'code': code
+                }]);
+            }
+        }
+        /*]]>*/
+    </script>
+</th:block>

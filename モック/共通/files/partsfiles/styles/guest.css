@@ -1,0 +1,110 @@
+
+/*-----------------------------
+  ナビ
+------------------------------*/
+div.guestNavigation {
+  width: 100%;
+  display: table;
+}
+
+/*-----------------------------
+  ナビ　タイトル
+------------------------------*/
+div.guestNavigationTitle,div.guestNavigationImg {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*-----------------------------
+  ナビ　画像
+------------------------------*/
+div.guestNavigationImg {
+  text-align: center;
+}
+
+div.guestNavigationImg img{
+  width:80%;
+  max-width:438px;
+  margin-bottom:20px;
+}
+/*-----------------------------
+  ゲスト編集情報エリア
+------------------------------*/
+#guestEditArea {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#guestEditArea div.navigation {
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+
+#guestEditArea #guestInfoArea {
+  margin: 0px 0px 0px 0px;
+}
+
+/*-----------------------------
+  必須
+------------------------------*/
+#guestEditArea .requireMessageArea {
+  width: 100%;
+  overflow: hidden;
+  background-color: #FFF;
+}
+
+/*-----------------------------
+  編集データ側
+------------------------------*/
+#guestEditArea div.rightData {
+  padding: 10px;
+}
+
+#guestEditArea div.rightData input.name {
+  width: 100px;
+}
+
+/*-----------------------------
+別のお届け先情報
+------------------------------*/
+#addressLastName {
+  width: 100px;
+}
+
+#addressFirstName {
+  width: 100px;
+}
+
+#addressLastNameKana {
+  width: 100px;
+}
+
+#addressFirstNameKana {
+  width: 100px;
+}
+
+/*-----------------------------
+  会員規約
+------------------------------*/
+#frontGuestMembersRuleArea {
+  text-align: left;
+  padding:10px;
+  margin-bottom: 10px;
+  max-height:200px;
+  overflow-y:auto;
+}
+
+/*-----------------------------
+  郵便番号検索エリア
+-----------------------------*/
+#ownerPostalSearchArea,#addressPostalSearchArea {
+  display: inline;
+}
+
+/*-----------------------------
+  ボタンエリア
+------------------------------*/
+#buttonArea {
+  margin-top: 10px;
+  overflow: hidden;
+}

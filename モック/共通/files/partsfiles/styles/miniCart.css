@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+#miniCart {
+  position: relative;
+}
+
+#miniCartHeader {
+  overflow: hidden;
+  height: 58px;
+  color: #333333;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align:middle;
+  text-align: center;
+  border-left: 1px solid #cccccc;
+  width:15%;
+}
+
+#miniCartHeader:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+#miniCartDetailArea {
+  text-align: left;
+  line-height: 20px;
+  z-index: 299;
+  position: absolute;
+  box-shadow: 5px 5px 5px #ddd;
+  padding: 10px 5px 5px 5px;
+  width: 100%;
+  min-width: 100%;
+  background-color: white;
+  overflow: auto;
+  color: #000000;
+  max-height: 300px;
+  border: 1px solid rgb(238, 238, 238);
+}
+
+#miniCartDetail {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+#miniCart .miniCartShopLink {
+  padding: 15px 10px;
+}
+
+#miniCart .miniCartItemDetail {
+  width: 95%;
+  height: 70px;
+  margin: 5px 15px 5px 5px;
+}
+
+#miniCart .miniCartItemDetail:hover {
+  background: rgb(238, 238, 238);
+}
+
+#miniCart img.miniCartItemImage {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+#miniCart img.miniCartItemImage:hover {
+  opacity: 0.7;
+}
+
+#miniCart .miniCartRightDetail {
+  float: left;
+  width: 65%;
+  height: 60px;
+  margin: 5px 5px 5px 0px;
+  overflow: hidden;
+  font-size: 0.9em;
+  line-height:1.3em;
+  text-overflow: ellipsis;
+}
+
+#miniCart .miniCartItemIncwork {
+  font-size: 0.9em;
+}
+
+#miniCart .miniCartItemQuantityArea {
+  font-size: 0.9em;
+  display:inline-block;
+}
+
+#miniCart .miniCartReserve {
+  color: red;
+}
+
+#miniCartFooter {
+  z-index: 999;
+  width: 100%;
+  height: 60px;
+  left: 0px;
+  position: fixed;
+  bottom: 0px;
+  background: rgba(51, 51, 51, 0.7);
+}
+
+
+#miniCartFooter p, #miniCartFooter b {
+  display: table-cell;
+  vertical-align: middle;
+  height: 60px;
+}
+
+#miniCartFooter .cart {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.floating-txt {
+  color: #ffffff;
+  display: inline-block;
+  text-align: left;
+}
+
+.floatThum {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  border: 1px solid #ffffff;
+  float: left;
+  background: #ffffff;
+  margin-left: 10px;
+}
+
+.slideup, .slidedown {
+  max-height: 0;            
+  overflow-y: hidden;
+  -webkit-transition: max-height 0.4s ease-in-out;
+  -moz-transition: max-height 0.4s ease-in-out;
+  -o-transition: max-height 0.4s ease-in-out;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.slideup {            
+  max-height: 60px ;                    
+}  

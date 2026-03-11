@@ -1,0 +1,64 @@
+<th:block th:fragment="wsparts-include">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var config = /*[[${config}]]*/ '';
+        var context = /*[[${#ctx.getExchange().getRequest().getContextPath()}]]*/'';
+
+        var code = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.skuCode : ''}]]*/ '';
+        var url1 = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.commodityPageUrl : ''}]]*/ '';
+        url1 = webReceptionUtil.substring(url1,250);
+        var status = 1;
+        var imageUrl1 = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.commodityImagePath : ''}]]*/ '';
+        imageUrl1 = webReceptionUtil.convertCommodityImagePath(imageUrl1, config, context);
+        var description = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.shortDescription : ''}]]*/ '';
+        var saleStage = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.commoditySalesSituation : ''}]]*/ '';
+
+        var currency = '円';
+        var discount = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.representDiscountRate : ''}]]*/ '';
+
+        var reservationPrice = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.reservationPriceNoTax : ''}]]*/ '';
+        var reserve = false;
+        if (reservationPrice) {
+            reserve = true;
+        }
+        var stockQuantity = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.addCartLimitQuantity : ''}]]*/ '';
+        var stockManagementType = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.stockManagementType : ''}]]*/ '';
+        var stockSufficientThreshold = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.stockSufficientThreshold : ''}]]*/ '';
+        var stockStatus = webReceptionUtil.getCommodityStockStatus(reserve, stockManagementType, stockQuantity, stockSufficientThreshold);
+
+        var discountPrice = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.discountPriceNoTax : ''}]]*/ '';
+        var unitPrice = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.unitPriceNoTax : ''}]]*/ '';
+
+        var price1 = reservationPrice ? reservationPrice : discountPrice ? discountPrice : unitPrice;
+        var price2 = unitPrice;
+
+        var purchaseMethodType = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.purchaseMethodType : ''}]]*/ '';
+        var reservePrice = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.reservationPrice : ''}]]*/ '';
+        purchaseMethodType = reservePrice > 0 ? 2 : purchaseMethodType;
+
+        var name = /*[[${DetailResultBean != null && DetailResultBean.unitCommodityInfo != null ? DetailResultBean.unitCommodityInfo.commodityName : ''}]]*/ '';
+
+        var item = {
+            'code': code,
+            'attributes': {
+                'name': name,
+                'url1': url1,
+                'price1': price1,
+                'discount': discount,
+                'status': status,
+                'imageUrl1': imageUrl1,
+                'description': description,
+                'saleStage': saleStage,
+                'stockStatus': stockStatus,
+                'price2': price2,
+                'currency': currency,
+                'stockCount': stockQuantity
+            }
+        };
+
+        _sna_dam.push(['behaviorType', 1]);
+        _sna_dam.push(['item', item]);
+        /*]]>*/
+    </script>
+</th:block>

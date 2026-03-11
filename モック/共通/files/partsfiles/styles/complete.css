@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/*-----------------------------
+  ナビ
+------------------------------*/
+div.completeNavigation {
+  width: 100%;
+  display: table;
+}
+
+/*-----------------------------
+  ナビ タイトル
+------------------------------*/
+div.completeNavigationTitle,div.completeNavigationImg {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*-----------------------------
+  ナビ 画像
+------------------------------*/
+div.completeNavigationImg {
+  text-align: center;
+}
+div.completeNavigationImg img{
+  width:80%;
+  max-width:438px;
+  text-align: center;
+  margin-bottom:20px;
+}
+
+#completeMainArea {
+  margin: 0 auto;
+}
+
+#completeInfoArea {
+  padding:20px;
+}
+
+#displayContinueArea {
+  margin-top: 20px;
+  text-align:center;
+}
+
+#displayEnqueteArea {
+  margin-top: 20px;
+  text-align:center;
+}
+
+/*-----------------------------
+  ボタンエリア
+------------------------------*/
+#buttonArea {
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+#mypageButtonArea {
+  float: right;
+}
+
+/*-----------------------------
+  メッセージアリア
+------------------------------*/
+#orderDetailArea{
+  text-align:center;
+}
+.massageTxt{
+  font-size:2em;
+  line-height:1.2em;
+  margin:10px auto;
+}
+
+.pointTxt{
+  font-size:1.5em;
+  color: #af0000;
+  font-weight: bold;
+}
+

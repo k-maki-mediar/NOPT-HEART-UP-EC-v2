@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/*-----------------------
+  注文履歴絞り検索バー
+------------------------*/
+.searchBar {
+  width: 100%;
+  border: 1px solid #cccccc;
+  margin-bottom: 20px;
+  overflow:hidden;
+  vertical-align: middle;
+}
+
+.searchBar .searchTitle {
+  display: inline-block;
+  background-color: #DCDCDC;
+  padding: 10px 3%;
+  font-weight: bold;
+}
+
+.searchBar .searchType {
+  padding: 10px 3%;
+  cursor: pointer;
+  display:inline-block;
+}
+
+.searchBar .currentSearchType {
+  padding: 10px 3%;
+  font-weight: bold;
+  display:inline-block;
+}
+.leftTitleBar{
+  background:#e2e2e2;
+  padding-bottom: 32768px;
+  margin-bottom: -32768px;
+}
+.leftTitleBar span{
+  display:inline-block;
+  padding:10px;
+}
+
+.rightDatarBar {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#orderHistoryArea{
+  clear:both;
+}
+
+.listTemplateArea:hover {
+  background-color: #f9f9f9;
+}
+
+/*-----------------------
+  キャンセル・お問い合わせ
+------------------------*/
+.cancelStatusCol input{
+  width:94px;
+  margin:3px 0;
+}
+
+/*-----------------------
+  構成品
+------------------------*/
+div.compositionListArea {
+  font-size: 10px;
+  margin: 0;
+  padding-left: 10px;
+}
+
+/*-----------------------
+ お知らせ
+------------------------*/
+#orderHistoryArea .orderCreateErrorMessage {
+  color: #af0000;
+  cursor: pointer;
+}
+
+/*991px以下(xs,sm)で表示*/
+@media screen and (max-width:991px) {
+  .leftTitleBar{
+    margin:0;
+    padding:0;
+  }
+  
+  #orderHistoryArea li.totalPriceCol {
+    text-align: left;
+    padding-bottom: 0;
+  }
+  
+  .orderNoCol p{
+    display:inline;
+    margin-left:5px;
+  }
+  
+  .infoCol {
+    clear: both;
+  }
+}

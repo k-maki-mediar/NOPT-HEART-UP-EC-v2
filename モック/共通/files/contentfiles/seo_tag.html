@@ -1,0 +1,7 @@
+<title th:text="${TagResultBean.tagInfo.tagName + ' ' + TagResultBean.tagInfo.shopName}"></title>
+<script itemscope itemtype="http://schema.org/WebContent" itemref="s1 s2"></script>
+<meta th:content="${TagResultBean.tagInfo.tagName + ' ' + TagResultBean.tagInfo.shopName}" name="description" />
+<meta id="s1" th:content="${TagResultBean.tagInfo.tagName + ' ' + TagResultBean.tagInfo.shopName}" itemprop="description" />
+<meta name="keywords" th:content="${TagResultBean.tagInfo.tagName + ',' + TagResultBean.tagInfo.shopName}" />
+<link th:href="@{/} + ${'tag/' + TagResultBean.tagInfo.shopCode + '/' + TagResultBean.tagInfo.tagCode} + '/'" rel="canonical" />
+<link id="s2" th:href="@{/} + ${'tag/' + TagResultBean.tagInfo.shopCode + '/' + TagResultBean.tagInfo.tagCode} + '/'" itemprop="url" />

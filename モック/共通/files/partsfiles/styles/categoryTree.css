@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/*toggle*/
+#categoryTreeArea{
+  border-bottom: 1px dashed #cdcdcd;
+  margin-right: -5px;
+}
+#categoryTreeArea ul{
+  list-style: none;
+}
+.toggle_menu {
+  padding: 0;
+}
+
+.toggle_menu ul li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis; /* Safari */
+  -o-text-overflow: ellipsis; /* Opera */
+  white-space: nowrap;
+  border-top: 1px dashed #cdcdcd;
+  line-height: 40px;
+}
+
+.accordion .toggle {
+  cursor: pointer;
+  content: "";
+  background-image: url(../../commonfiles/images/icon_plus.png);
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+  padding: 0 10px 0 30px;
+}
+
+.accordion .open {
+  background-image: url(../../commonfiles/images/icon_minus.png);
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+}
+
+.accordion .blank {
+  padding: 0 10px 0 30px;
+}
+
+.accordion .childCategory {
+  display: none;
+  overflow: hidden;
+  padding-left: 40px;
+  background-image:url(../../commonfiles/images/tree_bgLeft.gif);
+  background-repeat: no-repeat;
+  background-position: 17px 10px;
+}
+
+li.selected {
+  font-weight: bold;
+  background-color: #f5f5f5;
+}
+
+a.selected {
+  color: #333333;
+}
+
+/*IE10,11*/
+@media screen and (-ms-high-contrast: active) , ( -ms-high-contrast :
+  none) {
+  .accordion .toggle {
+    padding-top: 1px;
+  }
+}

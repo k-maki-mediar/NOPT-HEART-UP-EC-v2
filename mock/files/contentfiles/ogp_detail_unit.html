@@ -1,0 +1,7 @@
+<meta property="og:title" th:content="${DetailResultBean.unitCommodityInfo.commodityName + ' ' + DetailResultBean.unitCommodityInfo.shopName}" />
+<meta property="og:type" th:content="'product'" />
+<meta property="og:description" th:content="${DetailResultBean.unitCommodityInfo.shortDescription}" />
+<meta property="og:url" th:content="${#ctx.getExchange().getSession().getAttributeValue('SNS_URL')}" />
+<meta th:if="${!#lists.isEmpty(DetailResultBean.unitCommodityInfo.relatedImageInfo.relatedImageList)}" property="og:image" th:content="'https://' + ${#ctx.getExchange().getRequest().getServerName()} + ${DetailResultBean.unitCommodityInfo.relatedImageInfo.relatedImageList.get(0)}" />
+<meta property="og:site_name" th:content="${LoginInfoResultBean.siteName}" />
+<meta property="og:locale" th:content="${#locale}" />

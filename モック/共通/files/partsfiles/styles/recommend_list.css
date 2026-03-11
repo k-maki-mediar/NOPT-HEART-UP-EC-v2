@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+.item_label {
+  padding: 2px 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+/*991px以下(xs,sm)で表示*/
+@media screen and (max-width:991px) {
+  .priceCol {
+    float:right;
+  }
+  .commodityDescriptionCol{
+    clear:both;
+    display:block;
+    width:100%;
+    float:none;
+  }
+  .listTbl td.imageCommodityCol,
+  .listTbl td.commodityDetailArea{
+    width:120px;
+    float:left;
+  }
+  .noCol{
+    text-align:left;
+  }
+}

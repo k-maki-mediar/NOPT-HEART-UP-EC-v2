@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/*-----------------------------
+  商品画像
+------------------------------*/
+#favoriteListArea div.imageCommodityArea {
+  white-space: normal;
+}
+
+/*-----------------------------
+  レジ値引
+------------------------------*/
+span.campaignDiscountRateArea {
+  color: #D26900;
+  font-weight: 600;
+}
+
+/*-----------------------
+  特別価格
+------------------------*/
+.discountPrice {
+  font-weight: 600;
+}
+
+.discountNormalPrice {
+  padding-left: 63px;
+}
+
+/*SPでの表示*/
+@media screen and (max-width:991px) {
+  .imageCommodityCol{
+    float: left;
+  }
+  
+  .priceCol{
+    float: right;
+  }
+  
+  .deleteCol{
+    clear: both;
+    float: left;
+  }
+  
+  .addCartCol{
+    float: right;
+  }
+
+  .noCol {
+    text-align: left;
+  }
+}

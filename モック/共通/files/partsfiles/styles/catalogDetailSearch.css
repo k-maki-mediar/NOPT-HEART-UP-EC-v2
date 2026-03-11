@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+#catalogDetailSearch{
+  margin-bottom:40px;
+  margin-right: -5px;
+}
+
+#catalogDetailSearch .searchPriceStart {
+  width: 42%;
+  display: inline-block;
+}
+
+#catalogDetailSearch .searchPriceEnd {
+  width: 42%;
+  display: inline-block;
+}
+
+/*992pxから1199pxまでのcss*/
+@media only screen and (min-width:992px) and (max-width:1199px) {
+  input, select {
+    width:130px;
+  }
+}
+
+/*1200px以上のcss*/
+@media only screen and (min-width:1200px){
+  .left_navi_box input,
+  .left_navi_box select {
+    width:100%;
+  }
+}

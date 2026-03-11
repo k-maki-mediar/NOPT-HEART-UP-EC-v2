@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+
+/*-----------------------------
+  検索エリア右部
+-----------------------------*/
+
+#buttonArea {
+  padding-top: 10px;
+  overflow: hidden;
+}
+
+/*-----------------------------
+  動的設定
+-----------------------------*/
+
+/*tab,PCで表示*/
+@media screen and (min-width:768px) {
+  textarea#reviewDescription {
+    width: 500px;
+  }
+}
+
+/*767px以下（SP）で表示*/
+@media screen and (max-width:767px) {
+  textarea#reviewDescription {
+    width: 200px;
+  }
+}
+
+/*-----------------------------
+  メッセージエリア
+-----------------------------*/
+#resultMessageArea {
+  padding: 30px 0px 30px 0px;
+  text-align: center;
+  font-size: 100%;
+  font-weight: bold;
+}

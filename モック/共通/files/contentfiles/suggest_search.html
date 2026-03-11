@@ -1,0 +1,8 @@
+<div th:fragment="wsparts-include">
+  <th:block th:if="${naviPlusConfig.search && naviPlusConfig.searchSuggest}">
+    <script th:src="${naviPlusConfig.suggestSearchURL}"></script>
+    <script>
+      $('#detailSearchAreaSearchWord').attr('autocomplete', 'off');
+    </script>
+  </th:block>
+</div>

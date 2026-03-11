@@ -1,0 +1,53 @@
+<th:block th:fragment="wsparts-include">
+<th:block th:if="${analytics} and ${analytics.access}">
+<!--/* Google Tag Manager */-->
+<script>
+/**
+ * ターゲティングクッキー
+ */
+var tagetingcName = "TARGETING-COOKIE";
+
+/**
+ * クッキー名称からクッキー取得
+ * 
+ * クッキーがなければ空文字を返す
+ */
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+/**
+ * クッキー存在チェック
+ */
+function hasCookie(cname) {
+    var user = getCookie(cname);
+    if (user != "") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+if (hasCookie(tagetingcName)) {
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');
+}
+</script>
+<!--/* End Google Tag Manager */-->
+</th:block>
+</th:block>

@@ -1,0 +1,38 @@
+<th:block th:fragment="wsparts-include">
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var bean = /*[[${CompleteResultBean}]]*/'';
+        var config = /*[[${config}]]*/ '';
+        var context = /*[[${#ctx.getExchange().getRequest().getContextPath()}]]*/'';
+
+        var orderCode = bean.orderNo;
+        var totalPrice = bean.totalPrice;
+
+        $(bean.conversionCommodityInfoList).each(function() {
+
+            var code = webReceptionUtil.isSetCommodity(this.skuCode) ? this.commodityCode : this.skuCode;
+            var name = webReceptionUtil.convertStandardName(this.commodityName,this.standardDetail1Name,this.standardDetail2Name);
+            var stockStatus = webReceptionUtil.getCommodityStockStatus(this.reserve, this.stockManagementType, this.availableStockQuantity, this.stockSufficientThreshold);
+
+            var item = {
+                'code' : code,
+                'attributes' : {
+                    'name' : name,
+                    'stockStatus' : stockStatus
+                }
+            };
+
+            _sna_dam.push([ 'item', item ]);
+
+        });
+
+        _sna_dam.push([ 'behaviorType', 3 ]);
+        _sna_dam.push([ 'orderCode', orderCode ]);
+        _sna_dam.push([ 'totalPrice', totalPrice ]);
+
+        /*]]>*/
+    </script>
+
+</th:block>

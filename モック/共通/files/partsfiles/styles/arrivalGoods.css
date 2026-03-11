@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+.arrivalHidden{
+  display: none;
+}
+
+/*-----------------------------
+  table-cellを設定
+-----------------------------*/
+div .cell {
+  display: table-cell;
+}
+
+/*-----------------------------
+  表示エリア
+-----------------------------*/
+div#arrivalGoodsArea .arrivalGoods {
+  width: 100%;
+  background-color: #FFF;
+}
+
+/*-----------------------------
+  入力左部
+-----------------------------*/
+div .leftTitle {
+  padding: 5px 5px 5px 5px;
+}
+
+/*-----------------------------
+  入力右部
+-----------------------------*/
+div .rightData {
+  width: 60%;
+  text-align: left;
+  background-color: white
+}
+
+/*-----------------------------
+  ボタンエリア
+-----------------------------*/
+#arrivalGoodsArea .buttonArea {
+  margin: 10px 15px 10px 0px;
+  background-color: #FFF;
+  width: 90%;
+  text-align: center;
+}
+
+/*-----------------------------
+  メールアドレス入力部設定
+-----------------------------*/
+input.email {
+  ime-mode: inactive;
+}

@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+/*-----------------------------
+  データ側
+-----------------------------*/
+.linkBlock .rightData a{
+  float: left;
+  border-left: 7px solid #333333;
+  color: #333333;
+  text-decoration: none;
+  width: 210px;
+  height: 15px;
+  margin: 5px 0;
+  padding-left: 5px;
+  text-align: left;
+}
+/*-----------------------------
+  ホバー
+-----------------------------*/
+.linkBlock .rightData a:hover,
+#moveOrderHistory a:hover {
+  opacity: 0.7;
+}
+
+.linkBlock .rightData span {
+  display: block;
+  float: left;
+  border-left: 7px solid #cccccc;
+  text-decoration: none;
+  color: #cccccc;
+  width: 210px;
+  height: 15px;
+  margin: 5px 0;
+  padding-left: 5px;
+  text-align: left;
+}
+
+#withdrawalMessage, #disableWithdrawalMessage {
+  position: absolute;
+  padding: 5px 10px 5px 10px;
+  border: 1px soild;
+  background-color: #FFF;
+  border: 1px solid #888;
+  z-index: 999;
+}
+
+/*-----------------------------
+  注文履歴部分
+-----------------------------*/
+#mypageMainArea div#orderHistoryArea {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#orderList{
+  margin-bottom: 10px;
+}
+
+/*-----------------------------
+  構成品
+-----------------------------*/
+div.compositionListArea {
+  font-size: 10px;
+  margin: 0px;
+  padding-left: 10px;
+}
+
+/*-----------------------
+ お知らせ
+------------------------*/
+#mypageMainArea .orderCreateErrorMessage {
+  color: #af0000;
+}
+
+/*-----------------------------
+  注文履歴リンク
+-----------------------------*/
+.orderHistoryLinkArea {
+  width: 100%;
+  padding-left: 10px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+
+/*-----------------------------
+  半年以内の注文はありません
+-----------------------------*/
+#totalOrderCountTitle {
+  font-size: 12px;
+}
+
+#mypageMainArea #noOrderData {
+  float: left;
+  border-left: 7px solid #cccccc;
+  text-decoration: none;
+  color: #cccccc;
+  width: 250px;
+  height: 15px;
+  margin: 6px 10px 2px 10px;
+  padding-left: 5px;
+  text-align: left;
+}
+
+/*991px以下(xs,sm)で表示*/
+@media screen and (max-width:991px) {
+  .orderNo p{
+    display:inline;
+    margin-left:5px;
+  }
+}
+
+/*767px以下(xs)で表示*/
+@media screen and (max-width:767px) {
+  .linkBlock .rightData{
+    clear:both;
+    overflow: hidden;
+    padding:0;
+  }
+  
+  .linkBlock .rightData a{
+    display:block;
+    float:none;
+    border-left:none;
+    border-bottom: 1px solid #cccccc;
+    width:100%;
+    min-height:40px;
+    padding:10px;
+    margin:0;
+    padding: 15px 10px;
+    border-bottom: 1px solid #cccccc;
+    background: url(../../commonfiles/images/arrow_next.gif) 98% 50% no-repeat;
+  }
+  
+  .linkBlock .rightData span{
+    float:none;
+    border-left:none;
+    width:100%;
+    min-height:40px;
+    margin:0;
+    padding:10px;
+  }
+  
+  .linkBlock .rightData a:last-child{
+    border-bottom: none;
+  }
+  
+  .orderHistoryLinkArea {
+    padding-left:0;
+    margin-bottom:0;
+  }
+  
+  #moveOrderHistory a{
+    border-bottom:none;
+  }
+}
+

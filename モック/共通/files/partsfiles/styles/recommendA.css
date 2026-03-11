@@ -1,0 +1,21 @@
+.recoImg {
+  width: 180px;
+  height: 180px;
+  margin-top: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.recoName {
+  height: 50px;
+  word-break: break-all;
+  white-space: normal;
+  margin: 10px;
+  vertical-align: top;
+}
+
+.itembox_price {
+  height: unset;
+}
+

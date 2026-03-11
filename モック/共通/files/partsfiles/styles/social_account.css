@@ -1,0 +1,32 @@
+@charset "utf-8";
+#socialAccountInfoArea{
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+#socialAccountInfoArea .socialAccountSortArea {
+  margin: 0px 10px 20px 10px;
+}
+#socialAccountInfoArea .btn-login-social.disable {
+  cursor: default;
+  color: #bfbfbf;
+}
+#socialAccountInfoArea .btn-social-dissociate {
+  border: none;
+  background-color: transparent;
+  color: #001789;
+}
+#socialAccountInfoArea .btn-social-dissociate:hover {
+  text-decoration: underline;
+}
+#socialAccountCaution {
+  padding: 10px;
+}
+
+/*SPで表示*/
+
+@media screen and (max-width:767px) {
+  #socialAccountInfoArea .btn-social-dissociate {
+    margin: 5px 0px;
+    float: right;
+  }
+}

@@ -1,0 +1,86 @@
+<th:block th:fragment="wsparts-include">
+<th:block th:if="${analytics} and ${analytics.access}">
+<script th:inline="javascript">
+  /**
+   * ターゲティングクッキー
+   */
+  var tagetingcName = "TARGETING-COOKIE";
+
+  /**
+   * クッキー名称からクッキー取得
+   * 
+   * クッキーがなければ空文字を返す
+   */
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+      return "";
+  }
+
+  /**
+   * クッキー存在チェック
+   */
+  function hasCookie(cname) {
+    var user = getCookie(cname);
+    if (user != "") {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  if (hasCookie(tagetingcName)) {
+      /*[- */ アクセス解析 /* -]*/
+      var customerCode = /*[[${analytics.access.customerCode}]]*/ '';
+      var customerSex = /*[[${analytics.access.customerSex}]]*/ '';
+      var customerAge = /*[[${analytics.access.customerAge}]]*/ '';
+      var customerGroupName = /*[[${analytics.access.customerGroupName}]]*/ '';
+      var customerPrefectureCode = /*[[${analytics.access.customerPrefectureCode}]]*/ '';
+
+      dataLayer.push({
+          event: "accessAnalysis",
+          customer_code: customerCode,               /*[- */ 顧客コード /* -]*/
+          customer_sex: customerSex,                /*[- */ 性別 /* -]*/
+          customer_age: customerAge,                /*[- */ 年齢 /* -]*/
+          customer_group_name: customerGroupName,          /*[- */ 顧客グループコード /* -]*/
+          customer_prefecture_code: customerPrefectureCode,     /*[- */ 都道府県コード /* -]*/
+      });
+
+      /*[- */ 受注解析 /* -]*/
+      dataLayer.push({ ecommerce: null });
+      var bean = /*[[${CompleteResultBean}]]*/;
+      var itemsList = [];
+      $(bean.conversionCommodityInfoList).each(function() {
+        itemsList.push({
+                item_name: this.commodityName,    /*[- */ 商品名 /* -]*/
+                item_id: this.skuCode,            /*[- */ SKUコード /* -]*/
+                price: this.retailPrice,          /*[- */ 販売価格 /* -]*/
+                quantity: this.quantity           /*[- */ 数量 /* -]*/
+        })
+      });
+      dataLayer.push({
+          event: "purchase",
+          ecommerce: {
+            transaction_id: bean.orderNo,         /*[- */ 受注番号 /* -]*/
+            value: bean.orderTotalPrice,          /*[- */ 合計金額 /* -]*/
+            tax: bean.tax,                        /*[- */ 税額 /* -]*/
+            shipping: bean.shippingCharge,        /*[- */ 送料 /* -]*/
+            currency: "JPY",                      /*[- */ 通貨 /* -]*/
+            coupon: bean.couponManagementCode,    /*[- */ クーポン管理コード /* -]*/
+            items: itemsList                      /*[- */ 商品情報 /* -]*/
+          }
+      });
+  }
+</script>
+</th:block>
+</th:block>

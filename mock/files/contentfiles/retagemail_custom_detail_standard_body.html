@@ -1,0 +1,87 @@
+<th:block th:fragment="wsparts-include">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var config = /*[[${config}]]*/ '';
+        var context = /*[[${#ctx.getExchange().getRequest().getContextPath()}]]*/'';
+
+        var code = /*[[${DetailResultBean.standardCommodityInfo.selectedSkuCode}]]*/ '';
+        var url1 = /*[[${DetailResultBean.standardCommodityInfo.commodityPageUrl}]]*/ '';
+        url1 = webReceptionUtil.substring(url1,250);
+        var status = 1;
+        var imageUrl1 = /*[[${DetailResultBean.standardCommodityInfo.commodityImagePath}]]*/ '';
+        imageUrl1 = webReceptionUtil.convertCommodityImagePath(imageUrl1, config, context);
+        var description = /*[[${DetailResultBean.standardCommodityInfo.shortDescription}]]*/ '';
+        var saleStage = /*[[${DetailResultBean.standardCommodityInfo.commoditySalesSituation}]]*/ '';
+        var discount = /*[[${DetailResultBean.standardCommodityInfo.representDiscountRate}]]*/ '';
+        var currency = '円';
+
+        var price1;
+        var price2;
+
+        var detailList = /*[[${DetailResultBean.standardCommodityInfo.detailList}]]*/ '';
+        $(detailList).each(function() {
+
+            if (this.skuCode == code) {
+
+                var reservationPrice = this.reservationPriceNoTax;
+                var discountPrice = this.discountPriceNoTax;
+                var unitPrice = this.unitPriceNoTax;
+
+                price1 = reservationPrice ? reservationPrice : discountPrice ? discountPrice : unitPrice;
+                price2 = unitPrice;
+
+                var reserve = false;
+                if (reservationPrice) {
+                    reserve = true;
+                }
+                var stockQuantity = this.availableStockQuantity;
+                var stockManagementType = /*[[${DetailResultBean.standardCommodityInfo.stockManagementType}]]*/ '';
+                var stockSufficientThreshold = /*[[${DetailResultBean.standardCommodityInfo.stockSufficientThreshold}]]*/ '';
+                var stockStatus = webReceptionUtil.getCommodityStockStatus(reserve, stockManagementType, stockQuantity, stockSufficientThreshold);
+
+                var purchaseMethodType = /*[[${DetailResultBean.standardCommodityInfo.purchaseMethodType}]]*/ '';
+                var reservePrice = /*[[${DetailResultBean.standardCommodityInfo.detailList[0].reservationPrice}]]*/ '';
+                purchaseMethodType = reservePrice > 0 ? 2 : purchaseMethodType;
+
+                var name = /*[[${DetailResultBean.standardCommodityInfo.commodityName}]]*/ '';
+
+                var standardDetailInfo1 =  /*[[${DetailResultBean.standardCommodityInfo.standardDetailInfo1}]]*/ '';
+                var selectedDetailCode1 = /*[[${DetailResultBean.standardCommodityInfo.selectedStandardDetailCode1}]]*/ '';
+                var standardDetail1Name = webReceptionUtil.getStandardDetailName(selectedDetailCode1,standardDetailInfo1);
+
+                var standardDetailInfo2 =  /*[[${DetailResultBean.standardCommodityInfo.standardDetailInfo2}]]*/ '';
+                var selectedDetailCode2 = /*[[${DetailResultBean.standardCommodityInfo.selectedStandardDetailCode2}]]*/ '';
+                var standardDetail2Name = webReceptionUtil.getStandardDetailName(selectedDetailCode2,standardDetailInfo2);
+
+                name = webReceptionUtil.convertStandardName(name,standardDetail1Name,standardDetail2Name);
+
+                var displayStockCount = stockQuantity < 0 ? '' : (stockQuantity === 0 ? 0 : stockQuantity);
+
+                var item = {
+                    'code': code,
+                    'attributes': {
+                        'name': name,
+                        'url1': url1,
+                        'price1': price1,
+                        'status': status,
+                        'imageUrl1': imageUrl1,
+                        'description': description,
+                        'saleStage': saleStage,
+                        'stockStatus': stockStatus,
+                        'price2': price2,
+                        'currency': currency,
+                        'discount': discount
+                    }
+                };
+                if (displayStockCount !== '') {
+                    item.attributes.stockCount = displayStockCount;
+                }
+                _sna_dam.push(['item', item]);
+            }
+        });
+
+        _sna_dam.push(['behaviorType', 1]);
+        /*]]>*/
+    </script>
+</th:block>

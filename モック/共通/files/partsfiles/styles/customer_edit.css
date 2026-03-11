@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+/*-----------------------------
+  ナビエリア
+-----------------------------*/
+#customerEditArea div.navigation {
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+
+#customerEditArea div.navigation img{
+  width:80%;
+  max-width:438px;
+  margin-bottom:20px;
+}
+
+/*-----------------------------
+  顧客情報入力エリア
+-----------------------------*/
+#customerInfoArea>div:first-child {
+  border-top: none;
+}
+
+#customerEditArea .requireMessageArea {
+  width: 100%;
+  overflow: hidden;
+  background-color: #FFF;
+}
+
+#customerEditArea .requireMessageArea .require{
+  float:left;
+}
+
+/*-----------------------------
+  入力データ
+-----------------------------*/
+#customerEditArea div.rightData {
+  padding: 10px;
+}
+
+#customerEditArea div.rightData input.name {
+  width: 100px;
+}
+
+#customerEditArea div.rightData p, #customerEditArea div.rightData select, #customerEditArea div.rightData span {
+  padding: 0;
+}
+
+#address2 {
+  width: 250px;
+}
+
+/*-----------------------------
+  会員規約
+-----------------------------*/
+#frontCustomerRegisterMembersRuleArea {
+  text-align: left;
+  padding:10px;
+  margin-bottom: 10px;
+  max-height:200px;
+  overflow-y:auto;
+}
+
+
+/*-----------------------------
+  tab,PCで表示
+-----------------------------*/
+@media screen and (min-width:768px) {
+  #customerEditArea {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #customerEditArea .password {
+    margin-top: 5px;
+    width: 270px;
+  }
+
+  #customerEditArea .passwordInformation {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 80%;
+  }
+}
+
+/*-----------------------------
+  767px以下（SP）で表示
+-----------------------------*/
+@media screen and (max-width:767px) {
+  #customerEditArea {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #customerEditArea .password {
+    margin-top: 5px;
+  }
+
+  #customerEditArea .passwordInformation {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 80%;
+  }
+  
+  #address2 {
+    width: 175px;
+  }
+}

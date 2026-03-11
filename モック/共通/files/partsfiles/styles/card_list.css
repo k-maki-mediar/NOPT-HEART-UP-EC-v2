@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+label {
+  margin-bottom: 0;
+  cursor: auto;
+}
+
+.shopSelectArea {
+  border: 1px solid #cccccc;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+}
+
+.searchCardSelectArea {
+  padding-top: 10px;
+  display: table-cell;
+}
+
+.searchCardButtonArea {
+  display: table-cell;
+  text-align: left;
+  padding: 0 15px;
+}
+
+.savedCardInfoList {
+ border-right: 1px solid #cccccc;
+}
+
+.savedCardInfoListMainArea {
+  border-top: 1px solid #cccccc;
+  position: relative;
+}
+
+.paymentMethodName {
+  padding: 5px;
+  width: 100%;
+  height: 40px;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #cccccc;
+}
+
+.paymentMethodName span {
+  line-height: 30px;
+  display: inline-block;
+}
+
+.cardInfoBox {
+  padding: 20px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.unusableCardMessage {
+  display: inline-block;
+}
+
+.searchCardButtonArea input{
+  display: inline-block;
+  width: 130px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+#buttonArea {
+  margin-top: 40px;
+}
+
+#newCardButtonArea {
+  position: absolute;
+  right: 15px;
+  top: 4px;
+}
+
+#newCardButtonArea input {
+  width: 130px;
+}
+
+.flex-button {
+  flex: 0 0 46px;
+}
+
+.flex-1 {
+  flex: 1 1 10%;
+}
+
+/*SPで表示*/
+@media screen and (max-width:767px) {
+  .searchCardButtonArea input{
+    width: 50px;
+  }
+  #newCardButtonArea {
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: static;
+  }
+  #newCardButtonArea input {
+    display: block;
+    width: 90%;
+    height: 40px;
+    margin: 0 auto 20px auto;
+  }
+}

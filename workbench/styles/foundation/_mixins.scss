@@ -1,0 +1,21 @@
+// ========================================
+// Mixins
+// メディアクエリmixin（ガイドライン2-5準拠）
+// SP: 320px〜767px / Tablet: 768px〜991px / PC: 992px〜
+// ========================================
+
+@mixin sp {
+  @media (max-width: 767px) { @content; }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 991px) { @content; }
+}
+
+@mixin pc {
+  @media (min-width: 992px) { @content; }
+}
+
+@mixin tablet-up {
+  @media (min-width: 768px) { @content; }
+}

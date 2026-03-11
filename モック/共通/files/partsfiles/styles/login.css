@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+#loginTableArea .loginTablePadding {
+  padding:20px;
+}
+
+.loginPadding {
+  padding-top: 10px;
+}
+
+
+.emailBox {
+  width: 230px;
+}
+
+.passwordBox {
+  width: 230px;
+}
+
+/*-----------------------------
+  動的設定
+-----------------------------*/
+/*tab,PCで表示*/
+@media screen and (min-width:768px) {
+
+  #commonCustomerArea #loginArea {
+    padding-top: 10px;
+  }
+
+  /*---------------------------
+  ログインテーブル
+  ---------------------------*/
+  #loginTableArea {
+    margin: 0 auto;
+  }
+
+  /*---------------------------
+  会員ログインエリア
+  ---------------------------*/
+  #commonCustomerArea {
+    width: 650px;
+    margin: 0 auto;
+  }
+
+  /*---------------------------
+  新規登録エリア
+  ---------------------------*/
+  #newCustomerRegisterArea {
+    width: 650px;
+    margin: 0 auto;
+  }
+
+  /*---------------------------
+  ゲストエリア
+  ---------------------------*/
+  #guestOrderArea {
+    width: 650px;
+    margin: 0 auto;
+  }
+}/*↑tab,PCで表示ここまで*/
+
+/*767px以下（SP）で表示*/
+@media screen and (max-width:767px) {
+
+  div.frameBody{
+    border:none;
+  }
+  #newCustomerRegisterArea {
+    height: 100px;
+  }
+  #guestOrderArea {
+    height: 100px;
+  }
+}/*↑767px以下（SP）で表示ここまで*/

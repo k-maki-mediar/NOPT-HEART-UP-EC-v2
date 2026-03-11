@@ -1,0 +1,49 @@
+<th:block th:fragment="wsparts-include">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var config = /*[[${config}]]*/ '';
+        var context = /*[[${#ctx.getExchange().getRequest().getContextPath()}]]*/'';
+
+        var code = /*[[${DetailResultBean.setCommodityInfo.skuCode}]]*/ '';
+        var url1 = /*[[${DetailResultBean.setCommodityInfo.commodityPageUrl}]]*/ '';
+        url1 = webReceptionUtil.substring(url1,250);
+        var status = 1;
+        var imageUrl1 = /*[[${DetailResultBean.setCommodityInfo.commodityImagePath}]]*/ '';
+        imageUrl1 = webReceptionUtil.convertCommodityImagePath(imageUrl1, config, context);
+        var description = /*[[${DetailResultBean.setCommodityInfo.shortDescription}]]*/ '';
+        var saleStage = /*[[${DetailResultBean.setCommodityInfo.commoditySalesSituation}]]*/ '';
+        var discount = /*[[${DetailResultBean.setCommodityInfo.representDiscountRate}]]*/ '';
+        var currency = '円';
+
+        var discountPrice = /*[[${DetailResultBean.setCommodityInfo.discountPriceNoTax}]]*/ '';
+        var unitPrice = /*[[${DetailResultBean.setCommodityInfo.unitPriceNoTax}]]*/ '';
+
+        var price1 = discountPrice ? discountPrice : unitPrice;
+        var price2 = unitPrice;
+
+        var stockStatus = 1;
+        var name = /*[[${DetailResultBean.setCommodityInfo.commodityName}]]*/ '';
+
+        var item = {
+            'code': code,
+            'attributes': {
+                'name': name,
+                'url1': url1,
+                'price1': price1,
+                'status': status,
+                'imageUrl1': imageUrl1,
+                'description': description,
+                'saleStage': saleStage,
+                'stockStatus': stockStatus,
+                'price2': price2,
+                'currency': currency,
+                'discount': discount
+            }
+        };
+
+        _sna_dam.push(['behaviorType', 1]);
+        _sna_dam.push(['item', item]);
+        /*]]>*/
+    </script>
+</th:block>

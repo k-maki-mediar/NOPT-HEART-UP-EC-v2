@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+.itembox_img {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+.items {
+  padding-top: 20px;
+  width:100%;
+  font-size: 0px;
+  line-height: 0px;
+}
+
+.items .itembox {
+  height: 410px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.itembox_shopname {
+  display: block;
+  padding: 4px 0 4px 0;
+  text-align: center;
+}
+
+.item_profile {
+  margin: 10px 0;
+  display: block;
+  padding: 10px;
+}
+
+.text-overflow-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  padding:0px 5px 0px 5px;
+  word-break: break-all;
+}
+
+#shopList .btn_buy {
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1px dashed #cdcdcd;
+  padding-bottom: 20px;
+  width: 98%;
+}
+
+.btn_buy span {
+  vertical-align: middle;
+}
+
+/*991px～1200pxでの表示*/
+@media only screen and (min-width:992px) and (max-width:1200px) {
+  .itembox_img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/*769px～1200pxの表示*/
+@media only screen and (min-width:768px) and (max-width:1200px) {
+}
+
+
+/*tab,PCでの表示 */
+@media screen and (min-width:768px) {
+}
+
+/*SPでの表示*/
+@media screen and (max-width:767px) {
+  #pageHeader .navigation {
+    height: 0;
+  }
+  
+  .sp_sequence,.sp_filter {
+    display: inline-block;
+    height: 40px;
+    width: 49%;
+    margin-top: -10px;
+  }
+  
+  .sp_sequence button,.sp_filter button {
+    text-align: left;
+    padding: 0 12px;
+    height: 40px;
+    width: 100%;
+  }
+  
+  .sp_filter {
+    border-left: 1px solid #cccccc;
+  }
+  
+  .sp_filter button {
+    background: url(../../commonfiles/images/arrow_next.gif) 98% 50% no-repeat;
+  }
+  
+  .items {
+    padding: 0;
+  }
+  
+  .items .itembox {
+    height: auto;
+    border-bottom: 1px dashed #cccccc;
+    padding: 0px;
+    margin: 0;
+  }
+  
+  .itembox .itembox_img {
+    width: 90px;
+    height: 90px;
+    float: left;
+    margin-right: 10px;
+  }
+  
+  .sp_itembox_txt {
+    font-size: 90%;
+    padding: 10px;
+    height: 110px;
+  }
+  
+  #shopList .btn_buy {
+    width: 50px;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    border-bottom: 0;
+    padding: 0;
+  }
+  
+  .btn_buy button {
+    padding: 0;
+  }
+  
+  .btn_buy span {
+    display: block;
+  }
+
+  .btn_buy a {
+    padding: 40px 5px 0px 5px;
+  }
+  
+  .previous a {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+  }
+  
+  .next a {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+  }
+  
+  .itembox_shopname {
+    display: block;
+    padding: 4px 0 4px 0;
+    text-align: left;
+  }
+  
+  .text-overflow-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    padding:0px 0px 0px 0px;
+    width:60%
+  }
+}
+
+/*481px～768pxでの表示*/
+@media only screen and (min-width:481px) and (max-width:767px) {
+  .sp_itembox_txt {
+    width: 90%;
+  }
+
+  /*480px以下の表示*/
+  @media screen and (max-width:480px) {
+    .sp_itembox_txt {
+      width: 84%;
+    }
+  }
+}

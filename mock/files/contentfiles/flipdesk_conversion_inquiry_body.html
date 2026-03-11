@@ -1,0 +1,17 @@
+<th:block th:fragment="wsparts-include">
+	<script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var conversionTag = '<div id="flipdesk_conversion" data-api-token="" data-conversion=""></div>';
+
+        var pathname = location.pathname;
+        var regexp = /\/inquiry\/Completion\//;
+
+        if (regexp.test(pathname)) {
+
+            $('body').append(conversionTag);
+        }
+
+        /*]]>*/
+    </script>
+</th:block>

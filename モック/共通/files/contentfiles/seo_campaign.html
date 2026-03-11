@@ -1,0 +1,7 @@
+<title th:text="${CampaignResultBean.campaignInfo.campaignName + ' ' + CampaignResultBean.campaignInfo.shopName}"></title>
+<script itemscope itemtype="http://schema.org/WebContent" itemref="s1 s2"></script>
+<meta th:content="${CampaignResultBean.campaignInfo.campaignName + ' ' + CampaignResultBean.campaignInfo.shopName}" name="description" />
+<meta id="s1" th:content="${CampaignResultBean.campaignInfo.campaignName + ' ' + CampaignResultBean.campaignInfo.shopName}" itemprop="description" />
+<meta name="keywords" th:content="${CampaignResultBean.campaignInfo.campaignName + ' ' + CampaignResultBean.campaignInfo.shopName}" />
+<link th:href="@{/} + ${'campaign/' + CampaignResultBean.campaignInfo.shopCode + '/' + CampaignResultBean.campaignInfo.campaignCode} + '/'" rel="canonical" />
+<link id="s2" th:href="@{/} + ${'campaign/' + CampaignResultBean.campaignInfo.shopCode + '/' + CampaignResultBean.campaignInfo.campaignCode} + '/'" itemprop="url" />

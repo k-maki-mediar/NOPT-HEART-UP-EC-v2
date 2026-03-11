@@ -1,0 +1,20 @@
+<th:block th:fragment="wsparts-include">
+<th:block th:unless="${CustomerCompleteResultBean.isUpdateFlg()}">
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+        var customer = /*[[${LoginInfoResultBean.customer}]]*/'';
+
+        _sna_dam.push([ 'userCode', customer.customerCode ]);
+        _sna_dam.push([ 'email', customer.email ]);
+        _sna_dam.push([ 'lastName', customer.lastName ]);
+        _sna_dam.push([ 'firstName', customer.firstName ]);
+        _sna_dam.push([ 'status', customer.requestMailType ]);
+        _sna_dam.push([ 'gender', customer.sex ]);
+        _sna_dam.push([ 'point', customer.restPoint ]);
+        _sna_dam.push([ 'register', 1 ]);
+
+    /*]]>*/
+</script>
+</th:block>
+</th:block>

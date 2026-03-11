@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+/*-----------------------------
+  ナビ
+------------------------------*/
+div.shippingNavigation {
+  width: 100%;
+  display: table;
+}
+
+/*-----------------------------
+  ナビ　タイトル
+------------------------------*/
+div.shippingNavigationTitle,div.shippingNavigationImg {
+  vertical-align: middle;
+}
+
+div.shippingNavigationTitle,div.shippingNavigationImg img{
+  width:80%;
+  max-width:438px;
+  margin-bottom:20px;
+}
+
+/*-----------------------------
+  ナビ　画像
+------------------------------*/
+div.shippingNavigationImg {
+  text-align: center;
+}
+
+div.listTitle,ul.tableHeader {
+  height: 30px;
+}
+
+/*-----------------------------
+  お届け先情報
+------------------------------*/
+#shippingMainArea .frameBody {
+  clear: both;
+}
+
+.frameHeader_gray .checkbox{
+  margin:0;
+}
+
+.frameHeader_gray .checkbox label{
+  width:100%;
+  padding-left:0;
+}
+
+.requiredMessageArea,
+#shippingMainArea .frameBody{
+  margin-bottom:0;
+}
+
+/*-----------------------------
+  宛先追加ボタン
+------------------------------*/
+#addAdressArea {
+  text-align: right;
+  padding: 5px;
+}
+
+/*-----------------------------
+  お届け先情報
+------------------------------*/
+.shippingArea {
+  overflow: hidden;
+  padding:0px 0px 30px 0px;
+}
+
+.shippingInfoArea {
+  width:100%;
+}
+
+#address4, #address3{
+  width:400px;
+}
+/*-----------------------------
+  ボタンエリア
+------------------------------*/
+.btnBottom{
+  float:right;
+}
+
+.addShippingButton {
+  padding: 10px;
+}
+
+.sendButtonArea,.nextButtonArea{
+  float:right;
+  margin-left:5px;
+}
+
+/*-----------------------------
+  767px以下(xs)で表示
+------------------------------*/
+@media screen and (max-width:767px) {
+  #giftListArea{
+    width:80%;
+  }
+  
+  #address2, #address3, #address4{
+    width:80%;
+  }
+}
+/*-----------------------------
+  990px以下(xs,sm)で表示
+------------------------------*/
+@media screen and (max-width:991px) {
+  .btnBottom{
+    float:none;
+  }
+  
+  #buttonArea {
+    text-align: center;
+    width: 100%;
+  }
+  
+  #buttonArea input{
+    float: none;
+    height: 40px;
+    margin-top: 10px;
+    min-width: 95%;
+  }
+  
+  .sendButtonArea,.nextButtonArea{
+    display:block;
+    float:none;
+  }
+  
+  .shippingNavigationImg{
+    clear:both;
+  }
+}

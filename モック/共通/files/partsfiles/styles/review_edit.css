@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/*-----------------------------
+  table-cellを設定
+-----------------------------*/
+div.cell {
+  display: table-cell;
+}
+
+/*-----------------------
+  商品説明エリア設定
+------------------------*/
+#inputInfomation {
+  padding: 10px 0;
+}
+
+/*-----------------------------
+  入力エリア設定
+-----------------------------*/
+input#nickName {
+  width: 200px;
+}
+
+input#reviewTitle {
+  width: 200px;
+}
+
+/*-----------------------
+  内容設定
+------------------------*/
+span.reviewDescriptionBr {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/*-----------------------------
+  検索エリア右部
+-----------------------------*/
+div.rightData {
+  padding: 10px;
+}
+
+#buttonArea {
+  padding-top: 10px;
+  overflow: hidden;
+}
+
+/*-----------------------------
+  動的設定
+-----------------------------*/
+
+/*tab,PCで表示*/
+@media screen and (min-width:768px) {
+  textarea#reviewDescription {
+    width: 500px;
+  }
+}
+
+/*767px以下（SP）で表示*/
+@media screen and (max-width:767px) {
+  textarea#reviewDescription {
+    width: 200px;
+  }
+}

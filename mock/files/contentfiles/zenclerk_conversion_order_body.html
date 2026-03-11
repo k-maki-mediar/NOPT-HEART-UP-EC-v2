@@ -1,0 +1,27 @@
+<th:block th:fragment="wsparts-include">
+    <script type="text/javascript" th:inline="javascript">
+        /*<![CDATA[*/
+
+        var bean = /*[[${CompleteResultBean}]]*/ '';
+
+        var zenclerk_conversion_id = bean.orderNo;
+        var zenclerk_conversion_price = bean.totalPrice;
+
+        var zenclerk_conversion_items = [];
+
+        $(bean.conversionCommodityInfoList).each(function() {
+
+            var commodityName = webReceptionUtil.getConvertCommodityName( 'order', this, bean.purchaseMethodType );
+
+            zenclerk_conversion_items.push({
+                id: this.skuCode,           /*[- */ SKUコード/* -]*/
+                name: commodityName,        /*[- */ 商品名 /* -]*/
+                url: this.commodityPageUrl, /*[- */ 商品URL /* -]*/
+                price: this.retailPrice,    /*[- */ 販売価格 /* -]*/
+                count: this.quantity        /*[- */ 数量 /* -]*/
+            });
+        });
+
+        /*]]>*/
+    </script>
+</th:block>

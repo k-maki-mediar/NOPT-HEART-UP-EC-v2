@@ -1,0 +1,1152 @@
+﻿
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <title>注文内容確認</title>
+  <meta name="description" content="">
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/front/app/error/no_support/" />
+  </noscript>
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/bootstrap-5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/commonfiles/styles/reset.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/commonfiles/styles/common.css?date=20250703090703" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/systemfiles/styles/sociallogin.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/jquery.colorbox-1.6.4/colorbox.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/concrete/concrete.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/fontawesome-5.15.4-web/css/all.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/pageHeaderLogoOnly.css?date=20250703090703">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/confirm.css?date=20250703090703">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/pageFooterCopyrightOnly.css?date=20250703090703">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/cookieConsentBanner.css?date=20250703090703">
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/popper-2.11.8/dist/popper.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/bootstrap-5.3.2/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery.lightbox_me/jquery.lightbox_me.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/elevatezoom-plus-master/jquery.ez-plus.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery.colorbox-1.6.4/jquery.colorbox.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/fontawesome-5.15.4-web/js/all.js"></script>
+  <script>
+    /*<![CDATA[*/
+    var settings = {
+      servletMapping: "/app",
+      applicationLevel: "/pc",
+      commonPath: "/cms/pc/common/",
+      apiServ: "/api",
+      logServ: "/log",
+      pagingLineSize: 3,
+      pagingMaxSize: 125,
+      context: "/front",
+      apiContext: "/front",
+      defaultLang: "ja",
+      isUseWovn: false,
+      siteShopCode: "0000",
+      sessionTimeout: 30,
+      sessionTimer: 2,
+      sessionUrl: ["/cart/cart/", "/order/guest/", "/order/shipping/", "/order/payment/", "/order/confirm/", "/customer/customer_edit/", "/customer/customer_confirm/", "/order/shipping_multi/", "/order/shipping_split/"],
+      isUseNaviPlusSearch: false,
+      isUseNaviPlusSearchSuggest: false,
+      isUseNaviPlusRecommend: false,
+      isUseNaviPlusReview: false
+    };
+    /*]]>*/
+
+  </script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/initialize.js?date=20250703090703"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/core.js?date=20250703090703"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/validate.js?date=20250703090703"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/process.js?date=20250703090703"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/session.js?date=20250703090703"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/socialLogin.js?date=20250703090703"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/webReception.js?date=20250703090703"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/veritrans.js?date=20250703090703"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/blocks/image/js/image_hover.js"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/js/responsive-slides.js"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/js/videoPlayer_swfobject.js"></script>
+</head>
+
+<body>
+  <div class="ccm-page page-type-original-order-pagetype page-template-orderflow">
+    <div>
+      <div id="facebookScriptArea" class="wsparts-include clearBoth">
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v15.0" nonce="nIvcsYYq">
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればfacebookScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#facebookScriptArea').hide();
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="lineScriptArea" class="wsparts-include clearBoth">
+        <script src="https://scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async defer>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればlineScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#lineScriptArea').hide();
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="twitterScriptArea" class="wsparts-include clearBoth">
+        <script>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればtwitterScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#twitterScriptArea').hide();
+          } else {
+            window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+              return t;
+            }(document, "script", "twitter-wjs"));
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="pinterestScriptArea" class="wsparts-include clearBoth">
+        <script>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればpinterestScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#pinterestScriptArea').hide();
+          } else {
+            $('#pinterestScriptArea').html('<script type="text/javascript" async defer src="https://assets.pinterest.com/js/pinit.js"/>');
+          }
+
+        </script>
+      </div>
+    </div>
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <div class="row">
+            <div>
+              <div class="wsparts-include">
+                <div id="pageHeader">
+                  <div id="titleArea">
+                    <img src="../共通/files/commonfiles/images/sitelogo.png" alt="SI Web Shopping v12 一店舗" title="SI Web Shopping v12 一店舗">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <div id="message" data-ws-parts-popup="messageArea">
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/confirm.js?date=20250703090703"></script>
+                <script type="text/javascript" src="https://apps.paidy.com/"></script>
+                <div id="confirmMain">
+                  <div id="" class="confirmNavigation">
+                    <div class="confirmNavigationImg">
+                      <img src="../共通/files/commonfiles/images/navi_order_confirm_guest.gif" alt="内容確認">
+                    </div>
+                  </div>
+                  <div class="cartTtl"> 注文内容確認 </div>
+                  <div id="confirmMainArea">
+                    <div>
+                      <div id="confirmTitleArea">
+                        <div class="title">
+                          <span class="caption">注文を確定します。この内容でよろしいですか？</span>
+                        </div>
+                      </div>
+                      <div id="confirmInfoArea" class="pd0">
+                        <div class="mb20">
+                          <h2>お支払い金額</h2>
+                          <table class="frameBody">
+                            <tbody>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">商品合計(税抜)</th>
+                                <td class="txt_r"> <span class="currency">1,971円</span> </td>
+                              </tr>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">オプション合計(税抜)</th>
+                                <td class="txt_r"> <span class="currency">0円</span> </td>
+                              </tr>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">ラッピング合計(税抜)</th>
+                                <td class="txt_r"> <span class="currency">200円</span> </td>
+                              </tr>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">のし合計(税抜)</th>
+                                <td class="txt_r"> <span class="currency">300円</span> </td>
+                              </tr>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">送料合計(税抜)</th>
+                                <td class="txt_r"> <span class="currency">1,005円</span> </td>
+                              </tr>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">注文合計金額(税抜)</th>
+                                <td class="txt_r"> <span class="currency txt_large">3,476円</span> </td>
+                              </tr>
+                              <tr class="linkBlock bdr_b_dash_fix useCouponArea" id="useCouponArea">
+                                <th class="leftTitle">クーポン利用</th>
+                                <td class="txt_r"> <span>0円</span> </td>
+                              </tr>
+                              <tr class="hidden linkBlock bdrB bdr_b_dash_fix">
+                                <th class="leftTitle">お支払合計金額（手数料抜き）</th>
+                                <td class="txt_r"> <span class="currency txt_red txt_large">3,476円</span> </td>
+                              </tr>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <div>
+                                  <th class="leftTitle">手数料(税抜)</th>
+                                </div>
+                                <td class="txt_r"> <span class="currency">0円</span> </td>
+                              </tr>
+                              <tr class="linkBlock bdrB bdr_b_dash_fix">
+                                <th class="leftTitle">お支払い合計金額</th>
+                                <td class="txt_r"> <span class="currency txt_red txt_large">3,730円</span> </td>
+                              </tr>
+                            </tbody>
+                            <tbody>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">(10%対象)</th>
+                                <td class="txt_r"><span>1,325円</span></td>
+                              </tr>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">(内消費税額)</th>
+                                <td class="txt_r"><span>120円</span></td>
+                              </tr>
+                            </tbody>
+                            <tbody>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">(8%対象)</th>
+                                <td class="txt_r"><span>1,286円</span></td>
+                              </tr>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">(内消費税額)</th>
+                                <td class="txt_r"><span>95円</span></td>
+                              </tr>
+                            </tbody>
+                            <tbody>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">(5%対象)</th>
+                                <td class="txt_r"><span>819円</span></td>
+                              </tr>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">(内消費税額)</th>
+                                <td class="txt_r"><span>39円</span></td>
+                              </tr>
+                            </tbody>
+                            <tbody>
+                              <tr class="linkBlock bdr_b_dash_fix">
+                                <th class="leftTitle">(非課税対象)</th>
+                                <td class="txt_r"><span>300円</span></td>
+                              </tr>
+                            </tbody>
+                            <tbody>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div id="middleButtonArea">
+                          <!--/* SourceCode_V12.18_add_start */-->
+                          <!--  <input class="btn-orange largeButton orderCommitButton" type="button" value="注文を確定する" onclick="sendConfirmRequest(this)" data-button="confirmRegist" id="sendConfirmRequestButton">  -->
+                          <!--/* SourceCode_V12.18_add_end */-->
+                          <!--/* Mockup_V12.18_add_start */-->
+                          <input class="btn-orange largeButton orderCommitButton" type="button" value="注文を確定する" onclick="location.href='../order/注文完了(ゲスト購入).html'" data-button="confirmRegist" id="sendConfirmRequestButton">
+                          <!--/* Mockup_V12.18_add_end */-->
+                          
+                        </div>
+                      </div>
+                      <div id="confirmPaymentMethodArea_sp" class="d-block d-lg-none">
+                        <h2> お支払い方法 <input type="button" data-button="goPayment" class="btn-gray smallButton deliveryUpdateButton" value="変更" id="goPaymentButton" onclick="sendConfirmMoveRequest('/order/payment/', this)"></h2>
+                        <div class="listBody">
+                          <div class="frameBody">
+                            <div class="linkBlock bdr_b_dash">
+                              <div class="leftTitle"> お支払い方法 </div>
+                              <div class="rightData">
+                                <span>銀行振込</span>
+                              </div>
+                            </div>
+                            <div class="linkBlock bdr_b_dash" id="paymentCommissionArea">
+                              <div class="leftTitle">
+                                <p>手数料</p>
+                              </div>
+                              <div class="rightData">
+                                <span class="paymentCommission currency">0円</span>
+                                <span>
+                                  <span class="paymentCommission currency"></span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="confirmBasicInfoArea" class="pd0">
+                        <div id="confirmCustomerArea">
+                          <!--/* SourceCode_V12.18_add_start */-->
+                          <!--  <h2> お客様情報 <input type="button" data-button="goGuestInfo" class="btn-gray smallButton" value="変更" onclick="move('/order/guest/')" id="goGuestInfoButton"> </h2>  -->
+                          <!--/* SourceCode_V12.18_add_end */-->
+                          <!--/* Mockup_V12.18_add_start */-->
+                          <h2> お客様情報 <input type="button" data-button="goGuestInfo" class="btn-gray smallButton" value="変更" onclick="move('../order/顧客情報入力(ゲスト購入).html')" id="goGuestInfoButton"> </h2>
+                          <!--/* Mockup_V12.18_add_end */-->
+                          <div class="listBody" id="confirmDataCustomer">
+                            <div class="frameBody">
+                              <div class="linkBlock bdr_b_dash">
+                                <div class="leftTitle"> 氏名 </div>
+                                <div class="rightData">
+                                  <span>山田</span>
+                                  <span>太郎</span>
+                                  <span>様</span>
+                                </div>
+                              </div>
+                              <div class="linkBlock bdr_b_dash">
+                                <div class="leftTitle"> 住所 </div>
+                                <div class="rightData">
+                                  <div>
+                                    <span>〒</span>
+                                    <span class="postal">330-6032</span>
+                                  </div>
+                                  <span>埼玉県</span>
+                                  <span>さいたま市中央区</span>
+                                  <br>
+                                  <span>新都心明治安田生命さいたま新都心ビル</span>
+                                  <span></span>
+                                </div>
+                              </div>
+                              <div class="linkBlock bdr_b_dash">
+                                <div class="leftTitle"> 電話番号 </div>
+                                <div class="rightData">
+                                  <span>000-1111-2222</span>
+                                </div>
+                              </div>
+                              <div class="linkBlock bdr_b_dash">
+                                <div class="leftTitle"> メール </div>
+                                <div class="rightData">
+                                  <span>login_dgbt@example.com</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="confirmPaymentMethodArea" class="d-none d-lg-block">
+                          <!--/* SourceCode_V12.18_add_start */-->
+                          <!--  <h2> お支払い方法 <input type="button" data-button="goPayment" class="btn-gray smallButton deliveryUpdateButton" value="変更" id="goPaymentButton" onclick="sendConfirmMoveRequest('/order/payment/', this)"></h2>  -->
+                          <!--/* SourceCode_V12.18_add_end */-->
+                          <!--/* Mockup_V12.18_add_start */-->
+                          <h2> お支払い方法 <input type="button" data-button="goPayment" class="btn-gray smallButton deliveryUpdateButton" value="変更" id="goPaymentButton" onclick="location.href='../order/お支払方法選択(ゲスト購入).html'"></h2>
+                          <!--/* Mockup_V12.18_add_end */-->
+                          <div class="listBody" id="confirmDataPay">
+                            <div class="frameBody">
+                              <div class="linkBlock bdr_b_dash">
+                                <div class="leftTitle"> お支払い方法 </div>
+                                <div class="rightData">
+                                  <span>銀行振込</span>
+                                </div>
+                              </div>
+                              <div class="linkBlock bdr_b_dash" id="paymentCommissionArea">
+                                <div class="leftTitle">
+                                  <p>手数料</p>
+                                </div>
+                                <div class="rightData">
+                                  <span class="paymentCommission currency">0円</span>
+                                  <span>
+                                    <span class="paymentCommission currency"></span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clearBoth pd0 shippingListData">
+                        <div class="shippingListTemplateArea">
+                          <div class="separator"></div>
+                          <dl>
+                            <dt>
+                              <h2>
+                                <p class="addName"> <span>お届け先：</span> <span></span>
+                                  <!--/* SourceCode_V12.18_add_start */-->
+                                  <!--  <input type="button" class="btn-gray smallButton deliveryUpdateButton" value="変更" data-button="goShipping" onclick="sendConfirmMoveRequest('/order/shipping/', this)" id="goShippingButton_0">  -->
+                                  <!--/* SourceCode_V12.18_add_end */-->
+                                  <!--/* Mockup_V12.18_add_start */-->
+                                  <input type="button" class="btn-gray smallButton deliveryUpdateButton" value="変更" data-button="goShipping" onclick="location.href='../order/お届け先・ラッピング設定(ゲスト購入).html'" id="goShippingButton_0">
+                                  <!--/* Mockup_V12.18_add_end */-->
+                                </p>
+                              </h2>
+                            </dt>
+                            <dd class="listBody addTxt">
+                              <div class="frameBody">
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> お届け先氏名 </div>
+                                  <div class="rightData">
+                                    <span>山田</span>
+                                    <span>太郎</span>
+                                    <span>様</span>
+                                  </div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> お届け先住所 </div>
+                                  <div class="rightData">
+                                    <div>
+                                      <span>〒</span>
+                                      <span class="postal">330-6032</span>
+                                    </div>
+                                    <span>埼玉県</span>
+                                    <span>さいたま市中央区</span>
+                                    <br>
+                                    <span>新都心明治安田生命さいたま新都心ビル</span>
+                                    <span></span>
+                                  </div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> お届け先電話番号 </div>
+                                  <div class="rightData">
+                                    <span>000-1111-2222</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="commodityListArea">
+                                <div class="shopNameArea shopShippingTitle">
+                                  <span>通常便</span>
+                                  <span class="shippingCharge">／ 送料：</span>
+                                  <span class="shippingCharge currency">355円</span>
+                                  <span>
+                                    <span class="shippingCharge currency">(参考税込 ：390.50円)</span>
+                                  </span>
+                                </div>
+                                <div class="frameBody shopShippingTxt">
+                                  <table class="listTbl">
+                                    <thead>
+                                      <tr class="tableHeader d-none d-lg-table-row">
+                                        <th class="commodityNameCol">商品名</th>
+                                        <th width="20%" class="retailPriceCol">販売価格</th>
+                                        <th width="20%" class="giftNameCol"> ラッピング <br> のし </th>
+                                        <th width="8%" class="quantityCol">数量</th>
+                                        <th width="15%" class="subTotalCol">小計(税抜)</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="listBody commodityListBodyArea">
+                                        <td class="commodityNameCol"> <span class="commodityName">単品軽減8％商品</span>
+                                          <span class="standardDetail1Name"></span>
+                                          <span class="standardDetail2Name"></span>
+                                          <div class="compositionListArea txt_small">
+                                            <span></span>
+                                          </div>
+                                          <div class="saleEndDatetimeArea">
+                                            <span>販売期間：</span>
+                                            <span class="saleEndDatetime">2100/01/01 00</span>
+                                            <span>時まで</span>
+                                          </div>
+                                        </td>
+                                        <td class="retailPriceCol" align="right">
+                                          <span class="d-inline d-lg-none">販売価格：</span>
+                                          <span class="currency" data-displaytaxtype="true">1,191円※</span>
+                                          <span><br>
+                                            <span class="currency" data-displaytaxtype="true">(参考税込 ：1,286.28円)※</span>
+                                          </span>
+                                        </td>
+                                        <td>
+                                          <div class="d-none d-lg-block">
+                                            <div class="giftName">ギフト001税抜</div>
+                                            <span class="currency" data-displaytaxtype="true">200円</span>
+                                            <span>
+                                              <span class="currency" data-displaytaxtype="true">(参考税込 ：220.00円)</span>
+                                            </span>
+                                            <br><br>
+                                            <div>熨斗002非課税</div>
+                                            <div>
+                                              <span class="currency" data-displaytaxtype="true">300円（非課税）</span>
+                                              <div></div>
+                                            </div>
+                                          </div>
+                                          <table class="cartTbl d-table d-lg-none mb10">
+                                            <tbody>
+                                              <tr>
+                                                <th class="cmdtyCol">オプション</th>
+                                                <th class="priceCol">販売価格</th>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <div>
+                                                    <ul>
+                                                      <li class="incWorkName">
+                                                        <span>□</span>
+                                                        <span>付帯サービス_001税抜</span>
+                                                        <span>：なし</span>
+                                                      </li>
+                                                    </ul>
+                                                  </div>
+                                                </td>
+                                                <td>
+                                                  <div class="incWorkPrice">
+                                                    <span>
+                                                      <span>-</span>
+                                                    </span>
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <div>
+                                                    <ul>
+                                                      <li class="incWorkName">
+                                                        <span>□</span>
+                                                        <span>付帯サービス_002非課税</span>
+                                                        <span>：なし</span>
+                                                      </li>
+                                                    </ul>
+                                                  </div>
+                                                </td>
+                                                <td>
+                                                  <div class="incWorkPrice">
+                                                    <span>
+                                                      <span>-</span>
+                                                    </span>
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                          <table class="cartTbl mb10 d-table d-lg-none">
+                                            <tbody>
+                                              <tr>
+                                                <th class="cmdtyCol">ラッピング／のし</th>
+                                                <th class="priceCol">販売価格</th>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <div class="giftName">ギフト001税抜</div> <br>
+                                                  <div>熨斗002非課税</div>
+                                                  <div>
+                                                    <div></div>
+                                                  </div>
+                                                </td>
+                                                <td>
+                                                  <div>
+                                                    <span class="currency" data-displaytaxtype="true">200円</span>
+                                                    <span><br>
+                                                      <span class="currency" data-displaytaxtype="true">(参考税込 ：220.00円)</span>
+                                                    </span>
+                                                    <br>
+                                                  </div> <br>
+                                                  <div>
+                                                    <span class="currency" data-displaytaxtype="true">300円（非課税）</span>
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                        <td class="quantityCol" align="right"> <span class="d-lg-none">数量：</span> <span class="number">1</span> </td>
+                                        <td class="subTotalCol" align="right">
+                                          <div class="subTotal currency">
+                                            <span class="d-none d-lg-block">1,691円</span>
+                                            <table class="cartTbl mb20 d-block d-lg-none">
+                                              <tbody>
+                                                <tr>
+                                                  <th>小計(税抜)</th>
+                                                  <td class="txt_r"> <span class="currency">1,691円</span>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </td>
+                                        <td class="d-block d-lg-none">
+                                          <table class="shippingItemTotalArea cartTbl cartTotal frameBody mb20 ">
+                                            <tbody>
+                                              <tr class="bdr_b_dash">
+                                                <th class="txt_r">お届け先小計金額(税抜)</th>
+                                                <td align="right"><span>1,691円</span></td>
+                                              </tr>
+                                              <tr class="bdr_b_dash">
+                                                <th class="bdr_b_dash txt_r">送料金額(税抜)</th>
+                                                <td align="right"><span>355円</span></td>
+                                              </tr>
+                                              <tr class="bdr_b_dash_fix">
+                                                <th class="txt_r">合計金額(参考税込)</th>
+                                                <td align="right"><span>2,196円</span></td>
+                                              </tr>
+                                            </tbody>
+                                            <tbody>
+                                              <tr class="bdr_b_dash">
+                                                <th class="txt_r"><span>(10%対象)</span></th>
+                                                <td align="right"> <span class="currency">610円</span> </td>
+                                              </tr>
+                                              <tr class="bdr_b_dash_fix">
+                                                <th class="txt_r">(内消費税額)</th>
+                                                <td align="right"> <span class="currency">55円</span> </td>
+                                              </tr>
+                                            </tbody>
+                                            <tbody>
+                                              <tr class="bdr_b_dash">
+                                                <th class="txt_r"><span>(8%対象)</span></th>
+                                                <td align="right"> <span class="currency">1,286円</span> </td>
+                                              </tr>
+                                              <tr class="bdr_b_dash_fix">
+                                                <th class="txt_r">(内消費税額)</th>
+                                                <td align="right"> <span class="currency">95円</span> </td>
+                                              </tr>
+                                            </tbody>
+                                            <tbody>
+                                              <tr class="bdr_b_dash">
+                                                <th class="txt_r"><span>(非課税対象)</span></th>
+                                                <td align="right"> <span class="currency">300円</span> </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                      <tr class="listBody commodityListBodyArea incWorkArea d-none d-md-table-row">
+                                        <td class="commodityNameCol">
+                                          <div>
+                                            <ul>
+                                              <li class="incWorkName"> <span>□</span> <span>付帯サービス_001税抜</span>
+                                                <span>：なし</span>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </td>
+                                        <td class="retailPriceCol" align="right">
+                                          <span class="incWorkNot">
+                                            <span>-</span>
+                                          </span>
+                                        </td>
+                                        <td></td>
+                                        <td class="quantityCol" align="right"></td>
+                                        <td class="subTotalCol" align="right"></td>
+                                      </tr>
+                                      <tr class="listBody commodityListBodyArea incWorkArea d-none d-md-table-row">
+                                        <td class="commodityNameCol">
+                                          <div>
+                                            <ul>
+                                              <li class="incWorkName"> <span>□</span> <span>付帯サービス_002非課税</span>
+                                                <span>：なし</span>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </td>
+                                        <td class="retailPriceCol" align="right">
+                                          <span class="incWorkNot">
+                                            <span>-</span>
+                                          </span>
+                                        </td>
+                                        <td></td>
+                                        <td class="quantityCol" align="right"></td>
+                                        <td class="subTotalCol" align="right"></td>
+                                      </tr>
+                                      <tr class="listBody commodityListBodyArea bdr_b_solid d-none d-md-table-row">
+                                        <td class="commodityNameCol">
+                                        </td>
+                                        <td class="retailPriceCol" align="right"></td>
+                                        <td></td>
+                                        <td class="quantityCol" align="right"></td>
+                                        <td class="subTotalCol" align="right"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <table class="shippingItemTotalArea cartTbl cartTotal frameBody d-none d-md-table">
+                                  <tbody>
+                                    <tr class="bdr_b_dash">
+                                      <th class="txt_r">お届け先小計金額(税抜)</th>
+                                      <td align="right"><span>1,691円</span></td>
+                                    </tr>
+                                    <tr class="bdr_b_dash">
+                                      <th class="bdr_b_dash txt_r">送料金額(税抜)</th>
+                                      <td align="right"><span>355円</span></td>
+                                    </tr>
+                                    <tr class="bdr_b_dash_fix">
+                                      <th class="txt_r">合計金額(参考税込)</th>
+                                      <td align="right"><span>2,196円</span></td>
+                                    </tr>
+                                  </tbody>
+                                  <tbody>
+                                    <tr class="bdr_b_dash">
+                                      <th class="txt_r"> <span>(10%対象)</span> </th>
+                                      <td align="right"> <span class="currency">610円</span> </td>
+                                    </tr>
+                                    <tr class="bdr_b_dash_fix">
+                                      <th class="txt_r"> <span>(内消費税額)</span> </th>
+                                      <td align="right"> <span class="currency">55円</span> </td>
+                                    </tr>
+                                  </tbody>
+                                  <tbody>
+                                    <tr class="bdr_b_dash">
+                                      <th class="txt_r"> <span>(8%対象)</span> </th>
+                                      <td align="right"> <span class="currency">1,286円</span> </td>
+                                    </tr>
+                                    <tr class="bdr_b_dash_fix">
+                                      <th class="txt_r"> <span>(内消費税額)</span> </th>
+                                      <td align="right"> <span class="currency">95円</span> </td>
+                                    </tr>
+                                  </tbody>
+                                  <tbody>
+                                    <tr class="bdr_b_dash">
+                                      <th class="txt_r"> <span>(非課税対象)</span> </th>
+                                      <td align="right"> <span class="currency">300円</span> </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <div class="commodityListArea">
+                                <div class="shopNameArea shopShippingTitle">
+                                  <span>クール便</span>
+                                  <span class="shippingCharge">／ 送料：</span>
+                                  <span class="shippingCharge currency">650円</span>
+                                  <span>
+                                    <span class="shippingCharge currency">(参考税込 ：715.00円)</span>
+                                  </span>
+                                </div>
+                                <div class="frameBody shopShippingTxt">
+                                  <table class="listTbl">
+                                    <thead>
+                                      <tr class="tableHeader d-none d-lg-table-row">
+                                        <th class="commodityNameCol">商品名</th>
+                                        <th width="20%" class="retailPriceCol">販売価格</th>
+                                        <th width="20%" class="giftNameCol"> ラッピング <br> のし </th>
+                                        <th width="8%" class="quantityCol">数量</th>
+                                        <th width="15%" class="subTotalCol">小計(税抜)</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="listBody commodityListBodyArea">
+                                        <td class="commodityNameCol"> <span class="commodityName">単品軽減5％商品</span>
+                                          <span class="standardDetail1Name"></span>
+                                          <span class="standardDetail2Name"></span>
+                                          <div class="compositionListArea txt_small">
+                                            <span></span>
+                                          </div>
+                                          <div class="saleEndDatetimeArea">
+                                            <span>販売期間：</span>
+                                            <span class="saleEndDatetime">2100/01/01 00</span>
+                                            <span>時まで</span>
+                                          </div>
+                                        </td>
+                                        <td class="retailPriceCol" align="right">
+                                          <span class="d-inline d-lg-none">販売価格：</span>
+                                          <span class="currency" data-displaytaxtype="true">780円※</span>
+                                          <span><br>
+                                            <span class="currency" data-displaytaxtype="true">(参考税込 ：819.00円)※</span>
+                                          </span>
+                                        </td>
+                                        <td>
+                                          <div class="d-none d-lg-block">
+                                            <div class="giftName">ラッピング選択なし</div>
+                                            <br><br>
+                                            <div>のし選択なし</div>
+                                          </div>
+                                          <table class="cartTbl d-table d-lg-none mb10">
+                                            <tbody>
+                                              <tr>
+                                                <th class="cmdtyCol">オプション</th>
+                                                <th class="priceCol">販売価格</th>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <div>オプション選択なし</div>
+                                                </td>
+                                                <td></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                          <table class="cartTbl mb10 d-table d-lg-none">
+                                            <tbody>
+                                              <tr>
+                                                <th class="cmdtyCol">ラッピング／のし</th>
+                                                <th class="priceCol">販売価格</th>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <div class="giftName">ラッピング選択なし</div> <br>
+                                                  <div>のし選択なし</div>
+                                                </td>
+                                                <td>
+                                                  <br>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                        <td class="quantityCol" align="right"> <span class="d-lg-none">数量：</span> <span class="number">1</span> </td>
+                                        <td class="subTotalCol" align="right">
+                                          <div class="subTotal currency">
+                                            <span class="d-none d-lg-block">780円</span>
+                                            <table class="cartTbl mb20 d-block d-lg-none">
+                                              <tbody>
+                                                <tr>
+                                                  <th>小計(税抜)</th>
+                                                  <td class="txt_r"> <span class="currency">780円</span>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </td>
+                                        <td class="d-block d-lg-none">
+                                          <table class="shippingItemTotalArea cartTbl cartTotal frameBody mb20 ">
+                                            <tbody>
+                                              <tr class="bdr_b_dash">
+                                                <th class="txt_r">お届け先小計金額(税抜)</th>
+                                                <td align="right"><span>780円</span></td>
+                                              </tr>
+                                              <tr class="bdr_b_dash">
+                                                <th class="bdr_b_dash txt_r">送料金額(税抜)</th>
+                                                <td align="right"><span>650円</span></td>
+                                              </tr>
+                                              <tr class="bdr_b_dash_fix">
+                                                <th class="txt_r">合計金額(参考税込)</th>
+                                                <td align="right"><span>1,534円</span></td>
+                                              </tr>
+                                            </tbody>
+                                            <tbody>
+                                              <tr class="bdr_b_dash">
+                                                <th class="txt_r"><span>(10%対象)</span></th>
+                                                <td align="right"> <span class="currency">715円</span> </td>
+                                              </tr>
+                                              <tr class="bdr_b_dash_fix">
+                                                <th class="txt_r">(内消費税額)</th>
+                                                <td align="right"> <span class="currency">65円</span> </td>
+                                              </tr>
+                                            </tbody>
+                                            <tbody>
+                                              <tr class="bdr_b_dash">
+                                                <th class="txt_r"><span>(5%対象)</span></th>
+                                                <td align="right"> <span class="currency">819円</span> </td>
+                                              </tr>
+                                              <tr class="bdr_b_dash_fix">
+                                                <th class="txt_r">(内消費税額)</th>
+                                                <td align="right"> <span class="currency">39円</span> </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                      <tr class="listBody commodityListBodyArea incWorkArea incWorkNot d-none d-md-table-row">
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                          <span>オプション選択なし</span>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr class="listBody commodityListBodyArea bdr_b_solid d-none d-md-table-row">
+                                        <td class="commodityNameCol">
+                                        </td>
+                                        <td class="retailPriceCol" align="right"></td>
+                                        <td></td>
+                                        <td class="quantityCol" align="right"></td>
+                                        <td class="subTotalCol" align="right"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <table class="shippingItemTotalArea cartTbl cartTotal frameBody d-none d-md-table">
+                                  <tbody>
+                                    <tr class="bdr_b_dash">
+                                      <th class="txt_r">お届け先小計金額(税抜)</th>
+                                      <td align="right"><span>780円</span></td>
+                                    </tr>
+                                    <tr class="bdr_b_dash">
+                                      <th class="bdr_b_dash txt_r">送料金額(税抜)</th>
+                                      <td align="right"><span>650円</span></td>
+                                    </tr>
+                                    <tr class="bdr_b_dash_fix">
+                                      <th class="txt_r">合計金額(参考税込)</th>
+                                      <td align="right"><span>1,534円</span></td>
+                                    </tr>
+                                  </tbody>
+                                  <tbody>
+                                    <tr class="bdr_b_dash">
+                                      <th class="txt_r"> <span>(10%対象)</span> </th>
+                                      <td align="right"> <span class="currency">715円</span> </td>
+                                    </tr>
+                                    <tr class="bdr_b_dash_fix">
+                                      <th class="txt_r"> <span>(内消費税額)</span> </th>
+                                      <td align="right"> <span class="currency">65円</span> </td>
+                                    </tr>
+                                  </tbody>
+                                  <tbody>
+                                    <tr class="bdr_b_dash">
+                                      <th class="txt_r"> <span>(5%対象)</span> </th>
+                                      <td align="right"> <span class="currency">819円</span> </td>
+                                    </tr>
+                                    <tr class="bdr_b_dash_fix">
+                                      <th class="txt_r"> <span>(内消費税額)</span> </th>
+                                      <td align="right"> <span class="currency">39円</span> </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </dd>
+                            <!-- listBody -->
+                          </dl>
+                        </div>
+                      </div>
+                      <div>
+                        <b class="bottom">手続等の詳細は「<a href="../info/特定商取引法に基づく表記(ロゴのみ).html" target="_blank">特定商取引法に基づく表記</a>」をご確認ください。</b>
+                      </div>
+                      <div>
+                        <span class="caution">※は軽減税率対象品目</span>
+                      </div>
+                      <div id="buttonArea" class="col-sm-12 pd0">
+                        <div class="fixButtonArea mb20 ">
+                          <!--/* SourceCode_V12.18_add_start */-->
+                          <!--  <input class="btn-orange orderCommitButton" type="button" value="注文を確定する" onclick="sendConfirmRequest(this)" data-button="confirmRegist" id="confirmRegistButton">  -->
+                          <!--/* SourceCode_V12.18_add_end */-->
+                          <!--/* Mockup_V12.18_add_start */-->
+                          <input class="btn-orange orderCommitButton" type="button" value="注文を確定する" onclick="location.href='../order/注文完了(ゲスト購入).html'" data-button="confirmRegist" id="confirmRegistButton">
+                          <!--/* Mockup_V12.18_add_end */-->
+                        </div>
+                        <div class="confirmNavigationImg d-block d-lg-none">
+                          <img src="../共通/files/commonfiles/images/navi_order_confirm.gif" alt="内容確認">
+                        </div>
+                        <div class="backButtonArea">
+                          <!--/* SourceCode_V12.18_add_start */-->
+                          <!--  <input class="btn-gray" type="button" value="前へ戻る" onclick="move('/order/payment/')" id="goBackButton">  -->
+                          <!--/* SourceCode_V12.18_add_end */-->
+                          <!--/* Mockup_V12.18_add_start */-->
+                          <input class="btn-gray" type="button" value="前へ戻る" onclick="location.href='../order/お支払方法選択(ゲスト購入).html'" id="goBackButton">
+                          <!--/* Mockup_V12.18_add_end */-->
+                        </div>
+                      </div>
+                      <div class="clearBoth"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include">
+                <div id="pageFooter">
+                  <hr>
+                  <div class="copyRight">
+                    <span>Copyright (c) 2025 DG Business Technology,Inc. All Rights Reserved.</span>
+                  </div>
+                </div>
+                <input type="hidden" id="transactionToken" name="transactionToken" value="678c5220-345c-4f80-8094-1c71d099c3a2">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/final.js?date=20250703090703"></script>
+              </div>
+            </div>
+            <div>
+              <div id="cookieConsentBannerRoot" class="wsparts-include">
+                <script>
+                  /*<![CDATA[*/
+                  var relatedExternalCookieNames = [];
+                  /*]]>*/
+
+                </script>
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/cookieConsentBanner.js?date=20250703090703"></script>
+                <div id="cookieConsentBanner" class="cookieConsentBanner hidden">
+                  <div class="d-none d-md-block d-lg-block pd0 cookieConsentBannerArea">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8 floating-txt">
+                          <div class="float_l cookiePolicy">
+                            <span>当サイトでは、サイトの利便性向上のため、クッキー（Cookie）を使用しています。<br> サイトのクッキー（Cookie）の仕様に関しては <a href="../info/クッキーポリシー.html" id="moveCookiePolicy">「クッキーポリシー」</a>をお読みください。</span>
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                          <div class="float_r mt5">
+                            <button type="button" class="btn btn-deny" onclick="acceptCookie()">すべて拒否する</button>
+                            <button type="button" class="btn btn-accept" onclick="acceptCookie()">すべてのCookieを受け入れる</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="cookieConsentBannerSP" class="cookieConsentBannerSP hidden">
+                  <div class="d-block d-lg-none pd0 cookieConsentBannerAreaSP">
+                    <div class="container p-0">
+                      <div class="row m-0">
+                        <div class="col-xs-12 col-sm-12 floating-txt">
+                          <div class="float_l cookiePolicySP">
+                            <span>当サイトでは、サイトの利便性向上のため、クッキー（Cookie）を使用しています。<br> サイトのクッキー（Cookie）の仕様に関しては <a href="../info/クッキーポリシー.html" id="moveCookiePolicy">「クッキーポリシー」</a>をお読みください。</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row m-1">
+                        <div class="col-12">
+                          <button type="button" class="btn btn-deny" onclick="acceptCookie()">すべて拒否する</button>
+                        </div>
+                      </div>
+                      <div class="row m-1">
+                        <div class="col-12">
+                          <button type="button" class="btn btn-accept" onclick="acceptCookie()">すべてのCookieを受け入れる</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

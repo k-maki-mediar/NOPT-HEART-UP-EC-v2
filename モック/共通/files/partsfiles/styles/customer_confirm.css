@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/*-----------------------------
+  ナビエリア
+-----------------------------*/
+#customerConfirmArea div.navigation {
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+#customerConfirmArea div.navigation img{
+  max-width: 438px;
+  width:80%;
+}
+
+/*-----------------------------
+  顧客情報エリア
+-----------------------------*/
+#customerConfirmArea #customerInfoArea {
+  margin: 0px 0px 0px 0px;
+}
+
+#customerConfirmArea .confirmMessageArea {
+  text-align: left;
+  width: 100%;
+  overflow: hidden;
+  background-color: #FFF;
+  font-weight: bold;
+  padding-left:10px;
+}

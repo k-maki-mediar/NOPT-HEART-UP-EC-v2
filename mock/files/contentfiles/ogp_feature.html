@@ -1,0 +1,7 @@
+<meta property="og:title" th:content="${FeatureResultBean.featureInfo.featureName + ' ' + FeatureResultBean.featureInfo.shopName}" />
+<meta property="og:type" th:content="'product.group'" />
+<meta property="og:description" th:content="${FeatureResultBean.featureInfo.featureName + ' ' + FeatureResultBean.featureInfo.shopName}" />
+<meta property="og:url" th:content="${#ctx.getExchange().getSession().getAttributeValue('SNS_URL')}" />
+<meta property="og:image" th:content="'https://' + ${#ctx.getExchange().getRequest().getServerName()} + @{/files/commonfiles/images/ws_ogp.png}" />
+<meta property="og:site_name" th:content="${LoginInfoResultBean.siteName}" />
+<meta property="og:locale" th:content="${#locale}" />

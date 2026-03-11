@@ -1,0 +1,69 @@
+<th:block th:fragment="wsparts-include">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+       var bean = /*[[${CompleteResultBean}]]*/'';
+
+        try {
+
+            var karte_conversion_items = [];
+
+            $(bean.conversionCommodityInfoList).each(function() {
+
+                var item = {
+                    item_id: this.skuCode,
+                    name: webReceptionUtil.getConvertCommodityName( 'order_karte', this, bean.purchaseMethodType ),
+                    price: Number(this.retailPrice),
+                    quantity: Number(this.quantity),
+                    identifier: webReceptionUtil.extractIdentifier(this.identifier),
+                    gift_name: webReceptionUtil.convertName(this.giftName),
+                    gift_price: Number(this.giftPrice),
+                    noshi_name: webReceptionUtil.convertName(this.noshi.noshiName),
+                    noshi_price: Number(this.noshi.noshiPrice)
+                };
+
+                $(this.incWorkMap).each(function(index,obj) {
+                    var seq = 1;
+                    $.each(obj,function(k,v){
+                        if( v.userChecked ) {
+                            var incWorkName = webReceptionUtil.convertName(v.incWorkFrontName);
+                            incWorkName = v.userChoicesName ? incWorkName + " " + v.userChoicesName : incWorkName;
+                            var incWorkPrice = v.price ? Number(v.price) : 0;
+                            item['incwork_name'+seq] = incWorkName;
+                            item['incwork_price'+seq] = incWorkPrice;
+                            seq += 1;
+                        }
+                    });
+                });
+
+                karte_conversion_items.push(item);
+            });
+
+
+            tracker.buy({
+                transaction_id: bean.orderNo,
+                total_commodity_price: Number(bean.totalCommodityPrice),
+                total_incwork_price: Number(bean.totalIncWorkPrice),
+                total_gift_price: Number(bean.totalGiftPrice),
+                total_noshi_price: Number(bean.totalNoshiPrice),
+                shipping: Number(bean.shippingCharge),
+                total_price: Number(bean.totalPrice),
+                used_coupon: Number(bean.useCoupon),
+                used_point: Number(bean.usePoint),
+                payment_commission: Number(bean.paymentCommission),
+                revenue: Number(bean.orderTotalPrice),
+                tax: Number(bean.tax),
+                aquired_point: Number(bean.totalAquiredPoint),
+                items: karte_conversion_items
+            });
+
+        } catch (e) {
+            if ('tracker' in window) {
+                tracker.track('_error', {
+                    message: e.message
+                });
+            }
+        }
+        /*]]>*/
+    </script>
+</th:block>

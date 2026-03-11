@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+/*-----------------------------
+  ナビ
+------------------------------*/
+div.shippingNavigation {
+  width: 100%;
+  display: table;
+}
+
+/*-----------------------------
+  ナビ　タイトル
+------------------------------*/
+div.shippingNavigationTitle,div.shippingNavigationImg {
+  vertical-align: middle;
+}
+div.shippingNavigationTitle,div.shippingNavigationImg img{
+  width:80%;
+  max-width:438px;
+  margin-bottom:20px;
+}
+
+/*-----------------------------
+  ナビ　画像
+------------------------------*/
+table.shippingTbl .shippingImage {
+  width:5%;
+  padding:10px 0px;
+  text-align: center;
+}
+
+div.shippingNavigationImg {
+  text-align: center;
+}
+
+/*-----------------------------
+  ヘッダ
+------------------------------*/
+.shippingHeader {
+  height:31px;
+  background-color: #DCDCDC;
+  text-align: center;
+}
+
+.shippingHeader th {
+  font-weight: bold;
+}
+
+/*-----------------------------
+  お届け先テーブル
+------------------------------*/
+#shippingTbl {
+  width: 100%;
+  border-style: solid;
+  border-width: 1;
+  border-collapse: collapse;
+}
+
+table.shippingTbl th,table.shippingTbl td {
+  border: 1px solid #cccccc;
+  word-break:break-all;
+}
+table.shippingTbl th{
+  text-align:center;
+}
+
+table.shippingTbl .commodityName {
+  padding-left: 5px;
+  white-space: normal;
+  word-break: break-all;
+  width: 30%;
+}
+
+table.shippingTbl .amout {
+  width: 5%;
+}
+
+table.shippingTbl .allocate {
+  width: 5%;
+}
+
+table.shippingTbl .address {
+  width: 10%;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.allocateArea:not(:last-child ) {
+  border-bottom: 1px solid #cccccc;
+}
+
+.allocateArea {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.addressArea:not(:last-child ) {
+  border-bottom: 1px solid #cccccc;
+}
+
+.addressArea {
+  height: 50px;
+  vertical-align: middle;
+  padding: 10px 0px 0px 5px
+}
+
+.commodityQuantity {
+  text-align: center;
+}
+
+/*-----------------------------
+  構成品
+-----------------------------*/
+div.compositionListArea {
+  font-size: 10px;
+  margin: 0px;
+  padding-left: 5px;
+}
+
+.incFreeText {
+  padding-left: 20px;
+}
+
+/*-----------------------------
+  990px以下(xs,sm)で表示
+------------------------------*/
+@media screen and (max-width:991px) {
+  #buttonArea input{
+    float:none;
+    display:block;
+    margin:0 auto;
+    width:95%;
+    height:40px;
+  }
+
+  table.shippingTbl .commodityName {
+    padding-left: 5px;
+    white-space: normal;
+    word-break: break-all;
+    width: 20%;
+  }
+
+  table.shippingTbl .amout {
+    width: 3%;
+  }
+
+  table.shippingTbl .allocate {
+    width: 3%;
+  }
+
+  table.shippingTbl .address {
+    width: 20%;
+    white-space: normal;
+    word-break: break-all;
+  }
+
+  .addressArea {
+    height: 60px;
+    vertical-align: middle;
+    padding: 5px 0px 0px 5px
+  }
+
+  .allocateArea {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    vertical-align: middle;
+  }
+}

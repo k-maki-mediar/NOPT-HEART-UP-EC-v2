@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+#purchasingConfirmArea {
+  background-color: #fff;
+  width: 600px;
+  display: none;
+}
+
+#purchasingConfirmArea .purchasingConfirm {
+  max-height: 300px;
+  text-align: left;
+  padding: 10px;
+  overflow-y: auto;
+  word-break: break-all;
+}
+
+.purchasingConfirmButtonArea {
+  padding: 10px;
+  overflow: hidden;
+}
+
+/*-----------------------------
+  767px以下(xs)で表示
+------------------------------*/
+@media screen and (max-width:767px) {
+  #purchasingConfirmArea {
+    width: 80%;
+  }
+}

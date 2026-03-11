@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+.dataImg {
+  display: table-cell;
+  vertical-align: middle;
+  word-break: break-all;
+  padding: 0px 0px 40px 0px;
+}
+
+.dataProfile {
+  display: table-cell;
+  vertical-align: middle;
+  word-break: break-all;
+  padding: 0px 0px 40px 20px;
+}
+
+.dataProfile h1 {
+  background: none;
+  padding-left: 0;
+}
+
+@media screen and (max-width:767px) {
+  .dataImg {
+    display: block;
+  }
+  
+  .dataProfile {
+    display: block;
+    padding: 20px !important;
+  }
+  
+  .dataProfile h1 {
+    text-align: center !important;
+  }
+  
+  .dataShop {
+    text-align: center !important;
+  }
+}

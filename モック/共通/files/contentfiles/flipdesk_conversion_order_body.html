@@ -1,0 +1,24 @@
+<th:block th:fragment="wsparts-include">
+	<div id="flipdesk_conversion" data-api-token="" data-conversion=""></div>
+	<script th:inline="javascript">
+	    /*<![CDATA[*/
+
+	    var bean = /*[[${CompleteResultBean}]]*/ '';
+
+	    var skus_query_string = "";
+	    var quantity_num = 0;
+
+	    $(bean.conversionCommodityInfoList).each(function() {
+	        quantity_num += Number(this.quantity);
+	        var commodityName = webReceptionUtil.getConvertCommodityName( 'order', this, bean.purchaseMethodType );
+	        commodityName = webReceptionUtil.halfWidthToFullWidth(commodityName);
+	        skus_query_string += "__" + this.skuCode + "," + commodityName + "," + this.quantity + "," + this.retailPrice + ",,";
+	    });
+
+	    var query_string = "p=" + bean.totalCommodityPrice + "&q=" + quantity_num + "&oid=" + bean.orderNo + "&skus=" + skus_query_string;
+
+	    $('#flipdesk_conversion').attr('data-conversion', query_string);
+
+	    /*]]>*/
+	</script>
+</th:block>

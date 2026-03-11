@@ -1,0 +1,269 @@
+@charset "utf-8";
+
+/*-----------------------------
+  ナビエリア
+-----------------------------*/
+.cartNavigation {
+  width: 100%;
+  display: table;
+}
+.cartNavigationTitle,div.cartNavigationImg {
+  vertical-align: middle;
+}
+.shopCartBeanTemplateArea div.shopNameArea{
+  background-color:#eeeeee;
+  color:#333333;
+  border-bottom:1px solid #cccccc;
+}
+
+/*-----------------------------
+  ナビ画像
+-----------------------------*/
+.cartNavigationImg {
+  text-align: center;
+}
+
+.cartNavigationImg img{
+  width:80%;
+  max-width:438px;
+  margin-bottom:20px;
+}
+
+.tableBody, .tableHeader{
+  width:100%;
+}
+.imageCommodityImg{
+  width:72px;
+  height:72px;
+}
+
+/*-----------------------------
+  数量・削除
+-----------------------------*/
+.quantityCol {
+  text-align:center;
+  width:10%;
+}
+.buttonCol{
+  text-align:center;
+  width:12%;
+}
+.deleteButton {
+  width: 80px;
+}
+/*-----------------------------
+  価格・小計
+-----------------------------*/
+.priceCol {
+  width:17%;
+  vertical-align:top;
+}
+.sutotalCol {
+  width:11%;
+}
+/*-----------------------------
+  ショップ名
+-----------------------------*/
+.shopCode{
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:10px;
+  display:inline-block;
+}
+/*-----------------------------
+  商品画像
+-----------------------------*/
+.listBody li.cmdtyImageCol {
+  text-align: left;
+  white-space: normal;
+  float:left;
+}
+
+/*-----------------------------
+  商品名
+-----------------------------*/
+.listBody li.cmdtyNameCol {
+  text-align: left;
+  white-space: normal;
+  word-break: break-all;
+}
+
+/*-----------------------------
+  構成品
+-----------------------------*/
+div.compositionListArea {
+  font-size: 10px;
+  margin: 0px;
+  padding-left: 5px;
+}
+
+.purchaseLink {
+  margin-left: 10px;
+}
+
+/*-----------------------------
+  合計
+-----------------------------*/
+.total{
+  padding:10px 0 20px 0;
+  border-top: 2px solid #cccccc;
+}
+.total table td{
+  text-align: right;
+  font-size:1.5em;
+  padding:15px;
+}
+
+
+/*-----------------------------
+  数量変更コメント
+-----------------------------*/
+.updateQuantity {
+  margin: 5px 5px;
+  text-align: right;
+}
+
+/*-----------------------------
+  ボタン
+-----------------------------*/
+span.commoditySalesPrice {
+  color: #af0000;
+}
+.shippingButtonArea{
+  padding-bottom:20px;
+  text-align:right;
+}
+.ageLimitArea{
+  text-align:right;
+}
+#blanketCartArea{
+  float:right;
+}
+.clearCartArea{
+  float:left;
+}
+#blanketCartArea input[type="button"]{
+  background-color:#ffffff;
+  border:none;
+  color:#001789;
+}
+#blanketCartArea input[type="button"]:hover{
+  color: #e68012;
+  text-decoration: underline;
+  opacity:1.0;
+}
+
+/*-----------------------------
+  テーブル
+-----------------------------*/
+.shopCartBeanTemplateArea{
+  border:1px solid #cccccc;
+  margin-bottom: 40px;
+  background:#f9f9f9;
+}
+.shopCartBeanTemplateArea .cartCover{
+  padding:0 20px;
+  margin-top:10px;
+}
+.shopCartBeanTemplateArea ul{
+  list-style: none;
+}
+.incWorkArea{
+  width:100%;
+}
+.frameBody li{
+  padding-left:0;
+  padding-right:0;
+}
+.incFreeText{
+  display:inline-block;
+}
+.incWorkPrice{
+  float:right;
+}
+.incWorkNot{
+  padding-right: 10px;
+}
+.frameBody li{
+  padding-top:0;
+  padding-bottom:0;
+  word-break: break-all;
+  padding-bottom:10px;
+}
+#orderPopUpArea{
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+}
+
+/*-----------------------------
+  カート画面のポップアップ
+------------------------------*/
+.popUpButtonArea{
+  padding: 10px;
+  overflow: hidden;
+}
+
+/*-----------------------------
+  SP一括設定
+-----------------------------*/
+/*991px以下(xs,sm)で表示*/
+@media screen and (max-width:991px){
+  .sp_login, .sp_logout{
+    right:0 !important;
+  }
+  .itemName{
+    padding:0 10px;
+  }
+  .priceCol{
+    width:25%;
+  }
+  .ageLimitArea{
+    padding:0 10px;
+  }
+  .deleteButton,.favoriteButton{
+    display:inline-block;
+  }
+  .commodityCartBean{
+    border-bottom:1px dashed #cccccc;
+    margin-bottom:20px;
+  }
+  .commodityCartBean:last-child{
+    border:none;
+  }
+  #blanketCartArea{
+    float:none;
+    margin-top:40px;
+  }
+  .clearCartArea{
+    float:none;
+  }
+  .clearCartArea input{
+    width:100%;
+    height:40px;
+  }
+  .ageLimitArea{
+    text-align:center;
+  }
+  #shippingButton{
+    text-align:center;
+    width:100%;
+    height:40px;
+    }
+  .total table td{
+    text-align: right;
+    font-size: 1em;
+    padding:15px;
+  }
+}
+
+/*-----------------------------
+  前回と同じ注文方法で注文するポップアップ
+------------------------------*/
+.table-secondary, .table-secondary>td, .table-secondary>th {
+  background-color: #d6d8db;
+}
+
+.table td, .table th {
+  padding: 0.75rem;
+}

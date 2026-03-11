@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+/*-----------------------------
+  注文タイトル
+------------------------------*/
+#orderDetailTitleArea .title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+/*-----------------------------
+  注文詳細
+------------------------------*/
+.noshiMessagePopUpLink{
+  cursor: pointer;
+}
+
+.noshiMessagePopUp {
+  max-width: 400px;
+}
+/*-----------------------------
+  注文内容エリア
+------------------------------*/
+#orderDetailInfoArea .leftTitle {
+  padding: 10px;
+  width: 150px;
+}
+#orderDetailInfoArea .rightData {
+  padding: 10px;
+  width: 40%;
+  text-align: right;
+}
+#orderDetailInfoArea .txt_r {
+  width: 60%;
+  padding:10px;
+}
+
+/*-----------------------------
+  お届け先エリア タイトル側
+------------------------------*/
+.addressLink{
+  font-size:12px;
+}
+
+/*-----------------------------
+  商品名
+------------------------------*/
+.commodityListArea li.commodityNameCol {
+  text-align: left;
+  white-space: normal;
+  word-break: break-all;
+}
+
+/*-----------------------------
+  レビュー
+------------------------------*/
+@media screen and (min-width:481px) {
+  #postScoreButton {
+    width: 107px;
+  }
+}
+
+.reviewTbl {
+  float: right;
+}
+/*-----------------------------
+  付帯サービス名
+-----------------------------*/
+.frameBody li.incWorkName {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+/*-----------------------------
+  付帯サービス金額
+-----------------------------*/
+.frameBody li.incWorkPrice {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-align: right;
+}
+
+/*-----------------------------
+  付帯自由入力欄
+-----------------------------*/
+.frameBody li.incFreeText {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 20px;
+  width: 280px;
+  word-break: break-all;
+  white-space: normal;
+}
+
+/*-----------------------------
+  構成品
+------------------------------*/
+.compositionListArea {
+  font-size: 10px;
+  margin: 0px;
+  padding-left: 5px;
+}
+
+/*-----------------------------
+  ギフト
+------------------------------*/
+.commodityListArea li.giftNameCol {
+  text-align: left;
+  white-space: normal;
+  word-break: break-all;
+}
+
+/*-----------------------------
+  小計
+------------------------------*/
+.separator {
+  clear: both;
+  height: 30px
+}
+
+/*-----------------------------
+  連絡事項
+------------------------------*/
+.messageData {
+  word-wrap: break-word;
+  padding: 5px 5px 5px 5px;
+  width: 100%;
+}
+
+/*-----------------------------
+  一括指定
+------------------------------*/
+#orderDetailInfoArea, #orderDetailCustomerArea, .deliverylistData,
+    #buttonArea {
+  padding-right: 0;
+  padding-left: 0;
+}
+.commodityListtemplateArea ul{
+  list-style: none;
+}
+.cartTbl th{
+  width: 75%;
+  text-align: right;
+}
+/*-----------------------------
+  991px以上(md)で表示
+------------------------------*/
+@media screen and (min-width:992px) {
+  #orderDetailCustomerArea{
+    float: left;
+    width: 65%;
+  }
+  
+  #orderDetailInfoArea {
+    float: right;
+    width: 33%;
+  }
+}
+/*-----------------------------
+  990px以下(xs,sm)で表示
+------------------------------*/
+@media screen and (max-width:991px) {
+  #orderDetailInfoArea .bdr_b_dash, .shippingItemTotalArea .bdr_b_dash{
+    border-bottom:1px dashed #cccccc;
+  }
+  .commodityListtemplateArea{
+    border:1px solid #cccccc;
+    padding:20px;
+    background-color:#f9f9f9;
+    margin-bottom:20px;
+	padding-bottom: 40px;
+  }
+  #orderDetailInfoArea .leftTitle {
+    width: 170px;
+  }
+  #orderDetailInfoArea .txt_r {
+    width: auto;
+    padding:10px;
+  }
+}

@@ -1,0 +1,1823 @@
+﻿
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/front/app/error/no_support/" />
+  </noscript>
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/bootstrap-5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/commonfiles/styles/reset.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/commonfiles/styles/common.css?date=20250704113221" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/systemfiles/styles/sociallogin.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/jquery.colorbox-1.6.4/colorbox.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/concrete/concrete.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/fontawesome-5.15.4-web/css/all.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/pageHeaderMenu.css">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/miniCart.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/topicPath.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/detail_unit.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/purchasingConfirm.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/arrivalGoods.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/recommend_naviplus.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/exfiles/slick-1.4.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/exfiles/slick-1.4.1/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/recommendB.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/exfiles/slick-1.4.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/exfiles/slick-1.4.1/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/recommendA.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/exfiles/slick-1.4.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/exfiles/slick-1.4.1/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/browsingHistory.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/exfiles/slick-1.4.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/exfiles/slick-1.4.1/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/reviewList.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/brandBanner.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/campaignBanner.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/pageFooterMenu.css?date=20250704113221">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/cookieConsentBanner.css?date=20250704113221">
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/popper-2.11.8/dist/popper.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/bootstrap-5.3.2/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery.lightbox_me/jquery.lightbox_me.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/elevatezoom-plus-master/jquery.ez-plus.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery.colorbox-1.6.4/jquery.colorbox.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/fontawesome-5.15.4-web/js/all.js"></script>
+  <script>
+    /*<![CDATA[*/
+    var settings = {
+      servletMapping: "/app",
+      applicationLevel: "/pc",
+      commonPath: "/cms/pc/common/",
+      apiServ: "/api",
+      logServ: "/log",
+      pagingLineSize: 3,
+      pagingMaxSize: 125,
+      context: "/front",
+      apiContext: "/front",
+      defaultLang: "ja",
+      isUseWovn: false,
+      siteShopCode: "0000",
+      sessionTimeout: 30,
+      sessionTimer: 2,
+      sessionUrl: ["/cart/cart/", "/order/guest/", "/order/shipping/", "/order/payment/", "/order/confirm/", "/customer/customer_edit/", "/customer/customer_confirm/", "/order/shipping_multi/", "/order/shipping_split/"],
+      isUseNaviPlusSearch: false,
+      isUseNaviPlusSearchSuggest: false,
+      isUseNaviPlusRecommend: false,
+      isUseNaviPlusReview: false
+    };
+    /*]]>*/
+
+  </script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/initialize.js?date=20250704113221"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/core.js?date=20250704113221"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/validate.js?date=20250704113221"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/process.js?date=20250704113221"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/session.js?date=20250704113221"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/socialLogin.js?date=20250704113221"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/webReception.js?date=20250704113221"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/veritrans.js?date=20250704113221"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/blocks/image/js/image_hover.js"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/js/responsive-slides.js"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/js/videoPlayer_swfobject.js"></script>
+  <style type="text/css">
+    .successAddCartMessage {
+      border-radius: 4px;
+      box-shadow: 0 1px 4px gray;
+      padding: 10px;
+      margin-top: -15px;
+      position: absolute;
+      right: 10px;
+      z-index: 100;
+      color: teal;
+      font-size: 80%;
+      background-color: Azure;
+      border: 1px solid LightSeaGreen;
+    }
+
+  </style>
+  <script type="text/javascript">
+    function showAddCartMessage(elem, style) {
+      var html = '';
+      html += '<div id="addCartSuccess" class="addCartMessageArea successAddCartMessage" ' + style
+      html += '  <span class="addCartMessage">カートに追加しました。</span>'
+      html += '  <a class="cartUrlButton" href="../cart/カート.html">カート</a>'
+      html += ' </div>'
+      $(elem).parent().before(html);
+      var messageArea = $('#addCartSuccess');
+      messageArea.children('a').focus();
+      messageArea.children('a').blur(function() {
+        $(this).parent().remove();
+      });
+    }
+
+    function addCart(elem) {
+      showAddCartMessage(elem, ' style="bottom: 60px;">');
+    }
+
+    function showSkuList(elem) {
+      showAddCartMessage(elem, ' style="margin-top: 40px;">');
+    }
+
+    function clickFavorite(id) {
+      showMessage(id);
+    }
+
+    function clickArrivalGoodsRegister(id) {
+      showMessage(id);
+    }
+
+    function showMessage(type) {
+      var callback = function(c) {
+        return function(index, e) {
+          var target = $(e);
+          if (target.attr('id') == c) {
+            target.show();
+          } else {
+            target.hide();
+          }
+        };
+      };
+      $('.informationBlock').each(callback(type));
+      $('html,body').animate({
+        scrollTop: 0
+      }, 'fast');
+    }
+
+  </script>
+  <title>単品標準10％高額商品 SI Web Shopping v12 一店舗</title>
+  <script itemscope itemtype="http://schema.org/WebContent" itemref="s1 s2"></script>
+  <meta content="単品標準10％高額商品" name="description" />
+  <meta id="s1" content="単品標準10％高額商品" itemprop="description" />
+  <meta name="keywords" content="単品標準10％高額商品 SI Web Shopping v12 一店舗" />
+  <link href="/front/commodity/0000/1218IT_uni000005/" rel="canonical" />
+  <link id="s2" href="/front/commodity/0000/1218IT_uni000005/" itemprop="url" />
+  <meta property="og:title" content="単品標準10％高額商品 SI Web Shopping v12 一店舗" />
+  <meta property="og:type" content="product" />
+  <meta property="og:description" content="単品標準10％高額商品" />
+  <meta property="og:url" content="https://localhost:8443/front/commodity/0000/1218IT_uni000005/" />
+  <meta property="og:image" content="https://localhost/front/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_common_pc.jpg?date=20250707114745" />
+  <meta property="og:site_name" content="SI Web Shopping v12 一店舗" />
+  <meta property="og:locale" content="en_US" />
+</head>
+
+<body>
+  <div class="ccm-page page-type-general-detailunit-pagetype page-template-general">
+    <div>
+      <div id="facebookScriptArea" class="wsparts-include clearBoth">
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v15.0" nonce="nIvcsYYq">
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればfacebookScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#facebookScriptArea').hide();
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="lineScriptArea" class="wsparts-include clearBoth">
+        <script src="https://scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async defer>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればlineScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#lineScriptArea').hide();
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="twitterScriptArea" class="wsparts-include clearBoth">
+        <script>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればtwitterScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#twitterScriptArea').hide();
+          } else {
+            window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+              return t;
+            }(document, "script", "twitter-wjs"));
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="pinterestScriptArea" class="wsparts-include clearBoth">
+        <script>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればpinterestScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#pinterestScriptArea').hide();
+          } else {
+            $('#pinterestScriptArea').html('<script type="text/javascript" async defer src="https://assets.pinterest.com/js/pinit.js"/>');
+          }
+
+        </script>
+      </div>
+    </div>
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <div class="row">
+            <div>
+              <div class="wsparts-include">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/pageHeader.js"></script>
+                <div id="pageHeader">
+                  <div class="top" id="goTop">
+                  </div>
+                  <span class="modeLine mode_1"></span>
+                  <div id="titleArea" class="row justify-content-between m-0">
+                    <div id="sitelogoArea" class="col-5 ps-0">
+                      <a href="../common/トップページ(LoggedIn).html" id="returnTopPage">
+                        <span id="siteLogo">
+                          <img src="../共通/files/commonfiles/images/sitelogo.png" alt="SI Web Shopping v12 一店舗">
+                        </span>
+                      </a>
+                    </div>
+                    <div id="loginInfoArea" class="d-none d-md-block col-7 pe-0">
+                      <div class="stillLoginArea customerName">
+                        <span class="username"> ようこそ&nbsp; <span>シナリオテスト</span> &nbsp; <span>管理</span> 様 </span>
+                        <span class="user-controls">
+                          <a class="btn btn-black" href="../mypage/マイページ.html" id="mypage">マイページ</a>
+                          <a class="btn btn-black" href="../common/ログアウト.html" id="logout">ログアウト</a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="navigation clearfix">
+                    <ul class="row justify-content-between m-0">
+                      <li class="category d-none d-md-block col-md-3 col-lg-2 pd0 dropdown" id="menuCategoryTree">
+                        <button class="btn dropdown-toggle over_txt head_dropdown" type="button" id="dropdownMenu1" data-bs-toggle="dropdown"> カテゴリから探す <span class="caret"></span> </button>
+                        <ul class="categoryTree dropdown-menu w100" role="menu" aria-labelledby="dropdownMenu1" id="menuCategory">
+                          <li role="presentation" class="categoryInfo dropdown-item parent" id="C00002">
+                            <span class="categoryName">カテゴリーC2(PC...</span>
+                            <input value="C00002" class="categoryCode" type="hidden">
+                            <input value="0" class="parentCategoryCode" type="hidden">
+                            <input value="1" class="categoryDepth" type="hidden">
+                          </li>
+                          <li role="presentation" class="categoryInfo dropdown-item" id="C00002_1">
+                            <span class="categoryName">カテゴリーC2_1(...</span>
+                            <input value="C00002_1" class="categoryCode" type="hidden">
+                            <input value="C00002" class="parentCategoryCode" type="hidden">
+                            <input value="2" class="categoryDepth" type="hidden">
+                          </li>
+                          <li role="presentation" class="categoryInfo dropdown-item" id="C00003">
+                            <span class="categoryName">カテゴリーC3(PC...</span>
+                            <input value="C00003" class="categoryCode" type="hidden">
+                            <input value="0" class="parentCategoryCode" type="hidden">
+                            <input value="1" class="categoryDepth" type="hidden">
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="searchBlock d-none d-md-block col-md-7 col-lg-6 pd0">
+                        <div id="searchArea">
+                          <div id="pageHeaderSearchAlertArea" class="hidden">
+                            <span id="pageHeaderSearchAlert" class="searchAlert">検索条件を入力してください。</span>
+                          </div>
+                          <div id="searchFormArea">
+                            <form id="searchform">
+                              <span>
+                                <select id="searchCategoryCode" name="searchCategoryCode" class="pageHeaderSearchCategoryCode">
+                                  <option value="0">すべての商品</option>
+                                  <option value="C00002">カテゴリーC2(PC...</option>
+                                  <option value="C00003">カテゴリーC3(PC...</option>
+                                </select>
+                                <input value="" type="text" name="searchWord" id="searchWord" class="full_width largeText pageHeaderSearchWord" maxlength="50" onkeydown="if(event.keyCode == 13){javascript:event.preventDefault();getElementById('searchButton').click();}">
+                              </span>
+                              <input type="hidden" name="searchMethod" value="0">
+                              <button type="button" class="btn btn-black" id="searchButton" onclick="location.href='../catalog/検索結果.html'">検索</button>
+                              <button type="button" class="btn btn-black" onclick="location.href='../catalog/詳細検索.html'" id="catalogSearchButton">詳細検索</button>
+                            </form>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="col p-0">
+                        <div>
+                          <div id="miniCartRoot" class="wsparts-include">
+                            <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/miniCart.js?date=20250704115952"></script>
+                            <div id="miniCart">
+                              <div class="d-none d-lg-block pd0">
+                                <div id="miniCartHeader">
+                                  <div class="miniCartPriceArea">
+                                    <span class="miniCartItemAndPrice"> <b class="miniCartItemQuantity txt_orange">6</b>点 <b class="miniCartTotalPrice txt_orange">7,696</b>円 </span>
+                                  </div>
+                                </div>
+                                <div id="miniCartDetailArea" style="display: none;">
+                                  <div id="miniCartDetail">
+                                    <div class="miniCartShopArea">
+                                      <div class="miniCartItemDetail">
+                                        <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(単品).html'" id="moveDetail_0000_1218IT_uni000004_1218IT_uni000004"> <img class="miniCartItemImage" src="../共通/cms/images/0000/catalog/1218IT_uni000004/1218IT_uni000004_common_pc.jpg?date=20250704115952" loading="lazy" decoding="async"> </a>
+                                        <div class="miniCartRightDetail">
+                                          <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(単品).html'" id="commodityName_0000_1218IT_uni000004_1218IT_uni000004"> <span>単品0円年齢制限商品</span> <br> </a>
+                                          <div class="miniCartItemIncwork"></div>
+                                          <div class="miniCartItemQuantityArea"> 数量： <span class="miniCartItemQuantity">1</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="miniCartItemDetail">
+                                        <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(規格品).html'" id="moveDetail_0000_1218IT_stn000001_1218IT_stn000002"> <img class="miniCartItemImage" src="../共通/cms/images/0000/catalog/1218IT_stn000001/1218IT_stn000001_common_pc.jpg?date=20250704115952" loading="lazy" decoding="async"> </a>
+                                        <div class="miniCartRightDetail">
+                                          <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(規格品).html'" id="commodityName_0000_1218IT_stn000001_1218IT_stn000002"> <span>規格非課税商品</span> <br> <span class="standardDetailName">(赤/M)</span> </a>
+                                          <div class="miniCartItemIncwork"></div>
+                                          <div class="miniCartItemQuantityArea"> 数量： <span class="miniCartItemQuantity">1</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="miniCartItemDetail">
+                                        <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(単品).html'" id="moveDetail_0000_1218IT_uni000001_1218IT_uni000001"> <img class="miniCartItemImage" src="../共通/cms/images/0000/catalog/1218IT_uni000001/1218IT_uni000001_common_pc.jpg?date=20250704115952" loading="lazy" decoding="async"> </a>
+                                        <div class="miniCartRightDetail">
+                                          <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(単品).html'" id="commodityName_0000_1218IT_uni000001_1218IT_uni000001"> <span>単品軽減8％商品</span> <br> </a>
+                                          <div class="miniCartItemIncwork"></div>
+                                          <div class="miniCartItemQuantityArea"> 数量： <span class="miniCartItemQuantity">2</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="miniCartItemDetail">
+                                        <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(予約).html'" id="moveDetail_0000_1218IT_uni000006_1218IT_uni000006"> <img class="miniCartItemImage" src="../共通/cms/images/0000/catalog/1218IT_uni000006/1218IT_uni000006_common_pc.jpg?date=20250704115952" loading="lazy" decoding="async"> </a>
+                                        <div class="miniCartRightDetail">
+                                          <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(予約).html'" id="commodityName_0000_1218IT_uni000006_1218IT_uni000006"> <span>単品標準10％予約商品</span> <br> </a>
+                                          <div class="miniCartItemIncwork"></div>
+                                          <div class="miniCartItemQuantityArea"> 数量： <span class="miniCartItemQuantity">1</span>
+                                            <span id="miniCartReserve" class="miniCartReserve">予約</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="miniCartItemDetail">
+                                        <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(セット品).html'" id="moveDetail_0000_1218IT_set000003_1218IT_set000003:1218IT_set000001:1218IT_set000002"> <img class="miniCartItemImage" src="../共通/cms/images/0000/catalog/1218IT_set000003/1218IT_set000003_common_pc.jpg?date=20250704115952" loading="lazy" decoding="async"> </a>
+                                        <div class="miniCartRightDetail">
+                                          <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(セット品).html'"> <span>セット品標準10％商品</span> <br> </a>
+                                          <div class="miniCartItemIncwork"></div>
+                                          <div class="miniCartItemQuantityArea"> 数量： <span class="miniCartItemQuantity">1</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="miniCartFooter" class="d-none d-md-block pd0 slidedown">
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-10 col-md-10 col-lg-11 floating-txt">
+                                      <p class="float_l mr5"><b class="miniCartItemQuantity mr5">6 点 7,696 円 </b></p>
+                                      <p class="footerCommodityImage">
+                                        <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(単品).html'" id="footerMoveDetail_0000_1218IT_uni000004_1218IT_uni000004">
+                                          <img class="miniCartItemImage floatThum" src="../共通/cms/images/0000/catalog/1218IT_uni000004/1218IT_uni000004_common_pc.jpg?date=20250704115952" loading="lazy" decoding="async" alt="単品0円年齢制限商品">
+                                        </a>
+                                      </p>
+                                      <p class="footerCommodityImage">
+                                        <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(規格品).html'" id="footerMoveDetail_0000_1218IT_stn000001_1218IT_stn000002">
+                                          <img class="miniCartItemImage floatThum" src="../共通/cms/images/0000/catalog/1218IT_stn000001/1218IT_stn000001_common_pc.jpg?date=20250704115952" loading="lazy" decoding="async" alt="規格非課税商品">
+                                        </a>
+                                      </p>
+                                      <p class="footerCommodityImage">
+                                        <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(単品).html'" id="footerMoveDetail_0000_1218IT_uni000001_1218IT_uni000001">
+                                          <img class="miniCartItemImage floatThum" src="../共通/cms/images/0000/catalog/1218IT_uni000001/1218IT_uni000001_common_pc.jpg?date=20250704115952" loading="lazy" decoding="async" alt="単品軽減8％商品">
+                                        </a>
+                                      </p>
+                                      <p class="footerCommodityImage">
+                                        <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(予約).html'" id="footerMoveDetail_0000_1218IT_uni000006_1218IT_uni000006">
+                                          <img class="miniCartItemImage floatThum" src="../共通/cms/images/0000/catalog/1218IT_uni000006/1218IT_uni000006_common_pc.jpg?date=20250704115952" loading="lazy" decoding="async" alt="単品標準10％予約商品">
+                                        </a>
+                                      </p>
+                                      <p class="footerCommodityImage">
+                                        <a class="miniCartItemUrl" onclick="location.href='../catalog/商品詳細(セット品).html'" id="footerMoveDetail_0000_1218IT_set000003_1218IT_set000003:1218IT_set000001:1218IT_set000002">
+                                          <img class="miniCartItemImage floatThum" src="../共通/cms/images/0000/catalog/1218IT_set000003/1218IT_set000003_common_pc.jpg?date=20250704115952" loading="lazy" decoding="async" alt="セット品標準10％商品">
+                                        </a>
+                                      </p>
+                                    </div>
+                                    <p class="cart col-2 col-md-2 col-lg-1 float_r">
+                                      <a class="cartLink block" href="../cart/カート.html" id="goCartButton">
+                                        <img src="../共通/files/commonfiles/images/cart.png" alt="カート">
+                                        <span>カート</span>
+                                      </a>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="col-xs-12 col-sm-12 col-md-1 pd0 float_r">
+                        <div class="cart sp_cart header-cart-button">
+                          <a href="../cart/カート.html" class="cartLink block" id="cart"> <img src="../共通/files/commonfiles/images/cart.png" alt="カート">
+                            <span>カート</span>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="sp_logout d-block d-md-none">
+                      <a href="../common/ログアウト.html" class="block"> <img src="../共通/files/commonfiles/images/icon_logout.png" alt="ログアウト">
+                        <span>ログアウト</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <div id="message" data-ws-parts-popup="messageArea">
+                  <span id="totalMessageLengs" class="hidden">0</span>
+                  <div class="informationBlock" id="favoriteMessage" style="display: none;">
+                    <div class="informationMessage">お気に入りに登録しました。</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/topicPath.js?date=20250704113221"></script>
+                <div id="topicPath" data-ws-parts-popup="topicPath">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1">
+                <div>
+                  <div id="twitterArea" class="wsparts-include clearBoth">
+                    <a href="https://twitter.com/share" class="twitter-share-button" lang="en_US" url="https://localhost:8443/front/">ツイート</a>
+                  </div>
+                  <script>
+                    /**
+                     * ターゲティングクッキー
+                     */
+                    var tagetingcName = "TARGETING-COOKIE";
+                    /**
+                     * クッキー名称からクッキー取得
+                     * 
+                     * クッキーがなければ空文字を返す
+                     */
+                    function getCookie(cname) {
+                      var name = cname + "=";
+                      var decodedCookie = decodeURIComponent(document.cookie);
+                      var ca = decodedCookie.split(';');
+                      for (var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                          c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                          return c.substring(name.length, c.length);
+                        }
+                      }
+                      return "";
+                    }
+                    /**
+                     * クッキー存在チェック
+                     */
+                    function hasCookie(cname) {
+                      var user = getCookie(cname);
+                      if (user != "") {
+                        return true;
+                      } else {
+                        return false;
+                      }
+                    }
+                    window.twttr = (function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                      if (d.getElementById(id)) return t;
+                      js = d.createElement(s);
+                      js.id = id;
+                      js.src = "https://platform.twitter.com/widgets.js";
+                      fjs.parentNode.insertBefore(js, fjs);
+                      t._e = [];
+                      t.ready = function(f) {
+                        t._e.push(f);
+                      };
+                      return t;
+                    }(document, "script", "twitter-wjs"));
+
+                  </script>
+                </div>
+              </div>
+              <div class="col-1">
+                <div>
+                  <div id="facebookArea" class="wsparts-include clearBoth">
+                    <div class="fb-like" data-href="https://localhost:8443/front/" data-width="" data-layout="button" data-action="like" data-size="small" data-share="false"></div>
+                    <script>
+                      /**
+                       * ターゲティングクッキー
+                       */
+                      var tagetingcName = "TARGETING-COOKIE";
+                      /**
+                       * クッキー名称からクッキー取得
+                       * 
+                       * クッキーがなければ空文字を返す
+                       */
+                      function getCookie(cname) {
+                        var name = cname + "=";
+                        var decodedCookie = decodeURIComponent(document.cookie);
+                        var ca = decodedCookie.split(';');
+                        for (var i = 0; i < ca.length; i++) {
+                          var c = ca[i];
+                          while (c.charAt(0) == ' ') {
+                            c = c.substring(1);
+                          }
+                          if (c.indexOf(name) == 0) {
+                            return c.substring(name.length, c.length);
+                          }
+                        }
+                        return "";
+                      }
+                      /**
+                       * クッキー存在チェック
+                       */
+                      function hasCookie(cname) {
+                        var user = getCookie(cname);
+                        if (user != "") {
+                          return true;
+                        } else {
+                          return false;
+                        }
+                      }
+                    </script>
+                  </div>
+                </div>
+              </div>
+            <div class="col-1">
+              <div>
+                <div id="pinterestArea" class="wsparts-include clearBoth">
+                  <div class="pintrest">
+                    <a href="https://www.pinterest.com/pin/create/button/"> <img
+                        src="https://assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png"> </a>
+                  </div>
+                  <script>
+                    /**
+                      * ターゲティングクッキー
+                      */
+                    var tagetingcName = "TARGETING-COOKIE";
+
+                    /**
+                      * クッキー名称からクッキー取得
+                      * 
+                      * クッキーがなければ空文字を返す
+                      */
+                    function getCookie(cname) {
+                      var name = cname + "=";
+                      var decodedCookie = decodeURIComponent(document.cookie);
+                      var ca = decodedCookie.split(';');
+                      for (var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                          c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                          return c.substring(name.length, c.length);
+                        }
+                      }
+                      return "";
+                    }
+
+                    /**
+                      * クッキー存在チェック
+                      */
+                    function hasCookie(cname) {
+                      var user = getCookie(cname);
+                      if (user != "") {
+                        return true;
+                      } else {
+                        return false;
+                      }
+                    }               
+                  </script>
+                </div>
+              </div>
+            </div>
+              <div class="col-1">
+                <div>
+                  <div id="lineArea" class="wsparts-include clearBoth">
+                    <iframe data-type="share-a" data-lang="ja" data-line-it-id="0" scrolling="no" frameborder="0" allowtransparency="true" style="width: 86px; height: 20px; visibility: visible; position: static;" class="line-it-button" src="https://social-plugins.line.me/widget/share?buttonType=share-a&amp;type=share&amp;lang=ja&amp;id=0&amp;origin=https%3A%2F%2Flocalhost%3A8443%2Ffront%2F&amp;title=SI%20Web%20Shopping%20v12%20%E4%B8%80%E5%BA%97%E8%88%97" title="このページの情報をLINEでシェアできます。"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/detail_unit.js?date=20250704113221"></script>
+                <div id="detailUnitMain">
+                  <input type="hidden" name="preview" id="preview" value="false">
+                  <form id="detailInfoForm">
+                    <input type="hidden" name="shopCode" id="shopCode" value="0000">
+                    <input type="hidden" name="commodityCode" id="commodityCode" value="1218IT_uni000001">
+                    <input type="hidden" name="skuCode" id="skuCode" value="1218IT_uni000001">
+                    <input type="hidden" name="purchasingConfirmFlg" id="purchasingConfirmFlg" value="false">
+                    <input type="hidden" name="salesMethodType" id="salesMethodType" value="0">
+                  </form>
+                  <div class="topicPathList">
+                    <div class="topicPath" data-name="カテゴリーC2(PC)" data-value="../catalog/商品一覧(サムネイル表示).html"></div>
+                  </div>
+                  <div class="topicPathList">
+                    <div class="topicPath" data-name="カテゴリーC2_1(PC)" data-value="../catalog/商品一覧(サムネイル表示).html"></div>
+                  </div>
+                  <div class="contents_box sp_box_top">
+                    <div class="col-xs-12 col-sm-12 d-block d-md-none">
+                      <div class="sp_itemDetail_ttl">
+                        <h1>単品軽減8％商品</h1>
+                        <div class="itemDetail_txt">
+                          <span> <span> <span>レビュー</span> </span> <a href="#reviewListArea"> ( <span class="reviewCount">0</span> ) </a> </span>
+                        </div>
+                        <div class="itemDetail_txt txt_r">
+                          <span class="caution">※は軽減税率対象品目</span>
+                        </div>
+                        <span>
+                          <span>
+                            <span>
+                              <span>
+                                <div class="itemDetail_txt">
+                                  <p class="amiToggle discoColor"> <span class="bg_cam"> 「 キャンペーンA 」実施中！ レジにて 7％値引 </span> </p>
+                                </div>
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-6">
+                        <div id="imageArea">
+                          <p class="itemMain"> <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_common_pc.jpg?date=20250707115134" alt="単品標準10％高額商品" data-zoom-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_commonL_pc.jpg?date=20250707115134"> </p>
+                          <p class="item_thum" id="relatedImageArea">
+                            <span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink active" id="relatedImage_0" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_common_pc.jpg?date=20250707115134" data-zoom-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_commonL_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_common_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span><span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink" id="relatedImage_1" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_1_rel_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_1_rel_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span><span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink" id="relatedImage_2" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_2_rel_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_2_rel_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span><span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink" id="relatedImage_3" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_3_rel_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_3_rel_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span><span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink" id="relatedImage_4" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_4_rel_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_4_rel_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span><span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink" id="relatedImage_5" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_5_rel_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_5_rel_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span><span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink" id="relatedImage_6" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_6_rel_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_6_rel_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span><span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink" id="relatedImage_7" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_7_rel_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_7_rel_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span><span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink" id="relatedImage_8" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_8_rel_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_8_rel_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span><span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink" id="relatedImage_9" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_9_rel_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_9_rel_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span><span class="catalogRelatedImages">
+                              <a href="#" class="relatedImageLink" id="relatedImage_10" data-image="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_10_rel_pc.jpg?date=20250707115134">
+                                <img id="mainImage" src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_10_rel_pc.jpg?date=20250707115134" alt="単品標準10％高額商品">
+                              </a>
+                            </span>
+                          </p>
+                        </div>
+                        <div class="d-none d-md-block mt10">
+                          <img src="../共通/files/commonfiles/images/icon_inquiry.gif" alt="お問い合わせ" class="mr5"> この商品に関するお問い合わせは<a href="../customer/お問い合わせ入力(商品).html" id="moveInquiryLink">こちら</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 cpl-xl-6">
+                        <div class="d-none d-md-block col-sm-12 col-md-12 col-lg-12 sp_itemDetail_r">
+                          <div class="sp_itemDetail_ttl">
+                            <h1>単品標準10％高額商品</h1>
+                            <div class="itemDetail_txt">
+                              <p class="amiNoImg"> <span class="priorArea">Comming soon</span> </p>
+                            </div>
+                            <div class="itemDetail_txt">
+                              <span> <span> <span> <img src="../共通/files/commonfiles/images/lbl_Star80.gif"> </span> </span> <a href="#reviewListArea"> ( <span class="reviewCount">1</span> ) </a> </span>
+                            </div>
+                            <div class="itemDetail_txt txt_r">
+                              <span class="caution">※は軽減税率対象品目</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sp_itemDetail_r">
+                          <div class="sp_itemDetail_info w100">
+                            <div>
+                              <div class="col-xs-12 d-block d-md-none">
+                                <div style="visibility: hidden"> &nbsp; </div>
+                              </div>
+                              <div style="clear: both"></div>
+                            </div>
+                            <div class="itemDetail_txt mt10" align="center">
+                              <table class="w100">
+                                <tbody>
+                                </tbody>
+                              </table>
+                            </div>
+                            <p class="detail_arrow"> <img src="../共通/files/commonfiles/images/arrow_itemDetail.gif" alt=""> </p>
+                            <div class="itemDetail_txt" align="center">
+                              <table class="w100">
+                                <tbody>
+                                  <tr>
+                                    <th>商品コード</th>
+                                    <td>1218IT_uni000005</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="addCartMessageArea" style="display: none;">
+                              <span class="addCartMessage"></span>
+                              <a class="cartUrlButton" href="../cart/カート.html">カート</a>
+                            </div>
+                            <div>
+                              <div>
+                                <span class="normal_label">近日発売</span>
+                              </div>
+                              <p class="btn_buy mb10">
+                                <button class="btn_off w100 cursor_defaut">
+                                  <img src="../共通/files/commonfiles/images/icon_add_off.png" alt="購入不可">
+                                  <span class="addCartLabel">カートに入れる</span>
+                                </button>
+                              </p>
+                              <p class="d-none d-md-block"> <a href="javascript:clickFavorite('favoriteMessage')" id="addFavoriteLink"><img src="../共通/files/commonfiles/images/icon_heart.gif" alt="お気に入り" class="mr5"> この商品をお気に入りに追加 </a> </p>
+                              <p class="col-xs-12 d-block d-md-none pd0 mb5"> <button type="button" class="btn view_btn w100" data-data1="0000" data-data2="1218IT_uni000005" data-data3="1218IT_uni000005" onclick="addFavorite(this.getAttribute(&#39;data-data1&#39;), this.getAttribute(&#39;data-data2&#39;), this.getAttribute(&#39;data-data3&#39;))" id="addFavoriteButton"> <img src="../共通/files/commonfiles/images/icon_heart.gif" alt="お気に入り" class="mr5"> この商品をお気に入りに追加 </button> </p>
+                              <p class="col-xs-12 d-block d-md-none pd0 mb10"> <button type="button" class="btn view_btn w100" data-data1="0000" data-data2="1218IT_uni000005" onclick="moveInquiry(this.getAttribute(&#39;data-data1&#39;), this.getAttribute(&#39;data-data2&#39;))" id="moveInquiryButton"> <img src="../共通/files/commonfiles/images/icon_inquiry.gif" alt="お問い合わせ" class="mr5"> この商品に関するお問い合わせはこちら </button> </p>
+                            </div>
+                          </div>
+                          <!--sp_itemDetail_info -->
+                        </div>
+                      </div>
+                    </div>
+                    <!--box_right -->
+                    <br clear="all">
+                  </div>
+                  <!--contents_box -->
+                </div>
+                <div>
+                  <div class="wsparts-include clearBoth">
+                    <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/purchasingConfirm.js?date=20250704113221"></script>
+                    <div id="purchasingConfirmArea" data-ws-parts-popup="purchasingConfirm">
+                      <h3>購入確認</h3>
+                      <div class="purchasingConfirm">
+                        <div id="purchasingConfirm" data-attribute="html" data-escape="false"></div>
+                      </div>
+                      <div class="purchasingConfirmButtonArea">
+                        <input name="confirm" type="button" class="btn-orange float_r spBtn smallButton" value="同意する" id="confirmPurchasingButton">
+                        <input name="notConfirm" type="button" class="btn-gray float_l spBtn smallButton" value="同意しない" onclick="notConfirmPurchasing()" id="notConfirmPurchasingButton">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="wsparts-include clearBoth">
+                    <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/arrivalGoods.js?date=20250704113221"></script>
+                    <div class="arrivalHidden" id="arrivalGoodsArea" data-ws-parts-popup="arrivalGoods">
+                      <form id="arrivalGoodsForm">
+                        <div class="arrivalGoods">
+                          <h3>入荷お知らせ登録</h3>
+                          <div class="frameBody" data-type="catalog.arrival_goods">
+                            <div>
+                              <div class="leftTitle">
+                                <span>メールアドレス</span>
+                              </div>
+                              <div class="rightData">
+                                <input type="text" name="email" id="email" class="required email" data-item-name="メールアドレス" maxlength="254" data-item="email">
+                              </div>
+                            </div>
+                            <div class="buttonArea">
+                              <input type="button" value="入荷お知らせ登録" class="btn-gray closeLightBox" onclick="arrivalGoodsRegister('arrivalGoodsForm', this)" data-button="registArrivalGoods" id="arrivalGoodsRegisterButton">
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <div id="detailDescription">
+                  <div class="sp_itemDetail_other col-lg-12 pd0">
+                    <div class="contents_box">
+                      <h2>商品説明</h2>
+                      <div class="box_in"> PC商品説明</div>
+                    </div>
+                    <!--contents_box -->
+                    <div class="contents_box">
+                      <h2>返品について</h2>
+                      <div class="box_in">PC返品特約</div>
+                    </div>
+                    <!--contents_box -->
+                    <div class="contents_box">
+                      <h2>商品属性</h2>
+                      <div class="box_in">
+                        <table class="attribute_list">
+                          <tbody>
+                            <tr>
+                              <th>商品属性</th>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!--contents_box -->
+                    <div class="contents_box">
+                      <div class="contents_box_in">
+                        <h2>検索タグ</h2>
+                        <div class="box_in">
+                          <div class="clearfix pd0 mr5 mb5 text-center">
+                            <p>
+                              <a href="../catalog/タグトップ.html" id="tagBanner_0000_tag001">
+                                <img src="../共通/cms/images/0000/tag/tag001/tag001_t_pc.jpg?date=20250704170619" alt="タグ001" data-nophoto="noPhotoTag">
+                              </a>
+                            </p>
+                            <p>
+                              <a href="../catalog/タグトップ.html" id="tagName_0000_tag001">
+                                <span>タグ001</span>
+                              </a>
+                            </p>
+                          </div>
+                          <div class="clearfix pd0 mr5 mb5 text-center">
+                            <p>
+                              <a href="../catalog/タグトップ.html" id="tagBanner_0000_tag002">
+                                <img src="../共通/cms/images/0000/tag/tag002/tag002_t_pc.jpg?date=20250704170619" alt="タグ002" data-nophoto="noPhotoTag">
+                              </a>
+                            </p>
+                            <p>
+                              <a href="../catalog/タグトップ.html" id="tagName_0000_tag002">
+                                <span>タグ002</span>
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                        <!-- contents_box_in -->
+                        <a class="float_r clearBoth" href="../catalog/タグ一覧.html">すべてのタグをみる</a>
+                      </div>
+                    </div>
+                    <div class="contents_box">
+                      <div class="contents_box_in">
+                        <h2>特集</h2>
+                        <div class="box_in">
+                          <div class="clearfix pd0 mr5 mb5 text-center">
+                            <p>
+                              <a href="../catalog/特集.html" id="featureBanner_0000_feature_001">
+                                <img src="../共通/cms/images/0000/feature/feature_001/feature_001_f_pc.jpg?date=20250704170619" alt="特集001" data-nophoto="noPhotoFeature">
+                              </a>
+                            </p>
+                            <p>
+                              <a href="../catalog/特集.html" id="featureName_0000_feature_001">
+                                <span>特集001</span>
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                        <!-- contents_box_in -->
+                        <a class="float_r clearBoth" href="../catalog/特集一覧.html">すべての特集をみる</a>
+                      </div>
+                    </div>
+                    <div class="contents_box">
+                      <h2>もっと詳しい説明はこちら</h2>
+                      <div class="box_in">
+                        <a href="https://www.example.com/vn/" target="_blank" id="linkUrl"> <span>https://www.example.com/vn/</span> </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!--sp_itemDetail_other -->
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/slick-1.4.1/slick/slick.min.js"></script>
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/recommend_naviplus.js?date=20250704170620"></script>
+                <div class="box_in">
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/slick-1.4.1/slick/slick.min.js"></script>
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/recommendB.js?date=20250704170620"></script>
+                <div class="box_in">
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/slick-1.4.1/slick/slick.min.js"></script>
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/recommendA.js?date=20250704170620"></script>
+                <div class="box_in">
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/slick-1.4.1/slick/slick.min.js"></script>
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/recommendB.js?date=20250704170835"></script>
+                <div class="box_in">
+                  <div class="contents_box_in slick-track">
+                    <h3>こんな商品も買われています</h3>
+                    <div class="recommendListB">
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_B_0000_1218IT_stn000001"> <img src="../共通/cms/images/0000/catalog/1218IT_stn000001/1218IT_stn000001_thumb_pc.jpg?date=20250704170834" alt="規格非課税商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_B_0000_1218IT_stn000001">
+                            <p class="recoName">規格非課税商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>390円（非課税）</span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_B_0000_1218IT_uni000001"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000001/1218IT_uni000001_thumb_pc.jpg?date=20250704170834" alt="単品軽減8％商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_B_0000_1218IT_uni000001">
+                            <p class="recoName">単品軽減8％商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>1,280円※</span>
+                            <span> <br>
+                              <span>(参考税込 ：1,382.40円)※</span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_B_0000_1218IT_uni000004"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000004/1218IT_uni000004_thumb_pc.jpg?date=20250704170834" alt="単品0円年齢制限商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_B_0000_1218IT_uni000004">
+                            <p class="recoName">単品0円年齢制限商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>0円</span>
+                            <span> <br>
+                              <span></span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_B_0000_1218IT_uni000005"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_thumb_pc.jpg?date=20250704170834" alt="単品標準10％高額商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_B_0000_1218IT_uni000005">
+                            <p class="recoName">単品標準10％高額商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>55,000円</span>
+                            <span> <br>
+                              <span>(参考税込 ：60,500.00円)</span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_B_0000_1218IT_uni000006"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000006/1218IT_uni000006_thumb_pc.jpg?date=20250704170834" alt="単品標準10％予約商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_B_0000_1218IT_uni000006">
+                            <p class="recoName">単品標準10％予約商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span class="txt_red"> 予約価格 <span>2,980円</span>
+                            <span> <br>
+                              <span>(参考税込 ：3,278.00円)</span>
+                            </span>
+                          </span>
+                          <span> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_B_0000_1218IT_uni000007"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000007/1218IT_uni000007_thumb_pc.jpg?date=20250704170834" alt="単品非課税在庫切れ商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_B_0000_1218IT_uni000007">
+                            <p class="recoName">単品非課税在庫切れ商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>4,990円（非課税）</span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div>
+            <div class="wsparts-include clearBoth">
+              <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/slick-1.4.1/slick/slick.min.js"></script>
+              <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/recommendA.js?date=20250707094847"></script>
+              <div class="box_in">
+                <div class="contents_box_in slick-track">
+                  <h3>関連商品</h3>
+                  <div class="recommendListA">
+                    <div>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_A_0000_1218IT_set000001"> <img src="../共通/cms/images/0000/catalog/1218IT_set000001/1218IT_set000001_thumb_pc.jpg?date=20250707094846" alt="セット構成品標準10％商品A" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_A_0000_1218IT_set000001">
+                          <p class="recoName">セット構成品標準10％商品A</p>
+                        </a> </span>
+                      <span class="itembox_price">
+                        <span>
+                          <span>480円</span>
+                          <span> <br>
+                            <span>(参考税込 ：528.00円)</span>
+                          </span>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                      </span>
+                    </div>
+                    <div>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_A_0000_1218IT_set000002"> <img src="../共通/cms/images/0000/catalog/1218IT_set000002/1218IT_set000002_thumb_pc.jpg?date=20250707094846" alt="セット構成品標準10％商品B" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_A_0000_1218IT_set000002">
+                          <p class="recoName">セット構成品標準10％商品B</p>
+                        </a> </span>
+                      <span class="itembox_price">
+                        <span>
+                          <span>1,980円</span>
+                          <span> <br>
+                            <span>(参考税込 ：2,178.00円)</span>
+                          </span>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                      </span>
+                    </div>
+                    <div>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_A_0000_1218IT_set000003"> <img src="../共通/cms/images/0000/catalog/1218IT_set000003/1218IT_set000003_thumb_pc.jpg?date=20250707094846" alt="セット品標準10％商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_A_0000_1218IT_set000003">
+                          <p class="recoName">セット品標準10％商品</p>
+                        </a> </span>
+                      <span class="itembox_price">
+                        <span>
+                          <span>2,019円</span>
+                          <span> <br>
+                            <span>(参考税込 ：2,220.90円)</span>
+                          </span>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                      </span>
+                    </div>
+                    <div>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_A_0000_1218IT_set000007"> <img src="../共通/cms/images/0000/catalog/1218IT_set000007/1218IT_set000007_thumb_pc.jpg?date=20250707094846" alt="セット品標準10％商品Moc" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_A_0000_1218IT_set000007">
+                          <p class="recoName">セット品標準10％商品Moc</p>
+                        </a> </span>
+                      <span class="itembox_price">
+                        <span>
+                          <span>2,460円</span>
+                          <span> <br>
+                            <span>(参考税込 ：2,706.00円)</span>
+                          </span>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                      </span>
+                    </div>
+                    <div>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_A_0000_1218IT_stn000001"> <img src="../共通/cms/images/0000/catalog/1218IT_stn000001/1218IT_stn000001_thumb_pc.jpg?date=20250707094846" alt="規格非課税商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_A_0000_1218IT_stn000001">
+                          <p class="recoName">規格非課税商品</p>
+                        </a> </span>
+                      <span class="itembox_price">
+                        <span>
+                          <span>390円（非課税）</span>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                      </span>
+                    </div>
+                    <div>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_A_0000_1218IT_stn000011"> <img src="../共通/files/commonfiles/images/NoPhoto_commodity.jpg" alt="規格軽減税率8%商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_A_0000_1218IT_stn000011">
+                          <p class="recoName">規格軽減税率8%商品</p>
+                        </a> </span>
+                      <span class="itembox_price">
+                        <span>
+                          <span>1,370円※</span>
+                          <span> <br>
+                            <span>(参考税込 ：1,479.60円)※</span>
+                          </span>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                      </span>
+                    </div>
+                    <div>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage_A_0000_1218IT_uni000003"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000003/1218IT_uni000003_thumb_pc.jpg?date=20250707094846" alt="単品軽減税率変更商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                      <span> <a href="../catalog/商品詳細(単品).html" id="commodityName_A_0000_1218IT_uni000003">
+                          <p class="recoName">単品軽減税率変更商品</p>
+                        </a> </span>
+                      <span class="itembox_price">
+                        <span>
+                          <span>190円※</span>
+                          <span> <br>
+                            <span>(参考税込 ：199.50円)※</span>
+                          </span>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                        <span class="txt_red"> <br>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/slick-1.4.1/slick/slick.min.js"></script>
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/browsingHistory.js?date=20250704170620"></script>
+                <div class="box_in">
+                  <div class="contents_box_in slick-track">
+                    <h3>最近閲覧した商品</h3>
+                    <div class="browsingHistoryList">
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_set000003"> <img src="../共通/cms/images/0000/catalog/1218IT_set000003/1218IT_set000003_thumb_pc.jpg?date=20250704170619" alt="セット品標準10％商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_set000003">
+                            <p class="recoName">セット品標準10％商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>2,019円</span>
+                            <span> <br>
+                              <span>(参考税込 ：2,220.90円)</span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_uni000001"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000001/1218IT_uni000001_thumb_pc.jpg?date=20250704170619" alt="単品軽減8％商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_uni000001">
+                            <p class="recoName">単品軽減8％商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>1,280円※</span>
+                            <span> <br>
+                              <span>(参考税込 ：1,382.40円)※</span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_set000001"> <img src="../共通/cms/images/0000/catalog/1218IT_set000001/1218IT_set000001_thumb_pc.jpg?date=20250704170619" alt="セット構成品標準10％商品A" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_set000001">
+                            <p class="recoName">セット構成品標準10％商品A</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>480円</span>
+                            <span> <br>
+                              <span>(参考税込 ：528.00円)</span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_uni000004"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000004/1218IT_uni000004_thumb_pc.jpg?date=20250704170619" alt="単品0円年齢制限商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_uni000004">
+                            <p class="recoName">単品0円年齢制限商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>0円</span>
+                            <span> <br>
+                              <span></span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_stn000011"> <img src="../共通/files/commonfiles/images/NoPhoto_commodity.jpg" alt="規格軽減税率8%商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_stn000011">
+                            <p class="recoName">規格軽減税率8%商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>1,370円※</span>
+                            <span> <br>
+                              <span>(参考税込 ：1,479.60円)※</span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_uni000003"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000003/1218IT_uni000003_thumb_pc.jpg?date=20250704170619" alt="単品軽減税率変更商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_uni000003">
+                            <p class="recoName">単品軽減税率変更商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>190円※</span>
+                            <span> <br>
+                              <span>(参考税込 ：199.50円)※</span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_uni000022"> <img src="../共通/files/commonfiles/images/NoPhoto_commodity.jpg" alt="単品軽減税率変更商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_uni000022">
+                            <p class="recoName">単品軽減税率変更商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>190円※</span>
+                            <span> <br>
+                              <span>(参考税込 ：199.50円)※</span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_stn000001"> <img src="../共通/cms/images/0000/catalog/1218IT_stn000001/1218IT_stn000001_thumb_pc.jpg?date=20250704170619" alt="規格非課税商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_stn000001">
+                            <p class="recoName">規格非課税商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>390円（非課税）</span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_uni000007"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000007/1218IT_uni000007_thumb_pc.jpg?date=20250704170619" alt="単品非課税在庫切れ商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_uni000007">
+                            <p class="recoName">単品非課税在庫切れ商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>4,990円（非課税）</span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_uni000006"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000006/1218IT_uni000006_thumb_pc.jpg?date=20250704170619" alt="単品標準10％予約商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_uni000006">
+                            <p class="recoName">単品標準10％予約商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span class="txt_red"> 予約価格 <span>2,980円</span>
+                            <span> <br>
+                              <span>(参考税込 ：3,278.00円)</span>
+                            </span>
+                          </span>
+                          <span> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityImage0000_1218IT_uni000005"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000005/1218IT_uni000005_thumb_pc.jpg?date=20250704170619" alt="単品標準10％高額商品" class="recoImg" loading="lazy" decoding="async"> </a> </span>
+                        <span> <a href="../catalog/商品詳細(単品).html" id="commodityName0000_1218IT_uni000005">
+                            <p class="recoName">単品標準10％高額商品</p>
+                          </a> </span>
+                        <span class="itembox_price">
+                          <span>
+                            <span>55,000円</span>
+                            <span> <br>
+                              <span>(参考税込 ：60,500.00円)</span>
+                            </span>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                          <span class="txt_red"> <br>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/reviewList.js?date=20250704170620"></script>
+                <div id="reviewListArea">
+                  <div class="contents_box_in">
+                    <div data-type="catalog.review_list" class=" titleArea">
+                      <h3> <span class=""> レビュー <span data-item="pagerRowCount" class="pagerRowCountArea"></span> </span> </h3>
+                    </div>
+                    <div class="reviewListBody">
+                      <div data-type="catalog.review_list" class="readMoreDataType">
+                        <div data-item="reviewList" id="reviewList">
+                          <div class="dashed hidden review_area" id="reviewInfoTemplate">
+                            <div class="box_in review_txt">
+                              <div class="mb10">
+                                <p> <input data-item="reviewScore" class="reviewScore" type="hidden" data-attribute="value"> <span
+                                    class="reviewScoreImageArea"> <span class="reviewScore5"> <img
+                                        src="../共通/files/commonfiles/images/lbl_Star100.gif" class="mr5"> </span> <span
+                                      class="reviewScore4"> <img src="../共通/files/commonfiles/images/lbl_Star80.gif" class="mr5"> </span>
+                                    <span class="reviewScore3"> <img src="../共通/files/commonfiles/images/lbl_Star60.gif" class="mr5">
+                                    </span> <span class="reviewScore2"> <img src="../共通/files/commonfiles/images/lbl_Star40.gif"
+                                        class="mr5"> </span> <span class="reviewScore1"> <img
+                                        src="../共通/files/commonfiles/images/lbl_Star20.gif" class="mr5"> </span> </span> <span
+                                    class="reviewTitle"> <span data-item="reviewTitle" data-attribute="html" class="mr5"></span> </span>
+                                  <span class="reviewContributedDatetime"> <span data-item="reviewContributedDatetime"
+                                      data-attribute="html"></span> </span> </p>
+                              </div>
+                              <p class="textOverFlow" data-item="reviewDescription" data-escape="true" data-attribute="html">レビューテキスト</p>
+                              <span> （<span data-item="nickName" data-attribute="html"></span> さん） </span>
+                            </div>
+                          </div>
+                          <div data-item="replyList" id="replyList">
+                            <div class="dashed hidden reply_area" id="replyInfoTemplate">
+                              <div class="box_in reply_txt">
+                                <span class="reviewReplyContributedDatetime"> <span data-item="reviewReplyContributedDatetime"
+                                    id="reviewReplyContributedDatetime" data-attribute="html"></span> </span>
+                                <p class="textOverFlow" data-item="reviewReplyDescription" id="reviewReplyDescription" data-escape="true"
+                                  data-attribute="html">レビュー返信テキスト</p>
+                                <span> （<span data-item="replyNickname" id="replyNickname" data-attribute="html"></span>） </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dashed review_area reviewArea" id="reviewInfo_0">
+                            <div class="box_in review_txt">
+                              <div class="mb10">
+                                <p> <input data-item="reviewScore" class="reviewScore" type="hidden" data-attribute="value" value="5"> <span
+                                    class="reviewScoreImageArea"> <span class="reviewScore5"> <img
+                                        src="../共通/files/commonfiles/images/lbl_Star100.gif" class="mr5"> </span> </span> <span
+                                    class="reviewTitle"> <span data-item="reviewTitle" data-attribute="html" class="mr5">very good</span>
+                                  </span> <span class="reviewContributedDatetime"> <span data-item="reviewContributedDatetime"
+                                      data-attribute="html">2025/06/19</span> </span> </p>
+                              </div>
+                              <p class="textOverFlow" data-item="reviewDescription" data-escape="true" data-attribute="html">ようこそ</p>
+                              <span> （<span data-item="nickName" data-attribute="html">ようこそ</span> さん） </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <input id="currentPage" type="hidden" value="1">
+                      <div data-type="catalog.review_list" class="readMoreArea">
+                        <div data-item="readMore">
+                          <a id="openReadMore" href="javascript:reviewListReadMore()" class="hidden">レビューをもっと見る</a>
+                          <a id="closeReadMore" href="javascript:closeReviewList()" class="hidden">閉じる</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/brandBanner.js?date=20250704170620"></script>
+                <div id="brandBannerArea">
+                  <div class="contents_box_in">
+                    <h2>ブランド一覧</h2>
+                    <div class="box_in bnr_top row">
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/ブランド.html" id="brandBanner_0000_brand001"> <img src="../共通/cms/images/0000/brand/brand001/brand001_b_pc.jpg?date=20250704170619" alt="ブランド001" data-nophoto="noPhotoBrand" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/ブランド.html" id="brandName_0000_brand001"> <span>ブランド001</span> </a> </p>
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/ブランド.html" id="brandBanner_0000_brand002"> <img src="../共通/cms/images/0000/brand/brand002/brand002_b_pc.jpg?date=20250704170619" alt="ブランド002" data-nophoto="noPhotoBrand" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/ブランド.html" id="brandName_0000_brand002"> <span>ブランド002</span> </a> </p>
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/ブランド.html" id="brandBanner_0000_brand003"> <img src="../共通/cms/images/0000/brand/brand003/brand003_b_pc.jpg?date=20250704170619" alt="ブランド003" data-nophoto="noPhotoBrand" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/ブランド.html" id="brandName_0000_brand003"> <span>ブランド003</span> </a> </p>
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/ブランド.html" id="brandBanner_0000_brand004"> <img src="../共通/cms/images/0000/brand/brand004/brand004_b_pc.jpg?date=20250704170619" alt="ブランド004" data-nophoto="noPhotoBrand" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/ブランド.html" id="brandName_0000_brand004"> <span>ブランド004</span> </a> </p>
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/ブランド.html" id="brandBanner_0000_brand005"> <img src="../共通/cms/images/0000/brand/brand005/brand005_b_pc.jpg?date=20250704170619" alt="ブランド005" data-nophoto="noPhotoBrand" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/ブランド.html" id="brandName_0000_brand005"> <span>ブランド005</span> </a> </p>
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/ブランド.html" id="brandBanner_0000_brand006"> <img src="../共通/cms/images/0000/brand/brand006/brand006_b_pc.jpg?date=20250704170619" alt="ブランド006" data-nophoto="noPhotoBrand" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/ブランド.html" id="brandName_0000_brand006"> <span>ブランド006</span> </a> </p>
+                    </div>
+                  </div>
+                  <a class="float_r clearBoth" href="../catalog/ブランド一覧.html">すべてのブランドをみる</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/campaignBanner.js?date=20250704170620"></script>
+                <div id="campaignBannerArea">
+                  <div class="contents_box_in">
+                    <h2>キャンペーン一覧</h2>
+                    <div class="box_in bnr_top row">
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/キャンペーン.html" id="campaignBanner_0000_campaign_001"> <img src="../共通/cms/images/0000/campaign/campaign_001/campaign_001_c_pc.jpg?date=20250704170619" alt="キャンペーンA" data-nophoto="noPhotoCampaign" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/キャンペーン.html" id="campaignName_0000_campaign_001"> <span>キャンペーンA</span> </a> </p>
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/キャンペーン.html" id="campaignBanner_0000_campaign_002"> <img src="../共通/cms/images/0000/campaign/campaign_002/campaign_002_c_pc.jpg?date=20250704170619" alt="キャンペーンB" data-nophoto="noPhotoCampaign" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/キャンペーン.html" id="campaignName_0000_campaign_002"> <span>キャンペーンB</span> </a> </p>
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/キャンペーン.html" id="campaignBanner_0000_campaign_003"> <img src="../共通/cms/images/0000/campaign/campaign_003/campaign_003_c_pc.jpg?date=20250704170619" alt="キャンペーンC" data-nophoto="noPhotoCampaign" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/キャンペーン.html" id="campaignName_0000_campaign_003"> <span>キャンペーンC</span> </a> </p>
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/キャンペーン.html" id="campaignBanner_0000_campaign_004"> <img src="../共通/cms/images/0000/campaign/campaign_004/campaign_004_c_pc.jpg?date=20250704170619" alt="キャンペーンD" data-nophoto="noPhotoCampaign" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/キャンペーン.html" id="campaignName_0000_campaign_004"> <span>キャンペーンD</span> </a> </p>
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/キャンペーン.html" id="campaignBanner_0000_campaign_005"> <img src="../共通/cms/images/0000/campaign/campaign_005/campaign_005_c_pc.jpg?date=20250704170619" alt="キャンペーンE" data-nophoto="noPhotoCampaign" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/キャンペーン.html" id="campaignName_0000_campaign_005"> <span>キャンペーンE</span> </a> </p>
+                      <p class="col-xs-12 col-sm-12 col-md-4"> <span class="bnr_img"> <a href="../catalog/キャンペーン.html" id="campaignBanner_0000_campaign_006"> <img src="../共通/cms/images/0000/campaign/campaign_006/campaign_006_c_pc.jpg?date=20250704170619" alt="キャンペーンF" data-nophoto="noPhotoCampaign" loading="lazy" decoding="async"> </a> </span> <a href="../catalog/キャンペーン.html" id="campaignName_0000_campaign_006"> <span>キャンペーンF</span> </a> </p>
+                    </div>
+                  </div>
+                  <a class="float_r clearBoth" href="../catalog/キャンペーン一覧.html">すべてのキャンペーンをみる</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/pageFooterMenu.js?date=20250704170620"></script>
+                <div class="pageFooter">
+                  <div class="container">
+                    <div class="footer_sitemap">
+                      <div class="footer_sitemap_in clearfix">
+                        <div class="go_top">
+                          <a id="footerGoTop">ページトップへ</a>
+                        </div>
+                        <div class="row">
+                          <div class="sitemap_cate col-xs-12 col-sm-12 col-md-9 row m-0">
+                            <div class="footerCategory col-xs-12 col-sm-12 col-md-4">
+                              <dl>
+                                <a href="../catalog/商品一覧(サムネイル表示).html" id="category_C00002">
+                                  <dt>カテゴリーC2(PC)</dt>
+                                </a>
+                              </dl>
+                            </div>
+                            <div class="footerCategory col-xs-12 col-sm-12 col-md-4">
+                              <dl>
+                                <a href="../catalog/商品一覧(サムネイル表示).html" id="category_C00003">
+                                  <dt>カテゴリーC3(PC)</dt>
+                                </a>
+                              </dl>
+                            </div>
+                          </div>
+                        <div class="sitemap_r col-xs-12 col-sm-12 col-md-3">
+                          <dl>
+                            <dt>
+                              <a href="../catalog/タグ一覧.html" id="sitemapTagList">タグ一覧</a>
+                            </dt>
+                            <dt>
+                              <a href="../catalog/キャンペーン一覧.html" id="sitemapCampaignList">キャンペーン一覧</a>
+                            </dt>
+                            <dt>
+                              <a href="../catalog/ブランド一覧.html" id="sitemapBrandList">ブランド一覧</a>
+                            </dt>
+                            <dt>
+                              <a href="../catalog/特集一覧.html" id="sitemapFeatureList">特集一覧</a>
+                            </dt>
+                          </dl>
+                          <dl>
+                            <dt>
+                              <a href="../mypage/マイページ.html" id="sitemapMypage">マイページ</a>
+                            </dt>
+                            <dt>
+                              <a href="../customer/お客様情報登録(基本情報)_更新.html" id="sitemapCustomer">新規会員登録</a>
+                            </dt>
+                            <dt>
+                              <a href="../page/ヘルプ.html" id="sitemapHelp">お買いもの方法</a>
+                            </dt>
+                            <dt>
+                              <a href="../cart/まとめてカート.html" id="sitemapBlanketCart">カタログから商品を購入</a>
+                            </dt>
+                          </dl>
+                          <dl>
+                            <dt>
+                              <a href="../customer/お問い合わせ入力.html" id="sitemapInquiry">お問い合わせ</a>
+                            </dt>
+                            <dt>
+                              <a href="../customer/メールマガジン.html" id="sitemapMailMagazine">メールマガジン</a>
+                            </dt>
+                            <dt>
+                              <a href="../shop/サイト情報.html" id="sitemapMoveSite">サイト情報</a>
+                            </dt>
+                          </dl>
+                          <p class="sp_footer_sns"> <a href="https://www.facebook.com/FacebookDevelopers" class="mr5" target="_blank" id="sitemapFacebook"> <img src="../共通/files/commonfiles/images/icon_fb.png" alt="facebook" title="facebook"> </a> <a href="https://twitter.com/twitter" target="_blank" id="sitemapTwitter"> <img src="../共通/files/commonfiles/images/icon_tw.png" alt="twitter" title="twitter"> </a> </p>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="footerLinkArea">
+                  <a href="../page/利用規約.html" id="ruletouse">利用規約</a> &nbsp;|&nbsp; <a href="../info/個人情報保護方針.html" id="privacypolicy">個人情報保護方針</a> &nbsp;|&nbsp; <a href="../info/クッキーポリシー.html" id="cookiepolicy">クッキーポリシー</a> &nbsp;|&nbsp; <a href="../info/特定商取引法に基づく表記.html" id="compliance">特定商取引法に基づく表記</a> &nbsp;|&nbsp; <a href="../info/サイトマップ.html?searchMode=multiple" id="sitemap">サイトマップ</a>
+                  <div class="copyRight">
+                    <span>Copyright (c) 2025 DG Business Technology,Inc. All Rights Reserved.</span>
+                  </div>
+                </div>
+                <div id="floating-menu" class="d-block d-md-none pd0">
+                  <div id="footerSearchArea" style="display: none;">
+                    <div id="pageFooterSearchAlertArea" class="hidden">
+                      <span id="pageFooterSearchAlert" class="searchAlert">検索条件を入力してください。</span>
+                    </div>
+                    <form id="footerSearchForm">
+                      <span>
+                        <select id="footerSearchCategoryCode" name="searchCategoryCode" class="pageFooterSearchCategoryCode">
+                          <option value="0">すべての商品</option>
+                          <option value="C00002">カテゴリーC2(PC...</option>
+                          <option value="C00003">カテゴリーC3(PC...</option>
+                        </select>
+                        <input value="" type="text" name="searchWord" id="footerSearchWord" class="full_width largeText pageFooterSearchWord" maxlength="50" onkeydown="if(event.keyCode == 13){javascript:event.preventDefault();getElementById('footerSearchButton').click();}">
+                      </span>
+                      <input type="hidden" name="searchMethod" value="0">
+                      <button type="button" class="btn" onclick="location.href='../catalog/検索結果.html'" id="footerSearchButton">検索</button>
+                      <button type="button" class="btn" onclick="location.href='../catalog/詳細検索.html'"id="footerCatalogSearchButton">詳細検索</button>
+                    </form>
+                  </div>
+                  <div class="container-lg p-0">
+                    <div class="row m-0 footer-menu">
+                      <a class="col-3 p-0" href="../common/トップページ.html"> <button type="button" class="btn btn-black"> <img src="../共通/files/commonfiles/images/sp_flo_top.png" alt="トップへ"> </button> </a>
+                      <a class="col-3 p-0" href="../mypage/マイページ.html"> <button type="button" class="btn btn-black"> <img src="../共通/files/commonfiles/images/sp_flo_mypage.png" alt="マイページ"> </button> </a>
+                      <a class="col-3 p-0" href="../cart/カート.html"> <button type="button" class="btn btn-black"> <img src="../共通/files/commonfiles/images/sp_flo_cart.png" alt="カート"> <sub id="footerItemCount" style="display: none;"></sub> </button> </a>
+                      <a class="col-3 p-0" onclick="javascript:footerSearch()"> <button type="button" class="btn btn-black bdr_none"> <img src="../共通/files/commonfiles/images/sp_flo_search.png" alt="検索"> </button> </a>
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" id="transactionToken" name="transactionToken" value="b1c55d05-7316-4e80-9a72-55f2d1aed723">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/final.js?date=20250704170620"></script>
+              </div>
+            </div>
+            <div>
+              <div id="cookieConsentBannerRoot" class="wsparts-include">
+                <script>
+                  /*<![CDATA[*/
+                  var relatedExternalCookieNames = [];
+                  /*]]>*/
+
+                </script>
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/cookieConsentBanner.js?date=20250704170620"></script>
+                <div id="cookieConsentBanner" class="cookieConsentBanner hidden">
+                  <div class="d-none d-md-block d-lg-block pd0 cookieConsentBannerArea">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8 floating-txt">
+                          <div class="float_l cookiePolicy">
+                            <span>当サイトでは、サイトの利便性向上のため、クッキー（Cookie）を使用しています。<br> サイトのクッキー（Cookie）の仕様に関しては <a href="../info/クッキーポリシー.html" id="moveCookiePolicy">「クッキーポリシー」</a>をお読みください。</span>
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                          <div class="float_r mt5">
+                            <button type="button" class="btn btn-deny" onclick="acceptCookie()">すべて拒否する</button>
+                            <button type="button" class="btn btn-accept" onclick="acceptCookie()">すべてのCookieを受け入れる</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="cookieConsentBannerSP" class="cookieConsentBannerSP hidden">
+                  <div class="d-block d-lg-none pd0 cookieConsentBannerAreaSP">
+                    <div class="container p-0">
+                      <div class="row m-0">
+                        <div class="col-xs-12 col-sm-12 floating-txt">
+                          <div class="float_l cookiePolicySP">
+                            <span>当サイトでは、サイトの利便性向上のため、クッキー（Cookie）を使用しています。<br> サイトのクッキー（Cookie）の仕様に関しては <a href="../info/クッキーポリシー.html" id="moveCookiePolicy">「クッキーポリシー」</a>をお読みください。</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row m-1">
+                        <div class="col-12">
+                          <button type="button" class="btn btn-deny" onclick="acceptCookie()">すべて拒否する</button>
+                        </div>
+                      </div>
+                      <div class="row m-1">
+                        <div class="col-12">
+                          <button type="button" class="btn btn-accept" onclick="acceptCookie()">すべてのCookieを受け入れる</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+            </div>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

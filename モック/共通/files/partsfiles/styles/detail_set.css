@@ -1,0 +1,246 @@
+@charset "utf-8";
+.itemDetail_txt{
+  padding:0 10px 10px 10px;
+  clear:both;
+}
+.itemDetail_txt span{
+  font-weight:normal;
+}
+.itemDetail_txt .ami{
+  background:url(../../commonfiles/images/line_h2.gif);
+  padding:10px;
+  color:#af0000;
+}
+.itemDetail_txt .amiToggle{
+  background:url(../../commonfiles/images/line_h2.gif);
+  padding:10px;
+}
+.itemDetail_txt .amiNoImg{
+  background:url(../../commonfiles/images/line_h2.gif);
+  padding:10px;
+  color:#af0000;
+}
+.itemDetail_txt .ami span,
+.itemDetail_txt .amiToggle span{
+  padding-left:40px;
+  min-height:24px;
+  display:inline-block;
+}
+.itemDetail_txt .amiNoImg span{
+  min-height:24px;
+  display:inline-block;
+}
+
+.itemDetail_txt .amiToggle .bg_cam{
+  background:url(../../commonfiles/images/icon_sale.gif) no-repeat left top;
+}
+.detail_arrow{
+  border-top:1px solid #cccccc;
+  height:11px;
+  width:100%;
+  position:relative;
+}
+.detail_arrow img{
+  position:absolute;
+  top:-1px;
+  left:50%;
+}
+
+.catalogCompositionItem {
+  min-height: 90px;
+}
+
+.commodityCompositionArea :last-child{
+  border: none;
+}
+
+.itemDetail_txt table tr th{
+  width:30%;
+}
+.itemDetail_txt table tr td{
+  padding:3px;
+}
+.itemDetail_txt table b{
+  font-size:16px;
+}
+
+.standard1Name, .standard2Name{
+  display: inline-block;
+  width: 170px;
+}
+
+.commodityCompositionDetail{
+  display: inline-block;
+  margin: 5px 10px 0px 15px;
+}
+
+.compositionLeftTitle{
+  min-width: 60px;
+  display: inline-block;
+}
+
+.commodityStandardArea input{
+  display: none;
+}
+
+.itemMain{
+  border:1px solid #cccccc;
+  text-align:center;
+  vertical-align:middle;
+}
+.itemMain img,
+.item_thum img{
+  max-width:100%;
+  max-height:100%;
+  position: relative !important;
+}
+.item_thum a{
+  display:inline-block;
+  border:1px solid #cccccc;
+  width:103px;
+  height:103px;
+  margin-right:4px;
+  margin-top:5px;
+  text-align:center;
+  vertical-align:middle;
+}
+.item_thum img.last_r{
+  margin-right:0;
+}
+.attribute_list{
+  border-top:1px solid #cccccc;
+  border-right:1px solid #cccccc;
+  border-left:1px solid #cccccc;
+  width:100%;
+}
+.attribute_list th,
+.attribute_list td{
+  padding:10px 20px;
+  border-bottom:1px solid #cccccc;
+}
+.attribute_list th{
+  background:#eeeeee;
+  width:30%;
+  border-right:1px solid #cccccc;
+}
+
+.item_set_thum{
+  float:left;
+}
+.item_set_thum img{
+  max-width:76px;
+  max-height:86px;
+  text-align:center;
+}
+.mainNoPhotoImg{
+  width:100%;
+  height:100%;
+}
+
+.btn_off {
+  background-color: #eeeeee;
+  border: medium none;
+  color: #ffffff;
+  text-align: center;
+  padding: 6px 12px;
+}
+
+.selectStandardBtn{
+  background-color: #ffffff;
+  border: #cccccc solid 2px;
+  padding: 1px 6px;
+}
+
+.selectedStandard{
+  border: #e68012 solid 2px;
+}
+
+.standardThumb {
+  margin: -1px -6px;
+}
+
+/* SNS */
+#snsArea{
+  margin: 10px 0px 0px 0px;
+}
+
+.discoColor{
+  color:#af0000;
+}
+.discoColorDisable{
+  color:#c0c0c0;
+}
+
+select.incWorkDetail {
+  direction: rtl;
+}
+  
+select.incWorkDetail option{
+  text-align: left;
+}
+
+/*1201px以上のcss*/
+@media only screen and (min-width:1201px) {
+  .item_thum a{
+    width:107px;
+    height:107px;
+  }
+  .item_thum img{
+    top: 49.5%;
+    -webkit-transform: translateY(-49.5%);
+    -ms-transform: translateY(-49.5%);
+    transform: translateY(-49.5%);
+  }
+  .itemMain{
+    width:573px;
+    height:573px;
+  }
+}
+
+/*992pxから1199pxまでのcss*/
+@media only screen and (min-width:992px) and (max-width:1199px) {
+  .itemMain{
+    width:554px;
+    height:554px;
+  }
+}
+
+/*768pxから991pxまでのcss*/
+@media only screen and (min-width:768px) and (max-width:991px) {
+  .item_thum a{
+    margin-right:3px;
+    width:78px;
+    height:78px;
+  }
+  .itemMain{
+    width:426px;
+    height:426px;
+  }
+}
+
+
+/*481pxから767pxまでのcss*/
+@media only screen and (min-width:481px) and (max-width:767px) {
+  .item_thum a{
+    width:90px;
+    height:90px;
+  }
+  .itemMain{
+    width:458px;
+    height:458px;
+    margin:0 auto;
+  }
+}
+
+/*480px以下で表示*/
+@media screen and (max-width:480px){
+  .item_thum a{
+    width:52px;
+    height:52px;
+  }
+  .itemMain{
+    width:298px;
+    height:298px;
+    margin:0 auto;
+  }
+}

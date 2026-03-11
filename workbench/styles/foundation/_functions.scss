@@ -1,0 +1,40 @@
+// ========================================
+// Functions
+// 汎用的な計算関数
+// ========================================
+
+@use "sass:math";
+
+/// 単位を除去する（内部ヘルパー関数）
+/// @param {Number} $num - 単位付き数値
+/// @return {Number} - 単位なし数値
+@function strip-unit($num) {
+  @return math.div($num, ($num * 0 + 1));
+}
+
+/// px を rem に変換（16px基準）
+/// @param {Number} $px - px値（数値のみでも単位付きでもOK）
+/// @return {Number} - rem値
+/// @example
+///   .example { font-size: rem(16px); } // => 1rem
+///   .example { font-size: rem(16); }   // => 1rem
+@function rem($px) {
+  $value: $px;
+  // 単位が付いている場合は除去
+  @if unitless($px) {
+    $value: $px;
+  } @else {
+    $value: strip-unit($px);
+  }
+  @return math.div($value, 16) * 1rem;
+}
+
+/// em値を計算（親要素基準）
+/// @param {Number} $px - 目標px値
+/// @param {Number} $base - 親のフォントサイズ（デフォルト16px）
+/// @return {Number} - em値
+@function em($px, $base: 16px) {
+  $px-value: if(unitless($px), $px, strip-unit($px));
+  $base-value: if(unitless($base), $base, strip-unit($base));
+  @return math.div($px-value, $base-value) * 1em;
+}

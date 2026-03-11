@@ -1,0 +1,100 @@
+/*---------------------------
+メールマガジンエリア
+---------------------------*/
+div#mailMagazineArea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+div#mailMagazineArea .checkbox{
+  margin-top:0;
+}
+div#mailMagazineArea .checkbox li{
+  float:none;
+}
+
+/*---------------------------
+メールマガジンのメッセージ
+---------------------------*/
+#mailMagazineArea div.mailMagazineIntro {
+  font-weight: bold;
+}
+
+/*---------------------------
+リストのヘッダ
+---------------------------*/
+#mailMagazineArea li.selectHeader {
+  width: 64px;
+}
+
+#mailMagazineArea li.titleHeader {
+  width: 270px;
+}
+
+#mailMagazineArea li.descriptionHeader {
+  width: 270px;
+}
+
+/*---------------------------
+�ｽ�ｽ�ｽX�ｽg�ｽﾌ暦ｿｽ
+---------------------------*/
+#mailMagazineArea li.selectCol {
+  width: 64px;
+  text-align: center;
+}
+
+#mailMagazineArea li.titleCol {
+  width: 270px;
+}
+
+#mailMagazineList ul:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+#mailMagazineArea .pointer {
+  cursor: pointer;
+}
+
+/*---------------------------
+メール入力エリア
+---------------------------*/
+#emailArea {
+  border: 1px solid #cccccc;
+  padding: 11px;
+  background-color: #f9f9f9;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.emailIn{
+  text-align:center;
+}
+
+.emailBox {
+  width: 20em;
+}
+
+/*-----------------------------
+  動的設定
+-----------------------------*/
+/*tab,PCで表示*/
+@media screen and (min-width:768px) {
+  #mailMagazineArea li.descriptionCol {
+    width: 65%;
+    white-space: normal;
+  }
+}
+
+/*767px以下（SP）で表示*/
+@media screen and (max-width:767px) {
+  #mailMagazineArea li.descriptionCol {
+    width: 100%;
+    white-space: normal;
+  }
+  .emailBtn{
+    margin-top:10px;
+    display:block;
+  }
+  .btnStop{
+    margin-top:40px;
+  }
+}

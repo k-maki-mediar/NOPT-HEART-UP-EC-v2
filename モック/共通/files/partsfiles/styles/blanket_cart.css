@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+#blanketCartArea {
+  clear: both;
+}
+
+#blanketCartMain #buttonArea {
+  margin-top: 10px;
+  overflow: hidden;
+}

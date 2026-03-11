@@ -1,0 +1,7 @@
+<title th:text="${CategoryResultBean.categoryName}"></title>
+<script itemscope itemtype="http://schema.org/WebContent" itemref="s1 s2"></script>
+<meta th:content="${CategoryResultBean.categoryName}" name="description" />
+<meta id="s1" th:content="${CategoryResultBean.categoryName}" itemprop="description" />
+<meta name="keywords" th:content="${CategoryResultBean.categoryName}" />
+<link th:href="@{/} + ${'category/' + CategoryResultBean.categoryCode +'/'}" rel="canonical" />
+<link id="s2" th:href="@{/} + ${'category/' + CategoryResultBean.categoryCode +'/'}" itemprop="url" />

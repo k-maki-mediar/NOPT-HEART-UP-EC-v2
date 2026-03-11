@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.dash {
+    border-top: 1px dashed #cccccc;
+}
+
+.dash:first-child {
+    border-top: none;
+}
+
+/*-----------------------------
+  ボタンエリア
+-----------------------------*/
+#buttonArea {
+    margin-top: 10px;
+    overflow: hidden;
+}

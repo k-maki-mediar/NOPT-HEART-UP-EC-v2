@@ -1,0 +1,62 @@
+// ========================================
+// Main SCSS Entry Point
+// workbench/styles/main.scss
+// ========================================
+// ビルド後: mock/files/commonfiles/styles/common.css
+//
+// v2方針: 元パッケージのcommon.css・各画面用CSSを除去し、新規作成
+// レガシー共存レイヤー（.legacy-page, .c-app-root）は不要
+
+// ========================================
+// Foundation（基盤）
+// ========================================
+
+// 1. Functions（関数 - 最初に読み込み）
+@use 'foundation/functions' as *;
+
+// 2. Variables（変数 - CSS変数出力を含む）
+@use 'foundation/variables' as *;
+
+// 3. Mixins
+@use 'foundation/mixins' as *;
+
+// ========================================
+// Base（共通基盤スタイル - 全classベース）
+// ========================================
+
+@use 'base/typography';
+@use 'base/forms';
+@use 'base/tables';
+@use 'base/buttons';
+@use 'base/messages';
+@use 'base/utilities';
+
+// ========================================
+// rem基準の設定
+// ========================================
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+// フォントサイズ切り替え機能
+html[data-font-size="large"] {
+  font-size: 112.5%; // 18px
+}
+
+html[data-font-size="x-large"] {
+  font-size: 125%; // 20px
+}
+
+// ========================================
+// Body設定（v2: モダンページのみ）
+// ========================================
+
+body {
+  font-size: 16px;
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--color-bg);
+}

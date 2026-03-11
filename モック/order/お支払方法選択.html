@@ -1,0 +1,953 @@
+﻿
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <title>お支払い方法選択</title>
+  <meta name="description" content="">
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/front/app/error/no_support/" />
+  </noscript>
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/bootstrap-5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/commonfiles/styles/reset.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/commonfiles/styles/common.css?date=20250715111600" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/systemfiles/styles/sociallogin.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/jquery.colorbox-1.6.4/colorbox.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/concrete/concrete.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/fontawesome-5.15.4-web/css/all.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/pageHeaderLogoOnly.css?date=20250715111601">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/payment.css?date=20250715111601">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/pageFooterCopyrightOnly.css?date=20250715111601">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/cookieConsentBanner.css?date=20250715111601">
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/popper-2.11.8/dist/popper.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/bootstrap-5.3.2/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery.lightbox_me/jquery.lightbox_me.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/elevatezoom-plus-master/jquery.ez-plus.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery.colorbox-1.6.4/jquery.colorbox.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/fontawesome-5.15.4-web/js/all.js"></script>
+  <script>
+    /*<![CDATA[*/
+    var settings = {
+      servletMapping: "/app",
+      applicationLevel: "/pc",
+      commonPath: "/cms/pc/common/",
+      apiServ: "/api",
+      logServ: "/log",
+      pagingLineSize: 3,
+      pagingMaxSize: 125,
+      context: "/front",
+      apiContext: "/front",
+      defaultLang: "ja",
+      isUseWovn: false,
+      siteShopCode: "0000",
+      sessionTimeout: 30,
+      sessionTimer: 2,
+      sessionUrl: ["/cart/cart/", "/order/guest/", "/order/shipping/", "/order/payment/", "/order/confirm/", "/customer/customer_edit/", "/customer/customer_confirm/", "/order/shipping_multi/", "/order/shipping_split/"],
+      isUseNaviPlusSearch: false,
+      isUseNaviPlusSearchSuggest: false,
+      isUseNaviPlusRecommend: false,
+      isUseNaviPlusReview: false
+    };
+    /*]]>*/
+
+  </script>
+  <script>
+    function paymentDeleteCardNoRequestMokup(num) {
+      var confirmText = "削除しますか？";
+      if (window.confirm(confirmText)) {
+        $('.informationBlock').show();
+        $('#messageRegist').hide();
+        window.scrollTo(0, 0);
+        document.getElementById('cardInfo_0').style.display = 'none';
+        $('#messageRemove').show();
+      }
+    }
+
+  function registerPayment(){
+    $('.informationBlock').show();
+    $('#messageRegist').show();
+    $('#deleteComplete').hide();
+    window.scrollTo(0, 0);
+  }
+  </script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/initialize.js?date=20250715111600"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/core.js?date=20250715111600"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/validate.js?date=20250715111600"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/process.js?date=20250715111600"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/session.js?date=20250715111600"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/socialLogin.js?date=20250715111600"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/webReception.js?date=20250715111600"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/veritrans.js?date=20250715111600"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/blocks/image/js/image_hover.js"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/js/responsive-slides.js"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/js/videoPlayer_swfobject.js"></script>
+</head>
+
+<body>
+  <div class="ccm-page page-type-original-order-pagetype page-template-orderflow">
+    <div>
+      <div id="facebookScriptArea" class="wsparts-include clearBoth">
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v15.0" nonce="nIvcsYYq">
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればfacebookScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#facebookScriptArea').hide();
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="lineScriptArea" class="wsparts-include clearBoth">
+        <script src="https://scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async defer>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればlineScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#lineScriptArea').hide();
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="twitterScriptArea" class="wsparts-include clearBoth">
+        <script>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればtwitterScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#twitterScriptArea').hide();
+          } else {
+            window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+              return t;
+            }(document, "script", "twitter-wjs"));
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="pinterestScriptArea" class="wsparts-include clearBoth">
+        <script>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればpinterestScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#pinterestScriptArea').hide();
+          } else {
+            $('#pinterestScriptArea').html('<script type="text/javascript" async defer src="https://assets.pinterest.com/js/pinit.js"/>');
+          }
+
+        </script>
+      </div>
+    </div>
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <div class="row">
+            <div>
+              <div class="wsparts-include">
+                <div id="pageHeader">
+                  <div id="titleArea">
+                    <img src="../共通/files/commonfiles/images/sitelogo.png" alt="SI Web Shopping v12 一店舗" title="SI Web Shopping v12 一店舗">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <div id="message" data-ws-parts-popup="messageArea">
+                  <div class="informationBlock" style="display: none;">
+                  <div class="informationMessage" id="messageRegist" style="display: none;">クレジットカード情報の登録を完了しました。</div>
+                  <div class="informationMessage" id="messageRemove" style="display: none;">カード情報の削除を完了しました。</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/payment.js?date=20250715111601"></script>
+                <div id="paymentMain">
+                  <div class="paymentNavigation">
+                    <div class="paymentNavigationImg">
+                      <img class="" src="../共通/files/commonfiles/images/navi_order_payment.gif" alt="お支払い方法選択">
+                    </div>
+                  </div>
+                  <div class="cartTtl"> お支払い方法選択 </div>
+                  <div id="paymentMainArea">
+                    <div id="orderArea">
+                      <form id="paymentForm">
+                        <div class="row m-0">
+                          <div id="orderSummaryInfoArea" class="col-sm-12 col-md-12 col-lg-4">
+                            <div>
+                              <h2>お支払い金額</h2>
+                              <table class="frameBody ">
+                                <tbody>
+                                  <tr class="linkBlock bdr_b_dash">
+                                    <th class="leftTitle">商品合計(税抜)</th>
+                                    <td class="txt_r"> <span class="currency">1,633円</span> </td>
+                                  </tr>
+                                  <tr class="linkBlock bdr_b_dash">
+                                    <th class="leftTitle">オプション合計(税抜)</th>
+                                    <td class="txt_r"> <span class="currency">0円</span> </td>
+                                  </tr>
+                                  <tr class="linkBlock bdr_b_dash">
+                                    <th class="leftTitle">ラッピング合計(税抜)</th>
+                                    <td class="txt_r"> <span class="currency">0円</span> </td>
+                                  </tr>
+                                  <tr class="linkBlock bdr_b_dash">
+                                    <th class="leftTitle">のし合計(税抜)</th>
+                                    <td class="txt_r"> <span class="currency">0円</span> </td>
+                                  </tr>
+                                  <tr class="linkBlock bdr_b_dash">
+                                    <th class="leftTitle">送料合計(税抜)</th>
+                                    <td class="txt_r"> <span class="currency">355円</span> </td>
+                                  </tr>
+                                  <tr class="linkBlock bdr_b_dash">
+                                    <th class="leftTitle">注文合計金額(税抜)</th>
+                                    <td class="txt_r"> <span class="currency txt_large">1,988円</span> </td>
+                                  </tr>
+                                  <tr class="linkBlock bdr_b_dash" id="usableCouponCol">
+                                    <th class="leftTitle">クーポン利用</th>
+                                    <td class="txt_r"> <span id="couponUsedAmount">0円</span> </td>
+                                  </tr>
+                                  <tr class="linkBlock bdr_b_dash usablePointCol" id="usablePointCol">
+                                    <th class="leftTitle">ポイント利用 pt（円）</th>
+                                    <td class="txt_r">
+                                      <div class="inputPoint">
+                                        <span id="usePoint">0</span> pt
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="linkBlock bdrB bdr_b_dash_fix">
+                                    <th class="leftTitle">お支払い合計金額</th>
+                                    <td class="txt_r"> <span class="currency totalAllPrice txt_large txt_red">2,162円</span> </td>
+                                  </tr>
+                                </tbody>
+                                <tbody>
+                                  <tr class="linkBlock bdr_b_dash">
+                                    <th class="leftTitle">(10%対象)</th>
+                                    <td class="txt_r"><span>876円</span></td>
+                                  </tr>
+                                  <tr class="linkBlock bdr_b_dash_fix">
+                                    <th class="leftTitle">(内消費税額)</th>
+                                    <td class="txt_r"><span>79円</span></td>
+                                  </tr>
+                                </tbody>
+                                <tbody>
+                                  <tr class="linkBlock bdr_b_dash">
+                                    <th class="leftTitle">(8%対象)</th>
+                                    <td class="txt_r"><span>1,286円</span></td>
+                                  </tr>
+                                  <tr class="linkBlock bdr_b_dash_fix">
+                                    <th class="leftTitle">(内消費税額)</th>
+                                    <td class="txt_r"><span>95円</span></td>
+                                  </tr>
+                                </tbody>
+                                <tbody>
+                                  <tr class="linkBlock bdr_b_dash">
+                                    <th class="leftTitle">(非課税対象)</th>
+                                    <td class="txt_r"><span>0円</span></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <div id="restPointTotalArea" class="mb10">
+                                <span class="caution"> ※お支払い合計金額には、選択したお支払い方法の手数料が加算されます。 </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ordrtLeftArea col-sm-12 col-md-12 col-lg-8 order-md-last order-lg-first p-0 pe-lg-3">
+                            <div id="couponSelectArea" class="col-sm-12">
+                              <h2>クーポンのご利用</h2>
+                              <div class="frameBody">
+                                <div class="linkBlock bdr_b_dash couponInfo">
+                                  <label> <input type="radio" name="selectCouponManagementCode" value="" onclick="changeCouponType()" id="noCouponManagementCode" checked="checked"> クーポンを利用しない </label>
+                                </div>
+                                <div class="linkBlock bdr_b_dash couponInfo">
+                                  <label> <input type="radio" name="selectCouponManagementCode" class="couponRadio coupon_001" value="coupon_001" onclick="changeCouponType(1)" id="selectCouponManagementCode_coupon_001"> <span>クーポン_001金額値引</span> <span> / <span>100円</span> 値引 </span> / 有効期限 <span>2025/09/30 23時00分00秒まで</span> <span> / ご利用可能回数 <span>無制限</span> </span> </label>
+                                  <div class="couponDescription">クーポン説明_001</div>
+                                  <div class="couponUsePurchasePrice"> ※ <span>100円</span> 以上の購入でご利用頂けます。 </div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash couponInfo">
+                                  <label> <input type="radio" name="selectCouponManagementCode" class="couponRadio coupon_002" value="coupon_002" onclick="changeCouponType(1)" id="selectCouponManagementCode_coupon_002"> <span>クーポン_002率値引</span> <span> / <span>13</span> ％値引 </span> / 有効期限 <span>2025/09/30 23時00分00秒まで</span> <span> / ご利用可能回数 <span>無制限</span> </span> </label>
+                                  <div class="couponDescription">クーポン説明_002</div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash couponInfo">
+                                  <div id="couponConfirmSelectArea">
+                                    <label> <input type="radio" name="selectCouponManagementCode" value="" id="confirmCouponManagementCode" onclick="changeCouponType(0)"> クーポンコードを入力する </label>
+                                    <input type="text" name="confirmCouponCode" id="confirmCouponCode" class="confirmCouponCode alphaNum2" size="30" maxlength="16" value="" data-item-name="クーポンコード">
+                                    <span class="couponCodeInfo caution">※大文字小文字を区別します。</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <input type="hidden" name="couponType" id="couponType" value="">
+                            </div>
+                            <div id="pointSelectArea" class="col-sm-12">
+                              <h2>ポイントのご利用</h2>
+                              <div class="frameBody">
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> ポイント残高 </div>
+                                  <div class="rightData" id="pointUseArea">
+                                    <div id="pointArea">
+                                      <span class="number">55,722</span> pt <span>(有効期限：2026/07/07)</span>
+                                      <div class="caution" id="pointCaution"> ※1pt 1円として利用できます </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> ご利用方法 </div>
+                                  <div class="rightData">
+                                    <div>
+                                      <label> <input type="radio" name="pointUseType" value="1" id="pointUseTypePart"> 一部のポイントを利用する </label>
+                                      <input type="text" size="5" maxlength="8" name="inputUsePoint" class="required digit usePoint" value="" id="inputUsePoint" data-item-name="ポイント"> pt（円） <span class="caution">※例 9999 半角数字</span>
+                                    </div>
+                                    <div>
+                                      <label> <input type="radio" name="pointUseType" value="2" id="pointUseTypePart_2"> 注文合計金額にポイントをすべて利用する </label>
+                                    </div>
+                                    <div>
+                                      <label> <input type="radio" name="pointUseType" value="3" id="pointUseTypePart_3" checked="checked"> ポイントを利用しない </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="applyPointArea" class="col-sm-12">
+                              <input type="button" class="btn-gray" value="クーポン・ポイント適用" onclick="location.reload()" data-button="applyCoupon" id="applyPointCouponButton">
+                            </div>
+                          </div>
+                        </div>
+                        <div id="paymethodSelectArea" class="mt40 col-sm-12">
+                          <h2>お支払い方法選択</h2>
+                          <div class="requireMessageArea">
+                            <span class="requireTtl">必須入力項目です</span>
+                          </div>
+                          <div class="frameBody">
+                            <div id="paymentMethodArea_10000001">
+                              <div class="displayPaymentListTemplateArea">
+                                <div class="paymentMethodNameMainArea">
+                                  <div class="otherwiseMainArea">
+                                    <label> <input type="radio" data-payment-type="02" name="paymentMethodCode" id="10000001" class="otherwisePaymentMethodCode" value="10000001"> <span>代金引換</span> </label>
+                                    <div class="paymentMethodLogoListMainArea other">
+                                    </div>
+                                    <div class="inline-block">
+                                      <span class="paymentCommission">（ 手数料</span>
+                                      <span class="paymentCommission currency">300円</span>
+                                      <span>
+                                        <span class="paymentCommission currency">(参考税込 ：330.00円)</span>
+                                      </span>
+                                      <span class="paymentCommission">）</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="paymentMethodNameSubArea paymentIndent">
+                                  <div class="commissionListMainArea">
+                                    <a id="displayCommissionListDetailArea">手数料一覧</a>
+                                    <table class="commissionListDetailArea popUpArea">
+                                      <tbody>
+                                        <tr class="tableHeader">
+                                          <th>お支払い合計金額</th>
+                                          <th>手数料</th>
+                                        </tr>
+                                        <tr align="right">
+                                          <td> <span class="currency">0円</span> ～ <span>99,999,999円</span> </td>
+                                          <td>
+                                            <span class="currency">300円</span>
+                                            <span>
+                                              <span class="currency">(参考税込 ：330.00円)</span>
+                                            </span>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="paymentMethodArea_10000005">
+                              <div class="displayPaymentListTemplateArea">
+                                <div class="paymentMethodNameMainArea">
+                                  <div class="otherwiseMainArea">
+                                    <label> <input type="radio" data-payment-type="03" name="paymentMethodCode" id="10000005" class="otherwisePaymentMethodCode" value="10000005"> <span>銀行振込</span> </label>
+                                    <div class="paymentMethodLogoListMainArea other">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="paymentMethodNameSubArea paymentIndent">
+                                  <div class="bankListMainArea paymentPaymethodFrame">
+                                    <div>
+                                      <div class="bankListBody">
+                                        <div id="bankList" class="bdr_b_dash">
+                                          <div class="bankListTemplateArea">
+                                            <div class="linkBlock bdr_b_dash">
+                                              <div class="leftTitle">
+                                                <span>振込先金融機関</span> ( <span class="bankNo">1</span> )
+                                              </div>
+                                              <div class="rightData">
+                                                <span>結合テスト銀行</span> &nbsp; <span>結合テスト支店</span> &nbsp;(店番号 <span>111</span> ) <br>
+                                                <span class="accountType">普通</span>
+                                                <span class="accountNo">9999999</span>
+                                                <br>
+                                                <span class="accountName">ケツゴウテストメイギニン</span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="paymentMethodArea_10000006">
+                              <div class="displayPaymentListTemplateArea">
+                                <div class="paymentMethodNameMainArea">
+                                  <div class="otherwiseMainArea">
+                                    <label> <input type="radio" data-payment-type="04" name="paymentMethodCode" id="10000006" class="otherwisePaymentMethodCode" value="10000006"> <span>クレジット支払い</span> </label>
+                                    <div class="paymentMethodLogoListMainArea creditCard">
+                                      <img alt="Card_Visa.gif" src="../共通/files/systemfiles/images/Card_Visa.gif" class="paymentMethodLogoListImg"><img alt="Card_MasterCard.gif" src="../共通/files/systemfiles/images/Card_MasterCard.gif" class="paymentMethodLogoListImg"><img alt="Card_JCB.gif" src="../共通/files/systemfiles/images/Card_JCB.gif" class="paymentMethodLogoListImg"><img alt="Card_Amex.gif" src="../共通/files/systemfiles/images/Card_Amex.gif" class="paymentMethodLogoListImg"><img alt="Card_DinersClub.gif" src="../共通/files/systemfiles/images/Card_DinersClub.gif" class="paymentMethodLogoListImg">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="paymentMethodNameSubArea paymentIndent">
+                                  <div class="creditcardMainArea paymentPaymethodFrame">
+                                    <div class="cardInfoTitle"><span>クレジットカード番号</span><span>有効期限(月/年)</span><span></span></div>
+                                    <div class="savedCardInfoListArea">
+                                      <div class="savedCardInfo" id="cardInfo_0">
+                                        <label>
+                                          <input type="radio" name="savedCardId_10000006" class="paymentMethodCodeName savedCard" value="ADW20PTS57ACJTMG2JFGLD9TT" data-data1="paymentMethodArea_10000006" data-data2="cardInfo_0" data-data3="10000006" onclick="toggleCardInfo(false, this.getAttribute(&#39;data-data1&#39;), this.getAttribute(&#39;data-data2&#39;), this.getAttribute(&#39;data-data3&#39;))" id="savedCardId_10000006_0">
+                                          <span>377752*****6404</span>
+                                        </label>
+                                        <span class="cardExpiredTxt">01/25</span>
+                                        <input type="button" value="削除" data-data1="10000006" data-data2="ADW20PTS57ACJTMG2JFGLD9TT" data-data3="cardInfo_0" onclick="paymentDeleteCardNoRequestMokup(1)" class="btn-gray deleteSavedCardNoButton right" data-button="deleteCard" id="sendPaymentDeleteCardNoRequest_10000006_0">
+                                        <div class="defaultCardCheckbox"><label><input type="checkbox" name="defaultCard_10000006" value="1" id="defaultCardFunc_10000006_0" checked="checked">通常使うカードに設定する</label></div>
+                                      </div>
+                                      <div class="savedCardInfo" id="cardInfo_1">
+                                        <label>
+                                          <input type="radio" name="savedCardId_10000006" class="paymentMethodCodeName savedCard" value="16V2DVMGU1FMN8IJAJ1WTOP69" data-data1="paymentMethodArea_10000006" data-data2="cardInfo_1" data-data3="10000006" onclick="toggleCardInfo(false, this.getAttribute(&#39;data-data1&#39;), this.getAttribute(&#39;data-data2&#39;), this.getAttribute(&#39;data-data3&#39;))" id="savedCardId_10000006_1">
+                                          <span>411111******1111</span>
+                                        </label>
+                                        <span class="cardExpiredTxt">03/30</span>
+                                        <input type="button" value="削除" data-data1="10000006" data-data2="16V2DVMGU1FMN8IJAJ1WTOP69" data-data3="cardInfo_1" onclick="paymentDeleteCardNoRequestMokup(1)" class="btn-gray deleteSavedCardNoButton right" data-button="deleteCard" id="sendPaymentDeleteCardNoRequest_10000006_1">
+                                        <div class="defaultCardCheckbox"><label><input type="checkbox" name="defaultCard_10000006" value="1" id="defaultCardFunc_10000006_1">通常使うカードに設定する</label></div>
+                                      </div>
+                                      <div class="savedCardInfo" id="cardInfo_2">
+                                        <label>
+                                          <input type="radio" name="savedCardId_10000006" class="paymentMethodCodeName savedCard" value="8L4EPSDWAEOWHLRNGMSAG1ANV" data-data1="paymentMethodArea_10000006" data-data2="cardInfo_2" data-data3="10000006" onclick="toggleCardInfo(false, this.getAttribute(&#39;data-data1&#39;), this.getAttribute(&#39;data-data2&#39;), this.getAttribute(&#39;data-data3&#39;))" id="savedCardId_10000006_2">
+                                          <span>411111******1111</span>
+                                        </label>
+                                        <span class="cardExpiredTxt">01/27</span>
+                                        <input type="button" value="削除" data-data1="10000006" data-data2="8L4EPSDWAEOWHLRNGMSAG1ANV" data-data3="cardInfo_2" onclick="paymentDeleteCardNoRequestMokup(1)" class="btn-gray deleteSavedCardNoButton right" data-button="deleteCard" id="sendPaymentDeleteCardNoRequest_10000006_2">
+                                        <div class="inputCardholderNameArea">
+                                          <div class="inputCardholderNameTable">
+                                            <div class="linkBlock bdr_b_dash">
+                                              <div class="leftTitle require">
+                                                <span>クレジットカード名義人（半角ローマ字）</span>
+                                              </div>
+                                              <div class="rightData">
+                                                <input type="text" name="cardholderName_10000006" id="cardholderName_10000006" class="paymentMethodCodeName alphaNumSymbol required" maxlength="45" size="45" data-item-name="カード名義人" value="">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="defaultCardCheckbox"><label><input type="checkbox" name="defaultCard_10000006" value="1" id="defaultCardFunc_10000006_2">通常使うカードに設定する</label></div>
+                                      </div>
+                                    </div>
+                                    <div class="newCardInfoArea" style="border-top:none;">
+                                      <label class="newCardRadio">
+                                        <input type="radio" name="savedCardId_10000006" class="newCard paymentMethodCodeName" data-data1="paymentMethodArea_10000006" data-data2="10000006" onclick="toggleCardInfo(true, this.getAttribute(&#39;data-data1&#39;), &#39;&#39;, this.getAttribute(&#39;data-data2&#39;))" value="newCard" id="newCard_10000006"> 新しいクレジットカード情報を入力する </label>
+                                      <div class="newCardInfoInputArea">
+                                        <div class="newCardInfoInputTable">
+                                          <div class="linkBlock bdr_b_dash">
+                                            <div class="leftTitle require">
+                                              <span>クレジットカード名義人（半角ローマ字）</span>
+                                            </div>
+                                            <div class="rightData">
+                                              <input type="text" name="cardholderName_10000006" id="cardholderName_10000006" class="paymentMethodCodeName alphaNumSymbol required" maxlength="45" size="45" data-item-name="カード名義人">
+                                            </div>
+                                          </div>
+                                          <div class="linkBlock bdr_b_dash">
+                                            <div class="leftTitle require">
+                                              <span>クレジットカード番号</span>
+                                            </div>
+                                            <div class="rightData">
+                                              <input type="text" name="cardNo_10000006" id="cardNo_10000006" class="paymentMethodCodeName digit required" maxlength="16" size="16" data-item-name="カード番号">
+                                            </div>
+                                          </div>
+                                          <div class="linkBlock bdr_b_dash">
+                                            <div class="leftTitle require">
+                                              <span>有効期限(月/年)</span>
+                                            </div>
+                                            <div class="rightData">
+                                              <select name="cardExpirationMonth_10000006" id="cardExpirationMonth_10000006" class="required paymentMethodCodeName">
+                                                <option value="">--</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                              </select> / <select name="cardExpirationYear_10000006" id="cardExpirationYear_10000006" class="required paymentMethodCodeName">
+                                                <option value="">----</option>
+                                                <option value="25">2025</option>
+                                                <option value="26">2026</option>
+                                                <option value="27">2027</option>
+                                                <option value="28">2028</option>
+                                                <option value="29">2029</option>
+                                                <option value="30">2030</option>
+                                                <option value="31">2031</option>
+                                                <option value="32">2032</option>
+                                                <option value="33">2033</option>
+                                                <option value="34">2034</option>
+                                                <option value="35">2035</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                          <div class="linkBlock bdr_b_dash">
+                                            <div class="leftTitle require">
+                                              <span>セキュリティコード</span>
+                                            </div>
+                                            <div class="rightData">
+                                              <input type="text" name="securityCode_10000006" id="securityCode_10000006" class="paymentMethodCodeName digit required" size="4" maxlength="4" data-item-name="セキュリティコード">
+                                            </div>
+                                          </div>
+                                          <div class="linkBlock bdr_b_dash newDefaultCardArea">
+                                            <div class="leftTitle">通常使うカードに設定する </div>
+                                            <div class="rightData defaultCardCheckbox">
+                                              <input type="checkbox" name="defaultCard_10000006" onclick="defaultCardFunc(this)" value="1">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="cardRegisterButton">
+                                          <input type="button" class="largeButton btn-gray btn-paymentToken" value="カード登録" data-data1="paymentMethodArea_10000006" onclick="registerPayment()" data-button="registCard" id="registCardButton" data-methodcode="10000006">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <table class="cardListButtomArea">
+                                      <tr>
+                                        <td class="leftTitle require"> <span>お支払い回数</span> </td>
+                                        <td class="rightData"> <select name="divisionType_10000006" id="divisionType_10000006" value="" class="required paymentMethodCodeName">
+                                            <option value="01">一括</option>
+                                            <option value="80">ボーナス一括払い</option>
+                                            <option value="03">3回</option>
+                                            <option value="05">5回</option>
+                                            <option value="06">6回</option>
+                                            <option value="10">10回</option>
+                                            <option value="12">12回</option>
+                                            <option value="15">15回</option>
+                                            <option value="18">18回</option>
+                                            <option value="20">20回</option>
+                                            <option value="24">24回</option>
+                                            <option value="99">リボルビング</option>
+                                          </select> </td>
+                                      </tr>
+                                    </table>
+                                    <div class="saveNewCardCheckbox"><label><input type="checkbox" name="saveNewCard_10000006" value="1" id="saveNewCard">決済時にクレジットカード情報を登録する</label></div>
+                                    <input type="text" class="hidden" name="paymentTokenApiKey" value="6159ea2f-4152-4069-bb84-05fd2bbe8346" data-item-name="paymentTokenApiKey">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="paymentMethodArea_10000007">
+                              <div class="displayPaymentListTemplateArea">
+                                <div class="paymentMethodNameMainArea">
+                                  <div class="otherwiseMainArea">
+                                    <label> <input type="radio" data-payment-type="05" name="paymentMethodCode" id="10000007" class="otherwisePaymentMethodCode" value="10000007"> <span>コンビニ支払い</span> </label>
+                                    <div class="paymentMethodLogoListMainArea cvs">
+                                      <img alt="logo_seveneleven.jpg" src="../共通/files/systemfiles/images/logo_seveneleven.jpg" class="paymentMethodLogoListImg"><img alt="logo_lawson.gif" src="../共通/files/systemfiles/images/logo_lawson.gif" class="paymentMethodLogoListImg"><img alt="logo_familymart.gif" src="../共通/files/systemfiles/images/logo_familymart.gif" class="paymentMethodLogoListImg"><img alt="logo_ministop.gif" src="../共通/files/systemfiles/images/logo_ministop.gif" class="paymentMethodLogoListImg"><img alt="logo_seicomart.gif" src="../共通/files/systemfiles/images/logo_seicomart.gif" class="paymentMethodLogoListImg"><img alt="logo_dailyyamazaki.gif" src="../共通/files/systemfiles/images/logo_dailyyamazaki.gif" class="paymentMethodLogoListImg"><img alt="logo_yamazakidailystore.jpg" src="../共通/files/systemfiles/images/logo_yamazakidailystore.jpg" class="paymentMethodLogoListImg">
+                                    </div>
+                                    <div>
+                                      <span class="paymentLimitAmount">&nbsp;上限金額 </span>
+                                      <span class="paymentLimitAmount currency">299,999円</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="paymentMethodNameSubArea paymentIndent">
+                                  <div class="cvsPaymentMainArea paymentPaymethodFrame">
+                                    <div>
+                                      <div class="cvsPaymentBody">
+                                        <div class="linkBlock bdr_b_dash">
+                                          <div class="leftTitle require">
+                                            <span>コンビニ種類</span>
+                                          </div>
+                                          <div class="rightData">
+                                            <select name="convenienceCode_10000007" id="convenienceCode_10000007" value="" class="paymentMethodCodeName csvSelectTag">
+                                              <option value="10">セブン-イレブン</option>
+                                              <option value="20">ローソン・ファミリーマート・ミニストップ・セイコーマート</option>
+                                              <option value="90">デイリーヤマザキ・ヤマザキデイリーストア</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                        <div class="linkBlock">
+                                          <div class="leftTitle require">
+                                            <span>受取人(姓/名)</span>
+                                          </div>
+                                          <div class="rightData">
+                                            <input type="text" name="lastName_10000007" id="lastName_10000007" value="シナリオテスト" maxlength="20" size="15" class="required fullwidth paymentMethodCodeName" data-item-name="受取人(姓)">
+                                            <input type="text" name="firstName_10000007" id="firstName_10000007" value="管理" maxlength="20" size="15" class="required fullwidth paymentMethodCodeName" data-item-name="受取人(名)">
+                                          </div>
+                                        </div>
+                                        <div style="display:none;" class="linkBlock bdr_t_dash cvsPhoneNumber">
+                                          <div class="leftTitle">
+                                            <span>お客様番号</span>
+                                          </div>
+                                          <div class="rightData">
+                                            <span>050-1234-5678</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="paymentMethodArea_10000008">
+                              <div class="displayPaymentListTemplateArea">
+                                <div class="paymentMethodNameMainArea">
+                                  <div class="otherwiseMainArea">
+                                    <label> <input type="radio" data-payment-type="25" name="paymentMethodCode" id="10000008" class="otherwisePaymentMethodCode" value="10000008"> <span>ATM決済</span> </label>
+                                    <div class="paymentMethodLogoListMainArea other">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="paymentMethodNameSubArea paymentIndent">
+                                  <div class="payEasyMainArea paymentPaymethodFrame">
+                                    <div>
+                                      <div class="onLineBankingBody">
+                                        <div class="linkBlock bdr_b_dash">
+                                          <div class="leftTitle require">
+                                            <span>決済者名(姓/名)</span>
+                                          </div>
+                                          <div class="rightData">
+                                            <input type="text" name="customerFamilyName_10000008" id="customerFamilyName_10000008" value="シナリオテスト" maxlength="20" size="15" class="required fullwidth paymentMethodCodeName" data-item-name="決済者名(姓)">
+                                            <input type="text" name="customerName_10000008" id="customerName_10000008" value="管理" maxlength="20" size="15" class="required fullwidth paymentMethodCodeName" data-item-name="決済者名(名)">
+                                          </div>
+                                        </div>
+                                        <div class="linkBlock bdr_b_dash">
+                                          <div class="leftTitle require">
+                                            <span>決済者名カナ(姓/名)</span>
+                                          </div>
+                                          <div class="rightData">
+                                            <input type="text" name="customerFamilyNameKana_10000008" id="customerFamilyNameKana_10000008" value="シナリオテスト" maxlength="40" size="15" class="required fullwidth paymentMethodCodeName" data-item-name="決済者名カナ(姓)">
+                                            <input type="text" name="customerNameKana_10000008" id="customerNameKana_10000008" value="カンリ" maxlength="40" size="15" class="required fullwidth paymentMethodCodeName" data-item-name="決済者名カナ(名)">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="paymentMethodArea_10000009">
+                              <div class="displayPaymentListTemplateArea">
+                                <div class="paymentMethodNameMainArea">
+                                  <div>
+                                    <label> <input name="paymentMethodCode" type="radio" value="10000009" id="10000009"> <span>携帯キャリア決済</span> </label>
+                                    <div> 上限金額&nbsp; <span>99,999円</span>
+                                    </div>
+                                    <select name="careerKey_10000009" id="careerKeyList_10000009" value="" class="paymentMethodCodeName">
+                                      <option value="1">ドコモ払い</option>
+                                      <option value="2">auかんたん決済</option>
+                                      <option value="3">ソフトバンクまとめて支払い</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="paymentMethodNameSubArea paymentIndent">
+                                </div>
+                              </div>
+                            </div>
+                            <div id="paymentMethodArea_10000010">
+                              <div class="displayPaymentListTemplateArea">
+                                <div class="paymentMethodNameMainArea">
+                                  <div class="otherwiseMainArea">
+                                    <label> <input type="radio" data-payment-type="28" name="paymentMethodCode" id="10000010" class="otherwisePaymentMethodCode" value="10000010"> <span>PayPay決済</span> </label>
+                                    <div class="paymentMethodLogoListMainArea other">
+                                      <img alt="PayPay.png" src="../共通/files/systemfiles/images/PayPay.png" class="paymentMethodLogoListImg">
+                                    </div>
+                                    <div>
+                                      <span class="paymentLimitAmount">&nbsp;上限金額 </span>
+                                      <span class="paymentLimitAmount currency">500,000円</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="paymentMethodNameSubArea paymentIndent">
+                                </div>
+                              </div>
+                            </div>
+                            <div id="paymentMethodArea_10000011">
+                              <div class="displayPaymentListTemplateArea">
+                                <div class="paymentMethodNameMainArea">
+                                  <div class="otherwiseMainArea">
+                                    <label> <input type="radio" data-payment-type="29" name="paymentMethodCode" id="10000011" class="otherwisePaymentMethodCode" value="10000011"> <span>あと払い（ペイディ）</span> </label>
+                                    <div class="paymentMethodLogoListMainArea other">
+                                      <img alt="Paidy.png" src="../共通/files/systemfiles/images/Paidy.png" class="paymentMethodLogoListImg">
+                                    </div>
+                                    <div>
+                                      <span class="paymentLimitAmount">&nbsp;上限金額 </span>
+                                      <span class="paymentLimitAmount currency">500,000円</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="paymentMethodNameSubArea paymentIndent">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div id="buttonArea">
+                      <div class="confirmButtonArea mb20">
+                        <input type="button" value="注文内容確認へ" id="confirmButton" class="btn-orange btn-paymentToken confirmButton" onclick="location.href='../order/注文内容確認.html'" data-button="paymentConfirm">
+                      </div>
+                      <div class="paymentNavigationImg d-block d-lg-none">
+                        <img class="" src="../共通/files/commonfiles/images/navi_order_payment.gif" alt="お支払い方法選択">
+                      </div>
+                      <div class="backButtonArea">
+                        <input class="largeButton backButton btn-gray" type="button" value="前へ戻る" onclick="location.href='../order/お届け先・ラッピング設定.html'" id="goBackButton">
+                      </div>
+                    </div>
+                  </div>
+                  <input type="text" class="hidden" name="paymentTokenServerUrl" id="paymentTokenServerUrl" value="https://api3.veritrans.co.jp/4gtoken" data-item-name="paymentTokenServerUrl">
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include">
+                <div id="pageFooter">
+                  <hr>
+                  <div class="copyRight">
+                    <span>Copyright (c) 2025 DG Business Technology,Inc. All Rights Reserved.</span>
+                  </div>
+                </div>
+                <input type="hidden" id="transactionToken" name="transactionToken" value="10766839-bec1-4410-86e6-8f679ae0c982">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/final.js?date=20250715111601"></script>
+              </div>
+            </div>
+            <div>
+              <div id="cookieConsentBannerRoot" class="wsparts-include">
+                <script>
+                  /*<![CDATA[*/
+                  var relatedExternalCookieNames = [];
+                  /*]]>*/
+
+                </script>
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/cookieConsentBanner.js?date=20250715111601"></script>
+                <div id="cookieConsentBanner" class="cookieConsentBanner hidden">
+                  <div class="d-none d-md-block d-lg-block pd0 cookieConsentBannerArea">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8 floating-txt">
+                          <div class="float_l cookiePolicy">
+                            <span>当サイトでは、サイトの利便性向上のため、クッキー（Cookie）を使用しています。<br> サイトのクッキー（Cookie）の仕様に関しては <a href="../info/クッキーポリシー.html" id="moveCookiePolicy">「クッキーポリシー」</a>をお読みください。</span>
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                          <div class="float_r mt5">
+                            <button type="button" class="btn btn-deny" onclick="acceptCookie()">すべて拒否する</button>
+                            <button type="button" class="btn btn-accept" onclick="acceptCookie()">すべてのCookieを受け入れる</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="cookieConsentBannerSP" class="cookieConsentBannerSP hidden">
+                  <div class="d-block d-lg-none pd0 cookieConsentBannerAreaSP">
+                    <div class="container p-0">
+                      <div class="row m-0">
+                        <div class="col-xs-12 col-sm-12 floating-txt">
+                          <div class="float_l cookiePolicySP">
+                            <span>当サイトでは、サイトの利便性向上のため、クッキー（Cookie）を使用しています。<br> サイトのクッキー（Cookie）の仕様に関しては <a href="../info/クッキーポリシー.html" id="moveCookiePolicy">「クッキーポリシー」</a>をお読みください。</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row m-1">
+                        <div class="col-12">
+                          <button type="button" class="btn btn-deny" onclick="acceptCookie()">すべて拒否する</button>
+                        </div>
+                      </div>
+                      <div class="row m-1">
+                        <div class="col-12">
+                          <button type="button" class="btn btn-accept" onclick="acceptCookie()">すべてのCookieを受け入れる</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

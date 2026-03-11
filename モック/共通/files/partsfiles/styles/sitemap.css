@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+#siteMapArea div{
+  padding: 10px 10px;
+}
+
+.frameBody{
+  border:none;
+}
+
+#shopListArea .tableBody,#shopListArea .tableHeader {
+  width: 100%;
+}
+
+.commodityListCol {
+  display:inline-block;
+}
+
+input[type="button"]{
+  border:none;
+}
+
+.view_list03 input{
+  height:40px;
+  width:150px;
+}
+
+.punctuation{
+  display:inline-block;
+}
+
+#shopList ul{
+  display:block;
+  width:100%;
+  border-bottom:1px solid #cccccc;
+}
+
+.commodityListCol{
+  margin-right:40px;
+}
+
+/*SPで表示*/
+@media screen and (max-width:767px) {
+  h3{
+    margin-bottom:0;
+  }
+  
+  .frameBody ul{
+    width:100%;
+    display:block;
+    border-bottom:1px solid #cccccc;
+  }
+  
+  .frameBody li{
+    padding:0;
+    background-image: url(../../commonfiles/images/arrow_next.gif) ;
+    background-repeat:no-repeat;
+    background-position: 98% 50%;
+  }
+  
+  .frameBody li a{
+    padding:10px;
+    display:block;
+  }
+  
+  .punctuation{
+    display:none;
+  }
+  
+  .frameBody li .commodityListCol a{
+    padding:3px;
+    background-image: none;
+  }
+  
+  .shopInfoCol{
+    position:relative;
+    padding:10px;
+  }
+  
+  .commodityListCol{
+    position: absolute;
+    top: 6px;
+    width: 80px;
+    margin-left:10px;
+  }
+  
+  .frameBody li a.shopListName{
+    margin-left:100px;
+    display:block;
+  }
+}

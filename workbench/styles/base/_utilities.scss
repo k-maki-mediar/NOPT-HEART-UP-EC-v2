@@ -1,0 +1,31 @@
+// ========================================
+// Utilities
+// ユーティリティクラス
+// ========================================
+
+// テキストサイズ
+.u-text-xs { font-size: var(--font-size-xs); }
+.u-text-sm { font-size: var(--font-size-sm); }
+.u-text-base { font-size: var(--font-size-base); }
+.u-text-md { font-size: var(--font-size-md); }
+.u-text-lg { font-size: var(--font-size-lg); }
+.u-text-xl { font-size: var(--font-size-xl); }
+
+// スペーシング
+.u-mt-sm { margin-top: var(--spacing-sm); }
+.u-mt-md { margin-top: var(--spacing-md); }
+.u-mt-lg { margin-top: var(--spacing-lg); }
+.u-mb-sm { margin-bottom: var(--spacing-sm); }
+.u-mb-md { margin-bottom: var(--spacing-md); }
+.u-mb-lg { margin-bottom: var(--spacing-lg); }
+
+// カラー
+.u-text-primary { color: var(--color-primary); }
+.u-text-secondary { color: var(--color-secondary); }
+.u-text-muted { color: var(--color-text-light); }
+
+// 表示制御
+.u-hidden { display: none; }
+.u-block { display: block; }
+.u-inline-block { display: inline-block; }
+.u-flex { display: flex; }

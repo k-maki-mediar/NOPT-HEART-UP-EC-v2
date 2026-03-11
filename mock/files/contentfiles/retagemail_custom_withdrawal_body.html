@@ -1,0 +1,14 @@
+<th:block th:fragment="wsparts-include">
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+        var bean = /*[[${WithdrawalCompleteResultBean}]]*/'';
+
+        if( bean.customerCode ) {
+
+            _sna_dam.push([ 'userCode', bean.customerCode]);
+            _sna_dam.push([ 'status', 0 ]);
+        }
+    /*]]>*/
+</script>
+</th:block>

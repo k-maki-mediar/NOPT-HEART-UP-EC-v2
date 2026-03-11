@@ -1,0 +1,16 @@
+#featureBannerArea img {
+  width: 100%;
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
+}
+.bnr_top p{
+  margin-bottom:20px;
+  text-align:center;
+}
+.bnr_top p .bnr_img{
+  height:120px;
+  display:block;
+  margin-bottom: 12px;
+  overflow:hidden;
+}

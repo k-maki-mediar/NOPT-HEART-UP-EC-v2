@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/*-----------------------------
+  新規お届け先登録　全体配置
+------------------------------*/
+#addressEditArea {
+  text-align: left;
+  width: 700px;
+  background:#ffffff;
+}
+#addressScrollArea{
+  overflow-y:scroll;
+  height:500px;
+}
+#addressEditArea .frameBody{
+  margin:0;
+}
+
+.popUpButtonArea{
+  padding: 10px;
+  overflow: hidden;
+}
+
+/*-----------------------------
+  入力データ
+-----------------------------*/
+#addressEditArea div.rightData input.name {
+  width: 100px;
+}
+
+/*-----------------------------
+  新規お届け先登録コメント
+------------------------------*/
+#addressMessage .errorMessage {
+  margin: 4px 0px 4px 0px;
+}
+
+/*-----------------------
+  リアルタイムバリデーション
+------------------------*/
+.validationMessageArea {
+  position: relative;
+  z-index: 99;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+.validationMessage {
+  margin-left: 0px;
+}
+.triangle {
+  margin-left: 5px;
+}
+
+/*-----------------------------
+  767px以下(xs)で表示
+------------------------------*/
+@media screen and (max-width:767px) {
+  #addressEditArea {
+    width: 80%;
+  }
+}

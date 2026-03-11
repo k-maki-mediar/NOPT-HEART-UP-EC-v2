@@ -1,0 +1,22 @@
+<th:block th:fragment="wsparts-include">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var pathname = location.pathname;
+        var regexp = /\/info\/privacypolicy\//;
+
+        if (regexp.test(pathname)) {
+            try {
+                tracker.track("custom", {
+                    message: "カスタムイベント検知(個人情報保護方針のみ)"
+                });
+            } catch (e) {
+                if ('tracker' in window) {
+                    tracker.track('_error', {
+                        message: e.message
+                    });
+                }
+            }
+        }
+        /*]]>*/
+    </script>
+</th:block>

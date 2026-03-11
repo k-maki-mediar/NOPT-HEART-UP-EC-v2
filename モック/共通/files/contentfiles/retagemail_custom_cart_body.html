@@ -1,0 +1,41 @@
+<th:block th:fragment="wsparts-include">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+            var bean = /*[[${MiniCartResultBean}]]*/'';
+            var config = /*[[${config}]]*/ '';
+            var context = /*[[${#ctx.getExchange().getRequest().getContextPath()}]]*/'';
+
+            $(bean.miniCartShopBeanList).each(function(){
+
+               $(this.miniCartCommodityBeanList).each(function(){
+
+                  _sna_dam.push(['item', {
+                    'code': webReceptionUtil.isSetCommodity(this.skuCode) ? this.commodityCode : this.skuCode,
+                    'attributes' : {
+                        'name' : webReceptionUtil.convertStandardName(this.commodityName,this.standardDetail1Name,this.standardDetail2Name),
+                        'url1' : webReceptionUtil.substring(this.commodityPageUrl,250),
+                        'price1' : this.retailPrice,
+                        'status' : 1,
+                        'imageUrl1' : webReceptionUtil.convertCommodityImagePath(this.commodityImagePath, config, context),
+                        'description' : this.shortDescription,
+                        'saleStage': this.commoditySalesSituation,
+                        'stockStatus' : webReceptionUtil.getCommodityStockStatus(this.reserve, this.stockManagementType, this.availableStockQuantity, this.stockSufficientThreshold),
+                        'price2' : this.unitPrice,
+                        'currency' : '円'
+                    }
+                  }]);
+                });
+            });
+
+            _sna_dam.push(['behaviorType', 2]);
+            // returnUrlがlocalドメインだとエラーが出るため、ダミー用URLを設定する
+            // var returnUrl = "https://example.com/";
+            // _sna_dam.push(['returnUrl', returnUrl]);
+            _sna_dam.push(['totalPrice', bean.miniCartTotal]);
+
+
+        /*]]>*/
+    </script>
+
+</th:block>

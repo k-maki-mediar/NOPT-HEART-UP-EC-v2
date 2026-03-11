@@ -1,0 +1,19 @@
+<th:block th:fragment="wsparts-include">
+<script th:inline="javascript">
+        /*<![CDATA[*/
+
+        (function() {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            var serialId = /*[[${retargeConfig != null && retargeConfig.retagemailSerial != null ? retargeConfig.retagemailSerial : ''}]]*/ '';
+            s.src = 'https://bvr.ast.snva.jp/beaver.js?serial=' + serialId;
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+        var _sna_dam = _sna_dam || [];
+
+        /*]]>*/
+</script>
+
+</th:block>

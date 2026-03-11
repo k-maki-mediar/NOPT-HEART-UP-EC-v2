@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+/*-----------------------------
+  必須
+------------------------------*/
+.requireMessageArea {
+  width: 100%;
+  overflow: hidden;
+}
+
+/*-----------------------------
+  ショップ名
+------------------------------*/
+.shopNameArea {
+  background-color: #eeeeee;
+  border-bottom: 1px solid #cccccc;
+  color: #333333;
+}
+
+/*-----------------------------
+  支払方法名
+------------------------------*/
+.paymentMethodName {
+  padding:5px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  color: #333333;
+  font-weight:bold;
+  width:100%;
+  margin-bottom:0;
+}
+
+/*-----------------------------
+  入力エリア
+------------------------------*/
+.saveCardInfoSide{
+  border-right:1px solid #cccccc;
+  border-left:1px solid #cccccc;
+}
+
+.saveCardInfoInputArea {
+  padding:20px;
+}
+
+.saveCardInfoInputArea .bdr_b_dash:last-child{
+  border-bottom:1px solid #cccccc;
+}
+
+/*991px以下(xs,sm)で表示*/
+@media screen and (max-width:991px) {
+  input[type="text"][name="cardholderName"] {
+    width: 350px;
+  }
+}
+
+/*767px以下（SP）で表示*/
+@media screen and (max-width:767px) {
+  input[type="text"][name="cardholderName"]{
+    width: 200px;
+  }
+  input[type="text"][name="cardNo"]{
+    width: 180px;
+  }
+}
+
+/*-----------------------------
+  タイトル側
+------------------------------*/
+.saveCardInfoMainArea div.leftTitle {
+  padding: 10px 8px 10px 10px;
+  width: 150px;
+}
+
+/*-----------------------------
+  情報側
+------------------------------*/
+.saveCardInfoMainArea div.rightData {
+  padding: 3px 0px 3px 10px;
+}
+
+.savedCardNoArea {
+  padding: 5px 10px;
+}
+
+.linkBlock td{
+  padding-right:5px;
+}
+#paymentMainArea .linkBlock.dashed {
+  border-top: dashed 1px #cccccc;
+}
+
+/*-----------------------------
+  ボタンエリア
+------------------------------*/
+#buttonArea {
+  padding-top: 10px;
+}
+.confirmButtonArea{
+  float:right;
+}
+.backButtonArea{
+  float:left;
+}
+.backButtonArea input{
+  width:100px;
+}
+
+
+
+/*SPで表示*/
+@media screen and (max-width:767px) {
+
+  /*-----------------------------
+    タイトル側
+  ------------------------------*/
+  .saveCardInfoMainArea div.leftTitle {
+    display:block;
+    width: 100%;
+  }
+
+  /*-----------------------------
+    情報側
+  ------------------------------*/
+  .saveCardInfoMainArea div.rightData {
+    padding:10px;
+  }
+}

@@ -1,0 +1,45 @@
+#topicPath {
+  margin: 10px 5px 10px 0px;
+  margin-right: -30px;
+  margin-left: 5px;
+}
+
+#topicPath>.delimiter {
+  margin: 0px 5px 0px 5px;
+  font-size: 10px;
+}
+
+
+
+/*SPで表示*/
+@media screen and (max-width:767px) {
+  #topicPath {
+    background: none repeat scroll 0 0 #eeeeee;
+    margin: 0 0 20px 0;
+    padding: 10px 5px;
+  }
+}
+
+/* Source_V12.18_add_start */
+#topicPathMock {
+  margin: 10px 5px 10px 0px;
+  margin-right: -30px;
+  margin-left: 5px;
+}
+
+#topicPathMock>.delimiter {
+  margin: 0px 5px 0px 5px;
+  font-size: 10px;
+}
+
+
+
+/*SPで表示*/
+@media screen and (max-width:767px) {
+  #topicPathMock {
+    background: none repeat scroll 0 0 #eeeeee;
+    margin: 0 0 20px 0;
+    padding: 10px 5px;
+  }
+}
+/* Source_V12.18_add_end */

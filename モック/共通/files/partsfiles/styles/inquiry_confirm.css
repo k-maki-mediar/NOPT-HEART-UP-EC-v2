@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*PCで表示*/
+@media screen and (min-width:992px) {
+  #inquiryDetailArea .inquiryDetailBox {
+    width: 750px;
+    height: 16em;
+  }
+}
+
+/*tabで表示*/
+@media screen and (min-width:768px) and (max-width:991px) {
+  #inquiryDetailArea .inquiryDetailBox {
+    width: 500px;
+    height: 16em;
+  }
+
+  #customerNameArea .customerNameBox {
+    width: 20em;
+  }
+
+  #emailArea .emailBox {
+    width: 20em;
+  }
+}
+
+/*767px以下（SP）で表示*/
+@media screen and (max-width:767px) {
+  #inquiryDetailArea .inquiryDetailBox {
+    width: 100%;
+    height: 8em;
+  }
+}

@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/*-----------------------------
+  table-cellを設定
+-----------------------------*/
+div .cell {
+  display: table-cell;
+}
+
+/*-----------------------------
+  検索エリア
+-----------------------------*/
+div#detailSearchArea {
+  clear: both;
+}
+
+/*-----------------------------
+  検索エリア右部
+-----------------------------*/
+.detailSearchAreaSearchWord {
+  width: 60%;
+}
+
+.searchButton input {
+  margin: 0 auto;
+  min-width: 150px;;
+
+}
+
+/*-----------------------------
+  テキストボックス設定
+-----------------------------*/
+input.price {
+  ime-mode: inactive;
+  text-align: right;
+}

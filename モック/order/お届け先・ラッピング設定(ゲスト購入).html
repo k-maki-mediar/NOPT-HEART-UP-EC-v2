@@ -1,0 +1,1018 @@
+﻿
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <title>お届け先・ラッピング設定</title>
+  <meta name="description" content="">
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/front/app/error/no_support/" />
+  </noscript>
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/bootstrap-5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/commonfiles/styles/reset.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/commonfiles/styles/common.css?date=20250702144702" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/systemfiles/styles/sociallogin.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/jquery.colorbox-1.6.4/colorbox.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/concrete/concrete.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/fontawesome-5.15.4-web/css/all.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/pageHeaderLogoOnly.css?date=20250702144702">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/shipping.css?date=20250702144702">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/pageFooterCopyrightOnly.css?date=20250702144702">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/cookieConsentBanner.css?date=20250702144702">
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/popper-2.11.8/dist/popper.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/bootstrap-5.3.2/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery.lightbox_me/jquery.lightbox_me.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/elevatezoom-plus-master/jquery.ez-plus.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery.colorbox-1.6.4/jquery.colorbox.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/fontawesome-5.15.4-web/js/all.js"></script>
+  <script>
+    /*<![CDATA[*/
+    var settings = {
+      servletMapping: "/app",
+      applicationLevel: "/pc",
+      commonPath: "/cms/pc/common/",
+      apiServ: "/api",
+      logServ: "/log",
+      pagingLineSize: 3,
+      pagingMaxSize: 125,
+      context: "/front",
+      apiContext: "/front",
+      defaultLang: "ja",
+      isUseWovn: false,
+      siteShopCode: "0000",
+      sessionTimeout: 30,
+      sessionTimer: 2,
+      sessionUrl: ["/cart/cart/", "/order/guest/", "/order/shipping/", "/order/payment/", "/order/confirm/", "/customer/customer_edit/", "/customer/customer_confirm/", "/order/shipping_multi/", "/order/shipping_split/"],
+      isUseNaviPlusSearch: false,
+      isUseNaviPlusSearchSuggest: false,
+      isUseNaviPlusRecommend: false,
+      isUseNaviPlusReview: false
+    };
+    /*]]>*/
+
+  </script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/initialize.js?date=20250702144702"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/core.js?date=20250702144702"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/validate.js?date=20250702144702"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/process.js?date=20250702144702"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/session.js?date=20250702144702"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/socialLogin.js?date=20250702144702"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/webReception.js?date=20250702144702"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/veritrans.js?date=20250702144702"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/blocks/image/js/image_hover.js"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/js/responsive-slides.js"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/js/videoPlayer_swfobject.js"></script>
+</head>
+
+<body>
+  <div class="ccm-page page-type-original-order-pagetype page-template-orderflow">
+    <div>
+      <div id="facebookScriptArea" class="wsparts-include clearBoth">
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v15.0" nonce="nIvcsYYq">
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればfacebookScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#facebookScriptArea').hide();
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="lineScriptArea" class="wsparts-include clearBoth">
+        <script src="https://scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async defer>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればlineScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#lineScriptArea').hide();
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="twitterScriptArea" class="wsparts-include clearBoth">
+        <script>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればtwitterScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#twitterScriptArea').hide();
+          } else {
+            window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+              return t;
+            }(document, "script", "twitter-wjs"));
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="pinterestScriptArea" class="wsparts-include clearBoth">
+        <script>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればpinterestScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#pinterestScriptArea').hide();
+          } else {
+            $('#pinterestScriptArea').html('<script type="text/javascript" async defer src="https://assets.pinterest.com/js/pinit.js"/>');
+          }
+
+        </script>
+      </div>
+    </div>
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <div class="row">
+            <div>
+              <div class="wsparts-include">
+                <div id="pageHeader">
+                  <div id="titleArea">
+                    <img src="../共通/files/commonfiles/images/sitelogo.png" alt="SI Web Shopping v12 一店舗" title="SI Web Shopping v12 一店舗">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <div id="message" data-ws-parts-popup="messageArea">
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/shipping.js?date=20250702144702"></script>
+                <div id="shippingMain">
+                  <div class="shippingNavigation">
+                    <div class="shippingNavigationImg">
+                      <img class="" src="../共通/files/commonfiles/images/navi_order_shipping_guest.gif" alt="お届け先・ラッピング設定">
+                    </div>
+                  </div>
+                  <div class="cartTtl"> お届け先・ラッピング設定 </div>
+                  <div id="shippingMainArea">
+                    <div id="shippingTable">
+                      <form id="shippingForm">
+                        <div>
+                          <div id="shipping_list_key_0" class="shippingListTemplateArea" data-rowcount="0">
+                            <input value="shipping_list_key_0" name="shippingListKey" class="hidden">
+                            <div>
+                              <h2>
+                                <span class="shippingAddressLabelCol">お届け先</span>
+                                <span class="shippingAddressUpdateCol">
+                                  <input id="shippingChangeAction" name="shippingMoveAction" class="btn-gray smallButton shippingMoveAction" type="button" value="変更" onclick="location.href='../order/顧客情報入力(ゲスト購入).html'">
+                                </span>
+                              </h2>
+                              <div id="addressInfo_0" class="frameBody">
+                                <input name="targetAddressNo" value="0" class="hidden">
+                                <input name="targetPostcodeAddress" value="3306032" class="hidden">
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> お届け先氏名 </div>
+                                  <div class="rightData">
+                                    <span>姓&nbsp; </span>
+                                    <input id="lastName" type="text" maxlength="20" name="lastName" class="name required fullwidth" data-item-name="氏名（姓）" value="山田">
+                                    <span>&nbsp;名&nbsp; </span>
+                                    <input id="firstName" type="text" maxlength="20" name="firstName" class="name required fullwidth" data-item-name="氏名（名）" value="太郎">
+                                    <p> <span class="txt_example">例）山田&nbsp;&nbsp;太郎 </span> </p>
+                                  </div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> お届け先名カナ </div>
+                                  <div class="rightData">
+                                    <span>姓&nbsp; </span>
+                                    <input id="lastNameKana" type="text" maxlength="40" name="lastNameKana" class="name required kana fullwidth" value="ヤマダ" data-item-name="氏名カナ（姓） ">
+                                    <span>&nbsp;名&nbsp; </span>
+                                    <input id="firstNameKana" type="text" maxlength="40" name="firstNameKana" class="name required kana fullwidth" value="タロウ" data-item-name="氏名カナ（名）">
+                                    <p> <span class="txt_example">例）ヤマダ&nbsp;&nbsp;タロウ </span> </p>
+                                  </div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> お届け先郵便番号 </div>
+                                  <div class="rightData">
+                                    <span>〒&nbsp; </span>
+                                    <input id="postalCodeId_0" type="text" maxlength="7" name="postalCode1" class="required digit postalCode" data-item-name="郵便番号" value="3306032">
+                                    <input type="button" onclick="sendPostalSearchRequest(&#39;postalCodeId_0&#39;,&#39;postalGuideId_0&#39;, &#39;prefectureCodeId_0&#39;,&#39;address2Id_0&#39;,&#39;address3Id_0&#39;)" class="btn btn-gray postalSearch smallButton" value="検索" id="postalSearch">
+                                    <br>
+                                    <span class="txt_example">例）3306032</span>
+                                    <br>
+                                    <span class="caution postalSearch" id="postalGuideId_0"></span>
+                                  </div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> お届け先都道府県 </div>
+                                  <div class="rightData">
+                                    <select id="prefectureCodeId_0" name="prefectureCode1">
+                                      <option value="">--------</option>
+                                      <option value="01">北海道</option>
+                                      <option value="02">青森県</option>
+                                      <option value="03">岩手県</option>
+                                      <option value="04">宮城県</option>
+                                      <option value="05">秋田県</option>
+                                      <option value="06">山形県</option>
+                                      <option value="07">福島県</option>
+                                      <option value="08">茨城県</option>
+                                      <option value="09">栃木県</option>
+                                      <option value="10">群馬県</option>
+                                      <option value="11" selected="selected">埼玉県</option>
+                                      <option value="12">千葉県</option>
+                                      <option value="13">東京都</option>
+                                      <option value="14">神奈川県</option>
+                                      <option value="15">新潟県</option>
+                                      <option value="16">富山県</option>
+                                      <option value="17">石川県</option>
+                                      <option value="18">福井県</option>
+                                      <option value="19">山梨県</option>
+                                      <option value="20">長野県</option>
+                                      <option value="21">岐阜県</option>
+                                      <option value="22">静岡県</option>
+                                      <option value="23">愛知県</option>
+                                      <option value="24">三重県</option>
+                                      <option value="25">滋賀県</option>
+                                      <option value="26">京都府</option>
+                                      <option value="27">大阪府</option>
+                                      <option value="28">兵庫県</option>
+                                      <option value="29">奈良県</option>
+                                      <option value="30">和歌山県</option>
+                                      <option value="31">鳥取県</option>
+                                      <option value="32">島根県</option>
+                                      <option value="33">岡山県</option>
+                                      <option value="34">広島県</option>
+                                      <option value="35">山口県</option>
+                                      <option value="36">徳島県</option>
+                                      <option value="37">香川県</option>
+                                      <option value="38">愛媛県</option>
+                                      <option value="39">高知県</option>
+                                      <option value="40">福岡県</option>
+                                      <option value="41">佐賀県</option>
+                                      <option value="42">長崎県</option>
+                                      <option value="43">熊本県</option>
+                                      <option value="44">大分県</option>
+                                      <option value="45">宮崎県</option>
+                                      <option value="46">鹿児島県</option>
+                                      <option value="47">沖縄県</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> お届け先市区町村 </div>
+                                  <div class="rightData">
+                                    <input id="address2Id_0" type="text" maxlength="50" name="address21" class="required fullwidth address2" value="さいたま市中央区" data-item-name="市区町村">
+                                    <br>
+                                    <span class="txt_example">例）さいたま市</span>
+                                  </div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> お届け先町名・番地 </div>
+                                  <div class="rightData">
+                                    <input id="address3Id_0" type="text" maxlength="50" name="address31" class="required fullwidth address3" data-item-name="町名・番地" value="新都心明治安田生命さいたま新都心ビル">
+                                    <br>
+                                    <span class="txt_example">例）中央区新都心11番地２丁目</span>
+                                  </div>
+                                </div>
+                                <div class="linkBlock bdr_b_dash">
+                                  <div class="leftTitle"> お届け先建物名 </div>
+                                  <div class="rightData">
+                                    <input id="address4Id" type="text" maxlength="100" name="address41" class="fullwidth address4" value="" data-item-name="アパート・マンション・ビル">
+                                    <br>
+                                    <p> <span class="txt_example">例）ランド・アクシス・タワー（明治安田生命さいたま新都心ビル）３２階</span> </p>
+                                  </div>
+                                </div>
+                                <div class="linkBlock">
+                                  <div class="leftTitle"> お届け先電話番号 </div>
+                                  <div class="rightData">
+                                    <input id="phoneNumber1" type="text" maxlength="5" name="phoneNumber1" class="required digit phoneNumber" value="000" data-item-name="電話番号1">
+                                    <span class="">-</span>
+                                    <input id="phoneNumber2" type="text" maxlength="4" name="phoneNumber2" class="required digit phoneNumber" value="1111" data-item-name="電話番号2">
+                                    <span class="">-</span>
+                                    <input id="phoneNumber3" type="text" maxlength="4" name="phoneNumber3" class="required digit phoneNumber" value="2222" data-item-name="電話番号3">
+                                    <p> <span>※自宅電話番号又は携帯電話番号を入力してください。</span> </p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="subShippingListTemplateArea">
+                                <div id="0_0_0000_1218IT_uni000001" class="frameBody shippingDtailTemplateArea shippingDetailListKey">
+                                  <input value="0_0_0000_1218IT_uni000001" name="shippingDetailListKey" class="hidden">
+                                  <div class="linkBlock shopNameHeader">
+                                    <div class="shopShippingTitle">
+                                      <span class="deliveryTypeName">通常便</span>
+                                      <span class="shippingCharge">／ 送料：</span>
+                                      <span class="shippingCharge currency">355円</span>
+                                      <span>
+                                        <span class="shippingCharge currency">(参考税込 ：390.50円)</span>
+                                      </span>
+                                      <span class="freeShippingChargeDiff"> ／ あと <span>17,428円</span> で送料無料 </span>
+                                    </div>
+                                    <div class="shopShippingList">
+                                      <div class="shippingBorder">
+                                        <div class="frameBody">
+                                          <table class="listTbl">
+                                            <tbody>
+                                              <tr class="tableHeader d-none d-lg-table-row">
+                                                <th width="*" class="tableCell">商品名</th>
+                                                <th width="30%" class="tableCell giftCol">ラッピング／のし</th>
+                                                <th width="10%" class="tableCell quantityCol">数量</th>
+                                              </tr>
+                                              <tr class="listBody commodityList commodityListTemplateArea bdr_b_solid">
+                                                <td>
+                                                  <div>
+                                                    <div id="[0][0000][1218IT_uni000001]">
+                                                      <input value="[0][0000][1218IT_uni000001]" name="shippingCommodityKey" class="hidden">
+                                                      <ul class="tableBody skuCode">
+                                                        <li class="commodityImageCol"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000001/1218IT_uni000001_10_rel_pc.jpg" onerror="noPhoto(this, 'noPhotoCommodity')" class="imageCommodityImg" width="60" height="60" alt="単品軽減8％商品"> </li>
+                                                        <li class="commodityNameCol"> <span>単品軽減8％商品</span>
+                                                          <span class="standardDetail1Name"></span>
+                                                          <span class="standardDetail2Name"></span>
+                                                          <div class="compositionListArea">
+                                                            <span></span>
+                                                          </div>
+                                                          <div>
+                                                            <span class="high_label"> 「 キャンペーンA 」 にて 7%値引適応中 </span>
+                                                          </div>
+                                                          <div class="incWorkArea">
+                                                            <div class="incWork">
+                                                              <span>□</span>
+                                                              <span>付帯サービス_001税抜</span>
+                                                              <span>：なし</span>
+                                                            </div>
+                                                            <div class="incWork">
+                                                              <span>□</span>
+                                                              <span>付帯サービス_002非課税</span>
+                                                              <span>：なし</span>
+                                                            </div>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                </td>
+                                                <td> <span class="giftCol"></span> <span class="giftCol"> <input value="" name="giftCode_1218IT_uni000001" class="hidden"> <input value="" name="giftCode" class="hidden">
+                                                    <!-- PCのし・ギフトエリア -->
+                                                    <div class="d-none d-lg-block">
+                                                      <!--/* Mockup_V12.18_mod_start */-->
+                                                      <div id="giftNone">
+                                                        <a id="giftList_1218IT_uni000001_0" class="popUpLink" data-data1="0000" data-data2="1218IT_uni000001" data-data3="1218IT_uni000001" onclick="getGiftList(this.getAttribute('data-data1'), this.getAttribute('data-data2'), this, this.getAttribute('data-data3'))">
+                                                          <span class="noshiGiftName">ラッピング選択なし</span>
+                                                        </a>
+                                                      </div>
+                                                      <div style="display: none;" id="giftSelected">
+                                                        <a id="giftList_1218IT_uni000001_0" class="popUpLink" data-data1="1000" data-data2="1218IT_uni000001" data-data3="1218IT_uni000001" onclick="getGiftList(this.getAttribute('data-data1'), this.getAttribute('data-data2'), this, this.getAttribute('data-data3'))">
+                                                          <span class="noshiGiftName">ギフト001税抜</span>
+                                                        </a>
+                                                        <div>
+                                                          <span>200円</span>
+                                                          <span>
+                                                            <span>(参考税込 ：220.00円)</span>
+                                                          </span>
+                                                        </div>
+                                                      </div>
+                                                      <br>
+                                                      <div class="noshiPopUpLinkArea">
+                                                        <input class="hidden selectededNoshiCode" value="">
+                                                        <input class="hidden inputedNoshiNameplate" value="">
+                                                        <textarea class="hidden inputedNoshiMessage"></textarea>
+                                                        <a id="noshiList_1218IT_uni000001_0" class="popUpLink" data-data1="0000" onclick="getNoshiList(this.getAttribute('data-data1'), this)"> <span class="noshiGiftName">のし選択なし</span> </a>
+                                                        <div></div>
+                                                      </div>
+                                                      <div class="noshiPopUpLinkAreaSelected" style="display: none;">
+                                                        <input class="hidden selectededNoshiCode" value="noshi001">
+                                                        <input class="hidden inputedNoshiNameplate" value="">
+                                                        <textarea class="hidden inputedNoshiMessage"></textarea>
+                                                        <a id="noshiList_1218IT_uni000001_0" class="popUpLink" data-data1="1000" onclick="getNoshiList(this.getAttribute('data-data1'), this)"> <span class="noshiGiftName">熨斗001税抜</span> </a>
+                                                        <div>
+                                                          <span>200円</span>
+                                                          <span>
+                                                            <span>(参考税込 ：220.00円)</span>
+                                                          </span>
+                                                        </div>
+                                                        <div></div>
+                                                      </div>
+                                                    </div>
+                                                    <!--/* Mockup_V12.18_mod_end */-->
+                                                    <!-- SPのし・ギフトエリア -->
+                                                    <table class="cartTbl mb10 d-table d-lg-none">
+                                                      <tbody>
+                                                        <tr>
+                                                          <th class="cmdtyCol">ラッピング／のし</th>
+                                                          <th class="priceCol">販売価格</th>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>
+                                                            <div>
+                                                              <a id="giftList_1218IT_uni000001_0_sp" class="popUpLink" data-data1="0000" data-data2="1218IT_uni000001" data-data3="1218IT_uni000001" onclick="getGiftList(this.getAttribute(&#39;data-data1&#39;), this.getAttribute(&#39;data-data2&#39;), this, this.getAttribute(&#39;data-data3&#39;))"> <span class="noshiGiftName">ラッピング選択なし</span> </a>
+                                                            </div>
+                                                            <br>
+                                                            <div class="noshiPopUpLinkArea">
+                                                              <input class="hidden selectededNoshiCode" value="">
+                                                              <input class="hidden inputedNoshiNameplate" value="">
+                                                              <textarea class="hidden inputedNoshiMessage"></textarea>
+                                                              <a id="noshiList_1218IT_uni000001_0_sp" class="popUpLink" data-data1="0000" onclick="getNoshiList(this.getAttribute(&#39;data-data1&#39;), this)"> <span class="noshiGiftName">のし選択なし</span> </a>
+                                                              <div></div>
+                                                            </div>
+                                                          </td>
+                                                          <td>
+                                                            <br>
+                                                          </td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </span> </td>
+                                                <td align="right"> <span class="quantityCol"> <span class="d-inline d-lg-none">数量：</span> <span>2</span> <input type="hidden" value="2" name="commodityQuantity"> </span> </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                      <div class="deliveryArea">
+                                        <div class="deliveryAppoint">
+                                          <span>お届け希望日</span>
+                                        </div>
+                                        <div class="deliveryBlock">
+                                          <div class="deliveryAppointedDateListArea">
+                                            <select class="mr5" name="deliveryAppointedDate" id="deliveryAppointedDate_0">
+                                              <option value="">お届け希望日を選択してください</option>
+                                              <option value="2025/07/04">2025年07月04日(金)</option>
+                                              <option value="2025/07/05">2025年07月05日(土)</option>
+                                              <option value="2025/07/06">2025年07月06日(日)</option>
+                                              <option value="2025/07/07">2025年07月07日(月)</option>
+                                              <option value="2025/07/08">2025年07月08日(火)</option>
+                                              <option value="2025/07/09">2025年07月09日(水)</option>
+                                              <option value="2025/07/10">2025年07月10日(木)</option>
+                                              <option value="2025/07/11">2025年07月11日(金)</option>
+                                              <option value="2025/07/12">2025年07月12日(土)</option>
+                                              <option value="2025/07/13">2025年07月13日(日)</option>
+                                              <option value="2025/07/14">2025年07月14日(月)</option>
+                                              <option value="2025/07/15">2025年07月15日(火)</option>
+                                              <option value="2025/07/16">2025年07月16日(水)</option>
+                                              <option value="2025/07/17">2025年07月17日(木)</option>
+                                              <option value="2025/07/18">2025年07月18日(金)</option>
+                                              <option value="2025/07/19">2025年07月19日(土)</option>
+                                              <option value="2025/07/20">2025年07月20日(日)</option>
+                                              <option value="2025/07/21">2025年07月21日(月)</option>
+                                              <option value="2025/07/22">2025年07月22日(火)</option>
+                                              <option value="2025/07/23">2025年07月23日(水)</option>
+                                              <option value="2025/07/24">2025年07月24日(木)</option>
+                                              <option value="2025/07/25">2025年07月25日(金)</option>
+                                              <option value="2025/07/26">2025年07月26日(土)</option>
+                                              <option value="2025/07/27">2025年07月27日(日)</option>
+                                              <option value="2025/07/28">2025年07月28日(月)</option>
+                                              <option value="2025/07/29">2025年07月29日(火)</option>
+                                              <option value="2025/07/30">2025年07月30日(水)</option>
+                                              <option value="2025/07/31">2025年07月31日(木)</option>
+                                              <option value="2025/08/01">2025年08月01日(金)</option>
+                                              <option value="2025/08/02">2025年08月02日(土)</option>
+                                            </select>
+                                            <select name="deliveryAppointedTimeZone" id="deliveryAppointedTimeZone_0" class="hidden">
+                                              <option value=""></option>
+                                            </select>
+                                            <div>
+                                              <p class="mt10">※お届け希望日の選択可能期間は、本日中にご注文を確定して頂いた場合を前提として算出しています。</p>
+                                              <p>※前払いが必要なお支払方法の場合、ご入金状況によってはお届け希望日に間に合わない場合がありますのでご注意ください。</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="subShippingListTemplateArea">
+                                <div id="0_1_0000_1218IT_uni000002" class="frameBody shippingDtailTemplateArea shippingDetailListKey">
+                                  <input value="0_1_0000_1218IT_uni000002" name="shippingDetailListKey" class="hidden">
+                                  <div class="linkBlock shopNameHeader">
+                                    <div class="shopShippingTitle">
+                                      <span class="deliveryTypeName">クール便</span>
+                                      <span class="shippingCharge">／ 送料：</span>
+                                      <span class="shippingCharge currency">1,300円</span>
+                                      <span>
+                                        <span class="shippingCharge currency">(参考税込 ：1,430.00円)</span>
+                                      </span>
+                                    </div>
+                                    <div class="shopShippingList">
+                                      <div class="shippingBorder">
+                                        <div class="frameBody">
+                                          <table class="listTbl">
+                                            <tbody>
+                                              <tr class="tableHeader d-none d-lg-table-row">
+                                                <th width="*" class="tableCell">商品名</th>
+                                                <th width="30%" class="tableCell giftCol">ラッピング／のし</th>
+                                                <th width="10%" class="tableCell quantityCol">数量</th>
+                                              </tr>
+                                              <tr class="listBody commodityList commodityListTemplateArea bdr_b_solid">
+                                                <td>
+                                                  <div>
+                                                    <div id="[0][0000][1218IT_uni000002]">
+                                                      <input value="[0][0000][1218IT_uni000002]" name="shippingCommodityKey" class="hidden">
+                                                      <ul class="tableBody skuCode">
+                                                        <li class="commodityImageCol"> <img src="../共通//cms/images/0000/catalog/1218IT_uni000002/1218IT_uni000002_common_pc.jpg" onerror="noPhoto(this, 'noPhotoCommodity')" class="imageCommodityImg" width="60" height="60" alt="単品軽減5％商品"> </li>
+                                                        <li class="commodityNameCol"> <span>単品軽減5％商品</span>
+                                                          <span class="standardDetail1Name"></span>
+                                                          <span class="standardDetail2Name"></span>
+                                                          <div class="compositionListArea">
+                                                            <span></span>
+                                                          </div>
+                                                          <div class="incWorkArea">
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                </td>
+                                                <td> <span class="giftCol"></span> <span class="giftCol"> <input value="" name="giftCode_1218IT_uni000002" class="hidden"> <input value="" name="giftCode" class="hidden">
+                                                    <!-- PCのし・ギフトエリア -->
+                                                    <div class="d-none d-lg-block">
+                                                      <div>
+                                                        <span>ラッピング選択なし</span>
+                                                      </div>
+                                                      <br>
+                                                      <div>
+                                                        <span>のし選択なし</span>
+                                                      </div>
+                                                    </div>
+                                                    <!-- SPのし・ギフトエリア -->
+                                                    <table class="cartTbl mb10 d-table d-lg-none">
+                                                      <tbody>
+                                                        <tr>
+                                                          <th class="cmdtyCol">ラッピング／のし</th>
+                                                          <th class="priceCol">販売価格</th>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>
+                                                            <div>
+                                                              <span>ラッピング選択なし</span>
+                                                            </div>
+                                                            <br>
+                                                            <div>
+                                                              <span>のし選択なし</span>
+                                                            </div>
+                                                          </td>
+                                                          <td>
+                                                            <br>
+                                                          </td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </span> </td>
+                                                <td align="right"> <span class="quantityCol"> <span class="d-inline d-lg-none">数量：</span> <span>2</span> <input type="hidden" value="2" name="commodityQuantity"> </span> </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                      <div class="deliveryArea hidden">
+                                        <div class="deliveryAppoint">
+                                          <span>お届け希望</span>
+                                        </div>
+                                        <div class="deliveryBlock">
+                                          <div class="deliveryAppointedDateListArea">
+                                            <select class="mr5 hidden" name="deliveryAppointedDate" id="deliveryAppointedDate_0">
+                                              <option value=""></option>
+                                            </select>
+                                            <select name="deliveryAppointedTimeZone" id="deliveryAppointedTimeZone_0" class="hidden">
+                                              <option value=""></option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <table class="cartTbl cartTotal">
+                                <tbody>
+                                  <tr>
+                                    <th class="shopClaimTotal">お届け先小計金額(税抜)</th>
+                                    <td> <span class="shippingTotalPrice">3,942円</span> </td>
+                                  </tr>
+                                  <tr>
+                                    <th class="shopClaimTotal">送料金額(税抜)</th>
+                                    <td> <span class="shippingTotalPrice">1,655円</span> </td>
+                                  </tr>
+                                  <tr>
+                                    <th class="shopClaimTotal">合計金額(参考税込)</th>
+                                    <td> <span class="shippingTotalPrice">6,030円</span> </td>
+                                  </tr>
+                                </tbody>
+                                <tbody>
+                                  <tr>
+                                    <th class="shopClaimTotal">(10%対象)</th>
+                                    <td><span class="shippingTotalPrice">1,820円</span></td>
+                                  </tr>
+                                  <tr>
+                                    <th class="shopClaimTotal">(内消費税額)</th>
+                                    <td><span>165円</span></td>
+                                  </tr>
+                                </tbody>
+                                <tbody>
+                                  <tr>
+                                    <th class="shopClaimTotal">(8%対象)</th>
+                                    <td><span class="shippingTotalPrice">2,572円</span></td>
+                                  </tr>
+                                  <tr>
+                                    <th class="shopClaimTotal">(内消費税額)</th>
+                                    <td><span>190円</span></td>
+                                  </tr>
+                                </tbody>
+                                <tbody>
+                                  <tr>
+                                    <th class="shopClaimTotal">(5%対象)</th>
+                                    <td><span class="shippingTotalPrice">1,638円</span></td>
+                                  </tr>
+                                  <tr>
+                                    <th class="shopClaimTotal">(内消費税額)</th>
+                                    <td><span>78円</span></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="MessageArea">
+                          <div id="blanketCartTable" class="">
+                            <h2>連絡事項</h2>
+                          </div>
+                          <div id="textArea">
+                            <textarea id="shippingMessage" class="fullwidth" maxlength="200" cols="109" rows="5" name="message"></textarea>
+                          </div>
+                        </div>
+                      </form>
+                      <!-- Popup画面はここから-->
+                      <div id="giftListArea" data-type="order.gift_list" style="left: 50%; margin-left: -300px; z-index: 1002; position: absolute; top: 740px; margin-top: 0px; display: none;">
+                        <h3>ラッピング選択</h3>
+                        <div class="giftHeader"> ラッピングの種類を選択してください。 </div>
+                        <div class="listBody normal">
+                          <form id="giftRadioForm">
+                            <label onclick="txtClick()" class="w100">
+                              <ul class="tableBody">
+                                <li class="radioCell"> <input id="noneSelect" class="editRadio" type="radio" checked="" value="" name="wrappingSelect"> </li>
+                                <li class="giftNameCell giftListCell">ラッピング選択なし</li>
+                              </ul>
+                            </label>
+                            <div id="giftList">
+                              <div id="giftInfoTemplate" class="hidden giftInfo">
+                                <input class="selectGiftCode hidden" data-item="giftCode" data-attribute="value">
+                                <ul class="tableBody">
+                                  <label data-item="giftCode" id="" data-attribute="id" onclick="txtClick(id)" class="giftListAreaLabel">
+                                    <li class="radioCell"> <input data-item="giftCode" class="editRadio" type="radio" name="wrappingSelect" data-attribute="value"> </li>
+                                    <li class="giftNameCell giftListCell giftNameTitle" data-item="giftName" data-attribute="html"></li>
+                                    <li class="imageCell"> <img data-item="giftImageUrl" class="giftImage" data-attribute="src" onerror="noPhoto(this,'noPhotoGift')" data-alt-item="giftName" data-attribute-alt="alt" src="../共通/files/commonfiles/images/NoPhoto_gift.jpg"> </li>
+                                    <li class="giftDescCell giftListCell">
+                                      <div class="giftListDescroption">
+                                        <span data-item="giftDescription" data-attribute="html"></span>
+                                      </div>
+                                      <div class="giftListPrice">
+                                        <span data-item="giftPrice" class="currency" data-attribute="html" data-displaytaxtype="true"></span>
+                                      </div>
+                                    </li>
+                                  </label>
+                                </ul>
+                              </div>
+                              <div id="giftInfo0" class="giftInfo">
+                                <input class="selectGiftCode hidden" data-item="giftCode" data-attribute="value" value="gift001">
+                                <ul class="tableBody">
+                                  <label data-item="giftCode" id="gift001" data-attribute="id" onclick="txtClick(id)" class="giftListAreaLabel">
+                                    <li class="radioCell"> <input data-item="giftCode" class="editRadio" type="radio" name="wrappingSelect" data-attribute="value" value="gift001"> </li>
+                                    <li class="giftNameCell giftListCell giftNameTitle" data-item="giftName" data-attribute="html">ギフト001税抜</li>
+                                    <li class="imageCell"> <img data-item="giftImageUrl" class="giftImage" data-attribute="src" onerror="noPhoto(this,'noPhotoGift')" data-alt-item="giftName" data-attribute-alt="alt" src="../共通/cms/images/0000/gift/gift1/gift1_g_pc.jpg" alt="ギフト001税抜"> </li>
+                                    <li class="giftDescCell giftListCell">
+                                      <div class="giftListDescroption">
+                                        <span data-item="giftDescription" data-attribute="html">ギフト001説明</span>
+                                      </div>
+                                      <div class="giftListPrice">
+                                        <span data-item="giftPrice" class="currency" data-attribute="html" data-displaytaxtype="true">200円 (参考税込 ：220.00円)</span>
+                                      </div>
+                                    </li>
+                                  </label>
+                                </ul>
+                              </div>
+                              <div id="giftInfo1" class="giftInfo">
+                                <input class="selectGiftCode hidden" data-item="giftCode" data-attribute="value" value="gift002">
+                                <ul class="tableBody">
+                                  <label data-item="giftCode" id="gift002" data-attribute="id" onclick="txtClick(id)" class="giftListAreaLabel">
+                                    <li class="radioCell"> <input data-item="giftCode" class="editRadio" type="radio" name="wrappingSelect" data-attribute="value" value="gift002"> </li>
+                                    <li class="giftNameCell giftListCell giftNameTitle" data-item="giftName" data-attribute="html">ギフト002非課税</li>
+                                    <li class="imageCell"> <img data-item="giftImageUrl" class="giftImage" data-attribute="src" onerror="noPhoto(this,'noPhotoGift')" data-alt-item="giftName" data-attribute-alt="alt" src="../共通/cms/images/0000/gift/gift2/gift2_g_pc.jpg" alt="ギフト002非課税"> </li>
+                                    <li class="giftDescCell giftListCell">
+                                      <div class="giftListDescroption">
+                                        <span data-item="giftDescription" data-attribute="html">ギフト002説明</span>
+                                      </div>
+                                      <div class="giftListPrice">
+                                        <span data-item="giftPrice" class="currency" data-attribute="html" data-displaytaxtype="true">300円（非課税）</span>
+                                      </div>
+                                    </li>
+                                  </label>
+                                </ul>
+                                <input type="hidden" name="targetRow" value="0_0">
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="popUpButtonArea">
+                          <input id="decisionGiftButton" type="button" class="spBtn smallButton btn-orange float_r" onclick="callGiftSetAction(this)" data-button="setGift" value="決定する">
+                          <input id="giftCloseLightBoxButton" class="spBtn smallButton btn-gray float_l closeLightBox" type="button" value="閉じる">
+                        </div>
+                      </div>
+                      <div id="noshiListArea" style="left: 50%; margin-left: -300px; z-index: 1002; position: absolute; top: 1040px; margin-top: 0px; display: none;">
+                        <form id="noshiForm">
+                          <h3>のし選択</h3>
+                          <div class="noshiHeader"> のしの種類を選択してください。 </div>
+                          <div class="frameBody">
+                            <div class="noNoshiArea" onclick="disableNoshiInput(true)">
+                              <input type="radio" id="noNoshi" name="noshiRadio" checked="" value="">
+                              <label for="noNoshi">のし選択なし</label>
+                            </div>
+                            <div id="noshiInfoList">
+                              <div class="noshiInfoTemplate" style="display: none;" onclick="disableNoshiInput(false)">
+                                <input type="radio" name="noshiRadio" value="">
+                                <label class="noshiName" data-item="noshiName" data-attribute="html" data-escape="false"></label>
+                                <div>
+                                  <img class="noshiImage" data-item="noshiImageUrl" data-attribute="src" data-alt-item="noshiName" data-attribute-alt="alt" src="../共通/files/commonfiles/images/NoPhoto_commodity.jpg">
+                                  <span class="noshiDescription" data-item="noshiDescription" data-attribute="html"></span>
+                                </div>
+                                <div class="noshiPrice mb10" data-item="noshiPrice" data-attribute="html"></div>
+                              </div>
+                              <div class="noshiInfoTemplate" style="" onclick="disableNoshiInput(false)">
+                                <input type="radio" name="noshiRadio" value="noshi001" id="noshiInfo_noshi001">
+                                <label class="noshiName" data-item="noshiName" data-attribute="html" data-escape="false" for="noshiInfo_noshi001">熨斗001税抜</label>
+                                <div>
+                                  <img class="noshiImage" data-item="noshiImageUrl" data-attribute="src" data-alt-item="noshiName" data-attribute-alt="alt" src="../共通/cms/images/0000/noshi/noshi1/noshi1_n_pc.jpg" alt="熨斗001税抜">
+                                  <span class="noshiDescription" data-item="noshiDescription" data-attribute="html">熨斗001説明</span>
+                                </div>
+                                <div class="noshiPrice mb10" data-item="noshiPrice" data-attribute="html">200円 (参考税込 ：220.00円)</div>
+                              </div>
+                              <div class="noshiInfoTemplate" style="" onclick="disableNoshiInput(false)">
+                                <input type="radio" name="noshiRadio" value="noshi002" id="noshiInfo_noshi002">
+                                <label class="noshiName" data-item="noshiName" data-attribute="html" data-escape="false" for="noshiInfo_noshi002">熨斗002非課税</label>
+                                <div>
+                                  <img class="noshiImage" data-item="noshiImageUrl" data-attribute="src" data-alt-item="noshiName" data-attribute-alt="alt" src="../共通/files/commonfiles/images/NoPhoto_commodity.jpg" alt="熨斗002非課税">
+                                  <span class="noshiDescription" data-item="noshiDescription" data-attribute="html">熨斗002説明</span>
+                                </div>
+                                <div class="noshiPrice mb10" data-item="noshiPrice" data-attribute="html">300円（非課税）</div>
+                              </div>
+                              <input type="hidden" name="targetRow" value="0_0">
+                            </div>
+                            <div class="noshiHeader"> 詳細情報を入力してください。 </div>
+                            <div id="noshiInputArea">
+                              <span id="noshiNameplateLabel">名入れ</span>
+                              <input id="noshiNameplate" name="noshiNameplate" maxlength="100" value="" onkeydown="disableEnterkey(this.id)" disabled="">
+                              <div id="noshiNameplateCaution" class="caution"> ※連名の際は、名前を句点(、)で区切って記載してください。 </div>
+                              <br>
+                              <span>連絡事項</span>
+                              <textarea id="noshiMessage" name="noshiMessage" maxlength="200" rows="3" disabled=""></textarea>
+                            </div>
+                            <div class="popUpButtonArea">
+                              <input type="button" id="callNoshiSetActionButton" class="spBtn btn-orange smallButton float_r" onclick="callNoshiSetAction('noshiForm',this)" data-button="setNoshi" value="決定する">
+                              <input id="noshiCloseLightBoxButton" class="spBtn btn-gray smallButton float_l closeLightBox" type="button" value="閉じる">
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div id="buttonArea">
+                        <div class="disabledMovePaymentArea mb20">
+                          <input class="btn-orange" type="button" value="お支払い方法選択へ" onclick="location.href='../order/お支払方法選択(ゲスト購入).html'" data-button="goPayment" id="movePayment">
+                        </div>
+                        <div class="shippingNavigationImg d-block d-lg-none">
+                          <img class="" src="../共通/files/commonfiles/images/navi_order_shipping.gif" alt="お届け先・ラッピング設定">
+                        </div>
+                        <div class="backButtonArea">
+                          <input class="btn-gray backButton" type="button" value="前へ戻る" onclick="location.href='../order/顧客情報入力(ゲスト購入).html'" id="goBackButton">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="wsparts-include">
+                  <div id="pageFooter">
+                    <hr>
+                    <div class="copyRight">
+                      <span>Copyright (c) 2025 DG Business Technology,Inc. All Rights Reserved.</span>
+                    </div>
+                  </div>
+                  <input type="hidden" id="transactionToken" name="transactionToken" value="89db58f7-b771-499f-8198-d243ad007199">
+                  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/final.js?date=20250702144702"></script>
+                </div>
+              </div>
+              <div>
+                <div id="cookieConsentBannerRoot" class="wsparts-include">
+                  <script>
+                    /*<![CDATA[*/
+                    var relatedExternalCookieNames = [];
+                    /*]]>*/
+
+                  </script>
+                  <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/cookieConsentBanner.js?date=20250702144702"></script>
+                  <div id="cookieConsentBanner" class="cookieConsentBanner hidden">
+                    <div class="d-none d-md-block d-lg-block pd0 cookieConsentBannerArea">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8 floating-txt">
+                            <div class="float_l cookiePolicy">
+                              <span>当サイトでは、サイトの利便性向上のため、クッキー（Cookie）を使用しています。<br> サイトのクッキー（Cookie）の仕様に関しては <a href="../info/クッキーポリシー.html" id="moveCookiePolicy">「クッキーポリシー」</a>をお読みください。</span>
+                            </div>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                            <div class="float_r mt5">
+                              <button type="button" class="btn btn-deny" onclick="acceptCookie()">すべて拒否する</button>
+                              <button type="button" class="btn btn-accept" onclick="acceptCookie()">すべてのCookieを受け入れる</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="cookieConsentBannerSP" class="cookieConsentBannerSP hidden">
+                    <div class="d-block d-lg-none pd0 cookieConsentBannerAreaSP">
+                      <div class="container p-0">
+                        <div class="row m-0">
+                          <div class="col-xs-12 col-sm-12 floating-txt">
+                            <div class="float_l cookiePolicySP">
+                              <span>当サイトでは、サイトの利便性向上のため、クッキー（Cookie）を使用しています。<br> サイトのクッキー（Cookie）の仕様に関しては <a href="../info/クッキーポリシー.html" id="moveCookiePolicy">「クッキーポリシー」</a>をお読みください。</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row m-1">
+                          <div class="col-12">
+                            <button type="button" class="btn btn-deny" onclick="acceptCookie()">すべて拒否する</button>
+                          </div>
+                        </div>
+                        <div class="row m-1">
+                          <div class="col-12">
+                            <button type="button" class="btn btn-accept" onclick="acceptCookie()">すべてのCookieを受け入れる</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+#pageHeader {
+  width: 100%;
+  overflow: hidden;
+  height: 51px;
+  margin-top: 8px;
+  margin-bottom: 20px; 
+}
+
+body {
+  background: none;
+}

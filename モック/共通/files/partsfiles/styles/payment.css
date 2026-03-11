@@ -1,0 +1,427 @@
+@charset "utf-8";
+
+/*-----------------------------
+  ナビ
+------------------------------*/
+div.paymentNavigation {
+  width: 100%;
+  display: table;
+}
+
+/*-----------------------------
+  ナビ　タイトル
+------------------------------*/
+div.paymentNavigationTitle, div.paymentNavigationImg {
+  vertical-align: middle;
+}
+
+div.paymentNavigationTitle, div.paymentNavigationImg img {
+  width: 80%;
+  max-width: 438px;
+  margin-bottom: 20px;
+}
+
+/*-----------------------------
+  ナビ　画像
+------------------------------*/
+div.paymentNavigationImg {
+  text-align: center;
+}
+
+/*-----------------------------
+  クーポンエリア
+------------------------------*/
+#couponSelectArea {
+  margin-bottom: 10px;
+}
+
+/*-----------------------------
+  ポイントエリア
+------------------------------*/
+#pointSelectArea {
+  margin-bottom: 10px;
+}
+
+/*-----------------------------
+  ポイント適用入力
+------------------------------*/
+#applyPointArea {
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+/*-----------------------------
+  クーポンのご利用エリア
+------------------------------*/
+div.couponInfo {
+  padding: 10px;
+}
+
+/*-----------------------------
+  クーポン説明
+------------------------------*/
+div.couponDescription {
+  padding: 0px 3px 0px 50px;
+}
+
+/*-----------------------------
+  クーポン最低購入金額
+------------------------------*/
+div.couponUsePurchasePrice {
+  padding: 3px 3px 3px 50px;
+  color: #af0000;
+}
+
+/*-----------------------------
+  クーポンコード入力
+------------------------------*/
+.confirmCouponCode {
+  margin: 5px;
+}
+
+/*-----------------------------
+  クーポンコード入力説明
+------------------------------*/
+div.couponCodeInfo {
+  padding: 3px 3px 3px 3px;
+}
+/*-----------------------------
+  ポイントの内訳を見る
+------------------------------*/
+#displayPointSummaryArea {
+  margin-left:10px;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+#displayPointSummaryLink {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: right;
+}
+
+/*-----------------------------
+  ポイント
+------------------------------*/
+#pointArea {
+  display:inline-block;
+  vertical-align: middle;
+}
+
+/*-----------------------------
+  ポイント注意文
+------------------------------*/
+#pointCaution {
+  padding-top: 5px;
+}
+
+/*-----------------------------
+  ポイント入力
+------------------------------*/
+.usePoint {
+  margin-left: 10px;
+}
+
+/*-----------------------------
+  支払方法入力エリア
+------------------------------*/
+.displayPaymentListTemplateArea {
+  border-bottom: 1px solid #cccccc;
+}
+.paymentMethodNameMainArea {
+  padding: 10px;
+}
+
+.paymentMethodNameSubArea .cvsPaymentMethodLogoListMainArea {
+  margin: 5px 5px;
+}
+.paymentMethodLogoListMainArea{
+  display:inline-block;
+}
+/*-----------------------------
+  テーブルエリア
+------------------------------*/
+div.paymentPaymethodFrame div.frame {
+  border-left: none;
+}
+
+div.paymentPaymethodFrame div.frameBody {
+  border: none;
+}
+
+.paymentIndent{
+  margin-left:40px;
+}
+.bankListBody, .cvsPaymentBody,
+.onLineBankingBody{
+  border-top:1px solid #cccccc;
+  border-left:1px solid #cccccc;
+  background-color:#ffffff;
+  margin-top: 10px;
+}
+.newCardInfoArea{
+  border-top:1px solid #cccccc;
+  border-left:1px solid #cccccc;
+  border-bottom:1px solid #cccccc;
+  padding: 8px;
+}
+
+.newCardInfoInputTable,.inputCardholderNameTable{
+  border:1px solid #cccccc;
+  margin: 0px 10px;
+}
+
+.cardNoInput,.cardExpirationInput,.securityCodeInput{
+  flex-basis: 50%;
+  margin: 4px 0px;
+}
+
+.newCardRadio,.defaultCardCheckbox,.saveNewCardCheckbox,.inputCardholderNameArea{
+  flex-basis: 100%;
+  margin: 4px 0px;
+}
+
+.defaultCardCheckbox{
+  text-align:right;
+}
+.cardRegisterButton{
+  text-align:right;
+  margin: 8px 30px 0px 0px;
+}
+.inputtedCardNo{
+  padding-left: 20px;
+}
+.linkBlock td{
+  padding:10px;
+}
+#paymentMainArea .linkBlock.dashed {
+  border-top: dashed 1px #cccccc;
+}
+
+/*-----------------------------
+  注文内容合計エリア タイトル側
+------------------------------*/
+#orderSummaryInfoArea .leftTitle {
+  width: 40%;
+}
+#orderSummaryInfoArea .txt_r {
+  width: 60%;
+}
+/*-----------------------------
+  注文内容合計エリア データ側
+------------------------------*/
+#orderSummaryInfoArea div.rightData {
+  padding: 5px 5px 5px 5px;
+  text-align: right;
+  padding: 5px;
+  width:60%;
+}
+
+#recalculationButton {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/*-----------------------------
+  ポイントサマリー
+------------------------------*/
+#pointSummaryMainArea {
+  width: 400px;
+  background-color: #ffffff;
+}
+
+#pointSummaryMainArea div.frameHeader {
+  text-align: left;
+  font-size: 90%;
+}
+
+#pointSummaryMainArea div.frameBody {
+  background-color: white;
+  overflow: hidden;
+  font-size: 90%;
+}
+
+/*-----------------------------
+  ポイント利用
+------------------------------*/
+#pointSummaryMainArea li.pointUseDateCol {
+  width: 90px;
+  text-align: left;
+}
+
+/*-----------------------------
+  ポイント
+------------------------------*/
+#pointSummaryMainArea li.pointNameCol {
+  width: 125px;
+  text-align: left;
+}
+
+/*-----------------------------
+  ポイント合計
+------------------------------*/
+#pointSummaryMainArea li.sumOfPointCol {
+  width: 125px;
+  text-align: right;
+}
+
+/*-----------------------------
+  ポイントをすべて使うボタン
+------------------------------*/
+#usePointButtonArea {
+/*     margin-top: 5px; */
+  margin-bottom: 5px;
+  float: right;
+}
+
+input[name='usePointButton'].middleButton {
+  width: 120px;
+}
+
+#restPointTotalArea {
+  clear: both;
+  width: 200px;
+}
+
+/*-----------------------------
+  ボタンエリア
+------------------------------*/
+#buttonArea {
+  padding-top: 10px;
+  overflow: hidden;
+  clear: both;
+}
+.confirmButtonArea{
+  float:right;
+}
+
+.backButtonArea{
+  float:left;
+}
+.backButtonArea input{
+  width:100px;
+}
+
+.confirmButton {
+  background-color: #e68012;
+  color: #ffffff;
+}
+
+.confirmButtonDisabled {
+  color: #c0c0c0;
+}
+
+
+/*-----------------------------
+  ポイント明細
+------------------------------*/
+.pointSummaryDetailListData {
+  border-bottom: solid 1px #cccccc;
+}
+
+#pointSummaryMainArea #closeButton {
+  margin: 5px 5px 5px 0px;
+}
+
+/*-----------------------------
+  一括指定
+------------------------------*/
+#orderSummaryInfoArea, #couponSelectArea, #pointSelectArea,
+    #applyPointArea, #paymethodSelectArea {
+  padding: 0;
+}
+/*-----------------------------
+  991px以上(md)で表示
+------------------------------*/
+@media screen and (min-width:992px) {
+  .ordrtLeftArea {
+    float: left;
+  }
+  #orderSummaryInfoArea {
+    float: right;
+  }
+}
+/*-----------------------------
+  990px以下(xs,sm)で表示
+------------------------------*/
+@media screen and (max-width:991px) {
+  #orderSummaryInfoArea .leftTitle {
+    width: 20%;
+    min-width:130px;
+  }
+  
+  #orderSummaryInfoArea .txt_r {
+    width:auto;
+  }
+  
+  .confirmButtonArea{
+    float:none;
+  }
+  
+  #applyPointArea{
+    text-align:center;
+  }
+  
+  #applyPointArea input,
+  .confirmButtonArea input,
+  .backButtonArea input{
+    width:95%;
+    height:40px;
+  }
+  
+  .backButtonArea{
+    float:none;
+    display:block;
+  }
+  
+  .pointSummaryDetailListData {
+    text-align:left;
+  }
+  
+  .confirmCouponCode {
+    width: 240px;
+  }
+  
+  input[type="text"][name^="cardholderName"] {
+    width: 350px;
+  }
+}
+
+/*-----------------------------
+  767px以下(xs)で表示
+------------------------------*/
+@media screen and (max-width:767px) {
+  #pointSummaryMainArea {
+    width:80%;
+  }
+  
+  #pointSummaryMainArea li.pointUseDateCol,
+  #pointSummaryMainArea li.pointNameCol,
+  #pointSummaryMainArea li.sumOfPointCol{
+    width:auto;
+  }
+  
+  .pointSummaryDetailListTemplateArea .tableBody{
+    text-align:left;
+  }
+  
+  #orderSummaryInfoArea .bdr_b_dash{
+    border-bottom:1px dashed #cccccc;
+  }
+  
+  .confirmCouponCode {
+    width: 180px;
+  }
+  
+  input[type="text"][name^="cardholderName"] {
+    width: 200px;
+  }
+  
+  input[type="text"][name^="cardNo"] {
+    width: 180px;
+  }
+  
+  .csvSelectTag {
+    width: 250px;
+  }
+}

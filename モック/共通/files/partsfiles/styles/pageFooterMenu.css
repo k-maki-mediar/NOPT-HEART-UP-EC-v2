@@ -1,0 +1,223 @@
+.pageFooter {
+  background: #eeeeee;
+  width: 100%;
+  margin-top: 100px;
+  border-top:2px solid #ffffff;
+  display: inline-block;
+}
+
+.footer_sitemap {
+  width: 100%;
+  text-align: left;
+}
+
+.footer_sitemap_in {
+  margin: 0px auto;
+  display: block;
+  padding: 30px 10px;
+  position: relative;
+}
+.sp_footer_sns a{
+  text-decoration: none;
+}
+
+.go_top {
+  background-color: #eeeeee;
+  background-image: url(../../commonfiles/images/arrow_go_top.gif);
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: -38px;
+  padding-left: 25px;
+  text-align: center;
+  cursor: pointer;
+  border-top:2px solid #ffffff;
+  border-left:2px solid #ffffff;
+  border-right:2px solid #ffffff;
+}
+
+.sitemap_cate {
+  display: block;
+}
+
+.sitemap_cate > .footerCategory {
+  float: left;
+}
+/**/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .go_top {
+    top: -34px;
+  }
+}
+/**/
+@media screen and (-ms-high-contrast: active) , ( -ms-high-contrast :
+  none) {
+  .go_top {
+    top: -34px;
+  }
+}
+
+.go_top a {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.footerLinkArea {
+  padding-top: 15px;
+  background:#ffffff;
+  text-align: center;
+}
+
+.footer_sitemap_in dl {
+  vertical-align: top;
+  margin-bottom: 30px;
+  margin-right: 5px;
+  display: inline-block;
+  width: 100%;
+  word-break: break-all;
+}
+
+.footer_sitemap_in .last_b {
+  margin-bottom: 0;
+}
+
+.footer_sitemap_in dt {
+  font-weight: bold;
+}
+
+.copyRight {
+  padding: 10px 0 70px 0;
+  background: #ffffff;
+  font-size: 10px;
+}
+
+/**/
+@media screen and (max-width:767px) {
+  .pageFooter .container {
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .pageFooter .row {
+    margin: 0;
+  }
+  
+  .footer_sitemap_in {
+    padding: 0;
+  }
+  
+  .sitemap_cate,.footerCategory,.sitemap_r {
+    padding: 0;
+  }
+  
+  .footer_sitemap_in dl {
+    vertical-align: middle;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer_sitemap_in .sitemap_cate dl dt {
+    padding: 15px 10px;
+    border-bottom: 1px solid #cccccc;
+    background: url(../../commonfiles/images/arrow_next.gif) 98% 50%
+      no-repeat;
+  }
+  
+  .footer_sitemap_in dl dt a {
+    padding: 15px 10px;
+    width: 100%;
+    display: inline-block;
+  }
+  
+  .footer_sitemap_in dl .open {
+    background: url(../../commonfiles/images/arrow_up.gif) 98% 50%
+      no-repeat;
+  }
+  
+  .footer_sitemap_in dl dd {
+    display: none;
+  }
+  
+  .footer_sitemap_in .sitemap_cate dl dd ul li,.footer_sitemap_in .sitemap_r dl dt
+    {
+    border-bottom: 1px solid #cccccc;
+    background: url(../../commonfiles/images/arrow_next.gif) 98% 50%
+      no-repeat;
+  }
+  
+  .footer_sitemap_in .sitemap_cate dl dd ul li {
+    background-color: #ffffff;
+  }
+  
+  .footer_sitemap_in .footerCategory dl dd ul li a {
+    padding: 15px 10px;
+    width: 100%;
+    display: inline-block;
+  }
+  
+  .sp_footer_sns {
+    padding: 15px 10px;
+  }
+  
+  .footerLinkArea {
+    font-size: 11px;
+  }
+  
+  #footerSearchArea select[name='searchCategoryCode'] {
+    width: 100%;
+    display: block;
+    height: 58px;
+  }
+  
+  #floating-menu{
+    width: 100%;
+    z-index: 100;
+  }
+  
+  #floating-menu #searchWord {
+    margin: 10px 0;
+  }
+  
+  #floating-menu #footerSearchForm {
+    background: #333333;
+    padding: 10px;
+  }
+  
+  #floating-menu #footerSearchForm button {
+    background: #cccccc;
+    color: #333333;
+    height: 31px;
+    border-radius:5px;
+    margin:0px 0px 0px 5px;
+  }
+  
+  #floating-menu #footerSearchForm input {
+    line-height: 31px;
+    width: 48%;
+  }
+  
+  #footerItemCount {
+    position: absolute;
+    bottom: 35px;
+    right: 15%;
+    background-color: rgb(175, 0, 0);
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 10px;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+  }
+  
+  #floating-menu .footer-menu .btn-black {
+    width: 100%;
+  }
+}

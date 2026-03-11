@@ -1,0 +1,49 @@
+/*****news*****/
+
+.news dl {
+  margin-top: -10px;
+}
+
+.news dt,.news dd {
+  line-height:2;
+  font-weight: normal;
+}
+
+.news dt {
+  float: left;
+  padding-left: 10px;
+  width: 30%;
+}
+
+.news dd {
+  border-bottom: 1px dashed #cccccc;
+  padding-left: 10px;
+}
+
+.news dd .ddIn{
+  width: 70%;
+  word-break:break-all;
+  display:inline-block;;
+}
+
+/*767px以下（SP）で表示*/
+@media screen and (max-width:767px) {
+  .news dt {
+    float: none;
+    border-bottom: none;
+    padding-top: 10px;
+    width: 100%;
+  }
+  
+  .news dd {
+    padding-bottom: 10px;
+  }
+  
+  .news dt,.news dd {
+    line-height: 1.5em;
+  }
+  
+  .news dd .ddIn{
+    width: 100%;
+  }
+}

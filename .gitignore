@@ -1,0 +1,33 @@
+node_modules/
+
+# ビルド生成物
+mock/cms/pc/**/*.html
+mock/files/commonfiles/styles/common.css
+mock/files/commonfiles/scripts/**
+mock/files/partsfiles/styles/*.css
+mock/files/partsfiles/scripts/*.js
+mock/cms/pc/parts/
+
+# ※ 以下はパッケージからのコピーなのでGit管理する
+# mock/files/exfiles/
+# mock/files/systemfiles/
+# mock/files/contentfiles/
+
+.sass-cache/
+.cache/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.log
+*.tmp
+.temp/
+素材/
+.env
+.env.local
+.env*.local
+.vercel
+.playwright-mcp/

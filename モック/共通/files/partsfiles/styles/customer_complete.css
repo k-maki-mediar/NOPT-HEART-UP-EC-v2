@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+/*-----------------------------
+  ナビエリア
+-----------------------------*/
+#customerCompleteArea div.navigation {
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+#customerCompleteArea div.navigation img{
+  max-width: 438px;
+  width:80%;
+}
+/*-----------------------------
+  メッセージエリア
+-----------------------------*/
+#resultMessageArea {
+  padding: 30px 0px 30px 0px;
+  text-align: center;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+#resultMessageArea .messageBg{
+  background-color:#eeeeee;
+  padding:20px;
+  margin:20px;
+  border-radius:2px;
+  -webkit-border-radius: 2px; /* Safari,Google Chrome用 */
+  -moz-border-radius: 2px; /* Firefox用 */
+}
+
+#resultMessageArea .massageTxt{
+  margin:10px auto;
+  font-size:2em;
+  line-height:1.2em;
+}

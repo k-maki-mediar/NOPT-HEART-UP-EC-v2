@@ -1,0 +1,153 @@
+// ========================================
+// Variables
+// デザインから抽出した変数
+// SCSS変数 + CSS変数出力の両方を定義
+// ========================================
+
+// Functions をインポート（rem変換に使用）
+@use 'functions' as *;
+
+// ========================================
+// SCSS変数（ビルド時計算用）
+// ========================================
+
+// カラーパレット
+$primary-color: #FF6B6B;
+$secondary-color: #4ECDC4;
+$accent-color: #FFE66D;
+$text-color: #2C3E50;
+$text-light: #7F8C8D;
+$bg-color: #FFFFFF;
+$bg-light: #F7F7F7;
+$border-color: #E0E0E0;
+
+// フォント
+$font-family-base: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+$font-family-heading: 'Noto Sans JP', sans-serif;
+
+// フォントサイズ（px - SCSS計算用）
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-md: 18px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+$font-size-2xl: 32px;
+$font-size-3xl: 40px;
+
+// フォントウェイト
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// スペーシング（px - SCSS計算用）
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+
+// ブレークポイント（ガイドライン2-5準拠）
+// SP: 320px〜767px / Tablet: 768px〜991px / PC: 992px〜
+$breakpoint-sp-max: 767px;
+$breakpoint-tablet-min: 768px;
+$breakpoint-tablet-max: 991px;
+$breakpoint-pc-min: 992px;
+
+// ボーダー
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-width: 1px;
+
+// シャドウ
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+// トランジション
+$transition-fast: 0.15s ease-in-out;
+$transition-base: 0.3s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
+
+// z-index
+$z-index-dropdown: 1000;
+$z-index-modal: 1050;
+$z-index-tooltip: 1100;
+
+// ========================================
+// CSS変数エクスポート（ランタイム用・JS連携用）
+// ========================================
+
+:root {
+  // カラー
+  --color-primary: #{$primary-color};
+  --color-secondary: #{$secondary-color};
+  --color-accent: #{$accent-color};
+  --color-text: #{$text-color};
+  --color-text-light: #{$text-light};
+  --color-bg: #{$bg-color};
+  --color-bg-light: #{$bg-light};
+  --color-border: #{$border-color};
+
+  // フォントファミリー
+  --font-family-base: #{$font-family-base};
+  --font-family-heading: #{$font-family-heading};
+
+  // フォントサイズ（rem変換）
+  --font-size-xs: #{rem($font-size-xs)};
+  --font-size-sm: #{rem($font-size-sm)};
+  --font-size-base: #{rem($font-size-base)};
+  --font-size-md: #{rem($font-size-md)};
+  --font-size-lg: #{rem($font-size-lg)};
+  --font-size-xl: #{rem($font-size-xl)};
+  --font-size-2xl: #{rem($font-size-2xl)};
+  --font-size-3xl: #{rem($font-size-3xl)};
+
+  // フォントウェイト
+  --font-weight-normal: #{$font-weight-normal};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-bold: #{$font-weight-bold};
+
+  // スペーシング（rem変換）
+  --spacing-xs: #{rem($spacing-xs)};
+  --spacing-sm: #{rem($spacing-sm)};
+  --spacing-md: #{rem($spacing-md)};
+  --spacing-lg: #{rem($spacing-lg)};
+  --spacing-xl: #{rem($spacing-xl)};
+  --spacing-2xl: #{rem($spacing-2xl)};
+  --spacing-3xl: #{rem($spacing-3xl)};
+
+  // ボーダー（rem変換）
+  --border-radius-sm: #{rem($border-radius-sm)};
+  --border-radius-md: #{rem($border-radius-md)};
+  --border-radius-lg: #{rem($border-radius-lg)};
+  --border-width: #{$border-width};
+
+  // シャドウ
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+
+  // トランジション
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+
+  // z-index
+  --z-index-dropdown: #{$z-index-dropdown};
+  --z-index-modal: #{$z-index-modal};
+  --z-index-tooltip: #{$z-index-tooltip};
+
+  // レイアウト幅
+  --main-content-width: clamp(320px, 90vw, 960px);
+}
+
+// PC版（992px以上）でコンテンツ最大幅を1076pxに拡張
+@media (min-width: #{$breakpoint-pc-min}) {
+  :root {
+    --main-content-width: 1076px;
+  }
+}

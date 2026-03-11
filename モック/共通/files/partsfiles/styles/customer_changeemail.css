@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+/*-----------------------------
+  必須
+-----------------------------*/
+div.requireMessageArea {
+  overflow: hidden;
+  background-color: #FFF;
+}
+
+/*-----------------------------
+  ボタンエリア
+-----------------------------*/
+#buttonArea {
+  margin-top: 10px;
+  overflow: hidden;
+}

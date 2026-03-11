@@ -1,0 +1,7 @@
+<title th:text="${ShopinfoResultBean.shopinfo.shopName}"></title>
+<script itemscope itemtype="http://schema.org/WebContent" itemref="s1 s2"></script>
+<meta id="s1" th:content="${ShopinfoResultBean.shopinfo.shopName}" itemprop="description" />
+<meta th:content="${ShopinfoResultBean.shopinfo.shopName}" name="description" />
+<meta name="keywords" th:content="${ShopinfoResultBean.shopinfo.shopName}" />
+<link th:href="@{/} + ${'shop/' + ShopinfoResultBean.shopinfo.shopCode + '/'}" rel="canonical" />
+<link id="s2" th:href="@{/} + ${'shop/' + ShopinfoResultBean.shopinfo.shopCode + '/'}" itemprop="url" />

@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+.freeInputTextBox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 80px;
+}
+
+#questionArea span {
+  word-break: break-all;
+}
+
+#selectArea select {
+  width: 100%;
+}

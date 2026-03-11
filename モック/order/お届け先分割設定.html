@@ -1,0 +1,513 @@
+﻿
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <title>お届け先分割設定</title>
+  <meta name="description" content="">
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/front/app/error/no_support/" />
+  </noscript>
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/bootstrap-5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/commonfiles/styles/reset.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/commonfiles/styles/common.css?date=20250715111320" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/systemfiles/styles/sociallogin.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/jquery.colorbox-1.6.4/colorbox.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/concrete/concrete.css" />
+  <link rel="stylesheet" type="text/css" href="../共通/files/exfiles/fontawesome-5.15.4-web/css/all.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/pageHeaderLogoOnly.css?date=20250715111320">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/shipping_split.css?date=20250715111320">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/pageFooterCopyrightOnly.css?date=20250715111320">
+  <link rel="stylesheet" type="text/css" media="all" href="../共通/files/partsfiles/styles/cookieConsentBanner.css?date=20250715111320">
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/popper-2.11.8/dist/popper.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/bootstrap-5.3.2/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery.lightbox_me/jquery.lightbox_me.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/elevatezoom-plus-master/jquery.ez-plus.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/jquery.colorbox-1.6.4/jquery.colorbox.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/exfiles/fontawesome-5.15.4-web/js/all.js"></script>
+  <script>
+    /*<![CDATA[*/
+    var settings = {
+      servletMapping: "/app",
+      applicationLevel: "/pc",
+      commonPath: "/cms/pc/common/",
+      apiServ: "/api",
+      logServ: "/log",
+      pagingLineSize: 3,
+      pagingMaxSize: 125,
+      context: "/front",
+      apiContext: "/front",
+      defaultLang: "ja",
+      isUseWovn: false,
+      siteShopCode: "0000",
+      sessionTimeout: 30,
+      sessionTimer: 2,
+      sessionUrl: ["/cart/cart/", "/order/guest/", "/order/shipping/", "/order/payment/", "/order/confirm/", "/customer/customer_edit/", "/customer/customer_confirm/", "/order/shipping_multi/", "/order/shipping_split/"],
+      isUseNaviPlusSearch: false,
+      isUseNaviPlusSearchSuggest: false,
+      isUseNaviPlusRecommend: false,
+      isUseNaviPlusReview: false
+    };
+    /*]]>*/
+
+  </script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/initialize.js?date=20250715111320"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/core.js?date=20250715111320"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/validate.js?date=20250715111320"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/process.js?date=20250715111320"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/session.js?date=20250715111320"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/socialLogin.js?date=20250715111320"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/webReception.js?date=20250715111320"></script>
+  <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/veritrans.js?date=20250715111320"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/blocks/image/js/image_hover.js"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/js/responsive-slides.js"></script>
+  <script type="text/javascript" src="../共通/files/exfiles/concrete/js/videoPlayer_swfobject.js"></script>
+</head>
+
+<body>
+  <div class="ccm-page page-type-original-order-pagetype page-template-orderflow">
+    <div>
+      <div id="facebookScriptArea" class="wsparts-include clearBoth">
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v15.0" nonce="nIvcsYYq">
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればfacebookScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#facebookScriptArea').hide();
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="lineScriptArea" class="wsparts-include clearBoth">
+        <script src="https://scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async defer>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればlineScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#lineScriptArea').hide();
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="twitterScriptArea" class="wsparts-include clearBoth">
+        <script>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればtwitterScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#twitterScriptArea').hide();
+          } else {
+            window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+              return t;
+            }(document, "script", "twitter-wjs"));
+          }
+
+        </script>
+      </div>
+    </div>
+    <div>
+      <div id="pinterestScriptArea" class="wsparts-include clearBoth">
+        <script>
+          /**
+           * ターゲティングクッキー
+           */
+          var tagetingcName = "TARGETING-COOKIE";
+          /**
+           * クッキー名称からクッキー取得
+           * 
+           * クッキーがなければ空文字を返す
+           */
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+          /**
+           * クッキー存在チェック
+           */
+          function hasCookie(cname) {
+            var user = getCookie(cname);
+            if (user != "") {
+              return true;
+            } else {
+              return false;
+            }
+          }
+          /**
+           * ターゲティングクッキーが無効にすればpinterestScriptアリア非表示する
+           */
+          if (!hasCookie(tagetingcName)) {
+            $('#pinterestScriptArea').hide();
+          } else {
+            $('#pinterestScriptArea').html('<script type="text/javascript" async defer src="https://assets.pinterest.com/js/pinit.js"/>');
+          }
+
+        </script>
+      </div>
+    </div>
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <div class="row">
+            <div>
+              <div class="wsparts-include">
+                <div id="pageHeader">
+                  <div id="titleArea">
+                    <img src="../共通/files/commonfiles/images/sitelogo.png" alt="SI Web Shopping v12 一店舗" title="SI Web Shopping v12 一店舗">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <div id="message" data-ws-parts-popup="messageArea">
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include clearBoth">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/shipping_split.js?date=20250715111320"></script>
+                <div id="shippingSplitMain">
+                  <div class="shippingNavigation">
+                    <div class="shippingNavigationImg">
+                      <img class="" src="../共通/files/commonfiles/images/navi_order_shipping_split.gif" alt="お届け先分割設定">
+                    </div>
+                  </div>
+                  <div class="cartTtl"> お届け先分割設定 </div>
+                  <div id="shippingMainArea">
+                    <form id="addressSelect">
+                      <h2 id="shippingHeaderArea"> <span id="headerShippingInfo">お届け先を分ける</span> <span id="allocateButtonArea"> <input type="button" id="aveBtn" class="btn-gray" onclick="location.reload()" value="均等割り"> </span> </h2>
+                      <table border="1" id="shippingTbl" name="shippingTbl" class="shippingTbl">
+                        <tbody>
+                          <tr class="shippingHeader">
+                          <th></th>
+                          <th class="commodityName">商品名</th>
+                          <th class="amout">数量</th>
+                          <th class="allocate">割り当て数</th>
+                          <th class="address">お届け先</th>
+                          </tr>
+                          <tr>
+                          <td class="shippingImage"> <img src="../共通/cms/images/0000/catalog/1218IT_set000001/1218IT_set000001_common_pc.jpg?date=20250716110809" onerror="noPhoto(this, 'noPhotoCommodity')" width="60" height="60" alt="セット構成品標準10％商品A"> </td>
+                          <td class="commodityName"> <span>セット構成品標準10％商品A</span>
+                            
+                            
+                            <div class="compositionListArea">
+                            <span></span>
+                            
+                            </div>
+                            <div class="incWork">
+                            <span>□</span>
+                            <span>付帯サービス_001税抜</span>
+                            
+                            <span>：なし</span>
+                            
+                            </div>
+                            <div class="incWork">
+                            <span>□</span>
+                            <span>付帯サービス_002非課税</span>
+                            
+                            <span>：なし</span>
+                            
+                            </div> </td>
+                          <td id="commodityQuantity_00001218IT_set000001" class="commodityQuantity" data-shop="0000" data-sku="1218IT_set000001" data-commodityindex="0">1</td>
+                          <td>
+                            <div class="allocateArea">
+                            <select name="allocate_00001218IT_set0000010" class="allocateSelect allocateSelect0000_0" id="commodityQuantity_0000_1218IT_set000001__0">   <option value="0">0</option> <option value="1" selected="selected">1</option> </select>
+                            </div>
+                            <div class="allocateArea">
+                            <select name="allocate_00001218IT_set00000110000000" class="allocateSelect allocateSelect0000_0" id="commodityQuantity_0000_1218IT_set000001__10000000">   <option value="0">0</option> <option value="1">1</option> </select>
+                            </div> </td>
+                          <td class="address">
+                            <div class="addressArea">本人</div>
+                            <div class="addressArea">別荘</div> </td>
+                          </tr>
+                          <tr>
+                          <td class="shippingImage"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000001/1218IT_uni000001_common_pc.jpg?date=20250716110809" onerror="noPhoto(this, 'noPhotoCommodity')" width="60" height="60" alt="単品軽減8％商品"> </td>
+                          <td class="commodityName"> <span>単品軽減8％商品</span>
+                            
+                            
+                            <div class="compositionListArea">
+                            <span></span>
+                            
+                            </div>
+                            <div class="incWork">
+                            <span>□</span>
+                            <span>付帯サービス_001税抜</span>
+                            
+                            <span>：なし</span>
+                            
+                            </div>
+                            <div class="incWork">
+                            <span>□</span>
+                            <span>付帯サービス_002非課税</span>
+                            
+                            <span>：なし</span>
+                            
+                            </div> </td>
+                          <td id="commodityQuantity_00001218IT_uni000001" class="commodityQuantity" data-shop="0000" data-sku="1218IT_uni000001" data-commodityindex="1">1</td>
+                          <td>
+                            <div class="allocateArea">
+                            <select name="allocate_00001218IT_uni0000010" class="allocateSelect allocateSelect0000_1" id="commodityQuantity_0000_1218IT_uni000001__0">   <option value="0">0</option> <option value="1" selected="selected">1</option> </select>
+                            </div>
+                            <div class="allocateArea">
+                            <select name="allocate_00001218IT_uni00000110000000" class="allocateSelect allocateSelect0000_1" id="commodityQuantity_0000_1218IT_uni000001__10000000">   <option value="0">0</option> <option value="1">1</option> </select>
+                            </div> </td>
+                          <td class="address">
+                            <div class="addressArea">本人</div>
+                            <div class="addressArea">別荘</div> </td>
+                          </tr>
+                          <tr>
+                          <td class="shippingImage"> <img src="../共通/cms/images/0000/catalog/1218IT_uni000004/1218IT_uni000004_common_pc.jpg?date=20250716110809" onerror="noPhoto(this, 'noPhotoCommodity')" width="60" height="60" alt="単品0円年齢制限商品"> </td>
+                          <td class="commodityName"> <span>単品0円年齢制限商品</span>
+                            
+                            
+                            <div class="compositionListArea">
+                            <span></span>
+                            
+                            </div>
+                            <div class="incWork">
+                            <span>□</span>
+                            <span>付帯サービス_001税抜</span>
+                            
+                            <span>：なし</span>
+                            
+                            </div> </td>
+                          <td id="commodityQuantity_00001218IT_uni000004" class="commodityQuantity" data-shop="0000" data-sku="1218IT_uni000004" data-commodityindex="2">1</td>
+                          <td>
+                            <div class="allocateArea">
+                            <select name="allocate_00001218IT_uni0000040" class="allocateSelect allocateSelect0000_2" id="commodityQuantity_0000_1218IT_uni000004__0">   <option value="0">0</option> <option value="1" selected="selected">1</option> </select>
+                            </div>
+                            <div class="allocateArea">
+                            <select name="allocate_00001218IT_uni00000410000000" class="allocateSelect allocateSelect0000_2" id="commodityQuantity_0000_1218IT_uni000004__10000000">   <option value="0">0</option> <option value="1">1</option> </select>
+                            </div> </td>
+                          <td class="address">
+                            <div class="addressArea">本人</div>
+                            <div class="addressArea">別荘</div> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div id="buttonArea" class="mt10">
+                        <input class="btn-orange float_r" type="button" value="確定する" onclick="location.href='../order/お届け先・ラッピング設定(複数お届け先).html'" data-button="shippingSplit" id="shippingSplitButton">
+                        <div class="shippingNavigationImg d-block d-lg-none">
+                          <img class="" src="../共通/files/commonfiles/images/navi_order_shipping_split.gif" alt="お届け先分割設定">
+                        </div>
+                        <div class="backButtonArea">
+                          <input class="btn-gray" type="button" value="前へ戻る" onclick="location.href='../order/複数お届け先設定.html'" id="goBackButton">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="wsparts-include">
+                <div id="pageFooter">
+                  <hr>
+                  <div class="copyRight">
+                    <span>Copyright (c) 2025 DG Business Technology,Inc. All Rights Reserved.</span>
+                  </div>
+                </div>
+                <input type="hidden" id="transactionToken" name="transactionToken" value="5cd6a96a-8ed4-43f8-82a9-249d8021a6fc">
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/systemfiles/scripts/final.js?date=20250715111320"></script>
+              </div>
+            </div>
+            <div>
+              <div id="cookieConsentBannerRoot" class="wsparts-include">
+                <script>
+                  /*<![CDATA[*/
+                  var relatedExternalCookieNames = [];
+                  /*]]>*/
+
+                </script>
+                <script type="text/javascript" charset="UTF-8" src="../共通/files/partsfiles/scripts/cookieConsentBanner.js?date=20250715111320"></script>
+                <div id="cookieConsentBanner" class="cookieConsentBanner hidden">
+                  <div class="d-none d-md-block d-lg-block pd0 cookieConsentBannerArea">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8 floating-txt">
+                          <div class="float_l cookiePolicy">
+                            <span>当サイトでは、サイトの利便性向上のため、クッキー（Cookie）を使用しています。<br> サイトのクッキー（Cookie）の仕様に関しては <a href="../info/クッキーポリシー.html" id="moveCookiePolicy">「クッキーポリシー」</a>をお読みください。</span>
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                          <div class="float_r mt5">
+                            <button type="button" class="btn btn-deny" onclick="acceptCookie()">すべて拒否する</button>
+                            <button type="button" class="btn btn-accept" onclick="acceptCookie()">すべてのCookieを受け入れる</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="cookieConsentBannerSP" class="cookieConsentBannerSP hidden">
+                  <div class="d-block d-lg-none pd0 cookieConsentBannerAreaSP">
+                    <div class="container p-0">
+                      <div class="row m-0">
+                        <div class="col-xs-12 col-sm-12 floating-txt">
+                          <div class="float_l cookiePolicySP">
+                            <span>当サイトでは、サイトの利便性向上のため、クッキー（Cookie）を使用しています。<br> サイトのクッキー（Cookie）の仕様に関しては <a href="../info/クッキーポリシー.html" id="moveCookiePolicy">「クッキーポリシー」</a>をお読みください。</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row m-1">
+                        <div class="col-12">
+                          <button type="button" class="btn btn-deny" onclick="acceptCookie()">すべて拒否する</button>
+                        </div>
+                      </div>
+                      <div class="row m-1">
+                        <div class="col-12">
+                          <button type="button" class="btn btn-accept" onclick="acceptCookie()">すべてのCookieを受け入れる</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

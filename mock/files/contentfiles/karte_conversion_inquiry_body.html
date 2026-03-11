@@ -1,0 +1,42 @@
+<th:block th:fragment="wsparts-include">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var bean =  /*[[${InquiryResultBean}]]*/'';
+
+        var pathname = location.pathname;
+        var regexp = /\/inquiry\/Completion\//;
+
+        if (regexp.test(pathname)) {
+
+            try {
+
+                var subject = bean.customerInquirySubject;
+
+                if( !isNaN(subject) ) {
+
+                    $(bean.customerInquirySubjectList).each(function(){
+                        if(this.value == bean.customerInquirySubject) {
+                            subject = this.name;
+                        }
+                     });
+                }
+
+                tracker.track("contact", {
+                    name: bean.customerName,
+                    email: bean.email,
+                    subject: subject,
+                    inquiryDetail: webReceptionUtil.substring(bean.inquiryDetail,1024)
+                });
+
+            } catch (e) {
+                if ('tracker' in window) {
+                    tracker.track('_error', {
+                        message: e.message
+                    });
+                }
+            }
+        }
+        /*]]>*/
+    </script>
+</th:block>

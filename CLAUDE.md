@@ -64,3 +64,48 @@ SI Web Shoppingベースのデザインカスタマイズプロジェクト。
 3. head.htmlに当該CSSの`<link>`を追加
 4. ページHTMLで `@@include` を使用
 5. `npm run dev` でビルド確認
+
+## Git管理・納品フロー
+
+### ブランチ構成
+
+| ブランチ | 用途 | 内容 |
+|---|---|---|
+| `main` | ソース管理・安定版 | workbench/, 設定ファイル, mock/静的資材すべて |
+| `feature/xxx` | 画面単位の開発作業 | mainから分岐、完了後削除 |
+| `delivery` | 納品専用 | mock/の中身をルート直下に展開（ガイドライン3-6構成） |
+
+### 納品コマンド
+
+- `npm run deliver -- "メッセージ"` — ビルド → deliveryブランチにコミット
+- `npm run deliver:zip` — deliver実行 → `dist/` にzip + 納品メモ同梱
+
+### 納品シナリオ
+
+- **Git共有可能**: deliveryブランチのみ共有（ソース非公開）
+- **Git共有不可**: `npm run deliver:zip` でzip + delivery-note.txt を納品
+
+### 作業フロー
+
+1. `git checkout -b feature/xxx main` — 作業ブランチ作成
+2. パーツ/ページ単位でコミット
+3. `git checkout main && git merge feature/xxx` — mainにマージ
+4. `npm run deliver -- "メッセージ"` — 納品
+5. `git branch -d feature/xxx` — ブランチ削除
+6. 先方確認 → OKなら次へ / NGなら `fix/xxx` ブランチで修正
+
+### 初回レビュー対応（ガイドライン4-2）
+
+初回納品で先方レビュー → フィードバック対応後、以降の画面は指摘事項を横展開した状態で作成
+
+## 対象ブラウザ（ガイドライン2-2）
+
+### フロント
+- Windows: Chrome, Edge
+- Mac: Safari
+- iOS 17: Safari
+- Android 11: Chrome
+
+### 店頭
+- Windows: Chrome, Edge
+- タブレット: iOS 17 Safari

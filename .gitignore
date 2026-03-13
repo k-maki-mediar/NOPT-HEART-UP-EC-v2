@@ -13,6 +13,10 @@ mock/cms/pc/parts/
 # mock/files/systemfiles/
 # mock/files/contentfiles/
 
+# 納品スクリプト一時ファイル
+.delivery-worktree/
+dist/
+
 .sass-cache/
 .cache/
 .DS_Store

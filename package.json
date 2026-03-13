@@ -4,7 +4,9 @@
   "description": "ECサイトHTML/CSSコーディング（v2: ガイドライン準拠・新規CSS）",
   "scripts": {
     "dev": "gulp watch",
-    "build": "gulp build"
+    "build": "gulp build",
+    "deliver": "zsh scripts/deliver.sh",
+    "deliver:zip": "zsh scripts/deliver-zip.sh"
   },
   "devDependencies": {
     "browser-sync": "^2.29.3",

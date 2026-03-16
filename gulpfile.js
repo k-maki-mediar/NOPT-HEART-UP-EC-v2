@@ -22,12 +22,16 @@ const pxtoremOptions = {
 };
 
 // パス設定（workbench → mock）
+// ガイドライン3-6準拠の納品構成:
+//   ページHTML: mock/cms/pc/[category]/
+//   パーツHTML: mock/cms/pc/parts/general/, mock/cms/pc/parts/main/
+//   CSS/JS/画像: mock/files/commonfiles/, mock/files/partsfiles/, etc.
 const paths = {
   src: {
     html: 'workbench/pages/**/*.html',
     scss: 'workbench/styles/**/*.scss',
     scssEntry: 'workbench/styles/main.scss',
-    js: 'workbench/scripts/**/*.js',
+    js: 'workbench/scripts/parts/**/*.js',
     assets: 'workbench/assets/**/*',
     includes: 'workbench/includes/**/*.html',
     partsGeneral: 'workbench/includes/parts/general/**/*.html',
@@ -38,7 +42,6 @@ const paths = {
     html: 'mock/cms/pc/',
     css: 'mock/files/commonfiles/styles/',
     cssComponent: 'mock/files/partsfiles/styles/',
-    js: 'mock/files/commonfiles/scripts/',
     jsparts: 'mock/files/partsfiles/scripts/',
     assets: 'mock/files/commonfiles/',
     partsGeneral: 'mock/cms/pc/parts/general/',
@@ -53,13 +56,12 @@ const paths = {
 gulp.task('clean:generated', () => {
   return gulp.src([
     paths.dist.css + 'common.css',
-    paths.dist.cssComponent + '*.css',
-    paths.dist.js + '**/*.js'
+    paths.dist.cssComponent + '*.css'
   ], { read: false, allowEmpty: true })
-    .pipe(clean());
+    .pipe(clean({ force: true }));
 });
 
-// HTML展開タスク（workbench/pages → mock/cms/pc/）
+// HTML展開タスク（workbench/pages → mock/cms/pc/[category]/）
 gulp.task('html', () => {
   return gulp.src(paths.src.html)
     .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
@@ -67,11 +69,11 @@ gulp.task('html', () => {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('mock/cms/pc/'))
+    .pipe(gulp.dest(paths.dist.html))
     .pipe(browserSync.stream());
 });
 
-// パーツHTMLを単体ファイルとしてcms/pc/parts/にコピー
+// パーツHTMLを cms/pc/parts/ にコピー（ガイドライン3-6準拠）
 gulp.task('parts', () => {
   return gulp.src([
     paths.src.partsGeneral,
@@ -118,18 +120,15 @@ gulp.task('scss-components', () => {
 // SCSSタスク統合
 gulp.task('scss', gulp.parallel('scss-main', 'scss-components'));
 
-// JavaScriptタスク
+// JavaScriptタスク（パーツ単位: workbench/scripts/parts/ → files/partsfiles/scripts/）
 gulp.task('js', () => {
-  return gulp.src([
-    'workbench/scripts/main.js',
-    'workbench/scripts/modules/**/*.js'
-  ], { base: 'workbench/scripts', allowEmpty: true })
+  return gulp.src(paths.src.js, { base: 'workbench/scripts/parts', allowEmpty: true })
     .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
-    .pipe(gulp.dest(paths.dist.js))
+    .pipe(gulp.dest(paths.dist.jsparts))
     .pipe(browserSync.stream());
 });
 
-// アセットコピータスク
+// アセットコピータスク（workbench/assets → files/commonfiles/）
 gulp.task('assets', () => {
   return gulp.src(paths.src.assets, { allowEmpty: true })
     .pipe(gulp.dest(paths.dist.assets));
@@ -140,6 +139,20 @@ gulp.task('vendor-css', () => {
   return gulp.src('workbench/vendor/reset.css', { allowEmpty: true })
     .pipe(gulp.dest(paths.dist.css))
     .pipe(browserSync.stream());
+});
+
+// モック/共通/ から静的資材をガイドライン3-6構成でコピー
+gulp.task('copy-vendor-assets', () => {
+  return gulp.src([
+    'モック/共通/files/exfiles/**/*',
+    'モック/共通/files/systemfiles/**/*',
+    'モック/共通/files/contentfiles/**/*',
+    'モック/共通/files/partsfiles/scripts/**/*',
+    'モック/共通/files/commonfiles/images/**/*',
+    'モック/共通/cms/**/*',
+    'モック/共通/pagefiles/**/*'
+  ], { base: 'モック/共通', allowEmpty: true, encoding: false })
+    .pipe(gulp.dest('mock/'));
 });
 
 // BrowserSync起動
@@ -157,7 +170,7 @@ gulp.task('serve', (done) => {
 
 // 監視タスク
 gulp.task('watch', gulp.series(
-  gulp.parallel('html', 'parts', 'scss', 'js', 'assets', 'vendor-css'),
+  gulp.parallel('html', 'parts', 'scss', 'js', 'assets', 'vendor-css', 'copy-vendor-assets'),
   'serve',
   () => {
     gulp.watch(paths.watch.html, gulp.series('html', 'parts'));
@@ -170,7 +183,7 @@ gulp.task('watch', gulp.series(
 // ビルドタスク
 gulp.task('build', gulp.series(
   'clean:generated',
-  gulp.parallel('html', 'parts', 'scss', 'js', 'assets', 'vendor-css')
+  gulp.parallel('html', 'parts', 'scss', 'js', 'assets', 'vendor-css', 'copy-vendor-assets')
 ));
 
 // デフォルトタスク

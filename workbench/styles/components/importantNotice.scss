@@ -1,9 +1,10 @@
 @use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
 
 .c-important-notice {
-  max-width: 1130px;
+  max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(12) rem(16);
+  padding: rem(8) rem(12);
 }
 
 .c-important-notice__heading {
@@ -36,20 +37,20 @@
   gap: rem(8);
   min-height: rem(44);
   padding: rem(10) rem(16);
-  background-color: #f4f8fc;
-  border: 1px solid #00387d;
+  background-color: $bg-light;
+  border: 1px solid $primary-color;
   border-radius: rem(8);
   text-decoration: none;
-  color: #333;
+  color: $text-color;
 }
 
 .c-important-notice__date {
   flex-shrink: 0;
   font-family: "Noto Sans JP", sans-serif;
   font-size: rem(12);
-  font-weight: 400;
+  font-weight: $font-weight-normal;
   line-height: 1.5;
-  color: #00387d;
+  color: $primary-color;
   white-space: nowrap;
 }
 
@@ -59,11 +60,11 @@
   align-items: center;
   justify-content: center;
   padding: rem(2) rem(8);
-  background-color: #00387d;
-  color: #fff;
+  background-color: $primary-color;
+  color: $bg-color;
   font-family: "Noto Sans JP", sans-serif;
   font-size: rem(11);
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   line-height: 1.5;
   border-radius: rem(4);
   white-space: nowrap;
@@ -74,10 +75,10 @@
   min-width: 0;
   font-family: "Noto Sans JP", sans-serif;
   font-size: rem(12);
-  font-weight: 400;
+  font-weight: $font-weight-normal;
   line-height: 1.5;
   letter-spacing: 0.15px;
-  color: #333;
+  color: $text-color;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -88,7 +89,7 @@
   display: inline-block;
   width: rem(8);
   height: rem(8);
-  border-top: 2px solid #00387d;
-  border-right: 2px solid #00387d;
+  border-top: 2px solid $primary-color;
+  border-right: 2px solid $primary-color;
   transform: rotate(45deg);
 }

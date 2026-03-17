@@ -1,0 +1,82 @@
+// ========================================
+// CSS Custom Properties（CSS変数出力）
+// main.scss からのみ読み込むこと
+// コンポーネントSCSSからは読み込まない
+// ========================================
+
+@use 'functions' as *;
+@use 'variables' as *;
+
+:root {
+  // カラー
+  --color-primary: #{$primary-color};
+  --color-primary-dark: #{$primary-color-dark};
+  --color-secondary: #{$secondary-color};
+  --color-accent: #{$accent-color};
+  --color-danger: #{$danger-color};
+  --color-text: #{$text-color};
+  --color-text-light: #{$text-light};
+  --color-bg: #{$bg-color};
+  --color-bg-light: #{$bg-light};
+  --color-bg-gray: #{$bg-gray};
+  --color-border: #{$border-color};
+
+  // フォントファミリー
+  --font-family-base: #{$font-family-base};
+  --font-family-heading: #{$font-family-heading};
+
+  // フォントサイズ（rem変換）
+  --font-size-xs: #{rem($font-size-xs)};
+  --font-size-sm: #{rem($font-size-sm)};
+  --font-size-base: #{rem($font-size-base)};
+  --font-size-md: #{rem($font-size-md)};
+  --font-size-lg: #{rem($font-size-lg)};
+  --font-size-xl: #{rem($font-size-xl)};
+  --font-size-2xl: #{rem($font-size-2xl)};
+  --font-size-3xl: #{rem($font-size-3xl)};
+
+  // フォントウェイト
+  --font-weight-normal: #{$font-weight-normal};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-bold: #{$font-weight-bold};
+
+  // スペーシング（rem変換）
+  --spacing-xs: #{rem($spacing-xs)};
+  --spacing-sm: #{rem($spacing-sm)};
+  --spacing-md: #{rem($spacing-md)};
+  --spacing-lg: #{rem($spacing-lg)};
+  --spacing-xl: #{rem($spacing-xl)};
+  --spacing-2xl: #{rem($spacing-2xl)};
+  --spacing-3xl: #{rem($spacing-3xl)};
+
+  // ボーダー（rem変換）
+  --border-radius-sm: #{rem($border-radius-sm)};
+  --border-radius-md: #{rem($border-radius-md)};
+  --border-radius-lg: #{rem($border-radius-lg)};
+  --border-width: #{$border-width};
+
+  // シャドウ
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+
+  // トランジション
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+
+  // z-index
+  --z-index-dropdown: #{$z-index-dropdown};
+  --z-index-modal: #{$z-index-modal};
+  --z-index-tooltip: #{$z-index-tooltip};
+
+  // レイアウト幅
+  --main-content-width: clamp(320px, 90vw, 960px);
+}
+
+// PC版（992px以上）でコンテンツ最大幅を1076pxに拡張
+@media (min-width: #{$breakpoint-pc-min}) {
+  :root {
+    --main-content-width: 1076px;
+  }
+}

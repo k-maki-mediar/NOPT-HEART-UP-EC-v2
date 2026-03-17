@@ -14,10 +14,13 @@
 // 1. Functions（関数 - 最初に読み込み）
 @use 'foundation/functions' as *;
 
-// 2. Variables（変数 - CSS変数出力を含む）
+// 2. Variables（SCSS変数のみ）
 @use 'foundation/variables' as *;
 
-// 3. Mixins
+// 3. Custom Properties（CSS変数出力 - main.scssのみで読み込み）
+@use 'foundation/custom-properties';
+
+// 4. Mixins
 @use 'foundation/mixins' as *;
 
 // ========================================

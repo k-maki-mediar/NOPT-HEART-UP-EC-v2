@@ -1,18 +1,21 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+
 .c-footer-menu {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: #f4f8fc;
-  padding: 12px 12px 16px;
+  background-color: $bg-light;
+  padding: rem(12) rem(12) rem(16);
 }
 
 .c-footer-menu__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  max-width: 1130px;
+  gap: rem(8);
+  max-width: rem(1130);
   margin: 0 auto;
   list-style: none;
   padding: 0;
@@ -31,37 +34,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 8px 4px;
-  background-color: #fff;
-  border: 1px solid #00387d;
-  border-radius: 10px;
+  min-height: rem(48);
+  padding: rem(8) rem(4);
+  background-color: $bg-color;
+  border: 1px solid $primary-color;
+  border-radius: rem(10);
   text-decoration: none;
-  box-shadow: 0 2px 0 0 #002a5e;
+  box-shadow: 0 2px 0 0 $primary-color-dark;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 
   &:hover {
     transform: translateY(2px);
-    box-shadow: 0 0 0 0 #002a5e;
+    box-shadow: 0 0 0 0 $primary-color-dark;
   }
 }
 
 .c-footer-menu__link-text {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
   line-height: 1.2;
   letter-spacing: 0.56px;
   text-align: center;
-  color: #00387d;
+  color: $primary-color;
 }
 
 .c-footer-menu__badge {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 10px;
-  height: 10px;
-  background-color: #e53e3e;
+  top: rem(6);
+  right: rem(6);
+  width: rem(10);
+  height: rem(10);
+  background-color: $danger-color;
   border-radius: 50%;
 }

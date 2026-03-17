@@ -1,7 +1,7 @@
 // ========================================
 // Variables
-// デザインから抽出した変数
-// SCSS変数 + CSS変数出力の両方を定義
+// デザインから抽出したSCSS変数（ビルド時計算用）
+// CSS変数出力は _custom-properties.scss で行う
 // ========================================
 
 // Functions をインポート（rem変換に使用）
@@ -12,14 +12,17 @@
 // ========================================
 
 // カラーパレット
-$primary-color: #FF6B6B;
+$primary-color: #00387d;
+$primary-color-dark: #002a5e;
 $secondary-color: #4ECDC4;
 $accent-color: #FFE66D;
-$text-color: #2C3E50;
+$danger-color: #e53e3e;
+$text-color: #333;
 $text-light: #7F8C8D;
 $bg-color: #FFFFFF;
-$bg-light: #F7F7F7;
-$border-color: #E0E0E0;
+$bg-light: #f4f8fc;
+$bg-gray: #F7F7F7;
+$border-color: #e0e0e0;
 
 // フォント
 $font-family-base: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
@@ -76,78 +79,3 @@ $transition-slow: 0.5s ease-in-out;
 $z-index-dropdown: 1000;
 $z-index-modal: 1050;
 $z-index-tooltip: 1100;
-
-// ========================================
-// CSS変数エクスポート（ランタイム用・JS連携用）
-// ========================================
-
-:root {
-  // カラー
-  --color-primary: #{$primary-color};
-  --color-secondary: #{$secondary-color};
-  --color-accent: #{$accent-color};
-  --color-text: #{$text-color};
-  --color-text-light: #{$text-light};
-  --color-bg: #{$bg-color};
-  --color-bg-light: #{$bg-light};
-  --color-border: #{$border-color};
-
-  // フォントファミリー
-  --font-family-base: #{$font-family-base};
-  --font-family-heading: #{$font-family-heading};
-
-  // フォントサイズ（rem変換）
-  --font-size-xs: #{rem($font-size-xs)};
-  --font-size-sm: #{rem($font-size-sm)};
-  --font-size-base: #{rem($font-size-base)};
-  --font-size-md: #{rem($font-size-md)};
-  --font-size-lg: #{rem($font-size-lg)};
-  --font-size-xl: #{rem($font-size-xl)};
-  --font-size-2xl: #{rem($font-size-2xl)};
-  --font-size-3xl: #{rem($font-size-3xl)};
-
-  // フォントウェイト
-  --font-weight-normal: #{$font-weight-normal};
-  --font-weight-medium: #{$font-weight-medium};
-  --font-weight-bold: #{$font-weight-bold};
-
-  // スペーシング（rem変換）
-  --spacing-xs: #{rem($spacing-xs)};
-  --spacing-sm: #{rem($spacing-sm)};
-  --spacing-md: #{rem($spacing-md)};
-  --spacing-lg: #{rem($spacing-lg)};
-  --spacing-xl: #{rem($spacing-xl)};
-  --spacing-2xl: #{rem($spacing-2xl)};
-  --spacing-3xl: #{rem($spacing-3xl)};
-
-  // ボーダー（rem変換）
-  --border-radius-sm: #{rem($border-radius-sm)};
-  --border-radius-md: #{rem($border-radius-md)};
-  --border-radius-lg: #{rem($border-radius-lg)};
-  --border-width: #{$border-width};
-
-  // シャドウ
-  --shadow-sm: #{$shadow-sm};
-  --shadow-md: #{$shadow-md};
-  --shadow-lg: #{$shadow-lg};
-
-  // トランジション
-  --transition-fast: #{$transition-fast};
-  --transition-base: #{$transition-base};
-  --transition-slow: #{$transition-slow};
-
-  // z-index
-  --z-index-dropdown: #{$z-index-dropdown};
-  --z-index-modal: #{$z-index-modal};
-  --z-index-tooltip: #{$z-index-tooltip};
-
-  // レイアウト幅
-  --main-content-width: clamp(320px, 90vw, 960px);
-}
-
-// PC版（992px以上）でコンテンツ最大幅を1076pxに拡張
-@media (min-width: #{$breakpoint-pc-min}) {
-  :root {
-    --main-content-width: 1076px;
-  }
-}

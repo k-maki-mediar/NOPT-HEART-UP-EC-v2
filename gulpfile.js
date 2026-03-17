@@ -141,20 +141,6 @@ gulp.task('vendor-css', () => {
     .pipe(browserSync.stream());
 });
 
-// モック/共通/ から静的資材をガイドライン3-6構成でコピー
-gulp.task('copy-vendor-assets', () => {
-  return gulp.src([
-    'モック/共通/files/exfiles/**/*',
-    'モック/共通/files/systemfiles/**/*',
-    'モック/共通/files/contentfiles/**/*',
-    'モック/共通/files/partsfiles/scripts/**/*',
-    'モック/共通/files/commonfiles/images/**/*',
-    'モック/共通/cms/**/*',
-    'モック/共通/pagefiles/**/*'
-  ], { base: 'モック/共通', allowEmpty: true, encoding: false })
-    .pipe(gulp.dest('mock/'));
-});
-
 // BrowserSync起動
 gulp.task('serve', (done) => {
   browserSync.init({
@@ -170,7 +156,7 @@ gulp.task('serve', (done) => {
 
 // 監視タスク
 gulp.task('watch', gulp.series(
-  gulp.parallel('html', 'parts', 'scss', 'js', 'assets', 'vendor-css', 'copy-vendor-assets'),
+  gulp.parallel('html', 'parts', 'scss', 'js', 'assets', 'vendor-css'),
   'serve',
   () => {
     gulp.watch(paths.watch.html, gulp.series('html', 'parts'));
@@ -183,7 +169,7 @@ gulp.task('watch', gulp.series(
 // ビルドタスク
 gulp.task('build', gulp.series(
   'clean:generated',
-  gulp.parallel('html', 'parts', 'scss', 'js', 'assets', 'vendor-css', 'copy-vendor-assets')
+  gulp.parallel('html', 'parts', 'scss', 'js', 'assets', 'vendor-css')
 ));
 
 // デフォルトタスク

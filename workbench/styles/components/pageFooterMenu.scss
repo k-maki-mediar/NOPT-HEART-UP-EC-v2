@@ -9,6 +9,11 @@
   z-index: 100;
   background-color: $bg-light;
   padding: rem(12) rem(12) rem(16);
+  transition: transform 0.3s ease;
+
+  &.is-hidden {
+    transform: translateY(100%);
+  }
 }
 
 .c-footer-menu__list {

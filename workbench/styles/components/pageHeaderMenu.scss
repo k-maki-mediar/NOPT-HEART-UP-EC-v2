@@ -14,14 +14,10 @@
 }
 
 .c-header__left {
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
-}
-
-.c-header__center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  gap: 4px;
 }
 
 .c-header__logo-link {

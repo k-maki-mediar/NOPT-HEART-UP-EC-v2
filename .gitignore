@@ -30,6 +30,7 @@ Thumbs.db
 *.tmp
 .temp/
 素材/
+specs/
 .env
 .env.local
 .env*.local

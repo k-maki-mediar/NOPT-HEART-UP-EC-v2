@@ -1,10 +1,10 @@
 <header class="c-header">
   <div class="c-header__inner">
     <div class="c-header__left">
-      <a href="#" class="c-header__nav-link">
+      <button type="button" class="c-header__nav-link c-header__nav-link--btn js-header-menu-toggle" aria-expanded="false" aria-controls="js-header-menu">
         <img src="../../../files/commonfiles/images/icon-menu.svg" alt="" class="c-header__nav-icon" />
         <span class="c-header__nav-label">メニュー</span>
-      </a>
+      </button>
       <a href="../common/トップページ.html" class="c-header__logo-link">
         <img src="../../../files/commonfiles/images/logo.png" alt="コンタクトのハートアップ" class="c-header__logo-img" />
       </a>
@@ -25,5 +25,56 @@
         </li>
       </ul>
     </nav>
+  </div>
+  <div class="c-header-menu" id="js-header-menu" style="display: none;">
+    <ul class="c-header-menu__list">
+      <li class="c-header-menu__item">
+        <a href="../common/ログイン.html" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">ログイン</span>
+          <span class="c-header-menu__arrow"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">新規会員登録はこちら</span>
+          <span class="c-header-menu__arrow"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">お知らせ</span>
+          <span class="c-header-menu__arrow"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item c-header-menu__item--accordion">
+        <button type="button" class="c-header-menu__toggle js-header-menu-accordion">
+          <span class="c-header-menu__toggle-text">商品メニュー</span>
+          <span class="c-header-menu__toggle-icon"></span>
+        </button>
+        <ul class="c-header-menu__submenu" style="display: none;">
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">商品カテゴリ1</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">商品カテゴリ2</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">商品カテゴリ3</a>
+          </li>
+        </ul>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">らくとく定期便とは</span>
+          <span class="c-header-menu__arrow"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">ご利用ガイド</span>
+          <span class="c-header-menu__arrow"></span>
+        </a>
+      </li>
+    </ul>
   </div>
 </header>

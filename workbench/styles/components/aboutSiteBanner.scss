@@ -1,0 +1,26 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+
+.c-about-site-banner {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(16) rem(16) 0;
+}
+
+.c-about-site-banner__inner {
+  max-width: rem(600);
+  margin: 0 auto;
+}
+
+.c-about-site-banner__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3984 / 2520;
+  border: 2px dashed $border-color;
+  border-radius: rem(10);
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: rem(14);
+  color: $text-light;
+  text-decoration: none;
+}

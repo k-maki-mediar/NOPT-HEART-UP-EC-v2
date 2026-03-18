@@ -60,7 +60,7 @@
   // 幅: viewport幅の55%（中心を少し超える）
   width: 55vw;
   height: rem(220);
-  top: 30%;
+  top: 50%;
   transform: translateY(-50%);
   background-color: $deco-pink;
   opacity: 0.5;
@@ -68,7 +68,6 @@
 
   @media (min-width: $breakpoint-tablet-min) {
     height: rem(280);
-    top: 50%;
   }
 
   @media (min-width: $breakpoint-pc-min) {

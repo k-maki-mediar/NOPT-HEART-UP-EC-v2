@@ -1,0 +1,58 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+
+.c-pickup-banner {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(128) rem(16) 0;
+}
+
+.c-pickup-banner__inner {
+  max-width: rem(600);
+  margin: 0 auto;
+}
+
+.c-pickup-banner__heading {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: rem(24);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
+  text-align: center;
+  color: $primary-color;
+  margin-bottom: rem(16);
+}
+
+.c-pickup-banner__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-pickup-banner__item + .c-pickup-banner__item {
+  margin-top: rem(12);
+}
+
+.c-pickup-banner__link {
+  display: block;
+  border-radius: rem(20);
+  overflow: hidden;
+}
+
+.c-pickup-banner__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.c-pickup-banner__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 345 / 106;
+  border: rem(2) dashed $border-color;
+  border-radius: rem(20);
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: rem(14);
+  color: $text-light;
+}

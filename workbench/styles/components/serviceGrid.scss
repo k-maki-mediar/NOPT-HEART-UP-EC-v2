@@ -2,14 +2,202 @@
 @use '../foundation/variables' as *;
 
 .c-service-grid {
+  position: relative;
   max-width: rem(1130);
   margin: 0 auto;
   padding: rem(128) rem(16) 0;
 }
 
 .c-service-grid__inner {
+  position: relative;
+  z-index: 1;
   max-width: rem(600);
   margin: 0 auto;
+}
+
+// ----------------------------------------
+// 装飾レイヤー（aboutSiteBannerと同じ向き）
+// ----------------------------------------
+
+.c-service-grid__deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  @media (min-width: $breakpoint-pc-min) {
+    top: rem(200);
+  }
+}
+
+// ピンク矩形（右側）
+.c-service-grid__deco-rect {
+  position: absolute;
+  right: calc((100% - 100vw) / 2);
+  width: 55vw;
+  height: rem(550);
+  top: 33%;
+  transform: translateY(-30%);
+  background-color: $deco-blue;
+  opacity: 0.6;
+  border-radius: rem(20) 0 0 rem(20);
+
+  @media (min-width: $breakpoint-tablet-min) {
+    height: rem(600);
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    height: rem(350);
+    top: 20%;
+  }
+}
+
+// 大きな円アウトライン（左上）
+.c-service-grid__deco-circle {
+  position: absolute;
+  opacity: 0.5;
+  color: $deco-blue-stroke;
+  width: rem(140);
+  height: rem(140);
+  left: rem(-70);
+  top: rem(-40);
+
+  @media (min-width: $breakpoint-tablet-min) {
+    width: rem(170);
+    height: rem(170);
+    left: rem(-50);
+    top: rem(-20);
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    width: rem(400);
+    height: rem(400);
+    left: rem(-120);
+    top: rem(-130);
+  }
+}
+
+// 三角形（円の右下に重なる）
+.c-service-grid__deco-triangle {
+  position: absolute;
+  opacity: 0.5;
+  color: $deco-blue;
+  width: rem(100);
+  height: rem(110);
+  left: rem(-40);
+  top: rem(0);
+
+  @media (min-width: $breakpoint-tablet-min) {
+    width: rem(120);
+    height: rem(130);
+    left: rem(-10);
+    top: rem(38);
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    width: rem(280);
+    height: rem(310);
+    left: rem(10);
+    top: rem(20);
+  }
+}
+
+// ランドルト環 浮遊アニメーション
+@keyframes float-sg-ring-lg {
+  0%, 100% { transform: rotate(-147deg) translateY(0); }
+  50% { transform: rotate(-147deg) translateY(rem(-16)); }
+}
+
+@keyframes float-sg-ring-md {
+  0%, 100% { transform: rotate(120deg) translateY(0); }
+  50% { transform: rotate(120deg) translateY(rem(-12)); }
+}
+
+@keyframes float-sg-ring-sm {
+  0%, 100% { transform: rotate(-45deg) translateY(0); }
+  50% { transform: rotate(-45deg) translateY(rem(-10)); }
+}
+
+// ランドルト環（共通）
+.c-service-grid__deco-ring {
+  position: absolute;
+  opacity: 0.5;
+  overflow: visible;
+  color: $deco-ring-fill;
+}
+
+// ランドルト環（大）- 右上
+.c-service-grid__deco-ring--lg {
+  width: rem(70);
+  height: rem(70);
+  right: rem(-20);
+  top: rem(10);
+  transform: rotate(-147deg);
+  animation: float-sg-ring-lg 4s ease-in-out infinite;
+
+  @media (min-width: $breakpoint-tablet-min) {
+    width: rem(130);
+    height: rem(130);
+    right: rem(-60);
+    top: rem(30);
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    width: rem(240);
+    height: rem(240);
+    right: rem(-120);
+    top: rem(10);
+    stroke-width: 0.5;
+  }
+}
+
+// ランドルト環（中）- 左
+.c-service-grid__deco-ring--md {
+  width: rem(35);
+  height: rem(35);
+  left: rem(-5);
+  top: 20%;
+  transform: rotate(120deg);
+  stroke-width: 1.5;
+  animation: float-sg-ring-md 5s ease-in-out infinite;
+
+  @media (min-width: $breakpoint-tablet-min) {
+    width: rem(60);
+    height: rem(60);
+    left: rem(-35);
+    top: 80%;
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    width: rem(70);
+    height: rem(70);
+    left: rem(-40);
+    top: 70%;
+  }
+}
+
+// ランドルト環（小）- 右
+.c-service-grid__deco-ring--sm {
+  width: rem(20);
+  height: rem(20);
+  right: rem(10);
+  top: 25%;
+  transform: rotate(-45deg);
+  stroke-width: 3;
+  animation: float-sg-ring-sm 3.5s ease-in-out infinite;
+
+  @media (min-width: $breakpoint-tablet-min) {
+    width: rem(36);
+    height: rem(36);
+    right: rem(-20);
+    top: 85%;
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    width: rem(42);
+    height: rem(42);
+    right: rem(-30);
+  }
 }
 
 .c-service-grid__heading {

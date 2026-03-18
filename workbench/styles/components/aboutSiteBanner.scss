@@ -60,7 +60,7 @@
   // 幅: viewport幅の55%（中心を少し超える）
   width: 55vw;
   height: rem(220);
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
   background-color: $deco-pink;
   opacity: 0.5;
@@ -68,6 +68,7 @@
 
   @media (min-width: $breakpoint-tablet-min) {
     height: rem(280);
+    top: 50%;
   }
 
   @media (min-width: $breakpoint-pc-min) {
@@ -84,7 +85,7 @@
   width: rem(140);
   height: rem(140);
   left: rem(-70);
-  top: rem(-10);
+  top: rem(-40);
 
   @media (min-width: $breakpoint-tablet-min) {
     width: rem(170);
@@ -110,7 +111,7 @@
   width: rem(100);
   height: rem(110);
   left: rem(-40);
-  top: rem(30);
+  top: rem(0);
 
   @media (min-width: $breakpoint-tablet-min) {
     width: rem(120);
@@ -153,10 +154,10 @@
 
 // ランドルト環（大）- 右上、画面端で見切れる
 .c-about-site-banner__deco-ring--lg {
-  width: rem(100);
-  height: rem(100);
+  width: rem(70);
+  height: rem(70);
   right: rem(-20);
-  top: rem(40);
+  top: rem(10);
   transform: rotate(-147deg);
   animation: float-ring-lg 4s ease-in-out infinite;
 
@@ -178,10 +179,10 @@
 
 // ランドルト環（中）- 左、画面端で見切れる
 .c-about-site-banner__deco-ring--md {
-  width: rem(50);
-  height: rem(50);
+  width: rem(35);
+  height: rem(35);
   left: rem(-5);
-  top: 55%;
+  top: 30%;
   transform: rotate(120deg);
   stroke-width: 1.5;
   animation: float-ring-md 5s ease-in-out infinite;
@@ -190,6 +191,7 @@
     width: rem(60);
     height: rem(60);
     left: rem(-35);
+    top: 55%;
   }
 
   @media (min-width: $breakpoint-pc-min) {
@@ -202,10 +204,10 @@
 
 // ランドルト環（小）- 右、画面端で見切れる
 .c-about-site-banner__deco-ring--sm {
-  width: rem(30);
-  height: rem(30);
+  width: rem(20);
+  height: rem(20);
   right: rem(10);
-  top: 60%;
+  top: 35%;
   transform: rotate(-45deg);
   stroke-width: 3;
   animation: float-ring-sm 3.5s ease-in-out infinite;
@@ -214,6 +216,7 @@
     width: rem(36);
     height: rem(36);
     right: rem(-20);
+    top: 60%;
   }
 
   @media (min-width: $breakpoint-pc-min) {

@@ -7,7 +7,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: $bg-light;
+  background-color: rgba($bg-light, 0.85);
   padding: rem(12) rem(12) rem(16);
   transition: transform 0.3s ease;
 
@@ -25,7 +25,7 @@
   list-style: none;
   padding: 0;
 
-  @media (min-width: 992px) {
+  @media (min-width: $breakpoint-pc-min) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -42,24 +42,24 @@
   min-height: rem(48);
   padding: rem(8) rem(4);
   background-color: $bg-color;
-  border: 1px solid $primary-color;
+  border: rem(1) solid $primary-color;
   border-radius: rem(10);
   text-decoration: none;
-  box-shadow: 0 2px 0 0 $primary-color-dark;
+  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 
   &:hover {
-    transform: translateY(2px);
+    transform: translateY(rem(2));
     box-shadow: 0 0 0 0 $primary-color-dark;
   }
 }
 
 .c-footer-menu__link-text {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-medium;
   line-height: 1.2;
-  letter-spacing: 0.56px;
+  letter-spacing: rem(0.56);
   text-align: center;
   color: $primary-color;
 }

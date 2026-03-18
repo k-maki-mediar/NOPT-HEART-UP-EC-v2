@@ -1,18 +1,30 @@
 $(function () {
   var $footer = $(".js-footer-menu");
-  var lastScrollTop = 0;
+  var $main = $(".c-main");
+  var scrollTimer = null;
 
   $(window).on("scroll", function () {
-    var currentScrollTop = $(this).scrollTop();
+    // スクロール中は非表示
+    $footer.addClass("is-hidden");
 
-    if (currentScrollTop > lastScrollTop) {
-      // 下スクロール → 非表示
-      $footer.addClass("is-hidden");
-    } else {
-      // 上スクロール → 表示
-      $footer.removeClass("is-hidden");
+    // タイマーリセット
+    if (scrollTimer) {
+      clearTimeout(scrollTimer);
     }
 
-    lastScrollTop = currentScrollTop;
+    // スクロール停止後に表示
+    scrollTimer = setTimeout(function () {
+      $footer.removeClass("is-hidden");
+    }, 300);
   });
+
+  // mainの下にフッター高さ + 8rem分の余白を確保
+  function updateBottomPadding() {
+    var footerHeight = $footer.outerHeight();
+    var extraPadding = parseFloat(getComputedStyle(document.documentElement).fontSize) * 8;
+    $main.css("padding-bottom", footerHeight + extraPadding + "px");
+  }
+
+  updateBottomPadding();
+  $(window).on("resize", updateBottomPadding);
 });

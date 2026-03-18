@@ -1,19 +1,19 @@
 @use '../foundation/functions' as *;
 @use '../foundation/variables' as *;
 
-.c-pickup-banner {
+.c-campaign-topics {
   max-width: rem(1130);
   margin: 0 auto;
   padding: rem(128) rem(16) 0;
 }
 
-.c-pickup-banner__inner {
+.c-campaign-topics__inner {
   max-width: rem(600);
   margin: 0 auto;
 }
 
-.c-pickup-banner__heading {
-  font-family: "Noto Sans JP", sans-serif;
+.c-campaign-topics__heading {
+  font-family: $font-family-heading;
   font-size: rem(24);
   font-weight: $font-weight-medium;
   line-height: 1.5;
@@ -23,36 +23,46 @@
   margin-bottom: rem(16);
 }
 
-.c-pickup-banner__list {
+.c-campaign-topics__list {
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media (min-width: $breakpoint-pc-min) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(12);
+  }
 }
 
-.c-pickup-banner__item + .c-pickup-banner__item {
+.c-campaign-topics__item + .c-campaign-topics__item {
   margin-top: rem(12);
+
+  @media (min-width: $breakpoint-pc-min) {
+    margin-top: 0;
+  }
 }
 
-.c-pickup-banner__link {
+.c-campaign-topics__link {
   display: block;
   border-radius: rem(20);
   overflow: hidden;
 }
 
-.c-pickup-banner__img {
+.c-campaign-topics__img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.c-pickup-banner__placeholder {
+.c-campaign-topics__placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
   aspect-ratio: 345 / 106;
   border: rem(2) dashed $border-color;
   border-radius: rem(20);
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(14);
   color: $text-light;
 }

@@ -1,19 +1,19 @@
 @use '../foundation/functions' as *;
 @use '../foundation/variables' as *;
 
-.c-topics-grid {
+.c-service-grid {
   max-width: rem(1130);
   margin: 0 auto;
   padding: rem(128) rem(16) 0;
 }
 
-.c-topics-grid__inner {
+.c-service-grid__inner {
   max-width: rem(600);
   margin: 0 auto;
 }
 
-.c-topics-grid__heading {
-  font-family: "Noto Sans JP", sans-serif;
+.c-service-grid__heading {
+  font-family: $font-family-heading;
   font-size: rem(24);
   font-weight: $font-weight-medium;
   line-height: 1.5;
@@ -23,36 +23,40 @@
   margin-bottom: rem(16);
 }
 
-.c-topics-grid__list {
+.c-service-grid__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: rem(16);
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media (min-width: $breakpoint-pc-min) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.c-topics-grid__link {
+.c-service-grid__link {
   display: block;
   border-radius: rem(20);
   overflow: hidden;
   box-shadow: $shadow-xs;
 }
 
-.c-topics-grid__img {
+.c-service-grid__img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.c-topics-grid__placeholder {
+.c-service-grid__placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
   aspect-ratio: 1 / 1;
   border: rem(2) dashed $border-color;
   border-radius: rem(20);
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(14);
   color: $text-light;
 }

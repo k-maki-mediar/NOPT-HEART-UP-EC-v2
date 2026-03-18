@@ -24,17 +24,17 @@
   margin: 0 auto;
 }
 
-.c-about-site-banner__placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 3984 / 2520;
-  border: rem(2) dashed $border-color;
-  border-radius: rem(10);
-  font-family: $font-family-heading;
-  font-size: rem(14);
-  color: $text-light;
+.c-about-site-banner__link {
+  display: block;
   text-decoration: none;
+}
+
+.c-about-site-banner__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: rem(10);
+  box-shadow: $shadow-md;
 }
 
 // ----------------------------------------
@@ -47,7 +47,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
 }
 
 // ピンク矩形（右側）
@@ -127,6 +127,22 @@
   }
 }
 
+// ランドルト環 浮遊アニメーション
+@keyframes float-ring-lg {
+  0%, 100% { transform: rotate(-147deg) translateY(0); }
+  50% { transform: rotate(-147deg) translateY(rem(-16)); }
+}
+
+@keyframes float-ring-md {
+  0%, 100% { transform: rotate(120deg) translateY(0); }
+  50% { transform: rotate(120deg) translateY(rem(-12)); }
+}
+
+@keyframes float-ring-sm {
+  0%, 100% { transform: rotate(-45deg) translateY(0); }
+  50% { transform: rotate(-45deg) translateY(rem(-10)); }
+}
+
 // ランドルト環（共通）
 .c-about-site-banner__deco-ring {
   position: absolute;
@@ -142,6 +158,7 @@
   right: rem(-20);
   top: rem(40);
   transform: rotate(-147deg);
+  animation: float-ring-lg 4s ease-in-out infinite;
 
   @media (min-width: $breakpoint-tablet-min) {
     width: rem(130);
@@ -155,6 +172,7 @@
     height: rem(240);
     right: rem(-120);
     top: rem(10);
+    stroke-width: 0.5;
   }
 }
 
@@ -165,6 +183,8 @@
   left: rem(-5);
   top: 55%;
   transform: rotate(120deg);
+  stroke-width: 1.5;
+  animation: float-ring-md 5s ease-in-out infinite;
 
   @media (min-width: $breakpoint-tablet-min) {
     width: rem(60);
@@ -187,6 +207,8 @@
   right: rem(10);
   top: 60%;
   transform: rotate(-45deg);
+  stroke-width: 3;
+  animation: float-ring-sm 3.5s ease-in-out infinite;
 
   @media (min-width: $breakpoint-tablet-min) {
     width: rem(36);

@@ -4,7 +4,7 @@
 .c-about-site-banner {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: 8rem rem(16) 0;
+  padding: rem(128) rem(16) 0;
 }
 
 .c-about-site-banner__inner {
@@ -17,9 +17,9 @@
   align-items: center;
   justify-content: center;
   aspect-ratio: 3984 / 2520;
-  border: 2px dashed $border-color;
+  border: rem(2) dashed $border-color;
   border-radius: rem(10);
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(14);
   color: $text-light;
   text-decoration: none;

@@ -38,7 +38,7 @@
   min-height: rem(44);
   padding: rem(10) rem(16);
   background-color: $bg-light;
-  border: 1px solid $primary-color;
+  border: rem(1) solid $primary-color;
   border-radius: rem(8);
   text-decoration: none;
   color: $text-color;
@@ -46,7 +46,7 @@
 
 .c-important-notice__date {
   flex-shrink: 0;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(12);
   font-weight: $font-weight-normal;
   line-height: 1.5;
@@ -62,7 +62,7 @@
   padding: rem(2) rem(8);
   background-color: $primary-color;
   color: $bg-color;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(11);
   font-weight: $font-weight-bold;
   line-height: 1.5;
@@ -73,11 +73,11 @@
 .c-important-notice__text {
   flex: 1;
   min-width: 0;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(12);
   font-weight: $font-weight-normal;
   line-height: 1.5;
-  letter-spacing: 0.15px;
+  letter-spacing: rem(0.15);
   color: $text-color;
   white-space: nowrap;
   overflow: hidden;
@@ -89,7 +89,7 @@
   display: inline-block;
   width: rem(8);
   height: rem(8);
-  border-top: 2px solid $primary-color;
-  border-right: 2px solid $primary-color;
+  border-top: rem(2) solid $primary-color;
+  border-right: rem(2) solid $primary-color;
   transform: rotate(45deg);
 }

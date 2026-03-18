@@ -80,10 +80,10 @@
 .c-header__nav-label {
   display: block;
   margin-top: rem(4);
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(10);
   line-height: 1.5;
-  letter-spacing: 0.12px;
+  letter-spacing: rem(0.12);
   text-align: center;
   color: $text-color;
 }
@@ -109,7 +109,7 @@
 }
 
 .c-header-menu__item {
-  border-bottom: 1px solid $border-color;
+  border-bottom: rem(1) solid $border-color;
 }
 
 .c-header-menu__link {
@@ -120,7 +120,7 @@
   padding: rem(12) rem(16);
   text-decoration: none;
   color: $text-color;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-bold;
   line-height: 1.5;
@@ -134,8 +134,8 @@
   display: inline-block;
   width: rem(8);
   height: rem(8);
-  border-top: 2px solid $primary-color;
-  border-right: 2px solid $primary-color;
+  border-top: rem(2) solid $primary-color;
+  border-right: rem(2) solid $primary-color;
   transform: rotate(45deg);
   flex-shrink: 0;
   margin-left: rem(12);
@@ -153,7 +153,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-bold;
   line-height: 1.5;
@@ -187,13 +187,13 @@
   // 横線（常時表示）
   &::before {
     width: rem(12);
-    height: 2px;
+    height: rem(2);
     transform: translate(-50%, -50%);
   }
 
   // 縦線（開いた時に消える）
   &::after {
-    width: 2px;
+    width: rem(2);
     height: rem(12);
     transform: translate(-50%, -50%);
     transition: opacity 0.2s ease;
@@ -203,7 +203,7 @@
 // 開いた状態: 白抜き（背景白、線が色付き）
 .c-header-menu__item--accordion.is-open .c-header-menu__toggle-icon {
   background-color: $bg-color;
-  border: 1px solid $primary-color;
+  border: rem(1) solid $primary-color;
 
   &::before {
     background-color: $primary-color;
@@ -223,7 +223,7 @@
 }
 
 .c-header-menu__subitem {
-  border-top: 1px solid $border-color;
+  border-top: rem(1) solid $border-color;
 }
 
 .c-header-menu__sublink {
@@ -232,7 +232,7 @@
   padding: rem(12) rem(16) rem(12) rem(32);
   text-decoration: none;
   color: $text-color;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: $font-family-heading;
   font-size: rem(14);
   line-height: 1.5;
 }

@@ -1,13 +1,25 @@
 @use '../foundation/functions' as *;
 @use '../foundation/variables' as *;
 
+// ========================================
+// aboutSiteBanner
+// 「このサイトでできること」ブロック + 背景装飾
+// ========================================
+
 .c-about-site-banner {
+  position: relative;
   max-width: rem(1130);
   margin: 0 auto;
   padding: rem(128) rem(16) 0;
 }
 
+// ----------------------------------------
+// コンテンツ層
+// ----------------------------------------
+
 .c-about-site-banner__inner {
+  position: relative;
+  z-index: 1;
   max-width: rem(600);
   margin: 0 auto;
 }
@@ -23,4 +35,168 @@
   font-size: rem(14);
   color: $text-light;
   text-decoration: none;
+}
+
+// ----------------------------------------
+// 装飾レイヤー（背景）
+// - overflow制御なし（隣接ブロックにまたがる）
+// - SP基準 → Tablet/PCで拡大＋外側に広げる
+// ----------------------------------------
+
+.c-about-site-banner__deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+// ピンク矩形（右側）
+// 画面右端から中心を少し超えるまで伸ばす
+// 親要素がmax-width中央寄せのため、rightはviewport端まで広げるcalcを使用
+.c-about-site-banner__deco-rect {
+  position: absolute;
+  // 画面右端まで: 親の右端から画面端までの距離を補う
+  right: calc((100% - 100vw) / 2);
+  // 幅: viewport幅の55%（中心を少し超える）
+  width: 55vw;
+  height: rem(220);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: $deco-pink;
+  opacity: 0.5;
+  border-radius: rem(20) 0 0 rem(20);
+
+  @media (min-width: $breakpoint-tablet-min) {
+    height: rem(280);
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    height: rem(312);
+  }
+}
+
+// 大きな円アウトライン（左上）
+// Figma: 177.5×197.5、左上に配置
+.c-about-site-banner__deco-circle {
+  position: absolute;
+  opacity: 0.5;
+  color: $deco-circle-stroke;
+  width: rem(140);
+  height: rem(140);
+  left: rem(-70);
+  top: rem(-10);
+
+  @media (min-width: $breakpoint-tablet-min) {
+    width: rem(170);
+    height: rem(170);
+    left: rem(-50);
+    top: rem(-20);
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    width: rem(400);
+    height: rem(400);
+    left: rem(-120);
+    top: rem(-130);
+  }
+}
+
+// 三角形（円の右下に重なる、Figma準拠）
+// 円の直径の約半分の位置から、円の輪郭をまたいで外側にはみ出す
+.c-about-site-banner__deco-triangle {
+  position: absolute;
+  opacity: 0.5;
+  color: $deco-pink;
+  width: rem(100);
+  height: rem(110);
+  left: rem(-40);
+  top: rem(30);
+
+  @media (min-width: $breakpoint-tablet-min) {
+    width: rem(120);
+    height: rem(130);
+    left: rem(-10);
+    top: rem(38);
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    width: rem(280);
+    height: rem(310);
+    left: rem(10);
+    top: rem(20);
+  }
+}
+
+// ランドルト環（共通）
+.c-about-site-banner__deco-ring {
+  position: absolute;
+  opacity: 0.5;
+  overflow: visible;
+  color: $deco-ring-fill;
+}
+
+// ランドルト環（大）- 右上、画面端で見切れる
+.c-about-site-banner__deco-ring--lg {
+  width: rem(100);
+  height: rem(100);
+  right: rem(-20);
+  top: rem(40);
+  transform: rotate(-147deg);
+
+  @media (min-width: $breakpoint-tablet-min) {
+    width: rem(130);
+    height: rem(130);
+    right: rem(-60);
+    top: rem(30);
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    width: rem(240);
+    height: rem(240);
+    right: rem(-120);
+    top: rem(10);
+  }
+}
+
+// ランドルト環（中）- 左、画面端で見切れる
+.c-about-site-banner__deco-ring--md {
+  width: rem(50);
+  height: rem(50);
+  left: rem(-5);
+  top: 55%;
+  transform: rotate(120deg);
+
+  @media (min-width: $breakpoint-tablet-min) {
+    width: rem(60);
+    height: rem(60);
+    left: rem(-35);
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    width: rem(70);
+    height: rem(70);
+    left: rem(-40);
+    top: 44%;
+  }
+}
+
+// ランドルト環（小）- 右、画面端で見切れる
+.c-about-site-banner__deco-ring--sm {
+  width: rem(30);
+  height: rem(30);
+  right: rem(10);
+  top: 60%;
+  transform: rotate(-45deg);
+
+  @media (min-width: $breakpoint-tablet-min) {
+    width: rem(36);
+    height: rem(36);
+    right: rem(-20);
+  }
+
+  @media (min-width: $breakpoint-pc-min) {
+    width: rem(42);
+    height: rem(42);
+    right: rem(-30);
+  }
 }

@@ -68,9 +68,18 @@
   padding: rem(24) rem(20);
   margin-bottom: rem(16);
 
+  &--second {
+    display: none;
+    margin-bottom: 0;
+  }
+
   @include pc {
     flex: 1;
     margin-bottom: 0;
+
+    &--second {
+      display: block;
+    }
   }
 }
 

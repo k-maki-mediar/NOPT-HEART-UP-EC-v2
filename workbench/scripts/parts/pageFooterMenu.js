@@ -18,10 +18,10 @@ $(function () {
     }, 300);
   });
 
-  // mainの下にフッター高さ + 8rem分の余白を確保
+  // mainの下にフッター高さ + 2rem分の余白を確保
   function updateBottomPadding() {
     var footerHeight = $footer.outerHeight();
-    var extraPadding = parseFloat(getComputedStyle(document.documentElement).fontSize) * 8;
+    var extraPadding = parseFloat(getComputedStyle(document.documentElement).fontSize) * 2;
     $main.css("padding-bottom", footerHeight + extraPadding + "px");
   }
 

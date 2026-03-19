@@ -151,7 +151,7 @@
   @media (min-width: $breakpoint-pc-min) {
     width: rem(240);
     height: rem(240);
-    left: rem(-120);
+    left: rem(30);
     top: rem(10);
     stroke-width: 0.5;
   }
@@ -202,7 +202,7 @@
   @media (min-width: $breakpoint-pc-min) {
     width: rem(42);
     height: rem(42);
-    left: rem(-30);
+    left: rem(120);
     top: 115%;
   }
 }

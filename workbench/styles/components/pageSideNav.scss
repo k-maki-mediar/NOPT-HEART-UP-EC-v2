@@ -14,9 +14,10 @@
     display: block;
     position: fixed;
     top: rem(80); // ヘッダー高さ分下げる
-    left: var(--side-nav-left);
+    left: 0;
     z-index: 90;
-    width: var(--side-nav-width);
+    width: calc(var(--side-nav-left) + var(--side-nav-width));
+    padding-left: var(--side-nav-left);
     height: calc(100vh - #{rem(80)});
     overflow-y: auto;
     background-color: rgba($bg-color, 0.82);
@@ -34,11 +35,7 @@
 }
 
 .c-side-nav__item {
-  border-bottom: rem(1) solid $border-color;
-
-  &:first-child {
-    border-top: rem(1) solid $border-color;
-  }
+  // 区切り線なし
 }
 
 .c-side-nav__link {
@@ -160,7 +157,7 @@
 }
 
 .c-side-nav__subitem {
-  border-top: rem(1) solid $border-color;
+  // 区切り線なし
 }
 
 .c-side-nav__sublink {

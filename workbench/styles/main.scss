@@ -2,7 +2,7 @@
 // Main SCSS Entry Point
 // workbench/styles/main.scss
 // ========================================
-// ビルド後: mock/files/commonfiles/styles/common.css
+// ビルド後: mock/files/commonfiles/styles/design.css
 //
 // v2方針: 元パッケージのcommon.css・各画面用CSSを除去し、新規作成
 // レガシー共存レイヤー（.legacy-page, .c-app-root）は不要
@@ -33,6 +33,21 @@
 @use 'base/buttons';
 @use 'base/messages';
 @use 'base/utilities';
+
+// ========================================
+// Components（コンポーネント - 全て common.css に統合）
+// ========================================
+
+@use 'components/pageHeaderMenu';
+@use 'components/pageFooterMenu';
+@use 'components/importantNotice';
+@use 'components/bannerArea';
+@use 'components/aboutSiteBanner';
+@use 'components/campaignTopics';
+@use 'components/serviceGrid';
+@use 'components/categoryMenu';
+@use 'components/businessCalendar';
+@use 'components/pageSideNav';
 
 // ========================================
 // rem基準の設定

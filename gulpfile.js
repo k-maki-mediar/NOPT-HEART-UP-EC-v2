@@ -55,8 +55,7 @@ const paths = {
 // クリーンタスク（生成されるファイルのみを削除）
 gulp.task('clean:generated', () => {
   return gulp.src([
-    paths.dist.css + 'common.css',
-    paths.dist.cssComponent + '*.css'
+    paths.dist.css + 'design.css'
   ], { read: false, allowEmpty: true })
     .pipe(clean({ force: true }));
 });
@@ -93,32 +92,13 @@ gulp.task('scss-main', () => {
       cascade: false
     }))
     .pipe(postcss([pxtorem(pxtoremOptions)]))
-    .pipe(rename('common.css'))
+    .pipe(rename('design.css'))
     .pipe(gulp.dest(paths.dist.css))
     .pipe(browserSync.stream());
 });
 
-// SCSSコンパイルタスク - 個別コンポーネント（_なしのSCSSファイル）
-gulp.task('scss-components', () => {
-  return gulp.src([
-    'workbench/styles/layout/[!_]*.scss',
-    'workbench/styles/components/[!_]*.scss',
-    'workbench/styles/pages/[!_]*.scss'
-  ], { allowEmpty: true })
-    .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
-    .pipe(sass({
-      outputStyle: 'expanded'
-    }).on('error', sass.logError))
-    .pipe(autoprefixer({
-      cascade: false
-    }))
-    .pipe(postcss([pxtorem(pxtoremOptions)]))
-    .pipe(gulp.dest(paths.dist.cssComponent))
-    .pipe(browserSync.stream());
-});
-
-// SCSSタスク統合
-gulp.task('scss', gulp.parallel('scss-main', 'scss-components'));
+// SCSSタスク統合（全SCSSを common.css に一本化）
+gulp.task('scss', gulp.series('scss-main'));
 
 // JavaScriptタスク（パーツ単位: workbench/scripts/parts/ → files/partsfiles/scripts/）
 gulp.task('js', () => {

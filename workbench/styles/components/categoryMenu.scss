@@ -4,20 +4,7 @@
 .c-category-menu {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(128) rem(16) rem(64);
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: rem(80);
-    bottom: 0;
-    // 画面端まで広げる
-    left: calc((100% - 100vw) / 2);
-    right: calc((100% - 100vw) / 2);
-    background-color: #f7f7f7;
-    z-index: -1;
-  }
+  padding: rem(128) rem(16) rem(128);
 }
 
 .c-category-menu__inner {

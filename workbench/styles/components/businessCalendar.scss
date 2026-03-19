@@ -1,0 +1,215 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+
+// ========================================
+// businessCalendar
+// 営業日カレンダー
+// ========================================
+
+.c-business-calendar {
+  position: relative;
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(64) rem(16) rem(64);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc((100% - 100vw) / 2);
+    right: calc((100% - 100vw) / 2);
+    background-color: $bg-gray;
+    z-index: -1;
+  }
+}
+
+.c-business-calendar__inner {
+  max-width: rem(600);
+  margin: 0 auto;
+}
+
+.c-business-calendar__heading {
+  font-family: $font-family-heading;
+  font-size: rem(24);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
+  text-align: center;
+  color: $primary-color;
+  margin-bottom: rem(24);
+}
+
+// ----------------------------------------
+// カードコンテナ
+// ----------------------------------------
+
+.c-business-calendar__card {
+  background-color: $bg-color;
+  border-radius: rem(10);
+  padding: rem(24) rem(20);
+  margin-bottom: rem(24);
+}
+
+// ----------------------------------------
+// 月ナビゲーション
+// ----------------------------------------
+
+.c-business-calendar__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: rem(16);
+}
+
+.c-business-calendar__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(44);
+  height: rem(44);
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: $text-color;
+}
+
+.c-business-calendar__nav-label {
+  display: flex;
+  align-items: baseline;
+  gap: rem(2);
+}
+
+.c-business-calendar__nav-year {
+  font-family: $font-family-heading;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  color: $text-color;
+}
+
+.c-business-calendar__nav-month {
+  font-family: $font-family-heading;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  color: $text-color;
+}
+
+// ----------------------------------------
+// 区切り線
+// ----------------------------------------
+
+.c-business-calendar__divider {
+  border: none;
+  border-top: rem(1) solid $border-color;
+  margin: 0 0 rem(16);
+}
+
+// ----------------------------------------
+// カレンダーグリッド
+// ----------------------------------------
+
+.c-business-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: rem(3) rem(4);
+}
+
+.c-business-calendar__weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(35);
+  font-family: $font-family-heading;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  text-align: center;
+  color: $text-color;
+}
+
+.c-business-calendar__weekday--sat {
+  color: $calendar-sat;
+}
+
+.c-business-calendar__weekday--sun {
+  color: $calendar-holiday;
+}
+
+.c-business-calendar__day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(35);
+  height: rem(35);
+  margin: 0 auto;
+  font-family: $font-family-heading;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  text-align: center;
+  color: $text-color;
+  border-radius: 50%;
+}
+
+.c-business-calendar__day--holiday {
+  background-color: $calendar-holiday;
+  color: $bg-color;
+}
+
+.c-business-calendar__day--other {
+  opacity: 0.15;
+}
+
+// ----------------------------------------
+// フッター
+// ----------------------------------------
+
+.c-business-calendar__footer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+}
+
+.c-business-calendar__note {
+  font-family: $font-family-heading;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  color: $text-color;
+  margin: 0;
+}
+
+.c-business-calendar__link {
+  color: $calendar-sat;
+  text-decoration: underline;
+}
+
+.c-business-calendar__legend {
+  display: flex;
+  align-items: center;
+  gap: rem(4);
+  font-family: $font-family-heading;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  color: $text-color;
+  margin: 0;
+}
+
+.c-business-calendar__legend-icon {
+  display: inline-block;
+  width: rem(16);
+  height: rem(16);
+  background-color: $calendar-holiday;
+  border-radius: 50%;
+  flex-shrink: 0;
+}

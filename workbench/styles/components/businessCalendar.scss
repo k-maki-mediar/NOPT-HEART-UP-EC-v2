@@ -1,5 +1,6 @@
 @use '../foundation/functions' as *;
 @use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
 
 // ========================================
 // businessCalendar
@@ -27,6 +28,10 @@
 .c-business-calendar__inner {
   max-width: rem(600);
   margin: 0 auto;
+
+  @include pc {
+    max-width: rem(1000);
+  }
 }
 
 .c-business-calendar__heading {
@@ -44,11 +49,25 @@
 // カードコンテナ
 // ----------------------------------------
 
+.c-business-calendar__cards {
+  margin-bottom: rem(24);
+
+  @include pc {
+    display: flex;
+    gap: rem(16);
+  }
+}
+
 .c-business-calendar__card {
   background-color: $bg-color;
   border-radius: rem(10);
   padding: rem(24) rem(20);
-  margin-bottom: rem(24);
+  margin-bottom: rem(16);
+
+  @include pc {
+    flex: 1;
+    margin-bottom: 0;
+  }
 }
 
 // ----------------------------------------

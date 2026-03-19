@@ -4,18 +4,20 @@
 // SP: 320px〜767px / Tablet: 768px〜991px / PC: 992px〜
 // ========================================
 
+@use 'variables' as *;
+
 @mixin sp {
-  @media (max-width: 767px) { @content; }
+  @media (max-width: $breakpoint-sp-max) { @content; }
 }
 
 @mixin tablet {
-  @media (min-width: 768px) and (max-width: 991px) { @content; }
+  @media (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) { @content; }
 }
 
 @mixin pc {
-  @media (min-width: 992px) { @content; }
+  @media (min-width: $breakpoint-pc-min) { @content; }
 }
 
 @mixin tablet-up {
-  @media (min-width: 768px) { @content; }
+  @media (min-width: $breakpoint-tablet-min) { @content; }
 }

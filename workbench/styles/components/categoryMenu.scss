@@ -3,12 +3,24 @@
 @use '../foundation/mixins' as *;
 
 .c-category-menu {
+  position: relative;
   max-width: rem(1130);
-  margin: 0 auto;
-  padding: rem(128) rem(16) rem(128);
+  margin: rem(64) auto;
+  padding: rem(64) rem(16) rem(64);
 
   @include pc {
     padding-left: var(--side-nav-content-offset);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc((100% - 100vw) / 2);
+    right: calc((100% - 100vw) / 2);
+    background-color: rgba($bg-banner, 0.6);
+    z-index: -1;
   }
 }
 

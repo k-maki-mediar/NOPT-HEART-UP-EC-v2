@@ -75,10 +75,10 @@
   }
 
   @media (min-width: $breakpoint-pc-min) {
-    width: rem(400);
-    height: rem(400);
-    right: rem(-120);
-    top: rem(-130);
+    width: rem(250);
+    height: rem(250);
+    right: rem(-70);
+    top: rem(-80);
   }
 }
 
@@ -101,8 +101,8 @@
   }
 
   @media (min-width: $breakpoint-pc-min) {
-    width: rem(280);
-    height: rem(310);
+    width: rem(180);
+    height: rem(200);
     right: rem(10);
     top: rem(20);
   }
@@ -149,9 +149,9 @@
   }
 
   @media (min-width: $breakpoint-pc-min) {
-    width: rem(240);
-    height: rem(240);
-    left: rem(30);
+    width: rem(150);
+    height: rem(150);
+    left: rem(150);
     top: rem(10);
     stroke-width: 0.5;
   }
@@ -175,9 +175,9 @@
   }
 
   @media (min-width: $breakpoint-pc-min) {
-    width: rem(70);
-    height: rem(70);
-    right: rem(-40);
+    width: rem(45);
+    height: rem(45);
+    right: rem(-20);
     top: 110%;
   }
 }
@@ -200,9 +200,9 @@
   }
 
   @media (min-width: $breakpoint-pc-min) {
-    width: rem(42);
-    height: rem(42);
-    left: rem(120);
+    width: rem(28);
+    height: rem(28);
+    left: rem(240);
     top: 115%;
   }
 }

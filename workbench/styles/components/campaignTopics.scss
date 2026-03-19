@@ -24,6 +24,10 @@
   inset: 0;
   pointer-events: none;
   z-index: -1;
+
+  @media (min-width: $breakpoint-pc-min) {
+    top: rem(50);
+  }
 }
 
 // ピンク矩形（左側 ← 元は右側）
@@ -43,15 +47,15 @@
   }
 
   @media (min-width: $breakpoint-pc-min) {
-    height: rem(180);
-    top: 65%;
+    height: rem(100);
+    top: 88%;
   }
 }
 
 // 大きな円アウトライン（右上 ← 元は左上）
 .c-campaign-topics__deco-circle {
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.3;
   color: $deco-yellow-stroke;
   width: rem(140);
   height: rem(140);
@@ -169,7 +173,7 @@
     width: rem(70);
     height: rem(70);
     right: rem(-40);
-    top: 90%;
+    top: 110%;
   }
 }
 
@@ -194,7 +198,7 @@
     width: rem(42);
     height: rem(42);
     left: rem(-30);
-    top: 95%;
+    top: 115%;
   }
 }
 

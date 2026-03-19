@@ -2,10 +2,17 @@
 @use '../foundation/variables' as *;
 
 .c-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   background-color: $bg-color;
+}
+
+// ヘッダーがfixedのため、直後のコンテンツがヘッダー下に潜り込まないようにスペーサーを確保
+.c-header + * {
+  margin-top: rem(80); // ヘッダー高さ分
 }
 
 // メニューボタン（button要素）のリセット

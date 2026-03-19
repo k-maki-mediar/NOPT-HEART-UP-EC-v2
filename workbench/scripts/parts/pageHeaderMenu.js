@@ -14,6 +14,8 @@ $(function () {
     var $item = $(this).closest('.c-header-menu__item--accordion');
     var $submenu = $item.find('.c-header-menu__submenu');
     $item.toggleClass('is-open');
+    var isOpen = $item.hasClass('is-open');
+    $(this).attr('aria-expanded', isOpen);
     $submenu.slideToggle(300);
   });
 });

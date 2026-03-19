@@ -1,11 +1,16 @@
 @use '../foundation/functions' as *;
 @use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
 
 .c-service-grid {
   position: relative;
   max-width: rem(1130);
   margin: 0 auto;
   padding: rem(128) rem(16) 0;
+
+  @include pc {
+    padding-left: var(--side-nav-content-offset);
+  }
 }
 
 .c-service-grid__inner {

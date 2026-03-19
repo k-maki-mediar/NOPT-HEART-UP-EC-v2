@@ -78,5 +78,15 @@
 @media (min-width: #{$breakpoint-pc-min}) {
   :root {
     --main-content-width: 1076px;
+
+    // サイドナビ レイアウト変数
+    --side-nav-width: #{rem(200)};
+    --header-padding-left: #{rem(16)};
+    // サイドナビ左端: ヘッダー内側の左端に揃える（画面幅が狭い場合は16pxにクランプ）
+    --side-nav-left: max(var(--header-padding-left), calc((100vw - #{rem(1130)}) / 2 + var(--header-padding-left)));
+    // サイドナビ右端
+    --side-nav-right: calc(var(--side-nav-left) + var(--side-nav-width));
+    // コンテンツのpadding-left: サイドナビ右端 - コンテナ左端 + 余白
+    --side-nav-content-offset: calc(var(--side-nav-right) - max(0px, (100vw - #{rem(1130)}) / 2) + #{rem(8)});
   }
 }

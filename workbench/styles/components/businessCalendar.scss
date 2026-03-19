@@ -11,7 +11,11 @@
   position: relative;
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(64) rem(16) rem(64);
+  padding: rem(64) rem(16) rem(64) rem(16);
+
+  @include pc {
+    padding: rem(64) rem(32) rem(64) calc(var(--side-nav-content-offset) + rem(32));
+  }
 
   &::before {
     content: '';

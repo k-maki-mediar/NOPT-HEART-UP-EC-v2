@@ -14,13 +14,12 @@
     display: block;
     position: fixed;
     top: rem(80); // ヘッダー高さ分下げる
-    // ヘッダー左端に揃える: (100vw - 1130px) / 2 + 16px（ヘッダーのpadding-left）
-    left: calc((100vw - #{rem(1130)}) / 2 + #{rem(16)});
+    left: var(--side-nav-left);
     z-index: 90;
-    width: rem(200);
+    width: var(--side-nav-width);
     height: calc(100vh - #{rem(80)});
     overflow-y: auto;
-    background-color: rgba($bg-color, 0.92);
+    background-color: rgba($bg-color, 0.82);
   }
 }
 

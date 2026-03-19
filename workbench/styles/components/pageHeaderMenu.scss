@@ -11,8 +11,13 @@
 }
 
 // ヘッダーがfixedのため、直後のコンテンツがヘッダー下に潜り込まないようにスペーサーを確保
-.c-header + * {
+// サイドナビ（.c-side-nav）はfixed表示のためmargin不要、それ以外の要素に適用
+.c-header + *:not(.c-side-nav) {
   margin-top: rem(80); // ヘッダー高さ分
+}
+
+.c-header + .c-side-nav + * {
+  margin-top: rem(80); // サイドナビが間に入る場合、その次の要素にスペーサー
 }
 
 // メニューボタン（button要素）のリセット
@@ -20,6 +25,12 @@
   background: none;
   border: none;
   cursor: pointer;
+
+  // PC時はサイドナビがあるため非表示
+  // ※ サイドナビ廃止時はこのブロックを削除してハンバーガーを復活させる
+  @media (min-width: $breakpoint-pc-min) {
+    display: none;
+  }
 }
 
 .c-header__inner {

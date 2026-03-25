@@ -150,13 +150,13 @@
   margin-top: 5rem;
 }
 
-.c-header__nav-link--btn {
+.c-header__nav-link.c-header__nav-link--btn {
   background: none;
   border: none;
   cursor: pointer;
 }
 @media (min-width: 992px) {
-  .c-header__nav-link--btn {
+  .c-header__nav-link.c-header__nav-link--btn {
     display: none;
   }
 }
@@ -1193,7 +1193,7 @@
 @media (min-width: 992px) {
   .c-service-grid__deco-rect {
     height: 25rem;
-    top: 20%;
+    top: 30%;
   }
 }
 

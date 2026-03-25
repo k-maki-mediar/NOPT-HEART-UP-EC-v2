@@ -118,6 +118,9 @@
   z-index: 99;
   background-color: $bg-color;
   box-shadow: 0 rem(6) rem(16) rem(-2) rgba(0, 0, 0, 0.06);
+  max-height: calc(100vh - rem(80));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .c-header-menu__list {

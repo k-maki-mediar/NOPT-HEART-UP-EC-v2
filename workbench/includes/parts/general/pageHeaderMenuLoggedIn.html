@@ -1,0 +1,138 @@
+<header class="c-header">
+  <div class="c-header__inner">
+    <div class="c-header__left">
+      <button type="button" class="c-header__nav-link c-header__nav-link--btn js-header-menu-toggle" aria-expanded="false" aria-controls="js-header-menu">
+        <img src="../../../files/commonfiles/images/icon-menu.svg" alt="" class="c-header__nav-icon" />
+        <span class="c-header__nav-label">メニュー</span>
+      </button>
+      <a href="../common/トップページ（ログイン後）.html" class="c-header__logo-link">
+        <img src="../../../files/commonfiles/images/logo.png" alt="コンタクトのハートアップ" class="c-header__logo-img" />
+      </a>
+    </div>
+    <nav class="c-header__right">
+      <ul class="c-header__nav-list">
+        <li class="c-header__nav-item">
+          <a href="#" class="c-header__nav-link">
+            <img src="../../../files/commonfiles/images/icon-logout.svg" alt="" class="c-header__nav-icon" />
+            <span class="c-header__nav-label">ログアウト</span>
+          </a>
+        </li>
+        <li class="c-header__nav-item">
+          <a href="../cart/カート.html" class="c-header__nav-link">
+            <img src="../../../files/commonfiles/images/icon-cart.svg" alt="" class="c-header__nav-icon" />
+            <span class="c-header__nav-label">カート</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="c-header-menu" id="js-header-menu" style="display: none;">
+    <ul class="c-header-menu__list">
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">お知らせ</span>
+          <span class="c-header-menu__arrow" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item c-header-menu__item--accordion">
+        <button type="button" class="c-header-menu__toggle js-header-menu-accordion" aria-expanded="false">
+          <span class="c-header-menu__toggle-text">商品メニュー</span>
+          <span class="c-header-menu__toggle-icon" aria-hidden="true"></span>
+        </button>
+        <ul class="c-header-menu__submenu" style="display: none;">
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">商品カテゴリ1</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">商品カテゴリ2</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">商品カテゴリ3</a>
+          </li>
+        </ul>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">クーポン一覧</span>
+          <span class="c-header-menu__arrow" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">購入履歴</span>
+          <span class="c-header-menu__arrow" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">お気に入り一覧</span>
+          <span class="c-header-menu__arrow" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">らくとく定期便 確認・変更</span>
+          <span class="c-header-menu__arrow" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item c-header-menu__item--accordion is-open">
+        <button type="button" class="c-header-menu__toggle js-header-menu-accordion" aria-expanded="true">
+          <span class="c-header-menu__toggle-text">Eye-d DIARY</span>
+          <span class="c-header-menu__toggle-icon" aria-hidden="true"></span>
+        </button>
+        <ul class="c-header-menu__submenu" style="display: block;">
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">購入可能コンタクトレンズ一覧</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">処方箋送信フォーム</a>
+          </li>
+        </ul>
+      </li>
+      <li class="c-header-menu__item c-header-menu__item--accordion is-open">
+        <button type="button" class="c-header-menu__toggle js-header-menu-accordion" aria-expanded="true">
+          <span class="c-header-menu__toggle-text">登録情報確認・変更</span>
+          <span class="c-header-menu__toggle-icon" aria-hidden="true"></span>
+        </button>
+        <ul class="c-header-menu__submenu" style="display: block;">
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">会員登録内容変更</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">登録住所一覧</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">クレジットカード一覧</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">パスワード変更</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">二段階認証の設定・解除</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">LINEアカウントの連携・解除</a>
+          </li>
+        </ul>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">らくとく定期便とは</span>
+          <span class="c-header-menu__arrow" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">ご利用ガイド</span>
+          <span class="c-header-menu__arrow" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">ログアウト</span>
+          <span class="c-header-menu__arrow" aria-hidden="true"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>

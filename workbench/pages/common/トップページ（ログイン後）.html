@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ja">
+<head>
+@@include('../../includes/head.html', {"title": "トップページ"})
+<!-- パーツCSS（必要に応じて追加） -->
+</head>
+<body>
+  <div class="c-page-wrapper">
+    @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
+    @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
+    <main class="c-main">
+      @@include('../../includes/parts/main/common/importantNotice.html')
+      @@include('../../includes/parts/main/common/bannerArea.html')
+      @@include('../../includes/parts/main/common/aboutSiteBanner.html')
+      @@include('../../includes/parts/main/common/campaignTopics.html')
+      @@include('../../includes/parts/main/common/serviceGrid.html')
+      @@include('../../includes/parts/main/common/categoryMenu.html')
+      @@include('../../includes/parts/main/common/businessCalendar.html')
+    </main>
+    @@include('../../includes/parts/general/pageFooterMenu.html')
+  </div>
+</body>
+</html>

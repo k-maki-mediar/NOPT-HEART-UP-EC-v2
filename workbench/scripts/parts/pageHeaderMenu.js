@@ -3,9 +3,11 @@ $(function () {
   $('.js-header-menu-toggle').on('click', function () {
     var $btn = $(this);
     var $menu = $('#js-header-menu');
+    var $footer = $('.js-footer-menu');
     $menu.slideToggle(300, function () {
       var isOpen = $menu.is(':visible');
       $btn.attr('aria-expanded', isOpen);
+      $footer.toggle(!isOpen);
     });
   });
 

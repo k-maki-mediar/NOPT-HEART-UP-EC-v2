@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja">
+<head>
+@@include('../../includes/head.html', {"title": "マイページ"})
+<!-- パーツCSS（必要に応じて追加） -->
+</head>
+<body>
+  <div class="c-page-wrapper">
+    @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
+    @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
+    <main class="c-main c-main--logged-in">
+      @@include('../../includes/parts/main/common/importantNotice.html')
+    </main>
+    @@include('../../includes/parts/general/pageFooterMenu.html')
+  </div>
+</body>
+</html>

@@ -2261,6 +2261,388 @@
   }
 }
 
+.c-available-lens {
+  max-width: 70.625rem;
+  margin: 1.5rem auto 0;
+  padding: 0 1rem;
+}
+@media (min-width: 992px) {
+  .c-available-lens {
+    padding-left: var(--side-nav-content-offset);
+  }
+}
+
+.c-available-lens__inner {
+  max-width: 37.5rem;
+  margin: 0 auto;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #F7F7F7;
+  overflow: hidden;
+}
+
+.c-available-lens__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 4rem;
+  padding: 0.75rem 1rem;
+  background-color: #00387d;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.c-available-lens__header-icon {
+  width: 1.875rem;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.c-available-lens__header-title {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04rem;
+  color: #FFFFFF;
+}
+
+.c-available-lens__header-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.75rem;
+  height: 0.75rem;
+  flex-shrink: 0;
+}
+.c-available-lens__header-toggle::before, .c-available-lens__header-toggle::after {
+  content: "";
+  position: absolute;
+  background-color: #FFFFFF;
+  transition: transform 0.15s ease-in-out;
+}
+.c-available-lens__header-toggle::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0.125rem;
+  transform: translateY(-50%);
+}
+.c-available-lens__header-toggle::after {
+  top: 0;
+  left: 50%;
+  width: 0.125rem;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.c-available-lens__header[aria-expanded=true] .c-available-lens__header-toggle::after {
+  transform: translateX(-50%) scaleY(0);
+}
+
+.c-available-lens__body {
+  display: none;
+  background-color: #FFFFFF;
+  padding: 1rem;
+}
+.c-available-lens__body.is-open {
+  display: block;
+}
+
+.c-available-lens__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 992px) {
+  .c-available-lens__list {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.c-available-lens__item + .c-available-lens__item {
+  margin-top: 1.5rem;
+}
+@media (min-width: 992px) {
+  .c-available-lens__item + .c-available-lens__item {
+    margin-top: 0;
+  }
+}
+@media (min-width: 992px) {
+  .c-available-lens__item {
+    flex: 1;
+  }
+}
+
+.c-available-lens__product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+.c-available-lens__product-img {
+  display: block;
+  max-width: 12.5rem;
+  width: 100%;
+  height: auto;
+}
+
+.c-available-lens__product-name {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+  margin: 0.5rem 0 0;
+}
+
+.c-available-lens__product-actions {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.c-available-lens__product-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.5rem 0.25rem;
+  border: 0.0625rem solid #00387d;
+  border-radius: 0.5rem;
+  background-color: #FFFFFF;
+  box-shadow: 0 0.1875rem 0 0 #002a5e;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-available-lens__product-btn:hover {
+  transform: translateY(0.1875rem);
+  box-shadow: 0 0 0 0 #002a5e;
+}
+.c-available-lens__product-btn--primary {
+  background-color: #00387d;
+  color: #FFFFFF;
+  border-color: #00387d;
+  box-shadow: 0 0.1875rem 0 0 #002a5e;
+}
+.c-available-lens__product-btn--primary:hover {
+  box-shadow: 0 0 0 0 #002a5e;
+}
+
+.c-available-lens__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 25rem;
+  margin: 1.5rem auto 0;
+}
+
+.c-available-lens__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.875rem;
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid #00387d;
+  border-radius: 1.4375rem;
+  background-color: #FFFFFF;
+  box-shadow: 0 0.125rem 0 0 #002a5e;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-available-lens__btn:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 0 #002a5e;
+}
+
+.c-coupon-list {
+  max-width: 70.625rem;
+  margin: 1.5rem auto 0;
+  padding: 0 1rem;
+}
+@media (min-width: 992px) {
+  .c-coupon-list {
+    padding-left: var(--side-nav-content-offset);
+  }
+}
+
+.c-coupon-list__inner {
+  max-width: 37.5rem;
+  margin: 0 auto;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #F7F7F7;
+  overflow: hidden;
+}
+
+.c-coupon-list__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 4rem;
+  padding: 0.75rem 1rem;
+  background-color: #00387d;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.c-coupon-list__header-icon {
+  width: 1.875rem;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.c-coupon-list__header-title {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04rem;
+  color: #FFFFFF;
+}
+
+.c-coupon-list__header-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.75rem;
+  height: 0.75rem;
+  flex-shrink: 0;
+}
+.c-coupon-list__header-toggle::before, .c-coupon-list__header-toggle::after {
+  content: "";
+  position: absolute;
+  background-color: #FFFFFF;
+  transition: transform 0.15s ease-in-out;
+}
+.c-coupon-list__header-toggle::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0.125rem;
+  transform: translateY(-50%);
+}
+.c-coupon-list__header-toggle::after {
+  top: 0;
+  left: 50%;
+  width: 0.125rem;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.c-coupon-list__header[aria-expanded=true] .c-coupon-list__header-toggle::after {
+  transform: translateX(-50%) scaleY(0);
+}
+
+.c-coupon-list__body {
+  display: none;
+  background-color: #FFFFFF;
+  padding: 1rem;
+}
+.c-coupon-list__body.is-open {
+  display: block;
+}
+
+.c-coupon-list__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-coupon-list__item + .c-coupon-list__item {
+  margin-top: 1rem;
+}
+
+.c-coupon-list__coupon {
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+.c-coupon-list__coupon-text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.04rem;
+  color: #cc4843;
+  margin: 0;
+}
+
+.c-coupon-list__coupon-expiry {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.009375rem;
+  color: #333;
+  text-align: right;
+  margin: 0.5rem 0 0;
+}
+
+.c-coupon-list__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 25rem;
+  margin: 1.5rem auto 0;
+}
+
+.c-coupon-list__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.875rem;
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid #00387d;
+  border-radius: 1.4375rem;
+  background-color: #FFFFFF;
+  box-shadow: 0 0.125rem 0 0 #002a5e;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-coupon-list__btn:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 0 #002a5e;
+}
+
 .c-main--logged-in .c-campaign-topics__deco-rect {
   background-color: #ffdedd;
 }

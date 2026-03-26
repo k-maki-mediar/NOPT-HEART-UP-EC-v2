@@ -1,0 +1,184 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// couponList
+// クーポン一覧（アコーディオンカード）
+// ========================================
+
+.c-coupon-list {
+  max-width: rem(1130);
+  margin: rem(24) auto 0;
+  padding: 0 rem(16);
+
+  @include pc {
+    padding-left: var(--side-nav-content-offset);
+  }
+}
+
+.c-coupon-list__inner {
+  max-width: rem(600);
+  margin: 0 auto;
+  border-radius: rem(10);
+  border: rem(1) solid $bg-gray;
+  overflow: hidden;
+}
+
+// ヘッダー（アコーディオントリガー）
+.c-coupon-list__header {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  width: 100%;
+  min-height: rem(64);
+  padding: rem(12) rem(16);
+  background-color: $primary-color;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.c-coupon-list__header-icon {
+  width: rem(30);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.c-coupon-list__header-title {
+  margin: 0;
+  font-family: $font-family-heading;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  color: $bg-color;
+}
+
+.c-coupon-list__header-toggle {
+  position: absolute;
+  right: rem(16);
+  top: 50%;
+  transform: translateY(-50%);
+  width: rem(12);
+  height: rem(12);
+  flex-shrink: 0;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: $bg-color;
+    transition: transform $transition-fast;
+  }
+
+  // 横棒
+  &::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: rem(2);
+    transform: translateY(-50%);
+  }
+
+  // 縦棒（開いている時は非表示）
+  &::after {
+    top: 0;
+    left: 50%;
+    width: rem(2);
+    height: 100%;
+    transform: translateX(-50%);
+  }
+}
+
+// 開いている状態: 縦棒を消す（−表示）
+.c-coupon-list__header[aria-expanded="true"] .c-coupon-list__header-toggle::after {
+  transform: translateX(-50%) scaleY(0);
+}
+
+// ボディ
+.c-coupon-list__body {
+  display: none;
+  background-color: $bg-color;
+  padding: rem(16);
+
+  &.is-open {
+    display: block;
+  }
+}
+
+// クーポンリスト
+.c-coupon-list__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-coupon-list__item {
+  & + & {
+    margin-top: rem(16);
+  }
+}
+
+// クーポンカード
+.c-coupon-list__coupon {
+  padding: rem(16);
+  background-color: $bg-color;
+  border-radius: rem(8);
+  box-shadow: $shadow-xs;
+}
+
+.c-coupon-list__coupon-text {
+  font-size: rem(16);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.64);
+  color: $calendar-holiday;
+  margin: 0;
+}
+
+.c-coupon-list__coupon-expiry {
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  color: $text-color;
+  text-align: right;
+  margin: rem(8) 0 0;
+}
+
+// アクションボタン
+.c-coupon-list__actions {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  max-width: rem(400);
+  margin: rem(24) auto 0;
+}
+
+.c-coupon-list__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(46);
+  padding: rem(8) rem(16);
+  border: rem(1) solid $primary-color;
+  border-radius: rem(23);
+  background-color: $bg-color;
+  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  color: $primary-color;
+  text-decoration: none;
+  text-align: center;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 $primary-color-dark;
+  }
+}

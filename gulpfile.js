@@ -66,7 +66,8 @@ gulp.task('html', () => {
     .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
     .pipe(fileinclude({
       prefix: '@@',
-      basepath: '@file'
+      basepath: '@file',
+      indent: true
     }))
     .pipe(gulp.dest(paths.dist.html))
     .pipe(browserSync.stream());

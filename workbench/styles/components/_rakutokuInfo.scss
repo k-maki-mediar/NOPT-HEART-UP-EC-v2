@@ -1,0 +1,114 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+
+.c-rakutoku-info {
+  max-width: rem(600);
+  margin: rem(24) auto rem(16);
+  padding: 0 rem(16);
+
+  @media (min-width: $breakpoint-pc-min) {
+    padding-left: var(--side-nav-content-offset);
+  }
+}
+
+.c-rakutoku-info__card {
+  border: rem(1) solid $primary-color;
+  border-radius: rem(20);
+  padding: rem(20) rem(24);
+  background-color: $bg-color;
+  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
+}
+
+.c-rakutoku-info__header {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  margin-bottom: rem(12);
+}
+
+.c-rakutoku-info__icon {
+  display: block;
+  width: rem(25);
+  height: rem(19);
+  flex-shrink: 0;
+}
+
+.c-rakutoku-info__title {
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  color: $primary-color;
+}
+
+.c-rakutoku-info__body {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+}
+
+.c-rakutoku-info__plan {
+  /* individual plan block */
+}
+
+.c-rakutoku-info__plan + .c-rakutoku-info__plan {
+  border-top: rem(1) solid $border-color;
+  padding-top: rem(12);
+}
+
+.c-rakutoku-info__plan-row {
+  display: flex;
+  align-items: baseline;
+  gap: rem(12);
+  flex-wrap: wrap;
+}
+
+.c-rakutoku-info__plan-name {
+  font-family: $font-family-heading;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  color: $text-color;
+}
+
+.c-rakutoku-info__plan-status {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-bold;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+}
+
+.c-rakutoku-info__plan-status--active {
+  color: $primary-color;
+}
+
+.c-rakutoku-info__plan-status--alert {
+  color: $calendar-holiday;
+}
+
+.c-rakutoku-info__caution {
+  font-family: $font-family-base;
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+  color: $calendar-holiday;
+  margin: rem(8) 0 0;
+}
+
+.c-rakutoku-info__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: rem(44);
+  margin-top: rem(8);
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  color: $calendar-sat;
+  text-decoration: underline;
+}

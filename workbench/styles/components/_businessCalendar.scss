@@ -32,10 +32,6 @@
 .c-business-calendar__inner {
   max-width: rem(600);
   margin: 0 auto;
-
-  @include pc {
-    max-width: rem(1000);
-  }
 }
 
 .c-business-calendar__heading {

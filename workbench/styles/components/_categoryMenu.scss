@@ -5,7 +5,7 @@
 .c-category-menu {
   position: relative;
   max-width: rem(1130);
-  margin: rem(64) auto;
+  margin: rem(64) auto 0;
   padding: rem(64) rem(16) rem(64);
 
   @include pc {

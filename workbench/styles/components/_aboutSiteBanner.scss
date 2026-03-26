@@ -207,52 +207,32 @@
 }
 
 // ----------------------------------------
-// 装飾配置をcampaignTopicsと同一にする（ログイン後トップページ用）
+// 装飾を左右反転（ログイン後トップページ用）
+// サイズ・透明度はオリジナルと同一、位置のみ左右入れ替え
 // ----------------------------------------
 
-.c-about-site-banner--mirrored .c-about-site-banner__deco {
-  @media (min-width: $breakpoint-pc-min) {
-    top: rem(50);
-  }
-}
-
-// 矩形: 右側→左側、campaignTopicsと同じ値
+// 矩形: 右側→左側（サイズはオリジナル準拠）
 .c-about-site-banner--mirrored .c-about-site-banner__deco-rect {
   right: auto;
   left: calc((100% - 100vw) / 2);
-  height: rem(320);
-  transform: translateY(-40%);
-  opacity: 0.4;
   border-radius: 0 rem(20) rem(20) 0;
-
-  @media (min-width: $breakpoint-tablet-min) {
-    height: rem(400);
-  }
-
-  @media (min-width: $breakpoint-pc-min) {
-    height: rem(100);
-    top: 88%;
-  }
 }
 
-// 円: 左上→右上
+// 円: 左上→右上（サイズはオリジナル準拠）
 .c-about-site-banner--mirrored .c-about-site-banner__deco-circle {
   left: auto;
   right: rem(-70);
-  top: rem(-40);
 
   @media (min-width: $breakpoint-tablet-min) {
     right: rem(-50);
-    top: rem(-20);
   }
 
   @media (min-width: $breakpoint-pc-min) {
     right: rem(-70);
-    top: rem(-80);
   }
 }
 
-// 三角形: 左→右、scaleX(-1)で反転
+// 三角形: 左→右、scaleX(-1)で反転（サイズはオリジナル準拠）
 .c-about-site-banner--mirrored .c-about-site-banner__deco-triangle {
   left: auto;
   right: rem(-40);
@@ -267,12 +247,10 @@
   }
 }
 
-// ランドルト環（大）: 右→左
+// ランドルト環（大）: 右→左（サイズはオリジナル準拠）
 .c-about-site-banner--mirrored .c-about-site-banner__deco-ring--lg {
   right: auto;
   left: rem(-20);
-  transform: rotate(327deg);
-  animation: float-ct-ring-lg 4s ease-in-out infinite;
 
   @media (min-width: $breakpoint-tablet-min) {
     left: rem(-60);
@@ -283,39 +261,31 @@
   }
 }
 
-// ランドルト環（中）: 左→右
+// ランドルト環（中）: 左→右（サイズはオリジナル準拠）
 .c-about-site-banner--mirrored .c-about-site-banner__deco-ring--md {
   left: auto;
   right: rem(-5);
-  transform: rotate(60deg);
-  animation: float-ct-ring-md 5s ease-in-out infinite;
 
   @media (min-width: $breakpoint-tablet-min) {
     right: rem(-35);
-    top: 55%;
   }
 
   @media (min-width: $breakpoint-pc-min) {
     right: rem(-20);
-    top: 110%;
   }
 }
 
-// ランドルト環（小）: 右→左
+// ランドルト環（小）: 右→左（サイズはオリジナル準拠）
 .c-about-site-banner--mirrored .c-about-site-banner__deco-ring--sm {
   right: auto;
   left: rem(10);
-  transform: rotate(225deg);
-  animation: float-ct-ring-sm 3.5s ease-in-out infinite;
 
   @media (min-width: $breakpoint-tablet-min) {
     left: rem(-20);
-    top: 60%;
   }
 
   @media (min-width: $breakpoint-pc-min) {
     left: rem(240);
-    top: 115%;
   }
 }
 

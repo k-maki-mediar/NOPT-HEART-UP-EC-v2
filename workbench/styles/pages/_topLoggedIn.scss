@@ -1,0 +1,46 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+
+// ========================================
+// ログイン後トップページ 装飾色の入れ替え
+// 上から順に: ピンク → 黄色 → 青
+// ========================================
+
+// campaignTopics: 黄色 → ピンク
+.c-main--logged-in .c-campaign-topics__deco-rect {
+  background-color: $deco-pink;
+}
+
+.c-main--logged-in .c-campaign-topics__deco-circle {
+  color: $deco-circle-stroke;
+}
+
+.c-main--logged-in .c-campaign-topics__deco-triangle {
+  color: $deco-pink;
+}
+
+// serviceGrid: 青 → 黄色
+.c-main--logged-in .c-service-grid__deco-rect {
+  background-color: $deco-yellow;
+}
+
+.c-main--logged-in .c-service-grid__deco-circle {
+  color: $deco-yellow-stroke;
+}
+
+.c-main--logged-in .c-service-grid__deco-triangle {
+  color: $deco-yellow;
+}
+
+// aboutSiteBanner: ピンク → 緑
+.c-main--logged-in .c-about-site-banner__deco-rect {
+  background-color: $deco-green;
+}
+
+.c-main--logged-in .c-about-site-banner__deco-circle {
+  color: $deco-green-stroke;
+}
+
+.c-main--logged-in .c-about-site-banner__deco-triangle {
+  color: $deco-green;
+}

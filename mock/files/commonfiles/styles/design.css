@@ -848,6 +848,121 @@
   }
 }
 
+@media (min-width: 992px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco {
+    top: 3.125rem;
+  }
+}
+
+.c-about-site-banner--mirrored .c-about-site-banner__deco-rect {
+  right: auto;
+  left: calc((100% - 100vw) / 2);
+  height: 20rem;
+  transform: translateY(-40%);
+  opacity: 0.4;
+  border-radius: 0 1.25rem 1.25rem 0;
+}
+@media (min-width: 768px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-rect {
+    height: 25rem;
+  }
+}
+@media (min-width: 992px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-rect {
+    height: 6.25rem;
+    top: 88%;
+  }
+}
+
+.c-about-site-banner--mirrored .c-about-site-banner__deco-circle {
+  left: auto;
+  right: -4.375rem;
+  top: -2.5rem;
+}
+@media (min-width: 768px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-circle {
+    right: -3.125rem;
+    top: -1.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-circle {
+    right: -4.375rem;
+    top: -5rem;
+  }
+}
+
+.c-about-site-banner--mirrored .c-about-site-banner__deco-triangle {
+  left: auto;
+  right: -2.5rem;
+  transform: scaleX(-1);
+}
+@media (min-width: 768px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-triangle {
+    right: -0.625rem;
+  }
+}
+@media (min-width: 992px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-triangle {
+    right: 0.625rem;
+  }
+}
+
+.c-about-site-banner--mirrored .c-about-site-banner__deco-ring--lg {
+  right: auto;
+  left: -1.25rem;
+  transform: rotate(327deg);
+  animation: float-ct-ring-lg 4s ease-in-out infinite;
+}
+@media (min-width: 768px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-ring--lg {
+    left: -3.75rem;
+  }
+}
+@media (min-width: 992px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-ring--lg {
+    left: 9.375rem;
+  }
+}
+
+.c-about-site-banner--mirrored .c-about-site-banner__deco-ring--md {
+  left: auto;
+  right: -0.3125rem;
+  transform: rotate(60deg);
+  animation: float-ct-ring-md 5s ease-in-out infinite;
+}
+@media (min-width: 768px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-ring--md {
+    right: -2.1875rem;
+    top: 55%;
+  }
+}
+@media (min-width: 992px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-ring--md {
+    right: -1.25rem;
+    top: 110%;
+  }
+}
+
+.c-about-site-banner--mirrored .c-about-site-banner__deco-ring--sm {
+  right: auto;
+  left: 0.625rem;
+  transform: rotate(225deg);
+  animation: float-ct-ring-sm 3.5s ease-in-out infinite;
+}
+@media (min-width: 768px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-ring--sm {
+    left: -1.25rem;
+    top: 60%;
+  }
+}
+@media (min-width: 992px) {
+  .c-about-site-banner--mirrored .c-about-site-banner__deco-ring--sm {
+    left: 15rem;
+    top: 115%;
+  }
+}
+
 .c-about-site-banner__deco-ring--sm {
   width: 1.25rem;
   height: 1.25rem;
@@ -1184,7 +1299,7 @@
   height: 34.375rem;
   top: 33%;
   transform: translateY(-30%);
-  background-color: #d1e8ff;
+  background-color: #d6f2dd;
   opacity: 0.6;
   border-radius: 1.25rem 0 0 1.25rem;
 }
@@ -1203,7 +1318,7 @@
 .c-service-grid__deco-circle {
   position: absolute;
   opacity: 0.3;
-  color: #01468e;
+  color: #4a8c5c;
   width: 8.75rem;
   height: 8.75rem;
   left: -4.375rem;
@@ -1229,7 +1344,7 @@
 .c-service-grid__deco-triangle {
   position: absolute;
   opacity: 0.5;
-  color: #d1e8ff;
+  color: #d6f2dd;
   width: 6.25rem;
   height: 6.875rem;
   left: -2.5rem;
@@ -2111,6 +2226,42 @@
   line-height: 1.2;
   letter-spacing: 0.035rem;
   color: #00387d;
+}
+
+.c-main--logged-in .c-campaign-topics__deco-rect {
+  background-color: #ffdedd;
+}
+
+.c-main--logged-in .c-campaign-topics__deco-circle {
+  color: #E26464;
+}
+
+.c-main--logged-in .c-campaign-topics__deco-triangle {
+  color: #ffdedd;
+}
+
+.c-main--logged-in .c-service-grid__deco-rect {
+  background-color: #fff0ad;
+}
+
+.c-main--logged-in .c-service-grid__deco-circle {
+  color: #967b00;
+}
+
+.c-main--logged-in .c-service-grid__deco-triangle {
+  color: #fff0ad;
+}
+
+.c-main--logged-in .c-about-site-banner__deco-rect {
+  background-color: #d6f2dd;
+}
+
+.c-main--logged-in .c-about-site-banner__deco-circle {
+  color: #4a8c5c;
+}
+
+.c-main--logged-in .c-about-site-banner__deco-triangle {
+  color: #d6f2dd;
 }
 
 html {

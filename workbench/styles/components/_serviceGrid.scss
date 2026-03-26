@@ -43,7 +43,7 @@
   height: rem(550);
   top: 33%;
   transform: translateY(-30%);
-  background-color: $deco-blue;
+  background-color: $deco-green;
   opacity: 0.6;
   border-radius: rem(20) 0 0 rem(20);
 
@@ -61,7 +61,7 @@
 .c-service-grid__deco-circle {
   position: absolute;
   opacity: 0.3;
-  color: $deco-blue-stroke;
+  color: $deco-green-stroke;
   width: rem(140);
   height: rem(140);
   left: rem(-70);
@@ -86,7 +86,7 @@
 .c-service-grid__deco-triangle {
   position: absolute;
   opacity: 0.5;
-  color: $deco-blue;
+  color: $deco-green;
   width: rem(100);
   height: rem(110);
   left: rem(-40);

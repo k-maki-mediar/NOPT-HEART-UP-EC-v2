@@ -2,7 +2,7 @@
 @use '../foundation/variables' as *;
 
 .c-rakutoku-info {
-  max-width: rem(600);
+  max-width: rem(1130);
   margin: rem(24) auto rem(16);
   padding: 0 rem(16);
 
@@ -12,6 +12,8 @@
 }
 
 .c-rakutoku-info__card {
+  max-width: rem(600);
+  margin: 0 auto;
   border: rem(1) solid $primary-color;
   border-radius: rem(20);
   padding: rem(20) rem(24);

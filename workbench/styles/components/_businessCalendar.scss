@@ -216,6 +216,9 @@
 }
 
 .c-business-calendar__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: rem(44);
   color: $calendar-sat;
   text-decoration: underline;
 }

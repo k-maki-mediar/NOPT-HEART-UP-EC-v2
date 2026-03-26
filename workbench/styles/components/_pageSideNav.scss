@@ -151,9 +151,14 @@
 
 // サブメニュー
 .c-side-nav__submenu {
+  display: none;
   list-style: none;
   margin: 0;
   padding: 0;
+
+  .c-side-nav__item--accordion.is-open > & {
+    display: block;
+  }
 }
 
 .c-side-nav__subitem {

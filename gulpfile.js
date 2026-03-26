@@ -9,6 +9,7 @@ const notify = require('gulp-notify');
 const postcss = require('gulp-postcss');
 const pxtorem = require('postcss-pxtorem');
 const rename = require('gulp-rename');
+const replace = require('gulp-replace');
 
 // postcss-pxtorem 設定
 const pxtoremOptions = {
@@ -94,6 +95,7 @@ gulp.task('scss-main', () => {
     }))
     .pipe(postcss([pxtorem(pxtoremOptions)]))
     .pipe(rename('design.css'))
+    .pipe(replace(/\r?\n/g, '\r\n'))
     .pipe(gulp.dest(paths.dist.css))
     .pipe(browserSync.stream());
 });

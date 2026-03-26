@@ -142,11 +142,11 @@
   background-color: #FFFFFF;
 }
 
-.c-header + *:not(.c-side-nav) {
+.c-header + .c-main {
   margin-top: 5rem;
 }
 
-.c-header + .c-side-nav + * {
+.c-header + .c-side-nav + .c-main {
   margin-top: 5rem;
 }
 
@@ -176,6 +176,12 @@
   align-items: center;
   flex-shrink: 0;
   gap: 0.5rem;
+}
+
+.c-header__logo {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .c-header__logo-link {
@@ -235,6 +241,7 @@
 }
 
 .c-header-menu {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -245,6 +252,9 @@
   max-height: calc(100vh - 5rem);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+.c-header-menu.is-open {
+  display: block;
 }
 
 .c-header-menu__list {
@@ -350,10 +360,14 @@
 }
 
 .c-header-menu__submenu {
+  display: none;
   list-style: none;
   margin: 0;
   padding: 0;
   background-color: #FFFFFF;
+}
+.c-header-menu__item--accordion.is-open > .c-header-menu__submenu {
+  display: block;
 }
 
 .c-header-menu__subitem {
@@ -575,7 +589,7 @@
   overflow: hidden;
   white-space: nowrap;
 }
-.c-banner-area__carousel:not(.slick-initialized) .c-banner-area__slide:not(:first-child) {
+.c-banner-area__carousel:not(.slick-initialized) .c-banner-area__slide ~ .c-banner-area__slide {
   display: none;
 }
 
@@ -597,7 +611,7 @@
 }
 
 .c-banner-area .slick-dots {
-  bottom: -1rem;
+  bottom: -2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -607,20 +621,23 @@
 }
 
 .c-banner-area .slick-dots > * {
-  width: 0.5rem;
-  height: 0.5rem;
-  margin: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 0.3125rem;
 }
 
 .c-banner-area .slick-dots > * > [type=button] {
-  width: 0.5rem;
-  height: 0.5rem;
-  padding: 0;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0.3125rem;
   border: none;
   border-radius: 50%;
-  background-color: #e0e0e0;
+  background-color: transparent;
   font-size: 0;
   cursor: pointer;
+  background-clip: content-box;
+  background-color: #e0e0e0;
 }
 
 .c-banner-area .slick-dots > * > [type=button]::before {
@@ -634,8 +651,8 @@
 .c-banner-area .slick-prev,
 .c-banner-area .slick-next {
   z-index: 1;
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
 }
 
 .c-banner-area .slick-prev::before,
@@ -1853,6 +1870,9 @@
 }
 
 .c-business-calendar__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   color: #0087cb;
   text-decoration: underline;
 }
@@ -2007,9 +2027,13 @@
 }
 
 .c-side-nav__submenu {
+  display: none;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.c-side-nav__item--accordion.is-open > .c-side-nav__submenu {
+  display: block;
 }
 
 .c-side-nav__sublink {
@@ -2063,6 +2087,7 @@
 }
 
 .c-rakutoku-info__title {
+  margin: 0;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 500;

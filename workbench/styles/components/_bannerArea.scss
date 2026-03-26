@@ -37,7 +37,7 @@
     overflow: hidden;
     white-space: nowrap;
 
-    .c-banner-area__slide:not(:first-child) {
+    .c-banner-area__slide ~ .c-banner-area__slide {
       display: none;
     }
   }
@@ -67,7 +67,7 @@
 // ========================================
 
 .c-banner-area .slick-dots {
-  bottom: rem(-16);
+  bottom: rem(-32);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -77,22 +77,28 @@
 }
 
 // slick生成: ul.slick-dots > li（classなし）
+// モックデフォルト準拠: li 20x20px
 .c-banner-area .slick-dots > * {
-  width: rem(8);
-  height: rem(8);
-  margin: 0;
+  width: rem(20);
+  height: rem(20);
+  margin: 0 rem(5);
 }
 
 // slick生成: li > button（classなし）
+// モックデフォルト準拠: button 20x20px + padding 5px
+// 視覚上は8pxのドット、タップ領域はbutton 20x20pxで確保
 .c-banner-area .slick-dots > * > [type="button"] {
-  width: rem(8);
-  height: rem(8);
-  padding: 0;
+  display: block;
+  width: rem(20);
+  height: rem(20);
+  padding: rem(5);
   border: none;
   border-radius: 50%;
-  background-color: $border-color;
+  background-color: transparent;
   font-size: 0;
   cursor: pointer;
+  background-clip: content-box;
+  background-color: $border-color;
 }
 
 .c-banner-area .slick-dots > * > [type="button"]::before {
@@ -110,8 +116,8 @@
 .c-banner-area .slick-prev,
 .c-banner-area .slick-next {
   z-index: 1;
-  width: rem(32);
-  height: rem(32);
+  width: rem(44);
+  height: rem(44);
 }
 
 .c-banner-area .slick-prev::before,

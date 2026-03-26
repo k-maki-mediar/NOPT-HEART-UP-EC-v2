@@ -1,0 +1,50 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// mypageHeading
+// マイページ見出し（ユーザー名表示）
+// ========================================
+
+.c-mypage-heading {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(12) 0;
+
+  @include pc {
+    padding: rem(24) rem(32) 0 calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+.c-mypage-heading__inner {
+  max-width: rem(600);
+  margin: 0 auto;
+  background-color: $bg-color;
+}
+
+.c-mypage-heading__title {
+  font-family: $font-family-heading;
+  font-size: rem(24);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
+  text-align: center;
+  color: $primary-color;
+  padding: rem(24);
+  margin: 0;
+}
+
+.c-mypage-heading__line {
+  display: block;
+  position: relative;
+  left: calc((100% - 100vw) / 2);
+  width: 100vw;
+  height: rem(1);
+
+  @include pc {
+    left: 0;
+    width: 100%;
+  }
+}
+

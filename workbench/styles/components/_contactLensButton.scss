@@ -38,6 +38,10 @@
   width: rem(71);
   height: auto;
   flex-shrink: 0;
+
+  &--sm {
+    width: rem(32);
+  }
 }
 
 .c-contact-lens-btn__text {

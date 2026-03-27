@@ -37,12 +37,13 @@
 
 // カテゴリグループ
 .c-account-menu__group {
+  position: relative;
+
   & + & {
     padding-top: rem(1);
   }
 
   @include pc {
-    position: relative;
     padding: rem(16) rem(24);
 
     & + & {
@@ -52,21 +53,16 @@
   }
 }
 
-// PC時の白半透明背景を画面幅いっぱいに
+// 白半透明背景を画面幅いっぱいに
 .c-account-menu__group::before {
-  @include pc {
-    content: '';
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    width: 100vw;
-    top: 0;
-    bottom: 0;
-    background-color: rgba($bg-color, 0.9);
-    z-index: 0;
-  }
+  content: '';
+  position: absolute;
+  left: -100vw;
+  right: -100vw;
+  top: 0;
+  bottom: 0;
+  background-color: rgba($bg-color, 0.9);
+  z-index: 0;
 }
 
 // カテゴリ見出し（SPでは非表示）
@@ -96,14 +92,14 @@
   display: flex;
   flex-direction: column;
   gap: rem(1);
+  position: relative;
+  z-index: 1;
 
   @include pc {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: rem(4) 0;
     flex: 1;
-    position: relative;
-    z-index: 1;
   }
 }
 
@@ -115,9 +111,10 @@
   width: 100%;
   min-height: rem(64);
   padding: rem(12) rem(24);
-  background-color: rgba($bg-color, 0.9);
   text-decoration: none;
   transition: background-color $transition-fast, opacity $transition-fast;
+  position: relative;
+  z-index: 1;
 
   &:hover {
     background-color: $bg-light;

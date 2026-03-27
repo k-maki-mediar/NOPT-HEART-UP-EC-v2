@@ -18,14 +18,14 @@
     z-index: $z-index-side-nav;
     width: calc(var(--side-nav-left) + var(--side-nav-width));
     padding-left: var(--side-nav-left);
-    height: calc(100vh - #{rem(80)} - #{rem(80)});
+    height: calc(100vh - #{rem(80)});
     overflow-y: auto;
     background-color: rgba($bg-color, 0.82);
   }
 }
 
 .c-side-nav__inner {
-  padding: rem(16) 0;
+  padding: rem(16) 0 rem(80);
 }
 
 .c-side-nav__list {

@@ -53,16 +53,21 @@
   }
 }
 
-// 白半透明背景を画面幅いっぱいに
+// 白半透明背景を画面幅いっぱいに（PC時のみ）
 .c-account-menu__group::before {
-  content: '';
-  position: absolute;
-  left: -100vw;
-  right: -100vw;
-  top: 0;
-  bottom: 0;
-  background-color: rgba($bg-color, 0.9);
-  z-index: 0;
+  display: none;
+
+  @include pc {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -100vw;
+    right: -100vw;
+    top: 0;
+    bottom: 0;
+    background-color: rgba($bg-color, 0.9);
+    z-index: 0;
+  }
 }
 
 // カテゴリ見出し（SPでは非表示）
@@ -112,6 +117,7 @@
   min-height: rem(64);
   padding: rem(12) rem(24);
   text-decoration: none;
+  background-color: rgba($bg-color, 0.9);
   transition: background-color $transition-fast, opacity $transition-fast;
   position: relative;
   z-index: 1;

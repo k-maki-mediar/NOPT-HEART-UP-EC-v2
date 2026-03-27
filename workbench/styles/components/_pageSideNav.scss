@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: rem(44);
-  padding: rem(10) rem(12);
+  padding: rem(14) rem(20);
   text-decoration: none;
   color: $text-color;
   font-family: $font-family-heading;
@@ -79,7 +79,7 @@
   justify-content: space-between;
   width: 100%;
   min-height: rem(44);
-  padding: rem(10) rem(12);
+  padding: rem(14) rem(20);
   background: none;
   border: none;
   cursor: pointer;
@@ -168,7 +168,7 @@
 .c-side-nav__sublink {
   display: block;
   min-height: rem(44);
-  padding: rem(10) rem(12) rem(10) rem(24);
+  padding: rem(14) rem(20) rem(14) rem(32);
   text-decoration: none;
   color: $text-color;
   font-family: $font-family-heading;

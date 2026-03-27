@@ -1,11 +1,11 @@
 export const config = {
   matcher: '/(.*)',
+  runtime: 'edge',
 };
 
 export default function middleware(request) {
   const url = new URL(request.url);
 
-  // BrowserSyncのwebsocket等は除外
   if (url.pathname.startsWith('/__')) {
     return;
   }

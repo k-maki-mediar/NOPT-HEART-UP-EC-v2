@@ -1,0 +1,180 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// mypageMenu
+// マイページメニューリスト
+// SP: 青背景フラットリスト
+// PC: カテゴリ別グリッドレイアウト
+// ========================================
+
+.c-mypage-menu {
+  margin-top: rem(24);
+  background-color: rgba($bg-banner, 0.8);
+
+  @include pc {
+    background-color: transparent;
+    max-width: rem(1130);
+    margin: rem(24) auto 0;
+    padding: 0 rem(16);
+    padding-left: var(--side-nav-content-offset);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      margin-left: -50vw;
+      background-color: rgba($bg-banner, 0.8);
+      z-index: 0;
+    }
+  }
+}
+
+// カテゴリグループ
+.c-mypage-menu__group {
+  @include pc {
+    position: relative;
+    padding: rem(16) rem(24);
+
+    & + & {
+      margin-top: rem(1);
+    }
+  }
+}
+
+// PC時の白半透明背景を画面幅いっぱいに
+.c-mypage-menu__group::before {
+  @include pc {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    background-color: rgba($bg-color, 0.9);
+    z-index: 0;
+  }
+}
+
+// カテゴリ見出し（SPでは非表示）
+.c-mypage-menu__category {
+  display: none;
+  margin: 0;
+
+  @include pc {
+    display: block;
+    position: relative;
+    z-index: 1;
+    font-family: $font-family-base;
+    font-size: rem(12);
+    font-weight: $font-weight-medium;
+    line-height: 1.75;
+    letter-spacing: rem(0.56);
+    color: $primary-color;
+    margin-bottom: rem(8);
+  }
+}
+
+// アイテムリスト
+.c-mypage-menu__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: rem(1);
+
+  @include pc {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(4) 0;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// リンク
+.c-mypage-menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: rem(64);
+  padding: rem(12) rem(24);
+  background-color: rgba($bg-color, 0.9);
+  text-decoration: none;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $bg-light;
+  }
+
+  @include pc {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: auto;
+    min-height: auto;
+    padding: rem(4) rem(8);
+    background-color: rgba($bg-color, 0);
+
+    &:hover {
+      background-color: rgba($bg-color, 0);
+      text-decoration: underline;
+    }
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: rem(5) 0 rem(5) rem(7);
+      border-color: transparent transparent transparent $primary-color;
+      margin-right: rem(6);
+      margin-top: rem(7);
+      flex-shrink: 0;
+    }
+  }
+}
+
+// テキスト
+.c-mypage-menu__text {
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.64);
+  color: $text-color;
+
+  @include pc {
+    font-size: rem(14);
+  }
+}
+
+// SPのみ表示するグループ
+.c-mypage-menu__group--sp-only {
+  @include pc {
+    display: none;
+  }
+}
+
+// 矢印（SPのみ表示）
+.c-mypage-menu__arrow {
+  flex-shrink: 0;
+  font-size: rem(20);
+  color: $border-color-dark;
+  margin-left: rem(16);
+
+  @include pc {
+    display: none;
+  }
+}

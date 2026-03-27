@@ -112,24 +112,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
-  @include pc {
-    display: flex;
-    gap: rem(16);
-  }
 }
 
 .c-favorite-products__item {
   & + & {
     margin-top: rem(24);
-
-    @include pc {
-      margin-top: 0;
-    }
-  }
-
-  @include pc {
-    flex: 1;
   }
 }
 

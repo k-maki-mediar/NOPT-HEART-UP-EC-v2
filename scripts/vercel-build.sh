@@ -13,20 +13,21 @@ mkdir -p .vercel/output/functions/_middleware.func
 cp -R mock/* .vercel/output/static/
 
 # 4. Edge Middleware関数を配置
-cat > .vercel/output/functions/_middleware.func/index.js << 'MIDDLEWARE'
+# 環境変数 BASIC_AUTH_USER / BASIC_AUTH_PASSWORD をビルド時に埋め込む
+AUTH_USER="${BASIC_AUTH_USER:-nopt}"
+AUTH_PASS="${BASIC_AUTH_PASSWORD:-heartup2026}"
+
+cat > .vercel/output/functions/_middleware.func/index.js << MIDDLEWARE
 export default function handler(request) {
   const authHeader = request.headers.get('authorization');
   if (authHeader) {
     const [scheme, encoded] = authHeader.split(' ');
     if (scheme === 'Basic' && encoded) {
       const decoded = atob(encoded);
-      const [user, ...passParts] = decoded.split(':');
-      const pass = passParts.join(':');
-      if (
-        user === process.env.BASIC_AUTH_USER &&
-        pass === process.env.BASIC_AUTH_PASSWORD
-      ) {
-        return;
+      if (decoded === '${AUTH_USER}:${AUTH_PASS}') {
+        return new Response(null, {
+          headers: { 'x-middleware-next': '1' },
+        });
       }
     }
   }

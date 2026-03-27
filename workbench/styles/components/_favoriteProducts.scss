@@ -3,11 +3,11 @@
 @use '../foundation/mixins' as *;
 
 // ========================================
-// orderHistory
-// 注文履歴（アコーディオンカード）
+// favoriteProducts
+// お気に入り商品一覧（アコーディオンカード）
 // ========================================
 
-.c-order-history {
+.c-favorite-products {
   max-width: rem(1130);
   margin: rem(24) auto 0;
   padding: 0 rem(16);
@@ -17,7 +17,7 @@
   }
 }
 
-.c-order-history__inner {
+.c-favorite-products__inner {
   max-width: rem(600);
   margin: 0 auto;
   border-radius: rem(10);
@@ -26,7 +26,7 @@
 }
 
 // ヘッダー（アコーディオントリガー）
-.c-order-history__header {
+.c-favorite-products__header {
   display: flex;
   align-items: center;
   gap: rem(8);
@@ -39,13 +39,13 @@
   position: relative;
 }
 
-.c-order-history__header-icon {
+.c-favorite-products__header-icon {
   width: rem(30);
   height: auto;
   flex-shrink: 0;
 }
 
-.c-order-history__header-title {
+.c-favorite-products__header-title {
   margin: 0;
   font-family: $font-family-heading;
   font-size: rem(16);
@@ -55,7 +55,7 @@
   color: $bg-color;
 }
 
-.c-order-history__header-toggle {
+.c-favorite-products__header-toggle {
   position: absolute;
   right: rem(16);
   top: 50%;
@@ -92,12 +92,12 @@
 }
 
 // 開いている状態: 縦棒を消す（−表示）
-.c-order-history__header[aria-expanded="true"] .c-order-history__header-toggle::after {
+.c-favorite-products__header[aria-expanded="true"] .c-favorite-products__header-toggle::after {
   transform: translateX(-50%) scaleY(0);
 }
 
 // ボディ
-.c-order-history__body {
+.c-favorite-products__body {
   display: none;
   background-color: $bg-color;
   padding: rem(16);
@@ -108,102 +108,51 @@
 }
 
 // 商品リスト
-.c-order-history__list {
+.c-favorite-products__list {
   list-style: none;
   margin: 0;
   padding: 0;
-}
 
-.c-order-history__item {
-  & + & {
-    margin-top: rem(16);
+  @include pc {
+    display: flex;
+    gap: rem(16);
   }
 }
 
-// 商品カード
-.c-order-history__product {
+.c-favorite-products__item {
+  & + & {
+    margin-top: rem(24);
+
+    @include pc {
+      margin-top: 0;
+    }
+  }
+
+  @include pc {
+    flex: 1;
+  }
+}
+
+// 商品カード（縦積みレイアウト）
+.c-favorite-products__product {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: rem(16);
   background-color: $bg-color;
   border-radius: rem(8);
   box-shadow: $shadow-xs;
-  overflow: hidden;
 }
 
-// カードヘッダー（購入情報）
-.c-order-history__product-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: rem(8);
-  width: 100%;
-  padding: rem(12) rem(16);
-  background-color: $bg-banner;
-  text-align: left;
-}
-
-.c-order-history__product-info-text {
-  font-family: $font-family-heading;
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  line-height: 1.75;
-  letter-spacing: rem(0.56);
-  color: $primary-color;
-  margin: 0;
-}
-
-.c-order-history__product-status {
-  flex-shrink: 0;
-  font-size: rem(12);
-  font-weight: $font-weight-normal;
-  line-height: 1.5;
-  letter-spacing: rem(0.15);
-  color: $primary-color;
-  background-color: $bg-light;
-  padding: rem(4) rem(12);
-  border-radius: rem(23);
-  white-space: nowrap;
-
-  &--warning {
-    background-color: $deco-pink;
-    color: $calendar-holiday;
-  }
-
-  &--done {
-    background-color: $border-color-dark;
-    color: $text-color;
-  }
-}
-
-// 商品画像ラップ（ラベル付き）
-.c-order-history__product-img-wrap {
-  width: 100%;
-  padding: rem(16) rem(16) 0;
-  text-align: center;
-}
-
-.c-order-history__product-label {
+.c-favorite-products__product-img {
   display: block;
-  text-align: left;
-  font-family: $font-family-heading;
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  line-height: 1.75;
-  letter-spacing: rem(0.56);
-  color: $primary-color;
-  margin-bottom: rem(8);
-}
-
-.c-order-history__product-img {
-  display: inline-block;
   max-width: rem(200);
   width: 100%;
   height: auto;
 }
 
-.c-order-history__product-name {
+.c-favorite-products__product-name {
   font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-medium;
@@ -211,54 +160,37 @@
   letter-spacing: rem(0.56);
   color: $primary-color;
   margin: rem(8) 0 0;
-  padding: 0 rem(16);
-}
-
-// 商品ボタン（availableLensと同じスタイル）
-.c-order-history__product-actions {
-  display: flex;
-  gap: rem(12);
+  text-align: left;
   width: 100%;
-  padding: 0 rem(16) rem(16);
-  margin-top: rem(12);
 }
 
-.c-order-history__product-btn {
-  flex: 1;
+// 価格表示
+.c-favorite-products__product-price {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: rem(6);
-  min-height: rem(48);
-  padding: rem(8) rem(4);
-  border: rem(1) solid $primary-color;
-  border-radius: rem(8);
-  background-color: $bg-color;
-  box-shadow: 0 rem(3) 0 0 $primary-color-dark;
-  font-family: $font-family-heading;
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  line-height: 1.2;
-  letter-spacing: rem(0.56);
-  color: $primary-color;
-  text-decoration: none;
-  text-align: center;
-  transition: transform $transition-fast, box-shadow $transition-fast;
-
-  &:hover {
-    transform: translateY(rem(3));
-    box-shadow: 0 0 0 0 $primary-color-dark;
-  }
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: rem(4);
+  width: 100%;
+  margin-top: rem(8);
 }
 
-.c-order-history__product-btn-icon {
-  width: rem(16);
-  height: rem(16);
-  flex-shrink: 0;
+.c-favorite-products__product-price-value {
+  font-family: $font-family-heading;
+  font-size: rem(18);
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  color: $primary-color;
+}
+
+.c-favorite-products__product-price-tax {
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $calendar-holiday;
 }
 
 // アクションボタン
-.c-order-history__actions {
+.c-favorite-products__actions {
   display: flex;
   flex-direction: column;
   gap: rem(12);
@@ -266,7 +198,7 @@
   margin: rem(24) auto 0;
 }
 
-.c-order-history__btn {
+.c-favorite-products__btn {
   flex: 1;
   display: flex;
   align-items: center;

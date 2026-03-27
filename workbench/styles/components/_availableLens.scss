@@ -160,6 +160,45 @@
   letter-spacing: rem(0.56);
   color: $primary-color;
   margin: rem(8) 0 0;
+
+  &--left {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+// 価格表示
+.c-available-lens__product-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: rem(4);
+  width: 100%;
+  margin-top: rem(8);
+}
+
+.c-available-lens__product-price-label {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  color: $primary-color;
+  margin-right: auto;
+}
+
+.c-available-lens__product-price-value {
+  font-family: $font-family-heading;
+  font-size: rem(18);
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  color: $primary-color;
+}
+
+.c-available-lens__product-price-tax {
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $calendar-holiday;
 }
 
 // 商品ごとのボタン（フッターボタンと同じスタイル、横並び）

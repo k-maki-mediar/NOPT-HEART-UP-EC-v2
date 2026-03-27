@@ -2,3 +2,13 @@
 // Typography
 // タイポグラフィ基盤（classベースのみ）
 // ========================================
+
+@use '../foundation/mixins' as *;
+
+.c-html {
+  font-size: 100%; // SP: 16px（デフォルト）
+
+  @include pc {
+    font-size: 112.5%; // PC: 18px相当（16 × 1.125）
+  }
+}

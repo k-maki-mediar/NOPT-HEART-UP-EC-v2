@@ -131,7 +131,7 @@ const basicAuthMiddleware = function (req, res, next) {
     const [scheme, encoded] = auth.split(' ');
     if (scheme === 'Basic' && encoded) {
       const decoded = Buffer.from(encoded, 'base64').toString();
-      if (decoded === 'admin:password') {
+      if (decoded === 'nopt:heartup2026') {
         return next();
       }
     }

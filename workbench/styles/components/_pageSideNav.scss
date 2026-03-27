@@ -131,7 +131,7 @@
     width: rem(2);
     height: rem(10);
     transform: translate(-50%, -50%);
-    transition: opacity 0.2s ease;
+    transition: opacity $transition-fast;
   }
 }
 

@@ -9,7 +9,7 @@
   z-index: 100;
   background-color: rgba($bg-light, 0.85);
   padding: rem(12) rem(12) rem(16);
-  transition: transform 0.3s ease;
+  transition: transform $transition-base;
 
   &.is-hidden {
     transform: translateY(100%);
@@ -46,7 +46,7 @@
   border-radius: rem(10);
   text-decoration: none;
   box-shadow: 0 rem(2) 0 0 $primary-color-dark;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform $transition-fast, box-shadow $transition-fast;
 
   &:hover {
     transform: translateY(rem(2));

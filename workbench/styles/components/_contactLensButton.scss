@@ -25,7 +25,7 @@
   background-color: $bg-color;
   box-shadow: 0 rem(2) 0 0 $primary-color-dark;
   text-decoration: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform $transition-fast, box-shadow $transition-fast;
 
   &:hover {
     transform: translateY(rem(2));

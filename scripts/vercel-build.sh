@@ -1,11 +1,8 @@
 #!/bin/bash
-# Vercel用ビルドスクリプト
-# Build Output API v3 を使って静的サイト + Edge Middlewareを構成する
-
 set -e
 
 # 1. 通常のビルド（workbench → mock/）
-npm run build
+npx gulp build
 
 # 2. Build Output API ディレクトリ構成を作成
 rm -rf .vercel/output
@@ -19,14 +16,12 @@ cp -R mock/* .vercel/output/static/
 cat > .vercel/output/functions/_middleware.func/index.js << 'MIDDLEWARE'
 export default function handler(request) {
   const authHeader = request.headers.get('authorization');
-
   if (authHeader) {
     const [scheme, encoded] = authHeader.split(' ');
     if (scheme === 'Basic' && encoded) {
       const decoded = atob(encoded);
       const [user, ...passParts] = decoded.split(':');
       const pass = passParts.join(':');
-
       if (
         user === process.env.BASIC_AUTH_USER &&
         pass === process.env.BASIC_AUTH_PASSWORD
@@ -35,12 +30,9 @@ export default function handler(request) {
       }
     }
   }
-
   return new Response('Authentication required', {
     status: 401,
-    headers: {
-      'WWW-Authenticate': 'Basic realm="Protected"',
-    },
+    headers: { 'WWW-Authenticate': 'Basic realm="Protected"' },
   });
 }
 MIDDLEWARE

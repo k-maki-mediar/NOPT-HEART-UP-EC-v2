@@ -24,14 +24,8 @@
   border: rem(1) solid $primary-color;
   border-radius: rem(20);
   background-color: $bg-color;
-  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
+  @include button-press-effect;
   text-decoration: none;
-  transition: transform $transition-fast, box-shadow $transition-fast;
-
-  &:hover {
-    transform: translateY(rem(2));
-    box-shadow: 0 0 0 0 $primary-color-dark;
-  }
 }
 
 .c-contact-lens-btn__illust {

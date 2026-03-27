@@ -46,13 +46,7 @@
   border: rem(1) solid $primary-color;
   border-radius: rem(10);
   text-decoration: none;
-  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
-  transition: transform $transition-fast, box-shadow $transition-fast;
-
-  &:hover {
-    transform: translateY(rem(2));
-    box-shadow: 0 0 0 0 $primary-color-dark;
-  }
+  @include button-press-effect;
 }
 
 .c-footer-menu__link-text {

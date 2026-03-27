@@ -19,7 +19,7 @@
 
 .c-banner-area__inner {
   position: relative;
-  z-index: 1;
+  z-index: $z-index-content;
   max-width: rem(1130);
   margin: 0 auto;
   padding: 0 rem(16);
@@ -115,7 +115,7 @@
 
 .c-banner-area .slick-prev,
 .c-banner-area .slick-next {
-  z-index: 1;
+  z-index: $z-index-content;
   width: rem(44);
   height: rem(44);
 }

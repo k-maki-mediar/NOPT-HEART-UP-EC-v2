@@ -3149,9 +3149,6 @@
 .c-mypage-menu {
   margin-top: 1.5rem;
   background-color: rgba(215, 231, 251, 0.8);
-  display: flex;
-  flex-direction: column;
-  gap: 0.0625rem;
 }
 @media (min-width: 992px) {
   .c-mypage-menu {
@@ -3175,12 +3172,16 @@
   }
 }
 
+.c-mypage-menu__group + .c-mypage-menu__group {
+  padding-top: 0.0625rem;
+}
 @media (min-width: 992px) {
   .c-mypage-menu__group {
     position: relative;
     padding: 1rem 1.5rem;
   }
   .c-mypage-menu__group + .c-mypage-menu__group {
+    padding-top: 1rem;
     margin-top: 0.0625rem;
   }
 }

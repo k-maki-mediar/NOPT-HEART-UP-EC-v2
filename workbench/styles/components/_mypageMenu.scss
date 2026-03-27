@@ -12,6 +12,9 @@
 .c-mypage-menu {
   margin-top: rem(24);
   background-color: rgba($bg-banner, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: rem(1);
 
   @include pc {
     background-color: transparent;

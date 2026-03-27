@@ -124,6 +124,23 @@ gulp.task('vendor-css', () => {
     .pipe(browserSync.stream());
 });
 
+// Basic認証ミドルウェア（ローカル確認用）
+const basicAuthMiddleware = function (req, res, next) {
+  const auth = req.headers.authorization;
+  if (auth) {
+    const [scheme, encoded] = auth.split(' ');
+    if (scheme === 'Basic' && encoded) {
+      const decoded = Buffer.from(encoded, 'base64').toString();
+      if (decoded === 'nopt:heartup2026') {
+        return next();
+      }
+    }
+  }
+  res.statusCode = 401;
+  res.setHeader('WWW-Authenticate', 'Basic realm="Protected"');
+  res.end('Authentication required');
+};
+
 // BrowserSync起動
 gulp.task('serve', (done) => {
   browserSync.init({
@@ -132,7 +149,8 @@ gulp.task('serve', (done) => {
     },
     port: 3000,
     open: false,
-    notify: false
+    notify: false,
+    middleware: [basicAuthMiddleware]
   });
   done();
 });

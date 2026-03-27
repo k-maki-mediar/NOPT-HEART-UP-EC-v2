@@ -179,7 +179,7 @@
 .c-account-menu__arrow {
   flex-shrink: 0;
   font-size: rem(20);
-  color: $border-color-dark;
+  color: $primary-color;
   margin-left: rem(16);
 
   @include pc {

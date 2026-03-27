@@ -3303,7 +3303,7 @@
   padding: 0.75rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, opacity 0.15s ease-in-out;
 }
 .c-account-menu__link:hover {
   background-color: #f4f8fc;
@@ -3320,7 +3320,7 @@
   }
   .c-account-menu__link:hover {
     background-color: rgba(255, 255, 255, 0);
-    text-decoration: underline;
+    opacity: 0.7;
   }
   .c-account-menu__link::before {
     content: "";
@@ -3636,5 +3636,3 @@ body {
   background-color: var(--color-bg);
   overflow-x: hidden;
 }
-
-/*# sourceMappingURL=design.css.map */

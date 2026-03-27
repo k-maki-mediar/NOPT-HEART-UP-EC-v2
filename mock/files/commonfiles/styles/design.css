@@ -1560,10 +1560,6 @@
   letter-spacing: 0.035rem;
   color: #333;
 }
-.c-category-menu__search-input::-moz-placeholder {
-  color: #333;
-  opacity: 0.3;
-}
 .c-category-menu__search-input::placeholder {
   color: #333;
   opacity: 0.3;
@@ -1618,12 +1614,14 @@
   border: 0.0625rem solid #00387d;
   border-radius: 0.625rem;
   box-shadow: 0 0.125rem 0 0 #002a5e;
-  cursor: pointer;
   transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .c-category-menu__btn:hover {
   transform: translateY(0.125rem);
   box-shadow: 0 0 0 0 #002a5e;
+}
+.c-category-menu__btn {
+  cursor: pointer;
 }
 .c-category-menu__btn.is-active {
   background-color: #00387d;
@@ -1668,6 +1666,8 @@
 .c-category-menu__subbtn:hover {
   transform: translateY(0.125rem);
   box-shadow: 0 0 0 0 #002a5e;
+}
+.c-category-menu__subbtn:hover {
   text-decoration: none;
 }
 
@@ -2191,12 +2191,14 @@
   border-radius: 1.25rem;
   background-color: #FFFFFF;
   box-shadow: 0 0.125rem 0 0 #002a5e;
-  text-decoration: none;
   transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .c-contact-lens-btn__link:hover {
   transform: translateY(0.125rem);
   box-shadow: 0 0 0 0 #002a5e;
+}
+.c-contact-lens-btn__link {
+  text-decoration: none;
 }
 
 .c-contact-lens-btn__illust {
@@ -2273,3 +2275,5 @@ body {
   background-color: var(--color-bg);
   overflow-x: hidden;
 }
+
+/*# sourceMappingURL=design.css.map */

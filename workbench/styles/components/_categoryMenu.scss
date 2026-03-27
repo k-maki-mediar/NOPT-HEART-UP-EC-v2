@@ -20,7 +20,7 @@
     left: calc((100% - 100vw) / 2);
     right: calc((100% - 100vw) / 2);
     background-color: rgba($bg-banner, 0.6);
-    z-index: -1;
+    z-index: $z-index-deco;
   }
 }
 
@@ -90,7 +90,7 @@
 .c-category-menu__sp-br {
   display: none;
 
-  @media (max-width: $breakpoint-sp-max) {
+  @include sp {
     display: inline;
   }
 }
@@ -106,21 +106,15 @@
   background-color: $bg-color;
   border: rem(1) solid $primary-color;
   border-radius: rem(10);
-  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
+  @include button-press-effect;
   cursor: pointer;
-  transition: transform $transition-fast, box-shadow $transition-fast;
-
-  &:hover {
-    transform: translateY(rem(2));
-    box-shadow: 0 0 0 0 $primary-color-dark;
-  }
 
   &.is-active {
     background-color: $primary-color;
   }
 
   &.is-active .c-category-menu__btn-text {
-    color: $bg-color;
+    color: $color-white;
   }
 }
 
@@ -154,12 +148,9 @@
   border: rem(1) solid $primary-color;
   border-radius: rem(10);
   text-decoration: none;
-  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
-  transition: transform $transition-fast, box-shadow $transition-fast;
+  @include button-press-effect;
 
   &:hover {
-    transform: translateY(rem(2));
-    box-shadow: 0 0 0 0 $primary-color-dark;
     text-decoration: none;
   }
 }

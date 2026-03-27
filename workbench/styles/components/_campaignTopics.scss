@@ -15,7 +15,7 @@
 
 .c-campaign-topics__inner {
   position: relative;
-  z-index: 1;
+  z-index: $z-index-content;
   max-width: rem(600);
   margin: 0 auto;
 }
@@ -28,9 +28,9 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: -1;
+  z-index: $z-index-deco;
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     top: rem(50);
   }
 }
@@ -47,11 +47,11 @@
   opacity: 0.4;
   border-radius: 0 rem(20) rem(20) 0;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     height: rem(400);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     height: rem(100);
     top: 88%;
   }
@@ -67,14 +67,14 @@
   right: rem(-70);
   top: rem(-40);
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(170);
     height: rem(170);
     right: rem(-50);
     top: rem(-20);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(250);
     height: rem(250);
     right: rem(-70);
@@ -93,14 +93,14 @@
   top: rem(0);
   transform: scaleX(-1);
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(120);
     height: rem(130);
     right: rem(-10);
     top: rem(38);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(180);
     height: rem(200);
     right: rem(10);
@@ -141,14 +141,14 @@
   transform: rotate(327deg);
   animation: float-ct-ring-lg 4s ease-in-out infinite;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(130);
     height: rem(130);
     left: rem(-60);
     top: rem(30);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(150);
     height: rem(150);
     left: rem(150);
@@ -167,14 +167,14 @@
   stroke-width: 1.5;
   animation: float-ct-ring-md 5s ease-in-out infinite;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(60);
     height: rem(60);
     right: rem(-35);
     top: 55%;
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(45);
     height: rem(45);
     right: rem(-20);
@@ -192,14 +192,14 @@
   stroke-width: 3;
   animation: float-ct-ring-sm 3.5s ease-in-out infinite;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(36);
     height: rem(36);
     left: rem(-20);
     top: 60%;
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(28);
     height: rem(28);
     left: rem(240);
@@ -223,7 +223,7 @@
   margin: 0;
   padding: 0;
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: rem(12);
@@ -233,7 +233,7 @@
 .c-campaign-topics__item + .c-campaign-topics__item {
   margin-top: rem(12);
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     margin-top: 0;
   }
 }

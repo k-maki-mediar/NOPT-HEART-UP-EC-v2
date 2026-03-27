@@ -15,7 +15,7 @@
     position: fixed;
     top: rem(80); // ヘッダー高さ分下げる
     left: 0;
-    z-index: 90;
+    z-index: $z-index-side-nav;
     width: calc(var(--side-nav-left) + var(--side-nav-width));
     padding-left: var(--side-nav-left);
     height: calc(100vh - #{rem(80)} - #{rem(80)});
@@ -116,7 +116,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    background-color: $bg-color;
+    background-color: $color-white;
   }
 
   // 横線（常時表示）
@@ -137,7 +137,7 @@
 
 // 開いた状態
 .c-side-nav__item--accordion.is-open .c-side-nav__toggle-icon {
-  background-color: $bg-color;
+  background-color: $color-white;
   border: rem(1) solid $primary-color;
 
   &::before {

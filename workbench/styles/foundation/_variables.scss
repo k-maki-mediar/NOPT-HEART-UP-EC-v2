@@ -19,7 +19,8 @@ $accent-color: #FFE66D;
 $danger-color: #e53e3e;
 $text-color: #333;
 $text-light: #7F8C8D;
-$bg-color: #FFFFFF;
+$color-white: #FFFFFF;
+$bg-color: $color-white;
 $bg-light: #f4f8fc;
 $bg-gray: #F7F7F7;
 $bg-banner: #d7e7fb;
@@ -90,6 +91,11 @@ $transition-base: 0.3s ease-in-out;
 $transition-slow: 0.5s ease-in-out;
 
 // z-index
+$z-index-header: 100;
+$z-index-header-menu: 99;
+$z-index-side-nav: 90;
+$z-index-content: 1;
+$z-index-deco: -1;
 $z-index-dropdown: 1000;
 $z-index-modal: 1050;
 $z-index-tooltip: 1100;

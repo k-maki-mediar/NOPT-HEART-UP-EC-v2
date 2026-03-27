@@ -15,7 +15,7 @@
 
 .c-service-grid__inner {
   position: relative;
-  z-index: 1;
+  z-index: $z-index-content;
   max-width: rem(600);
   margin: 0 auto;
 }
@@ -28,9 +28,9 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: -1;
+  z-index: $z-index-deco;
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     top: rem(160);
   }
 }
@@ -47,11 +47,11 @@
   opacity: 0.6;
   border-radius: rem(20) 0 0 rem(20);
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     height: rem(600);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     height: rem(400);
     top: 30%;
   }
@@ -67,14 +67,14 @@
   left: rem(-70);
   top: rem(-40);
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(170);
     height: rem(170);
     left: rem(-50);
     top: rem(-20);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(250);
     height: rem(250);
     left: rem(150);
@@ -92,14 +92,14 @@
   left: rem(-40);
   top: rem(0);
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(120);
     height: rem(130);
     left: rem(-10);
     top: rem(38);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(180);
     height: rem(200);
     left: rem(250);
@@ -140,14 +140,14 @@
   transform: rotate(-147deg);
   animation: float-sg-ring-lg 4s ease-in-out infinite;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(130);
     height: rem(130);
     right: rem(-60);
     top: rem(30);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(150);
     height: rem(150);
     right: rem(-70);
@@ -166,14 +166,14 @@
   stroke-width: 1.5;
   animation: float-sg-ring-md 5s ease-in-out infinite;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(60);
     height: rem(60);
     left: rem(-35);
     top: 80%;
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(45);
     height: rem(45);
     left: rem(230);
@@ -191,14 +191,14 @@
   stroke-width: 3;
   animation: float-sg-ring-sm 3.5s ease-in-out infinite;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(36);
     height: rem(36);
     right: rem(-20);
     top: 85%;
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(28);
     height: rem(28);
     right: rem(-15);
@@ -224,7 +224,7 @@
   margin: 0;
   padding: 0;
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     grid-template-columns: repeat(3, 1fr);
   }
 }

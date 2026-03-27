@@ -25,7 +25,7 @@
     left: calc((100% - 100vw) / 2);
     right: calc((100% - 100vw) / 2);
     background-color: $bg-gray;
-    z-index: -1;
+    z-index: $z-index-deco;
   }
 }
 
@@ -188,7 +188,7 @@
 
 .c-business-calendar__day--holiday {
   background-color: $calendar-holiday;
-  color: $bg-color;
+  color: $color-white;
 }
 
 .c-business-calendar__day--other {

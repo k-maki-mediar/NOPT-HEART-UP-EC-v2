@@ -4,6 +4,7 @@
 // SP: 320px〜767px / Tablet: 768px〜991px / PC: 992px〜
 // ========================================
 
+@use 'functions' as *;
 @use 'variables' as *;
 
 @mixin sp {
@@ -20,4 +21,15 @@
 
 @mixin tablet-up {
   @media (min-width: $breakpoint-tablet-min) { @content; }
+}
+
+// ボタン押下エフェクト（影付きカード型ボタン共通）
+@mixin button-press-effect {
+  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 $primary-color-dark;
+  }
 }

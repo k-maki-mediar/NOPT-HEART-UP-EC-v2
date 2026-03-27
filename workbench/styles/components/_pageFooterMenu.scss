@@ -1,12 +1,13 @@
 @use '../foundation/functions' as *;
 @use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
 
 .c-footer-menu {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: $z-index-header;
   background-color: rgba($bg-light, 0.85);
   padding: rem(12) rem(12) rem(16);
   transition: transform $transition-base;
@@ -25,7 +26,7 @@
   list-style: none;
   padding: 0;
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -45,13 +46,7 @@
   border: rem(1) solid $primary-color;
   border-radius: rem(10);
   text-decoration: none;
-  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
-  transition: transform $transition-fast, box-shadow $transition-fast;
-
-  &:hover {
-    transform: translateY(rem(2));
-    box-shadow: 0 0 0 0 $primary-color-dark;
-  }
+  @include button-press-effect;
 }
 
 .c-footer-menu__link-text {

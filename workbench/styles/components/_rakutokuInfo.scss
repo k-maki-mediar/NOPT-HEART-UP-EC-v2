@@ -5,28 +5,25 @@
 .c-rakutoku-info {
   max-width: rem(1130);
   margin: rem(24) auto rem(16);
-  padding: 0 rem(16);
+  padding: 0 rem(12);
 
   @include pc {
-    padding-left: var(--side-nav-content-offset);
+    padding: 0 rem(32) 0 calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 
 .c-rakutoku-info__card {
-  max-width: rem(600);
-  margin: 0 auto;
   border: rem(1) solid $primary-color;
   border-radius: rem(20);
   padding: rem(20) rem(24);
   background-color: $bg-color;
-  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
 }
 
 .c-rakutoku-info__header {
   display: flex;
   align-items: center;
   gap: rem(8);
-  margin-bottom: rem(12);
+  margin-bottom: rem(16);
 }
 
 .c-rakutoku-info__icon {
@@ -39,9 +36,9 @@
 .c-rakutoku-info__title {
   margin: 0;
   font-family: $font-family-heading;
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  line-height: 1.75;
+  font-size: rem(16);
+  font-weight: $font-weight-bold;
+  line-height: 1.4;
   letter-spacing: rem(0.56);
   color: $primary-color;
 }
@@ -50,38 +47,49 @@
   display: flex;
   flex-direction: column;
   gap: rem(12);
+
+  @include pc {
+    flex-direction: row;
+  }
 }
 
 .c-rakutoku-info__plan {
-  /* individual plan block */
-}
-
-.c-rakutoku-info__plan + .c-rakutoku-info__plan {
-  border-top: rem(1) solid $border-color;
-  padding-top: rem(12);
-}
-
-.c-rakutoku-info__plan-row {
   display: flex;
-  align-items: baseline;
-  gap: rem(12);
-  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: $bg-light;
+  border-radius: rem(8);
+  padding: rem(12) rem(16);
+  text-align: center;
+
+  @include pc {
+    flex: 1;
+  }
+}
+
+.c-rakutoku-info__plan-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: rem(8);
+  margin-top: rem(8);
 }
 
 .c-rakutoku-info__plan-name {
   font-family: $font-family-heading;
-  font-size: rem(12);
+  font-size: rem(11);
   font-weight: $font-weight-medium;
-  line-height: 1.75;
+  line-height: 1.5;
   letter-spacing: rem(0.15);
-  color: $text-color;
+  color: $primary-color;
 }
 
 .c-rakutoku-info__plan-status {
-  font-family: $font-family-base;
-  font-size: rem(12);
+  font-family: $font-family-heading;
+  font-size: rem(16);
   font-weight: $font-weight-bold;
-  line-height: 1.75;
+  line-height: 1.4;
   letter-spacing: rem(0.15);
 }
 
@@ -99,15 +107,14 @@
   font-weight: $font-weight-normal;
   line-height: 1.5;
   letter-spacing: rem(0.15);
-  color: $calendar-holiday;
-  margin: rem(8) 0 0;
+  color: $text-light;
+  margin: 0;
 }
 
 .c-rakutoku-info__link {
   display: inline-flex;
   align-items: center;
   min-height: rem(44);
-  margin-top: rem(8);
   font-family: $font-family-base;
   font-size: rem(12);
   font-weight: $font-weight-normal;

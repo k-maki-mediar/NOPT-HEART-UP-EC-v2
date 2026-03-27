@@ -50,9 +50,15 @@
 
 .c-rakutoku-btn__text {
   font-family: $font-family-heading;
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
+  font-size: rem(18);
+  font-weight: $font-weight-bold;
   line-height: 1.2;
   letter-spacing: rem(0.56);
   color: $primary-color;
+}
+
+.c-rakutoku-btn__br {
+  @include pc {
+    display: none;
+  }
 }

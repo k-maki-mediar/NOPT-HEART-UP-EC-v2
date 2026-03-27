@@ -50,13 +50,14 @@
 @use 'components/pageSideNav';
 @use 'components/rakutokuInfo';
 @use 'components/contactLensButton';
-@use 'components/mypageHeading';
+@use 'components/rakutokuButton';
+@use 'components/userHeading';
 @use 'components/availableLens';
 @use 'components/couponList';
 @use 'components/orderHistory';
 @use 'components/favoriteProducts';
-@use 'components/mypageMenu';
-@use 'components/mypageDeco';
+@use 'components/accountMenu';
+@use 'components/sectionDeco';
 
 // ========================================
 // Pages（ページ固有スタイル）

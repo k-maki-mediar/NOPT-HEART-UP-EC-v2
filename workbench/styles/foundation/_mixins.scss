@@ -4,6 +4,7 @@
 // SP: 320px〜767px / Tablet: 768px〜991px / PC: 992px〜
 // ========================================
 
+@use 'functions' as *;
 @use 'variables' as *;
 
 @mixin sp {
@@ -20,4 +21,148 @@
 
 @mixin tablet-up {
   @media (min-width: $breakpoint-tablet-min) { @content; }
+}
+
+// ========================================
+// アコーディオンカード共通スタイル
+// マイページ各セクション（レンズ・クーポン・注文・お気に入り）で共通
+// ========================================
+
+@mixin accordion-card-inner {
+  max-width: rem(600);
+  margin: 0 auto;
+  border-radius: rem(10);
+  border: rem(1) solid $border-color;
+  overflow: hidden;
+}
+
+@mixin accordion-card-header {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  width: 100%;
+  min-height: rem(64);
+  padding: rem(12) rem(16);
+  background-color: $primary-color;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+@mixin accordion-card-header-title {
+  margin: 0;
+  font-family: $font-family-heading;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  color: $color-white;
+}
+
+@mixin accordion-card-toggle {
+  position: absolute;
+  right: rem(16);
+  top: 50%;
+  transform: translateY(-50%);
+  width: rem(12);
+  height: rem(12);
+  flex-shrink: 0;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: $color-white;
+    transition: transform $transition-fast;
+  }
+
+  // 横棒
+  &::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: rem(2);
+    transform: translateY(-50%);
+  }
+
+  // 縦棒（開いている時は非表示）
+  &::after {
+    top: 0;
+    left: 50%;
+    width: rem(2);
+    height: 100%;
+    transform: translateX(-50%);
+  }
+}
+
+@mixin accordion-card-body {
+  display: none;
+  background-color: $bg-color;
+  padding: rem(16);
+
+  &.is-open {
+    display: block;
+  }
+}
+
+@mixin accordion-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  max-width: rem(400);
+  margin: rem(24) auto 0;
+}
+
+@mixin accordion-card-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(48);
+  padding: rem(8) rem(16);
+  border: rem(1) solid $primary-color;
+  border-radius: rem(23);
+  background-color: $bg-color;
+  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  color: $primary-color;
+  text-decoration: none;
+  text-align: center;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 $primary-color-dark;
+  }
+}
+
+@mixin product-action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(48);
+  padding: rem(8) rem(4);
+  border: rem(1) solid $primary-color;
+  border-radius: rem(8);
+  background-color: $bg-color;
+  box-shadow: 0 rem(3) 0 0 $primary-color-dark;
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+  letter-spacing: rem(0.56);
+  color: $primary-color;
+  text-decoration: none;
+  text-align: center;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(3));
+    box-shadow: 0 0 0 0 $primary-color-dark;
+  }
 }

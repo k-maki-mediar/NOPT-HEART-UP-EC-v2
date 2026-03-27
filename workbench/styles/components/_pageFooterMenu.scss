@@ -1,12 +1,13 @@
 @use '../foundation/functions' as *;
 @use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
 
 .c-footer-menu {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: $z-index-header;
   background-color: rgba($bg-light, 0.85);
   padding: rem(12) rem(12) rem(16);
   transition: transform $transition-base;
@@ -25,7 +26,7 @@
   list-style: none;
   padding: 0;
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     grid-template-columns: repeat(4, 1fr);
   }
 }

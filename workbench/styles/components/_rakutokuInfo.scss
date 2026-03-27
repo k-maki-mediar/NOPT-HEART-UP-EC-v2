@@ -1,12 +1,13 @@
 @use '../foundation/functions' as *;
 @use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
 
 .c-rakutoku-info {
   max-width: rem(1130);
   margin: rem(24) auto rem(16);
   padding: 0 rem(16);
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     padding-left: var(--side-nav-content-offset);
   }
 }

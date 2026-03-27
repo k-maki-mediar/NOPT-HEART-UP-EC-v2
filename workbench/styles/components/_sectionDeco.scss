@@ -2,11 +2,12 @@
 @use '../foundation/variables' as *;
 @use '../foundation/mixins' as *;
 
-.c-mypage-deco {
+.c-section-deco {
   position: relative;
+  isolation: isolate;
 }
 
-.c-mypage-deco__inner {
+.c-section-deco__inner {
   position: relative;
   z-index: 1;
 }
@@ -16,7 +17,7 @@
 // ----------------------------------------
 
 // 装飾の基準幅をcampaignTopicsと揃える
-.c-mypage-deco__deco {
+.c-section-deco__deco {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -33,7 +34,7 @@
 }
 
 // グレー矩形（左側・ブロック全体より少し大きめ）
-.c-mypage-deco__deco-rect {
+.c-section-deco__deco-rect {
   position: absolute;
   left: calc((100% - 100vw) / 2);
   width: 55vw;
@@ -44,17 +45,17 @@
   opacity: 0.85;
   border-radius: 0 rem(20) rem(20) 0;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     height: calc(100% - rem(20));
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     height: calc(100% + rem(10));
   }
 }
 
 // 大きな円アウトライン（右上）
-.c-mypage-deco__deco-circle {
+.c-section-deco__deco-circle {
   position: absolute;
   opacity: 0.5;
   color: $border-color-dark;
@@ -63,14 +64,14 @@
   right: rem(-70);
   top: rem(-90);
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(170);
     height: rem(170);
     right: rem(-50);
     top: rem(-60);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(250);
     height: rem(250);
     right: rem(-70);
@@ -79,7 +80,7 @@
 }
 
 // 三角形（円の左下に重なる）
-.c-mypage-deco__deco-triangle {
+.c-section-deco__deco-triangle {
   position: absolute;
   opacity: 0.7;
   color: $bg-gray;
@@ -89,14 +90,14 @@
   top: rem(-50);
   transform: scaleX(-1);
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(120);
     height: rem(130);
     right: rem(-10);
     top: rem(-10);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(180);
     height: rem(200);
     right: rem(10);
@@ -105,23 +106,23 @@
 }
 
 // ランドルト環 浮遊アニメーション
-@keyframes float-mp-ring-lg {
+@keyframes float-deco-ring-lg {
   0%, 100% { transform: rotate(327deg) translateY(0); }
   50% { transform: rotate(327deg) translateY(rem(-16)); }
 }
 
-@keyframes float-mp-ring-md {
+@keyframes float-deco-ring-md {
   0%, 100% { transform: rotate(60deg) translateY(0); }
   50% { transform: rotate(60deg) translateY(rem(-12)); }
 }
 
-@keyframes float-mp-ring-sm {
+@keyframes float-deco-ring-sm {
   0%, 100% { transform: rotate(225deg) translateY(0); }
   50% { transform: rotate(225deg) translateY(rem(-10)); }
 }
 
 // ランドルト環（共通）
-.c-mypage-deco__deco-ring {
+.c-section-deco__deco-ring {
   position: absolute;
   opacity: 0.5;
   overflow: visible;
@@ -129,22 +130,22 @@
 }
 
 // ランドルト環（大）- 左上
-.c-mypage-deco__deco-ring--lg {
+.c-section-deco__deco-ring--lg {
   width: rem(70);
   height: rem(70);
   left: rem(-20);
   top: rem(-40);
   transform: rotate(327deg);
-  animation: float-mp-ring-lg 4s ease-in-out infinite;
+  animation: float-deco-ring-lg 4s ease-in-out infinite;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(130);
     height: rem(130);
     left: rem(-60);
     top: rem(-20);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(150);
     height: rem(150);
     left: rem(150);
@@ -154,23 +155,23 @@
 }
 
 // ランドルト環（中）- 右
-.c-mypage-deco__deco-ring--md {
+.c-section-deco__deco-ring--md {
   width: rem(35);
   height: rem(35);
   right: rem(-5);
   top: rem(110);
   transform: rotate(60deg);
   stroke-width: 1.5;
-  animation: float-mp-ring-md 5s ease-in-out infinite;
+  animation: float-deco-ring-md 5s ease-in-out infinite;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(60);
     height: rem(60);
     right: rem(-35);
     top: rem(130);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(45);
     height: rem(45);
     right: rem(-20);
@@ -179,23 +180,23 @@
 }
 
 // ランドルト環（小）- 左
-.c-mypage-deco__deco-ring--sm {
+.c-section-deco__deco-ring--sm {
   width: rem(20);
   height: rem(20);
   left: rem(10);
   top: rem(140);
   transform: rotate(225deg);
   stroke-width: 3;
-  animation: float-mp-ring-sm 3.5s ease-in-out infinite;
+  animation: float-deco-ring-sm 3.5s ease-in-out infinite;
 
-  @media (min-width: $breakpoint-tablet-min) {
+  @include tablet-up {
     width: rem(36);
     height: rem(36);
     left: rem(-20);
     top: rem(160);
   }
 
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     width: rem(28);
     height: rem(28);
     left: rem(240);

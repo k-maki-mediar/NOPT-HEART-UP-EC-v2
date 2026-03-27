@@ -1,12 +1,13 @@
 @use '../foundation/functions' as *;
 @use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
 
 .c-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: $z-index-header;
   background-color: $bg-color;
 }
 
@@ -28,7 +29,7 @@
 
   // PC時はサイドナビがあるため非表示
   // ※ サイドナビ廃止時はこのブロックを削除してハンバーガーを復活させる
-  @media (min-width: $breakpoint-pc-min) {
+  @include pc {
     display: none;
   }
 }
@@ -122,7 +123,7 @@
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: $z-index-header-menu;
   background-color: $bg-color;
   box-shadow: 0 rem(6) rem(16) rem(-2) rgba(0, 0, 0, 0.06);
   max-height: calc(100vh - rem(80));
@@ -213,7 +214,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    background-color: $bg-color;
+    background-color: $color-white;
   }
 
   // 横線（常時表示）
@@ -234,7 +235,7 @@
 
 // 開いた状態: 白抜き（背景白、線が色付き）
 .c-header-menu__item--accordion.is-open .c-header-menu__toggle-icon {
-  background-color: $bg-color;
+  background-color: $color-white;
   border: rem(1) solid $primary-color;
 
   &::before {

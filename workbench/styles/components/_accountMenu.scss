@@ -9,7 +9,7 @@
 // PC: カテゴリ別グリッドレイアウト
 // ========================================
 
-.c-mypage-menu {
+.c-account-menu {
   margin-top: rem(24);
   background-color: rgba($bg-banner, 0.8);
 
@@ -36,7 +36,7 @@
 }
 
 // カテゴリグループ
-.c-mypage-menu__group {
+.c-account-menu__group {
   & + & {
     padding-top: rem(1);
   }
@@ -53,7 +53,7 @@
 }
 
 // PC時の白半透明背景を画面幅いっぱいに
-.c-mypage-menu__group::before {
+.c-account-menu__group::before {
   @include pc {
     content: '';
     position: absolute;
@@ -70,7 +70,7 @@
 }
 
 // カテゴリ見出し（SPでは非表示）
-.c-mypage-menu__category {
+.c-account-menu__category {
   display: none;
   margin: 0;
 
@@ -89,7 +89,7 @@
 }
 
 // アイテムリスト
-.c-mypage-menu__items {
+.c-account-menu__items {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -108,7 +108,7 @@
 }
 
 // リンク
-.c-mypage-menu__link {
+.c-account-menu__link {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -152,7 +152,7 @@
 }
 
 // テキスト
-.c-mypage-menu__text {
+.c-account-menu__text {
   font-family: $font-family-base;
   font-size: rem(16);
   font-weight: $font-weight-normal;
@@ -166,14 +166,14 @@
 }
 
 // SPのみ表示するグループ
-.c-mypage-menu__group--sp-only {
+.c-account-menu__group--sp-only {
   @include pc {
     display: none;
   }
 }
 
 // 矢印（SPのみ表示）
-.c-mypage-menu__arrow {
+.c-account-menu__arrow {
   flex-shrink: 0;
   font-size: rem(20);
   color: $border-color-dark;

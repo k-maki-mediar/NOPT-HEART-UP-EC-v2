@@ -1,5 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "mock",
+  "buildCommand": "bash scripts/vercel-build.sh",
   "framework": null
 }

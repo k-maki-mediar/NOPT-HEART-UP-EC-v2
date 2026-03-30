@@ -1,10 +1,8 @@
 ---
 name: implement
-description: >
-  プロジェクト全体のHTML/CSS/JSをガイドライン・規格に照合して厳格に検証し、
-  違反を検出→fixブランチで修正→mainマージ→全ブランチ同期まで自動で行うスキル。
-  新規実装時のワークフロー管理も兼ねる。
-user_invocable: true
+description: "ガイドライン・規格に照合してHTML/CSS/JSを厳格に検証し、違反を検出→fixブランチで修正→mainマージ→全ブランチ同期まで自動実行。新規実装のワークフロー管理も兼ねる。"
+user-invocable: true
+argument-hint: "[画面名（省略で全体検証）]"
 ---
 
 # 検証・修正・同期スキル（implement）
@@ -383,9 +381,16 @@ npm run build
 ══════════════════════════════════════════
 ```
 
-**CRITICAL違反が0件の場合は修正不要。レポートのみ出力して終了。**
-**CRITICAL違反が1件以上ある場合は Step 4 に進む。**
-**WARNING違反のみの場合はユーザーに修正するか確認する。**
+### レポート出力後の分岐
+
+| 状態 | 動作 |
+|---|---|
+| CRITICAL 0件 + WARNING 0件 | 全項目合格。レポート出力のみで終了 |
+| CRITICAL 1件以上 | Step 4 に進み、CRITICAL + WARNING を全て修正 |
+| CRITICAL 0件 + WARNING 1件以上 | Step 4 に進み、WARNING を全て修正 |
+
+**WARNINGも含めて全て修正する。** 「推奨」であっても放置しない。
+ガイドライン適合を厳格に保つため、検出された違反は重要度に関わらず全て解消する。
 
 ---
 
@@ -406,34 +411,63 @@ git checkout -b fix/validate-YYYYMMDD
 
 ブランチ名の日付は実行日。同日に複数回実行する場合は `-01`, `-02` のサフィックス。
 
-### 4-3. CRITICAL違反の修正
+### 4-3. 全違反の修正（CRITICAL + WARNING）
 
-**修正は CRITICAL 違反のみ自動実行。WARNING は報告のみ。**
+**CRITICAL違反もWARNING違反も区別なく全て修正する。**
 
-各違反を修正し、修正内容をカテゴリごとにコミット:
+修正の優先順位:
+1. CRITICAL（規格・ガイドライン必須要件の違反）
+2. WARNING（推奨事項・品質向上項目）
+
+修正内容をカテゴリごとにコミット:
 
 ```bash
-# HTML修正
+# HTML修正（CRITICAL + WARNING まとめて）
 git add workbench/includes/... workbench/pages/...
-git commit -m "fix(html): void要素スラッシュ除去・alt属性追加 [H-01,H-08]"
+git commit -m "fix(html): void要素スラッシュ除去・alt属性追加・lang属性修正 [H-01,H-08,H-11]"
 
-# SCSS修正
+# SCSS修正（CRITICAL + WARNING まとめて）
 git add workbench/styles/...
-git commit -m "fix(scss): 素タグセレクタをクラスセレクタに変更 [S-01]"
+git commit -m "fix(scss): 素タグセレクタ変更・px直書きrem化・z-index変数化・カラー変数化 [S-01,S-04,S-08,S-09]"
 
-# JS修正（該当があれば）
+# JS修正（CRITICAL + WARNING まとめて）
 git add workbench/scripts/...
-git commit -m "fix(js): console.log除去 [J-02]"
+git commit -m "fix(js): console.log除去・var→const/let変更 [J-02,J-04]"
+
+# ディレクトリ構造修正（該当があれば）
+git add ...
+git commit -m "fix(structure): ファイル配置修正 [D-03]"
 ```
 
 **コミットメッセージに違反コード（[S-01]等）を必ず含める。**
 
-### 4-4. 修正後の再検証
+### 4-4. WARNING固有の修正ガイド
 
-修正完了後、Step 2 の検証を再実行。
-CRITICAL違反が0件になるまで繰り返す。
+WARNINGの修正で判断が必要な場合の対応方針:
 
-### 4-5. ビルド確認
+| 違反コード | 修正方法 |
+|---|---|
+| [S-04] px直書き | `16px` → `rem(16)` に変換。border-widthの1pxはそのまま許容 |
+| [S-08] z-index直値 | `_variables.scss` の `$z-index-xxx` 変数を使用。なければ変数を追加 |
+| [S-09] カラー直書き | `_variables.scss` の既存変数に置換。一致する変数がなければ変数を追加してから参照 |
+| [S-10] ブレークポイント直書き | `@media (max-width: 767px)` → `@include sp` 等のミックスインに変換 |
+| [S-12] 空ルールセット | 中身が空のルールは削除 |
+| [J-02] console.log | 全て削除 |
+| [J-03] jQuery非推奨 | `.ready()` → `$(function(){})`, `.bind()` → `.on()` に変換 |
+| [J-04] var宣言 | 再代入なし→`const`、再代入あり→`let` に変換 |
+| [H-05] パーツ内id | `id="xxx"` → `data-xxx` または class に変換。JS連携がある場合は `data-` 属性に統一 |
+| [H-07] X-UA-Compatible | meta要素ごと削除 |
+| [H-11] lang属性 | `<html` に `lang="ja"` を追加 |
+| [A-01] 空ボタン | `aria-label="xxx"` を追加（ボタンの機能を説明する文言） |
+| [A-02] form囲み | 入力グループを `<form>` で囲む |
+| [A-03] タップ領域不足 | `min-height: rem(44)` + 適切なpadding追加 |
+
+### 4-5. 修正後の再検証
+
+修正完了後、Step 2 の検証を**全項目**再実行する。
+**CRITICAL違反もWARNING違反も0件になるまで繰り返す。**
+
+### 4-6. ビルド確認
 
 ```bash
 npm run build
@@ -512,9 +546,14 @@ git branch -d fix/validate-YYYYMMDD
   - [H-01] void要素スラッシュ除去（5ファイル）
   ...
 
-■ 残存WARNING: N件
-  - [S-04] px直書き（推奨修正・非必須）
+■ 修正したWARNING違反: N件
+  - [S-04] px直書き → rem()関数に変換（4ファイル）
+  - [S-09] カラー直書き → 変数参照に変更（2ファイル）
+  - [J-04] var宣言 → const/letに変更（3ファイル）
   ...
+
+■ 残存違反: 0件
+  （CRITICAL/WARNING共に全て解消済み）
 
 ■ ブランチ同期状況:
   - main: ✓ 最新
@@ -525,8 +564,9 @@ git branch -d fix/validate-YYYYMMDD
 ■ ビルド: ✓ 成功
 
 ■ 修正コミット:
-  - abc1234 fix(html): void要素スラッシュ除去 [H-01]
-  - def5678 fix(scss): 素タグセレクタ変更 [S-01]
+  - abc1234 fix(html): void要素スラッシュ除去・lang属性追加 [H-01,H-11]
+  - def5678 fix(scss): 素タグセレクタ変更・px→rem変換・カラー変数化 [S-01,S-04,S-09]
+  - ghi9012 fix(js): console.log除去・var→const/let [J-02,J-04]
 ══════════════════════════════════════════
 ```
 

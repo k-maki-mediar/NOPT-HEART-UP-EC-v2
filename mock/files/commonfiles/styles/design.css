@@ -274,7 +274,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-.c-header-menu.is-open {
+.c-header-menu--open {
   display: block;
 }
 
@@ -369,14 +369,14 @@
   transition: opacity 0.15s ease-in-out;
 }
 
-.c-header-menu__item--accordion.is-open .c-header-menu__toggle-icon {
+.c-header-menu__item--open .c-header-menu__toggle-icon {
   background-color: #FFFFFF;
   border: 0.0625rem solid #00387d;
 }
-.c-header-menu__item--accordion.is-open .c-header-menu__toggle-icon::before {
+.c-header-menu__item--open .c-header-menu__toggle-icon::before {
   background-color: #00387d;
 }
-.c-header-menu__item--accordion.is-open .c-header-menu__toggle-icon::after {
+.c-header-menu__item--open .c-header-menu__toggle-icon::after {
   opacity: 0;
 }
 
@@ -387,7 +387,7 @@
   padding: 0;
   background-color: #FFFFFF;
 }
-.c-header-menu__item--accordion.is-open > .c-header-menu__submenu {
+.c-header-menu__item--open > .c-header-menu__submenu {
   display: block;
 }
 
@@ -1316,7 +1316,7 @@
 @media (min-width: 992px) {
   .c-service-grid__deco-rect {
     height: 25rem;
-    top: 30%;
+    top: 45%;
   }
 }
 
@@ -2040,14 +2040,14 @@
   transition: opacity 0.15s ease-in-out;
 }
 
-.c-side-nav__item--accordion.is-open .c-side-nav__toggle-icon {
+.c-side-nav__item--open .c-side-nav__toggle-icon {
   background-color: #FFFFFF;
   border: 0.0625rem solid #00387d;
 }
-.c-side-nav__item--accordion.is-open .c-side-nav__toggle-icon::before {
+.c-side-nav__item--open .c-side-nav__toggle-icon::before {
   background-color: #00387d;
 }
-.c-side-nav__item--accordion.is-open .c-side-nav__toggle-icon::after {
+.c-side-nav__item--open .c-side-nav__toggle-icon::after {
   opacity: 0;
 }
 
@@ -2057,7 +2057,7 @@
   margin: 0;
   padding: 0;
 }
-.c-side-nav__item--accordion.is-open > .c-side-nav__submenu {
+.c-side-nav__item--open > .c-side-nav__submenu {
   display: block;
 }
 
@@ -2297,11 +2297,17 @@
 
 .c-rakutoku-btn__text {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 1.125rem;
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.035rem;
   color: #00387d;
+}
+
+@media (min-width: 992px) {
+  .c-rakutoku-btn__br {
+    display: none;
+  }
 }
 
 .c-user-heading {
@@ -2434,7 +2440,7 @@
   background-color: #FFFFFF;
   padding: 1rem;
 }
-.c-available-lens__body.is-open {
+.c-available-lens__body--open {
   display: block;
 }
 
@@ -2692,7 +2698,7 @@
   background-color: #FFFFFF;
   padding: 1rem;
 }
-.c-coupon-list__body.is-open {
+.c-coupon-list__body--open {
   display: block;
 }
 
@@ -2853,7 +2859,7 @@
   background-color: #FFFFFF;
   padding: 1rem;
 }
-.c-order-history__body.is-open {
+.c-order-history__body--open {
   display: block;
 }
 
@@ -3120,7 +3126,7 @@
   background-color: #FFFFFF;
   padding: 1rem;
 }
-.c-favorite-products__body.is-open {
+.c-favorite-products__body--open {
   display: block;
 }
 
@@ -3265,14 +3271,20 @@
 }
 
 .c-account-menu__group::before {
-  content: "";
-  position: absolute;
-  left: -100vw;
-  right: -100vw;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 0;
+  display: none;
+}
+@media (min-width: 992px) {
+  .c-account-menu__group::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -100vw;
+    right: -100vw;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 0;
+  }
 }
 
 .c-account-menu__category {
@@ -3321,6 +3333,7 @@
   min-height: 4rem;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.9);
   transition: background-color 0.15s ease-in-out, opacity 0.15s ease-in-out;
   position: relative;
   z-index: 1;
@@ -3378,7 +3391,7 @@
 .c-account-menu__arrow {
   flex-shrink: 0;
   font-size: 1.25rem;
-  color: #c2c2c2;
+  color: #00387d;
   margin-left: 1rem;
 }
 @media (min-width: 992px) {
@@ -3634,21 +3647,21 @@
   color: #d6f2dd;
 }
 
-html {
+.c-html {
   font-size: 100%;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-html[data-font-size=large] {
+.c-html[data-font-size=large] {
   font-size: 112.5%;
 }
 
-html[data-font-size=x-large] {
+.c-html[data-font-size=x-large] {
   font-size: 125%;
 }
 
-body {
+.c-body {
   font-size: 1rem;
   font-family: var(--font-family-base);
   color: var(--color-text);

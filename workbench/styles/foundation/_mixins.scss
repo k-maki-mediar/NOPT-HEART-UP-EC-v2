@@ -100,7 +100,7 @@
   background-color: $bg-color;
   padding: rem(16);
 
-  &.is-open {
+  &--open {
     display: block;
   }
 }

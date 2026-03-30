@@ -136,7 +136,7 @@
 }
 
 // 開いた状態
-.c-side-nav__item--accordion.is-open .c-side-nav__toggle-icon {
+.c-side-nav__item--open .c-side-nav__toggle-icon {
   background-color: $color-white;
   border: rem(1) solid $primary-color;
 
@@ -156,7 +156,7 @@
   margin: 0;
   padding: 0;
 
-  .c-side-nav__item--accordion.is-open > & {
+  .c-side-nav__item--open > & {
     display: block;
   }
 }

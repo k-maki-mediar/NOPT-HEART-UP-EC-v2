@@ -69,18 +69,18 @@
 // rem基準の設定
 // ========================================
 
-html {
+.c-html {
   font-size: 100%;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
 // フォントサイズ切り替え機能
-html[data-font-size="large"] {
+.c-html[data-font-size="large"] {
   font-size: 112.5%; // 18px
 }
 
-html[data-font-size="x-large"] {
+.c-html[data-font-size="x-large"] {
   font-size: 125%; // 20px
 }
 
@@ -88,7 +88,7 @@ html[data-font-size="x-large"] {
 // Body設定（v2: モダンページのみ）
 // ========================================
 
-body {
+.c-body {
   font-size: rem(16);
   font-family: var(--font-family-base);
   color: var(--color-text);

@@ -5,6 +5,6 @@ $(function () {
     var isOpen = $btn.attr('aria-expanded') === 'true';
 
     $btn.attr('aria-expanded', !isOpen);
-    $body.toggleClass('is-open');
+    $body.toggleClass('c-coupon-list__body--open');
   });
 });

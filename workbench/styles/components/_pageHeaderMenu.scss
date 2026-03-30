@@ -130,7 +130,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  &.is-open {
+  &--open {
     display: block;
   }
 }
@@ -234,7 +234,7 @@
 }
 
 // 開いた状態: 白抜き（背景白、線が色付き）
-.c-header-menu__item--accordion.is-open .c-header-menu__toggle-icon {
+.c-header-menu__item--open .c-header-menu__toggle-icon {
   background-color: $color-white;
   border: rem(1) solid $primary-color;
 
@@ -255,7 +255,7 @@
   padding: 0;
   background-color: $bg-color;
 
-  .c-header-menu__item--accordion.is-open > & {
+  .c-header-menu__item--open > & {
     display: block;
   }
 }

@@ -109,11 +109,11 @@
   @include button-press-effect;
   cursor: pointer;
 
-  &.is-active {
+  &--active {
     background-color: $primary-color;
   }
 
-  &.is-active .c-category-menu__btn-text {
+  &--active .c-category-menu__btn-text {
     color: $color-white;
   }
 }

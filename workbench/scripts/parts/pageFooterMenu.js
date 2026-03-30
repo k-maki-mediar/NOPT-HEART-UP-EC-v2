@@ -5,7 +5,7 @@ $(function () {
 
   $(window).on("scroll", function () {
     // スクロール中は非表示
-    $footer.addClass("is-hidden");
+    $footer.addClass("c-footer-menu--hidden");
 
     // タイマーリセット
     if (scrollTimer) {
@@ -14,7 +14,7 @@ $(function () {
 
     // スクロール停止後に表示
     scrollTimer = setTimeout(function () {
-      $footer.removeClass("is-hidden");
+      $footer.removeClass("c-footer-menu--hidden");
     }, 300);
   });
 

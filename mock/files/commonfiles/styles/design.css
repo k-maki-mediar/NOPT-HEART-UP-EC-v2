@@ -416,7 +416,7 @@
   padding: 0.75rem 0.75rem 1rem;
   transition: transform 0.3s ease-in-out;
 }
-.c-footer-menu.is-hidden {
+.c-footer-menu--hidden {
   transform: translateY(100%);
 }
 
@@ -1648,10 +1648,10 @@
 .c-category-menu__btn {
   cursor: pointer;
 }
-.c-category-menu__btn.is-active {
+.c-category-menu__btn--active {
   background-color: #00387d;
 }
-.c-category-menu__btn.is-active .c-category-menu__btn-text {
+.c-category-menu__btn--active .c-category-menu__btn-text {
   color: #FFFFFF;
 }
 

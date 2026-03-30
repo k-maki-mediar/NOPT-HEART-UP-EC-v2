@@ -3388,6 +3388,30 @@
   }
 }
 
+.c-account-menu__group--pc-only {
+  display: none;
+}
+@media (min-width: 992px) {
+  .c-account-menu__group--pc-only {
+    display: block;
+  }
+}
+
+.c-account-menu__item--pc-only {
+  display: none;
+}
+@media (min-width: 992px) {
+  .c-account-menu__item--pc-only {
+    display: list-item;
+  }
+}
+
+@media (min-width: 992px) {
+  .c-account-menu__item[style*="--pc-order"] {
+    order: var(--pc-order);
+  }
+}
+
 .c-account-menu__arrow {
   flex-shrink: 0;
   font-size: 1.25rem;

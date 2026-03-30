@@ -175,6 +175,31 @@
   }
 }
 
+// PCのみ表示するグループ
+.c-account-menu__group--pc-only {
+  display: none;
+
+  @include pc {
+    display: block;
+  }
+}
+
+// PCのみ表示するアイテム
+.c-account-menu__item--pc-only {
+  display: none;
+
+  @include pc {
+    display: list-item;
+  }
+}
+
+// PC時の表示順序を復元（SP時はHTML順＝画像順）
+.c-account-menu__item[style*='--pc-order'] {
+  @include pc {
+    order: var(--pc-order);
+  }
+}
+
 // 矢印（SPのみ表示）
 .c-account-menu__arrow {
   flex-shrink: 0;

@@ -2438,7 +2438,7 @@
 .c-available-lens__body {
   display: none;
   background-color: #FFFFFF;
-  padding: 1rem;
+  padding: 2rem;
 }
 .c-available-lens__body--open {
   display: block;
@@ -2708,7 +2708,7 @@
 .c-coupon-list__body {
   display: none;
   background-color: #FFFFFF;
-  padding: 1rem;
+  padding: 2rem;
 }
 .c-coupon-list__body--open {
   display: block;
@@ -2881,7 +2881,7 @@
 .c-order-history__body {
   display: none;
   background-color: #FFFFFF;
-  padding: 1rem;
+  padding: 2rem;
 }
 .c-order-history__body--open {
   display: block;
@@ -3160,7 +3160,7 @@
 .c-favorite-products__body {
   display: none;
   background-color: #FFFFFF;
-  padding: 1rem;
+  padding: 2rem;
 }
 .c-favorite-products__body--open {
   display: block;

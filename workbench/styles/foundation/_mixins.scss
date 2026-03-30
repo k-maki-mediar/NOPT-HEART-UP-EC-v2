@@ -98,7 +98,7 @@
 @mixin accordion-card-body {
   display: none;
   background-color: $bg-color;
-  padding: rem(16);
+  padding: rem(32);
 
   &--open {
     display: block;

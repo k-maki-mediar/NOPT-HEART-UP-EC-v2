@@ -2611,6 +2611,18 @@
   box-shadow: 0 0 0 0 #002a5e;
 }
 
+.c-available-lens__empty {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+  margin: 0;
+  padding: 1rem 0;
+  text-align: center;
+}
+
 .c-coupon-list {
   max-width: 70.625rem;
   margin: 1.5rem auto 0;
@@ -2770,6 +2782,18 @@
 .c-coupon-list__btn:hover {
   transform: translateY(0.125rem);
   box-shadow: 0 0 0 0 #002a5e;
+}
+
+.c-coupon-list__empty {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+  margin: 0;
+  padding: 1rem 0;
+  text-align: center;
 }
 
 .c-order-history {
@@ -3039,6 +3063,18 @@
   box-shadow: 0 0 0 0 #002a5e;
 }
 
+.c-order-history__empty {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+  margin: 0;
+  padding: 1rem 0;
+  text-align: center;
+}
+
 .c-favorite-products {
   max-width: 70.625rem;
   margin: 1.5rem auto 0;
@@ -3226,6 +3262,18 @@
 .c-favorite-products__btn:hover {
   transform: translateY(0.125rem);
   box-shadow: 0 0 0 0 #002a5e;
+}
+
+.c-favorite-products__empty {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+  margin: 0;
+  padding: 1rem 0;
+  text-align: center;
 }
 
 .c-account-menu {

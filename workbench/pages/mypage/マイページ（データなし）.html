@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja" class="c-html">
+<head>
+@@include('../../includes/head.html', {"title": "マイページ"})
+<!-- パーツJS -->
+<script src="../../../files/partsfiles/scripts/pageHeaderMenu.js"></script>
+<script src="../../../files/partsfiles/scripts/pageFooterMenu.js"></script>
+<script src="../../../files/partsfiles/scripts/pageSideNav.js"></script>
+<script src="../../../files/partsfiles/scripts/availableLens.js"></script>
+<script src="../../../files/partsfiles/scripts/couponList.js"></script>
+<script src="../../../files/partsfiles/scripts/orderHistory.js"></script>
+<script src="../../../files/partsfiles/scripts/favoriteProducts.js"></script>
+</head>
+<body class="c-body">
+  <div class="c-page-wrapper">
+    @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
+    @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
+    <main class="c-main c-main--logged-in">
+      <!-- 重要なお知らせ：データなしのため非表示
+      @@include('../../includes/parts/main/common/importantNotice.html')
+      -->
+      @@include('../../includes/parts/main/mypage/mypageHeading.html')
+      @@include('../../includes/parts/main/mypage/rakutokuButton.html')
+      @@include('../../includes/parts/main/mypage/sectionDecoStart.html')
+          @@include('../../includes/parts/main/mypage/availableLensEmpty.html')
+          @@include('../../includes/parts/main/mypage/couponListEmpty.html')
+          @@include('../../includes/parts/main/mypage/orderHistoryEmpty.html')
+          @@include('../../includes/parts/main/mypage/favoriteProductsEmpty.html')
+      @@include('../../includes/parts/main/mypage/sectionDecoEnd.html')
+      @@include('../../includes/parts/main/mypage/mypageMenu.html')
+    </main>
+    @@include('../../includes/parts/general/pageFooterMenu.html')
+  </div>
+</body>
+</html>

@@ -127,3 +127,16 @@
 .c-favorite-products__btn {
   @include accordion-card-btn;
 }
+
+// データなし
+.c-favorite-products__empty {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  color: $primary-color;
+  margin: 0;
+  padding: rem(16) 0;
+  text-align: center;
+}

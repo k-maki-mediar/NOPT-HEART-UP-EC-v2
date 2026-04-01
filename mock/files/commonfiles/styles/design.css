@@ -316,7 +316,7 @@
   color: #333;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
 }
 
@@ -348,7 +348,7 @@
   cursor: pointer;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
   color: #333;
   text-align: left;
@@ -2034,7 +2034,7 @@
   color: #333;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.8125rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
   transition: background-color 0.15s ease-in-out;
 }
@@ -2069,7 +2069,7 @@
   cursor: pointer;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.8125rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
   color: #333;
   text-align: left;

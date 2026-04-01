@@ -51,7 +51,7 @@
   color: $text-color;
   font-family: $font-family-heading;
   font-size: rem(13);
-  font-weight: $font-weight-bold;
+  font-weight: 600;
   line-height: 1.5;
   transition: background-color $transition-fast;
 
@@ -88,7 +88,7 @@
   cursor: pointer;
   font-family: $font-family-heading;
   font-size: rem(13);
-  font-weight: $font-weight-bold;
+  font-weight: 600;
   line-height: 1.5;
   color: $text-color;
   text-align: left;

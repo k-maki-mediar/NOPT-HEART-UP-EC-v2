@@ -1,0 +1,43 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+.c-user-bar {
+  position: fixed;
+  top: rem(80);
+  left: 0;
+  right: 0;
+  z-index: $z-index-header - 1;
+  background-color: rgba(215, 231, 251, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  @include pc {
+    left: calc(var(--side-nav-left) + var(--side-nav-width));
+  }
+}
+
+.c-user-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(12);
+  padding: rem(6) rem(16);
+
+  @include pc {
+    padding: rem(6) calc((100vw - #{rem(1130)}) / 2 + #{rem(14)}) rem(6) rem(32);
+  }
+}
+
+.c-user-bar__name {
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+}
+
+.c-user-bar__member-id {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  color: $text-light;
+}

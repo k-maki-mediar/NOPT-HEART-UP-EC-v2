@@ -15,13 +15,9 @@
 }
 
 // ヘッダーがfixedのため、直後のメインコンテンツがヘッダー下に潜り込まないようにスペーサーを確保
-// サイドナビ（.c-side-nav）はfixed表示のためmargin不要
-.c-header + .c-main {
-  margin-top: rem(80); // ヘッダー高さ分（サイドナビなし時）
-}
-
-.c-header + .c-side-nav + .c-main {
-  margin-top: rem(80); // サイドナビが間に入る場合
+// ユーザーバー（約30px）+ ヘッダー（80px）= 110px
+.c-main {
+  margin-top: rem(110);
 }
 
 // メニューボタン（button要素）のリセット

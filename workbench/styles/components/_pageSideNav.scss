@@ -13,7 +13,7 @@
   @include pc {
     display: block;
     position: fixed;
-    top: rem(80); // ヘッダー高さ分下げる
+    top: rem(80); // ヘッダー高さ分
     left: 0;
     z-index: $z-index-side-nav;
     width: calc(var(--side-nav-left) + var(--side-nav-width));
@@ -23,6 +23,7 @@
     background-color: rgba($bg-color, 0.35);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    border-right: rem(1) solid $primary-color;
   }
 }
 

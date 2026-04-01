@@ -2097,8 +2097,8 @@
 
 .c-rakutoku-info__card {
   border: 0.0625rem solid #00387d;
-  border-radius: 1.25rem;
-  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  padding: 1rem;
   background-color: #FFFFFF;
 }
 
@@ -2119,7 +2119,7 @@
 .c-rakutoku-info__title {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: 0.035rem;
@@ -2134,7 +2134,13 @@
 @media (min-width: 992px) {
   .c-rakutoku-info__body {
     flex-direction: row;
+    flex-wrap: wrap;
   }
+}
+
+.c-rakutoku-info__body > .c-rakutoku-info__link {
+  align-self: center;
+  width: auto;
 }
 
 .c-rakutoku-info__plan {
@@ -2172,7 +2178,7 @@
 
 .c-rakutoku-info__plan-status {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: 0.009375rem;

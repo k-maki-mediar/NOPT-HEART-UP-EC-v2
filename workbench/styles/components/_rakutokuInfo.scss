@@ -14,8 +14,8 @@
 
 .c-rakutoku-info__card {
   border: rem(1) solid $primary-color;
-  border-radius: rem(20);
-  padding: rem(20) rem(24);
+  border-radius: rem(12);
+  padding: rem(16);
   background-color: $bg-color;
 }
 
@@ -36,7 +36,7 @@
 .c-rakutoku-info__title {
   margin: 0;
   font-family: $font-family-heading;
-  font-size: rem(16);
+  font-size: rem(14);
   font-weight: $font-weight-bold;
   line-height: 1.4;
   letter-spacing: rem(0.56);
@@ -50,7 +50,13 @@
 
   @include pc {
     flex-direction: row;
+    flex-wrap: wrap;
   }
+}
+
+.c-rakutoku-info__body > .c-rakutoku-info__link {
+  align-self: center;
+  width: auto;
 }
 
 .c-rakutoku-info__plan {
@@ -87,7 +93,7 @@
 
 .c-rakutoku-info__plan-status {
   font-family: $font-family-heading;
-  font-size: rem(16);
+  font-size: rem(14);
   font-weight: $font-weight-bold;
   line-height: 1.4;
   letter-spacing: rem(0.15);

@@ -20,7 +20,7 @@
 .c-user-bar__inner {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: rem(12);
   padding: rem(6) rem(16);
 
@@ -30,6 +30,7 @@
 }
 
 .c-user-bar__name {
+  margin-left: auto;
   font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-bold;

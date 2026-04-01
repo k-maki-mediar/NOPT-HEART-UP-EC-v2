@@ -101,6 +101,24 @@
   height: rem(24);
 }
 
+.c-header__nav-item--pc {
+  display: none;
+
+  @include pc {
+    display: block;
+  }
+}
+
+.c-header__nav-icon--bi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(24);
+  height: rem(24);
+  font-size: rem(20);
+  color: $text-color;
+}
+
 .c-header__nav-label {
   display: block;
   margin-top: rem(4);

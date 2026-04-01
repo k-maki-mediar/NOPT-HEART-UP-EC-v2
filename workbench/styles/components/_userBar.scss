@@ -20,7 +20,7 @@
 .c-user-bar__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: rem(12);
   padding: rem(6) rem(16);
 

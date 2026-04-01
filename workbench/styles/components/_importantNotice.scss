@@ -5,10 +5,10 @@
 .c-important-notice {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(8) rem(12);
+  padding: rem(16) rem(12) rem(8);
 
   @include pc {
-    padding: rem(8) rem(32) rem(8) calc(var(--side-nav-content-offset) + rem(32));
+    padding: rem(16) rem(32) rem(8) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 

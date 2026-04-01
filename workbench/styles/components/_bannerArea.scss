@@ -30,7 +30,7 @@
 }
 
 .c-banner-area__carousel {
-  max-width: rem(600);
+  max-width: rem(480);
   margin: 0 auto;
   /* slick初期化前のちらつき防止 */
   &:not(.slick-initialized) {

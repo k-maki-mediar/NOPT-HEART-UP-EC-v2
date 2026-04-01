@@ -24,6 +24,17 @@
   }
 }
 
+.c-category-menu__heading {
+  margin: 0 0 rem(24);
+  font-family: $font-family-heading;
+  font-size: rem(24);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
+  text-align: center;
+  color: $primary-color;
+}
+
 .c-category-menu__inner {
   max-width: rem(600);
   margin: 0 auto;

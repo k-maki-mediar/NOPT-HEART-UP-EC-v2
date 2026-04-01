@@ -29,6 +29,17 @@
   margin: 0 auto;
 }
 
+.c-about-site-banner__heading {
+  margin: 0 0 rem(24);
+  font-family: $font-family-heading;
+  font-size: rem(24);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
+  text-align: center;
+  color: $primary-color;
+}
+
 .c-about-site-banner__link {
   display: block;
   text-decoration: none;

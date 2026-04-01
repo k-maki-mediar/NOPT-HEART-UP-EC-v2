@@ -604,7 +604,7 @@
 }
 
 .c-banner-area__carousel {
-  max-width: 37.5rem;
+  max-width: 30rem;
   margin: 0 auto;
   /* slick初期化前のちらつき防止 */
 }
@@ -730,6 +730,17 @@
   z-index: 1;
   max-width: 37.5rem;
   margin: 0 auto;
+}
+
+.c-about-site-banner__heading {
+  margin: 0 0 1.5rem;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.06rem;
+  text-align: center;
+  color: #00387d;
 }
 
 .c-about-site-banner__link {
@@ -1573,6 +1584,17 @@
   right: calc((100% - 100vw) / 2);
   background-color: rgba(215, 231, 251, 0.6);
   z-index: -1;
+}
+
+.c-category-menu__heading {
+  margin: 0 0 1.5rem;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.06rem;
+  text-align: center;
+  color: #00387d;
 }
 
 .c-category-menu__inner {

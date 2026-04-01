@@ -65,16 +65,8 @@
           <span class="c-header-menu__toggle-text">商品メニュー</span>
           <span class="c-header-menu__toggle-icon" aria-hidden="true"></span>
         </button>
-        <ul class="c-header-menu__submenu" id="js-header-li-sub-product">
-          <li class="c-header-menu__subitem">
-            <a href="#" class="c-header-menu__sublink">商品カテゴリ1</a>
-          </li>
-          <li class="c-header-menu__subitem">
-            <a href="#" class="c-header-menu__sublink">商品カテゴリ2</a>
-          </li>
-          <li class="c-header-menu__subitem">
-            <a href="#" class="c-header-menu__sublink">商品カテゴリ3</a>
-          </li>
+        <ul class="c-header-menu__submenu c-product-menu" id="js-header-li-sub-product">
+          @@include('./productMenuItems.html')
         </ul>
       </li>
       <li class="c-header-menu__item">

@@ -1,0 +1,134 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// 商品メニュー（ネストアコーディオン）
+// サイドナビ・ヘッダーメニュー共通
+// ========================================
+
+.c-product-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// カテゴリ（コンタクトレンズ、ケア用品、メガネ関連）
+.c-product-menu__category {
+  // 区切り線なし
+}
+
+.c-product-menu__category-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: rem(44);
+  padding: rem(12) rem(20);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: $font-family-heading;
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  color: $text-color;
+  text-align: left;
+}
+
+.c-product-menu__category-icon {
+  position: relative;
+  display: inline-block;
+  width: rem(16);
+  height: rem(16);
+  flex-shrink: 0;
+  margin-left: rem(8);
+  border: none;
+  border-radius: rem(2);
+  background-color: $primary-color;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $color-white;
+  }
+
+  // 横線
+  &::before {
+    width: rem(8);
+    height: rem(1);
+    transform: translate(-50%, -50%);
+  }
+
+  // 縦線（開いた時に消える）
+  &::after {
+    width: rem(1);
+    height: rem(8);
+    transform: translate(-50%, -50%);
+    transition: opacity $transition-fast;
+  }
+}
+
+// 開いた状態
+.c-product-menu__category--open .c-product-menu__category-icon {
+  background-color: $color-white;
+  border: rem(1) solid $primary-color;
+
+  &::before {
+    background-color: $primary-color;
+  }
+
+  &::after {
+    opacity: 0;
+  }
+}
+
+// 商品リスト
+.c-product-menu__list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .c-product-menu__category--open > & {
+    display: block;
+  }
+}
+
+.c-product-menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: rem(44);
+  padding: rem(10) rem(20) rem(10) rem(32);
+  text-decoration: none;
+  color: $text-color;
+  font-family: $font-family-heading;
+  font-size: rem(13);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: rgba($bg-light, 0.8);
+    text-decoration: none;
+  }
+}
+
+.c-product-menu__link-text {
+  flex: 1;
+}
+
+.c-product-menu__arrow {
+  display: inline-block;
+  width: rem(6);
+  height: rem(6);
+  border-top: rem(1.5) solid $primary-color;
+  border-right: rem(1.5) solid $primary-color;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  margin-left: rem(8);
+}

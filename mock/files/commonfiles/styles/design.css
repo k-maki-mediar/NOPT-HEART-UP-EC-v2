@@ -2142,6 +2142,13 @@
   align-self: center;
   width: auto;
 }
+@media (min-width: 992px) {
+  .c-rakutoku-info__body > .c-rakutoku-info__link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
 
 .c-rakutoku-info__plan {
   display: flex;

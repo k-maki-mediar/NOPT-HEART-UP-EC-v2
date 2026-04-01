@@ -57,6 +57,12 @@
 .c-rakutoku-info__body > .c-rakutoku-info__link {
   align-self: center;
   width: auto;
+
+  @include pc {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .c-rakutoku-info__plan {

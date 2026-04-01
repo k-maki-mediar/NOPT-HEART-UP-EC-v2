@@ -640,6 +640,24 @@
   object-fit: cover;
 }
 
+.c-banner-area__play-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.c-banner-area__play-icon {
+  font-size: 1.125rem;
+  color: #00387d;
+  line-height: 1;
+}
+
 .c-banner-area .slick-dots {
   bottom: -2rem;
   list-style: none;

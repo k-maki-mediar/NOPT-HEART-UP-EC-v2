@@ -61,6 +61,9 @@
 }
 
 .c-available-lens__item {
+  &:only-child {
+    grid-column: 1 / -1;
+  }
 }
 
 // 商品カード（縦積みレイアウト）

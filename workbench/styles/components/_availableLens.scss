@@ -50,29 +50,19 @@
   @include accordion-card-body;
 }
 
-// 商品リスト
+// 商品リスト（常時2列）
 .c-available-lens__list {
   list-style: none;
   margin: 0;
   padding: 0;
-
-  @include pc {
-    display: flex;
-    gap: rem(16);
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(16);
 }
 
 .c-available-lens__item {
-  & + & {
-    margin-top: rem(24);
-
-    @include pc {
-      margin-top: 0;
-    }
-  }
-
-  @include pc {
-    flex: 1;
+  &:only-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -144,12 +134,18 @@
   color: $calendar-holiday;
 }
 
-// 商品ごとのボタン（フッターボタンと同じスタイル、横並び）
+// 商品ごとのボタン（SP: 縦並び、PC: 横並び）
 .c-available-lens__product-actions {
   display: flex;
-  gap: rem(12);
+  flex-direction: column;
+  gap: rem(8);
   width: 100%;
   margin-top: rem(12);
+
+  @include pc {
+    flex-direction: row;
+    gap: rem(12);
+  }
 }
 
 .c-available-lens__product-btn {

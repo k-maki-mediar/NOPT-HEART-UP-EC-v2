@@ -31,8 +31,18 @@
   letter-spacing: rem(0.96);
   text-align: center;
   color: $primary-color;
-  padding: rem(24);
+  padding: rem(24) rem(24) rem(8);
   margin: 0;
+}
+
+.c-user-heading__member-id {
+  margin: 0;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  line-height: 1.5;
+  text-align: center;
+  color: $text-light;
+  padding-bottom: rem(16);
 }
 
 .c-user-heading__line {

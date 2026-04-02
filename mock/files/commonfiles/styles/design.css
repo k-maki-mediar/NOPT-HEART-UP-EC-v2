@@ -2529,8 +2529,18 @@
   letter-spacing: 0.06rem;
   text-align: center;
   color: #00387d;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 0.5rem;
   margin: 0;
+}
+
+.c-user-heading__member-id {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #7F8C8D;
+  padding-bottom: 1rem;
 }
 
 .c-user-heading__line {

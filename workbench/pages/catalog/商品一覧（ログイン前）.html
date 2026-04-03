@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja" class="c-html">
+<head>
+@@include('../../includes/head.html', {"title": "商品一覧（ログイン前）"})
+<!-- デザイン用共通JS -->
+<script src="../../../files/partsfiles/scripts/common_design.js"></script>
+</head>
+<body class="c-body">
+  <div class="c-page-wrapper">
+    @@include('../../includes/parts/general/pageHeaderMenu.html')
+    @@include('../../includes/parts/general/pageSideNav.html')
+    <main class="c-main">
+      <div class="wsparts-include">
+        @@include('../../includes/parts/general/messageArea.html')
+      </div>
+      <div class="wsparts-include">
+        @@include('../../includes/parts/general/topicPath.html')
+      </div>
+      <div class="wsparts-include">
+        @@include('../../includes/parts/main/catalog/categoryHeading.html')
+      </div>
+      <div class="wsparts-include">
+        @@include('../../includes/parts/main/catalog/listMainBeforeLogin.html')
+      </div>
+    </main>
+    @@include('../../includes/parts/general/pageFooterMenu.html')
+  </div>
+</body>
+</html>

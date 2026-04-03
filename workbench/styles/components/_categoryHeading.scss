@@ -10,7 +10,7 @@
 .c-category-heading {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(16);
+  padding: 0;
 
   @include pc {
     padding: rem(16) rem(32) rem(16) calc(var(--side-nav-content-offset) + rem(32));
@@ -20,23 +20,20 @@
 .c-category-heading__inner {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: rem(16);
   background-color: $bg-light;
   padding: rem(16);
 
   @include pc {
-    gap: rem(24);
     padding: rem(20) rem(24);
   }
 }
 
 .c-category-heading__img-wrap {
   flex-shrink: 0;
-  width: rem(80);
+  width: rem(120);
 
   @include pc {
-    width: rem(120);
+    width: rem(180);
   }
 }
 
@@ -48,6 +45,8 @@
 }
 
 .c-category-heading__title {
+  flex: 1;
+  text-align: center;
   font-family: $font-family-heading;
   font-size: rem(18);
   font-weight: $font-weight-medium;

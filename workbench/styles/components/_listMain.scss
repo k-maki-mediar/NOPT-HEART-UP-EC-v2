@@ -50,12 +50,23 @@
   align-items: center;
   gap: rem(8);
   flex-wrap: wrap;
+  width: 100%;
+
+  @include pc {
+    width: auto;
+  }
+}
+
+.c-list-main__sort,
+.c-list-main__per-page {
+  flex: 1;
+  min-width: 0;
 }
 
 // セレクトボックス共通ラッパー
 .c-list-main__select-wrap {
   position: relative;
-  display: inline-block;
+  display: block;
 
   &::after {
     content: '';
@@ -67,30 +78,31 @@
     height: rem(6);
     border-left: rem(4) solid transparent;
     border-right: rem(4) solid transparent;
-    border-top: rem(6) solid $text-color;
+    border-top: rem(6) solid #c2c2c2;
     pointer-events: none;
   }
 }
 
 .c-list-main__select {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  width: 100%;
   height: rem(34);
   padding: rem(4) rem(32) rem(4) rem(12);
-  border: 1px solid $border-color-dark;
-  border-radius: rem(4);
+  border: 1px solid #c2c2c2;
+  border-radius: 0;
   background-color: $color-white;
   font-family: $font-family-base;
   font-size: rem(12);
   font-weight: $font-weight-normal;
+  letter-spacing: rem(0.15);
   color: $text-color;
   appearance: none;
   cursor: pointer;
-  min-width: rem(120);
 
   &:focus {
-    outline: rem(2) solid $primary-color;
-    outline-offset: rem(2);
+    border-color: $primary-color;
+    outline: none;
   }
 
   &:disabled {
@@ -143,7 +155,7 @@
 
 .c-list-main__grid {
   list-style: none;
-  margin: rem(16) 0;
+  margin: rem(24) 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

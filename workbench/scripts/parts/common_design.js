@@ -228,3 +228,155 @@ $(function () {
   });
 });
 
+/* ========================================
+ * 商品一覧ページャー（listMain pager）
+ * ======================================== */
+$(function () {
+  var $listMain = $('#listMain');
+  if ($listMain.length === 0) return;
+
+  var $items = $listMain.find('.c-list-main__grid-item');
+  var $perPageSelect = $listMain.find('#displayCount');
+  var $countTotal = $listMain.find('.c-list-main__count-total');
+  var $countRange = $listMain.find('.c-list-main__count-range');
+  var totalItems = $items.length;
+  var currentPage = 1;
+
+  function getPerPage() {
+    return parseInt($perPageSelect.val(), 10) || 8;
+  }
+
+  function getTotalPages() {
+    return Math.ceil(totalItems / getPerPage());
+  }
+
+  // 省略付きページ番号配列を生成（参考: nopt-heart-up-ec準拠）
+  // lineSize=3: 現在ページを中心に前後1ページの計3ページを表示
+  // 先頭(1)・末尾(max)は常に表示、隙間があれば「…」
+  var lineSize = 3;
+
+  function getPageNumbers(current, total) {
+    // lineSize以下なら全ページ表示
+    if (total <= lineSize) {
+      var arr = [];
+      for (var i = 1; i <= total; i++) arr.push(i);
+      return arr;
+    }
+
+    var pages = [];
+    // 中央表示範囲の開始ページを算出（currentを中心に）
+    var startPage = current - Math.floor(lineSize / 2);
+    if (startPage < 1) startPage = 1;
+    var lastPage = startPage + lineSize - 1;
+    // 末尾を超えないよう調整
+    if (lastPage > total) {
+      lastPage = total;
+      startPage = total - lineSize + 1;
+      if (startPage < 1) startPage = 1;
+    }
+
+    // 先頭ページ（中央範囲に含まれなければ表示）
+    if (startPage > 1) {
+      pages.push(1);
+      // 隙間があれば省略記号（隣接なら不要）
+      if (startPage > 2) {
+        pages.push('...');
+      }
+    }
+
+    // 中央範囲のページ番号
+    for (var j = startPage; j <= lastPage; j++) {
+      pages.push(j);
+    }
+
+    // 末尾ページ（中央範囲に含まれなければ表示）
+    if (lastPage < total) {
+      // 隙間があれば省略記号（隣接なら不要）
+      if (lastPage + 1 < total) {
+        pages.push('...');
+      }
+      pages.push(total);
+    }
+
+    return pages;
+  }
+
+  function renderPager() {
+    var totalPages = getTotalPages();
+    var perPage = getPerPage();
+
+    // 件数表示更新
+    $countTotal.text(totalItems);
+    var start = (currentPage - 1) * perPage + 1;
+    var end = Math.min(currentPage * perPage, totalItems);
+    $countRange.text(start + '件〜' + end + '件');
+
+    // ページャーHTML生成
+    var html = '';
+
+    // 前へボタン（1ページ目でなければ表示）
+    if (currentPage > 1) {
+      html += '<li class="c-pager__item c-pager__item--prev">';
+      html += '<a href="#" class="c-pager__link c-pager__link--prev" data-page="' + (currentPage - 1) + '" aria-label="前へ"></a>';
+      html += '</li>';
+    }
+
+    // ページ番号（省略付き）
+    var pageNumbers = getPageNumbers(currentPage, totalPages);
+    for (var k = 0; k < pageNumbers.length; k++) {
+      var p = pageNumbers[k];
+      if (p === '...') {
+        html += '<li class="c-pager__item c-pager__item--ellipsis">';
+        html += '<span class="c-pager__ellipsis">…</span>';
+        html += '</li>';
+      } else if (p === currentPage) {
+        html += '<li class="c-pager__item c-pager__item--current">';
+        html += '<span class="c-pager__current" aria-current="page">' + p + '</span>';
+        html += '</li>';
+      } else {
+        html += '<li class="c-pager__item">';
+        html += '<a href="#" class="c-pager__link" data-page="' + p + '">' + p + '</a>';
+        html += '</li>';
+      }
+    }
+
+    // 次へボタン（最終ページでなければ表示）
+    if (currentPage < totalPages) {
+      html += '<li class="c-pager__item c-pager__item--next">';
+      html += '<a href="#" class="c-pager__link c-pager__link--next" data-page="' + (currentPage + 1) + '" aria-label="次へ"></a>';
+      html += '</li>';
+    }
+
+    // 上下ページャー両方更新
+    $listMain.find('.c-pager__list').html(html);
+  }
+
+  function showPage(page) {
+    var perPage = getPerPage();
+    currentPage = page;
+    var start = (page - 1) * perPage;
+    var end = start + perPage;
+
+    $items.each(function (i) {
+      $(this).toggle(i >= start && i < end);
+    });
+
+    renderPager();
+  }
+
+  // ページリンククリック
+  $listMain.on('click', '.c-pager__link[data-page]', function (e) {
+    e.preventDefault();
+    var page = parseInt($(this).data('page'), 10);
+    showPage(page);
+  });
+
+  // 表示件数変更
+  $perPageSelect.on('change', function () {
+    showPage(1);
+  });
+
+  // 初期表示
+  showPage(1);
+});
+

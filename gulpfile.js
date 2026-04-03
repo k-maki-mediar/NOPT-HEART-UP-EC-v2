@@ -32,7 +32,7 @@ const paths = {
     html: 'workbench/pages/**/*.html',
     scss: 'workbench/styles/**/*.scss',
     scssEntry: 'workbench/styles/main.scss',
-    js: 'workbench/scripts/parts/**/*.js',
+    js: 'workbench/scripts/common_design.js',
     assets: 'workbench/assets/**/*',
     includes: 'workbench/includes/**/*.html',
     partsGeneral: 'workbench/includes/parts/general/**/*.html',
@@ -103,9 +103,9 @@ gulp.task('scss-main', () => {
 // SCSSタスク統合（全SCSSを common.css に一本化）
 gulp.task('scss', gulp.series('scss-main'));
 
-// JavaScriptタスク（パーツ単位: workbench/scripts/parts/ → files/partsfiles/scripts/）
+// JavaScriptタスク（共通JS: workbench/scripts/common_design.js → files/partsfiles/scripts/）
 gulp.task('js', () => {
-  return gulp.src(paths.src.js, { base: 'workbench/scripts/parts', allowEmpty: true })
+  return gulp.src(paths.src.js, { allowEmpty: true })
     .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
     .pipe(gulp.dest(paths.dist.jsparts))
     .pipe(browserSync.stream());

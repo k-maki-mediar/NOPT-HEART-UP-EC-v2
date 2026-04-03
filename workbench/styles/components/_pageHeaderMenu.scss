@@ -183,7 +183,7 @@
   color: $text-color;
   font-family: $font-family-heading;
   font-size: rem(14);
-  font-weight: 600;
+  font-weight: $font-weight-semibold;
   line-height: 1.5;
 }
 
@@ -216,7 +216,7 @@
   cursor: pointer;
   font-family: $font-family-heading;
   font-size: rem(14);
-  font-weight: 600;
+  font-weight: $font-weight-semibold;
   line-height: 1.5;
   color: $text-color;
   text-align: left;

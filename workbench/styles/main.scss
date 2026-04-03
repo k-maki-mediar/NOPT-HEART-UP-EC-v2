@@ -100,3 +100,19 @@
   // background-repeat: no-repeat;
   overflow-x: hidden;
 }
+
+// ========================================
+// PKGラッパー構造（デザイン透過）
+// PKGシステム取込み用の wrapper / container / row / wsparts-include は
+// デザインに影響を与えないよう透過的に扱う
+// ========================================
+
+.wrapper,
+.container,
+.row {
+  display: contents;
+}
+
+.wsparts-include {
+  display: contents;
+}

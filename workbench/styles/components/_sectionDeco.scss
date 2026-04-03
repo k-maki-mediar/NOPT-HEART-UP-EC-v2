@@ -9,7 +9,7 @@
 
 .c-section-deco__inner {
   position: relative;
-  z-index: 1;
+  z-index: $z-index-content;
 }
 
 // ----------------------------------------
@@ -26,7 +26,7 @@
   width: 100%;
   max-width: rem(1130);
   pointer-events: none;
-  z-index: -1;
+  z-index: $z-index-deco;
 
   @include pc {
     padding-left: var(--side-nav-content-offset);

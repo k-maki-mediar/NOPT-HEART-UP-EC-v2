@@ -30,7 +30,7 @@
       width: 100vw;
       margin-left: -50vw;
       background-color: rgba($bg-banner, 0.8);
-      z-index: 0;
+      z-index: $z-index-base;
     }
   }
 }
@@ -66,7 +66,7 @@
     top: 0;
     bottom: 0;
     background-color: rgba($bg-color, 0.9);
-    z-index: 0;
+    z-index: $z-index-base;
   }
 }
 
@@ -78,7 +78,7 @@
   @include pc {
     display: block;
     position: relative;
-    z-index: 1;
+    z-index: $z-index-content;
     font-family: $font-family-base;
     font-size: rem(12);
     font-weight: $font-weight-medium;
@@ -98,7 +98,7 @@
   flex-direction: column;
   gap: rem(1);
   position: relative;
-  z-index: 1;
+  z-index: $z-index-content;
 
   @include pc {
     display: grid;
@@ -120,7 +120,7 @@
   background-color: rgba($bg-color, 0.9);
   transition: background-color $transition-fast, opacity $transition-fast;
   position: relative;
-  z-index: 1;
+  z-index: $z-index-content;
 
   &:hover {
     background-color: $bg-light;

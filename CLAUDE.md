@@ -90,7 +90,7 @@ mock/ のビルド出力はガイドライン3-6に完全準拠する。ディ�
 | `files/commonfiles/styles/` | デザインCSS（design.css, reset.css） | `workbench/styles/main.scss` → design.css |
 | `files/commonfiles/images/` | 共通画像 | モック/共通/ からコピー |
 | ~~`files/partsfiles/styles/`~~ | ~~パーツ個別CSS~~ | ※ design.css に統合済み（出力なし） |
-| `files/partsfiles/scripts/` | パーツ個別JS | `workbench/scripts/parts/` |
+| `files/partsfiles/scripts/common_design.js` | デザイン用共通JS（1ファイルに集約） | `workbench/scripts/common_design.js` |
 | `files/exfiles/` | 外部ライブラリ（jQuery, Bootstrap等） | モック/共通/ からコピー |
 | `files/systemfiles/` | システムJS/CSS | モック/共通/ からコピー |
 | `files/contentfiles/` | アクセス解析等 | モック/共通/ からコピー |
@@ -154,11 +154,55 @@ mock/ のビルド出力はガイドライン3-6に完全準拠する。ディ�
 4. **パーツHTML**: どの画面から呼び出されても同一のHTML構成
 5. **レイアウト可変パターン**: 同一画面でも可変がある場合は別ページを作成
 
-## JSコーディングルール（ガイドライン3-4, 3-6準拠）
+### ページラッパー構造（PKG取込み要件）
 
-- **共通のカスタムJS（main.js等）は作成しない**
-- JSはパーツ単位で `workbench/scripts/parts/[パーツ名].js` に作成
-- ビルドで `files/partsfiles/scripts/[パーツ名].js` に出力
+全ページ共通で、PKG標準のラッパー構造 `main → wrapper → container → row` を必須とする。
+また、各パーツは `<div class="wsparts-include">～</div>` で囲み、PKG側でのパーツ取込み目印とする。
+`wsparts-include` で囲んでもデザインに影響が出ないようCSS側で調整すること。
+
+```html
+<body>
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="wsparts-include">
+              <header class="c-header">~~~</header> <!-- 共通ヘッダーパーツ -->
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <aside class="c-side-nav">~~~</aside> <!-- 共通サイドパーツ -->
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <div id="XXXX">~~~</div> <!-- 各画面のメイン部 -->
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <footer class="c-footer-menu js-footer-menu" aria-label="フッターメニュー">~~~</footer> <!-- 共通フッターパーツ -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+```
+
+## JSコーディングルール（ガイドライン3-4, 3-6準拠 + PKGレビュー指摘）
+
+> **【変更】JS集約方針（PKGレビュー指摘）**
+> PKGレビューにより、デザイン用JSをパーツ単位で個別作成するのではなく、`common_design.js` 1ファイルに集約し全画面から共通参照する方針に変更。
+> PKG標準の画面単位JS（`/files/partsfiles/scripts/xxx.js`）は作成しない。
+
+- デザイン用JSは `workbench/scripts/common_design.js` に集約する
+- ビルドで `files/partsfiles/scripts/common_design.js` に出力
+- 全画面のHTMLから共通的に `common_design.js` を参照する
+- PKG標準の画面単位JS（pageFooterMenu.js等）は作成・更新しない
 - 表示制御がある場合は、初期表示と操作後状態の両方を確認前提で組む
 - デザイン適用のための制御コードは可読性高く保つ
 - モーダル、ドロップダウン、タブなどは状態変化を前提に確認する
@@ -240,7 +284,7 @@ mock/ のビルド出力はガイドライン3-6に完全準拠する。ディ�
 1. SCSSファイル: `workbench/styles/components/_[name].scss` に作成（`_` パーシャル）
 2. `workbench/styles/main.scss` に `@use 'components/[name]';` を追加
 3. HTMLパーツ: `workbench/includes/parts/` に作成
-4. JSファイル（必要な場合）: `workbench/scripts/parts/[name].js` に作成 → `files/partsfiles/scripts/` に出力
+4. JSファイル（必要な場合）: `workbench/scripts/common_design.js` に追記（パーツ単位の個別JSは作成しない）
 5. ページHTMLで `@@include` を使用
 6. `npm run dev` でビルド確認
 

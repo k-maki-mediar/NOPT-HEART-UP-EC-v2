@@ -21,7 +21,7 @@
 @function rem($px) {
   $value: $px;
   // 単位が付いている場合は除去
-  @if unitless($px) {
+  @if math.is-unitless($px) {
     $value: $px;
   } @else {
     $value: strip-unit($px);
@@ -34,7 +34,7 @@
 /// @param {Number} $base - 親のフォントサイズ（デフォルト16px）
 /// @return {Number} - em値
 @function em($px, $base: 16px) {
-  $px-value: if(unitless($px), $px, strip-unit($px));
-  $base-value: if(unitless($base), $base, strip-unit($base));
+  $px-value: if(math.is-unitless($px), $px, strip-unit($px));
+  $base-value: if(math.is-unitless($base), $base, strip-unit($base));
   @return math.div($px-value, $base-value) * 1em;
 }

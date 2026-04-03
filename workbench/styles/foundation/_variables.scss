@@ -54,8 +54,10 @@ $font-size-2xl: 32px;
 $font-size-3xl: 40px;
 
 // フォントウェイト
+$font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
+$font-weight-semibold: 600;
 $font-weight-bold: 700;
 
 // スペーシング（px - SCSS計算用）
@@ -96,6 +98,7 @@ $z-index-header: 100;
 $z-index-header-menu: 99;
 $z-index-side-nav: 90;
 $z-index-content: 1;
+$z-index-base: 0;
 $z-index-deco: -1;
 $z-index-dropdown: 1000;
 $z-index-modal: 1050;

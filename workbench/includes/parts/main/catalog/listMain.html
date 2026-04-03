@@ -1,0 +1,492 @@
+<div class="c-list-main" id="listMain">
+
+  <!-- ===== コントロール行 ===== -->
+  <div class="c-list-main__control">
+    <!-- 件数表示（データあり時のみ） -->
+    <p class="c-list-main__count">
+      検索結果 全<span class="c-list-main__count-total">227</span>件
+      <span class="c-list-main__count-range">1件〜8件</span>
+    </p>
+
+    <!-- コントロール右エリア -->
+    <div class="c-list-main__control-right">
+      <!-- 並び順プルダウン（人気順を除外・新着順が初期値） -->
+      <div class="c-list-main__sort">
+        <label class="c-list-main__sort-label" for="sortOrder">並び順</label>
+        <div class="c-list-main__select-wrap">
+          <select class="c-list-main__select" id="sortOrder" name="alignmentSequence">
+            <option value="new" selected>新着順</option>
+            <option value="price_asc">価格の安い順</option>
+            <option value="price_desc">価格の高い順</option>
+            <option value="name">商品名順</option>
+            <option value="recommend">おすすめ順</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 表示件数プルダウン -->
+      <div class="c-list-main__per-page">
+        <label class="c-list-main__per-page-label" for="displayCount">表示件数</label>
+        <div class="c-list-main__select-wrap">
+          <select class="c-list-main__select" id="displayCount" name="displayCount">
+            <option value="8" selected>8件</option>
+            <option value="16">16件</option>
+            <option value="32">32件</option>
+            <option value="64">64件</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 表示形式切替（PCのみ） -->
+      <div class="c-list-main__display-mode" aria-label="表示形式">
+        <button
+          type="button"
+          class="c-list-main__display-btn c-list-main__display-btn--grid js-display-mode-btn"
+          data-mode="grid"
+          aria-pressed="true"
+          aria-label="画像形式"
+        >
+          <!-- グリッドアイコン（田） -->
+          <svg class="c-list-main__display-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1" y="1" width="6" height="6" rx="1" fill="currentColor"/>
+            <rect x="9" y="1" width="6" height="6" rx="1" fill="currentColor"/>
+            <rect x="1" y="9" width="6" height="6" rx="1" fill="currentColor"/>
+            <rect x="9" y="9" width="6" height="6" rx="1" fill="currentColor"/>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="c-list-main__display-btn c-list-main__display-btn--list js-display-mode-btn"
+          data-mode="list"
+          aria-pressed="false"
+          aria-label="テキスト形式"
+        >
+          <!-- リストアイコン（三） -->
+          <svg class="c-list-main__display-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1" y="2" width="14" height="2" rx="1" fill="currentColor"/>
+            <rect x="1" y="7" width="14" height="2" rx="1" fill="currentColor"/>
+            <rect x="1" y="12" width="14" height="2" rx="1" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- アイコン説明（PCのみ・データあり時） -->
+  <div class="c-list-main__icon-desc">
+    <p class="c-list-main__icon-desc-text">らくとく: 定期購入割引商品　1DAY: 1日使い捨て　2WK: 2週間交換</p>
+  </div>
+
+  <!-- 軽減税率注釈（対象商品がある場合） -->
+  <p class="c-list-main__tax-note">※は軽減税率対象品目</p>
+
+  <!-- ===== ページャー（上部） ===== -->
+  <nav class="c-pager c-pager--top" aria-label="ページナビゲーション（上部）">
+    <ul class="c-pager__list">
+      <li class="c-pager__item c-pager__item--current">
+        <span class="c-pager__current" aria-current="page">1</span>
+      </li>
+      <li class="c-pager__item">
+        <a href="#" class="c-pager__link">2</a>
+      </li>
+      <li class="c-pager__item">
+        <a href="#" class="c-pager__link">3</a>
+      </li>
+      <li class="c-pager__item c-pager__item--next">
+        <a href="#" class="c-pager__link c-pager__link--next">次へ</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ===== 商品グリッド（画像形式） ===== -->
+  <ul class="c-list-main__grid" aria-label="商品一覧">
+
+    <!-- 商品カード 1 -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            src="../../files/commonfiles/images/noPhoto.png"
+            alt="ロート1DAYフレッシュビューエアリッチ 乱視用"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">乱視用</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ">
+            <!-- お知らせラベル（条件付き表示） -->
+            <!-- <li class="c-product-card__notice-label">[予約受付終了]</li> -->
+            <!-- <li class="c-product-card__notice-label">[在庫なし]</li> -->
+            <!-- <li class="c-product-card__notice-label">[セット商品]</li> -->
+            <!-- <li class="c-product-card__notice-label">[近日発売]</li> -->
+            <!-- <li class="c-product-card__notice-label">[販売期間終了]</li> -->
+          </ul>
+          <p class="c-product-card__brand">ロート</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">ロート1DAYフレッシュビューエアリッチ 乱視用</a>
+          </h2>
+          <!-- 概要説明（テキスト形式時のみ） -->
+          <p class="c-product-card__desc">高含水レンズで1日中快適なつけ心地を実現した乱視矯正コンタクトレンズです。</p>
+          <div class="c-product-card__price-area">
+            <!-- 未ログイン・ゲスト価格非表示時 -->
+            <p class="c-product-card__price-login-msg">価格はログインしてご覧ください</p>
+            <!-- 通常価格（ログイン後・販売期間中）
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">1,234</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+            <p class="c-product-card__price-ref">(参考税込: 1,357円)</p>
+            -->
+          </div>
+          <div class="c-product-card__review">
+            <span class="c-product-card__review-stars" aria-label="評価4">
+              <span class="c-product-card__review-star c-product-card__review-star--on" aria-hidden="true">★</span>
+              <span class="c-product-card__review-star c-product-card__review-star--on" aria-hidden="true">★</span>
+              <span class="c-product-card__review-star c-product-card__review-star--on" aria-hidden="true">★</span>
+              <span class="c-product-card__review-star c-product-card__review-star--on" aria-hidden="true">★</span>
+              <span class="c-product-card__review-star" aria-hidden="true">★</span>
+            </span>
+            <a href="#" class="c-product-card__review-count">12</a>
+          </div>
+          <div class="c-product-card__actions">
+            <a href="#" class="c-product-card__detail-btn">詳細</a>
+            <button type="button" class="c-product-card__cart-btn">カートに入れる</button>
+          </div>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 2（特別価格パターン） -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            src="../../files/commonfiles/images/noPhoto.png"
+            alt="ワンデーアキュビュー モイスト 乱視用"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">らくとく</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ"></ul>
+          <p class="c-product-card__brand">ジョンソン＆ジョンソン</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">ワンデーアキュビュー モイスト 乱視用</a>
+          </h2>
+          <p class="c-product-card__desc">独自のLAGRILACH技術で瞳の乾燥を防ぎ、快適な装用感を1日中キープします。</p>
+          <div class="c-product-card__price-area">
+            <!-- 特別価格期間中パターン -->
+            <p class="c-product-card__price c-product-card__price--strike">
+              <span class="c-product-card__price-value">2,500</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+            <p class="c-product-card__price c-product-card__price--special">
+              <span class="c-product-card__price-value">1,980</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+            <p class="c-product-card__price-ref">(参考税込: 2,178円)</p>
+          </div>
+          <div class="c-product-card__review">
+            <span class="c-product-card__review-stars" aria-label="評価5">
+              <span class="c-product-card__review-star c-product-card__review-star--on" aria-hidden="true">★</span>
+              <span class="c-product-card__review-star c-product-card__review-star--on" aria-hidden="true">★</span>
+              <span class="c-product-card__review-star c-product-card__review-star--on" aria-hidden="true">★</span>
+              <span class="c-product-card__review-star c-product-card__review-star--on" aria-hidden="true">★</span>
+              <span class="c-product-card__review-star c-product-card__review-star--on" aria-hidden="true">★</span>
+            </span>
+            <a href="#" class="c-product-card__review-count">48</a>
+          </div>
+          <div class="c-product-card__actions">
+            <a href="#" class="c-product-card__detail-btn">詳細</a>
+            <button type="button" class="c-product-card__cart-btn">カートに入れる</button>
+          </div>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 3（規格商品・一覧で見る） -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            src="../../files/commonfiles/images/noPhoto.png"
+            alt="メニコン1DAY メニフォーカル"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">遠近両用</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ"></ul>
+          <p class="c-product-card__brand">メニコン</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">メニコン1DAY メニフォーカル</a>
+          </h2>
+          <p class="c-product-card__desc">遠近両用コンタクトレンズ。手元から遠くまで自然な見え方を実現します。</p>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">3,200</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+            <p class="c-product-card__price-ref">(参考税込: 3,520円)</p>
+          </div>
+          <div class="c-product-card__actions">
+            <a href="#" class="c-product-card__detail-btn">詳細</a>
+            <!-- 規格商品：一覧で見るボタン -->
+            <a href="#" class="c-product-card__cart-btn c-product-card__cart-btn--list">一覧で見る</a>
+          </div>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 4（在庫なし） -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            src="../../files/commonfiles/images/noPhoto.png"
+            alt="シード1dayPure EDOF"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ">
+            <li class="c-product-card__notice-label">[在庫なし]</li>
+          </ul>
+          <p class="c-product-card__brand">シード</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">シード1dayPure EDOF</a>
+          </h2>
+          <p class="c-product-card__desc">拡張焦点深度型コンタクトレンズで、広い焦点範囲と快適な装用感を両立します。</p>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">2,800</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+          </div>
+          <div class="c-product-card__actions">
+            <a href="#" class="c-product-card__detail-btn">詳細</a>
+          </div>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 5（予約商品） -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            src="../../files/commonfiles/images/noPhoto.png"
+            alt="バイオトゥルー ワンデー 乱視用"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ"></ul>
+          <p class="c-product-card__brand">ボシュロム</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">バイオトゥルー ワンデー 乱視用</a>
+          </h2>
+          <p class="c-product-card__desc">ヒアルロン酸を配合した高含水素材で終日潤いを保ちます。</p>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">2,100</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+          </div>
+          <div class="c-product-card__actions">
+            <a href="#" class="c-product-card__detail-btn">詳細</a>
+            <!-- 予約商品 -->
+            <button type="button" class="c-product-card__cart-btn c-product-card__cart-btn--reserve">予約する</button>
+          </div>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 6 -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            src="../../files/commonfiles/images/noPhoto.png"
+            alt="デイリーズ アクア コンフォートプラス 乱視用"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">乱視用</span>
+            </li>
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">らくとく</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ"></ul>
+          <p class="c-product-card__brand">アルコン</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">デイリーズ アクア コンフォートプラス 乱視用</a>
+          </h2>
+          <p class="c-product-card__desc">独自のSmartSurface技術で常に潤いに満ちた快適な装用感を実現。</p>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">2,380</span>
+              <span class="c-product-card__price-unit">円</span>
+              <span class="c-product-card__price-tax-note">※</span>
+            </p>
+            <p class="c-product-card__price-ref">(参考税込: 2,500円※)</p>
+          </div>
+          <div class="c-product-card__actions">
+            <a href="#" class="c-product-card__detail-btn">詳細</a>
+            <button type="button" class="c-product-card__cart-btn">カートに入れる</button>
+          </div>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 7 -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            src="../../files/commonfiles/images/noPhoto.png"
+            alt="クーパービジョン マイデイ"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ"></ul>
+          <p class="c-product-card__brand">クーパービジョン</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">クーパービジョン マイデイ</a>
+          </h2>
+          <p class="c-product-card__desc">水分を豊富に保持するSmart Water Technology搭載のシリコーンハイドロゲルレンズ。</p>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">3,600</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+          </div>
+          <div class="c-product-card__actions">
+            <a href="#" class="c-product-card__detail-btn">詳細</a>
+            <button type="button" class="c-product-card__cart-btn">カートに入れる</button>
+          </div>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 8（キャンペーン対象） -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            src="../../files/commonfiles/images/noPhoto.png"
+            alt="ファインUV プラス"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ"></ul>
+          <p class="c-product-card__brand">シード</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">ファインUV プラス</a>
+          </h2>
+          <p class="c-product-card__desc">UV吸収剤配合で紫外線をカット。日常的なUVケアを手軽に行えるコンタクトレンズ。</p>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">1,800</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+          </div>
+          <!-- キャンペーン対象 -->
+          <div class="c-product-card__campaign">
+            <p class="c-product-card__campaign-name">春のまとめ買いキャンペーン 10%OFF</p>
+          </div>
+          <div class="c-product-card__actions">
+            <a href="#" class="c-product-card__detail-btn">詳細</a>
+            <button type="button" class="c-product-card__cart-btn">カートに入れる</button>
+          </div>
+        </div>
+      </article>
+    </li>
+
+  </ul>
+
+  <!-- ===== ページャー（下部） ===== -->
+  <nav class="c-pager c-pager--bottom" aria-label="ページナビゲーション（下部）">
+    <ul class="c-pager__list">
+      <li class="c-pager__item c-pager__item--current">
+        <span class="c-pager__current" aria-current="page">1</span>
+      </li>
+      <li class="c-pager__item">
+        <a href="#" class="c-pager__link">2</a>
+      </li>
+      <li class="c-pager__item">
+        <a href="#" class="c-pager__link">3</a>
+      </li>
+      <li class="c-pager__item c-pager__item--next">
+        <a href="#" class="c-pager__link c-pager__link--next">次へ</a>
+      </li>
+    </ul>
+  </nav>
+
+</div>

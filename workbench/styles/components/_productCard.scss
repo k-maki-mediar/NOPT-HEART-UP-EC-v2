@@ -1,0 +1,393 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// productCard
+// 商品カード（画像形式グリッド・テキスト形式リスト共用）
+// ========================================
+
+.c-product-card {
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-xs;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+// 商品画像
+.c-product-card__img-link {
+  display: block;
+  overflow: hidden;
+  background-color: $color-white;
+}
+
+.c-product-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  padding: rem(8) rem(8) 0;
+}
+
+// カード本体（画像以下テキスト部）
+.c-product-card__body {
+  padding: rem(8) rem(12) rem(12);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+// 商品アイコン群（タグ）
+.c-product-card__icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(2);
+  list-style: none;
+  margin: 0 0 rem(4);
+  padding: 0;
+}
+
+.c-product-card__icon-item {
+  // flexアイテム
+}
+
+.c-product-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(16);
+  padding: 0 rem(6);
+  background-color: $bg-banner;
+  border-radius: rem(23);
+  font-family: $font-family-base;
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $primary-color;
+  white-space: nowrap;
+}
+
+// お知らせラベル群
+.c-product-card__notice-labels {
+  list-style: none;
+  margin: 0 0 rem(4);
+  padding: 0;
+}
+
+.c-product-card__notice-label {
+  font-family: $font-family-base;
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $danger-color;
+}
+
+// ブランド名
+.c-product-card__brand {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  color: $text-color;
+  margin: 0;
+}
+
+// 商品名
+.c-product-card__name {
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  margin: 0 0 rem(4);
+  flex: 1;
+}
+
+.c-product-card__name-link {
+  color: $text-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-color;
+    text-decoration: underline;
+  }
+}
+
+// 概要説明（テキスト形式時のみ表示）
+.c-product-card__desc {
+  display: none;
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  color: $text-color;
+  margin: 0 0 rem(8);
+
+  .c-list-main--list & {
+    @include pc {
+      display: block;
+    }
+  }
+}
+
+// 価格エリア
+.c-product-card__price-area {
+  margin-bottom: rem(8);
+}
+
+.c-product-card__price-login-msg {
+  font-family: $font-family-base;
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+  color: $text-color;
+  margin: 0;
+}
+
+.c-product-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: rem(2);
+  margin: 0;
+  line-height: 1.5;
+
+  &--strike .c-product-card__price-value,
+  &--strike .c-product-card__price-unit {
+    text-decoration: line-through;
+    color: $text-light;
+    font-size: rem(12);
+  }
+
+  &--special .c-product-card__price-value {
+    color: $danger-color;
+    font-size: rem(18);
+    font-weight: $font-weight-bold;
+  }
+}
+
+.c-product-card__price-value {
+  font-family: $font-family-heading;
+  font-size: rem(16);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+}
+
+.c-product-card__price-unit {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  color: $primary-color;
+}
+
+.c-product-card__price-tax-note {
+  font-size: rem(10);
+  color: $text-light;
+}
+
+.c-product-card__price-ref {
+  font-family: $font-family-base;
+  font-size: rem(10);
+  color: $text-light;
+  margin: 0;
+}
+
+.c-product-card__price-tax-exempt {
+  font-family: $font-family-base;
+  font-size: rem(10);
+  color: $text-light;
+}
+
+// 店舗価格（テキスト形式時のみ・条件付き）
+.c-product-card__price--store {
+  display: none;
+
+  .c-list-main--list & {
+    @include pc {
+      display: flex;
+    }
+  }
+}
+
+// レビュー
+.c-product-card__review {
+  display: flex;
+  align-items: center;
+  gap: rem(4);
+  margin-bottom: rem(8);
+}
+
+.c-product-card__review-stars {
+  display: flex;
+  gap: rem(1);
+}
+
+.c-product-card__review-star {
+  font-size: rem(14);
+  color: $border-color;
+
+  &--on {
+    color: $accent-color;
+  }
+}
+
+.c-product-card__review-count {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// キャンペーンアイコン
+.c-product-card__campaign {
+  background-color: lighten($accent-color, 10%);
+  border-radius: $border-radius-sm;
+  padding: rem(4) rem(8);
+  margin-bottom: rem(8);
+}
+
+.c-product-card__campaign-name {
+  font-family: $font-family-base;
+  font-size: rem(10);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0;
+}
+
+// 年齢制限アイコン
+.c-product-card__age-restriction {
+  display: inline-block;
+  font-family: $font-family-base;
+  font-size: rem(10);
+  color: $danger-color;
+  margin-bottom: rem(4);
+}
+
+// アクションエリア
+.c-product-card__actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: rem(6);
+}
+
+.c-product-card__detail-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(36);
+  padding: rem(6) rem(16);
+  border: 1px solid $primary-color;
+  border-radius: rem(23);
+  background-color: $color-white;
+  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
+  font-family: $font-family-heading;
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  text-decoration: none;
+  text-align: center;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 $primary-color-dark;
+  }
+
+  @include sp {
+    // SPでは詳細ボタンを強調（赤背景・白文字）
+    background-color: $danger-color;
+    border-color: $danger-color;
+    color: $color-white;
+    box-shadow: 0 rem(2) 0 0 darken($danger-color, 10%);
+  }
+}
+
+.c-product-card__cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(36);
+  padding: rem(6) rem(16);
+  border: 1px solid $primary-color;
+  border-radius: rem(23);
+  background-color: $primary-color;
+  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
+  font-family: $font-family-heading;
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 $primary-color-dark;
+  }
+
+  &--reserve {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    box-shadow: 0 rem(2) 0 0 darken($secondary-color, 10%);
+  }
+
+  &--list {
+    background-color: $color-white;
+    border-color: $primary-color;
+    color: $primary-color;
+    box-shadow: 0 rem(2) 0 0 $primary-color-dark;
+  }
+
+  &--disabled {
+    background-color: $bg-gray;
+    border-color: $border-color;
+    color: $text-light;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// テキスト形式（PC・リスト表示）
+.c-list-main--list .c-product-card {
+  @include pc {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.c-list-main--list .c-product-card__img-link {
+  @include pc {
+    width: rem(140);
+    flex-shrink: 0;
+  }
+}
+
+.c-list-main--list .c-product-card__img {
+  @include pc {
+    aspect-ratio: auto;
+    height: rem(120);
+    object-fit: contain;
+    padding: rem(8);
+  }
+}
+
+.c-list-main--list .c-product-card__body {
+  @include pc {
+    flex: 1;
+    padding: rem(12) rem(16);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 rem(16);
+  }
+}

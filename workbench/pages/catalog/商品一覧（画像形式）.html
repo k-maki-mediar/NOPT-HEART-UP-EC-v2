@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja" class="c-html">
+<head>
+@@include('../../includes/head.html', {"title": "商品一覧"})
+<!-- デザイン用共通JS -->
+<script src="../../../files/partsfiles/scripts/common_design.js"></script>
+</head>
+<body class="c-body">
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageHeaderMenu.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/messageArea.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageSideNav.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <div class="c-main">
+                @@include('../../includes/parts/general/topicPath.html')
+                @@include('../../includes/parts/main/catalog/categoryHeading.html')
+                @@include('../../includes/parts/main/catalog/filterPanel.html')
+                @@include('../../includes/parts/main/catalog/listMain.html')
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooterMenu.html')
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

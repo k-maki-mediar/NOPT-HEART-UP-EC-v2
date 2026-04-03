@@ -1,0 +1,202 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// filterPanel
+// SP専用絞り込みパネル（アコーディオン型）
+// PCでは非表示
+// ========================================
+
+.c-filter-panel {
+  background-color: $bg-gray;
+  border-bottom: 1px solid $border-color;
+
+  @include pc {
+    display: none;
+  }
+}
+
+.c-filter-panel__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: rem(48);
+  padding: rem(12) rem(24);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: $font-family-heading;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  color: $primary-color;
+  text-align: left;
+}
+
+.c-filter-panel__toggle-text {
+  flex: 1;
+}
+
+.c-filter-panel__toggle-icon {
+  display: inline-block;
+  width: rem(16);
+  height: rem(8);
+  position: relative;
+  flex-shrink: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: rem(2);
+    background-color: $primary-color;
+    transform: translateY(-50%) rotate(180deg);
+    transition: transform $transition-fast;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: 50%;
+    height: rem(2);
+    background-color: $primary-color;
+    transform: translateY(rem(4)) rotate(135deg);
+    transition: transform $transition-fast;
+  }
+}
+
+.c-filter-panel__toggle[aria-expanded="true"] .c-filter-panel__toggle-icon {
+  &::before {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  &::after {
+    transform: translateY(rem(-4)) rotate(-135deg);
+  }
+}
+
+.c-filter-panel__body {
+  display: none;
+  padding: 0 rem(24) rem(24);
+
+  &--open {
+    display: block;
+  }
+}
+
+.c-filter-panel__search {
+  margin-bottom: rem(12);
+}
+
+.c-filter-panel__search-label {
+  display: block;
+  position: relative;
+}
+
+.c-filter-panel__search-input {
+  display: block;
+  width: 100%;
+  min-height: rem(46);
+  padding: rem(12) rem(48) rem(12) rem(16);
+  border: 1px solid $border-color-dark;
+  border-radius: $border-radius-md;
+  background-color: $color-white;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  appearance: none;
+
+  &::placeholder {
+    color: rgba($text-color, 0.3);
+  }
+
+  &:focus {
+    outline: rem(2) solid $primary-color;
+    outline-offset: rem(2);
+  }
+}
+
+.c-filter-panel__search-icon {
+  position: absolute;
+  right: rem(16);
+  top: 50%;
+  transform: translateY(-50%);
+  width: rem(20);
+  height: rem(20);
+  color: $text-color;
+  pointer-events: none;
+}
+
+.c-filter-panel__tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(8);
+  list-style: none;
+  margin: 0 0 rem(16);
+  padding: 0;
+}
+
+.c-filter-panel__tag-item {
+  // flexアイテム
+}
+
+.c-filter-panel__tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(32);
+  padding: rem(4) rem(16);
+  background-color: $bg-gray;
+  border: 1px solid $border-color;
+  border-radius: rem(23);
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: rgba($text-color, 0.5);
+  text-decoration: none;
+  transition: background-color $transition-fast;
+
+  &:hover,
+  &--active {
+    background-color: $bg-banner;
+    color: $primary-color;
+    border-color: $primary-color;
+  }
+}
+
+.c-filter-panel__action {
+  display: flex;
+  justify-content: center;
+}
+
+.c-filter-panel__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(46);
+  width: 100%;
+  padding: rem(12) rem(16);
+  border: 1px solid $primary-color;
+  border-radius: rem(23);
+  background-color: $color-white;
+  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 $primary-color-dark;
+  }
+}

@@ -1,0 +1,225 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// listMain
+// 商品一覧メイン（コントロール行・グリッド・空状態）
+// ========================================
+
+.c-list-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(16) rem(16) rem(32);
+
+  @include pc {
+    padding-right: rem(32);
+  }
+}
+
+// ===== コントロール行 =====
+
+.c-list-main__control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: rem(8);
+  margin-bottom: rem(8);
+}
+
+.c-list-main__count {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  color: $text-color;
+  margin: 0;
+}
+
+.c-list-main__count-total {
+  font-weight: $font-weight-medium;
+}
+
+.c-list-main__count-range {
+  // インライン表示
+}
+
+.c-list-main__control-right {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  flex-wrap: wrap;
+}
+
+// セレクトボックス共通ラッパー
+.c-list-main__select-wrap {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: rem(12);
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(10);
+    height: rem(6);
+    border-left: rem(4) solid transparent;
+    border-right: rem(4) solid transparent;
+    border-top: rem(6) solid $text-color;
+    pointer-events: none;
+  }
+}
+
+.c-list-main__select {
+  display: inline-flex;
+  align-items: center;
+  height: rem(34);
+  padding: rem(4) rem(32) rem(4) rem(12);
+  border: 1px solid $border-color-dark;
+  border-radius: rem(4);
+  background-color: $color-white;
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  appearance: none;
+  cursor: pointer;
+  min-width: rem(120);
+
+  &:focus {
+    outline: rem(2) solid $primary-color;
+    outline-offset: rem(2);
+  }
+
+  &:disabled {
+    background-color: $bg-gray;
+    color: $text-light;
+    cursor: not-allowed;
+  }
+}
+
+.c-list-main__sort-label,
+.c-list-main__per-page-label {
+  position: absolute;
+  width: rem(1);
+  height: rem(1);
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+// 表示形式切替（PCのみ）
+.c-list-main__display-mode {
+  display: none;
+
+  @include pc {
+    display: flex;
+    gap: rem(4);
+  }
+}
+
+.c-list-main__display-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(34);
+  height: rem(34);
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  background-color: $color-white;
+  color: $text-light;
+  cursor: pointer;
+  transition: background-color $transition-fast, color $transition-fast, border-color $transition-fast;
+
+  &[aria-pressed="true"] {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $color-white;
+  }
+
+  &:hover:not([aria-pressed="true"]) {
+    background-color: $bg-light;
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+}
+
+.c-list-main__display-icon {
+  width: rem(16);
+  height: rem(16);
+}
+
+// アイコン説明（PCのみ）
+.c-list-main__icon-desc {
+  display: none;
+
+  @include pc {
+    display: block;
+    margin-bottom: rem(4);
+  }
+}
+
+.c-list-main__icon-desc-text {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  color: $text-light;
+  margin: 0;
+}
+
+// 軽減税率注釈
+.c-list-main__tax-note {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  color: $text-light;
+  margin: 0 0 rem(8);
+}
+
+// ===== 商品グリッド =====
+
+.c-list-main__grid {
+  list-style: none;
+  margin: rem(16) 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(12);
+
+  @include pc {
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(16);
+  }
+}
+
+.c-list-main__grid-item {
+  // グリッドアイテム
+}
+
+// テキスト形式（PC・displayMode=list時）
+.c-list-main--list .c-list-main__grid {
+  @include pc {
+    grid-template-columns: 1fr;
+    gap: rem(12);
+  }
+}
+
+// ===== 空状態 =====
+
+.c-list-main__empty {
+  text-align: center;
+  padding: rem(48) rem(16);
+}
+
+.c-list-main__empty-msg {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  color: $text-light;
+  margin: 0;
+}

@@ -1,0 +1,44 @@
+<div class="c-list-main" id="listMain">
+
+  <!-- ===== コントロール行（データなし・プルダウン非活性） ===== -->
+  <div class="c-list-main__control">
+    <p class="c-list-main__count">
+      <!-- データなし時は件数非表示 -->
+    </p>
+
+    <div class="c-list-main__control-right">
+      <!-- 並び順プルダウン（非活性） -->
+      <div class="c-list-main__sort">
+        <label class="c-list-main__sort-label" for="sortOrderEmpty">並び順</label>
+        <div class="c-list-main__select-wrap">
+          <select class="c-list-main__select" id="sortOrderEmpty" name="alignmentSequence" disabled>
+            <option value="new" selected>新着順</option>
+            <option value="price_asc">価格の安い順</option>
+            <option value="price_desc">価格の高い順</option>
+            <option value="name">商品名順</option>
+            <option value="recommend">おすすめ順</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 表示件数プルダウン（非活性） -->
+      <div class="c-list-main__per-page">
+        <label class="c-list-main__per-page-label" for="displayCountEmpty">表示件数</label>
+        <div class="c-list-main__select-wrap">
+          <select class="c-list-main__select" id="displayCountEmpty" name="displayCount" disabled>
+            <option value="8" selected>8件</option>
+            <option value="16">16件</option>
+            <option value="32">32件</option>
+            <option value="64">64件</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 空状態メッセージ ===== -->
+  <div class="c-list-main__empty">
+    <p class="c-list-main__empty-msg">お探しの商品は見つかりませんでした</p>
+  </div>
+
+</div>

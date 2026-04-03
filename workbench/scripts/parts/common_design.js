@@ -228,27 +228,3 @@ $(function () {
   });
 });
 
-/* ========================================
- * 表示形式切替（商品一覧・listMain）
- * ======================================== */
-$(function () {
-  $(document).on('click', '.js-display-mode-btn', function () {
-    const $btn = $(this);
-    const mode = $btn.data('mode');
-    const $listMain = $btn.closest('.c-list-main__control').siblings('.c-list-main__grid').parent();
-
-    // .c-list-main を特定（ボタンの祖先）
-    const $listMainContainer = $btn.closest('.c-list-main');
-
-    // ボタンのaria-pressed切替
-    $btn.closest('.c-list-main__display-mode').find('.js-display-mode-btn').attr('aria-pressed', 'false');
-    $btn.attr('aria-pressed', 'true');
-
-    // リストのmodifierクラス切替
-    if (mode === 'list') {
-      $listMainContainer.addClass('c-list-main--list');
-    } else {
-      $listMainContainer.removeClass('c-list-main--list');
-    }
-  });
-});

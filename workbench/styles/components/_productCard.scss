@@ -118,21 +118,9 @@
   }
 }
 
-// 概要説明（テキスト形式時のみ表示）
+// 概要説明
 .c-product-card__desc {
   display: none;
-  font-family: $font-family-base;
-  font-size: rem(12);
-  font-weight: $font-weight-normal;
-  line-height: 1.75;
-  color: $text-color;
-  margin: 0 0 rem(8);
-
-  .c-list-main--list & {
-    @include pc {
-      display: block;
-    }
-  }
 }
 
 // 価格エリア
@@ -202,15 +190,9 @@
   color: $text-light;
 }
 
-// 店舗価格（テキスト形式時のみ・条件付き）
+// 店舗価格（条件付き）
 .c-product-card__price--store {
   display: none;
-
-  .c-list-main--list & {
-    @include pc {
-      display: flex;
-    }
-  }
 }
 
 // レビュー
@@ -358,36 +340,3 @@
   }
 }
 
-// テキスト形式（PC・リスト表示）
-.c-list-main--list .c-product-card {
-  @include pc {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
-
-.c-list-main--list .c-product-card__img-link {
-  @include pc {
-    width: rem(140);
-    flex-shrink: 0;
-  }
-}
-
-.c-list-main--list .c-product-card__img {
-  @include pc {
-    aspect-ratio: auto;
-    height: rem(120);
-    object-fit: contain;
-    padding: rem(8);
-  }
-}
-
-.c-list-main--list .c-product-card__body {
-  @include pc {
-    flex: 1;
-    padding: rem(12) rem(16);
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0 rem(16);
-  }
-}

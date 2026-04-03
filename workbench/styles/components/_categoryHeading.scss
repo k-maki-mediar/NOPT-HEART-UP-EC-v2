@@ -8,30 +8,55 @@
 // ========================================
 
 .c-category-heading {
-  background-color: $color-white;
-  text-align: center;
-  padding: rem(24) rem(16);
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(16);
+
+  @include pc {
+    padding: rem(16) rem(32) rem(16) calc(var(--side-nav-content-offset) + rem(32));
+  }
 }
 
 .c-category-heading__inner {
-  max-width: rem(1130);
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(16);
+  background-color: $bg-light;
+  padding: rem(16);
+
+  @include pc {
+    gap: rem(24);
+    padding: rem(20) rem(24);
+  }
+}
+
+.c-category-heading__img-wrap {
+  flex-shrink: 0;
+  width: rem(80);
+
+  @include pc {
+    width: rem(120);
+  }
+}
+
+.c-category-heading__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .c-category-heading__title {
   font-family: $font-family-heading;
-  font-size: rem(24);
+  font-size: rem(18);
   font-weight: $font-weight-medium;
   line-height: 1.5;
   letter-spacing: rem(0.96);
   color: $primary-color;
   margin: 0;
-}
 
-.c-category-heading__border {
-  display: block;
-  width: 100%;
-  height: rem(4);
-  background-color: $bg-banner;
-  margin-top: rem(16);
+  @include pc {
+    font-size: rem(24);
+  }
 }

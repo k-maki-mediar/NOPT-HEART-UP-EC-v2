@@ -11,6 +11,10 @@
   max-width: rem(1130);
   margin: 0 auto;
   padding: 0 rem(16);
+
+  @include pc {
+    padding: 0 rem(32) 0 calc(var(--side-nav-content-offset) + rem(32));
+  }
 }
 
 .c-message-area__text {

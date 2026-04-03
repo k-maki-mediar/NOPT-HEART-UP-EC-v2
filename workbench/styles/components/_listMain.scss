@@ -13,7 +13,7 @@
   padding: rem(16) rem(16) rem(32);
 
   @include pc {
-    padding-right: rem(32);
+    padding: rem(16) rem(32) rem(32) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 
@@ -110,47 +110,6 @@
   white-space: nowrap;
 }
 
-// 表示形式切替（PCのみ）
-.c-list-main__display-mode {
-  display: none;
-
-  @include pc {
-    display: flex;
-    gap: rem(4);
-  }
-}
-
-.c-list-main__display-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: rem(34);
-  height: rem(34);
-  border: 1px solid $border-color;
-  border-radius: $border-radius-sm;
-  background-color: $color-white;
-  color: $text-light;
-  cursor: pointer;
-  transition: background-color $transition-fast, color $transition-fast, border-color $transition-fast;
-
-  &[aria-pressed="true"] {
-    background-color: $primary-color;
-    border-color: $primary-color;
-    color: $color-white;
-  }
-
-  &:hover:not([aria-pressed="true"]) {
-    background-color: $bg-light;
-    border-color: $primary-color;
-    color: $primary-color;
-  }
-}
-
-.c-list-main__display-icon {
-  width: rem(16);
-  height: rem(16);
-}
-
 // アイコン説明（PCのみ）
 .c-list-main__icon-desc {
   display: none;
@@ -191,21 +150,13 @@
   gap: rem(12);
 
   @include pc {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: rem(16);
   }
 }
 
 .c-list-main__grid-item {
   // グリッドアイテム
-}
-
-// テキスト形式（PC・displayMode=list時）
-.c-list-main--list .c-list-main__grid {
-  @include pc {
-    grid-template-columns: 1fr;
-    gap: rem(12);
-  }
 }
 
 // ===== 空状態 =====

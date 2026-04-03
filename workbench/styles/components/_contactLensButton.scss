@@ -2,6 +2,11 @@
 @use '../foundation/variables' as *;
 @use '../foundation/mixins' as *;
 
+// ========================================
+// contactLensButton
+// 購入可能コンタクトレンズを見るボタン（画像バナー）
+// ========================================
+
 .c-contact-lens-btn {
   max-width: rem(1130);
   margin: rem(24) auto 0;
@@ -15,35 +20,12 @@
 .c-contact-lens-btn__link {
   max-width: rem(600);
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: rem(12);
-  min-height: rem(100);
-  padding: rem(16) rem(24);
-  border: rem(1) solid $primary-color;
-  border-radius: rem(20);
-  background-color: $bg-color;
-  @include button-press-effect;
+  display: block;
   text-decoration: none;
 }
 
-.c-contact-lens-btn__illust {
+.c-contact-lens-btn__img {
   display: block;
-  width: rem(71);
+  width: 100%;
   height: auto;
-  flex-shrink: 0;
-
-  &--sm {
-    width: rem(32);
-  }
-}
-
-.c-contact-lens-btn__text {
-  font-family: $font-family-heading;
-  font-size: rem(18);
-  font-weight: $font-weight-bold;
-  line-height: 1.2;
-  letter-spacing: rem(0.56);
-  color: $primary-color;
 }

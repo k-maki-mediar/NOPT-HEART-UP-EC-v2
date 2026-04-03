@@ -99,6 +99,26 @@
   display: block;
   width: rem(24);
   height: rem(24);
+
+  &--diary {
+    width: rem(20);
+    height: rem(23);
+  }
+
+  &--rakutoku {
+    width: rem(30);
+    height: rem(23);
+  }
+
+  &--coupon {
+    width: rem(33);
+    height: rem(19);
+  }
+
+  &--mypage {
+    width: rem(21);
+    height: rem(23);
+  }
 }
 
 .c-header__nav-item--pc {
@@ -109,15 +129,6 @@
   }
 }
 
-.c-header__nav-icon--bi {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: rem(24);
-  height: rem(24);
-  font-size: rem(20);
-  color: $text-color;
-}
 
 .c-header__nav-label {
   display: block;

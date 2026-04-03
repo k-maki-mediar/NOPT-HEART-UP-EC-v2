@@ -3917,6 +3917,7 @@
 .c-category-heading__inner {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   background-color: #f4f8fc;
   padding: 1rem;

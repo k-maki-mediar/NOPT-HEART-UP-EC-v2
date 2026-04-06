@@ -118,7 +118,7 @@
     color: rgba($text-color, 0.3);
   }
 
-  &:focus {
+  &:focus-visible {
     outline: rem(2) solid $primary-color;
     outline-offset: rem(2);
   }
@@ -152,8 +152,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: rem(32);
-  padding: rem(4) rem(16);
+  min-height: rem(44);
+  padding: rem(8) rem(16);
   background-color: $bg-gray;
   border: 1px solid $border-color;
   border-radius: rem(23);
@@ -169,6 +169,11 @@
     background-color: $bg-banner;
     color: $primary-color;
     border-color: $primary-color;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
   }
 }
 
@@ -198,5 +203,10 @@
   &:hover {
     transform: translateY(rem(2));
     box-shadow: 0 0 0 0 $primary-color-dark;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
   }
 }

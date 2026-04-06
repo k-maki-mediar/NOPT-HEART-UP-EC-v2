@@ -20,6 +20,10 @@
     padding-left: var(--side-nav-content-offset);
   }
 
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
   @include sp {
     padding: 0;
   }
@@ -30,7 +34,7 @@
   position: fixed;
   bottom: rem(80);
   right: rem(16);
-  z-index: 100;
+  z-index: $z-index-header;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,6 +50,11 @@
 
   &:hover {
     opacity: 0.7;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
   }
 
   @include pc {
@@ -76,7 +85,7 @@
     bottom: 0;
     left: calc((100% - 100vw) / 2);
     right: calc((100% - 100vw) / 2);
-    background-color: #fcfdff;
+    background-color: $bg-footer;
     z-index: -1;
   }
 }
@@ -109,7 +118,7 @@
     line-height: 1.75;
     letter-spacing: rem(0.52);
     color: $text-color;
-    margin-bottom: rem(16);
+    margin-bottom: rem(8);
   }
 }
 
@@ -134,7 +143,7 @@
 .c-page-footer__link {
   display: flex;
   align-items: center;
-  height: rem(64);
+  min-height: rem(64);
   padding: rem(18) rem(24);
   font-size: rem(16);
   font-weight: $font-weight-normal;
@@ -155,12 +164,12 @@
 
   &:focus-visible {
     outline: 2px solid $text-color;
-    outline-offset: -2px;
+    outline-offset: rem(-2);
   }
 
   @include pc {
-    height: auto;
-    padding: rem(6) 0;
+    min-height: 0;
+    padding: rem(4) 0;
     font-size: rem(13);
     letter-spacing: rem(0.52);
 
@@ -260,8 +269,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: rem(24);
-  height: rem(24);
+  width: rem(44);
+  height: rem(44);
   text-decoration: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
 
@@ -272,20 +281,25 @@
 
   &:focus-visible {
     outline: 2px solid $text-color;
-    outline-offset: 2px;
+    outline-offset: rem(2);
   }
 
   @include pc {
-    width: rem(28);
-    height: rem(28);
+    width: rem(44);
+    height: rem(44);
   }
 }
 
 .c-page-footer__sns-icon {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: rem(24);
+  height: rem(24);
   object-fit: contain;
+
+  @include pc {
+    width: rem(28);
+    height: rem(28);
+  }
 }
 
 // コピーライト

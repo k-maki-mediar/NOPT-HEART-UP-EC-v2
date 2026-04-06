@@ -11,19 +11,33 @@
   display: flex;
   justify-content: center;
   margin: rem(24) 0;
+
+  &--top {
+    // 上部ページャー（下部と同一スタイル）
+  }
 }
 
 .c-pager__list {
   display: flex;
   align-items: center;
-  gap: rem(4);
+  gap: rem(8);
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @include sp {
+    gap: rem(4);
+  }
 }
 
 .c-pager__item {
   // flexアイテム
+
+  // 1ページ目では「前へ」非表示、最終ページでは「次へ」非表示
+  &--prev.is-hidden,
+  &--next.is-hidden {
+    visibility: hidden;
+  }
 }
 
 // ページ番号リンク（ボーダーなし）
@@ -31,8 +45,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: rem(40);
-  min-height: rem(40);
+  min-width: rem(44);
+  min-height: rem(44);
   padding: 0;
   border: none;
   border-radius: $border-radius-sm;
@@ -44,13 +58,24 @@
   text-decoration: none;
   transition: color 0.2s ease, background-color 0.2s ease;
 
+  @include sp {
+    min-width: rem(32);
+    min-height: rem(32);
+    font-size: rem(13);
+  }
+
   &:hover {
     background-color: $bg-light;
   }
 
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+
   // 「前へ」矢印ボタン
   &--prev {
-    min-width: rem(40);
+    min-width: rem(44);
     background-color: $color-white;
     border: 1px solid $primary-color;
     border-radius: $border-radius-sm;
@@ -62,14 +87,20 @@
     transition: transform 0.2s ease;
 
     &:hover {
-      transform: translateY(1px);
+      transform: translateY(rem(1));
       background-color: $color-white;
+    }
+
+    @include sp {
+      min-width: rem(36);
+      min-height: rem(36);
+      background-size: rem(18) rem(14);
     }
   }
 
   // 「次へ」矢印ボタン
   &--next {
-    min-width: rem(40);
+    min-width: rem(44);
     background-color: $color-white;
     border: 1px solid $primary-color;
     border-radius: $border-radius-sm;
@@ -81,8 +112,14 @@
     transition: transform 0.2s ease;
 
     &:hover {
-      transform: translateY(1px);
+      transform: translateY(rem(1));
       background-color: $color-white;
+    }
+
+    @include sp {
+      min-width: rem(36);
+      min-height: rem(36);
+      background-size: rem(18) rem(14);
     }
   }
 }
@@ -92,12 +129,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: rem(40);
-  min-height: rem(40);
+  min-width: rem(44);
+  min-height: rem(44);
   font-family: $font-family-base;
   font-size: rem(16);
   font-weight: $font-weight-medium;
   color: $text-light;
+
+  @include sp {
+    min-width: rem(20);
+    min-height: rem(32);
+    font-size: rem(13);
+  }
 }
 
 // アクティブページ（薄青背景 + 青文字）
@@ -105,8 +148,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: rem(40);
-  min-height: rem(40);
+  min-width: rem(44);
+  min-height: rem(44);
   padding: 0;
   border: none;
   border-radius: $border-radius-sm;
@@ -115,4 +158,10 @@
   font-size: rem(16);
   font-weight: $font-weight-medium;
   color: $primary-color;
+
+  @include sp {
+    min-width: rem(32);
+    min-height: rem(32);
+    font-size: rem(13);
+  }
 }

@@ -78,7 +78,7 @@
     height: rem(6);
     border-left: rem(4) solid transparent;
     border-right: rem(4) solid transparent;
-    border-top: rem(6) solid #c2c2c2;
+    border-top: rem(6) solid $border-color-dark;
     pointer-events: none;
   }
 }
@@ -87,9 +87,9 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: rem(34);
+  min-height: rem(44);
   padding: rem(4) rem(32) rem(4) rem(12);
-  border: 1px solid #c2c2c2;
+  border: 1px solid $border-color-dark;
   border-radius: 0;
   background-color: $color-white;
   font-family: $font-family-base;
@@ -100,9 +100,9 @@
   appearance: none;
   cursor: pointer;
 
-  &:focus {
-    border-color: $primary-color;
-    outline: none;
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
   }
 
   &:disabled {

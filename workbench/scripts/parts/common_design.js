@@ -33,17 +33,6 @@ $(function () {
  * ======================================== */
 $(function () {
   const $footer = $(".js-footer-menu");
-  const $main = $(".c-main");
-
-  // mainの下にフッター高さ + 2rem分の余白を確保
-  function updateBottomPadding() {
-    const footerHeight = $footer.outerHeight();
-    const extraPadding = parseFloat(getComputedStyle(document.documentElement).fontSize) * 2;
-    $main.css("padding-bottom", footerHeight + extraPadding + "px");
-  }
-
-  updateBottomPadding();
-  $(window).on("resize", updateBottomPadding);
 
   // 該当ページのフッターアイコンをアクティブにする
   const pageMap = {

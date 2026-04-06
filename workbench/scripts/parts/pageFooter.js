@@ -5,6 +5,8 @@
  * - 上方向スクロール時にボタンを非表示
  */
 (function () {
+  'use strict';
+
   var btn = document.querySelector('.c-page-footer__page-top-link');
   if (!btn) return;
 

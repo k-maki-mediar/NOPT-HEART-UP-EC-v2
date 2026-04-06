@@ -267,9 +267,9 @@ $(function () {
     }
 
     if (total > 0) {
-      $cartBtnNormal.removeClass('c-detail-unit__select-btn').addClass('c-detail-unit__cart-btn').text('カートに入れる').prop('disabled', false).removeAttr('aria-disabled');
+      $cartBtnNormal.text('カートに入れる').prop('disabled', false).removeAttr('aria-disabled');
     } else {
-      $cartBtnNormal.removeClass('c-detail-unit__cart-btn').addClass('c-detail-unit__select-btn').text('商品を選択してください').prop('disabled', true).attr('aria-disabled', 'true');
+      $cartBtnNormal.text('カートに入れる').prop('disabled', true).attr('aria-disabled', 'true');
     }
   }
 
@@ -290,9 +290,9 @@ $(function () {
     const leftChecked = $rakutokuLeft.is(':checked');
 
     if (rightChecked || leftChecked) {
-      $cartBtnRakutoku.removeClass('c-detail-unit__select-btn').addClass('c-detail-unit__cart-btn').text('カートに入れる').prop('disabled', false).removeAttr('aria-disabled');
+      $cartBtnRakutoku.text('定期便を申し込む').prop('disabled', false).removeAttr('aria-disabled');
     } else {
-      $cartBtnRakutoku.removeClass('c-detail-unit__cart-btn').addClass('c-detail-unit__select-btn').text('商品を選択してください').prop('disabled', true).attr('aria-disabled', 'true');
+      $cartBtnRakutoku.text('定期便を申し込む').prop('disabled', true).attr('aria-disabled', 'true');
     }
   }
 

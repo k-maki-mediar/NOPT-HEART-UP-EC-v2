@@ -140,18 +140,6 @@
         <p class="c-detail-unit__approval">医療機器承認番号: 22900BZX00123456</p>
       </div>
 
-      <!-- レビュー -->
-      <div class="c-detail-unit__review">
-        <div class="c-detail-unit__review-stars" aria-label="星4">
-          <span class="c-detail-unit__review-star c-detail-unit__review-star--on" aria-hidden="true">★</span>
-          <span class="c-detail-unit__review-star c-detail-unit__review-star--on" aria-hidden="true">★</span>
-          <span class="c-detail-unit__review-star c-detail-unit__review-star--on" aria-hidden="true">★</span>
-          <span class="c-detail-unit__review-star c-detail-unit__review-star--on" aria-hidden="true">★</span>
-          <span class="c-detail-unit__review-star" aria-hidden="true">★</span>
-        </div>
-        <a href="#" class="c-detail-unit__review-count">12件のレビュー</a>
-      </div>
-
       <!-- 年齢制限（年齢制限がある商品のみ） -->
       <!-- <span class="c-detail-unit__age-limit">18歳以上購入可</span> -->
 
@@ -315,9 +303,20 @@
       </div>
       <!-- /処方箋情報部 -->
 
-      <!-- ============================================================
-        通常購入部
-      ============================================================ -->
+    </div>
+    <!-- /右カラム -->
+
+  </div>
+  <!-- /inner（画像+情報2カラム） -->
+
+  <!-- ============================================================
+    注文ブロックラッパー（inner外＝全幅エリア、PC横並び用）
+  ============================================================ -->
+  <div class="c-detail-unit__order-wrapper">
+
+  <!-- ============================================================
+    通常購入部
+  ============================================================ -->
       <div class="c-detail-unit__order-normal">
         <div class="c-detail-unit__order-header">
           <p class="c-detail-unit__order-header-text">通常の注文</p>
@@ -422,9 +421,6 @@
             <!-- 予約するボタン（予約期間中） -->
             <!-- <button class="c-detail-unit__reserve-btn" type="button">予約する</button> -->
 
-            <!-- 商品を選択してくださいボタン（CLで左右数量が両方0の場合） -->
-            <!-- <button class="c-detail-unit__select-btn" type="button" disabled aria-disabled="true">商品を選択してください</button> -->
-
             <!-- 在庫なし表示（通常期間中・在庫なし） -->
             <!-- <div class="c-detail-unit__out-of-stock">
               <span class="c-detail-unit__out-of-stock-label">在庫なし</span>
@@ -444,11 +440,6 @@
 
           <!-- お問い合わせリンク（常時） -->
           <a href="#" class="c-detail-unit__inquiry-link">この商品に関するお問い合わせはこちら</a>
-
-          <hr class="c-detail-unit__divider" aria-hidden="true">
-
-          <!-- 商品一覧に戻るボタン（常時） -->
-          <a href="#" class="c-detail-unit__back-btn">商品一覧に戻る</a>
 
         </div>
       </div>
@@ -532,28 +523,19 @@
           <!-- ボタン群 -->
           <div class="c-detail-unit__btn-group">
             <!-- カートに入れるボタン（定期便・在庫あり） -->
-            <button class="c-detail-unit__cart-btn js-detail-cart-btn-rakutoku" type="button">カートに入れる</button>
-
-            <!-- 商品を選択してくださいボタン（CLで左右チェックが両方OFFの場合） -->
-            <!-- <button class="c-detail-unit__select-btn" type="button" disabled aria-disabled="true">商品を選択してください</button> -->
+            <button class="c-detail-unit__cart-btn js-detail-cart-btn-rakutoku" type="button">定期便を申し込む</button>
 
             <!-- 欠品メッセージ（定期便・在庫なし時） -->
             <!-- <p class="c-detail-unit__out-of-stock-msg">※申し訳ございませんが、ただいま品切れ中です。（入荷時期未定）</p> -->
           </div>
 
-          <hr class="c-detail-unit__divider" aria-hidden="true">
-
-          <!-- 商品一覧に戻るボタン（常時） -->
-          <a href="#" class="c-detail-unit__back-btn">商品一覧に戻る</a>
-
         </div>
       </div>
       <!-- /らくとく定期便部 -->
 
-    </div>
-    <!-- /右カラム -->
-
   </div>
+  <!-- /注文ブロックラッパー -->
+
 </div>
 
 <!-- ============================================================

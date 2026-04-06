@@ -17,6 +17,17 @@
   }
 }
 
+.c-detail-heading__maker {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  text-align: center;
+  margin: 0 0 rem(4);
+}
+
 .c-detail-heading__title {
   font-family: $font-family-heading;
   font-size: rem(24);

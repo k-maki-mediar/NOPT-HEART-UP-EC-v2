@@ -62,23 +62,32 @@
 }
 
 .c-detail-description-payment__inner {
+  // SP: 縦並び
   display: flex;
   flex-direction: column;
-  gap: rem(16);
+  gap: 0;
   max-width: rem(1130);
   margin: 0 auto;
   padding: rem(24) rem(12);
 
+  // PC: 2カラム（v1: column-count: 2）
   @include pc {
+    display: block;
+    column-count: 2;
+    column-gap: rem(48);
     padding: rem(32) rem(32) rem(32) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 
-// セクション区切り線（v1: 1px dashed #e0e0e0）
+// セクション区切り線（v1: SP表示、PC非表示）
 .c-detail-description-payment__divider {
   border: none;
   border-top: 1px dashed $border-color;
   margin: 0;
+
+  @include pc {
+    display: none;
+  }
 }
 
 // 各セクション（お支払い方法・配送について等）
@@ -86,6 +95,21 @@
   display: flex;
   flex-direction: column;
   gap: rem(16);
+  padding: rem(16) 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  // PC: カラムまたぎ防止 + 下ボーダーで区切り
+  @include pc {
+    break-inside: avoid;
+    border-bottom: 1px dashed $border-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }
 
 // セクション見出し（v1: 16px/500, color: #00387d — プレーンテキスト）

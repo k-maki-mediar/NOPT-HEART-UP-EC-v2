@@ -68,6 +68,11 @@
 @use 'components/productCard';
 @use 'components/pager';
 @use 'components/pageFooter';
+@use 'components/detailUnit';
+@use 'components/detailDescription';
+@use 'components/recommend';
+@use 'components/browsingHistory';
+@use 'components/cartModal';
 
 // ========================================
 // Pages（ページ固有スタイル）

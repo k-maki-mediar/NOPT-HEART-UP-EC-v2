@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja" class="c-html">
+<head>
+@@include('../../includes/head.html', {"title": "商品詳細（コンタクト・ログイン後・処方箋なし）"})
+<!-- デザイン用共通JS -->
+<script src="../../../files/partsfiles/scripts/common_design.js"></script>
+</head>
+<body class="c-body">
+  <div class="c-page-wrapper">
+    <!-- ヘッダー（ログイン済み） -->
+    @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
+    <!-- サイドナビ（ログイン済み） -->
+    @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
+    <main class="c-main">
+      <div class="wsparts-include">
+        @@include('../../includes/parts/general/messageArea.html')
+      </div>
+      <div class="wsparts-include">
+        <nav class="c-topic-path" aria-label="パンくずリスト">
+          <ol class="c-topic-path__list">
+            <li class="c-topic-path__item">
+              <a href="#" class="c-topic-path__link">トップページ</a>
+            </li>
+            <li class="c-topic-path__item">
+              <a href="#" class="c-topic-path__link">コンタクトレンズ</a>
+            </li>
+            <li class="c-topic-path__item c-topic-path__item--current">
+              <span class="c-topic-path__current">ロート1DAYフレッシュビューエアリッチ 乱視用</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <!-- ================================================================
+        バリエーション: コンタクト・ログイン後・処方箋なし
+        - 処方箋情報エリア: 非表示（コメントアウト）
+        - 通常注文エリア: 表示（処方箋なしメッセージ表示・購入不可）
+        - らくとく定期便エリア: 非表示
+        - 「価格はログインしてご覧ください」メッセージ表示
+          ※ 画面要素シートD34準拠: ログイン済みでも処方箋なしの場合は価格非表示
+        ================================================================ -->
+      <div class="wsparts-include">
+        <!-- 処方箋なしバリエーション用インラインHTML -->
+        <div class="c-detail-unit">
+          <div class="c-detail-unit__inner">
+
+            <!-- 左カラム：商品画像エリア -->
+            <div class="c-detail-unit__image-col">
+              <div class="c-detail-unit__image-area">
+                <div class="c-detail-unit__image-slider js-detail-image-slider">
+                  <div class="c-detail-unit__image-slide">
+                    <a href="#" class="c-detail-unit__image-link">
+                      <img
+                        class="c-detail-unit__image"
+                        src="../../../files/commonfiles/images/product-sample-01.png"
+                        onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+                        alt="ロート1DAYフレッシュビューエアリッチ 乱視用 メイン画像"
+                        width="280"
+                        height="240"
+                      >
+                    </a>
+                  </div>
+                </div>
+                <ul class="c-detail-unit__image-dots js-detail-image-dots" aria-label="画像切替">
+                  <li class="c-detail-unit__image-dots-item">
+                    <button class="c-detail-unit__image-dot c-detail-unit__image-dot--active js-detail-image-dot" aria-label="画像1を表示" data-index="0"></button>
+                  </li>
+                </ul>
+                <ul class="c-detail-unit__thumbnails js-detail-thumbnails" aria-label="サムネイル">
+                  <li class="c-detail-unit__thumbnail-item">
+                    <button class="c-detail-unit__thumbnail-btn c-detail-unit__thumbnail-btn--active js-detail-thumbnail-btn" aria-label="画像1" data-index="0">
+                      <img class="c-detail-unit__thumbnail-img" src="../../../files/commonfiles/images/product-sample-01.png" onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';" alt="サムネイル1" width="60" height="60">
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 右カラム -->
+            <div class="c-detail-unit__info-col">
+              <ul class="c-detail-unit__icons" aria-label="商品アイコン">
+                <li><span class="c-detail-unit__icon">1DAY</span></li>
+                <li><span class="c-detail-unit__icon">乱視用</span></li>
+              </ul>
+              <div class="c-detail-unit__info">
+                <p class="c-detail-unit__maker">ロート</p>
+                <h1 class="c-detail-unit__name">ロート1DAYフレッシュビューエアリッチ 乱視用</h1>
+                <p class="c-detail-unit__quantity">32枚入</p>
+                <p class="c-detail-unit__approval">医療機器承認番号: 22900BZX00123456</p>
+              </div>
+              <div class="c-detail-unit__review">
+                <div class="c-detail-unit__review-stars" aria-label="星4">
+                  <span class="c-detail-unit__review-star c-detail-unit__review-star--on" aria-hidden="true">★</span>
+                  <span class="c-detail-unit__review-star c-detail-unit__review-star--on" aria-hidden="true">★</span>
+                  <span class="c-detail-unit__review-star c-detail-unit__review-star--on" aria-hidden="true">★</span>
+                  <span class="c-detail-unit__review-star c-detail-unit__review-star--on" aria-hidden="true">★</span>
+                  <span class="c-detail-unit__review-star" aria-hidden="true">★</span>
+                </div>
+                <a href="#" class="c-detail-unit__review-count">12件のレビュー</a>
+              </div>
+              <p class="c-detail-unit__code">商品コード: 1234567890</p>
+              <div class="c-detail-unit__favorite">
+                <a href="#" class="c-detail-unit__favorite-btn js-favorite-btn" aria-label="お気に入りに追加">
+                  <svg class="c-detail-unit__favorite-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                  お気に入りに追加
+                </a>
+              </div>
+
+              <!-- 処方箋情報エリア: 非表示（処方箋なし） -->
+
+              <!-- 通常注文エリア（処方箋なし・価格非表示） -->
+              <div class="c-detail-unit__order-normal">
+                <div class="c-detail-unit__order-header">
+                  <p class="c-detail-unit__order-header-text">通常の注文</p>
+                </div>
+                <div class="c-detail-unit__order-body">
+                  <div class="c-detail-unit__price-area">
+                    <!-- 価格はログインしてご覧ください（処方箋なしの場合は価格非表示） -->
+                    <p class="c-detail-unit__login-msg">価格はログインしてご覧ください</p>
+                    <!-- 処方箋なしメッセージ -->
+                    <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p>
+                  </div>
+                  <a href="#" class="c-detail-unit__inquiry-link">この商品に関するお問い合わせはこちら</a>
+                  <hr class="c-detail-unit__divider" aria-hidden="true">
+                  <a href="#" class="c-detail-unit__back-btn">商品一覧に戻る</a>
+                </div>
+              </div>
+
+              <!-- らくとく定期便エリア: 非表示（処方箋なし） -->
+
+            </div>
+          </div>
+        </div>
+
+        <!-- カート投入後モーダル（このバリエーションでは使用しないが構造上含める） -->
+        <div class="c-cart-modal js-cart-modal" role="dialog" aria-modal="true" aria-labelledby="js-cart-modal-title">
+          <div class="c-cart-modal__overlay js-cart-modal-overlay"></div>
+          <div class="c-cart-modal__dialog">
+            <div class="c-cart-modal__body">
+              <div class="c-cart-modal__icon" aria-hidden="true">
+                <svg class="c-cart-modal__icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+              </div>
+              <h2 class="c-cart-modal__title" id="js-cart-modal-title">カートに入れました</h2>
+              <p class="c-cart-modal__message">引き続きショッピングをお楽しみください</p>
+            </div>
+            <div class="c-cart-modal__actions">
+              <button class="c-cart-modal__btn js-cart-modal-continue" type="button">買い物を続ける</button>
+              <a href="#" class="c-cart-modal__btn c-cart-modal__btn--primary" role="button">カートを見る</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wsparts-include">
+        @@include('../../includes/parts/general/detailDescription.html')
+      </div>
+      <div class="wsparts-include">
+        @@include('../../includes/parts/general/recommendA.html')
+      </div>
+      <div class="wsparts-include">
+        @@include('../../includes/parts/general/browsingHistory.html')
+      </div>
+    </main>
+    @@include('../../includes/parts/general/pageFooter.html')
+    @@include('../../includes/parts/general/pageFooterMenu.html')
+  </div>
+</body>
+</html>

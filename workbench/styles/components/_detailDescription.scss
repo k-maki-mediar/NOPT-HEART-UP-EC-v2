@@ -1,0 +1,82 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// detailDescription
+// 商品説明・お支払い方法送料エリア
+// ========================================
+
+.c-detail-description {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(16) rem(12) rem(24);
+
+  @include pc {
+    padding: rem(24) rem(32) rem(32) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// 商品説明ブロック
+.c-detail-description__product {
+  margin-bottom: rem(24);
+}
+
+.c-detail-description__product-heading {
+  font-family: $font-family-heading;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: 0 0 rem(12);
+  padding: rem(8) 0;
+  border-bottom: 2px solid $primary-color;
+}
+
+.c-detail-description__product-body {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  line-height: 1.7;
+  color: $text-color;
+}
+
+// お支払い方法・送料セクション（削除しやすい独立構造）
+// [removable] このセクション全体が後から削除可能
+.c-detail-description__payment-section {
+  border: 1px solid $border-color;
+  border-radius: rem(8);
+  overflow: hidden;
+}
+
+.c-detail-description__section {
+  & + & {
+    border-top: 1px solid $border-color;
+  }
+}
+
+.c-detail-description__section-title {
+  font-family: $font-family-heading;
+  font-size: rem(15);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: 0;
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
+}
+
+.c-detail-description__section-body {
+  padding: rem(12) rem(16);
+}
+
+.c-detail-description__section-text {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  line-height: 1.7;
+  color: $text-color;
+  margin: 0;
+}
+
+.c-detail-description__divider {
+  border: none;
+  border-top: 1px solid $border-color;
+  margin: rem(16) 0;
+}

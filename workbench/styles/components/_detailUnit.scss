@@ -1,0 +1,1141 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// detailUnit
+// 商品詳細（単品）メイン・処方箋・注文エリア一式
+// ========================================
+
+// ----------------------------------------
+// ラッパー
+// ----------------------------------------
+
+.c-detail-unit {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(16) rem(12) rem(8);
+
+  @include pc {
+    padding: rem(16) rem(32) rem(8) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+.c-detail-unit__inner {
+  @include pc {
+    display: flex;
+    gap: rem(32);
+    align-items: flex-start;
+  }
+}
+
+// ----------------------------------------
+// 左カラム（商品画像エリア）
+// ----------------------------------------
+
+.c-detail-unit__image-col {
+  @include pc {
+    flex: 0 0 rem(280);
+    max-width: rem(280);
+  }
+}
+
+// ----------------------------------------
+// 右カラム（商品情報・注文エリア）
+// ----------------------------------------
+
+.c-detail-unit__info-col {
+  flex: 1;
+  min-width: 0;
+}
+
+// ----------------------------------------
+// 商品画像スライダー
+// ----------------------------------------
+
+.c-detail-unit__image-area {
+  position: relative;
+  margin-bottom: rem(8);
+}
+
+.c-detail-unit__image-slider {
+  display: flex;
+  overflow: hidden;
+  border-radius: rem(8);
+  background-color: $color-white;
+}
+
+.c-detail-unit__image-slide {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(240);
+  padding: rem(16);
+}
+
+.c-detail-unit__image-link {
+  display: block;
+  text-align: center;
+}
+
+.c-detail-unit__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: rem(240);
+}
+
+// スライダードット
+.c-detail-unit__image-dots {
+  display: flex;
+  justify-content: center;
+  gap: rem(6);
+  margin-top: rem(8);
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c-detail-unit__image-dot {
+  width: rem(8);
+  height: rem(8);
+  border-radius: 50%;
+  background-color: $border-color;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+
+  &--active {
+    background-color: $primary-color;
+  }
+}
+
+// サムネイル一覧
+.c-detail-unit__thumbnails {
+  display: flex;
+  gap: rem(6);
+  flex-wrap: wrap;
+  margin-top: rem(8);
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c-detail-unit__thumbnail-item {
+  // flexアイテム
+}
+
+.c-detail-unit__thumbnail-btn {
+  display: block;
+  width: rem(60);
+  height: rem(60);
+  border: 2px solid $border-color;
+  border-radius: rem(4);
+  overflow: hidden;
+  background-color: $color-white;
+  cursor: pointer;
+  padding: rem(4);
+
+  &--active {
+    border-color: $primary-color;
+  }
+}
+
+.c-detail-unit__thumbnail-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+// ----------------------------------------
+// 商品アイコン行（1DAY・乱視用等）
+// ----------------------------------------
+
+.c-detail-unit__icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(6);
+  margin-bottom: rem(8);
+  list-style: none;
+  padding: 0;
+}
+
+.c-detail-unit__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(4) rem(10);
+  background-color: $bg-banner;
+  border-radius: rem(23);
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $primary-color;
+  white-space: nowrap;
+}
+
+// ----------------------------------------
+// 商品基本情報
+// ----------------------------------------
+
+.c-detail-unit__info {
+  margin-bottom: rem(16);
+}
+
+.c-detail-unit__maker {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $text-light;
+  margin: 0 0 rem(4);
+}
+
+.c-detail-unit__name {
+  font-family: $font-family-heading;
+  font-size: rem(20);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  color: $text-color;
+  margin: 0 0 rem(4);
+}
+
+.c-detail-unit__quantity {
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $text-color;
+  margin: 0 0 rem(4);
+}
+
+.c-detail-unit__approval {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $text-light;
+  margin: 0 0 rem(4);
+}
+
+.c-detail-unit__end-date {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $danger-color;
+  margin: 0 0 rem(4);
+}
+
+// ----------------------------------------
+// 事前/事後掲載
+// ----------------------------------------
+
+.c-detail-unit__printing-notice {
+  display: inline-block;
+  padding: rem(4) rem(10);
+  background-color: $campaign-bg;
+  border-radius: rem(4);
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin-bottom: rem(8);
+}
+
+// ----------------------------------------
+// レビュー
+// ----------------------------------------
+
+.c-detail-unit__review {
+  display: flex;
+  align-items: center;
+  gap: rem(4);
+  margin-bottom: rem(8);
+}
+
+.c-detail-unit__review-stars {
+  display: flex;
+  gap: rem(2);
+}
+
+.c-detail-unit__review-star {
+  font-size: rem(16);
+  color: $border-color;
+
+  &--on {
+    color: $accent-color;
+  }
+}
+
+.c-detail-unit__review-count {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+}
+
+// ----------------------------------------
+// 年齢制限・キャンペーン・商品コード
+// ----------------------------------------
+
+.c-detail-unit__age-limit {
+  display: inline-block;
+  padding: rem(4) rem(10);
+  background-color: $danger-color;
+  border-radius: rem(4);
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  margin-bottom: rem(8);
+}
+
+.c-detail-unit__campaign {
+  background-color: $campaign-bg;
+  border-radius: rem(4);
+  padding: rem(6) rem(10);
+  margin-bottom: rem(8);
+}
+
+.c-detail-unit__campaign-text {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0;
+}
+
+.c-detail-unit__code {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $text-light;
+  margin-bottom: rem(8);
+}
+
+// ----------------------------------------
+// 在庫状況
+// ----------------------------------------
+
+.c-detail-unit__stock {
+  margin-bottom: rem(8);
+}
+
+.c-detail-unit__stock-msg {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  color: $text-color;
+  margin: 0;
+}
+
+// ----------------------------------------
+// お気に入りボタン
+// ----------------------------------------
+
+.c-detail-unit__favorite {
+  margin-bottom: rem(16);
+}
+
+.c-detail-unit__favorite-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(6);
+  min-height: rem(44);
+  padding: rem(8) rem(16);
+  border: 1px solid $border-color;
+  border-radius: rem(23);
+  background-color: $color-white;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color $transition-fast;
+
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+
+  &--registered {
+    color: $text-light;
+    border-color: $border-color;
+    pointer-events: none;
+
+    &:hover {
+      color: $text-light;
+      border-color: $border-color;
+    }
+  }
+}
+
+.c-detail-unit__favorite-icon {
+  width: rem(18);
+  height: rem(18);
+  flex-shrink: 0;
+}
+
+// ----------------------------------------
+// らくとく定期バナー
+// ----------------------------------------
+
+.c-detail-unit__rakutoku-banner {
+  margin-bottom: rem(16);
+}
+
+.c-detail-unit__rakutoku-banner-link {
+  display: block;
+}
+
+.c-detail-unit__rakutoku-banner-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// ----------------------------------------
+// 処方箋情報エリア（コンタクトレンズのみ）
+// ----------------------------------------
+
+.c-detail-unit__prescription {
+  margin-bottom: rem(16);
+  border: 1px solid $border-color;
+  border-radius: rem(8);
+  overflow: hidden;
+}
+
+.c-detail-unit__prescription-warning {
+  padding: rem(10) rem(12);
+  background-color: #fde8e8;
+  border-bottom: 1px solid $danger-color;
+}
+
+.c-detail-unit__prescription-warning-text {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  color: $danger-color;
+  margin: 0;
+}
+
+.c-detail-unit__prescription-end-sale {
+  padding: rem(10) rem(12);
+  background-color: $bg-gray;
+  border-bottom: 1px solid $border-color;
+}
+
+.c-detail-unit__prescription-end-sale-text {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  margin: 0;
+}
+
+// 処方箋テーブル
+.c-detail-unit__prescription-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: $font-family-base;
+  font-size: rem(13);
+}
+
+.c-detail-unit__prescription-thead {
+  background-color: $primary-color;
+}
+
+.c-detail-unit__prescription-th {
+  padding: rem(8) rem(12);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.c-detail-unit__prescription-label-cell {
+  padding: rem(8) rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  background-color: $bg-light;
+  white-space: nowrap;
+  border-bottom: 1px solid $border-color;
+}
+
+.c-detail-unit__prescription-cell {
+  padding: rem(8) rem(12);
+  color: $text-color;
+  text-align: center;
+  border-bottom: 1px solid $border-color;
+}
+
+.c-detail-unit__prescription-row--disabled {
+  background-color: $bg-gray;
+
+  .c-detail-unit__prescription-cell {
+    color: $text-light;
+  }
+}
+
+// 有効期限（期限行）
+.c-detail-unit__prescription-expiry {
+  font-size: rem(11);
+  color: $text-light;
+}
+
+// 度数選択・カラー選択エリア
+.c-detail-unit__diopter-select,
+.c-detail-unit__color-select {
+  padding: rem(12);
+  border-top: 1px solid $border-color;
+  background-color: $bg-light;
+}
+
+.c-detail-unit__select-row {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  flex-wrap: wrap;
+
+  & + & {
+    margin-top: rem(8);
+  }
+}
+
+.c-detail-unit__select-label {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  flex: 0 0 auto;
+  min-width: rem(60);
+}
+
+.c-detail-unit__select-wrap {
+  position: relative;
+  flex: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: rem(10);
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: rem(8);
+    height: rem(8);
+    border-right: 2px solid $text-light;
+    border-bottom: 2px solid $text-light;
+    pointer-events: none;
+  }
+}
+
+.c-detail-unit__select {
+  display: block;
+  width: 100%;
+  min-height: rem(44);
+  padding: rem(8) rem(32) rem(8) rem(10);
+  border: 1px solid $border-color;
+  border-radius: rem(4);
+  background-color: $color-white;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  color: $text-color;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+}
+
+// ----------------------------------------
+// 通常注文エリア / らくとく定期便注文エリア 共通
+// ----------------------------------------
+
+.c-detail-unit__order-normal,
+.c-detail-unit__order-rakutoku {
+  border: 1px solid $border-color;
+  border-radius: rem(8);
+  overflow: hidden;
+  margin-bottom: rem(16);
+}
+
+.c-detail-unit__order-header {
+  display: flex;
+  align-items: center;
+  padding: rem(10) rem(16);
+  background-color: $primary-color;
+}
+
+.c-detail-unit__order-header-text {
+  font-family: $font-family-heading;
+  font-size: rem(15);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  margin: 0;
+}
+
+.c-detail-unit__order-body {
+  padding: rem(16);
+  background-color: $color-white;
+}
+
+// 近日発売・販売期間終了ラベル
+.c-detail-unit__sale-status {
+  display: inline-block;
+  padding: rem(6) rem(16);
+  border-radius: rem(4);
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  background-color: $bg-gray;
+  color: $text-light;
+  margin-bottom: rem(12);
+}
+
+// ----------------------------------------
+// 数量（コンタクトレンズ）
+// ----------------------------------------
+
+.c-detail-unit__quantity-contact {
+  margin-bottom: rem(12);
+}
+
+.c-detail-unit__quantity-row {
+  display: flex;
+  gap: rem(12);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.c-detail-unit__quantity-col {
+  display: flex;
+  align-items: center;
+  gap: rem(6);
+  flex: 1;
+  min-width: rem(120);
+}
+
+.c-detail-unit__quantity-eye-label {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  flex-shrink: 0;
+  min-width: rem(20);
+}
+
+.c-detail-unit__quantity-total {
+  margin-top: rem(6);
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $text-color;
+}
+
+// 数量（コンタクトレンズ以外）
+.c-detail-unit__quantity-normal {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  margin-bottom: rem(12);
+}
+
+.c-detail-unit__quantity-label {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  flex-shrink: 0;
+}
+
+// ----------------------------------------
+// 価格エリア
+// ----------------------------------------
+
+.c-detail-unit__price-area {
+  margin-bottom: rem(12);
+}
+
+.c-detail-unit__reduced-tax-note {
+  font-family: $font-family-base;
+  font-size: rem(10);
+  color: $text-light;
+  margin: 0 0 rem(4);
+}
+
+.c-detail-unit__price--strike {
+  display: flex;
+  align-items: baseline;
+  gap: rem(4);
+  margin-bottom: rem(4);
+}
+
+.c-detail-unit__price-strike-value {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $text-light;
+  text-decoration: line-through;
+}
+
+.c-detail-unit__price-strike-unit {
+  font-family: $font-family-base;
+  font-size: rem(11);
+  color: $text-light;
+  text-decoration: line-through;
+}
+
+.c-detail-unit__price--main {
+  display: flex;
+  align-items: baseline;
+  gap: rem(4);
+  margin-bottom: rem(2);
+}
+
+.c-detail-unit__price-value {
+  font-family: $font-family-base;
+  font-size: rem(24);
+  font-weight: $font-weight-bold;
+  color: $price-color;
+}
+
+.c-detail-unit__price-unit {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $price-color;
+}
+
+.c-detail-unit__price-tax {
+  font-family: $font-family-base;
+  font-size: rem(11);
+  color: $text-light;
+  margin-bottom: rem(4);
+}
+
+.c-detail-unit__price-ref {
+  font-family: $font-family-base;
+  font-size: rem(11);
+  color: $text-light;
+  margin-bottom: rem(4);
+}
+
+.c-detail-unit__price-period {
+  font-family: $font-family-base;
+  font-size: rem(11);
+  color: $text-light;
+  margin-bottom: rem(4);
+}
+
+.c-detail-unit__discount-rate {
+  display: inline-block;
+  padding: rem(2) rem(8);
+  background-color: $danger-color;
+  border-radius: rem(4);
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  margin-bottom: rem(6);
+}
+
+.c-detail-unit__login-msg {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: rem(8) 0;
+}
+
+.c-detail-unit__no-prescription-msg {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $text-color;
+  background-color: $bg-light;
+  border: 1px solid $border-color;
+  border-radius: rem(4);
+  padding: rem(10) rem(12);
+  margin: rem(8) 0;
+}
+
+// ----------------------------------------
+// ボタン類
+// ----------------------------------------
+
+.c-detail-unit__cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(52);
+  padding: rem(12) rem(24);
+  border: none;
+  border-radius: rem(26);
+  background-color: $primary-color;
+  font-family: $font-family-heading;
+  font-size: rem(16);
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  @include button-press-effect;
+
+  &:active {
+    background-color: $primary-color-active;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-white;
+    outline-offset: rem(2);
+  }
+}
+
+.c-detail-unit__reserve-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(52);
+  padding: rem(12) rem(24);
+  border: none;
+  border-radius: rem(26);
+  background-color: $secondary-color;
+  font-family: $font-family-heading;
+  font-size: rem(16);
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  cursor: pointer;
+  text-align: center;
+  @include button-press-effect;
+
+  &:focus-visible {
+    outline: 2px solid $color-white;
+    outline-offset: rem(2);
+  }
+}
+
+.c-detail-unit__select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(52);
+  padding: rem(12) rem(24);
+  border: 1px solid $border-color;
+  border-radius: rem(26);
+  background-color: $bg-gray;
+  font-family: $font-family-heading;
+  font-size: rem(16);
+  font-weight: $font-weight-bold;
+  color: $text-light;
+  cursor: not-allowed;
+  pointer-events: none;
+  text-align: center;
+}
+
+.c-detail-unit__arrival-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(44);
+  padding: rem(10) rem(24);
+  border: 1px solid $primary-color;
+  border-radius: rem(26);
+  background-color: $color-white;
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  cursor: pointer;
+  text-align: center;
+  @include button-press-effect;
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+}
+
+// ボタン群レイアウト
+.c-detail-unit__btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  margin-bottom: rem(12);
+}
+
+// ----------------------------------------
+// 在庫なし表示
+// ----------------------------------------
+
+.c-detail-unit__out-of-stock {
+  margin-bottom: rem(8);
+}
+
+.c-detail-unit__out-of-stock-label {
+  display: inline-block;
+  padding: rem(6) rem(16);
+  background-color: $bg-gray;
+  border: 1px solid $border-color-dark;
+  border-radius: rem(4);
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-light;
+}
+
+.c-detail-unit__out-of-stock-msg {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $text-color;
+  margin: rem(4) 0 0;
+}
+
+// ----------------------------------------
+// お届けについて
+// ----------------------------------------
+
+.c-detail-unit__delivery-desc {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $text-color;
+  padding: rem(8) rem(12);
+  background-color: $bg-light;
+  border-radius: rem(4);
+  margin-bottom: rem(8);
+}
+
+// ----------------------------------------
+// リンク類（お問い合わせ・商品一覧に戻る・らくとく定期便とは）
+// ----------------------------------------
+
+.c-detail-unit__inquiry-link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $calendar-sat;
+  text-decoration: underline;
+  min-height: rem(44);
+  padding: rem(4) 0;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+}
+
+.c-detail-unit__back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(44);
+  padding: rem(10) rem(24);
+  border: 1px solid $border-color;
+  border-radius: rem(23);
+  background-color: $color-white;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color $transition-fast;
+
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+}
+
+.c-detail-unit__rakutoku-info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $calendar-sat;
+  text-decoration: underline;
+  min-height: rem(44);
+  padding: rem(4) 0;
+  margin-bottom: rem(8);
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+}
+
+// ----------------------------------------
+// らくとく定期便 チェックボックス（左右）
+// ----------------------------------------
+
+.c-detail-unit__rakutoku-check {
+  display: flex;
+  gap: rem(16);
+  margin-bottom: rem(12);
+  flex-wrap: wrap;
+}
+
+.c-detail-unit__rakutoku-check-item {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  min-height: rem(44);
+}
+
+.c-detail-unit__rakutoku-check-label {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  font-family: $font-family-base;
+  font-size: rem(14);
+  color: $text-color;
+  cursor: pointer;
+  min-height: rem(44);
+}
+
+.c-detail-unit__rakutoku-check-input {
+  width: rem(20);
+  height: rem(20);
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: $primary-color;
+}
+
+// ----------------------------------------
+// お届けサイクルラジオボタン
+// ----------------------------------------
+
+.c-detail-unit__cycle-radio {
+  margin-bottom: rem(12);
+}
+
+.c-detail-unit__cycle-radio-title {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0 0 rem(6);
+}
+
+.c-detail-unit__cycle-radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.c-detail-unit__cycle-radio-label {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  min-height: rem(44);
+  padding: rem(8) rem(12);
+  border: 1px solid $border-color;
+  border-radius: rem(4);
+  cursor: pointer;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  color: $text-color;
+  transition: border-color $transition-fast;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}
+
+.c-detail-unit__cycle-radio-input {
+  width: rem(18);
+  height: rem(18);
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: $primary-color;
+}
+
+.c-detail-unit__cycle-radio-text {
+  flex: 1;
+}
+
+// ----------------------------------------
+// 付帯サービス
+// ----------------------------------------
+
+.c-detail-unit__incidental {
+  margin-bottom: rem(12);
+  padding: rem(12);
+  background-color: $bg-light;
+  border-radius: rem(4);
+  border: 1px solid $border-color;
+}
+
+.c-detail-unit__incidental-label {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  min-height: rem(44);
+  font-family: $font-family-base;
+  font-size: rem(14);
+  color: $text-color;
+  cursor: pointer;
+  margin-bottom: rem(6);
+}
+
+.c-detail-unit__incidental-checkbox {
+  width: rem(20);
+  height: rem(20);
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: $primary-color;
+}
+
+// ----------------------------------------
+// 区切り線
+// ----------------------------------------
+
+.c-detail-unit__divider {
+  border: none;
+  border-top: 1px solid $border-color;
+  margin: rem(12) 0;
+}

@@ -210,3 +210,135 @@ $(function () {
     $body.toggleClass('c-favorite-products__body--open');
   });
 });
+
+/* ========================================
+ * 商品詳細（detailUnitMain）
+ * ======================================== */
+$(function () {
+
+  // ----------------------------------------
+  // 商品画像スライダー（ドット・サムネイル切替）
+  // ----------------------------------------
+  const $slider = $('.js-detail-image-slider');
+  const $slides = $slider.find('.c-detail-unit__image-slide');
+  const $dots = $('.js-detail-image-dot');
+  const $thumbBtns = $('.js-detail-thumbnail-btn');
+
+  function showSlide(index) {
+    const total = $slides.length;
+    const safeIndex = Math.max(0, Math.min(index, total - 1));
+    $slides.hide().eq(safeIndex).show();
+    $dots.removeClass('c-detail-unit__image-dot--active').eq(safeIndex).addClass('c-detail-unit__image-dot--active');
+    $thumbBtns.removeClass('c-detail-unit__thumbnail-btn--active').eq(safeIndex).addClass('c-detail-unit__thumbnail-btn--active');
+  }
+
+  // 初期表示（最初のスライドのみ表示）
+  if ($slides.length > 1) {
+    $slides.hide().first().show();
+  }
+
+  $dots.on('click', function () {
+    showSlide(parseInt($(this).data('index'), 10));
+  });
+
+  $thumbBtns.on('click', function () {
+    showSlide(parseInt($(this).data('index'), 10));
+  });
+
+  // ----------------------------------------
+  // 通常注文：左右数量0→ボタン切替（コンタクトレンズ）
+  // ----------------------------------------
+  const $qRight = $('.js-detail-quantity-right');
+  const $qLeft = $('.js-detail-quantity-left');
+  const $cartBtnNormal = $('.js-detail-cart-btn-normal');
+  const $totalDisplay = $('.js-detail-quantity-total');
+
+  function updateNormalCartBtn() {
+    if ($qRight.length === 0 && $qLeft.length === 0) { return; }
+    const right = parseInt($qRight.val() || '0', 10);
+    const left = parseInt($qLeft.val() || '0', 10);
+    const total = right + left;
+
+    // 合計箱数表示更新
+    if ($totalDisplay.length) {
+      // 単価はdata属性から取得（実装時はHTMLにdata-unit-price属性を付与）
+      const unitPrice = parseInt($totalDisplay.data('unit-price') || '3300', 10);
+      $totalDisplay.text('計 ' + total + '箱 　1箱あたり ' + unitPrice.toLocaleString() + '円');
+    }
+
+    if (total > 0) {
+      $cartBtnNormal.removeClass('c-detail-unit__select-btn').addClass('c-detail-unit__cart-btn').text('カートに入れる').prop('disabled', false).removeAttr('aria-disabled');
+    } else {
+      $cartBtnNormal.removeClass('c-detail-unit__cart-btn').addClass('c-detail-unit__select-btn').text('商品を選択してください').prop('disabled', true).attr('aria-disabled', 'true');
+    }
+  }
+
+  $qRight.on('change', updateNormalCartBtn);
+  $qLeft.on('change', updateNormalCartBtn);
+  updateNormalCartBtn();
+
+  // ----------------------------------------
+  // らくとく定期便：左右チェックOFF→ボタン切替（コンタクトレンズ）
+  // ----------------------------------------
+  const $rakutokuRight = $('.js-detail-rakutoku-right');
+  const $rakutokuLeft = $('.js-detail-rakutoku-left');
+  const $cartBtnRakutoku = $('.js-detail-cart-btn-rakutoku');
+
+  function updateRakutokuCartBtn() {
+    if ($rakutokuRight.length === 0 && $rakutokuLeft.length === 0) { return; }
+    const rightChecked = $rakutokuRight.is(':checked');
+    const leftChecked = $rakutokuLeft.is(':checked');
+
+    if (rightChecked || leftChecked) {
+      $cartBtnRakutoku.removeClass('c-detail-unit__select-btn').addClass('c-detail-unit__cart-btn').text('カートに入れる').prop('disabled', false).removeAttr('aria-disabled');
+    } else {
+      $cartBtnRakutoku.removeClass('c-detail-unit__cart-btn').addClass('c-detail-unit__select-btn').text('商品を選択してください').prop('disabled', true).attr('aria-disabled', 'true');
+    }
+  }
+
+  $rakutokuRight.on('change', updateRakutokuCartBtn);
+  $rakutokuLeft.on('change', updateRakutokuCartBtn);
+  updateRakutokuCartBtn();
+
+  // ----------------------------------------
+  // カート投入後モーダル
+  // ----------------------------------------
+  const $modal = $('.js-cart-modal');
+  const $modalOverlay = $('.js-cart-modal-overlay');
+  const $modalContinue = $('.js-cart-modal-continue');
+
+  function openCartModal() {
+    $modal.addClass('c-cart-modal--open');
+    $modal.attr('aria-hidden', 'false');
+    $modalContinue.trigger('focus');
+  }
+
+  function closeCartModal() {
+    $modal.removeClass('c-cart-modal--open');
+    $modal.attr('aria-hidden', 'true');
+  }
+
+  // カートに入れるボタン押下でモーダル表示
+  $(document).on('click', '.js-detail-cart-btn-normal, .js-detail-cart-btn-rakutoku', function (e) {
+    e.preventDefault();
+    openCartModal();
+  });
+
+  // 「買い物を続ける」ボタンでモーダルを閉じる
+  $modalContinue.on('click', function () {
+    closeCartModal();
+  });
+
+  // オーバーレイクリックでモーダルを閉じる
+  $modalOverlay.on('click', function () {
+    closeCartModal();
+  });
+
+  // Escキーでモーダルを閉じる
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape' && $modal.hasClass('c-cart-modal--open')) {
+      closeCartModal();
+    }
+  });
+
+});

@@ -3919,10 +3919,12 @@
   align-items: center;
   background-color: #f4f8fc;
   padding: 1rem;
+  min-height: 5.625rem;
 }
 @media (min-width: 992px) {
   .c-category-heading__inner {
     padding: 1.25rem 1.5rem;
+    min-height: 7.5rem;
   }
 }
 

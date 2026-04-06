@@ -22,9 +22,11 @@
   align-items: center;
   background-color: $bg-light;
   padding: rem(16);
+  min-height: rem(90);
 
   @include pc {
     padding: rem(20) rem(24);
+    min-height: rem(120);
   }
 }
 

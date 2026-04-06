@@ -1,0 +1,63 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// categoryHeading
+// カテゴリ見出しバー（ページ上部）
+// ========================================
+
+.c-category-heading {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0;
+
+  @include pc {
+    padding: rem(16) rem(32) rem(16) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+.c-category-heading__inner {
+  display: flex;
+  align-items: center;
+  background-color: $bg-light;
+  padding: rem(16);
+  min-height: rem(90);
+
+  @include pc {
+    padding: rem(20) rem(24);
+    min-height: rem(120);
+  }
+}
+
+.c-category-heading__img-wrap {
+  flex-shrink: 0;
+  width: rem(120);
+
+  @include pc {
+    width: rem(180);
+  }
+}
+
+.c-category-heading__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.c-category-heading__title {
+  flex: 1;
+  text-align: center;
+  font-family: $font-family-heading;
+  font-size: rem(18);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
+  color: $primary-color;
+  margin: 0;
+
+  @include pc {
+    font-size: rem(24);
+  }
+}

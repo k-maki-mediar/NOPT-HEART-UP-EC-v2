@@ -1,0 +1,40 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// messageArea
+// メッセージエリア（汎用パーツ・ページ上部通知）
+// ========================================
+
+.c-message-area {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 rem(16);
+
+  @include pc {
+    padding: 0 rem(32) 0 calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+.c-message-area__text {
+  padding: rem(12) rem(16);
+  border-radius: $border-radius-md;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  margin: 0 0 rem(16);
+
+  &--error {
+    background-color: lighten($danger-color, 45%);
+    color: $danger-color;
+    border: 1px solid $danger-color;
+  }
+
+  &--info {
+    background-color: $bg-light;
+    color: $text-color;
+    border: 1px solid $border-color;
+  }
+}

@@ -1,0 +1,188 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// listMain
+// 商品一覧メイン（コントロール行・グリッド・空状態）
+// ========================================
+
+.c-list-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(16) rem(16) rem(32);
+
+  @include pc {
+    padding: rem(16) rem(32) rem(32) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ===== コントロール行 =====
+
+.c-list-main__control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: rem(8);
+  margin-bottom: rem(8);
+}
+
+.c-list-main__count {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  color: $text-color;
+  margin: 0;
+}
+
+.c-list-main__count-total {
+  font-weight: $font-weight-medium;
+}
+
+.c-list-main__count-range {
+  // インライン表示
+}
+
+.c-list-main__control-right {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include pc {
+    width: auto;
+  }
+}
+
+.c-list-main__sort,
+.c-list-main__per-page {
+  flex: 1;
+  min-width: 0;
+}
+
+// セレクトボックス共通ラッパー
+.c-list-main__select-wrap {
+  position: relative;
+  display: block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: rem(12);
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(10);
+    height: rem(6);
+    border-left: rem(4) solid transparent;
+    border-right: rem(4) solid transparent;
+    border-top: rem(6) solid $border-color-dark;
+    pointer-events: none;
+  }
+}
+
+.c-list-main__select {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: rem(44);
+  padding: rem(4) rem(32) rem(4) rem(12);
+  border: 1px solid $border-color-dark;
+  border-radius: 0;
+  background-color: $color-white;
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  letter-spacing: rem(0.15);
+  color: $text-color;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+
+  &:disabled {
+    background-color: $bg-gray;
+    color: $text-light;
+    cursor: not-allowed;
+  }
+}
+
+.c-list-main__sort-label,
+.c-list-main__per-page-label {
+  position: absolute;
+  width: rem(1);
+  height: rem(1);
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+// アイコン説明（PCのみ）
+.c-list-main__icon-desc {
+  display: none;
+
+  @include pc {
+    display: block;
+    margin-bottom: rem(4);
+  }
+}
+
+.c-list-main__icon-desc-text {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  color: $text-light;
+  margin: 0;
+}
+
+// 軽減税率注釈
+.c-list-main__tax-note {
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  color: $text-light;
+  margin: 0 0 rem(8);
+}
+
+// ===== 商品グリッド =====
+
+.c-list-main__grid {
+  list-style: none;
+  margin: rem(24) 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(12);
+
+  @include pc {
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(16);
+  }
+}
+
+.c-list-main__grid-item {
+  // グリッドアイテム
+}
+
+// ===== 空状態 =====
+
+.c-list-main__empty {
+  text-align: center;
+  padding: rem(48) rem(16);
+}
+
+.c-list-main__empty-msg {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  color: $text-light;
+  margin: 0;
+}

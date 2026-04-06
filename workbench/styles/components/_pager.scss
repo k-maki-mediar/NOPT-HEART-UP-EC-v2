@@ -1,0 +1,167 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// pager
+// ページネーション（参考: nopt-heart-up-ec準拠）
+// ========================================
+
+.c-pager {
+  display: flex;
+  justify-content: center;
+  margin: rem(24) 0;
+
+  &--top {
+    // 上部ページャー（下部と同一スタイル）
+  }
+}
+
+.c-pager__list {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include sp {
+    gap: rem(4);
+  }
+}
+
+.c-pager__item {
+  // flexアイテム
+
+  // 1ページ目では「前へ」非表示、最終ページでは「次へ」非表示
+  &--prev.is-hidden,
+  &--next.is-hidden {
+    visibility: hidden;
+  }
+}
+
+// ページ番号リンク（ボーダーなし）
+.c-pager__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(44);
+  min-height: rem(44);
+  padding: 0;
+  border: none;
+  border-radius: $border-radius-sm;
+  background: none;
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+  @include sp {
+    min-width: rem(32);
+    min-height: rem(32);
+    font-size: rem(13);
+  }
+
+  &:hover {
+    background-color: $bg-light;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+
+  // 「前へ」矢印ボタン
+  &--prev {
+    min-width: rem(44);
+    background-color: $color-white;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius-sm;
+    box-shadow: 0 rem(2) 0 0 $primary-color;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300387D' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='14 4 8 12 14 20'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: rem(22) rem(18);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(rem(1));
+      background-color: $color-white;
+    }
+
+    @include sp {
+      min-width: rem(36);
+      min-height: rem(36);
+      background-size: rem(18) rem(14);
+    }
+  }
+
+  // 「次へ」矢印ボタン
+  &--next {
+    min-width: rem(44);
+    background-color: $color-white;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius-sm;
+    box-shadow: 0 rem(2) 0 0 $primary-color;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300387D' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='10 4 16 12 10 20'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: rem(22) rem(18);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(rem(1));
+      background-color: $color-white;
+    }
+
+    @include sp {
+      min-width: rem(36);
+      min-height: rem(36);
+      background-size: rem(18) rem(14);
+    }
+  }
+}
+
+// 省略記号（…）
+.c-pager__ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(44);
+  min-height: rem(44);
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $text-light;
+
+  @include sp {
+    min-width: rem(20);
+    min-height: rem(32);
+    font-size: rem(13);
+  }
+}
+
+// アクティブページ（薄青背景 + 青文字）
+.c-pager__current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(44);
+  min-height: rem(44);
+  padding: 0;
+  border: none;
+  border-radius: $border-radius-sm;
+  background-color: $bg-banner;
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+
+  @include sp {
+    min-width: rem(32);
+    min-height: rem(32);
+    font-size: rem(13);
+  }
+}

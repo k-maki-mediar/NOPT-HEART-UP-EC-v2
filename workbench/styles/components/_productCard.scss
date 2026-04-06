@@ -28,6 +28,7 @@
 
 // 商品画像ラッパー
 .c-product-card__img-link {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +37,26 @@
   padding: rem(24) rem(14) 0;
   overflow: hidden;
   background-color: $color-white;
+}
+
+// 在庫なしバッジ（画像上にオーバーレイ）
+.c-product-card__sold-out-badge {
+  position: absolute;
+  top: rem(8);
+  left: rem(8);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(4) rem(10);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: rem(4);
+  font-family: $font-family-base;
+  font-size: rem(11);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  color: $color-white;
+  white-space: nowrap;
 }
 
 .c-product-card__img {

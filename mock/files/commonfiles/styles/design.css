@@ -4418,6 +4418,7 @@
 }
 
 .c-product-card__img-link {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4426,6 +4427,25 @@
   padding: 1.5rem 0.875rem 0;
   overflow: hidden;
   background-color: #FFFFFF;
+}
+
+.c-product-card__sold-out-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.625rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.25rem;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #FFFFFF;
+  white-space: nowrap;
 }
 
 .c-product-card__img {

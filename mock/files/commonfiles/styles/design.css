@@ -5305,6 +5305,7 @@
 }
 
 .c-detail-unit__image-slider {
+  position: relative;
   display: flex;
   overflow: hidden;
   border-radius: 0;
@@ -5551,79 +5552,35 @@
   margin: 0;
 }
 
-.c-detail-unit__favorite {
-  margin-bottom: 1rem;
-}
-
 .c-detail-unit__favorite-btn {
-  display: inline-flex;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 2;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  min-height: 2.75rem;
-  padding: 0.875rem 1rem;
+  padding: 0;
   border: none;
-  border-radius: 0.25rem;
-  background-color: #FFFFFF;
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: #00387d;
-  text-decoration: none;
+  background: none;
   cursor: pointer;
-  position: relative;
-  overflow: visible;
-  z-index: 0;
-  transition: all 0.2s ease;
-  width: 100%;
-}
-.c-detail-unit__favorite-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #FFFFFF;
-  border: 1px solid #00387d;
-  border-radius: 0.25rem;
-  z-index: -1;
-  transition: background-color 0.2s ease;
-}
-.c-detail-unit__favorite-btn::after {
-  content: "";
-  position: absolute;
-  top: 1px;
-  bottom: -0.1875rem;
-  left: 0;
-  right: 0;
-  background-color: #00387d;
-  border-radius: 0.25rem;
-  z-index: -2;
-}
-.c-detail-unit__favorite-btn > * {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.2s ease;
-}
-.c-detail-unit__favorite-btn:hover::before, .c-detail-unit__favorite-btn:hover > * {
-  transform: translateY(1px);
+  text-decoration: none;
 }
 .c-detail-unit__favorite-btn:focus-visible {
   outline: 2px solid #00387d;
   outline-offset: 0.125rem;
 }
-.c-detail-unit__favorite-btn--registered {
-  color: #7F8C8D;
-  pointer-events: none;
-}
-.c-detail-unit__favorite-btn--registered::before {
-  border-color: #e0e0e0;
-}
-.c-detail-unit__favorite-btn--registered::after {
-  background-color: #e0e0e0;
+.c-detail-unit__favorite-btn--registered .c-detail-unit__favorite-icon {
+  fill: #00387d;
+  stroke: #00387d;
 }
 
 .c-detail-unit__favorite-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #00387d;
+  fill: none;
+  stroke: #00387d;
   flex-shrink: 0;
 }
 

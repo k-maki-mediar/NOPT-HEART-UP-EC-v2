@@ -11,7 +11,14 @@
 
       <!-- 商品画像スライダー -->
       <div class="c-detail-unit__image-area">
+
         <div class="c-detail-unit__image-slider js-detail-image-slider">
+          <!-- お気に入りボタン（ログイン済み未登録 or 未ログイン） -->
+          <a href="#" class="c-detail-unit__favorite-btn js-favorite-btn" aria-label="お気に入りに追加">
+            <svg class="c-detail-unit__favorite-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </a>
           <!-- メイン画像（スライド1） -->
           <div class="c-detail-unit__image-slide">
             <a href="#" class="c-detail-unit__image-link">
@@ -156,22 +163,6 @@
         <p class="c-detail-unit__stock-msg">残り少なくなっています</p>
       </div> -->
 
-      <!-- お気に入りボタン（ログイン済み未登録 or 未ログイン） -->
-      <div class="c-detail-unit__favorite">
-        <a href="#" class="c-detail-unit__favorite-btn js-favorite-btn" aria-label="お気に入りに追加">
-          <svg class="c-detail-unit__favorite-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-          お気に入りに追加
-        </a>
-        <!-- お気に入り登録済みの場合（押下不可） -->
-        <!-- <span class="c-detail-unit__favorite-btn c-detail-unit__favorite-btn--registered" aria-label="お気に入りに登録済み">
-          <svg class="c-detail-unit__favorite-icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-          お気に入りに登録済み
-        </span> -->
-      </div>
 
       <!-- らくとく定期バナー（定期便利用可能商品のみ） -->
       <!-- <div class="c-detail-unit__rakutoku-banner">

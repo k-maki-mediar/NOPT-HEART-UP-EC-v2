@@ -341,4 +341,12 @@ $(function () {
     }
   });
 
+  // ----------------------------------------
+  // お気に入りボタン トグル
+  // ----------------------------------------
+  $(document).on('click', '.js-favorite-btn', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('c-detail-unit__favorite-btn--registered');
+  });
+
 });

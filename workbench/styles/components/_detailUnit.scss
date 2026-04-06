@@ -60,6 +60,7 @@
 }
 
 .c-detail-unit__image-slider {
+  position: relative;
   display: flex;
   overflow: hidden;
   border-radius: 0;
@@ -336,94 +337,43 @@
 }
 
 // ----------------------------------------
-// お気に入りボタン
-// v1: border-radius: 4px, ::before/::after shadow effect
+// お気に入りボタン（画像エリア右上のハートアイコン）
 // ----------------------------------------
 
-.c-detail-unit__favorite {
-  margin-bottom: rem(16);
-}
-
 .c-detail-unit__favorite-btn {
-  display: inline-flex;
+  position: absolute;
+  bottom: rem(8);
+  right: rem(8);
+  z-index: 2;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: rem(8);
-  min-height: rem(44);
-  padding: rem(14) rem(16);
+  padding: 0;
   border: none;
-  border-radius: rem(4);
-  background-color: $color-white;
-  font-family: $font-family-base;
-  font-size: rem(14);
-  font-weight: $font-weight-normal;
-  color: $primary-color;
-  text-decoration: none;
+  background: none;
   cursor: pointer;
-  position: relative;
-  overflow: visible;
-  z-index: 0;
-  transition: all 0.2s ease;
-  width: 100%;
-
-  // 白い背景レイヤー
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: $color-white;
-    border: 1px solid $primary-color;
-    border-radius: rem(4);
-    z-index: -1;
-    transition: background-color 0.2s ease;
-  }
-
-  // 影レイヤー
-  &::after {
-    content: '';
-    position: absolute;
-    top: 1px;
-    bottom: rem(-3);
-    left: 0;
-    right: 0;
-    background-color: $primary-color;
-    border-radius: rem(4);
-    z-index: -2;
-  }
-
-  > * {
-    position: relative;
-    z-index: 1;
-    transition: transform 0.2s ease;
-  }
-
-  &:hover::before,
-  &:hover > * {
-    transform: translateY(1px);
-  }
+  text-decoration: none;
 
   &:focus-visible {
     outline: 2px solid $primary-color;
     outline-offset: rem(2);
   }
 
+  // 押下済み（JSでクラス付与）
   &--registered {
-    color: $text-light;
-    pointer-events: none;
-
-    &::before {
-      border-color: $border-color;
-    }
-
-    &::after {
-      background-color: $border-color;
+    .c-detail-unit__favorite-icon {
+      fill: $primary-color;
+      stroke: $primary-color;
     }
   }
 }
 
 .c-detail-unit__favorite-icon {
-  width: rem(20);
-  height: rem(20);
+  width: rem(24);
+  height: rem(24);
+  color: $primary-color;
+  fill: none;
+  stroke: $primary-color;
   flex-shrink: 0;
 }
 

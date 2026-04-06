@@ -342,6 +342,23 @@ $(function () {
   });
 
   // ----------------------------------------
+  // 注文ブロック タブ切替
+  // ----------------------------------------
+  $(document).on('click', '.js-detail-order-tab', function () {
+    const $tab = $(this);
+    const target = $tab.data('target');
+    const $wrapper = $tab.closest('.c-detail-unit__order-wrapper');
+
+    // タブ切替
+    $wrapper.find('.js-detail-order-tab').removeClass('is-active').attr('aria-selected', 'false');
+    $tab.addClass('is-active').attr('aria-selected', 'true');
+
+    // パネル切替
+    $wrapper.find('.js-detail-order-panel').removeClass('is-active');
+    $wrapper.find('.js-detail-order-panel[data-panel="' + target + '"]').addClass('is-active');
+  });
+
+  // ----------------------------------------
   // お気に入りボタン トグル
   // ----------------------------------------
   $(document).on('click', '.js-favorite-btn', function (e) {

@@ -301,14 +301,23 @@
   <!-- /inner（画像+情報2カラム） -->
 
   <!-- ============================================================
-    注文ブロックラッパー（inner外＝全幅エリア、PC横並び用）
+    注文ブロックラッパー（inner外＝全幅エリア、タブ切替）
   ============================================================ -->
   <div class="c-detail-unit__order-wrapper">
+
+    <!-- タブボタン -->
+    <div class="c-detail-unit__order-tabs js-detail-order-tabs" role="tablist">
+      <button class="c-detail-unit__order-tab is-active js-detail-order-tab" role="tab" aria-selected="true" data-target="normal" type="button">通常の注文</button>
+      <button class="c-detail-unit__order-tab js-detail-order-tab" role="tab" aria-selected="false" data-target="rakutoku" type="button">らくとく定期便の注文</button>
+    </div>
+
+    <!-- タブパネル -->
+    <div class="c-detail-unit__order-panels">
 
   <!-- ============================================================
     通常購入部
   ============================================================ -->
-      <div class="c-detail-unit__order-normal">
+      <div class="c-detail-unit__order-normal c-detail-unit__order-panel is-active js-detail-order-panel" data-panel="normal" role="tabpanel">
         <div class="c-detail-unit__order-header">
           <p class="c-detail-unit__order-header-text">通常の注文</p>
         </div>
@@ -439,7 +448,7 @@
       <!-- ============================================================
         らくとく定期便部（定期購入可能商品・ページ側で表示制御）
       ============================================================ -->
-      <div class="c-detail-unit__order-rakutoku">
+      <div class="c-detail-unit__order-rakutoku c-detail-unit__order-panel js-detail-order-panel" data-panel="rakutoku" role="tabpanel">
         <div class="c-detail-unit__order-header">
           <p class="c-detail-unit__order-header-text">らくとく定期便の注文</p>
         </div>
@@ -523,6 +532,9 @@
         </div>
       </div>
       <!-- /らくとく定期便部 -->
+
+    </div>
+    <!-- /タブパネル -->
 
   </div>
   <!-- /注文ブロックラッパー -->

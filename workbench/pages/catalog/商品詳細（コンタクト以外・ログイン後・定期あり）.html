@@ -106,13 +106,21 @@
 
               <!-- 処方箋情報エリア: 非表示（コンタクトレンズ以外） -->
 
+            </div>
+          </div>
+          <!-- 注文ブロック（タブ切替） -->
+          <div class="c-detail-unit__order-wrapper">
+            <div class="c-detail-unit__order-tabs js-detail-order-tabs" role="tablist">
+              <button class="c-detail-unit__order-tab is-active js-detail-order-tab" role="tab" aria-selected="true" data-target="normal" type="button">通常の注文</button>
+              <button class="c-detail-unit__order-tab js-detail-order-tab" role="tab" aria-selected="false" data-target="rakutoku" type="button">らくとく定期便の注文</button>
+            </div>
+            <div class="c-detail-unit__order-panels">
               <!-- 通常注文エリア -->
-              <div class="c-detail-unit__order-normal">
+              <div class="c-detail-unit__order-normal c-detail-unit__order-panel is-active js-detail-order-panel" data-panel="normal" role="tabpanel">
                 <div class="c-detail-unit__order-header">
                   <p class="c-detail-unit__order-header-text">通常の注文</p>
                 </div>
                 <div class="c-detail-unit__order-body">
-                  <!-- 数量（コンタクトレンズ以外） -->
                   <div class="c-detail-unit__quantity-normal">
                     <span class="c-detail-unit__quantity-label">数量</span>
                     <div class="c-detail-unit__select-wrap">
@@ -137,20 +145,15 @@
                     <button class="c-detail-unit__cart-btn js-detail-cart-btn-normal" type="button">カートに入れる</button>
                   </div>
                   <a href="#" class="c-detail-unit__inquiry-link">この商品に関するお問い合わせはこちら</a>
-                  <hr class="c-detail-unit__divider" aria-hidden="true">
-                  <a href="#" class="c-detail-unit__back-btn">商品一覧に戻る</a>
                 </div>
               </div>
-
-              <!-- らくとく定期便エリア（3ヶ月・6ヶ月コース） -->
-              <div class="c-detail-unit__order-rakutoku">
+              <!-- らくとく定期便エリア -->
+              <div class="c-detail-unit__order-rakutoku c-detail-unit__order-panel js-detail-order-panel" data-panel="rakutoku" role="tabpanel">
                 <div class="c-detail-unit__order-header">
                   <p class="c-detail-unit__order-header-text">らくとく定期便の注文</p>
                 </div>
                 <div class="c-detail-unit__order-body">
                   <a href="#" class="c-detail-unit__rakutoku-info-link" target="_blank" rel="noopener noreferrer">らくとく定期便とは</a>
-                  <!-- コンタクトレンズ以外：左右チェックボックス不要 -->
-                  <!-- お届けサイクル（3ヶ月・6ヶ月コースのみ） -->
                   <div class="c-detail-unit__cycle-radio">
                     <p class="c-detail-unit__cycle-radio-title">お届けサイクル</p>
                     <ul class="c-detail-unit__cycle-radio-list">
@@ -181,13 +184,10 @@
                     <span class="c-detail-unit__discount-rate">通常価格より12%OFF</span>
                   </div>
                   <div class="c-detail-unit__btn-group">
-                    <button class="c-detail-unit__cart-btn js-detail-cart-btn-rakutoku" type="button">カートに入れる</button>
+                    <button class="c-detail-unit__cart-btn js-detail-cart-btn-rakutoku" type="button">定期便を申し込む</button>
                   </div>
-                  <hr class="c-detail-unit__divider" aria-hidden="true">
-                  <a href="#" class="c-detail-unit__back-btn">商品一覧に戻る</a>
                 </div>
               </div>
-
             </div>
           </div>
         </div>

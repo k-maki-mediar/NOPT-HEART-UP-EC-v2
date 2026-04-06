@@ -10,10 +10,19 @@
 .c-detail-heading {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(16) rem(12);
+  padding: 0;
 
   @include pc {
-    padding: rem(24) rem(32) rem(24) calc(var(--side-nav-content-offset) + rem(32));
+    padding: 0 rem(32) 0 calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+.c-detail-heading__inner {
+  background-color: $bg-light;
+  padding: rem(16);
+
+  @include pc {
+    padding: rem(20) rem(24);
   }
 }
 
@@ -37,11 +46,21 @@
   letter-spacing: rem(0.96);
   text-align: center;
   margin: 0;
-  padding-bottom: rem(16);
-  border-bottom: 1px solid $bg-banner;
 
   @include sp {
     font-size: rem(20);
     letter-spacing: rem(0.8);
   }
+}
+
+.c-detail-heading__approval {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  text-align: right;
+  margin: rem(8) 0 0;
+  padding: 0 0 rem(12);
+  border-bottom: 1px solid $bg-banner;
 }

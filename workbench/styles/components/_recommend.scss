@@ -35,10 +35,10 @@
   display: block;
   font-family: $font-family-heading-en;
   font-size: rem(24);
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-light;
   color: $primary-color;
-  line-height: 1.2;
-  letter-spacing: rem(1);
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
 }
 
 .c-recommend__heading-ja {

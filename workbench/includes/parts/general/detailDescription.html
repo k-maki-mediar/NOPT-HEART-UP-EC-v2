@@ -2,65 +2,112 @@
   商品説明・お支払い方法送料パーツ
   detailDescription.html
 =========================== -->
-<section class="c-detail-description" aria-label="商品説明・お支払い方法送料について">
 
-  <!-- 商品説明エリア -->
+<!-- 商品説明エリア -->
+<section class="c-detail-description" aria-label="商品説明">
   <div class="c-detail-description__product">
     <h2 class="c-detail-description__product-heading">商品説明</h2>
     <div class="c-detail-description__product-body">
       <p>商品の詳細説明がここに入ります。成分・使用方法・使用上の注意など商品固有のコンテンツが表示されます。</p>
     </div>
   </div>
+</section>
 
-  <hr class="c-detail-description__divider" aria-hidden="true">
+<!-- お支払い方法・送料セクション（独立構造・後から削除しやすい） -->
+<!-- [removable] このsectionブロック全体が後から削除可能 -->
+<section class="c-detail-description-payment" aria-label="お支払い方法・送料について">
+  <div class="c-detail-description-payment__inner">
 
-  <!-- お支払い方法・送料セクション（独立構造・後から削除しやすい） -->
-  <!-- [removable] このdivブロック全体が後から削除可能 -->
-  <div class="c-detail-description__payment-section">
+    <!-- お支払い方法 -->
+    <div class="c-detail-description-payment__section">
+      <h3 class="c-detail-description-payment__title">お支払い方法</h3>
+      <div class="c-detail-description-payment__body">
 
-    <div class="c-detail-description__section">
-      <h3 class="c-detail-description__section-title">お支払い方法</h3>
-      <div class="c-detail-description__section-body">
-        <p class="c-detail-description__section-text">クレジットカード（VISA・MasterCard・JCB・AMEX・Diners）、代金引換、銀行振込がご利用いただけます。</p>
+        <div class="c-detail-description-payment__subsection">
+          <p class="c-detail-description-payment__sub-heading">・クレジットカード</p>
+          <img class="c-detail-description-payment__card-brands" src="../../../files/commonfiles/images/credit-brands.png" alt="JCB, MasterCard, VISA" width="198" height="30">
+          <p class="c-detail-description-payment__text">分割払いをご選択いただいた場合の分割手数料はお客様ご負担となります。</p>
+        </div>
+
+        <div class="c-detail-description-payment__subsection">
+          <p class="c-detail-description-payment__sub-heading">・ＰａｙＰａｙ</p>
+          <p class="c-detail-description-payment__text">ＰａｙＰａｙ残高でのお支払いとなります。</p>
+        </div>
+
+        <div class="c-detail-description-payment__subsection">
+          <p class="c-detail-description-payment__sub-heading">・代金引換</p>
+          <p class="c-detail-description-payment__text">代引き手数料：330円(税込)<br>商品お届け時に商品と引換に代金を宅配業者にお支払頂きます。<br>ご購入金額が税込5,500円以上の場合、代引き手数料は無料となります。<br>らくとく定期便は、代引き手数料無料となります。</p>
+        </div>
+
+        <div class="c-detail-description-payment__subsection">
+          <p class="c-detail-description-payment__sub-heading">・コンビニ後払い(ベリトランス後払い)</p>
+          <p class="c-detail-description-payment__text">後払い手数料：220円(税込)<br>請求書は商品とは別に株式会社ＳＣＯＲＥより郵送されます。発行より14日以内にお近くのコンビニエンスストア、ＬＩＮＥＰａｙ、楽天銀行コンビニ支払い、ｄ払い請求書払い、ファミペイ請求書支払い方法よりお支払いください。<br>詳しくは<a href="#" class="c-detail-description-payment__link">＜ご利用ガイド＞お支払い方法</a>をご参照ください。<br>ご購入金額が税込5,500円以上の場合、後払い手数料は無料となります。<br>らくとく定期便は、後払い手数料無料となります。</p>
+        </div>
+
       </div>
     </div>
 
-    <div class="c-detail-description__section">
-      <h3 class="c-detail-description__section-title">配送について</h3>
-      <div class="c-detail-description__section-body">
-        <p class="c-detail-description__section-text">ご注文確認後、通常2〜3営業日以内に発送いたします。お急ぎの場合はご相談ください。</p>
+    <hr class="c-detail-description-payment__divider" aria-hidden="true">
+
+    <!-- 配送について -->
+    <div class="c-detail-description-payment__section">
+      <h3 class="c-detail-description-payment__title">配送について</h3>
+      <div class="c-detail-description-payment__body">
+        <div class="c-detail-description-payment__subsection">
+          <p class="c-detail-description-payment__sub-heading">【業者】日本郵便（JP）</p>
+          <p class="c-detail-description-payment__text">お届け希望の日時をお選び頂けます。ご自宅以外の配送先もお選び頂けます。（国内へのお届けに限ります）</p>
+        </div>
       </div>
     </div>
 
-    <div class="c-detail-description__section">
-      <h3 class="c-detail-description__section-title">消費税</h3>
-      <div class="c-detail-description__section-body">
-        <p class="c-detail-description__section-text">表示価格はすべて税込価格です。</p>
+    <hr class="c-detail-description-payment__divider" aria-hidden="true">
+
+    <!-- 消費税について -->
+    <div class="c-detail-description-payment__section">
+      <h3 class="c-detail-description-payment__title">消費税について</h3>
+      <div class="c-detail-description-payment__body">
+        <p class="c-detail-description-payment__text">表示価格は税率10%の税込み価格です。1商品ごとに消費税計算をしております。1円未満の消費税端数は切り捨てといたします。</p>
       </div>
     </div>
 
-    <div class="c-detail-description__section">
-      <h3 class="c-detail-description__section-title">送料</h3>
-      <div class="c-detail-description__section-body">
-        <p class="c-detail-description__section-text">送料はご注文金額・配送先により異なります。詳細はご注文時にご確認ください。</p>
+    <hr class="c-detail-description-payment__divider" aria-hidden="true">
+
+    <!-- 送料について -->
+    <div class="c-detail-description-payment__section">
+      <h3 class="c-detail-description-payment__title">送料について</h3>
+      <div class="c-detail-description-payment__body">
+        <p class="c-detail-description-payment__text">送料：1回のご注文につき550円(税込)<br>ご購入金額が税込5,500円以上の場合は、送料無料となります。<br>らくとく定期便は、送料無料となります。</p>
       </div>
     </div>
 
-    <div class="c-detail-description__section">
-      <h3 class="c-detail-description__section-title">返品・交換</h3>
-      <div class="c-detail-description__section-body">
-        <p class="c-detail-description__section-text">商品到着後8日以内にご連絡ください。お客様都合による返品は送料お客様負担となります。なお、衛生上の理由からコンタクトレンズの開封後の返品・交換はお受けできません。</p>
+    <hr class="c-detail-description-payment__divider" aria-hidden="true">
+
+    <!-- 返品について -->
+    <div class="c-detail-description-payment__section">
+      <h3 class="c-detail-description-payment__title">返品について</h3>
+      <div class="c-detail-description-payment__body">
+        <ul class="c-detail-description-payment__list">
+          <li class="c-detail-description-payment__list-item">商品到着後10日以内であれば、未使用未開封の商品に限り返品を承ります。まずはカスタマーセンターへご連絡下さい。</li>
+          <li class="c-detail-description-payment__list-item">お客様のご都合による返品の場合、商品の返送料はお客様ご負担でお願いします。</li>
+          <li class="c-detail-description-payment__list-item">配送途中の破損などの事故がございましたら、カスタマーセンターまでご連絡下さい。</li>
+          <li class="c-detail-description-payment__list-item">送料など弊社負担で早急に交換させて頂きます。</li>
+        </ul>
       </div>
     </div>
 
-    <div class="c-detail-description__section">
-      <h3 class="c-detail-description__section-title">お問い合わせ</h3>
-      <div class="c-detail-description__section-body">
-        <p class="c-detail-description__section-text">ご不明な点はお気軽にお問い合わせください。</p>
+    <hr class="c-detail-description-payment__divider" aria-hidden="true">
+
+    <!-- お問い合わせ -->
+    <div class="c-detail-description-payment__section">
+      <h3 class="c-detail-description-payment__title">お問い合わせ</h3>
+      <div class="c-detail-description-payment__body">
+        <div class="c-detail-description-payment__subsection">
+          <p class="c-detail-description-payment__sub-heading">ノプトカスタマーセンター</p>
+          <p class="c-detail-description-payment__text">フリーダイヤル　<span class="c-detail-description-payment__phone">0120-710-158</span><br>営業時間：平日10:00～13:00、14:00～18:00<br>※土・日・祝日や、ゴールデンウィーク・お盆・年末年始等はお休みさせて頂きます。</p>
+        </div>
       </div>
     </div>
 
   </div>
-  <!-- /お支払い方法・送料セクション -->
-
 </section>
+<!-- /お支払い方法・送料セクション -->

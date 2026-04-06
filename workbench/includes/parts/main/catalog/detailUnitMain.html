@@ -119,18 +119,7 @@
     <div class="c-detail-unit__info-col">
 
       <!-- 商品アイコン行（1DAY・乱視用等） -->
-      <ul class="c-detail-unit__icons" aria-label="商品アイコン">
-        <li>
-          <span class="c-detail-unit__icon">1DAY</span>
-        </li>
-        <li>
-          <span class="c-detail-unit__icon">乱視用</span>
-        </li>
-        <!-- 定期便利用可能商品の場合のみ表示 -->
-        <!-- <li><span class="c-detail-unit__icon">らくとく定期</span></li> -->
-      </ul>
-
-      <!-- 取扱終了日（登録値が最大値の場合は非表示） -->
+<!-- 取扱終了日（登録値が最大値の場合は非表示） -->
       <!-- <p class="c-detail-unit__end-date">取扱終了日: 2026/06/30</p> -->
 
       <!-- 事前掲載（事前掲載期間中のみ） -->
@@ -138,16 +127,7 @@
 
       <!-- 事後掲載（事後掲載期間中のみ） -->
       <!-- <span class="c-detail-unit__printing-notice">販売期間終了</span> -->
-
-      <!-- 商品基本情報 -->
-      <div class="c-detail-unit__info">
-        <p class="c-detail-unit__maker">ロート</p>
-        <h1 class="c-detail-unit__name">ロート1DAYフレッシュビューエアリッチ 乱視用</h1>
-        <p class="c-detail-unit__quantity">32枚入</p>
-        <p class="c-detail-unit__approval">医療機器承認番号: 22900BZX00123456</p>
-      </div>
-
-      <!-- 年齢制限（年齢制限がある商品のみ） -->
+<!-- 年齢制限（年齢制限がある商品のみ） -->
       <!-- <span class="c-detail-unit__age-limit">18歳以上購入可</span> -->
 
       <!-- キャンペーン情報（キャンペーンがある場合のみ・特別価格中は非表示） -->
@@ -156,7 +136,6 @@
       </div> -->
 
       <!-- 商品コード -->
-      <p class="c-detail-unit__code">商品コード: 1234567890</p>
 
       <!-- 在庫状況メッセージ（在庫状況に応じて表示） -->
       <!-- <div class="c-detail-unit__stock">
@@ -171,10 +150,33 @@
         </a>
       </div> -->
 
+      <!-- 商品説明フリーテキスト -->
+      <div class="c-detail-unit__free-text">
+        <p class="c-detail-unit__free-text-body">瞳にやさしいつけ心地の1日使い捨てコンタクトレンズです。独自のモイストベール技術により、うるおいが長時間持続します。UVカット機能付きで、紫外線から瞳を守ります。</p>
+      </div>
+
       <!-- ============================================================
-        処方箋情報部（コンタクトレンズかつ処方箋ありの場合のみ表示）
+        ご登録のEyeデータ（コンタクトレンズかつ処方箋ありの場合のみ表示）
         ページ側でこのブロックごとコメントアウト・削除して使い分ける
       ============================================================ -->
+      <div class="c-detail-unit__eye-data">
+        <h2 class="c-detail-unit__eye-data-heading">ご登録のEyeデータ</h2>
+        <dl class="c-detail-unit__eye-data-info">
+          <div class="c-detail-unit__eye-data-row">
+            <dt class="c-detail-unit__eye-data-label">メーカー名</dt>
+            <dd class="c-detail-unit__eye-data-value">ロート</dd>
+          </div>
+          <div class="c-detail-unit__eye-data-row">
+            <dt class="c-detail-unit__eye-data-label">商品名</dt>
+            <dd class="c-detail-unit__eye-data-value">ロート1DAYフレッシュビューエアリッチ 乱視用</dd>
+          </div>
+          <div class="c-detail-unit__eye-data-row">
+            <dt class="c-detail-unit__eye-data-label">内容量</dt>
+            <dd class="c-detail-unit__eye-data-value">32枚入</dd>
+          </div>
+        </dl>
+      </div>
+
       <div class="c-detail-unit__prescription">
 
         <!-- 処方箋有効期限警告（期限3ヶ月以内のみ） -->
@@ -196,47 +198,78 @@
         <table class="c-detail-unit__prescription-table">
           <thead class="c-detail-unit__prescription-thead">
             <tr>
-              <th class="c-detail-unit__prescription-th" scope="col">規格</th>
-              <th class="c-detail-unit__prescription-th" scope="col">右（R）</th>
-              <th class="c-detail-unit__prescription-th" scope="col">左（L）</th>
+              <th class="c-detail-unit__prescription-th" scope="col">項目</th>
+              <th class="c-detail-unit__prescription-th" scope="col">右</th>
+              <th class="c-detail-unit__prescription-th" scope="col">左</th>
             </tr>
           </thead>
           <tbody>
             <tr class="c-detail-unit__prescription-row">
-              <th class="c-detail-unit__prescription-label-cell" scope="row">BC</th>
-              <td class="c-detail-unit__prescription-cell">8.60</td>
-              <td class="c-detail-unit__prescription-cell">8.60</td>
+              <th class="c-detail-unit__prescription-label-cell" scope="row">処方箋<br>保管有効期限</th>
+              <td class="c-detail-unit__prescription-cell">2030/07/16</td>
+              <td class="c-detail-unit__prescription-cell">2030/07/16</td>
+            </tr>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">ベースカーブ（BC）</th>
+              <td class="c-detail-unit__prescription-cell">8.80</td>
+              <td class="c-detail-unit__prescription-cell">8.80</td>
             </tr>
             <tr class="c-detail-unit__prescription-row">
               <th class="c-detail-unit__prescription-label-cell" scope="row">度数（P）</th>
-              <td class="c-detail-unit__prescription-cell">-2.50</td>
-              <td class="c-detail-unit__prescription-cell">-3.00</td>
+              <td class="c-detail-unit__prescription-cell">-1.00</td>
+              <td class="c-detail-unit__prescription-cell">-1.00</td>
             </tr>
             <tr class="c-detail-unit__prescription-row">
               <th class="c-detail-unit__prescription-label-cell" scope="row">乱視度数（C）</th>
-              <td class="c-detail-unit__prescription-cell">-0.75</td>
-              <td class="c-detail-unit__prescription-cell">-0.75</td>
+              <td class="c-detail-unit__prescription-cell"></td>
+              <td class="c-detail-unit__prescription-cell"></td>
             </tr>
             <tr class="c-detail-unit__prescription-row">
               <th class="c-detail-unit__prescription-label-cell" scope="row">乱視軸（AX）</th>
-              <td class="c-detail-unit__prescription-cell">180</td>
-              <td class="c-detail-unit__prescription-cell">180</td>
+              <td class="c-detail-unit__prescription-cell"></td>
+              <td class="c-detail-unit__prescription-cell"></td>
             </tr>
             <tr class="c-detail-unit__prescription-row">
-              <th class="c-detail-unit__prescription-label-cell" scope="row">DIA</th>
+              <th class="c-detail-unit__prescription-label-cell" scope="row">レンズ直径（DIA）</th>
               <td class="c-detail-unit__prescription-cell">14.2</td>
               <td class="c-detail-unit__prescription-cell">14.2</td>
             </tr>
-            <!-- 加入度数（ADDは必要な場合のみ） -->
-            <!-- <tr class="c-detail-unit__prescription-row">
+            <tr class="c-detail-unit__prescription-row">
               <th class="c-detail-unit__prescription-label-cell" scope="row">加入度数（ADD）</th>
-              <td class="c-detail-unit__prescription-cell">+1.50</td>
-              <td class="c-detail-unit__prescription-cell">+1.50</td>
-            </tr> -->
+              <td class="c-detail-unit__prescription-cell"></td>
+              <td class="c-detail-unit__prescription-cell"></td>
+            </tr>
             <tr class="c-detail-unit__prescription-row">
-              <th class="c-detail-unit__prescription-label-cell" scope="row">有効期限</th>
-              <td class="c-detail-unit__prescription-cell c-detail-unit__prescription-expiry">2026/04/30</td>
-              <td class="c-detail-unit__prescription-cell c-detail-unit__prescription-expiry">2026/04/30</td>
+              <th class="c-detail-unit__prescription-label-cell" scope="row">度数選択<br>（遠用／近用）</th>
+              <td class="c-detail-unit__prescription-cell c-detail-unit__prescription-cell--select">
+                <select class="c-detail-unit__prescription-select" name="diopterRight">
+                  <option value="">選択してください</option>
+                  <option value="1">-2.00</option>
+                  <option value="2">-2.50</option>
+                  <option value="3">-3.00</option>
+                </select>
+              </td>
+              <td class="c-detail-unit__prescription-cell c-detail-unit__prescription-cell--select">
+                <select class="c-detail-unit__prescription-select" name="diopterLeft">
+                  <option value="">選択してください</option>
+                  <option value="1">-2.00</option>
+                  <option value="2">-2.50</option>
+                  <option value="3">-3.00</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">カラー選択</th>
+              <td class="c-detail-unit__prescription-cell c-detail-unit__prescription-cell--select">
+                <select class="c-detail-unit__prescription-select" name="colorRight">
+                  <option value="">-</option>
+                </select>
+              </td>
+              <td class="c-detail-unit__prescription-cell c-detail-unit__prescription-cell--select">
+                <select class="c-detail-unit__prescription-select" name="colorLeft">
+                  <option value="">-</option>
+                </select>
+              </td>
             </tr>
           </tbody>
         </table>

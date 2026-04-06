@@ -5230,11 +5230,21 @@
 .c-detail-heading {
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 1rem 0.75rem;
+  padding: 0;
 }
 @media (min-width: 992px) {
   .c-detail-heading {
-    padding: 1.5rem 2rem 1.5rem calc(var(--side-nav-content-offset) + 2rem);
+    padding: 0 2rem 0 calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-detail-heading__inner {
+  background-color: #f4f8fc;
+  padding: 1rem;
+}
+@media (min-width: 992px) {
+  .c-detail-heading__inner {
+    padding: 1.25rem 1.5rem;
   }
 }
 
@@ -5258,14 +5268,24 @@
   letter-spacing: 0.06rem;
   text-align: center;
   margin: 0;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #d7e7fb;
 }
 @media (max-width: 767px) {
   .c-detail-heading__title {
     font-size: 1.25rem;
     letter-spacing: 0.05rem;
   }
+}
+
+.c-detail-heading__approval {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #00387d;
+  line-height: 1.5;
+  text-align: right;
+  margin: 0.5rem 0 0;
+  padding: 0 0 0.75rem;
+  border-bottom: 1px solid #d7e7fb;
 }
 
 .c-detail-unit {
@@ -5410,34 +5430,6 @@
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
-}
-
-.c-detail-unit__icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  list-style: none;
-  padding: 0;
-}
-
-.c-detail-unit__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.375rem 0.625rem;
-  background-color: #d7e7fb;
-  border-radius: 1.4375rem;
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.009375rem;
-  color: #00387d;
-  white-space: nowrap;
-}
-.c-detail-unit__icon:empty {
-  display: none;
 }
 
 .c-detail-unit__info {
@@ -5631,6 +5623,65 @@
   margin: 0;
 }
 
+.c-detail-unit__free-text {
+  margin: 0 0 1.25rem;
+}
+
+.c-detail-unit__free-text-body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+  margin: 0;
+}
+
+.c-detail-unit__eye-data {
+  margin: 0 0 0.75rem;
+}
+
+.c-detail-unit__eye-data-heading {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #00387d;
+  line-height: 1.5;
+  letter-spacing: 0.04rem;
+  margin: 0 0 0.75rem;
+  padding: 0.6875rem 0.75rem;
+  background-color: #d7e7fb;
+}
+
+.c-detail-unit__eye-data-info {
+  margin: 0 0 0.75rem;
+}
+
+.c-detail-unit__eye-data-row {
+  display: flex;
+  align-items: baseline;
+  padding: 0.375rem 0;
+}
+
+.c-detail-unit__eye-data-label {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #00387d;
+  line-height: 1.5;
+  white-space: nowrap;
+  min-width: 5rem;
+}
+
+.c-detail-unit__eye-data-value {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .c-detail-unit__prescription-table {
   width: 100%;
   border-collapse: collapse;
@@ -5693,6 +5744,47 @@
 .c-detail-unit__prescription-expiry {
   font-size: 0.6875rem;
   color: #7F8C8D;
+}
+
+.c-detail-unit__prescription-cell--select {
+  padding: 0;
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+.c-detail-unit__prescription-select {
+  width: 100%;
+  height: 100%;
+  min-height: 2.875rem;
+  padding: 0 1.75rem 0 0.75rem;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  color: #00387d;
+  background-color: transparent;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  text-align: left;
+}
+.c-detail-unit__prescription-select:focus {
+  outline: 2px solid #00387d;
+  outline-offset: -2px;
+}
+
+.c-detail-unit__prescription-cell--select::after {
+  content: "";
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 0.3125rem solid transparent;
+  border-right: 0.3125rem solid transparent;
+  border-top: 0.3125rem solid #00387d;
+  pointer-events: none;
 }
 
 .c-detail-unit__diopter-select,

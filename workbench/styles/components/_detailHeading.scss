@@ -1,0 +1,36 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// detailHeading
+// 商品詳細ページ見出しエリア（v1準拠）
+// ========================================
+
+.c-detail-heading {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(16) rem(12);
+
+  @include pc {
+    padding: rem(24) rem(32) rem(24) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+.c-detail-heading__title {
+  font-family: $font-family-heading;
+  font-size: rem(24);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
+  text-align: center;
+  margin: 0;
+  padding-bottom: rem(16);
+  border-bottom: 1px solid $bg-banner;
+
+  @include sp {
+    font-size: rem(20);
+    letter-spacing: rem(0.8);
+  }
+}

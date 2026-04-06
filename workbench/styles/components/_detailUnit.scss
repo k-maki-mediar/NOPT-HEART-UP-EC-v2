@@ -4,7 +4,7 @@
 
 // ========================================
 // detailUnit
-// 商品詳細（単品）メイン・処方箋・注文エリア一式
+// 商品詳細（単品）メイン・処方箋・注文エリア一式（v1準拠）
 // ========================================
 
 // ----------------------------------------
@@ -24,7 +24,7 @@
 .c-detail-unit__inner {
   @include pc {
     display: flex;
-    gap: rem(32);
+    gap: rem(40);
     align-items: flex-start;
   }
 }
@@ -51,17 +51,18 @@
 
 // ----------------------------------------
 // 商品画像スライダー
+// v1: .itemMain { border:1px solid #cccccc; }
 // ----------------------------------------
 
 .c-detail-unit__image-area {
   position: relative;
-  margin-bottom: rem(8);
+  margin-bottom: rem(16);
 }
 
 .c-detail-unit__image-slider {
   display: flex;
   overflow: hidden;
-  border-radius: rem(8);
+  border-radius: 0;
   background-color: $color-white;
 }
 
@@ -87,42 +88,56 @@
   max-height: rem(240);
 }
 
-// スライダードット
+// スライダードット（v1: SP用インジケーター表示、PC非表示）
 .c-detail-unit__image-dots {
   display: flex;
   justify-content: center;
-  gap: rem(6);
+  gap: rem(8);
   margin-top: rem(8);
   list-style: none;
   padding: 0;
   margin-left: 0;
   margin-right: 0;
+
+  @include pc {
+    display: none;
+  }
 }
 
 .c-detail-unit__image-dot {
-  width: rem(8);
-  height: rem(8);
+  width: rem(10);
+  height: rem(10);
   border-radius: 50%;
-  background-color: $border-color;
+  background-color: #eeeeee;
   cursor: pointer;
   border: none;
   padding: 0;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #d0d0d0;
+  }
 
   &--active {
     background-color: $primary-color;
   }
 }
 
-// サムネイル一覧
+// サムネイル一覧（v1: 80x80, border-radius: 0.5rem, border: 1px solid transparent）
 .c-detail-unit__thumbnails {
-  display: flex;
-  gap: rem(6);
+  display: none;
+  gap: rem(12);
   flex-wrap: wrap;
-  margin-top: rem(8);
+  justify-content: center;
+  margin-top: rem(16);
   list-style: none;
   padding: 0;
   margin-left: 0;
   margin-right: 0;
+
+  @include pc {
+    display: flex;
+  }
 }
 
 .c-detail-unit__thumbnail-item {
@@ -131,14 +146,19 @@
 
 .c-detail-unit__thumbnail-btn {
   display: block;
-  width: rem(60);
-  height: rem(60);
-  border: 2px solid $border-color;
-  border-radius: rem(4);
+  width: rem(80);
+  height: rem(80);
+  border: 1px solid transparent;
+  border-radius: rem(8);
   overflow: hidden;
   background-color: $color-white;
   cursor: pointer;
-  padding: rem(4);
+  padding: 0;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   &--active {
     border-color: $primary-color;
@@ -154,12 +174,13 @@
 
 // ----------------------------------------
 // 商品アイコン行（1DAY・乱視用等）
+// v1: .product-detail__tag — pill型(23px), bg: #d7e7fb
 // ----------------------------------------
 
 .c-detail-unit__icons {
   display: flex;
   flex-wrap: wrap;
-  gap: rem(6);
+  gap: rem(8);
   margin-bottom: rem(8);
   list-style: none;
   padding: 0;
@@ -169,19 +190,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: rem(4) rem(10);
+  padding: rem(6) rem(10);
   background-color: $bg-banner;
   border-radius: rem(23);
   font-family: $font-family-base;
   font-size: rem(12);
   font-weight: $font-weight-normal;
   line-height: 1.5;
+  letter-spacing: rem(0.15);
   color: $primary-color;
   white-space: nowrap;
+
+  &:empty {
+    display: none;
+  }
 }
 
 // ----------------------------------------
 // 商品基本情報
+// v1: __name 20px/500, __brand 14px/500
 // ----------------------------------------
 
 .c-detail-unit__info {
@@ -191,9 +218,10 @@
 .c-detail-unit__maker {
   font-family: $font-family-base;
   font-size: rem(14);
-  font-weight: $font-weight-normal;
-  line-height: 1.5;
-  color: $text-light;
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  color: $text-color;
   margin: 0 0 rem(4);
 }
 
@@ -202,25 +230,28 @@
   font-size: rem(20);
   font-weight: $font-weight-medium;
   line-height: 1.5;
+  letter-spacing: rem(0.8);
   color: $text-color;
   margin: 0 0 rem(4);
 }
 
 .c-detail-unit__quantity {
   font-family: $font-family-base;
-  font-size: rem(16);
+  font-size: rem(14);
   font-weight: $font-weight-normal;
-  line-height: 1.5;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
   color: $text-color;
   margin: 0 0 rem(4);
 }
 
 .c-detail-unit__approval {
   font-family: $font-family-base;
-  font-size: rem(12);
+  font-size: rem(14);
   font-weight: $font-weight-normal;
-  line-height: 1.5;
-  color: $text-light;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  color: $text-color;
   margin: 0 0 rem(4);
 }
 
@@ -247,47 +278,6 @@
   font-weight: $font-weight-medium;
   color: $text-color;
   margin-bottom: rem(8);
-}
-
-// ----------------------------------------
-// レビュー
-// ----------------------------------------
-
-.c-detail-unit__review {
-  display: flex;
-  align-items: center;
-  gap: rem(4);
-  margin-bottom: rem(8);
-}
-
-.c-detail-unit__review-stars {
-  display: flex;
-  gap: rem(2);
-}
-
-.c-detail-unit__review-star {
-  font-size: rem(16);
-  color: $border-color;
-
-  &--on {
-    color: $accent-color;
-  }
-}
-
-.c-detail-unit__review-count {
-  font-family: $font-family-base;
-  font-size: rem(12);
-  color: $primary-color;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $primary-color;
-    outline-offset: rem(2);
-  }
 }
 
 // ----------------------------------------
@@ -347,6 +337,7 @@
 
 // ----------------------------------------
 // お気に入りボタン
+// v1: border-radius: 4px, ::before/::after shadow effect
 // ----------------------------------------
 
 .c-detail-unit__favorite {
@@ -356,23 +347,59 @@
 .c-detail-unit__favorite-btn {
   display: inline-flex;
   align-items: center;
-  gap: rem(6);
+  justify-content: center;
+  gap: rem(8);
   min-height: rem(44);
-  padding: rem(8) rem(16);
-  border: 1px solid $border-color;
-  border-radius: rem(23);
+  padding: rem(14) rem(16);
+  border: none;
+  border-radius: rem(4);
   background-color: $color-white;
   font-family: $font-family-base;
   font-size: rem(14);
   font-weight: $font-weight-normal;
-  color: $text-color;
+  color: $primary-color;
   text-decoration: none;
   cursor: pointer;
-  transition: border-color $transition-fast;
+  position: relative;
+  overflow: visible;
+  z-index: 0;
+  transition: all 0.2s ease;
+  width: 100%;
 
-  &:hover {
-    border-color: $primary-color;
-    color: $primary-color;
+  // 白い背景レイヤー
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: $color-white;
+    border: 1px solid $primary-color;
+    border-radius: rem(4);
+    z-index: -1;
+    transition: background-color 0.2s ease;
+  }
+
+  // 影レイヤー
+  &::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    bottom: rem(-3);
+    left: 0;
+    right: 0;
+    background-color: $primary-color;
+    border-radius: rem(4);
+    z-index: -2;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover::before,
+  &:hover > * {
+    transform: translateY(1px);
   }
 
   &:focus-visible {
@@ -382,19 +409,21 @@
 
   &--registered {
     color: $text-light;
-    border-color: $border-color;
     pointer-events: none;
 
-    &:hover {
-      color: $text-light;
+    &::before {
       border-color: $border-color;
+    }
+
+    &::after {
+      background-color: $border-color;
     }
   }
 }
 
 .c-detail-unit__favorite-icon {
-  width: rem(18);
-  height: rem(18);
+  width: rem(20);
+  height: rem(20);
   flex-shrink: 0;
 }
 
@@ -418,12 +447,11 @@
 
 // ----------------------------------------
 // 処方箋情報エリア（コンタクトレンズのみ）
+// v1: border: 1px solid #d7e7fb, thead bg: #00387d
 // ----------------------------------------
 
 .c-detail-unit__prescription {
   margin-bottom: rem(16);
-  border: 1px solid $border-color;
-  border-radius: rem(8);
   overflow: hidden;
 }
 
@@ -455,12 +483,12 @@
   margin: 0;
 }
 
-// 処方箋テーブル
+// 処方箋テーブル（v1準拠: border: 1px solid #d7e7fb）
 .c-detail-unit__prescription-table {
   width: 100%;
   border-collapse: collapse;
   font-family: $font-family-base;
-  font-size: rem(13);
+  font-size: rem(14);
 }
 
 .c-detail-unit__prescription-thead {
@@ -468,27 +496,44 @@
 }
 
 .c-detail-unit__prescription-th {
-  padding: rem(8) rem(12);
-  font-weight: $font-weight-medium;
+  padding: 0 rem(12);
+  height: rem(32);
+  font-weight: $font-weight-normal;
+  font-size: rem(14);
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
   color: $color-white;
   text-align: center;
   white-space: nowrap;
+  border: 1px solid $bg-banner;
+  vertical-align: middle;
 }
 
 .c-detail-unit__prescription-label-cell {
-  padding: rem(8) rem(12);
-  font-weight: $font-weight-medium;
+  padding: 0 rem(12);
+  height: rem(46);
+  font-weight: $font-weight-normal;
+  font-size: rem(14);
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
   color: $text-color;
   background-color: $bg-light;
+  text-align: right;
   white-space: nowrap;
-  border-bottom: 1px solid $border-color;
+  border: 1px solid $bg-banner;
+  vertical-align: middle;
 }
 
 .c-detail-unit__prescription-cell {
-  padding: rem(8) rem(12);
+  padding: 0 rem(12);
+  height: rem(46);
+  font-size: rem(14);
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
   color: $text-color;
-  text-align: center;
-  border-bottom: 1px solid $border-color;
+  text-align: right;
+  border: 1px solid $bg-banner;
+  vertical-align: middle;
 }
 
 .c-detail-unit__prescription-row--disabled {
@@ -556,7 +601,7 @@
   width: 100%;
   min-height: rem(44);
   padding: rem(8) rem(32) rem(8) rem(10);
-  border: 1px solid $border-color;
+  border: 1px solid #cccccc;
   border-radius: rem(4);
   background-color: $color-white;
   font-family: $font-family-base;
@@ -573,34 +618,43 @@
 
 // ----------------------------------------
 // 通常注文エリア / らくとく定期便注文エリア 共通
+// v1: border: 1px solid #00387d, border-radius: 20px, box-shadow: 0 3px 0 0 #00387d
 // ----------------------------------------
 
 .c-detail-unit__order-normal,
 .c-detail-unit__order-rakutoku {
-  border: 1px solid $border-color;
-  border-radius: rem(8);
+  position: relative;
+  z-index: 0;
+  border: 1px solid $primary-color;
+  border-radius: rem(20);
   overflow: hidden;
   margin-bottom: rem(16);
+  box-shadow: 0 3px 0 0 $primary-color;
 }
 
 .c-detail-unit__order-header {
   display: flex;
   align-items: center;
-  padding: rem(10) rem(16);
-  background-color: $primary-color;
+  padding: rem(12) rem(16);
 }
 
 .c-detail-unit__order-header-text {
   font-family: $font-family-heading;
-  font-size: rem(15);
+  font-size: rem(16);
   font-weight: $font-weight-medium;
-  color: $color-white;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  color: $primary-color;
   margin: 0;
 }
 
 .c-detail-unit__order-body {
   padding: rem(16);
   background-color: $color-white;
+
+  @include pc {
+    padding: rem(20) rem(24);
+  }
 }
 
 // 近日発売・販売期間終了ラベル
@@ -659,20 +713,21 @@
 .c-detail-unit__quantity-normal {
   display: flex;
   align-items: center;
-  gap: rem(8);
+  gap: rem(12);
   margin-bottom: rem(12);
 }
 
 .c-detail-unit__quantity-label {
   font-family: $font-family-base;
-  font-size: rem(13);
-  font-weight: $font-weight-medium;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
   color: $text-color;
   flex-shrink: 0;
 }
 
 // ----------------------------------------
 // 価格エリア
+// v1: 価格 20px(SP)/28px(PC), color: #cc4843
 // ----------------------------------------
 
 .c-detail-unit__price-area {
@@ -716,16 +771,28 @@
 
 .c-detail-unit__price-value {
   font-family: $font-family-base;
-  font-size: rem(24);
-  font-weight: $font-weight-bold;
+  font-size: rem(20);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.8);
   color: $price-color;
+
+  @include pc {
+    font-size: rem(28);
+  }
 }
 
 .c-detail-unit__price-unit {
   font-family: $font-family-base;
-  font-size: rem(14);
+  font-size: rem(20);
   font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.8);
   color: $price-color;
+
+  @include pc {
+    font-size: rem(28);
+  }
 }
 
 .c-detail-unit__price-tax {
@@ -763,48 +830,62 @@
 
 .c-detail-unit__login-msg {
   font-family: $font-family-base;
-  font-size: rem(14);
+  font-size: rem(20);
   font-weight: $font-weight-medium;
-  color: $text-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.8);
+  color: $price-color;
+  text-align: right;
   margin: rem(8) 0;
 }
 
 .c-detail-unit__no-prescription-msg {
   font-family: $font-family-base;
-  font-size: rem(13);
-  color: $text-color;
-  background-color: $bg-light;
-  border: 1px solid $border-color;
-  border-radius: rem(4);
-  padding: rem(10) rem(12);
-  margin: rem(8) 0;
+  font-size: rem(14);
+  line-height: 1.5;
+  color: $price-color;
+  margin: rem(16) 0;
+  text-align: left;
 }
 
 // ----------------------------------------
 // ボタン類
+// v1: border-radius: 4px, font-weight: 500, transition: background 0.2s ease
 // ----------------------------------------
 
 .c-detail-unit__cart-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: rem(8);
   width: 100%;
   min-height: rem(52);
-  padding: rem(12) rem(24);
+  padding: rem(16) rem(32);
   border: none;
-  border-radius: rem(26);
+  border-radius: rem(4);
   background-color: $primary-color;
   font-family: $font-family-heading;
   font-size: rem(16);
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
   color: $color-white;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  @include button-press-effect;
+  transition: background 0.2s ease;
 
-  &:active {
+  &:hover:not(:disabled) {
+    background-color: $primary-color-hover;
+  }
+
+  &:active:not(:disabled) {
     background-color: $primary-color-active;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
   }
 
   &:focus-visible {
@@ -817,19 +898,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: rem(8);
   width: 100%;
   min-height: rem(52);
-  padding: rem(12) rem(24);
+  padding: rem(16) rem(32);
   border: none;
-  border-radius: rem(26);
+  border-radius: rem(4);
   background-color: $secondary-color;
   font-family: $font-family-heading;
   font-size: rem(16);
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
   color: $color-white;
   cursor: pointer;
   text-align: center;
-  @include button-press-effect;
+  transition: background 0.2s ease;
 
   &:focus-visible {
     outline: 2px solid $color-white;
@@ -843,14 +927,14 @@
   justify-content: center;
   width: 100%;
   min-height: rem(52);
-  padding: rem(12) rem(24);
+  padding: rem(16) rem(32);
   border: 1px solid $border-color;
-  border-radius: rem(26);
-  background-color: $bg-gray;
+  border-radius: rem(4);
+  background-color: #cccccc;
   font-family: $font-family-heading;
   font-size: rem(16);
   font-weight: $font-weight-bold;
-  color: $text-light;
+  color: $color-white;
   cursor: not-allowed;
   pointer-events: none;
   text-align: center;
@@ -864,7 +948,7 @@
   min-height: rem(44);
   padding: rem(10) rem(24);
   border: 1px solid $primary-color;
-  border-radius: rem(26);
+  border-radius: rem(4);
   background-color: $color-white;
   font-family: $font-family-heading;
   font-size: rem(14);
@@ -872,7 +956,11 @@
   color: $primary-color;
   cursor: pointer;
   text-align: center;
-  @include button-press-effect;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background-color: $bg-light;
+  }
 
   &:focus-visible {
     outline: 2px solid $primary-color;
@@ -962,7 +1050,7 @@
   min-height: rem(44);
   padding: rem(10) rem(24);
   border: 1px solid $border-color;
-  border-radius: rem(23);
+  border-radius: rem(4);
   background-color: $color-white;
   font-family: $font-family-base;
   font-size: rem(14);
@@ -1007,13 +1095,17 @@
 
 // ----------------------------------------
 // らくとく定期便 チェックボックス（左右）
+// v1: bg: #f4f8fc, border-radius: 6px
 // ----------------------------------------
 
 .c-detail-unit__rakutoku-check {
   display: flex;
-  gap: rem(16);
+  gap: rem(12);
   margin-bottom: rem(12);
   flex-wrap: wrap;
+  background-color: $bg-light;
+  padding: rem(12);
+  border-radius: rem(6);
 }
 
 .c-detail-unit__rakutoku-check-item {
@@ -1021,6 +1113,8 @@
   align-items: center;
   gap: rem(8);
   min-height: rem(44);
+  flex: 1;
+  min-width: rem(120);
 }
 
 .c-detail-unit__rakutoku-check-label {
@@ -1029,14 +1123,16 @@
   gap: rem(8);
   font-family: $font-family-base;
   font-size: rem(14);
-  color: $text-color;
+  font-weight: $font-weight-medium;
+  color: $primary-color;
   cursor: pointer;
   min-height: rem(44);
+  user-select: none;
 }
 
 .c-detail-unit__rakutoku-check-input {
-  width: rem(20);
-  height: rem(20);
+  width: rem(18);
+  height: rem(18);
   cursor: pointer;
   flex-shrink: 0;
   accent-color: $primary-color;
@@ -1044,24 +1140,28 @@
 
 // ----------------------------------------
 // お届けサイクルラジオボタン
+// v1: bg: #d7e7fb, border-radius: 4px
 // ----------------------------------------
 
 .c-detail-unit__cycle-radio {
   margin-bottom: rem(12);
+  background-color: $bg-banner;
+  padding: rem(12);
+  border-radius: rem(4);
 }
 
 .c-detail-unit__cycle-radio-title {
   font-family: $font-family-base;
-  font-size: rem(13);
-  font-weight: $font-weight-medium;
-  color: $text-color;
-  margin: 0 0 rem(6);
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $primary-color;
+  margin: 0 0 rem(8);
 }
 
 .c-detail-unit__cycle-radio-list {
   display: flex;
   flex-direction: column;
-  gap: rem(6);
+  gap: rem(8);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1072,18 +1172,11 @@
   align-items: center;
   gap: rem(8);
   min-height: rem(44);
-  padding: rem(8) rem(12);
-  border: 1px solid $border-color;
-  border-radius: rem(4);
   cursor: pointer;
   font-family: $font-family-base;
   font-size: rem(14);
-  color: $text-color;
-  transition: border-color $transition-fast;
-
-  &:hover {
-    border-color: $primary-color;
-  }
+  color: $primary-color;
+  user-select: none;
 }
 
 .c-detail-unit__cycle-radio-input {

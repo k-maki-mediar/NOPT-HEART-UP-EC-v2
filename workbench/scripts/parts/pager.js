@@ -17,8 +17,8 @@
 (function () {
   'use strict';
 
-  var TOTAL_SLOTS = 7;
-  var pagers = document.querySelectorAll('.js-pager');
+  const TOTAL_SLOTS = 7;
+  const pagers = document.querySelectorAll('.js-pager');
   if (!pagers.length) return;
 
   /**
@@ -26,12 +26,11 @@
    * 数字はページ番号、文字列'...'は省略記号
    */
   function getPageSlots(current, total) {
-    var i;
-    var slots = [];
+    const slots = [];
 
     // 総ページ数がスロット数以下なら全表示
     if (total <= TOTAL_SLOTS) {
-      for (i = 1; i <= total; i++) {
+      for (let i = 1; i <= total; i++) {
         slots.push(i);
       }
       return slots;
@@ -55,7 +54,7 @@
    * li要素を生成するヘルパー
    */
   function createItem(className, inner) {
-    var li = document.createElement('li');
+    const li = document.createElement('li');
     li.className = 'c-pager__item' + (className ? ' ' + className : '');
     li.appendChild(inner);
     return li;
@@ -65,36 +64,36 @@
    * ページャーのHTMLを動的生成
    */
   function renderPager(pager, current, total) {
-    var list = pager.querySelector('.c-pager__list');
+    const list = pager.querySelector('.c-pager__list');
     if (!list) return;
 
     list.innerHTML = '';
-    var slots = getPageSlots(current, total);
+    const slots = getPageSlots(current, total);
 
     // 前へボタン
-    var prevLink = document.createElement('a');
+    const prevLink = document.createElement('a');
     prevLink.href = '#';
     prevLink.className = 'c-pager__link c-pager__link--prev';
     prevLink.setAttribute('aria-label', '前へ');
-    var prevItem = createItem('c-pager__item--prev', prevLink);
+    const prevItem = createItem('c-pager__item--prev', prevLink);
     if (current <= 1) prevItem.classList.add('is-hidden');
     list.appendChild(prevItem);
 
     // ページ番号・省略記号
-    for (var i = 0; i < slots.length; i++) {
+    for (let i = 0; i < slots.length; i++) {
       if (slots[i] === '...') {
-        var ellipsis = document.createElement('span');
+        const ellipsis = document.createElement('span');
         ellipsis.className = 'c-pager__ellipsis';
         ellipsis.textContent = '\u2026';
         list.appendChild(createItem('', ellipsis));
       } else if (slots[i] === current) {
-        var span = document.createElement('span');
+        const span = document.createElement('span');
         span.className = 'c-pager__current';
         span.setAttribute('aria-current', 'page');
         span.textContent = slots[i];
         list.appendChild(createItem('c-pager__item--current', span));
       } else {
-        var a = document.createElement('a');
+        const a = document.createElement('a');
         a.href = '#';
         a.className = 'c-pager__link';
         a.textContent = slots[i];
@@ -103,11 +102,11 @@
     }
 
     // 次へボタン
-    var nextLink = document.createElement('a');
+    const nextLink = document.createElement('a');
     nextLink.href = '#';
     nextLink.className = 'c-pager__link c-pager__link--next';
     nextLink.setAttribute('aria-label', '次へ');
-    var nextItem = createItem('c-pager__item--next', nextLink);
+    const nextItem = createItem('c-pager__item--next', nextLink);
     if (current >= total) nextItem.classList.add('is-hidden');
     list.appendChild(nextItem);
   }
@@ -116,8 +115,8 @@
    * 全ページャーを更新
    */
   function updateAll(newPage) {
-    for (var i = 0; i < pagers.length; i++) {
-      var total = parseInt(pagers[i].getAttribute('data-total-pages'), 10) || 1;
+    for (let i = 0; i < pagers.length; i++) {
+      const total = parseInt(pagers[i].getAttribute('data-total-pages'), 10) || 1;
       if (newPage < 1) newPage = 1;
       if (newPage > total) newPage = total;
       pagers[i].setAttribute('data-current-page', newPage);
@@ -126,24 +125,24 @@
   }
 
   // 初期描画
-  for (var i = 0; i < pagers.length; i++) {
-    var total = parseInt(pagers[i].getAttribute('data-total-pages'), 10) || 1;
-    var current = parseInt(pagers[i].getAttribute('data-current-page'), 10) || 1;
+  for (let i = 0; i < pagers.length; i++) {
+    const total = parseInt(pagers[i].getAttribute('data-total-pages'), 10) || 1;
+    const current = parseInt(pagers[i].getAttribute('data-current-page'), 10) || 1;
     renderPager(pagers[i], current, total);
   }
 
   // クリックイベント（イベント委任）
   document.addEventListener('click', function (e) {
-    var target = e.target.closest('.c-pager__link');
+    const target = e.target.closest('.c-pager__link');
     if (!target) return;
 
-    var pager = target.closest('.js-pager');
+    const pager = target.closest('.js-pager');
     if (!pager) return;
 
     e.preventDefault();
 
-    var current = parseInt(pager.getAttribute('data-current-page'), 10) || 1;
-    var newPage;
+    const current = parseInt(pager.getAttribute('data-current-page'), 10) || 1;
+    let newPage;
 
     if (target.classList.contains('c-pager__link--prev')) {
       newPage = current - 1;

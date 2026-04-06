@@ -642,12 +642,16 @@
 // 注文ブロックのラッパー（タブ切替デザイン）
 .c-detail-unit__order-wrapper {
   margin-top: rem(16);
+
+  @include pc {
+    margin-left: rem(320);
+  }
 }
 
 // タブボタン群（v1 LINE UP風）
 .c-detail-unit__order-tabs {
   display: flex;
-  gap: rem(2);
+  gap: rem(8);
 }
 
 .c-detail-unit__order-tab {
@@ -1133,7 +1137,7 @@
   gap: rem(12);
   margin-bottom: rem(12);
   flex-wrap: wrap;
-  background-color: $bg-light;
+  background-color: $bg-banner;
   padding: rem(12);
   border-radius: rem(6);
 }

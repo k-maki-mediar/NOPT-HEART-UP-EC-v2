@@ -4,168 +4,194 @@
 @@include('../../includes/head.html', {"title": "商品詳細（コンタクト・ログイン後・処方箋なし）"})
 </head>
 <body class="c-body">
-  <div class="c-page-wrapper">
-    <!-- ヘッダー（ログイン済み） -->
-    @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
-    <!-- サイドナビ（ログイン済み） -->
-    @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
-    <main class="c-main">
-      <div class="wsparts-include">
-        @@include('../../includes/parts/general/messageArea.html')
-      </div>
-      <div class="wsparts-include">
-        <nav class="c-topic-path" aria-label="パンくずリスト">
-          <ol class="c-topic-path__list">
-            <li class="c-topic-path__item">
-              <a href="#" class="c-topic-path__link">トップページ</a>
-            </li>
-            <li class="c-topic-path__item">
-              <a href="#" class="c-topic-path__link">コンタクトレンズ</a>
-            </li>
-            <li class="c-topic-path__item c-topic-path__item--current">
-              <span class="c-topic-path__current">ロート1DAYフレッシュビューエアリッチ 乱視用</span>
-            </li>
-          </ol>
-        </nav>
-      </div>
-      <div class="wsparts-include">
-        <div class="c-detail-heading">
-          <div class="c-detail-heading__inner">
-            <p class="c-detail-heading__maker">ロート</p>
-            <div class="c-detail-heading__title">フレッシュビューエアリッチ乱視用</div>
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="wsparts-include">
+              <!-- ヘッダー（ログイン済み） -->
+              @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
+            </div>
           </div>
-          <p class="c-detail-heading__approval">医療機器承認番号: 22900BZX00123456</p>
-        </div>
-      </div>
-      <!-- ================================================================
-        バリエーション: コンタクト・ログイン後・処方箋なし
-        - 処方箋情報エリア: 非表示（コメントアウト）
-        - 通常注文エリア: 表示（処方箋なしメッセージ表示・購入不可）
-        - らくとく定期便エリア: 非表示
-        - 「価格はログインしてご覧ください」メッセージ表示
-          ※ 画面要素シートD34準拠: ログイン済みでも処方箋なしの場合は価格非表示
-        ================================================================ -->
-      <div class="wsparts-include">
-        <!-- 処方箋なしバリエーション用インラインHTML -->
-        <div class="c-detail-unit">
-          <div class="c-detail-unit__inner">
-
-            <!-- 左カラム：商品画像エリア -->
-            <div class="c-detail-unit__image-col">
-              <div class="c-detail-unit__image-area">
-                <div class="c-detail-unit__image-slider js-detail-image-slider">
-                  <!-- お気に入りボタン -->
-                  <a href="#" class="c-detail-unit__favorite-btn js-favorite-btn" aria-label="お気に入りに追加">
-                    <svg class="c-detail-unit__favorite-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                  </a>
-                  <div class="c-detail-unit__image-slide">
-                    <a href="#" class="c-detail-unit__image-link">
-                      <img
-                        class="c-detail-unit__image"
-                        src="../../../files/commonfiles/images/product-sample-02.png"
-                        onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
-                        alt="ロート1DAYフレッシュビューエアリッチ 乱視用 メイン画像"
-                        width="280"
-                        height="240"
-                      >
-                    </a>
+          <div>
+            <div class="wsparts-include">
+              <!-- サイドナビ（ログイン済み） -->
+              @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <div class="c-main">
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/messageArea.html')
+                </div>
+                <div class="wsparts-include">
+                  <nav class="c-topic-path" aria-label="パンくずリスト">
+                    <ol class="c-topic-path__list">
+                      <li class="c-topic-path__item">
+                        <a href="#" class="c-topic-path__link">トップページ</a>
+                      </li>
+                      <li class="c-topic-path__item">
+                        <a href="#" class="c-topic-path__link">コンタクトレンズ</a>
+                      </li>
+                      <li class="c-topic-path__item c-topic-path__item--current">
+                        <span class="c-topic-path__current">ロート1DAYフレッシュビューエアリッチ 乱視用</span>
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+                <div class="wsparts-include">
+                  <div class="c-detail-heading">
+                    <div class="c-detail-heading__inner">
+                      <p class="c-detail-heading__maker">ロート</p>
+                      <div class="c-detail-heading__title">フレッシュビューエアリッチ乱視用</div>
+                    </div>
+                    <p class="c-detail-heading__approval">医療機器承認番号: 22900BZX00123456</p>
                   </div>
                 </div>
-                <ul class="c-detail-unit__image-dots js-detail-image-dots" aria-label="画像切替">
-                  <li class="c-detail-unit__image-dots-item">
-                    <button class="c-detail-unit__image-dot c-detail-unit__image-dot--active js-detail-image-dot" aria-label="画像1を表示" data-index="0"></button>
-                  </li>
-                </ul>
-                <ul class="c-detail-unit__thumbnails js-detail-thumbnails" aria-label="サムネイル">
-                  <li class="c-detail-unit__thumbnail-item">
-                    <button class="c-detail-unit__thumbnail-btn c-detail-unit__thumbnail-btn--active js-detail-thumbnail-btn" aria-label="画像1" data-index="0">
-                      <img class="c-detail-unit__thumbnail-img" src="../../../files/commonfiles/images/product-sample-02.png" onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';" alt="サムネイル1" width="60" height="60">
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
+                <!-- ================================================================
+                  バリエーション: コンタクト・ログイン後・処方箋なし
+                  - 処方箋情報エリア: 非表示（コメントアウト）
+                  - 通常注文エリア: 表示（処方箋なしメッセージ表示・購入不可）
+                  - らくとく定期便エリア: 非表示
+                  - 「価格はログインしてご覧ください」メッセージ表示
+                    ※ 画面要素シートD34準拠: ログイン済みでも処方箋なしの場合は価格非表示
+                  ================================================================ -->
+                <div class="wsparts-include">
+                  <!-- 処方箋なしバリエーション用インラインHTML -->
+                  <div class="c-detail-unit">
+                    <div class="c-detail-unit__inner">
 
-            <!-- 右カラム -->
-            <div class="c-detail-unit__info-col">
-              <!-- 商品説明フリーテキスト -->
-              <div class="c-detail-unit__free-text">
-                <p class="c-detail-unit__free-text-body">瞳にやさしいつけ心地の1日使い捨てコンタクトレンズです。独自のモイストベール技術により、うるおいが長時間持続します。UVカット機能付きで、紫外線から瞳を守ります。</p>
-              </div>
+                      <!-- 左カラム：商品画像エリア -->
+                      <div class="c-detail-unit__image-col">
+                        <div class="c-detail-unit__image-area">
+                          <div class="c-detail-unit__image-slider js-detail-image-slider">
+                            <!-- お気に入りボタン -->
+                            <a href="#" class="c-detail-unit__favorite-btn js-favorite-btn" aria-label="お気に入りに追加">
+                              <svg class="c-detail-unit__favorite-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                              </svg>
+                            </a>
+                            <div class="c-detail-unit__image-slide">
+                              <a href="#" class="c-detail-unit__image-link">
+                                <img
+                                  class="c-detail-unit__image"
+                                  src="../../../files/commonfiles/images/product-sample-02.png"
+                                  onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+                                  alt="ロート1DAYフレッシュビューエアリッチ 乱視用 メイン画像"
+                                  width="280"
+                                  height="240"
+                                >
+                              </a>
+                            </div>
+                          </div>
+                          <ul class="c-detail-unit__image-dots js-detail-image-dots" aria-label="画像切替">
+                            <li class="c-detail-unit__image-dots-item">
+                              <button class="c-detail-unit__image-dot c-detail-unit__image-dot--active js-detail-image-dot" aria-label="画像1を表示" data-index="0"></button>
+                            </li>
+                          </ul>
+                          <ul class="c-detail-unit__thumbnails js-detail-thumbnails" aria-label="サムネイル">
+                            <li class="c-detail-unit__thumbnail-item">
+                              <button class="c-detail-unit__thumbnail-btn c-detail-unit__thumbnail-btn--active js-detail-thumbnail-btn" aria-label="画像1" data-index="0">
+                                <img class="c-detail-unit__thumbnail-img" src="../../../files/commonfiles/images/product-sample-02.png" onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';" alt="サムネイル1" width="60" height="60">
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
 
-              <!-- 処方箋情報エリア: 非表示（処方箋なし） -->
+                      <!-- 右カラム -->
+                      <div class="c-detail-unit__info-col">
+                        <!-- 商品説明フリーテキスト -->
+                        <div class="c-detail-unit__free-text">
+                          <p class="c-detail-unit__free-text-body">瞳にやさしいつけ心地の1日使い捨てコンタクトレンズです。独自のモイストベール技術により、うるおいが長時間持続します。UVカット機能付きで、紫外線から瞳を守ります。</p>
+                        </div>
 
-              <!-- 注文ブロック（タブ切替） -->
-              <div class="c-detail-unit__order-wrapper">
-                <div class="c-detail-unit__order-tabs js-detail-order-tabs" role="tablist">
-                  <button class="c-detail-unit__order-tab is-active js-detail-order-tab" role="tab" aria-selected="true" data-target="normal" type="button">スポット便の注文</button>
-                  <button class="c-detail-unit__order-tab js-detail-order-tab" role="tab" aria-selected="false" data-target="rakutoku" type="button">らくとく定期便の注文</button>
-                </div>
-                <div class="c-detail-unit__order-panels">
-                  <!-- スポット便注文エリア（処方箋なし・価格非表示） -->
-                  <div class="c-detail-unit__order-normal c-detail-unit__order-panel is-active js-detail-order-panel" data-panel="normal" role="tabpanel">
-                    <div class="c-detail-unit__order-body">
-                      <div class="c-detail-unit__price-area">
-                        <p class="c-detail-unit__login-msg">価格はログインしてご覧ください</p>
-                        <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p>
+                        <!-- 処方箋情報エリア: 非表示（処方箋なし） -->
+
+                        <!-- 注文ブロック（タブ切替） -->
+                        <div class="c-detail-unit__order-wrapper">
+                          <div class="c-detail-unit__order-tabs js-detail-order-tabs" role="tablist">
+                            <button class="c-detail-unit__order-tab is-active js-detail-order-tab" role="tab" aria-selected="true" data-target="normal" type="button">スポット便の注文</button>
+                            <button class="c-detail-unit__order-tab js-detail-order-tab" role="tab" aria-selected="false" data-target="rakutoku" type="button">らくとく定期便の注文</button>
+                          </div>
+                          <div class="c-detail-unit__order-panels">
+                            <!-- スポット便注文エリア（処方箋なし・価格非表示） -->
+                            <div class="c-detail-unit__order-normal c-detail-unit__order-panel is-active js-detail-order-panel" data-panel="normal" role="tabpanel">
+                              <div class="c-detail-unit__order-body">
+                                <div class="c-detail-unit__price-area">
+                                  <p class="c-detail-unit__login-msg">価格はログインしてご覧ください</p>
+                                  <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- らくとく定期便エリア（処方箋なし） -->
+                            <div class="c-detail-unit__order-rakutoku c-detail-unit__order-panel js-detail-order-panel" data-panel="rakutoku" role="tabpanel">
+                              <div class="c-detail-unit__order-body">
+                                <div class="c-detail-unit__price-area">
+                                  <p class="c-detail-unit__login-msg">価格はログインしてご覧ください</p>
+                                  <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p>
+                                </div>
+                                <a href="#" class="c-detail-unit__rakutoku-info-link" target="_blank" rel="noopener noreferrer">らくとく定期便とは</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        @@include('../../includes/parts/general/detailDescriptionContent.html')
+
                       </div>
                     </div>
                   </div>
-                  <!-- らくとく定期便エリア（処方箋なし） -->
-                  <div class="c-detail-unit__order-rakutoku c-detail-unit__order-panel js-detail-order-panel" data-panel="rakutoku" role="tabpanel">
-                    <div class="c-detail-unit__order-body">
-                      <div class="c-detail-unit__price-area">
-                        <p class="c-detail-unit__login-msg">価格はログインしてご覧ください</p>
-                        <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p>
+
+                  <!-- カート投入後モーダル（このバリエーションでは使用しないが構造上含める） -->
+                  <div class="c-cart-modal js-cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+                    <div class="c-cart-modal__overlay js-cart-modal-overlay"></div>
+                    <div class="c-cart-modal__dialog">
+                      <div class="c-cart-modal__body">
+                        <div class="c-cart-modal__icon" aria-hidden="true">
+                          <svg class="c-cart-modal__icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <path d="M16 10a4 4 0 0 1-8 0"/>
+                          </svg>
+                        </div>
+                        <h2 class="c-cart-modal__title" id="cart-modal-title">カートに入れました</h2>
+                        <p class="c-cart-modal__message">引き続きショッピングをお楽しみください</p>
                       </div>
-                      <a href="#" class="c-detail-unit__rakutoku-info-link" target="_blank" rel="noopener noreferrer">らくとく定期便とは</a>
+                      <div class="c-cart-modal__actions">
+                        <button class="c-cart-modal__btn js-cart-modal-continue" type="button">買い物を続ける</button>
+                        <a href="#" class="c-cart-modal__btn c-cart-modal__btn--primary">カートを見る</a>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/detailDescriptionPayment.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/recommendA.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/browsingHistory.html')
+                </div>
               </div>
-
-              @@include('../../includes/parts/general/detailDescriptionContent.html')
-
             </div>
           </div>
-        </div>
-
-        <!-- カート投入後モーダル（このバリエーションでは使用しないが構造上含める） -->
-        <div class="c-cart-modal js-cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
-          <div class="c-cart-modal__overlay js-cart-modal-overlay"></div>
-          <div class="c-cart-modal__dialog">
-            <div class="c-cart-modal__body">
-              <div class="c-cart-modal__icon" aria-hidden="true">
-                <svg class="c-cart-modal__icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                  <line x1="3" y1="6" x2="21" y2="6"/>
-                  <path d="M16 10a4 4 0 0 1-8 0"/>
-                </svg>
-              </div>
-              <h2 class="c-cart-modal__title" id="cart-modal-title">カートに入れました</h2>
-              <p class="c-cart-modal__message">引き続きショッピングをお楽しみください</p>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooter.html')
             </div>
-            <div class="c-cart-modal__actions">
-              <button class="c-cart-modal__btn js-cart-modal-continue" type="button">買い物を続ける</button>
-              <a href="#" class="c-cart-modal__btn c-cart-modal__btn--primary">カートを見る</a>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooterMenu.html')
             </div>
           </div>
         </div>
       </div>
-      <div class="wsparts-include">
-        @@include('../../includes/parts/general/detailDescriptionPayment.html')
-      </div>
-      <div class="wsparts-include">
-        @@include('../../includes/parts/general/recommendA.html')
-      </div>
-      <div class="wsparts-include">
-        @@include('../../includes/parts/general/browsingHistory.html')
-      </div>
-    </main>
-    @@include('../../includes/parts/general/pageFooter.html')
-    @@include('../../includes/parts/general/pageFooterMenu.html')
-  </div>
+    </div>
+  </main>
 </body>
 </html>

@@ -4,70 +4,96 @@
 @@include('../../includes/head.html', {"title": "商品詳細（コンタクト・ログイン後・処方箋あり）"})
 </head>
 <body class="c-body">
-  <div class="c-page-wrapper">
-    <!-- ヘッダー（ログイン済み） -->
-    @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
-    <!-- サイドナビ（ログイン済み） -->
-    @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
-    <main class="c-main">
-      <div class="wsparts-include">
-        @@include('../../includes/parts/general/messageArea.html')
-      </div>
-      <div class="wsparts-include">
-        <!-- パンくず: TOP > 商品一覧 > 商品詳細 -->
-        <nav class="c-topic-path" aria-label="パンくずリスト">
-          <ol class="c-topic-path__list">
-            <li class="c-topic-path__item">
-              <a href="#" class="c-topic-path__link">トップページ</a>
-            </li>
-            <li class="c-topic-path__item">
-              <a href="#" class="c-topic-path__link">コンタクトレンズ</a>
-            </li>
-            <li class="c-topic-path__item c-topic-path__item--current">
-              <span class="c-topic-path__current">ロート1DAYフレッシュビューエアリッチ 乱視用</span>
-            </li>
-          </ol>
-        </nav>
-      </div>
-      <!-- らくとく定期バナー（SP表示用） -->
-      <div class="wsparts-include">
-        <div class="c-detail-unit__rakutoku-banner c-detail-unit__rakutoku-banner--sp">
-          <a href="#" class="c-detail-unit__rakutoku-banner-link" target="_blank" rel="noopener noreferrer">
-            <img class="c-detail-unit__rakutoku-banner-img" src="../../../files/commonfiles/images/pickup_raku_care.jpg" alt="らくとく定期便のご案内" width="580" height="155">
-          </a>
-        </div>
-      </div>
-      <div class="wsparts-include">
-        <div class="c-detail-heading">
-          <div class="c-detail-heading__inner">
-            <p class="c-detail-heading__maker">ロート</p>
-            <div class="c-detail-heading__title">フレッシュビューエアリッチ乱視用</div>
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="wsparts-include">
+              <!-- ヘッダー（ログイン済み） -->
+              @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
+            </div>
           </div>
-          <p class="c-detail-heading__approval">医療機器承認番号: 22900BZX00123456</p>
+          <div>
+            <div class="wsparts-include">
+              <!-- サイドナビ（ログイン済み） -->
+              @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <div class="c-main">
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/messageArea.html')
+                </div>
+                <div class="wsparts-include">
+                  <!-- パンくず: TOP > 商品一覧 > 商品詳細 -->
+                  <nav class="c-topic-path" aria-label="パンくずリスト">
+                    <ol class="c-topic-path__list">
+                      <li class="c-topic-path__item">
+                        <a href="#" class="c-topic-path__link">トップページ</a>
+                      </li>
+                      <li class="c-topic-path__item">
+                        <a href="#" class="c-topic-path__link">コンタクトレンズ</a>
+                      </li>
+                      <li class="c-topic-path__item c-topic-path__item--current">
+                        <span class="c-topic-path__current">ロート1DAYフレッシュビューエアリッチ 乱視用</span>
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+                <!-- らくとく定期バナー（SP表示用） -->
+                <div class="wsparts-include">
+                  <div class="c-detail-unit__rakutoku-banner c-detail-unit__rakutoku-banner--sp">
+                    <a href="#" class="c-detail-unit__rakutoku-banner-link" target="_blank" rel="noopener noreferrer">
+                      <img class="c-detail-unit__rakutoku-banner-img" src="../../../files/commonfiles/images/pickup_raku_care.jpg" alt="らくとく定期便のご案内" width="580" height="155">
+                    </a>
+                  </div>
+                </div>
+                <div class="wsparts-include">
+                  <div class="c-detail-heading">
+                    <div class="c-detail-heading__inner">
+                      <p class="c-detail-heading__maker">ロート</p>
+                      <div class="c-detail-heading__title">フレッシュビューエアリッチ乱視用</div>
+                    </div>
+                    <p class="c-detail-heading__approval">医療機器承認番号: 22900BZX00123456</p>
+                  </div>
+                </div>
+                <!-- ================================================================
+                  バリエーション: コンタクト・ログイン後・処方箋あり・定期あり
+                  - 処方箋情報エリア: 表示
+                  - 通常注文エリア: 表示（左右数量プルダウン）
+                  - らくとく定期便エリア: 表示
+                  - らくとく定期バナー: 表示
+                  ================================================================ -->
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/main/catalog/detailUnitMain.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/detailDescriptionPayment.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/recommendA.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/browsingHistory.html')
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooter.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooterMenu.html')
+            </div>
+          </div>
         </div>
       </div>
-      <!-- ================================================================
-        バリエーション: コンタクト・ログイン後・処方箋あり・定期あり
-        - 処方箋情報エリア: 表示
-        - 通常注文エリア: 表示（左右数量プルダウン）
-        - らくとく定期便エリア: 表示
-        - らくとく定期バナー: 表示
-        ================================================================ -->
-      <div class="wsparts-include">
-        @@include('../../includes/parts/main/catalog/detailUnitMain.html')
-      </div>
-      <div class="wsparts-include">
-        @@include('../../includes/parts/general/detailDescriptionPayment.html')
-      </div>
-      <div class="wsparts-include">
-        @@include('../../includes/parts/general/recommendA.html')
-      </div>
-      <div class="wsparts-include">
-        @@include('../../includes/parts/general/browsingHistory.html')
-      </div>
-    </main>
-    @@include('../../includes/parts/general/pageFooter.html')
-    @@include('../../includes/parts/general/pageFooterMenu.html')
-  </div>
+    </div>
+  </main>
 </body>
 </html>

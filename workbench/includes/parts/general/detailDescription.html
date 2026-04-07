@@ -5,12 +5,38 @@
 
 <!-- 商品説明エリア -->
 <section class="c-detail-description" aria-label="商品説明">
-  <div class="c-detail-description__product">
-    <h2 class="c-detail-description__product-heading">商品説明</h2>
-    <div class="c-detail-description__product-body">
-      <p>商品の詳細説明がここに入ります。成分・使用方法・使用上の注意など商品固有のコンテンツが表示されます。</p>
+
+  <!-- 1) 商品説明 -->
+  <div class="c-detail-description__section">
+    <h2 class="c-detail-description__section-heading">商品説明</h2>
+    <div class="c-detail-description__section-body">
+      <p>この商品は〇〇〇〇〇〇〇〇〇の商品です。</p>
     </div>
   </div>
+
+  <!-- 2) 商品属性 -->
+  <div class="c-detail-description__section">
+    <h2 class="c-detail-description__section-heading">商品属性</h2>
+    <div class="c-detail-description__section-body">
+      <table class="c-detail-description__attr-table">
+        <tbody>
+          <tr>
+            <th class="c-detail-description__attr-label">容量</th>
+            <td class="c-detail-description__attr-value">〇〇ml</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3) もっと詳しい説明はこちら -->
+  <div class="c-detail-description__section">
+    <h2 class="c-detail-description__section-heading">もっと詳しい説明はこちら</h2>
+    <div class="c-detail-description__section-body">
+      <a href="#" class="c-detail-description__ext-link">http://www.example.com</a>
+    </div>
+  </div>
+
 </section>
 
 <!-- お支払い方法・送料セクション（独立構造・後から削除しやすい） -->

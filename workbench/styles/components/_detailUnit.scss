@@ -809,25 +809,26 @@
 // ----------------------------------------
 
 .c-detail-unit__price-area {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: rem(2) rem(4);
   margin-bottom: rem(12);
 }
 
-.c-detail-unit__reduced-tax-note {
+.c-detail-unit__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: rem(4);
+}
+
+.c-detail-unit__price-label {
+  margin-left: auto;
   font-family: $font-family-base;
-  font-size: rem(10);
+  font-size: rem(12);
   color: $text-light;
-  width: 100%;
 }
 
 .c-detail-unit__price--strike {
   display: flex;
   align-items: baseline;
   gap: rem(4);
-  width: 100%;
 }
 
 .c-detail-unit__price-strike-value {
@@ -880,8 +881,6 @@
   font-family: $font-family-base;
   font-size: rem(11);
   color: $text-light;
-  display: flex;
-  align-items: baseline;
 }
 
 .c-detail-unit__price-ref {
@@ -899,16 +898,15 @@
 }
 
 .c-detail-unit__discount-rate {
-  flex: 0 0 100%;
   display: inline-block;
   padding: rem(2) rem(8);
-  background-color: $danger-color;
-  border-radius: rem(4);
+  background-color: $price-color;
+  border-radius: 0;
   font-family: $font-family-base;
   font-size: rem(12);
   font-weight: $font-weight-bold;
   color: $color-white;
-  width: fit-content;
+  margin-bottom: rem(4);
 }
 
 .c-detail-unit__login-msg {

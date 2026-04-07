@@ -13,41 +13,93 @@
   padding: rem(24) rem(12) rem(24);
 
   @include pc {
-    padding: rem(24) rem(32) rem(32) calc(var(--side-nav-content-offset) + rem(32));
+    // 右カラム（info-col）に揃える: side-nav-offset + 32px padding + 280px image-col + 40px gap
+    padding: rem(24) rem(32) rem(32) calc(var(--side-nav-content-offset) + rem(32) + rem(280) + rem(40));
     margin-top: rem(40);
   }
 }
 
-// 商品説明ブロック
-// v1: h2 — 24px/500, text-align: center, color: #00387d
-.c-detail-description__product {
-  margin-bottom: rem(40);
-}
+// 各セクション（商品説明・商品属性・もっと詳しい説明）
+.c-detail-description__section {
+  margin-bottom: rem(32);
 
-.c-detail-description__product-heading {
-  font-family: $font-family-heading;
-  font-size: rem(24);
-  font-weight: $font-weight-medium;
-  color: $primary-color;
-  line-height: 1.5;
-  letter-spacing: rem(0.96);
-  text-align: center;
-  margin: 0 0 rem(24);
-  padding-top: rem(24);
-
-  @include sp {
-    font-size: rem(20);
-    letter-spacing: rem(0.8);
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
-.c-detail-description__product-body {
+// セクション見出し（Eyeデータ見出しと同じスタイル）
+.c-detail-description__section-heading {
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  margin: 0 0 rem(16);
+  padding: rem(11) rem(12);
+  background-color: $bg-banner;
+}
+
+// セクション本文
+.c-detail-description__section-body {
   font-family: $font-family-base;
   font-size: rem(14);
   font-weight: $font-weight-normal;
   line-height: 1.75;
   letter-spacing: rem(0.56);
   color: $text-color;
+  padding: 0 rem(4);
+}
+
+// 商品属性テーブル
+.c-detail-description__attr-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid $border-color;
+}
+
+.c-detail-description__attr-label {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  background-color: $bg-light;
+  padding: rem(10) rem(16);
+  border: 1px solid $border-color;
+  text-align: left;
+  white-space: nowrap;
+  width: rem(120);
+
+  @include pc {
+    width: rem(160);
+  }
+}
+
+.c-detail-description__attr-value {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  padding: rem(10) rem(16);
+  border: 1px solid $border-color;
+}
+
+// 外部リンク
+.c-detail-description__ext-link {
+  color: $calendar-sat;
+  text-decoration: underline;
+  font-size: rem(14);
+  word-break: break-all;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
 }
 
 // ========================================

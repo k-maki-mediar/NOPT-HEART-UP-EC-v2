@@ -5999,25 +5999,26 @@
 }
 
 .c-detail-unit__price-area {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.125rem 0.25rem;
   margin-bottom: 0.75rem;
 }
 
-.c-detail-unit__reduced-tax-note {
+.c-detail-unit__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.c-detail-unit__price-label {
+  margin-left: auto;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   color: #7F8C8D;
-  width: 100%;
 }
 
 .c-detail-unit__price--strike {
   display: flex;
   align-items: baseline;
   gap: 0.25rem;
-  width: 100%;
 }
 
 .c-detail-unit__price-strike-value {
@@ -6072,8 +6073,6 @@
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.6875rem;
   color: #7F8C8D;
-  display: flex;
-  align-items: baseline;
 }
 
 .c-detail-unit__price-ref {
@@ -6091,17 +6090,15 @@
 }
 
 .c-detail-unit__discount-rate {
-  flex: 0 0 100%;
   display: inline-block;
   padding: 0.125rem 0.5rem;
-  background-color: #e53e3e;
-  border-radius: 0.25rem;
+  background-color: #cc4843;
+  border-radius: 0;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   color: #FFFFFF;
-  width: -moz-fit-content;
-  width: fit-content;
+  margin-bottom: 0.25rem;
 }
 
 .c-detail-unit__login-msg {
@@ -6400,40 +6397,85 @@
 }
 @media (min-width: 992px) {
   .c-detail-description {
-    padding: 1.5rem 2rem 2rem calc(var(--side-nav-content-offset) + 2rem);
+    padding: 1.5rem 2rem 2rem calc(var(--side-nav-content-offset) + 2rem + 17.5rem + 2.5rem);
     margin-top: 2.5rem;
   }
 }
 
-.c-detail-description__product {
-  margin-bottom: 2.5rem;
+.c-detail-description__section {
+  margin-bottom: 2rem;
+}
+.c-detail-description__section:last-child {
+  margin-bottom: 0;
 }
 
-.c-detail-description__product-heading {
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 1.5rem;
+.c-detail-description__section-heading {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
   font-weight: 500;
   color: #00387d;
   line-height: 1.5;
-  letter-spacing: 0.06rem;
-  text-align: center;
-  margin: 0 0 1.5rem;
-  padding-top: 1.5rem;
-}
-@media (max-width: 767px) {
-  .c-detail-description__product-heading {
-    font-size: 1.25rem;
-    letter-spacing: 0.05rem;
-  }
+  letter-spacing: 0.04rem;
+  margin: 0 0 1rem;
+  padding: 0.6875rem 0.75rem;
+  background-color: #d7e7fb;
 }
 
-.c-detail-description__product-body {
+.c-detail-description__section-body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.75;
   letter-spacing: 0.035rem;
   color: #333;
+  padding: 0 0.25rem;
+}
+
+.c-detail-description__attr-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e0e0e0;
+}
+
+.c-detail-description__attr-label {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #333;
+  background-color: #f4f8fc;
+  padding: 0.625rem 1rem;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+  white-space: nowrap;
+  width: 7.5rem;
+}
+@media (min-width: 992px) {
+  .c-detail-description__attr-label {
+    width: 10rem;
+  }
+}
+
+.c-detail-description__attr-value {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #333;
+  padding: 0.625rem 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.c-detail-description__ext-link {
+  color: #0087cb;
+  text-decoration: underline;
+  font-size: 0.875rem;
+  word-break: break-all;
+}
+.c-detail-description__ext-link:hover {
+  opacity: 0.75;
+}
+.c-detail-description__ext-link:focus-visible {
+  outline: 2px solid #00387d;
+  outline-offset: 0.125rem;
 }
 
 .c-detail-description-payment {

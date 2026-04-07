@@ -408,7 +408,6 @@
           <!-- 価格エリア -->
           <div class="c-detail-unit__price-area">
             <!-- 軽減税率注釈 -->
-            <p class="c-detail-unit__reduced-tax-note">※は軽減税率対象品目</p>
 
             <!-- 特別価格表示時：打消し線価格（条件付き） -->
             <!-- <div class="c-detail-unit__price--strike">
@@ -417,14 +416,14 @@
             </div> -->
 
             <!-- メイン価格（通常価格） -->
-            <div class="c-detail-unit__price--main">
-              <span class="c-detail-unit__price-value">3,300</span>
-              <span class="c-detail-unit__price-unit">円</span>
+            <div class="c-detail-unit__price-row">
+              <div class="c-detail-unit__price--main">
+                <span class="c-detail-unit__price-value">3,300</span>
+                <span class="c-detail-unit__price-unit">円</span>
+              </div>
+              <p class="c-detail-unit__price-tax">（税込）</p>
+              <span class="c-detail-unit__price-label">スポット便価格</span>
             </div>
-
-            <!-- 税区分（税込/非課税） -->
-            <p class="c-detail-unit__price-tax">（税込）</p>
-            <!-- 税抜の場合: <p class="c-detail-unit__price-tax">（税抜）<span class="c-detail-unit__price-ref">（参考税込: 3,630.00円）</span></p> -->
 
             <!-- 割引率（特別価格・店舗価格・定期価格の場合） -->
             <!-- <span class="c-detail-unit__discount-rate">通常価格より12%OFF</span> -->
@@ -480,9 +479,6 @@
         </div>
         <div class="c-detail-unit__order-body">
 
-          <!-- らくとく定期便とはリンク -->
-          <a href="#" class="c-detail-unit__rakutoku-info-link" target="_blank" rel="noopener noreferrer">らくとく定期便とは</a>
-
           <!-- コンタクトレンズ：左右チェックボックス -->
           <div class="c-detail-unit__rakutoku-check js-detail-rakutoku-check">
             <div class="c-detail-unit__rakutoku-check-item">
@@ -535,12 +531,15 @@
               <span class="c-detail-unit__price-strike-value">3,300</span>
               <span class="c-detail-unit__price-strike-unit">円</span>
             </div> -->
-            <div class="c-detail-unit__price--main">
-              <span class="c-detail-unit__price-value">2,904</span>
-              <span class="c-detail-unit__price-unit">円</span>
-            </div>
-            <p class="c-detail-unit__price-tax">（税込）</p>
             <span class="c-detail-unit__discount-rate">通常価格より12%OFF</span>
+            <div class="c-detail-unit__price-row">
+              <div class="c-detail-unit__price--main">
+                <span class="c-detail-unit__price-value">2,904</span>
+                <span class="c-detail-unit__price-unit">円</span>
+              </div>
+              <p class="c-detail-unit__price-tax">（税込）</p>
+              <span class="c-detail-unit__price-label">定期便価格</span>
+            </div>
 
             <!-- 処方箋なしメッセージ（コンタクトレンズかつ処方箋なし） -->
             <!-- <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p> -->
@@ -554,6 +553,8 @@
             <!-- 欠品メッセージ（定期便・在庫なし時） -->
             <!-- <p class="c-detail-unit__out-of-stock-msg">※申し訳ございませんが、ただいま品切れ中です。（入荷時期未定）</p> -->
           </div>
+
+          <a href="#" class="c-detail-unit__rakutoku-info-link" target="_blank" rel="noopener noreferrer">らくとく定期便とは</a>
 
         </div>
       </div>

@@ -53,6 +53,12 @@
             <div class="c-detail-unit__image-col">
               <div class="c-detail-unit__image-area">
                 <div class="c-detail-unit__image-slider js-detail-image-slider">
+                  <!-- お気に入りボタン -->
+                  <a href="#" class="c-detail-unit__favorite-btn js-favorite-btn" aria-label="お気に入りに追加">
+                    <svg class="c-detail-unit__favorite-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                  </a>
                   <div class="c-detail-unit__image-slide">
                     <a href="#" class="c-detail-unit__image-link">
                       <img
@@ -81,20 +87,10 @@
 
             <!-- 右カラム -->
             <div class="c-detail-unit__info-col">
-              <div class="c-detail-unit__favorite">
-                <a href="#" class="c-detail-unit__favorite-btn js-favorite-btn" aria-label="お気に入りに追加">
-                  <svg class="c-detail-unit__favorite-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                  お気に入りに追加
-                </a>
+              <!-- 商品説明フリーテキスト -->
+              <div class="c-detail-unit__free-text">
+                <p class="c-detail-unit__free-text-body">目の疲れ・かすみに効く目薬です。ビタミンB12・ネオスチグミンメチル硫酸塩配合で、ピント調節筋の疲れをほぐします。コンタクトレンズ装着中でも使用できます。</p>
               </div>
-              <!-- らくとく定期バナー -->
-              <!-- <div class="c-detail-unit__rakutoku-banner">
-                <a href="#" class="c-detail-unit__rakutoku-banner-link" target="_blank" rel="noopener noreferrer">
-                  <img class="c-detail-unit__rakutoku-banner-img" src="../../../files/commonfiles/images/image16.png" alt="らくとく定期便 詳しくはこちら" width="400" height="80">
-                </a>
-              </div> -->
 
               <!-- 処方箋情報エリア: 非表示（コンタクトレンズ以外） -->
 
@@ -103,14 +99,14 @@
           <!-- 注文ブロック（タブ切替） -->
           <div class="c-detail-unit__order-wrapper">
             <div class="c-detail-unit__order-tabs js-detail-order-tabs" role="tablist">
-              <button class="c-detail-unit__order-tab is-active js-detail-order-tab" role="tab" aria-selected="true" data-target="normal" type="button">通常の注文</button>
+              <button class="c-detail-unit__order-tab is-active js-detail-order-tab" role="tab" aria-selected="true" data-target="normal" type="button">スポット便の注文</button>
               <button class="c-detail-unit__order-tab js-detail-order-tab" role="tab" aria-selected="false" data-target="rakutoku" type="button">らくとく定期便の注文</button>
             </div>
             <div class="c-detail-unit__order-panels">
               <!-- 通常注文エリア -->
               <div class="c-detail-unit__order-normal c-detail-unit__order-panel is-active js-detail-order-panel" data-panel="normal" role="tabpanel">
                 <div class="c-detail-unit__order-header">
-                  <p class="c-detail-unit__order-header-text">通常の注文</p>
+                  <p class="c-detail-unit__order-header-text">スポット便の注文</p>
                 </div>
                 <div class="c-detail-unit__order-body">
                   <div class="c-detail-unit__quantity-normal">

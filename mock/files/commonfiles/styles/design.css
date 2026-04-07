@@ -6296,9 +6296,9 @@
   gap: 0.75rem;
   margin-bottom: 0.75rem;
   flex-wrap: wrap;
-  background-color: #d7e7fb;
-  padding: 0.75rem;
-  border-radius: 0.375rem;
+  background-color: #FFFFFF;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0;
 }
 
 .c-detail-unit__rakutoku-check-item {
@@ -6336,8 +6336,8 @@
 .c-detail-unit__cycle-radio {
   margin-bottom: 0.75rem;
   background-color: #d7e7fb;
-  padding: 0.75rem;
-  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0;
 }
 
 .c-detail-unit__cycle-radio-title {

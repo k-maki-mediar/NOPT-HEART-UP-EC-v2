@@ -44,6 +44,10 @@ $border-color-dark: #c2c2c2;
 $overlay-dark: rgba(0, 0, 0, 0.6);
 $danger-color-dark: #c93636;
 $campaign-bg: #fff5a0;
+$bg-danger-light: #fde8e8;
+$color-dot-default: #eeeeee;
+$color-dot-hover: #d0d0d0;
+$color-disabled: #cccccc;
 
 // フォント
 $font-family-base: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
@@ -105,6 +109,7 @@ $transition-slow: 0.5s ease-in-out;
 $z-index-header: 100;
 $z-index-header-menu: 99;
 $z-index-side-nav: 90;
+$z-index-above-content: 2;
 $z-index-content: 1;
 $z-index-base: 0;
 $z-index-deco: -1;

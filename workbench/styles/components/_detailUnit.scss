@@ -109,14 +109,14 @@
   width: rem(10);
   height: rem(10);
   border-radius: 50%;
-  background-color: #eeeeee;
+  background-color: $color-dot-default;
   cursor: pointer;
   border: none;
   padding: 0;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #d0d0d0;
+    background-color: $color-dot-hover;
   }
 
   &--active {
@@ -139,10 +139,6 @@
   @include pc {
     display: flex;
   }
-}
-
-.c-detail-unit__thumbnail-item {
-  // flexアイテム
 }
 
 .c-detail-unit__thumbnail-btn {
@@ -310,7 +306,7 @@
   position: absolute;
   bottom: rem(8);
   right: rem(8);
-  z-index: 2;
+  z-index: $z-index-above-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -394,7 +390,7 @@
 
 .c-detail-unit__prescription-warning {
   padding: rem(10) rem(12);
-  background-color: #fde8e8;
+  background-color: $bg-danger-light;
   border-bottom: 1px solid $danger-color;
 }
 
@@ -660,7 +656,7 @@
   width: 100%;
   min-height: rem(44);
   padding: rem(8) rem(32) rem(8) rem(10);
-  border: 1px solid #cccccc;
+  border: 1px solid $color-disabled;
   border-radius: rem(4);
   background-color: $color-white;
   font-family: $font-family-base;
@@ -726,7 +722,7 @@
 
   // アクティブタブ: 明るい背景 + ネイビーテキスト
   &.is-active {
-    background-color: #f7f7f7;
+    background-color: $bg-gray;
     color: $primary-color;
     cursor: default;
   }
@@ -734,7 +730,7 @@
 
 // タブパネル群
 .c-detail-unit__order-panels {
-  background-color: #f7f7f7;
+  background-color: $bg-gray;
   border-radius: 0 0 rem(8) rem(8);
 }
 
@@ -756,10 +752,6 @@
   }
 }
 
-
-.c-detail-unit__order-body {
-  // v1: パディングなし（親ブロックにパディングあり）
-}
 
 // 近日発売・販売期間終了ラベル
 .c-detail-unit__sale-status {
@@ -991,7 +983,7 @@
   }
 
   &:disabled {
-    background-color: #cccccc;
+    background-color: $color-disabled;
     cursor: not-allowed;
   }
 

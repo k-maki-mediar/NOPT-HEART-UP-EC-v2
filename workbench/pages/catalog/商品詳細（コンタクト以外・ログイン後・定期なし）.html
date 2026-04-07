@@ -2,8 +2,6 @@
 <html lang="ja" class="c-html">
 <head>
 @@include('../../includes/head.html', {"title": "商品詳細（コンタクト以外・ログイン後・定期なし）"})
-<!-- デザイン用共通JS -->
-<script src="../../../files/partsfiles/scripts/common_design.js"></script>
 </head>
 <body class="c-body">
   <div class="c-page-wrapper">
@@ -94,7 +92,7 @@
               <!-- 注文ブロック（定期なし: タブなし・スポット便のみ） -->
               <div class="c-detail-unit__order-wrapper">
                 <div class="c-detail-unit__order-tabs">
-                  <div class="c-detail-unit__order-tab is-active">スポット便の注文</div>
+                  <div class="c-detail-unit__order-tab is-active" role="heading" aria-level="3">スポット便の注文</div>
                 </div>
                 <div class="c-detail-unit__order-panels">
                   <div class="c-detail-unit__order-normal is-active">
@@ -136,7 +134,7 @@
         </div>
 
         <!-- カート投入後モーダル -->
-        <div class="c-cart-modal js-cart-modal" role="dialog" aria-modal="true" aria-labelledby="js-cart-modal-title">
+        <div class="c-cart-modal js-cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
           <div class="c-cart-modal__overlay js-cart-modal-overlay"></div>
           <div class="c-cart-modal__dialog">
             <div class="c-cart-modal__body">
@@ -147,12 +145,12 @@
                   <path d="M16 10a4 4 0 0 1-8 0"/>
                 </svg>
               </div>
-              <h2 class="c-cart-modal__title" id="js-cart-modal-title">カートに入れました</h2>
+              <h2 class="c-cart-modal__title" id="cart-modal-title">カートに入れました</h2>
               <p class="c-cart-modal__message">引き続きショッピングをお楽しみください</p>
             </div>
             <div class="c-cart-modal__actions">
               <button class="c-cart-modal__btn js-cart-modal-continue" type="button">買い物を続ける</button>
-              <a href="#" class="c-cart-modal__btn c-cart-modal__btn--primary" role="button">カートを見る</a>
+              <a href="#" class="c-cart-modal__btn c-cart-modal__btn--primary">カートを見る</a>
             </div>
           </div>
         </div>

@@ -642,10 +642,6 @@
 // 注文ブロックのラッパー（タブ切替デザイン）
 .c-detail-unit__order-wrapper {
   margin-top: rem(16);
-
-  @include pc {
-    margin-left: rem(320);
-  }
 }
 
 // タブボタン群（v1 LINE UP風）
@@ -813,6 +809,10 @@
 // ----------------------------------------
 
 .c-detail-unit__price-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: rem(2) rem(4);
   margin-bottom: rem(12);
 }
 
@@ -820,14 +820,14 @@
   font-family: $font-family-base;
   font-size: rem(10);
   color: $text-light;
-  margin: 0 0 rem(4);
+  width: 100%;
 }
 
 .c-detail-unit__price--strike {
   display: flex;
   align-items: baseline;
   gap: rem(4);
-  margin-bottom: rem(4);
+  width: 100%;
 }
 
 .c-detail-unit__price-strike-value {
@@ -848,7 +848,6 @@
   display: flex;
   align-items: baseline;
   gap: rem(4);
-  margin-bottom: rem(2);
 }
 
 .c-detail-unit__price-value {
@@ -881,7 +880,8 @@
   font-family: $font-family-base;
   font-size: rem(11);
   color: $text-light;
-  margin-bottom: rem(4);
+  display: flex;
+  align-items: baseline;
 }
 
 .c-detail-unit__price-ref {
@@ -899,6 +899,7 @@
 }
 
 .c-detail-unit__discount-rate {
+  flex: 0 0 100%;
   display: inline-block;
   padding: rem(2) rem(8);
   background-color: $danger-color;
@@ -907,7 +908,7 @@
   font-size: rem(12);
   font-weight: $font-weight-bold;
   color: $color-white;
-  margin-bottom: rem(6);
+  width: fit-content;
 }
 
 .c-detail-unit__login-msg {
@@ -1081,29 +1082,8 @@
 }
 
 // ----------------------------------------
-// リンク類（お問い合わせ・商品一覧に戻る・らくとく定期便とは）
+// リンク類（らくとく定期便とは）
 // ----------------------------------------
-
-.c-detail-unit__inquiry-link {
-  display: inline-flex;
-  align-items: center;
-  gap: rem(4);
-  font-family: $font-family-base;
-  font-size: rem(13);
-  color: $calendar-sat;
-  text-decoration: underline;
-  min-height: rem(44);
-  padding: rem(4) 0;
-
-  &:hover {
-    opacity: 0.75;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $primary-color;
-    outline-offset: rem(2);
-  }
-}
 
 .c-detail-unit__rakutoku-info-link {
   display: inline-flex;
@@ -1255,14 +1235,4 @@
   cursor: pointer;
   flex-shrink: 0;
   accent-color: $primary-color;
-}
-
-// ----------------------------------------
-// 区切り線
-// ----------------------------------------
-
-.c-detail-unit__divider {
-  border: none;
-  border-top: 1px solid $border-color;
-  margin: rem(12) 0;
 }

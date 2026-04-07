@@ -6677,6 +6677,8 @@
 @media (min-width: 992px) {
   .c-recommend__deco {
     top: 3.125rem;
+    left: max(0px, (100% - 70.625rem) / 2);
+    right: max(0px, (100% - 70.625rem) / 2);
   }
 }
 
@@ -6945,6 +6947,8 @@
 @media (min-width: 992px) {
   .c-browsing-history__deco {
     top: 10rem;
+    left: max(0px, (100% - 70.625rem) / 2);
+    right: max(0px, (100% - 70.625rem) / 2);
   }
 }
 

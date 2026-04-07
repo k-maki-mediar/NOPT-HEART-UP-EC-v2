@@ -89,6 +89,8 @@
 
   @include pc {
     top: rem(50);
+    left: max(0px, calc((100% - rem(1130)) / 2));
+    right: max(0px, calc((100% - rem(1130)) / 2));
   }
 }
 

@@ -219,7 +219,7 @@
   width: rem(35);
   height: rem(35);
   right: rem(-5);
-  top: 30%;
+  top: 20%;
   transform: rotate(60deg);
   stroke-width: 1.5;
   animation: float-rc-ring-md 5s ease-in-out infinite;
@@ -228,14 +228,14 @@
     width: rem(60);
     height: rem(60);
     right: rem(-35);
-    top: 55%;
+    top: 25%;
   }
 
   @include pc {
     width: rem(45);
     height: rem(45);
     right: rem(-20);
-    top: 110%;
+    top: 50%;
   }
 }
 
@@ -244,7 +244,7 @@
   width: rem(20);
   height: rem(20);
   left: rem(10);
-  top: 35%;
+  top: 25%;
   transform: rotate(225deg);
   stroke-width: 3;
   animation: float-rc-ring-sm 3.5s ease-in-out infinite;
@@ -253,13 +253,13 @@
     width: rem(36);
     height: rem(36);
     left: rem(-20);
-    top: 60%;
+    top: 30%;
   }
 
   @include pc {
     width: rem(28);
     height: rem(28);
     left: rem(240);
-    top: 115%;
+    top: 55%;
   }
 }

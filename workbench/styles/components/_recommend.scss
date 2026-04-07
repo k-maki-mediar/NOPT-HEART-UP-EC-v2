@@ -78,93 +78,188 @@
 }
 
 // ----------------------------------------
-// あしらい装飾（パターンA・黄系）
+// あしらい装飾（パターンA・黄系 — campaignTopics準拠）
 // ----------------------------------------
 
 .c-recommend__deco {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: rem(1130);
+  inset: 0;
   pointer-events: none;
   z-index: $z-index-deco;
 
   @include pc {
-    padding-left: var(--side-nav-content-offset);
+    top: rem(50);
   }
 }
 
-// 黄矩形（左端）
+// 黄矩形（左側）
 .c-recommend__deco-rect {
   position: absolute;
   left: calc((100% - 100vw) / 2);
-  width: 52vw;
-  height: calc(100% - rem(40));
-  top: 50%;
-  transform: translateY(-50%);
+  width: 55vw;
+  height: 90%;
+  top: 10%;
   background-color: $deco-yellow;
-  opacity: 0.6;
+  opacity: 0.4;
   border-radius: 0 rem(20) rem(20) 0;
 
   @include tablet-up {
-    height: calc(100% - rem(20));
+    height: 85%;
+    top: 10%;
   }
 
   @include pc {
-    height: calc(100% + rem(10));
+    height: 80%;
+    top: 15%;
   }
 }
 
-// 黄円（右上）
+// 円アウトライン（右上）
 .c-recommend__deco-circle {
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.3;
   color: $deco-yellow-stroke;
-  width: rem(120);
-  height: rem(120);
-  right: rem(-60);
-  top: rem(-60);
+  width: rem(140);
+  height: rem(140);
+  right: rem(-70);
+  top: rem(-40);
 
   @include tablet-up {
-    width: rem(160);
-    height: rem(160);
+    width: rem(170);
+    height: rem(170);
     right: rem(-50);
-    top: rem(-60);
+    top: rem(-20);
   }
 
   @include pc {
-    width: rem(220);
-    height: rem(220);
-    right: rem(-60);
-    top: rem(-100);
+    width: rem(250);
+    height: rem(250);
+    right: rem(-70);
+    top: rem(-80);
   }
 }
 
-// 三角（右）
+// 三角形（円の左下に重なる）
 .c-recommend__deco-triangle {
   position: absolute;
-  opacity: 0.65;
+  opacity: 0.5;
   color: $deco-yellow;
-  width: rem(80);
-  height: rem(90);
-  right: rem(-30);
-  top: rem(-30);
+  width: rem(100);
+  height: rem(110);
+  right: rem(-40);
+  top: rem(0);
   transform: scaleX(-1);
 
   @include tablet-up {
-    width: rem(110);
-    height: rem(120);
+    width: rem(120);
+    height: rem(130);
     right: rem(-10);
-    top: rem(-10);
+    top: rem(38);
   }
 
   @include pc {
-    width: rem(160);
-    height: rem(180);
+    width: rem(180);
+    height: rem(200);
     right: rem(10);
-    top: rem(-20);
+    top: rem(20);
+  }
+}
+
+// ランドルト環 浮遊アニメーション
+@keyframes float-rc-ring-lg {
+  0%, 100% { transform: rotate(327deg) translateY(0); }
+  50% { transform: rotate(327deg) translateY(rem(-16)); }
+}
+
+@keyframes float-rc-ring-md {
+  0%, 100% { transform: rotate(60deg) translateY(0); }
+  50% { transform: rotate(60deg) translateY(rem(-12)); }
+}
+
+@keyframes float-rc-ring-sm {
+  0%, 100% { transform: rotate(225deg) translateY(0); }
+  50% { transform: rotate(225deg) translateY(rem(-10)); }
+}
+
+// ランドルト環（共通）
+.c-recommend__deco-ring {
+  position: absolute;
+  opacity: 0.5;
+  overflow: visible;
+  color: $deco-ring-fill;
+}
+
+// ランドルト環（大）- 左上
+.c-recommend__deco-ring--lg {
+  width: rem(70);
+  height: rem(70);
+  left: rem(-20);
+  top: rem(10);
+  transform: rotate(327deg);
+  animation: float-rc-ring-lg 4s ease-in-out infinite;
+
+  @include tablet-up {
+    width: rem(130);
+    height: rem(130);
+    left: rem(-60);
+    top: rem(30);
+  }
+
+  @include pc {
+    width: rem(150);
+    height: rem(150);
+    left: rem(150);
+    top: rem(10);
+    stroke-width: 0.5;
+  }
+}
+
+// ランドルト環（中）- 右
+.c-recommend__deco-ring--md {
+  width: rem(35);
+  height: rem(35);
+  right: rem(-5);
+  top: 30%;
+  transform: rotate(60deg);
+  stroke-width: 1.5;
+  animation: float-rc-ring-md 5s ease-in-out infinite;
+
+  @include tablet-up {
+    width: rem(60);
+    height: rem(60);
+    right: rem(-35);
+    top: 55%;
+  }
+
+  @include pc {
+    width: rem(45);
+    height: rem(45);
+    right: rem(-20);
+    top: 110%;
+  }
+}
+
+// ランドルト環（小）- 左
+.c-recommend__deco-ring--sm {
+  width: rem(20);
+  height: rem(20);
+  left: rem(10);
+  top: 35%;
+  transform: rotate(225deg);
+  stroke-width: 3;
+  animation: float-rc-ring-sm 3.5s ease-in-out infinite;
+
+  @include tablet-up {
+    width: rem(36);
+    height: rem(36);
+    left: rem(-20);
+    top: 60%;
+  }
+
+  @include pc {
+    width: rem(28);
+    height: rem(28);
+    left: rem(240);
+    top: 115%;
   }
 }

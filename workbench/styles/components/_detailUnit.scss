@@ -715,21 +715,6 @@
   }
 }
 
-// 注文ヘッダー（タブ内の見出し）
-.c-detail-unit__order-header {
-  margin-bottom: rem(12);
-}
-
-.c-detail-unit__order-header-text {
-  font-family: $font-family-heading;
-  font-size: rem(16);
-  font-weight: $font-weight-medium;
-  line-height: 1.5;
-  letter-spacing: rem(0.64);
-  color: $primary-color;
-  margin: 0;
-  padding: 0;
-}
 
 .c-detail-unit__order-body {
   // v1: パディングなし（親ブロックにパディングあり）
@@ -916,7 +901,7 @@
   line-height: 1.5;
   letter-spacing: rem(0.8);
   color: $price-color;
-  text-align: right;
+  text-align: center;
   margin: rem(8) 0;
 }
 

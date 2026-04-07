@@ -6505,8 +6505,14 @@
     break-inside: avoid;
     border-bottom: 1px dashed #e0e0e0;
   }
-  .c-detail-description-payment__section:last-child {
+  .c-detail-description-payment__section:last-of-type {
     border-bottom: none;
+  }
+  .c-detail-description-payment__section:nth-of-type(2) {
+    border-bottom: none;
+  }
+  .c-detail-description-payment__section:nth-of-type(3) {
+    padding-top: 0;
   }
 }
 

@@ -152,8 +152,20 @@
     break-inside: avoid;
     border-bottom: 1px dashed $border-color;
 
-    &:last-child {
+    // 各カラム末尾: 下ボーダー非表示
+    &:last-of-type {
       border-bottom: none;
+    }
+
+    &:nth-of-type(2) {
+      // 配送について = 1カラム目末尾
+      border-bottom: none;
+    }
+
+    // 各カラム先頭: padding-top除去
+    &:nth-of-type(3) {
+      // 消費税について = 2カラム目先頭
+      padding-top: 0;
     }
   }
 }

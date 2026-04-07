@@ -6945,7 +6945,7 @@
 }
 @media (min-width: 992px) {
   .c-browsing-history__deco {
-    top: 10rem;
+    top: 3.125rem;
     left: max(0px, (100% - 70.625rem) / 2);
     right: max(0px, (100% - 70.625rem) / 2);
   }
@@ -6955,22 +6955,22 @@
   position: absolute;
   right: calc((100% - 100vw) / 2);
   width: 55vw;
-  height: 34.375rem;
-  top: 33%;
-  transform: translateY(-30%);
+  height: 90%;
+  top: 10%;
   background-color: #d6f2dd;
   opacity: 0.6;
   border-radius: 1.25rem 0 0 1.25rem;
 }
 @media (min-width: 768px) {
   .c-browsing-history__deco-rect {
-    height: 37.5rem;
+    height: 85%;
+    top: 10%;
   }
 }
 @media (min-width: 992px) {
   .c-browsing-history__deco-rect {
-    height: 25rem;
-    top: 45%;
+    height: 80%;
+    top: 15%;
   }
 }
 
@@ -7097,7 +7097,7 @@
     width: 3.75rem;
     height: 3.75rem;
     left: -2.1875rem;
-    top: 80%;
+    top: 25%;
   }
 }
 @media (min-width: 992px) {
@@ -7105,7 +7105,7 @@
     width: 2.8125rem;
     height: 2.8125rem;
     left: 14.375rem;
-    top: 70%;
+    top: 50%;
   }
 }
 
@@ -7123,7 +7123,7 @@
     width: 2.25rem;
     height: 2.25rem;
     right: -1.25rem;
-    top: 85%;
+    top: 30%;
   }
 }
 @media (min-width: 992px) {
@@ -7131,6 +7131,7 @@
     width: 1.75rem;
     height: 1.75rem;
     right: -0.9375rem;
+    top: 55%;
   }
 }
 

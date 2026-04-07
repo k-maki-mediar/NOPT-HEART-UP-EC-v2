@@ -88,7 +88,7 @@
   z-index: $z-index-deco;
 
   @include pc {
-    top: rem(160);
+    top: rem(50);
     left: max(0px, calc((100% - rem(1130)) / 2));
     right: max(0px, calc((100% - rem(1130)) / 2));
   }
@@ -99,20 +99,20 @@
   position: absolute;
   right: calc((100% - 100vw) / 2);
   width: 55vw;
-  height: rem(550);
-  top: 33%;
-  transform: translateY(-30%);
+  height: 90%;
+  top: 10%;
   background-color: $deco-green;
   opacity: 0.6;
   border-radius: rem(20) 0 0 rem(20);
 
   @include tablet-up {
-    height: rem(600);
+    height: 85%;
+    top: 10%;
   }
 
   @include pc {
-    height: rem(400);
-    top: 45%;
+    height: 80%;
+    top: 15%;
   }
 }
 
@@ -229,14 +229,14 @@
     width: rem(60);
     height: rem(60);
     left: rem(-35);
-    top: 80%;
+    top: 25%;
   }
 
   @include pc {
     width: rem(45);
     height: rem(45);
     left: rem(230);
-    top: 70%;
+    top: 50%;
   }
 }
 
@@ -254,12 +254,13 @@
     width: rem(36);
     height: rem(36);
     right: rem(-20);
-    top: 85%;
+    top: 30%;
   }
 
   @include pc {
     width: rem(28);
     height: rem(28);
     right: rem(-15);
+    top: 55%;
   }
 }

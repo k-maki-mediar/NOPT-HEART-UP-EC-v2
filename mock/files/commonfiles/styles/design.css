@@ -6599,7 +6599,6 @@
 
 .c-recommend {
   position: relative;
-  isolation: isolate;
   padding: 2rem 0;
 }
 

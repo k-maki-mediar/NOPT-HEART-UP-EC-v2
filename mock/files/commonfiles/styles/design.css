@@ -5291,11 +5291,11 @@
 .c-detail-unit {
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 1rem 0.75rem 0.5rem;
+  padding: 1rem 0.75rem 0rem;
 }
 @media (min-width: 992px) {
   .c-detail-unit {
-    padding: 1rem 2rem 0.5rem calc(var(--side-nav-content-offset) + 2rem);
+    padding: 1rem 2rem 0rem calc(var(--side-nav-content-offset) + 2rem);
   }
 }
 
@@ -6376,15 +6376,8 @@
 }
 
 .c-detail-description {
-  max-width: 70.625rem;
-  margin: 0 auto;
-  padding: 1.5rem 0.75rem 1.5rem;
-}
-@media (min-width: 992px) {
-  .c-detail-description {
-    padding: 1.5rem 2rem 2rem calc(var(--side-nav-content-offset) + 2rem + 17.5rem + 2.5rem);
-    margin-top: 2.5rem;
-  }
+  margin-top: 1.5rem;
+  padding: 0;
 }
 
 .c-detail-description__section {

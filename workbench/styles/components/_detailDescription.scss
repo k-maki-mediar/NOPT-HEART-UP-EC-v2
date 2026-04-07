@@ -8,15 +8,9 @@
 // ========================================
 
 .c-detail-description {
-  max-width: rem(1130);
-  margin: 0 auto;
-  padding: rem(24) rem(12) rem(24);
-
-  @include pc {
-    // 右カラム（info-col）に揃える: side-nav-offset + 32px padding + 280px image-col + 40px gap
-    padding: rem(24) rem(32) rem(32) calc(var(--side-nav-content-offset) + rem(32) + rem(280) + rem(40));
-    margin-top: rem(40);
-  }
+  // info-col内に配置されるため、独自のmax-width/padding-leftは不要
+  margin-top: rem(24);
+  padding: 0;
 }
 
 // 各セクション（商品説明・商品属性・もっと詳しい説明）

@@ -14,10 +14,10 @@
 .c-detail-unit {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(16) rem(12) rem(8);
+  padding: rem(16) rem(12) rem(0);
 
   @include pc {
-    padding: rem(16) rem(32) rem(8) calc(var(--side-nav-content-offset) + rem(32));
+    padding: rem(16) rem(32) rem(0) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 

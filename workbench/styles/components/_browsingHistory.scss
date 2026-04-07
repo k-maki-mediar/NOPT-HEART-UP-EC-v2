@@ -50,23 +50,31 @@
   margin-top: rem(4);
 }
 
-// 商品グリッド（商品一覧と同じレイアウト）
+// 商品グリッド（SP: 2列グリッド / PC: 1行横スクロール）
 .c-browsing-history__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: rem(12);
   list-style: none;
-  padding: 0;
+  padding: rem(4);
   margin: 0;
 
   @include pc {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: rem(16);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: rem(4) rem(4) rem(16);
   }
 }
 
 .c-browsing-history__item {
   min-width: 0;
+
+  @include pc {
+    flex: 0 0 calc((100% - rem(32)) / 3);
+    min-width: auto;
+  }
 }
 
 // ----------------------------------------

@@ -5284,8 +5284,13 @@
   line-height: 1.5;
   text-align: right;
   margin: 0.5rem 0 0;
-  padding: 0 0 0.75rem;
+  padding: 0 0.75rem 0.75rem 0;
   border-bottom: 1px solid #d7e7fb;
+}
+@media (min-width: 992px) {
+  .c-detail-heading__approval {
+    padding-right: 0;
+  }
 }
 
 .c-detail-unit {
@@ -5577,7 +5582,15 @@
 }
 
 .c-detail-unit__rakutoku-banner {
-  margin-bottom: 1rem;
+  max-width: 70.625rem;
+  margin: 0 auto 0.5rem;
+  padding: 0 0.75rem;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__rakutoku-banner {
+    padding: 0 2rem 0 calc(var(--side-nav-content-offset) + 2rem);
+    margin-bottom: 0.75rem;
+  }
 }
 
 .c-detail-unit__rakutoku-banner-link {

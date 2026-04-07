@@ -61,6 +61,10 @@
   line-height: 1.5;
   text-align: right;
   margin: rem(8) 0 0;
-  padding: 0 0 rem(12);
+  padding: 0 rem(12) rem(12) 0;
   border-bottom: 1px solid $bg-banner;
+
+  @include pc {
+    padding-right: 0;
+  }
 }

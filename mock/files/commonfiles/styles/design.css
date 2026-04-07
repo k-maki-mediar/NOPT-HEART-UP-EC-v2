@@ -5004,8 +5004,16 @@
   bottom: 0;
   left: calc((100% - 100vw) / 2);
   right: calc((100% - 100vw) / 2);
-  background-color: #fcfdff;
+  background-color: #F7F7F7;
   z-index: -1;
+}
+.c-page-footer__nav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc((100% - 100vw) / 2);
+  right: calc((100% - 100vw) / 2);
+  border-top: 1px solid #e0e0e0;
 }
 
 @media (min-width: 992px) {
@@ -5047,7 +5055,7 @@
 
 .c-page-footer__link-item {
   width: 100%;
-  border-bottom: 1px solid #d7e7fb;
+  border-bottom: 1px solid #e0e0e0;
 }
 @media (min-width: 992px) {
   .c-page-footer__link-item {

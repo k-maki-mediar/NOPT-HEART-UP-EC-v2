@@ -85,8 +85,17 @@
     bottom: 0;
     left: calc((100% - 100vw) / 2);
     right: calc((100% - 100vw) / 2);
-    background-color: $bg-footer;
+    background-color: $bg-gray;
     z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc((100% - 100vw) / 2);
+    right: calc((100% - 100vw) / 2);
+    border-top: 1px solid $border-color;
   }
 }
 
@@ -132,7 +141,7 @@
 // リンクアイテム
 .c-page-footer__link-item {
   width: 100%;
-  border-bottom: 1px solid $bg-banner;
+  border-bottom: 1px solid $border-color;
 
   @include pc {
     border-bottom: none;

@@ -158,13 +158,13 @@
       border-bottom: none;
     }
 
-    &:nth-of-type(2) {
+    &--col-end {
       // 配送について = 1カラム目末尾
       border-bottom: none;
     }
 
     // 各カラム先頭: padding-top除去
-    &:nth-of-type(3) {
+    &--col-start {
       // 消費税について = 2カラム目先頭
       padding-top: 0;
     }

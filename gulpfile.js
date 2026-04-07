@@ -70,6 +70,7 @@ gulp.task('html', () => {
       basepath: '@file',
       indent: true
     }))
+    .pipe(replace(/\r?\n/g, '\r\n'))
     .pipe(gulp.dest(paths.dist.html))
     .pipe(browserSync.stream());
 });

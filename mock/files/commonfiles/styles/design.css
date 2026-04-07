@@ -6561,10 +6561,10 @@
   .c-detail-description-payment__section:last-of-type {
     border-bottom: none;
   }
-  .c-detail-description-payment__section:nth-of-type(2) {
+  .c-detail-description-payment__section--col-end {
     border-bottom: none;
   }
-  .c-detail-description-payment__section:nth-of-type(3) {
+  .c-detail-description-payment__section--col-start {
     padding-top: 0;
   }
 }

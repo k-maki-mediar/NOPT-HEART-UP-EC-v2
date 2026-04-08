@@ -22,7 +22,8 @@
   z-index: $z-index-content;
 
   @include pc {
-    padding: rem(0) rem(32) rem(0) calc(var(--side-nav-content-offset) + rem(32));
+    max-width: none;
+    padding: rem(0) 0;
   }
 }
 
@@ -65,7 +66,7 @@
     gap: rem(16);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding: rem(4) rem(4) rem(16);
+    padding: rem(4) 0 rem(16) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 
@@ -73,8 +74,18 @@
   min-width: 0;
 
   @include pc {
-    flex: 0 0 calc((100% - rem(32)) / 3);
+    flex: 0 0 rem(240);
     min-width: auto;
+  }
+}
+
+.c-browsing-history__spacer {
+  display: none;
+  list-style: none;
+
+  @include pc {
+    display: block;
+    flex: 0 0 calc(var(--side-nav-content-offset) * 0.5);
   }
 }
 

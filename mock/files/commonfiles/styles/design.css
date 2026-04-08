@@ -6930,6 +6930,7 @@
   position: relative;
   isolation: isolate;
   padding: 2rem 0;
+  margin-bottom: 3rem;
 }
 
 .c-browsing-history__inner {

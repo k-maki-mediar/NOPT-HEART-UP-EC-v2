@@ -12,9 +12,6 @@
   justify-content: center;
   margin: rem(24) 0;
 
-  &--top {
-    // 上部ページャー（下部と同一スタイル）
-  }
 }
 
 .c-pager__list {
@@ -59,8 +56,8 @@
   transition: color 0.2s ease, background-color 0.2s ease;
 
   @include sp {
-    min-width: rem(32);
-    min-height: rem(32);
+    min-width: rem(44);
+    min-height: rem(44);
     font-size: rem(13);
   }
 
@@ -89,8 +86,8 @@
     }
 
     @include sp {
-      min-width: rem(36);
-      min-height: rem(36);
+      min-width: rem(44);
+      min-height: rem(44);
       background-size: rem(18) rem(14);
     }
   }
@@ -111,8 +108,8 @@
     }
 
     @include sp {
-      min-width: rem(36);
-      min-height: rem(36);
+      min-width: rem(44);
+      min-height: rem(44);
       background-size: rem(18) rem(14);
     }
   }

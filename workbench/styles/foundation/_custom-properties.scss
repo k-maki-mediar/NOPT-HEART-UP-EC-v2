@@ -71,13 +71,13 @@
   --z-index-tooltip: #{$z-index-tooltip};
 
   // レイアウト幅
-  --main-content-width: clamp(320px, 90vw, 960px);
+  --main-content-width: clamp(#{rem(320)}, 90vw, #{rem(960)});
 }
 
 // PC版（992px以上）でコンテンツ最大幅を1076pxに拡張
 @media (min-width: #{$breakpoint-pc-min}) {
   :root {
-    --main-content-width: 1076px;
+    --main-content-width: #{rem(1076)};
 
     // サイドナビ レイアウト変数
     --side-nav-width: #{rem(200)};

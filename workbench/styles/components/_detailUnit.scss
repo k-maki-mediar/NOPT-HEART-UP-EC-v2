@@ -661,7 +661,7 @@
 .c-detail-unit__prescription-cell--select .c-detail-unit__custom-select-option {
   font-size: rem(14);
   padding: rem(8) rem(12);
-  min-height: rem(36);
+  min-height: rem(44);
   color: $primary-color;
 
   @include sp {
@@ -719,7 +719,7 @@
   width: 100%;
   min-height: rem(44);
   padding: rem(10) rem(16);
-  border: 1px solid #c2c2c2;
+  border: 1px solid $border-color-dark;
   background-color: $color-white;
   font-family: $font-family-base;
   font-size: rem(14);
@@ -1276,11 +1276,11 @@
   font-weight: $font-weight-medium;
   color: $primary-color;
   text-decoration: none;
-  background-color: #fff;
+  background-color: $color-white;
   border: none;
   border-radius: rem(9999);
-  min-height: rem(36);
-  padding: rem(6) rem(16);
+  min-height: rem(44);
+  padding: rem(10) rem(16);
   transition: opacity 0.2s;
 
   &:hover {

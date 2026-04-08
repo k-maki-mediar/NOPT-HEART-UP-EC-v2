@@ -307,6 +307,23 @@ $(function () {
         .find('.c-detail-unit__custom-select-trigger').attr('aria-expanded', 'false');
     }
   });
+
+  // スクロール時: fixedパネルの位置を追従更新
+  $(window).on('scroll', function () {
+    $('.c-detail-unit__custom-select--open').each(function () {
+      const $open = $(this);
+      const $trig = $open.find('.c-detail-unit__custom-select-trigger');
+      const $pnl = $open.find('.c-detail-unit__custom-select-panel');
+      if ($pnl.css('position') === 'fixed') {
+        const rect = $trig[0].getBoundingClientRect();
+        $pnl.css({
+          top: rect.bottom + 'px',
+          left: rect.left + 'px',
+          width: rect.width + 'px'
+        });
+      }
+    });
+  });
 });
 
 /* ========================================

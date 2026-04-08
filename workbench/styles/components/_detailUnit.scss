@@ -925,10 +925,39 @@
 }
 
 .c-detail-unit__quantity-total {
-  margin-top: rem(6);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: rem(10);
+  padding: rem(8) rem(12);
+  background-color: $color-white;
+  border-radius: rem(4);
   font-family: $font-family-base;
   font-size: rem(13);
   color: $text-color;
+}
+
+.c-detail-unit__quantity-total-count {
+  font-size: rem(12);
+}
+
+.c-detail-unit__quantity-total-num {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: 0 rem(4);
+}
+
+.c-detail-unit__quantity-total-price {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $price-color;
+  margin: 0 rem(2);
+}
+
+.c-detail-unit__quantity-total-unit {
+  font-size: rem(12);
+  color: $text-light;
 }
 
 // 数量（コンタクトレンズ以外）

@@ -407,9 +407,7 @@ $(function () {
 
     // 合計箱数表示更新
     if ($totalDisplay.length) {
-      // 単価はdata属性から取得（実装時はHTMLにdata-unit-price属性を付与）
-      const unitPrice = parseInt($totalDisplay.data('unit-price') || '3300', 10);
-      $totalDisplay.text('計 ' + total + '箱 　1箱あたり ' + unitPrice.toLocaleString() + '円');
+      $totalDisplay.find('.js-detail-quantity-total-num').text(total);
     }
 
     if (total > 0) {

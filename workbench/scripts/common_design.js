@@ -11,7 +11,7 @@ $(function () {
   // メニューボタンでパネル開閉
   $('.js-header-menu-toggle').on('click', function () {
     const $btn = $(this);
-    const $menu = $('#js-header-menu');
+    const $menu = $('.js-header-menu');
     const $footer = $('.js-footer-menu');
     $menu.toggleClass('c-header-menu--open');
     const isOpen = $menu.hasClass('c-header-menu--open');
@@ -481,8 +481,8 @@ $(function () {
     closeCartModal();
   });
 
-  // Escキーでモーダルを閉じる
-  $(document).on('keydown', function (e) {
+  // Escキーでモーダルを閉じる（カスタムセレクトのEsc制御と共存）
+  $(document).on('keydown.cartModal', function (e) {
     if (e.key === 'Escape' && $modal.hasClass('c-cart-modal--open')) {
       closeCartModal();
     }
@@ -526,3 +526,221 @@ $(function () {
   });
 
 });
+
+/* ========================================
+ * SPフィルターパネル（filterPanel）
+ * ======================================== */
+(function () {
+  'use strict';
+
+  const toggle = document.querySelector('.js-filter-toggle');
+  if (!toggle) return;
+
+  const bodyId = toggle.getAttribute('aria-controls');
+  const body = bodyId ? document.getElementById(bodyId) : null;
+  if (!body) return;
+
+  toggle.addEventListener('click', function () {
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isExpanded));
+
+    if (isExpanded) {
+      body.classList.remove('c-filter-panel__body--open');
+    } else {
+      body.classList.add('c-filter-panel__body--open');
+    }
+  });
+})();
+
+/* ========================================
+ * ページトップへ戻るボタン（pageFooter）
+ * ======================================== */
+(function () {
+  'use strict';
+
+  const btn = document.querySelector('.c-page-footer__page-top-link');
+  if (!btn) return;
+
+  const SCROLL_THRESHOLD = 200;
+  const SCROLL_DELTA_THRESHOLD = 5;
+
+  let lastScrollY = window.scrollY;
+  let scrollDirection = null;
+  let ticking = false;
+
+  function detectScrollDirection(currentScrollY) {
+    const delta = Math.abs(currentScrollY - lastScrollY);
+
+    if (delta < SCROLL_DELTA_THRESHOLD) {
+      return scrollDirection;
+    }
+
+    if (currentScrollY > lastScrollY) {
+      scrollDirection = 'down';
+    } else if (currentScrollY < lastScrollY) {
+      scrollDirection = 'up';
+    }
+
+    lastScrollY = currentScrollY;
+    return scrollDirection;
+  }
+
+  function updateVisibility() {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY < SCROLL_THRESHOLD) {
+      btn.classList.remove('is-visible');
+      ticking = false;
+      return;
+    }
+
+    const direction = detectScrollDirection(currentScrollY);
+
+    if (direction === 'down') {
+      btn.classList.add('is-visible');
+    } else if (direction === 'up') {
+      btn.classList.remove('is-visible');
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(updateVisibility);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  updateVisibility();
+})();
+
+/* ========================================
+ * ページネーション（pager）
+ * ======================================== */
+(function () {
+  'use strict';
+
+  const TOTAL_SLOTS = 7;
+  const pagers = document.querySelectorAll('.js-pager');
+  if (!pagers.length) return;
+
+  function getPageSlots(current, total) {
+    const slots = [];
+
+    if (total <= TOTAL_SLOTS) {
+      for (let i = 1; i <= total; i++) {
+        slots.push(i);
+      }
+      return slots;
+    }
+
+    if (current <= 4) {
+      return [1, 2, 3, 4, 5, '...', total];
+    }
+
+    if (current >= total - 3) {
+      return [1, '...', total - 4, total - 3, total - 2, total - 1, total];
+    }
+
+    return [1, '...', current - 1, current, current + 1, '...', total];
+  }
+
+  function createItem(className, inner) {
+    const li = document.createElement('li');
+    li.className = 'c-pager__item' + (className ? ' ' + className : '');
+    li.appendChild(inner);
+    return li;
+  }
+
+  function renderPager(pager, current, total) {
+    const list = pager.querySelector('.c-pager__list');
+    if (!list) return;
+
+    list.innerHTML = '';
+    const slots = getPageSlots(current, total);
+
+    const prevLink = document.createElement('a');
+    prevLink.href = '#';
+    prevLink.className = 'c-pager__link c-pager__link--prev';
+    prevLink.setAttribute('aria-label', '前へ');
+    const prevItem = createItem('c-pager__item--prev', prevLink);
+    if (current <= 1) prevItem.classList.add('is-hidden');
+    list.appendChild(prevItem);
+
+    for (let i = 0; i < slots.length; i++) {
+      if (slots[i] === '...') {
+        const ellipsis = document.createElement('span');
+        ellipsis.className = 'c-pager__ellipsis';
+        ellipsis.textContent = '\u2026';
+        list.appendChild(createItem('', ellipsis));
+      } else if (slots[i] === current) {
+        const span = document.createElement('span');
+        span.className = 'c-pager__current';
+        span.setAttribute('aria-current', 'page');
+        span.textContent = slots[i];
+        list.appendChild(createItem('c-pager__item--current', span));
+      } else {
+        const a = document.createElement('a');
+        a.href = '#';
+        a.className = 'c-pager__link';
+        a.textContent = slots[i];
+        list.appendChild(createItem('', a));
+      }
+    }
+
+    const nextLink = document.createElement('a');
+    nextLink.href = '#';
+    nextLink.className = 'c-pager__link c-pager__link--next';
+    nextLink.setAttribute('aria-label', '次へ');
+    const nextItem = createItem('c-pager__item--next', nextLink);
+    if (current >= total) nextItem.classList.add('is-hidden');
+    list.appendChild(nextItem);
+  }
+
+  function updateAll(newPage) {
+    for (let i = 0; i < pagers.length; i++) {
+      const total = parseInt(pagers[i].getAttribute('data-total-pages'), 10) || 1;
+      if (newPage < 1) newPage = 1;
+      if (newPage > total) newPage = total;
+      pagers[i].setAttribute('data-current-page', newPage);
+      renderPager(pagers[i], newPage, total);
+    }
+  }
+
+  for (let i = 0; i < pagers.length; i++) {
+    const total = parseInt(pagers[i].getAttribute('data-total-pages'), 10) || 1;
+    const current = parseInt(pagers[i].getAttribute('data-current-page'), 10) || 1;
+    renderPager(pagers[i], current, total);
+  }
+
+  document.addEventListener('click', function (e) {
+    const target = e.target.closest('.c-pager__link');
+    if (!target) return;
+
+    const pager = target.closest('.js-pager');
+    if (!pager) return;
+
+    e.preventDefault();
+
+    const current = parseInt(pager.getAttribute('data-current-page'), 10) || 1;
+    let newPage;
+
+    if (target.classList.contains('c-pager__link--prev')) {
+      newPage = current - 1;
+    } else if (target.classList.contains('c-pager__link--next')) {
+      newPage = current + 1;
+    } else {
+      newPage = parseInt(target.textContent, 10);
+    }
+
+    if (isNaN(newPage) || newPage === current) return;
+
+    updateAll(newPage);
+  });
+})();

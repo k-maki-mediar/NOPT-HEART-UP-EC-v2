@@ -502,6 +502,18 @@ $(function () {
     $wrapper.find('.js-detail-order-panel[data-panel="' + target + '"]').addClass('is-active');
   });
 
+  // らくとくタブがある場合、初期表示をらくとくにする
+  $('.c-detail-unit__order-wrapper').each(function () {
+    const $wrapper = $(this);
+    const $rakutokuTab = $wrapper.find('.js-detail-order-tab[data-target="rakutoku"]');
+    if ($rakutokuTab.length) {
+      $wrapper.find('.js-detail-order-tab').removeClass('is-active').attr('aria-selected', 'false');
+      $rakutokuTab.addClass('is-active').attr('aria-selected', 'true');
+      $wrapper.find('.js-detail-order-panel').removeClass('is-active');
+      $wrapper.find('.js-detail-order-panel[data-panel="rakutoku"]').addClass('is-active');
+    }
+  });
+
   // ----------------------------------------
   // お気に入りボタン トグル
   // ----------------------------------------

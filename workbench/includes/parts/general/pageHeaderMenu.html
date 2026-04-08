@@ -1,7 +1,7 @@
 <header class="c-header">
   <div class="c-header__inner">
     <div class="c-header__left">
-      <button type="button" class="c-header__nav-link c-header__nav-link--btn js-header-menu-toggle" aria-expanded="false" aria-controls="js-header-menu">
+      <button type="button" class="c-header__nav-link c-header__nav-link--btn js-header-menu-toggle" aria-expanded="false">
         <img src="../../../files/commonfiles/images/icon-menu.svg" alt="" class="c-header__nav-icon">
         <span class="c-header__nav-label">メニュー</span>
       </button>
@@ -52,7 +52,7 @@
       </ul>
     </nav>
   </div>
-  <div class="c-header-menu" id="js-header-menu">
+  <div class="c-header-menu js-header-menu">
     <ul class="c-header-menu__list">
       <li class="c-header-menu__item">
         <a href="../common/ログイン.html" class="c-header-menu__link">
@@ -73,11 +73,11 @@
         </a>
       </li>
       <li class="c-header-menu__item c-header-menu__item--accordion">
-        <button type="button" class="c-header-menu__toggle js-header-menu-accordion" aria-expanded="false" aria-controls="js-header-li-sub-product">
+        <button type="button" class="c-header-menu__toggle js-header-menu-accordion" aria-expanded="false">
           <span class="c-header-menu__toggle-text">商品メニュー</span>
           <span class="c-header-menu__toggle-icon" aria-hidden="true"></span>
         </button>
-        <ul class="c-header-menu__submenu c-product-menu" id="js-header-li-sub-product">
+        <ul class="c-header-menu__submenu c-product-menu">
           @@include('./productMenuItems.html')
         </ul>
       </li>

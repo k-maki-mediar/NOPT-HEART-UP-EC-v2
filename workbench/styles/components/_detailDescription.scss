@@ -106,6 +106,12 @@
 
 .c-detail-description-payment {
   background-color: $bg-gray;
+
+  // SP: グレー背景を画面幅いっぱいに広げる（full-bleed）
+  @include sp {
+    margin-inline: calc(-50vw + 50%);
+    padding-inline: calc(50vw - 50%);
+  }
 }
 
 .c-detail-description-payment__inner {

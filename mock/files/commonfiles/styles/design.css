@@ -6524,6 +6524,12 @@
 .c-detail-description-payment {
   background-color: #F7F7F7;
 }
+@media (max-width: 767px) {
+  .c-detail-description-payment {
+    margin-inline: calc(-50vw + 50%);
+    padding-inline: calc(50vw - 50%);
+  }
+}
 
 .c-detail-description-payment__inner {
   display: flex;

@@ -360,6 +360,37 @@ $(function () {
     showSlide(parseInt($(this).data('index'), 10));
   });
 
+  // スワイプ対応（タッチ操作で画像切替）
+  let currentSlide = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const SWIPE_THRESHOLD = 40;
+
+  $slider.on('touchstart', function (e) {
+    touchStartX = e.originalEvent.touches[0].clientX;
+  });
+
+  $slider.on('touchend', function (e) {
+    touchEndX = e.originalEvent.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) < SWIPE_THRESHOLD) { return; }
+    const total = $slides.length;
+    if (diff > 0 && currentSlide < total - 1) {
+      currentSlide++;
+    } else if (diff < 0 && currentSlide > 0) {
+      currentSlide--;
+    }
+    showSlide(currentSlide);
+  });
+
+  // ドット・サムネイルクリック時もcurrentSlideを同期
+  $dots.on('click', function () {
+    currentSlide = parseInt($(this).data('index'), 10);
+  });
+  $thumbBtns.on('click', function () {
+    currentSlide = parseInt($(this).data('index'), 10);
+  });
+
   // ----------------------------------------
   // 通常注文：左右数量0→ボタン切替（コンタクトレンズ）
   // ----------------------------------------

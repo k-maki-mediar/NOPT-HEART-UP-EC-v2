@@ -963,10 +963,12 @@
 }
 
 .c-detail-unit__price-label {
-  margin-left: auto;
-  font-family: $font-family-base;
-  font-size: rem(12);
-  color: $text-light;
+  // TODO: 非表示検討中
+  display: none;
+  // margin-left: auto;
+  // font-family: $font-family-base;
+  // font-size: rem(12);
+  // color: $text-light;
 }
 
 .c-detail-unit__price--strike {

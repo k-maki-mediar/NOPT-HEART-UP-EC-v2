@@ -6182,10 +6182,7 @@
 }
 
 .c-detail-unit__price-label {
-  margin-left: auto;
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.75rem;
-  color: #6B7280;
+  display: none;
 }
 
 .c-detail-unit__price--strike {

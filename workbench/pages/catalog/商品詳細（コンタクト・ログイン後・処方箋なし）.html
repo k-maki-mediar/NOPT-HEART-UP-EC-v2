@@ -133,23 +133,38 @@
                             <button class="c-detail-unit__order-tab js-detail-order-tab" role="tab" aria-selected="false" data-target="rakutoku" type="button">らくとく定期便の注文</button>
                           </div>
                           <div class="c-detail-unit__order-panels">
-                            <!-- スポット便注文エリア（処方箋なし・価格非表示） -->
+                            <!-- スポット便注文エリア（処方箋なし・金額表示のみ） -->
                             <div class="c-detail-unit__order-normal c-detail-unit__order-panel is-active js-detail-order-panel" data-panel="normal" role="tabpanel">
                               <div class="c-detail-unit__order-body">
                                 <div class="c-detail-unit__price-area">
-                                  <p class="c-detail-unit__login-msg">価格はログインしてご覧ください</p>
+                                  <div class="c-detail-unit__price-row">
+                                    <div class="c-detail-unit__price--main">
+                                      <span class="c-detail-unit__price-value">3,300</span>
+                                      <span class="c-detail-unit__price-unit">円</span>
+                                    </div>
+                                    <p class="c-detail-unit__price-tax">（税込）</p>
+                                    <span class="c-detail-unit__price-label">スポット便価格</span>
+                                  </div>
                                   <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p>
                                 </div>
                               </div>
                             </div>
-                            <!-- らくとく定期便エリア（処方箋なし） -->
+                            <!-- らくとく定期便エリア（処方箋なし・金額表示のみ） -->
                             <div class="c-detail-unit__order-rakutoku c-detail-unit__order-panel js-detail-order-panel" data-panel="rakutoku" role="tabpanel">
                               <div class="c-detail-unit__order-body">
                                 <div class="c-detail-unit__price-area">
-                                  <p class="c-detail-unit__login-msg">価格はログインしてご覧ください</p>
+                                  <span class="c-detail-unit__discount-rate">通常価格より12%OFF</span>
+                                  <div class="c-detail-unit__price-row">
+                                    <div class="c-detail-unit__price--main">
+                                      <span class="c-detail-unit__price-value">2,904</span>
+                                      <span class="c-detail-unit__price-unit">円</span>
+                                    </div>
+                                    <p class="c-detail-unit__price-tax">（税込）</p>
+                                    <span class="c-detail-unit__price-label">定期便価格</span>
+                                  </div>
                                   <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p>
                                 </div>
-                                <a href="#" class="c-detail-unit__rakutoku-info-link" target="_blank" rel="noopener noreferrer">らくとく定期便とは</a>
+                                <a href="#" class="c-detail-unit__rakutoku-info-link" target="_blank" rel="noopener noreferrer">らくとく定期便とは<svg class="c-detail-unit__rakutoku-info-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
                               </div>
                             </div>
                           </div>

@@ -1097,21 +1097,34 @@
   margin-bottom: rem(8);
 }
 
+// 注文ブロック本体
+.c-detail-unit__order-body {
+  display: flex;
+  flex-direction: column;
+}
+
 // ----------------------------------------
 // リンク類（らくとく定期便とは）
 // ----------------------------------------
 
 .c-detail-unit__rakutoku-info-link {
+  align-self: flex-end;
   display: inline-flex;
   align-items: center;
-  gap: rem(4);
+  justify-content: center;
+  gap: rem(6);
   font-family: $font-family-base;
-  font-size: rem(13);
-  color: $calendar-sat;
-  text-decoration: underline;
-  min-height: rem(44);
-  padding: rem(4) 0;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  text-decoration: none;
+  background-color: #fff;
+  border: none;
+  border-radius: rem(9999);
+  min-height: rem(36);
+  padding: rem(6) rem(16);
   margin-bottom: rem(8);
+  transition: opacity 0.2s;
 
   &:hover {
     opacity: 0.75;
@@ -1121,6 +1134,13 @@
     outline: 2px solid $primary-color;
     outline-offset: rem(2);
   }
+}
+
+.c-detail-unit__rakutoku-info-link-arrow {
+  width: rem(14);
+  height: rem(14);
+  color: $primary-color;
+  flex-shrink: 0;
 }
 
 // ----------------------------------------

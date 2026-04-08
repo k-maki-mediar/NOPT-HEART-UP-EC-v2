@@ -7,19 +7,19 @@
 (function () {
   'use strict';
 
-  var btn = document.querySelector('.c-page-footer__page-top-link');
+  const btn = document.querySelector('.c-page-footer__page-top-link');
   if (!btn) return;
 
   // スクロール閾値
-  var SCROLL_THRESHOLD = 200;
-  var SCROLL_DELTA_THRESHOLD = 5;
+  const SCROLL_THRESHOLD = 200;
+  const SCROLL_DELTA_THRESHOLD = 5;
 
-  var lastScrollY = window.scrollY;
-  var scrollDirection = null;
-  var ticking = false;
+  let lastScrollY = window.scrollY;
+  let scrollDirection = null;
+  let ticking = false;
 
   function detectScrollDirection(currentScrollY) {
-    var delta = Math.abs(currentScrollY - lastScrollY);
+    const delta = Math.abs(currentScrollY - lastScrollY);
 
     if (delta < SCROLL_DELTA_THRESHOLD) {
       return scrollDirection;
@@ -36,7 +36,7 @@
   }
 
   function updateVisibility() {
-    var currentScrollY = window.scrollY;
+    const currentScrollY = window.scrollY;
 
     // ページトップ付近では常に非表示
     if (currentScrollY < SCROLL_THRESHOLD) {
@@ -45,7 +45,7 @@
       return;
     }
 
-    var direction = detectScrollDirection(currentScrollY);
+    const direction = detectScrollDirection(currentScrollY);
 
     // 下方向スクロール時に表示
     if (direction === 'down') {

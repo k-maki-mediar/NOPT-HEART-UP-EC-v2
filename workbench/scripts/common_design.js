@@ -216,6 +216,88 @@ $(function () {
 });
 
 /* ========================================
+ * カスタムセレクト（c-detail-unit__select → カスタムUI化）
+ * ======================================== */
+$(function () {
+  $('.c-detail-unit__select').each(function () {
+    const $select = $(this);
+    const $wrap = $select.closest('.c-detail-unit__select-wrap');
+
+    // カスタムUI生成
+    const $custom = $('<div class="c-detail-unit__custom-select"></div>');
+    const $trigger = $('<button type="button" class="c-detail-unit__custom-select-trigger" aria-haspopup="listbox" aria-expanded="false"></button>');
+    const $panel = $('<div class="c-detail-unit__custom-select-panel" role="listbox"></div>');
+
+    // option をボタンとして生成
+    $select.find('option').each(function () {
+      const $opt = $(this);
+      const $optBtn = $('<button type="button" class="c-detail-unit__custom-select-option" role="option"></button>');
+      $optBtn.text($opt.text());
+      $optBtn.attr('data-value', $opt.val());
+      if ($opt.is(':selected')) {
+        $optBtn.addClass('c-detail-unit__custom-select-option--selected');
+        $optBtn.attr('aria-selected', 'true');
+        $trigger.text($opt.text());
+      }
+      $panel.append($optBtn);
+    });
+
+    $custom.append($trigger).append($panel);
+    $wrap.append($custom);
+
+    // トリガークリックで開閉
+    $trigger.on('click', function (e) {
+      e.stopPropagation();
+      const isOpen = $custom.hasClass('c-detail-unit__custom-select--open');
+
+      // 他のドロップダウンを閉じる
+      $('.c-detail-unit__custom-select--open').removeClass('c-detail-unit__custom-select--open')
+        .find('.c-detail-unit__custom-select-trigger').attr('aria-expanded', 'false');
+
+      if (!isOpen) {
+        $custom.addClass('c-detail-unit__custom-select--open');
+        $trigger.attr('aria-expanded', 'true');
+      }
+    });
+
+    // 選択肢クリック
+    $panel.on('click', '.c-detail-unit__custom-select-option', function () {
+      const $opt = $(this);
+      const val = $opt.data('value');
+
+      // ネイティブselectを更新してchangeイベント発火
+      $select.val(val).trigger('change');
+
+      // UI更新
+      $panel.find('.c-detail-unit__custom-select-option')
+        .removeClass('c-detail-unit__custom-select-option--selected')
+        .attr('aria-selected', 'false');
+      $opt.addClass('c-detail-unit__custom-select-option--selected')
+        .attr('aria-selected', 'true');
+      $trigger.contents().first().replaceWith($opt.text());
+
+      // 閉じる
+      $custom.removeClass('c-detail-unit__custom-select--open');
+      $trigger.attr('aria-expanded', 'false');
+    });
+  });
+
+  // 外側クリックで閉じる
+  $(document).on('click', function () {
+    $('.c-detail-unit__custom-select--open').removeClass('c-detail-unit__custom-select--open')
+      .find('.c-detail-unit__custom-select-trigger').attr('aria-expanded', 'false');
+  });
+
+  // Escキーで閉じる
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') {
+      $('.c-detail-unit__custom-select--open').removeClass('c-detail-unit__custom-select--open')
+        .find('.c-detail-unit__custom-select-trigger').attr('aria-expanded', 'false');
+    }
+  });
+});
+
+/* ========================================
  * 商品詳細（detailUnitMain）
  * ======================================== */
 $(function () {

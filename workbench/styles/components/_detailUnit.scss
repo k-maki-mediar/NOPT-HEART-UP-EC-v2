@@ -636,38 +636,101 @@
 .c-detail-unit__select-wrap {
   position: relative;
   flex: 1;
-
-  &::after {
-    content: '';
-    position: absolute;
-    right: rem(10);
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    width: rem(8);
-    height: rem(8);
-    border-right: 2px solid $text-light;
-    border-bottom: 2px solid $text-light;
-    pointer-events: none;
-  }
 }
 
+// ネイティブselectを非表示（カスタムUI使用時）
 .c-detail-unit__select {
-  display: block;
+  display: none;
+}
+
+// カスタムドロップダウン
+.c-detail-unit__custom-select {
+  position: relative;
+}
+
+.c-detail-unit__custom-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   min-height: rem(44);
-  padding: rem(8) rem(32) rem(8) rem(10);
-  border: 1px solid $color-disabled;
-  border-radius: rem(4);
+  padding: rem(10) rem(16);
+  border: 1px solid #c2c2c2;
   background-color: $color-white;
   font-family: $font-family-base;
   font-size: rem(14);
+  font-weight: $font-weight-medium;
   color: $text-color;
-  appearance: none;
   cursor: pointer;
+  user-select: none;
 
   &:focus-visible {
-    outline: 2px solid $primary-color;
-    outline-offset: rem(2);
+    border-color: $primary-color;
+    outline: none;
+  }
+
+  &::after {
+    content: '';
+    flex-shrink: 0;
+    margin-left: rem(12);
+    width: rem(7);
+    height: rem(7);
+    border-right: 2px solid $primary-color;
+    border-bottom: 2px solid $primary-color;
+    transform: rotate(45deg);
+    transition: transform 0.2s;
+  }
+
+  .c-detail-unit__custom-select--open &::after {
+    transform: rotate(-135deg);
+  }
+
+  .c-detail-unit__custom-select--open & {
+    border-color: $primary-color;
+  }
+}
+
+.c-detail-unit__custom-select-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: rem(200);
+  overflow-y: auto;
+  border: 1px solid $primary-color;
+  border-top: none;
+  background-color: $color-white;
+
+  .c-detail-unit__custom-select--open & {
+    display: block;
+  }
+}
+
+.c-detail-unit__custom-select-option {
+  display: block;
+  width: 100%;
+  padding: rem(10) rem(16);
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  min-height: rem(44);
+
+  &:hover,
+  &:focus-visible {
+    background-color: $bg-light;
+    outline: none;
+  }
+
+  &--selected {
+    color: $primary-color;
+    background-color: $bg-light;
   }
 }
 
@@ -1123,7 +1186,6 @@
   border-radius: rem(9999);
   min-height: rem(36);
   padding: rem(6) rem(16);
-  margin-bottom: rem(8);
   transition: opacity 0.2s;
 
   &:hover {

@@ -5787,6 +5787,7 @@
 .c-detail-unit__prescription-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.875rem;
 }
@@ -6283,8 +6284,8 @@
 
 .c-detail-unit__price-period {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.6875rem;
-  color: #6B7280;
+  font-size: 0.8125rem;
+  color: #d42f2f;
   margin-bottom: 0.25rem;
 }
 

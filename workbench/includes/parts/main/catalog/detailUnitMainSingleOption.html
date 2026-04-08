@@ -1,0 +1,589 @@
+<!-- ===========================
+  商品詳細（単品）メインパーツ（選択肢なし/1件パターン）
+  detailUnitMainSingleOption.html
+  度数選択・カラー選択の選択肢が1件以下の場合
+=========================== -->
+<div class="c-detail-unit">
+  <div class="c-detail-unit__inner">
+
+    <!-- 左カラム：商品画像エリア -->
+    <div class="c-detail-unit__image-col">
+
+      <!-- 商品画像スライダー -->
+      <div class="c-detail-unit__image-area">
+
+        <div class="c-detail-unit__image-slider js-detail-image-slider">
+          <!-- お気に入りボタン（ログイン済み未登録 or 未ログイン） -->
+          <a href="#" class="c-detail-unit__favorite-btn js-favorite-btn" aria-label="お気に入りに追加">
+            <svg class="c-detail-unit__favorite-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </a>
+          <!-- メイン画像（スライド1） -->
+          <div class="c-detail-unit__image-slide">
+            <a href="#" class="c-detail-unit__image-link">
+              <img
+                class="c-detail-unit__image"
+                src="../../../files/commonfiles/images/product-sample-01.png"
+                onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+                alt="ロート1DAYフレッシュビューエアリッチ 乱視用 メイン画像"
+                width="280"
+                height="240"
+              >
+            </a>
+          </div>
+          <!-- 関連画像（スライド2） -->
+          <div class="c-detail-unit__image-slide">
+            <a href="#" class="c-detail-unit__image-link">
+              <img
+                class="c-detail-unit__image"
+                src="../../../files/commonfiles/images/product-sample-01.png"
+                onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+                alt="ロート1DAYフレッシュビューエアリッチ 乱視用 関連画像2"
+                width="280"
+                height="240"
+              >
+            </a>
+          </div>
+          <!-- 関連画像（スライド3） -->
+          <div class="c-detail-unit__image-slide">
+            <a href="#" class="c-detail-unit__image-link">
+              <img
+                class="c-detail-unit__image"
+                src="../../../files/commonfiles/images/product-sample-01.png"
+                onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+                alt="ロート1DAYフレッシュビューエアリッチ 乱視用 関連画像3"
+                width="280"
+                height="240"
+              >
+            </a>
+          </div>
+        </div>
+        <!-- スライダードット -->
+        <ul class="c-detail-unit__image-dots js-detail-image-dots" aria-label="画像切替">
+          <li class="c-detail-unit__image-dots-item">
+            <button class="c-detail-unit__image-dot c-detail-unit__image-dot--active js-detail-image-dot" aria-label="画像1を表示" data-index="0"></button>
+          </li>
+          <li class="c-detail-unit__image-dots-item">
+            <button class="c-detail-unit__image-dot js-detail-image-dot" aria-label="画像2を表示" data-index="1"></button>
+          </li>
+          <li class="c-detail-unit__image-dots-item">
+            <button class="c-detail-unit__image-dot js-detail-image-dot" aria-label="画像3を表示" data-index="2"></button>
+          </li>
+        </ul>
+        <!-- サムネイル一覧 -->
+        <ul class="c-detail-unit__thumbnails js-detail-thumbnails" aria-label="サムネイル">
+          <li class="c-detail-unit__thumbnail-item">
+            <button class="c-detail-unit__thumbnail-btn c-detail-unit__thumbnail-btn--active js-detail-thumbnail-btn" aria-label="画像1" data-index="0">
+              <img
+                class="c-detail-unit__thumbnail-img"
+                src="../../../files/commonfiles/images/product-sample-01.png"
+                onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+                alt="サムネイル1"
+                width="60"
+                height="60"
+              >
+            </button>
+          </li>
+          <li class="c-detail-unit__thumbnail-item">
+            <button class="c-detail-unit__thumbnail-btn js-detail-thumbnail-btn" aria-label="画像2" data-index="1">
+              <img
+                class="c-detail-unit__thumbnail-img"
+                src="../../../files/commonfiles/images/product-sample-01.png"
+                onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+                alt="サムネイル2"
+                width="60"
+                height="60"
+              >
+            </button>
+          </li>
+          <li class="c-detail-unit__thumbnail-item">
+            <button class="c-detail-unit__thumbnail-btn js-detail-thumbnail-btn" aria-label="画像3" data-index="2">
+              <img
+                class="c-detail-unit__thumbnail-img"
+                src="../../../files/commonfiles/images/product-sample-01.png"
+                onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+                alt="サムネイル3"
+                width="60"
+                height="60"
+              >
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- 商品アイコン -->
+      <ul class="c-detail-unit__icons c-detail-unit__icons--sp" aria-label="商品アイコン">
+        <li class="c-detail-unit__icon-item"><span class="c-detail-unit__icon">1DAY</span></li>
+        <li class="c-detail-unit__icon-item"><span class="c-detail-unit__icon">乱視用</span></li>
+        <li class="c-detail-unit__icon-item"><span class="c-detail-unit__icon">らくとく</span></li>
+      </ul>
+
+      <!-- らくとく定期バナー（PC表示用） -->
+      <div class="c-detail-unit__rakutoku-banner c-detail-unit__rakutoku-banner--pc">
+        <a href="#" class="c-detail-unit__rakutoku-banner-link" target="_blank" rel="noopener noreferrer">
+          <img class="c-detail-unit__rakutoku-banner-img" src="../../../files/commonfiles/images/pickup_raku_care.jpg" alt="らくとく定期便のご案内" width="580" height="155">
+        </a>
+      </div>
+
+    </div>
+    <!-- /左カラム -->
+
+    <!-- 右カラム：商品情報・注文エリア -->
+    <div class="c-detail-unit__info-col">
+
+      <!-- 商品アイコン行（1DAY・乱視用等） -->
+<!-- 取扱終了日（登録値が最大値の場合は非表示） -->
+      <!-- <p class="c-detail-unit__end-date">取扱終了日: 2026/06/30</p> -->
+
+      <!-- 事前掲載（事前掲載期間中のみ） -->
+      <!-- <span class="c-detail-unit__printing-notice">近日発売予定</span> -->
+
+      <!-- 事後掲載（事後掲載期間中のみ） -->
+      <!-- <span class="c-detail-unit__printing-notice">販売期間終了</span> -->
+<!-- 年齢制限（年齢制限がある商品のみ） -->
+      <!-- <span class="c-detail-unit__age-limit">18歳以上購入可</span> -->
+
+      <!-- キャンペーン情報（キャンペーンがある場合のみ・特別価格中は非表示） -->
+      <!-- <div class="c-detail-unit__campaign">
+        <p class="c-detail-unit__campaign-text">春のキャンペーン 12%OFF</p>
+      </div> -->
+
+      <!-- 商品コード -->
+
+      <!-- 在庫状況メッセージ（在庫状況に応じて表示） -->
+      <!-- <div class="c-detail-unit__stock">
+        <p class="c-detail-unit__stock-msg">残り少なくなっています</p>
+      </div> -->
+
+
+      <!-- 商品アイコン（PC） -->
+      <ul class="c-detail-unit__icons c-detail-unit__icons--pc" aria-label="商品アイコン">
+        <li class="c-detail-unit__icon-item"><span class="c-detail-unit__icon">1DAY</span></li>
+        <li class="c-detail-unit__icon-item"><span class="c-detail-unit__icon">乱視用</span></li>
+        <li class="c-detail-unit__icon-item"><span class="c-detail-unit__icon">らくとく</span></li>
+      </ul>
+      <!-- 商品説明フリーテキスト -->
+      <div class="c-detail-unit__free-text">
+        <p class="c-detail-unit__free-text-body">瞳にやさしいつけ心地の1日使い捨てコンタクトレンズです。独自のモイストベール技術により、うるおいが長時間持続します。UVカット機能付きで、紫外線から瞳を守ります。</p>
+      </div>
+
+      <!-- ============================================================
+        ご登録のEyeデータ（コンタクトレンズかつ処方箋ありの場合のみ表示）
+        ページ側でこのブロックごとコメントアウト・削除して使い分ける
+      ============================================================ -->
+      <div class="c-detail-unit__eye-data">
+        <h2 class="c-detail-unit__eye-data-heading">ご登録のEyeデータ</h2>
+        <dl class="c-detail-unit__eye-data-info">
+          <div class="c-detail-unit__eye-data-row">
+            <dt class="c-detail-unit__eye-data-label">メーカー名</dt>
+            <dd class="c-detail-unit__eye-data-value">ロート</dd>
+          </div>
+          <div class="c-detail-unit__eye-data-row">
+            <dt class="c-detail-unit__eye-data-label">商品名</dt>
+            <dd class="c-detail-unit__eye-data-value">ロート1DAYフレッシュビューエアリッチ 乱視用</dd>
+          </div>
+          <div class="c-detail-unit__eye-data-row">
+            <dt class="c-detail-unit__eye-data-label">内容量</dt>
+            <dd class="c-detail-unit__eye-data-value">32枚入</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="c-detail-unit__prescription">
+
+        <!-- 処方箋有効期限警告（期限3ヶ月以内のみ） -->
+        <!-- <div class="c-detail-unit__prescription-warning">
+          <p class="c-detail-unit__prescription-warning-text">※処方箋の保管有効期限が迫っています。眼科を受診し新しい処方箋を登録してください。</p>
+        </div> -->
+
+        <!-- 一部終売メッセージ（一部SKUが終売の場合） -->
+        <!-- <div class="c-detail-unit__prescription-end-sale">
+          <p class="c-detail-unit__prescription-end-sale-text">一部商品が販売終了になっています。</p>
+        </div> -->
+
+        <!-- 全終売メッセージ（全SKU終売の場合） -->
+        <!-- <div class="c-detail-unit__prescription-end-sale">
+          <p class="c-detail-unit__prescription-end-sale-text">選択した商品は販売終了のためご購入いただけません</p>
+        </div> -->
+
+        <!-- 処方箋規格テーブル -->
+        <table class="c-detail-unit__prescription-table">
+          <thead class="c-detail-unit__prescription-thead">
+            <tr>
+              <th class="c-detail-unit__prescription-th" scope="col">項目</th>
+              <th class="c-detail-unit__prescription-th" scope="col">右</th>
+              <th class="c-detail-unit__prescription-th" scope="col">左</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">処方箋<br>保管有効期限</th>
+              <td class="c-detail-unit__prescription-cell">2030/07/16</td>
+              <td class="c-detail-unit__prescription-cell">2030/07/16</td>
+            </tr>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">ベースカーブ（BC）</th>
+              <td class="c-detail-unit__prescription-cell">8.80</td>
+              <td class="c-detail-unit__prescription-cell">8.80</td>
+            </tr>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">度数（P）</th>
+              <td class="c-detail-unit__prescription-cell">-1.00</td>
+              <td class="c-detail-unit__prescription-cell">-1.00</td>
+            </tr>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">乱視度数（C）</th>
+              <td class="c-detail-unit__prescription-cell"></td>
+              <td class="c-detail-unit__prescription-cell"></td>
+            </tr>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">乱視軸（AX）</th>
+              <td class="c-detail-unit__prescription-cell"></td>
+              <td class="c-detail-unit__prescription-cell"></td>
+            </tr>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">レンズ直径（DIA）</th>
+              <td class="c-detail-unit__prescription-cell">14.2</td>
+              <td class="c-detail-unit__prescription-cell">14.2</td>
+            </tr>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">加入度数（ADD）</th>
+              <td class="c-detail-unit__prescription-cell"></td>
+              <td class="c-detail-unit__prescription-cell"></td>
+            </tr>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">度数選択<br>（遠用／近用）</th>
+              <td class="c-detail-unit__prescription-cell">-2.00</td>
+              <td class="c-detail-unit__prescription-cell">-2.00</td>
+            </tr>
+            <tr class="c-detail-unit__prescription-row">
+              <th class="c-detail-unit__prescription-label-cell" scope="row">カラー選択</th>
+              <td class="c-detail-unit__prescription-cell">-</td>
+              <td class="c-detail-unit__prescription-cell">-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 度数選択（遠用/近用）プルダウン（選択肢が1件以上ある場合） -->
+        <!-- <div class="c-detail-unit__diopter-select">
+          <div class="c-detail-unit__select-row">
+            <span class="c-detail-unit__select-label">右（遠用）</span>
+            <div class="c-detail-unit__select-wrap">
+              <select class="c-detail-unit__select" name="diopterRight">
+                <option value="">選択してください</option>
+                <option value="1">-2.00</option>
+                <option value="2">-2.50</option>
+                <option value="3">-3.00</option>
+              </select>
+            </div>
+          </div>
+          <div class="c-detail-unit__select-row">
+            <span class="c-detail-unit__select-label">左（遠用）</span>
+            <div class="c-detail-unit__select-wrap">
+              <select class="c-detail-unit__select" name="diopterLeft">
+                <option value="">選択してください</option>
+                <option value="1">-2.00</option>
+                <option value="2">-2.50</option>
+                <option value="3">-3.00</option>
+              </select>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- カラー選択プルダウン（選択肢が1件以上ある場合） -->
+        <!-- <div class="c-detail-unit__color-select">
+          <div class="c-detail-unit__select-row">
+            <span class="c-detail-unit__select-label">右カラー</span>
+            <div class="c-detail-unit__select-wrap">
+              <select class="c-detail-unit__select js-detail-color-select" name="colorRight" data-eye="right">
+                <option value="">選択してください</option>
+                <option value="1">ブラウン</option>
+                <option value="2">ブラック</option>
+              </select>
+            </div>
+          </div>
+          <div class="c-detail-unit__select-row">
+            <span class="c-detail-unit__select-label">左カラー</span>
+            <div class="c-detail-unit__select-wrap">
+              <select class="c-detail-unit__select js-detail-color-select" name="colorLeft" data-eye="left">
+                <option value="">選択してください</option>
+                <option value="1">ブラウン</option>
+                <option value="2">ブラック</option>
+              </select>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+      <!-- /処方箋情報部 -->
+
+      <!-- ============================================================
+        注文ブロックラッパー（info-col内＝右カラムに自然配置）
+      ============================================================ -->
+      <div class="c-detail-unit__order-wrapper">
+
+    <!-- タブボタン -->
+    <div class="c-detail-unit__order-tabs js-detail-order-tabs" role="tablist">
+      <button class="c-detail-unit__order-tab is-active js-detail-order-tab" role="tab" aria-selected="true" data-target="normal" type="button">スポット便の注文</button>
+      <button class="c-detail-unit__order-tab js-detail-order-tab" role="tab" aria-selected="false" data-target="rakutoku" type="button">らくとく定期便の注文</button>
+    </div>
+
+    <!-- タブパネル -->
+    <div class="c-detail-unit__order-panels">
+
+  <!-- ============================================================
+    通常購入部
+  ============================================================ -->
+      <div class="c-detail-unit__order-normal c-detail-unit__order-panel is-active js-detail-order-panel" data-panel="normal" role="tabpanel">
+        <div class="c-detail-unit__order-body">
+
+          <!-- 近日発売（事前掲載期間中のみ） -->
+          <!-- <span class="c-detail-unit__sale-status">近日発売</span> -->
+
+          <!-- 販売期間終了（事後掲載期間中のみ） -->
+          <!-- <span class="c-detail-unit__sale-status">販売期間終了</span> -->
+
+          <!-- 数量（コンタクトレンズの場合） -->
+          <div class="c-detail-unit__quantity-contact js-detail-quantity-contact">
+            <div class="c-detail-unit__quantity-row">
+              <!-- 右目 -->
+              <div class="c-detail-unit__quantity-col">
+                <span class="c-detail-unit__quantity-eye-label">右</span>
+                <div class="c-detail-unit__select-wrap">
+                  <select class="c-detail-unit__select js-detail-quantity-right" name="quantityRight" aria-label="右目の数量">
+                    <option value="0" selected>0箱</option>
+                    <option value="1">1箱</option>
+                    <option value="2">2箱</option>
+                    <option value="3">3箱</option>
+                    <option value="4">4箱</option>
+                    <option value="5">5箱</option>
+                  </select>
+                </div>
+              </div>
+              <!-- 左目 -->
+              <div class="c-detail-unit__quantity-col">
+                <span class="c-detail-unit__quantity-eye-label">左</span>
+                <div class="c-detail-unit__select-wrap">
+                  <select class="c-detail-unit__select js-detail-quantity-left" name="quantityLeft" aria-label="左目の数量">
+                    <option value="0" selected>0箱</option>
+                    <option value="1">1箱</option>
+                    <option value="2">2箱</option>
+                    <option value="3">3箱</option>
+                    <option value="4">4箱</option>
+                    <option value="5">5箱</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="c-detail-unit__quantity-total js-detail-quantity-total">
+              <span class="c-detail-unit__quantity-total-count">計 <strong class="c-detail-unit__quantity-total-num js-detail-quantity-total-num">0</strong>箱</span>
+              <span class="c-detail-unit__quantity-total-unit">1箱あたり <strong class="c-detail-unit__quantity-total-price">3,300</strong>円</span>
+            </div>
+          </div>
+
+          <!-- 数量（コンタクトレンズ以外の場合） -->
+          <!-- <div class="c-detail-unit__quantity-normal">
+            <span class="c-detail-unit__quantity-label">数量</span>
+            <div class="c-detail-unit__select-wrap">
+              <select class="c-detail-unit__select" name="quantity" aria-label="購入数量">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div> -->
+
+          <!-- 価格エリア -->
+          <div class="c-detail-unit__price-area">
+            <!-- 軽減税率注釈 -->
+
+            <!-- メイン価格（通常価格） -->
+            <div class="c-detail-unit__price-row">
+              <div class="c-detail-unit__price--main">
+                <span class="c-detail-unit__price-value">3,300</span>
+                <span class="c-detail-unit__price-unit">円</span>
+              </div>
+              <p class="c-detail-unit__price-tax">（税込）</p>
+              <span class="c-detail-unit__price-label">スポット便価格</span>
+            </div>
+
+            <!-- 割引前価格（条件付き） -->
+            <!-- <div class="c-detail-unit__price--strike">
+              <span class="c-detail-unit__price-strike-value">3,800</span>
+              <span class="c-detail-unit__price-strike-unit">円</span>
+            </div> -->
+
+            <!-- 割引率（特別価格・店舗価格・定期価格の場合） -->
+            <!-- <span class="c-detail-unit__discount-rate">通常価格より12%OFF</span> -->
+
+            <!-- 特別価格期間（特別価格表示時） -->
+            <!-- <p class="c-detail-unit__price-period">セール期間 [2026/06/30 23:00] まで</p> -->
+
+            <!-- ログインメッセージ（未ログインで価格非表示の場合） -->
+            <!-- <p class="c-detail-unit__login-msg">価格はログインしてご覧ください</p> -->
+
+            <!-- 処方箋なしメッセージ（コンタクトレンズかつ処方箋なし） -->
+            <!-- <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p> -->
+
+          </div>
+
+          <!-- ボタン群 -->
+          <div class="c-detail-unit__btn-group">
+            <!-- カートに入れるボタン（在庫あり・通常購入時） -->
+            <button class="c-detail-unit__cart-btn js-detail-cart-btn-normal" type="button">カートに入れる</button>
+
+            <!-- 予約するボタン（予約期間中） -->
+            <!-- <button class="c-detail-unit__reserve-btn" type="button">予約する</button> -->
+
+            <!-- 在庫なし表示（通常期間中・在庫なし） -->
+            <!-- <div class="c-detail-unit__out-of-stock">
+              <span class="c-detail-unit__out-of-stock-label">在庫なし</span>
+              <p class="c-detail-unit__out-of-stock-msg">※現在、お取り扱いできません。</p>
+              <p class="c-detail-unit__out-of-stock-msg">※申し訳ございませんが、ただいま品切れ中です。（入荷時期未定）</p>
+            </div> -->
+
+            <!-- 入荷お知らせボタン（入荷お知らせ申込み受付可かつ在庫なしの場合） -->
+            <!-- <button class="c-detail-unit__arrival-btn" type="button">入荷お知らせ</button> -->
+
+            <!-- 予約受付終了（予約期間中・在庫なし） -->
+            <!-- <span class="c-detail-unit__sale-status">予約受付終了</span> -->
+          </div>
+
+          <!-- お届けについて（在庫あり・販売期間中・納期説明がある場合のみ） -->
+          <!-- <p class="c-detail-unit__delivery-desc">通常2〜3営業日以内に発送いたします。</p> -->
+
+          <!-- お問い合わせリンク（常時） -->
+
+        </div>
+      </div>
+      <!-- /通常購入部 -->
+
+      <!-- ============================================================
+        らくとく定期便部（定期購入可能商品・ページ側で表示制御）
+      ============================================================ -->
+      <div class="c-detail-unit__order-rakutoku c-detail-unit__order-panel js-detail-order-panel" data-panel="rakutoku" role="tabpanel">
+        <div class="c-detail-unit__order-body">
+
+          <!-- コンタクトレンズ：左右チェックボックス -->
+          <div class="c-detail-unit__rakutoku-check js-detail-rakutoku-check">
+            <div class="c-detail-unit__rakutoku-check-item">
+              <label class="c-detail-unit__rakutoku-check-label">
+                <input class="c-detail-unit__rakutoku-check-input js-detail-rakutoku-right" type="checkbox" name="rakutokuRight" value="1">
+                右目を定期注文
+              </label>
+            </div>
+            <div class="c-detail-unit__rakutoku-check-item">
+              <label class="c-detail-unit__rakutoku-check-label">
+                <input class="c-detail-unit__rakutoku-check-input js-detail-rakutoku-left" type="checkbox" name="rakutokuLeft" value="1">
+                左目を定期注文
+              </label>
+            </div>
+          </div>
+
+          <!-- お届けサイクル（ラジオボタン） -->
+          <!-- コンタクトレンズ：3ヶ月コースのみ / ケア用品：3・6ヶ月コース / その他：全コース -->
+          <div class="c-detail-unit__cycle-radio">
+            <p class="c-detail-unit__cycle-radio-title">お届けサイクル</p>
+            <ul class="c-detail-unit__cycle-radio-list">
+              <!-- 1ヶ月コース（コンタクトレンズ・ケア用品は非表示） -->
+              <!-- <li>
+                <label class="c-detail-unit__cycle-radio-label">
+                  <input class="c-detail-unit__cycle-radio-input" type="radio" name="deliveryCycle" value="1">
+                  <span class="c-detail-unit__cycle-radio-text">1か月コース</span>
+                </label>
+              </li> -->
+              <!-- 3ヶ月コース -->
+              <li>
+                <label class="c-detail-unit__cycle-radio-label">
+                  <input class="c-detail-unit__cycle-radio-input js-detail-cycle-radio" type="radio" name="deliveryCycle" value="3">
+                  <span class="c-detail-unit__cycle-radio-text">3か月コース</span>
+                </label>
+              </li>
+              <!-- 6ヶ月コース（コンタクトレンズは非表示） -->
+              <!-- <li>
+                <label class="c-detail-unit__cycle-radio-label">
+                  <input class="c-detail-unit__cycle-radio-input js-detail-cycle-radio" type="radio" name="deliveryCycle" value="6">
+                  <span class="c-detail-unit__cycle-radio-text">6か月コース</span>
+                </label>
+              </li> -->
+            </ul>
+          </div>
+
+          <!-- 定期便価格エリア（サイクル選択後に表示） -->
+          <div class="c-detail-unit__price-area">
+            <span class="c-detail-unit__discount-rate">通常価格より12%OFF</span>
+            <div class="c-detail-unit__price-row">
+              <div class="c-detail-unit__price--main">
+                <span class="c-detail-unit__price-value">2,904</span>
+                <span class="c-detail-unit__price-unit">円</span>
+              </div>
+              <p class="c-detail-unit__price-tax">（税込）</p>
+              <span class="c-detail-unit__price-label">定期便価格</span>
+            </div>
+
+            <!-- 割引前価格（条件付き） -->
+            <!-- <div class="c-detail-unit__price--strike">
+              <span class="c-detail-unit__price-strike-value">3,300</span>
+              <span class="c-detail-unit__price-strike-unit">円</span>
+            </div> -->
+
+            <!-- 処方箋なしメッセージ（コンタクトレンズかつ処方箋なし） -->
+            <!-- <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p> -->
+          </div>
+
+          <!-- ボタン群 -->
+          <div class="c-detail-unit__btn-group">
+            <!-- カートに入れるボタン（定期便・在庫あり） -->
+            <button class="c-detail-unit__cart-btn js-detail-cart-btn-rakutoku" type="button">定期便を申し込む</button>
+
+            <!-- 欠品メッセージ（定期便・在庫なし時） -->
+            <!-- <p class="c-detail-unit__out-of-stock-msg">※申し訳ございませんが、ただいま品切れ中です。（入荷時期未定）</p> -->
+          </div>
+
+          <a href="#" class="c-detail-unit__rakutoku-info-link" target="_blank" rel="noopener noreferrer">らくとく定期便とは<svg class="c-detail-unit__rakutoku-info-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
+
+        </div>
+      </div>
+      <!-- /らくとく定期便部 -->
+
+    </div>
+    <!-- /タブパネル -->
+
+      </div>
+      <!-- /注文ブロックラッパー -->
+
+      @@include('../../../parts/general/detailDescriptionContent.html')
+
+    </div>
+    <!-- /右カラム -->
+
+  </div>
+  <!-- /inner（画像+情報2カラム） -->
+
+</div>
+
+<!-- ============================================================
+  カート投入後モーダル
+============================================================ -->
+<div class="c-cart-modal js-cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+  <div class="c-cart-modal__overlay js-cart-modal-overlay"></div>
+  <div class="c-cart-modal__dialog">
+    <div class="c-cart-modal__body">
+      <div class="c-cart-modal__icon" aria-hidden="true">
+        <svg class="c-cart-modal__icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </div>
+      <h2 class="c-cart-modal__title" id="cart-modal-title">カートに入れました</h2>
+      <p class="c-cart-modal__message">引き続きショッピングをお楽しみください</p>
+    </div>
+    <div class="c-cart-modal__actions">
+      <button class="c-cart-modal__btn js-cart-modal-continue" type="button">買い物を続ける</button>
+      <a href="#" class="c-cart-modal__btn c-cart-modal__btn--primary">カートを見る</a>
+    </div>
+  </div>
+</div>

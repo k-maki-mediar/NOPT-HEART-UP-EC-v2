@@ -534,6 +534,7 @@
 .c-detail-unit__prescription-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   font-family: $font-family-base;
   font-size: rem(14);
 }
@@ -1067,8 +1068,8 @@
 
 .c-detail-unit__price-period {
   font-family: $font-family-base;
-  font-size: rem(11);
-  color: $text-light;
+  font-size: rem(13);
+  color: $danger-color;
   margin-bottom: rem(4);
 }
 

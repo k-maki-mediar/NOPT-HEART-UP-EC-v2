@@ -61,48 +61,44 @@
 .c-list-main__per-page {
   flex: 1;
   min-width: 0;
+
+  @include pc {
+    flex: none;
+    min-width: rem(100);
+  }
 }
 
 // セレクトボックス共通ラッパー
 .c-list-main__select-wrap {
   position: relative;
   display: block;
-
-  &::after {
-    content: '';
-    position: absolute;
-    right: rem(12);
-    top: 50%;
-    transform: translateY(-50%);
-    width: rem(10);
-    height: rem(6);
-    border-left: rem(4) solid transparent;
-    border-right: rem(4) solid transparent;
-    border-top: rem(6) solid $border-color-dark;
-    pointer-events: none;
-  }
 }
 
-.c-list-main__select {
+// ネイティブselectを非表示（カスタムUI使用時、disabled以外）
+.c-list-main__select:not(:disabled) {
+  display: none;
+}
+
+.c-list-main__select:disabled {
   display: flex;
   align-items: center;
   width: 100%;
   min-height: rem(44);
   padding: rem(4) rem(32) rem(4) rem(12);
-  border: 1px solid $border-color-dark;
+  border: 1px solid #c2c2c2;
   border-radius: 0;
   background-color: $color-white;
   font-family: $font-family-base;
   font-size: rem(12);
-  font-weight: $font-weight-normal;
+  font-weight: $font-weight-medium;
   letter-spacing: rem(0.15);
   color: $text-color;
   appearance: none;
   cursor: pointer;
 
   &:focus-visible {
-    outline: 2px solid $primary-color;
-    outline-offset: rem(2);
+    border-color: $primary-color;
+    outline: none;
   }
 
   &:disabled {
@@ -110,6 +106,33 @@
     color: $text-light;
     cursor: not-allowed;
   }
+}
+
+// 商品一覧カスタムドロップダウン上書き
+.c-list-main__select-wrap .c-detail-unit__custom-select-trigger {
+  min-height: rem(44);
+  padding: rem(4) rem(12);
+  border: 1px solid #c2c2c2;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  white-space: nowrap;
+
+  &:focus-visible {
+    border-color: $primary-color;
+    outline: none;
+  }
+}
+
+.c-list-main__select-wrap .c-detail-unit__custom-select-panel {
+  border: 1px solid $primary-color;
+  border-top: none;
+}
+
+.c-list-main__select-wrap .c-detail-unit__custom-select-option {
+  font-size: rem(12);
+  padding: rem(8) rem(12);
+  min-height: rem(36);
 }
 
 .c-list-main__sort-label,

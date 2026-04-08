@@ -219,11 +219,14 @@ $(function () {
  * カスタムセレクト（c-detail-unit__select → カスタムUI化）
  * ======================================== */
 $(function () {
-  $('.c-detail-unit__select, .c-detail-unit__prescription-select').each(function () {
+  $('.c-detail-unit__select, .c-detail-unit__prescription-select, .c-list-main__select').each(function () {
     const $select = $(this);
+    if ($select.is(':disabled')) { return; }
     const $wrap = $select.closest('.c-detail-unit__select-wrap').length
       ? $select.closest('.c-detail-unit__select-wrap')
-      : $select.parent();
+      : $select.closest('.c-list-main__select-wrap').length
+        ? $select.closest('.c-list-main__select-wrap')
+        : $select.parent();
 
     // カスタムUI生成
     const $custom = $('<div class="c-detail-unit__custom-select"></div>');

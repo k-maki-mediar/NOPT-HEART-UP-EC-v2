@@ -4,9 +4,9 @@
   --color-primary-dark: #002a5e;
   --color-secondary: #4ECDC4;
   --color-accent: #FFE66D;
-  --color-danger: #e53e3e;
+  --color-danger: #d42f2f;
   --color-text: #333;
-  --color-text-light: #7F8C8D;
+  --color-text-light: #6B7280;
   --color-bg: #FFFFFF;
   --color-bg-light: #f4f8fc;
   --color-bg-gray: #F7F7F7;
@@ -538,7 +538,7 @@
   margin-right: -1.25rem;
   width: 0.5rem;
   height: 0.5rem;
-  background-color: #e53e3e;
+  background-color: #d42f2f;
   border-radius: 50%;
 }
 
@@ -1359,7 +1359,7 @@
   border-radius: 1.25rem;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
-  color: #7F8C8D;
+  color: #6B7280;
 }
 
 .c-service-grid {
@@ -1623,7 +1623,7 @@
   border-radius: 1.25rem;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
-  color: #7F8C8D;
+  color: #6B7280;
 }
 
 .c-category-menu {
@@ -1937,6 +1937,10 @@
   gap: 0.1875rem 0.25rem;
 }
 
+.c-business-calendar__row {
+  display: contents;
+}
+
 .c-business-calendar__weekday {
   display: flex;
   align-items: center;
@@ -1952,11 +1956,11 @@
 }
 
 .c-business-calendar__weekday--sat {
-  color: #0087cb;
+  color: #0074b3;
 }
 
 .c-business-calendar__weekday--sun {
-  color: #cc4843;
+  color: #c13b36;
 }
 
 .c-business-calendar__day {
@@ -1977,7 +1981,7 @@
 }
 
 .c-business-calendar__day--holiday {
-  background-color: #cc4843;
+  background-color: #c13b36;
   color: #FFFFFF;
 }
 
@@ -2005,7 +2009,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 2.75rem;
-  color: #0087cb;
+  color: #0074b3;
   text-decoration: underline;
 }
 
@@ -2026,7 +2030,7 @@
   display: inline-block;
   width: 1rem;
   height: 1rem;
-  background-color: #cc4843;
+  background-color: #c13b36;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -2407,7 +2411,7 @@
 }
 
 .c-rakutoku-info__plan-status--alert {
-  color: #cc4843;
+  color: #c13b36;
 }
 
 .c-rakutoku-info__caution {
@@ -2416,7 +2420,7 @@
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.009375rem;
-  color: #7F8C8D;
+  color: #6B7280;
   margin: 0;
 }
 
@@ -2429,7 +2433,7 @@
   font-weight: 400;
   line-height: 1.75;
   letter-spacing: 0.009375rem;
-  color: #0087cb;
+  color: #0074b3;
   text-decoration: underline;
 }
 
@@ -2518,7 +2522,7 @@
   font-size: 0.875rem;
   line-height: 1.5;
   text-align: center;
-  color: #7F8C8D;
+  color: #6B7280;
   padding-bottom: 1rem;
 }
 
@@ -2702,7 +2706,7 @@
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #cc4843;
+  color: #c13b36;
 }
 
 .c-available-lens__product-actions {
@@ -2913,7 +2917,7 @@
   font-weight: 400;
   line-height: 1.75;
   letter-spacing: 0.04rem;
-  color: #cc4843;
+  color: #c13b36;
   margin: 0;
 }
 
@@ -3120,7 +3124,7 @@
 }
 .c-order-history__product-status--warning {
   background-color: #ffdedd;
-  color: #cc4843;
+  color: #c13b36;
 }
 .c-order-history__product-status--done {
   background-color: #c2c2c2;
@@ -3404,7 +3408,7 @@
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #cc4843;
+  color: #c13b36;
 }
 
 .c-favorite-products__actions {
@@ -3900,7 +3904,7 @@
 .c-user-bar__member-id {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
-  color: #7F8C8D;
+  color: #4B5563;
 }
 
 .c-category-heading {
@@ -3991,7 +3995,7 @@
 .c-topic-path__item + .c-topic-path__item::before {
   content: ">";
   margin-right: 0.25rem;
-  color: #7F8C8D;
+  color: #6B7280;
   font-size: 0.75rem;
 }
 
@@ -4019,7 +4023,7 @@
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #7F8C8D;
+  color: #6B7280;
 }
 
 .c-message-area {
@@ -4043,9 +4047,9 @@
   margin: 0 0 1rem;
 }
 .c-message-area__text--error {
-  background-color: white;
-  color: #e53e3e;
-  border: 1px solid #e53e3e;
+  background-color: rgb(251.3167330677, 237.1832669323, 237.1832669323);
+  color: #d42f2f;
+  border: 1px solid #d42f2f;
 }
 .c-message-area__text--info {
   background-color: #f4f8fc;
@@ -4340,7 +4344,7 @@
 }
 .c-list-main__select:disabled {
   background-color: #F7F7F7;
-  color: #7F8C8D;
+  color: #6B7280;
   cursor: not-allowed;
 }
 
@@ -4369,7 +4373,7 @@
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.75;
-  color: #7F8C8D;
+  color: #6B7280;
   margin: 0;
 }
 
@@ -4378,7 +4382,7 @@
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.75;
-  color: #7F8C8D;
+  color: #6B7280;
   margin: 0 0 0.5rem;
 }
 
@@ -4407,7 +4411,7 @@
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.75;
-  color: #7F8C8D;
+  color: #6B7280;
   margin: 0;
 }
 
@@ -4511,7 +4515,7 @@
   font-size: 0.625rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #e53e3e;
+  color: #d42f2f;
 }
 
 .c-product-card__brand {
@@ -4587,11 +4591,11 @@
 }
 .c-product-card__price--strike .c-product-card__price-value, .c-product-card__price--strike .c-product-card__price-unit {
   text-decoration: line-through;
-  color: #7F8C8D;
+  color: #6B7280;
   font-size: 0.75rem;
 }
 .c-product-card__price--special .c-product-card__price-value {
-  color: #cc4843;
+  color: #c13b36;
   font-size: 1.125rem;
   font-weight: 700;
 }
@@ -4601,32 +4605,32 @@
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.04rem;
-  color: #cc4843;
+  color: #c13b36;
 }
 
 .c-product-card__price-unit {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
-  color: #cc4843;
+  color: #c13b36;
 }
 
 .c-product-card__price-tax-note {
   font-size: 0.625rem;
-  color: #7F8C8D;
+  color: #6B7280;
 }
 
 .c-product-card__price-ref {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.625rem;
-  color: #7F8C8D;
+  color: #6B7280;
   margin: 0;
 }
 
 .c-product-card__price-tax-exempt {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.625rem;
-  color: #7F8C8D;
+  color: #6B7280;
 }
 
 .c-product-card__price--store {
@@ -4682,7 +4686,7 @@
   display: inline-block;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.625rem;
-  color: #e53e3e;
+  color: #d42f2f;
   margin-bottom: 0.25rem;
 }
 
@@ -4722,8 +4726,8 @@
 }
 @media (max-width: 767px) {
   .c-product-card__detail-btn {
-    background-color: #e53e3e;
-    border-color: #e53e3e;
+    background-color: #d42f2f;
+    border-color: #d42f2f;
     color: #FFFFFF;
     box-shadow: 0 0.125rem 0 0 #c93636;
   }
@@ -4769,7 +4773,7 @@
 .c-product-card__cart-btn--disabled {
   background-color: #F7F7F7;
   border-color: #e0e0e0;
-  color: #7F8C8D;
+  color: #6B7280;
   box-shadow: none;
   cursor: not-allowed;
   pointer-events: none;
@@ -4894,7 +4898,7 @@
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  color: #7F8C8D;
+  color: #6B7280;
 }
 @media (max-width: 767px) {
   .c-pager__ellipsis {
@@ -5494,7 +5498,7 @@
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #e53e3e;
+  color: #d42f2f;
   margin: 0 0 0.25rem;
 }
 
@@ -5513,7 +5517,7 @@
 .c-detail-unit__age-limit {
   display: inline-block;
   padding: 0.25rem 0.625rem;
-  background-color: #e53e3e;
+  background-color: #d42f2f;
   border-radius: 0.25rem;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
@@ -5542,7 +5546,7 @@
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #7F8C8D;
+  color: #6B7280;
   margin-bottom: 0.5rem;
 }
 
@@ -5634,14 +5638,14 @@
 .c-detail-unit__prescription-warning {
   padding: 0.625rem 0.75rem;
   background-color: #fde8e8;
-  border-bottom: 1px solid #e53e3e;
+  border-bottom: 1px solid #d42f2f;
 }
 
 .c-detail-unit__prescription-warning-text {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
   font-weight: 400;
-  color: #e53e3e;
+  color: #d42f2f;
   margin: 0;
 }
 
@@ -5792,12 +5796,12 @@
   background-color: #F7F7F7;
 }
 .c-detail-unit__prescription-row--disabled .c-detail-unit__prescription-cell {
-  color: #7F8C8D;
+  color: #6B7280;
 }
 
 .c-detail-unit__prescription-expiry {
   font-size: 0.6875rem;
-  color: #7F8C8D;
+  color: #6B7280;
 }
 
 .c-detail-unit__prescription-cell--select {
@@ -5885,8 +5889,8 @@
   transform: translateY(-50%) rotate(45deg);
   width: 0.5rem;
   height: 0.5rem;
-  border-right: 2px solid #7F8C8D;
-  border-bottom: 2px solid #7F8C8D;
+  border-right: 2px solid #6B7280;
+  border-bottom: 2px solid #6B7280;
   pointer-events: none;
 }
 
@@ -5989,7 +5993,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   background-color: #F7F7F7;
-  color: #7F8C8D;
+  color: #6B7280;
   margin-bottom: 0.75rem;
 }
 
@@ -6057,7 +6061,7 @@
   margin-left: auto;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
-  color: #7F8C8D;
+  color: #6B7280;
 }
 
 .c-detail-unit__price--strike {
@@ -6069,14 +6073,14 @@
 .c-detail-unit__price-strike-value {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.8125rem;
-  color: #7F8C8D;
+  color: #6B7280;
   text-decoration: line-through;
 }
 
 .c-detail-unit__price-strike-unit {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.6875rem;
-  color: #7F8C8D;
+  color: #6B7280;
   text-decoration: line-through;
 }
 
@@ -6092,7 +6096,7 @@
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.05rem;
-  color: #cc4843;
+  color: #c13b36;
 }
 @media (min-width: 992px) {
   .c-detail-unit__price-value {
@@ -6106,7 +6110,7 @@
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.05rem;
-  color: #cc4843;
+  color: #c13b36;
 }
 @media (min-width: 992px) {
   .c-detail-unit__price-unit {
@@ -6117,27 +6121,27 @@
 .c-detail-unit__price-tax {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.6875rem;
-  color: #7F8C8D;
+  color: #6B7280;
 }
 
 .c-detail-unit__price-ref {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.6875rem;
-  color: #7F8C8D;
+  color: #6B7280;
   margin-bottom: 0.25rem;
 }
 
 .c-detail-unit__price-period {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.6875rem;
-  color: #7F8C8D;
+  color: #6B7280;
   margin-bottom: 0.25rem;
 }
 
 .c-detail-unit__discount-rate {
   display: inline-block;
   padding: 0.125rem 0.5rem;
-  background-color: #cc4843;
+  background-color: #c13b36;
   border-radius: 0;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
@@ -6152,7 +6156,7 @@
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.05rem;
-  color: #cc4843;
+  color: #c13b36;
   text-align: center;
   margin: 0.5rem 0;
 }
@@ -6161,7 +6165,7 @@
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.875rem;
   line-height: 1.5;
-  color: #cc4843;
+  color: #c13b36;
   margin: 1rem 0;
   text-align: left;
 }
@@ -6275,7 +6279,7 @@
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #7F8C8D;
+  color: #6B7280;
 }
 
 .c-detail-unit__out-of-stock-msg {
@@ -6301,7 +6305,7 @@
   gap: 0.25rem;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.8125rem;
-  color: #0087cb;
+  color: #0074b3;
   text-decoration: underline;
   min-height: 2.75rem;
   padding: 0.25rem 0;
@@ -6504,7 +6508,7 @@
 }
 
 .c-detail-description__ext-link {
-  color: #0087cb;
+  color: #0074b3;
   text-decoration: underline;
   font-size: 0.875rem;
   word-break: break-all;
@@ -6626,7 +6630,7 @@
 }
 
 .c-detail-description-payment__link {
-  color: #0087cb;
+  color: #0074b3;
   text-decoration: underline;
 }
 .c-detail-description-payment__link:hover {
@@ -6654,7 +6658,7 @@
 }
 
 .c-detail-description-payment__phone {
-  color: #0087cb;
+  color: #0074b3;
 }
 
 .c-recommend {
@@ -6695,7 +6699,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #7F8C8D;
+  color: #6B7280;
   margin-top: 0.25rem;
 }
 
@@ -6966,7 +6970,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #7F8C8D;
+  color: #6B7280;
   margin-top: 0.25rem;
 }
 
@@ -7265,7 +7269,7 @@
 .c-cart-modal__message {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.875rem;
-  color: #7F8C8D;
+  color: #6B7280;
   margin: 0;
 }
 

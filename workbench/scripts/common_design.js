@@ -219,9 +219,11 @@ $(function () {
  * カスタムセレクト（c-detail-unit__select → カスタムUI化）
  * ======================================== */
 $(function () {
-  $('.c-detail-unit__select').each(function () {
+  $('.c-detail-unit__select, .c-detail-unit__prescription-select').each(function () {
     const $select = $(this);
-    const $wrap = $select.closest('.c-detail-unit__select-wrap');
+    const $wrap = $select.closest('.c-detail-unit__select-wrap').length
+      ? $select.closest('.c-detail-unit__select-wrap')
+      : $select.parent();
 
     // カスタムUI生成
     const $custom = $('<div class="c-detail-unit__custom-select"></div>');
@@ -257,6 +259,16 @@ $(function () {
       if (!isOpen) {
         $custom.addClass('c-detail-unit__custom-select--open');
         $trigger.attr('aria-expanded', 'true');
+
+        // 処方箋テーブル内: fixed位置でパネルを表示（テーブルのoverflow問題回避）
+        if ($select.hasClass('c-detail-unit__prescription-select')) {
+          const rect = $trigger[0].getBoundingClientRect();
+          $panel.css({
+            top: rect.bottom + 'px',
+            left: rect.left + 'px',
+            width: rect.width + 'px'
+          });
+        }
       }
     });
 

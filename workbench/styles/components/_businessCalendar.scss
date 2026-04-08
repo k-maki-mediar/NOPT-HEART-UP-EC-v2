@@ -147,6 +147,10 @@
   gap: rem(3) rem(4);
 }
 
+.c-business-calendar__row {
+  display: contents;
+}
+
 .c-business-calendar__weekday {
   display: flex;
   align-items: center;

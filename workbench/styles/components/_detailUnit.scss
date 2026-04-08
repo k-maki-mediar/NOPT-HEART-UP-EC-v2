@@ -59,6 +59,49 @@
   margin-bottom: rem(16);
 }
 
+// 商品アイコン群
+.c-detail-unit__icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(8);
+  list-style: none;
+  margin: rem(16) 0 rem(12);
+  padding: 0;
+
+  // 画像下（SP専用）
+  &--sp {
+    @include pc {
+      display: none;
+    }
+  }
+
+  // free-text上（PC専用）
+  &--pc {
+    display: none;
+    margin: 0 0 rem(12);
+
+    @include pc {
+      display: flex;
+    }
+  }
+}
+
+.c-detail-unit__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(6) rem(10);
+  background-color: $bg-banner;
+  border-radius: rem(23);
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+  color: $primary-color;
+  white-space: nowrap;
+}
+
 // 取扱終了日（商品説明の上に表示）
 .c-detail-unit__end-date {
   font-family: $font-family-base;

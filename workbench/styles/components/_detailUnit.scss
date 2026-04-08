@@ -59,6 +59,16 @@
   margin-bottom: rem(16);
 }
 
+// 取扱終了日（商品説明の上に表示）
+.c-detail-unit__end-date {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $danger-color;
+  line-height: 1.5;
+  margin: 0 0 rem(12);
+}
+
 .c-detail-unit__image-slider {
   position: relative;
   display: flex;

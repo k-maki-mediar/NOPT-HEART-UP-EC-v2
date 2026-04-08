@@ -53,6 +53,22 @@
   }
 }
 
+.c-detail-heading__meta {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+  margin: rem(8) 0 0;
+  padding: 0 rem(12) rem(12) rem(12);
+  border-bottom: 1px solid $bg-banner;
+
+  @include pc {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: rem(16);
+    padding: 0 0 rem(12);
+  }
+}
+
 .c-detail-heading__approval {
   font-family: $font-family-base;
   font-size: rem(14);
@@ -60,11 +76,9 @@
   color: $primary-color;
   line-height: 1.5;
   text-align: right;
-  margin: rem(8) 0 0;
-  padding: 0 rem(12) rem(12) 0;
-  border-bottom: 1px solid $bg-banner;
+  margin: 0;
+}
 
-  @include pc {
-    padding-right: 0;
-  }
+.c-detail-heading__end-date {
+  display: none;
 }

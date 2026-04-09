@@ -760,7 +760,6 @@ $(function () {
     var scrollLeft = 0;
 
     $(el).on('mousedown', function (e) {
-      // 右クリック等は無視
       if (e.button !== 0) return;
       isDown = true;
       hasDragged = false;
@@ -768,6 +767,10 @@ $(function () {
       scrollLeft = el.scrollLeft;
       el.style.cursor = 'grabbing';
       el.style.userSelect = 'none';
+    });
+
+    // 画像のネイティブドラッグを防止（ドラッグスクロールと競合するため）
+    $(el).on('dragstart', 'img, a', function (e) {
       e.preventDefault();
     });
 
@@ -791,6 +794,17 @@ $(function () {
     $(el).on('click', 'a', function (e) {
       if (hasDragged) {
         e.preventDefault();
+      }
+    });
+
+    // カード全体クリックで商品ページへ遷移（ドラッグ時は除外）
+    $(el).on('click', '.c-product-card', function (e) {
+      if (hasDragged) return;
+      // リンク自体のクリックはそのまま通す
+      if ($(e.target).closest('a').length) return;
+      var href = $(this).find('.c-product-card__name-link').attr('href');
+      if (href) {
+        window.location.href = href;
       }
     });
   });

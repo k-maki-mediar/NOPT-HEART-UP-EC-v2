@@ -17,6 +17,30 @@
   }
 }
 
+.c-contact-lens-btn__heading {
+  margin-bottom: rem(16);
+  text-align: center;
+}
+
+.c-contact-lens-btn__heading-en {
+  display: block;
+  font-family: $font-family-heading-en;
+  font-size: rem(24);
+  font-weight: $font-weight-light;
+  color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
+}
+
+.c-contact-lens-btn__heading-ja {
+  display: block;
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+  margin-top: rem(4);
+}
+
 .c-contact-lens-btn__link {
   max-width: rem(600);
   margin: 0 auto;

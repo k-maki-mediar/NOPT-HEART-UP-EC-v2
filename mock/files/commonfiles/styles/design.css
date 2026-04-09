@@ -2513,6 +2513,30 @@
   }
 }
 
+.c-contact-lens-btn__heading {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.c-contact-lens-btn__heading-en {
+  display: block;
+  font-family: "Raleway", "Noto Sans JP", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #00387d;
+  line-height: 1.5;
+  letter-spacing: 0.06rem;
+}
+
+.c-contact-lens-btn__heading-ja {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #6B7280;
+  margin-top: 0.25rem;
+}
+
 .c-contact-lens-btn__link {
   max-width: 37.5rem;
   margin: 0 auto;

@@ -3548,27 +3548,26 @@
 
 .c-account-menu {
   margin-top: 1.5rem;
+  background-color: transparent;
+  position: relative;
+}
+.c-account-menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
   background-color: rgba(215, 231, 251, 0.8);
+  z-index: 0;
 }
 @media (min-width: 992px) {
   .c-account-menu {
-    background-color: transparent;
     max-width: 70.625rem;
     margin: 1.5rem auto 0;
     padding: 0 1rem;
     padding-left: var(--side-nav-content-offset);
-    position: relative;
-  }
-  .c-account-menu::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 100vw;
-    margin-left: -50vw;
-    background-color: rgba(215, 231, 251, 0.8);
-    z-index: 0;
   }
 }
 
@@ -3647,7 +3646,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   min-height: 4rem;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
@@ -3665,6 +3665,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: auto;
+    margin-left: 0;
     min-height: auto;
     padding: 0.25rem 0.5rem;
     background-color: rgba(255, 255, 255, 0);
@@ -5165,12 +5166,15 @@
 }
 
 .c-page-footer__link-item {
-  width: 100%;
   border-bottom: 1px solid #e0e0e0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 @media (min-width: 992px) {
   .c-page-footer__link-item {
     border-bottom: none;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -5178,6 +5182,7 @@
   display: flex;
   align-items: center;
   min-height: 4rem;
+  width: 100%;
   padding: 1.125rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;

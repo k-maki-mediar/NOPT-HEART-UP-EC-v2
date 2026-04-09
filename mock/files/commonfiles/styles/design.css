@@ -779,7 +779,7 @@
   position: relative;
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 8rem 1rem 0;
+  padding: 5rem 1rem 0;
 }
 @media (min-width: 992px) {
   .c-about-site-banner {
@@ -1106,7 +1106,7 @@
   position: relative;
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 8rem 1rem 0;
+  padding: 5rem 1rem 0;
 }
 @media (min-width: 992px) {
   .c-campaign-topics {
@@ -1392,7 +1392,7 @@
   position: relative;
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 8rem 1rem 0;
+  padding: 5rem 1rem 0;
 }
 @media (min-width: 992px) {
   .c-service-grid {
@@ -1668,8 +1668,8 @@
 .c-category-menu {
   position: relative;
   max-width: 70.625rem;
-  margin: 4rem auto 0;
-  padding: 4rem 1rem 4rem;
+  margin: 0 auto;
+  padding: 5rem 1rem 4rem;
 }
 @media (min-width: 992px) {
   .c-category-menu {
@@ -1869,7 +1869,7 @@
   position: relative;
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 4rem 1rem 4rem 1rem;
+  padding: 5rem 1rem 4rem 1rem;
 }
 @media (min-width: 992px) {
   .c-business-calendar {
@@ -2504,7 +2504,7 @@
 
 .c-contact-lens-btn {
   max-width: 70.625rem;
-  margin: 1.5rem auto 0;
+  margin: 5rem auto 0;
   padding: 0 1rem;
 }
 @media (min-width: 992px) {

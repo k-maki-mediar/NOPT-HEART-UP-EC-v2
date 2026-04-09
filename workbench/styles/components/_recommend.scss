@@ -74,8 +74,7 @@
   min-width: 0;
 
   @include pc {
-    flex: 0 0 calc((100% - rem(32)) / 3);
-    min-width: rem(240);
+    flex: 0 0 rem(270);
   }
 }
 

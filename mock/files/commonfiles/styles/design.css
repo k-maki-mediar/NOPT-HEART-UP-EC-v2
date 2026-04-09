@@ -6921,8 +6921,7 @@
 }
 @media (min-width: 992px) {
   .c-recommend__item {
-    flex: 0 0 calc((100% - 2rem) / 3);
-    min-width: 15rem;
+    flex: 0 0 16.875rem;
   }
 }
 
@@ -7194,8 +7193,7 @@
 }
 @media (min-width: 992px) {
   .c-browsing-history__item {
-    flex: 0 0 calc((100% - 2rem) / 3);
-    min-width: 15rem;
+    flex: 0 0 16.875rem;
   }
 }
 

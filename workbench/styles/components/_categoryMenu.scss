@@ -5,8 +5,8 @@
 .c-category-menu {
   position: relative;
   max-width: rem(1130);
-  margin: 0 auto;
-  padding: rem(80) rem(16) rem(64);
+  margin: rem(80) auto 0;
+  padding: rem(64) rem(16) rem(64);
 
   @include pc {
     padding-left: var(--side-nav-content-offset);

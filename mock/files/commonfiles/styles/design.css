@@ -1668,8 +1668,8 @@
 .c-category-menu {
   position: relative;
   max-width: 70.625rem;
-  margin: 0 auto;
-  padding: 5rem 1rem 4rem;
+  margin: 5rem auto 0;
+  padding: 4rem 1rem 4rem;
 }
 @media (min-width: 992px) {
   .c-category-menu {

@@ -5077,12 +5077,15 @@
 }
 
 .c-page-footer__link-item {
-  width: 100%;
   border-bottom: 1px solid #e0e0e0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 @media (min-width: 992px) {
   .c-page-footer__link-item {
     border-bottom: none;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -5090,6 +5093,7 @@
   display: flex;
   align-items: center;
   min-height: 4rem;
+  width: 100%;
   padding: 1.125rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;

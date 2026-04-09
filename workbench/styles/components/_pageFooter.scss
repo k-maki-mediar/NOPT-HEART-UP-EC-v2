@@ -140,11 +140,14 @@
 
 // リンクアイテム
 .c-page-footer__link-item {
-  width: 100%;
   border-bottom: 1px solid $border-color;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 
   @include pc {
     border-bottom: none;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -153,6 +156,7 @@
   display: flex;
   align-items: center;
   min-height: rem(64);
+  width: 100%;
   padding: rem(18) rem(24);
   font-size: rem(16);
   font-weight: $font-weight-normal;

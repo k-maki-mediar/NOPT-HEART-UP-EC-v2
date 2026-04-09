@@ -11,27 +11,26 @@
 
 .c-account-menu {
   margin-top: rem(24);
-  background-color: rgba($bg-banner, 0.8);
+  background-color: transparent;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    background-color: rgba($bg-banner, 0.8);
+    z-index: $z-index-base;
+  }
 
   @include pc {
-    background-color: transparent;
     max-width: rem(1130);
     margin: rem(24) auto 0;
     padding: 0 rem(16);
     padding-left: var(--side-nav-content-offset);
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 100vw;
-      margin-left: -50vw;
-      background-color: rgba($bg-banner, 0.8);
-      z-index: $z-index-base;
-    }
   }
 }
 
@@ -113,7 +112,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   min-height: rem(64);
   padding: rem(12) rem(24);
   text-decoration: none;
@@ -131,6 +131,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: auto;
+    margin-left: 0;
     min-height: auto;
     padding: rem(4) rem(8);
     background-color: rgba($bg-color, 0);

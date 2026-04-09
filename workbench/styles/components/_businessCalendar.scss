@@ -35,14 +35,27 @@
 }
 
 .c-business-calendar__heading {
+  margin-bottom: rem(24);
+  text-align: center;
+}
+
+.c-business-calendar__heading-en {
+  display: block;
   font-family: $font-family-heading-en;
   font-size: rem(24);
   font-weight: $font-weight-light;
+  color: $primary-color;
   line-height: 1.5;
   letter-spacing: rem(0.96);
-  text-align: center;
-  color: $primary-color;
-  margin-bottom: rem(24);
+}
+
+.c-business-calendar__heading-ja {
+  display: block;
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+  margin-top: rem(4);
 }
 
 // ----------------------------------------

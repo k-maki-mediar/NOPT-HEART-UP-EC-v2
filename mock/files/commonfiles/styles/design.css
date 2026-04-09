@@ -796,13 +796,26 @@
 
 .c-about-site-banner__heading {
   margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.c-about-site-banner__heading-en {
+  display: block;
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
+  color: #00387d;
   line-height: 1.5;
   letter-spacing: 0.06rem;
-  text-align: center;
-  color: #00387d;
+}
+
+.c-about-site-banner__heading-ja {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #6B7280;
+  margin-top: 0.25rem;
 }
 
 .c-about-site-banner__link {
@@ -1306,14 +1319,27 @@
 }
 
 .c-campaign-topics__heading {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.c-campaign-topics__heading-en {
+  display: block;
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
+  color: #00387d;
   line-height: 1.5;
   letter-spacing: 0.06rem;
-  text-align: center;
-  color: #00387d;
-  margin-bottom: 1rem;
+}
+
+.c-campaign-topics__heading-ja {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #6B7280;
+  margin-top: 0.25rem;
 }
 
 .c-campaign-topics__list {
@@ -1577,14 +1603,27 @@
 }
 
 .c-service-grid__heading {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.c-service-grid__heading-en {
+  display: block;
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
+  color: #00387d;
   line-height: 1.5;
   letter-spacing: 0.06rem;
-  text-align: center;
-  color: #00387d;
-  margin-bottom: 1rem;
+}
+
+.c-service-grid__heading-ja {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #6B7280;
+  margin-top: 0.25rem;
 }
 
 .c-service-grid__list {
@@ -1650,13 +1689,26 @@
 
 .c-category-menu__heading {
   margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.c-category-menu__heading-en {
+  display: block;
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
+  color: #00387d;
   line-height: 1.5;
   letter-spacing: 0.06rem;
-  text-align: center;
-  color: #00387d;
+}
+
+.c-category-menu__heading-ja {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #6B7280;
+  margin-top: 0.25rem;
 }
 
 .c-category-menu__inner {
@@ -1841,14 +1893,27 @@
 }
 
 .c-business-calendar__heading {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.c-business-calendar__heading-en {
+  display: block;
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
+  color: #00387d;
   line-height: 1.5;
   letter-spacing: 0.06rem;
-  text-align: center;
-  color: #00387d;
-  margin-bottom: 1.5rem;
+}
+
+.c-business-calendar__heading-ja {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #6B7280;
+  margin-top: 0.25rem;
 }
 
 .c-business-calendar__cards {

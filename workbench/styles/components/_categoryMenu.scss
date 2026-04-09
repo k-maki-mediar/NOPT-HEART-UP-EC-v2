@@ -26,13 +26,26 @@
 
 .c-category-menu__heading {
   margin: 0 0 rem(24);
+  text-align: center;
+}
+
+.c-category-menu__heading-en {
+  display: block;
   font-family: $font-family-heading-en;
   font-size: rem(24);
   font-weight: $font-weight-light;
+  color: $primary-color;
   line-height: 1.5;
   letter-spacing: rem(0.96);
-  text-align: center;
-  color: $primary-color;
+}
+
+.c-category-menu__heading-ja {
+  display: block;
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+  margin-top: rem(4);
 }
 
 .c-category-menu__inner {

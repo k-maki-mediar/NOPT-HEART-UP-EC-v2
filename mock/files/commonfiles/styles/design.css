@@ -6910,7 +6910,9 @@
     gap: 1rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0.25rem 0.25rem 1rem;
+    margin-right: calc(-1 * (2rem + max(0px, (100vw - 70.625rem) / 2)));
+    padding: 0.25rem 2rem 1rem 0.25rem;
+    cursor: grab;
   }
 }
 
@@ -6920,7 +6922,7 @@
 @media (min-width: 992px) {
   .c-recommend__item {
     flex: 0 0 calc((100% - 2rem) / 3);
-    min-width: auto;
+    min-width: 15rem;
   }
 }
 
@@ -7181,7 +7183,9 @@
     gap: 1rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0.25rem 0.25rem 1rem;
+    margin-right: calc(-1 * (2rem + max(0px, (100vw - 70.625rem) / 2)));
+    padding: 0.25rem 2rem 1rem 0.25rem;
+    cursor: grab;
   }
 }
 
@@ -7191,7 +7195,7 @@
 @media (min-width: 992px) {
   .c-browsing-history__item {
     flex: 0 0 calc((100% - 2rem) / 3);
-    min-width: auto;
+    min-width: 15rem;
   }
 }
 

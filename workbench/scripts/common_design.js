@@ -744,3 +744,54 @@ $(function () {
     updateAll(newPage);
   });
 })();
+
+/* ========================================
+ * PC横スクロール マウスドラッグ対応
+ * おすすめ商品・最近見た商品リスト
+ * ======================================== */
+$(function () {
+  var DRAG_THRESHOLD = 5;
+
+  $('.c-recommend__list, .c-browsing-history__list').each(function () {
+    var el = this;
+    var isDown = false;
+    var hasDragged = false;
+    var startX = 0;
+    var scrollLeft = 0;
+
+    $(el).on('mousedown', function (e) {
+      // 右クリック等は無視
+      if (e.button !== 0) return;
+      isDown = true;
+      hasDragged = false;
+      startX = e.clientX;
+      scrollLeft = el.scrollLeft;
+      el.style.cursor = 'grabbing';
+      el.style.userSelect = 'none';
+      e.preventDefault();
+    });
+
+    $(document).on('mousemove', function (e) {
+      if (!isDown) return;
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > DRAG_THRESHOLD) {
+        hasDragged = true;
+      }
+      el.scrollLeft = scrollLeft - dx;
+    });
+
+    $(document).on('mouseup', function () {
+      if (!isDown) return;
+      isDown = false;
+      el.style.cursor = '';
+      el.style.userSelect = '';
+    });
+
+    // ドラッグ後のクリックでリンク遷移しないようにする
+    $(el).on('click', 'a', function (e) {
+      if (hasDragged) {
+        e.preventDefault();
+      }
+    });
+  });
+});

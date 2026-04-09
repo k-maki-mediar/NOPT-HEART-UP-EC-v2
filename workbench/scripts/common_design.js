@@ -623,11 +623,11 @@ $(function () {
 /* ========================================
  * ページネーション（pager）
  * ======================================== */
-(function () {
+$(function () {
   'use strict';
 
-  const TOTAL_SLOTS = 7;
-  const pagers = document.querySelectorAll('.js-pager');
+  var TOTAL_SLOTS = 7;
+  var pagers = document.querySelectorAll('.js-pager');
   if (!pagers.length) return;
 
   function getPageSlots(current, total) {
@@ -743,7 +743,7 @@ $(function () {
 
     updateAll(newPage);
   });
-})();
+});
 
 /* ========================================
  * PC横スクロール マウスドラッグ対応

@@ -806,29 +806,40 @@
 // 注文ブロックのラッパー（タブ切替デザイン）
 .c-detail-unit__order-wrapper {
   margin-top: rem(16);
+  // タブ行とパネルの重なりで z-index を同一スタックにまとめる
+  isolation: isolate;
 }
 
 // タブボタン群（v1 LINE UP風）
 .c-detail-unit__order-tabs {
   display: flex;
   gap: rem(8);
+  position: relative;
+  z-index: 2;
+  // 下辺のみネイビー
+  background-image: linear-gradient($primary-color, $primary-color);
+  background-size: 100% rem(2);
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .c-detail-unit__order-tab {
+  position: relative;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   height: rem(52);
-  border: none;
+  border: rem(2) solid transparent;
+  border-bottom: none;
   border-radius: rem(8) rem(8) 0 0;
-  background-color: $primary-color;
+  background-color: $bg-banner;
   font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-medium;
   line-height: 1.5;
   letter-spacing: rem(0.56);
-  color: $color-white;
+  color: $primary-color;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
   padding: rem(8) rem(12);
@@ -839,7 +850,13 @@
   }
 
   &:hover:not(.is-active) {
-    background-color: $primary-color-hover;
+    background-color: rgba($bg-banner, 0.7);
+    // 非アクティブと同じ下線（背景レイヤーは hover でも維持）
+    background-image: linear-gradient($primary-color, $primary-color);
+    background-size: 100% rem(2);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-origin: border-box;
   }
 
   &:focus-visible {
@@ -847,17 +864,44 @@
     outline-offset: rem(2);
   }
 
-  // アクティブタブ: 明るい背景 + ネイビーテキスト
+  // 非アクティブ: 下辺は border ではなく背景の帯（透明左右ボーダー＋border-bottom のミターで欠けるのを防ぐ）
+  &:not(.is-active) {
+    border-bottom: none;
+    background-color: $bg-banner;
+    background-image: linear-gradient($primary-color, $primary-color);
+    background-size: 100% rem(2);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+  }
+
+  // アクティブタブ: 下辺ボーダーは付けない（左右ネイビー＋下辺のミター結合で角が三角形に見えるのを防ぐ）
   &.is-active {
     background-color: $bg-gray;
+    // 下端に同色帯を足して親の背景帯を確実に覆い隠す（サブピクセル誤差対策で余裕を持たせる）
+    background-image: linear-gradient($bg-gray, $bg-gray);
+    background-size: calc(100% + 2px) rem(4);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    border-color: $primary-color;
+    border-bottom: none;
     color: $primary-color;
     cursor: default;
   }
 }
 
-// タブパネル群
+// タブパネル群（上辺はアクティブタブ下辺でつなぐため top ボーダーなし）
 .c-detail-unit__order-panels {
+  position: relative;
+  z-index: 1;
+  // rem(2) の重なり＋固定pxでサブピクセル隙間を詰める
+  margin-top: calc(-1 * #{rem(2)} - 2px);
   background-color: $bg-gray;
+  border-right: rem(2) solid $primary-color;
+  border-bottom: rem(2) solid $primary-color;
+  border-left: rem(2) solid $primary-color;
+  border-top: none;
   border-radius: 0 0 rem(8) rem(8);
 }
 

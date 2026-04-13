@@ -494,7 +494,7 @@ $(function () {
   $(document).on('click', '.js-detail-order-tab', function () {
     const $tab = $(this);
     const target = $tab.data('target');
-    const $wrapper = $tab.closest('.c-detail-unit__order-wrapper');
+    const $wrapper = $tab.closest('.js-order-wrap');
 
     // タブ切替
     $wrapper.find('.js-detail-order-tab').removeClass('is-active').attr('aria-selected', 'false');
@@ -503,10 +503,15 @@ $(function () {
     // パネル切替
     $wrapper.find('.js-detail-order-panel').removeClass('is-active');
     $wrapper.find('.js-detail-order-panel[data-panel="' + target + '"]').addClass('is-active');
+
+    // SVG外枠を再描画
+    requestAnimationFrame(function () {
+      drawOrderOutline($wrapper[0]);
+    });
   });
 
   // らくとくタブがある場合、初期表示をらくとくにする
-  $('.c-detail-unit__order-wrapper').each(function () {
+  $('.js-order-wrap').each(function () {
     const $wrapper = $(this);
     const $rakutokuTab = $wrapper.find('.js-detail-order-tab[data-target="rakutoku"]');
     if ($rakutokuTab.length) {
@@ -515,6 +520,73 @@ $(function () {
       $wrapper.find('.js-detail-order-panel').removeClass('is-active');
       $wrapper.find('.js-detail-order-panel[data-panel="rakutoku"]').addClass('is-active');
     }
+  });
+
+  // ----------------------------------------
+  // 注文ブロック SVG外枠描画
+  // ----------------------------------------
+  function drawOrderOutline(wrapper) {
+    var svgNS = 'http://www.w3.org/2000/svg';
+    var svg = wrapper.querySelector('.c-detail-unit__order-outline');
+    var activeTab = wrapper.querySelector('.c-detail-unit__order-tab.is-active');
+    var panels = wrapper.querySelector('.c-detail-unit__order-panels');
+
+    if (!svg || !activeTab || !panels) return;
+
+    var wrapRect = wrapper.getBoundingClientRect();
+    var tabRect = activeTab.getBoundingClientRect();
+    var panelRect = panels.getBoundingClientRect();
+
+    var stroke = 2;
+    var radius = 8;
+
+    var left = tabRect.left - wrapRect.left;
+    var right = tabRect.right - wrapRect.left;
+    var tabTop = tabRect.top - wrapRect.top;
+    var panelTop = panelRect.top - wrapRect.top;
+    var panelLeft = panelRect.left - wrapRect.left;
+    var panelRight = panelRect.right - wrapRect.left;
+    var panelBottom = panelRect.bottom - wrapRect.top;
+
+    svg.setAttribute('viewBox', '0 0 ' + wrapRect.width + ' ' + wrapRect.height);
+
+    var d = [
+      'M ' + panelLeft + ' ' + panelBottom,
+      'L ' + panelLeft + ' ' + panelTop,
+      'L ' + left + ' ' + panelTop,
+      'L ' + left + ' ' + (tabTop + radius),
+      'Q ' + left + ' ' + tabTop + ' ' + (left + radius) + ' ' + tabTop,
+      'L ' + (right - radius) + ' ' + tabTop,
+      'Q ' + right + ' ' + tabTop + ' ' + right + ' ' + (tabTop + radius),
+      'L ' + right + ' ' + panelTop,
+      'L ' + panelRight + ' ' + panelTop,
+      'L ' + panelRight + ' ' + panelBottom
+    ].join(' ');
+
+    // 既存のpathを削除して再作成（SVG名前空間を使う）
+    while (svg.firstChild) {
+      svg.removeChild(svg.firstChild);
+    }
+    var path = document.createElementNS(svgNS, 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', '#00387d');
+    path.setAttribute('stroke-width', stroke);
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('vector-effect', 'non-scaling-stroke');
+    svg.appendChild(path);
+  }
+
+  // 初期描画 + リサイズ対応
+  var orderWrappers = document.querySelectorAll('.js-order-wrap');
+  orderWrappers.forEach(function (w) {
+    drawOrderOutline(w);
+  });
+  $(window).on('resize', function () {
+    orderWrappers.forEach(function (w) {
+      drawOrderOutline(w);
+    });
   });
 
   // ----------------------------------------

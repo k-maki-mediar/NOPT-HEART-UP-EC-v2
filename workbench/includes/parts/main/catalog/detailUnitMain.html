@@ -342,13 +342,16 @@
       <!-- ============================================================
         注文ブロックラッパー（info-col内＝右カラムに自然配置）
       ============================================================ -->
-      <div class="c-detail-unit__order-wrapper">
+      <div class="c-detail-unit__order-wrapper js-order-wrap">
 
     <!-- タブボタン -->
     <div class="c-detail-unit__order-tabs js-detail-order-tabs" role="tablist">
       <button class="c-detail-unit__order-tab is-active js-detail-order-tab" role="tab" aria-selected="true" data-target="normal" type="button">スポット便の注文</button>
       <button class="c-detail-unit__order-tab js-detail-order-tab" role="tab" aria-selected="false" data-target="rakutoku" type="button">らくとく定期便の注文</button>
     </div>
+
+    <!-- タブ〜パネル外枠（SVG 1本線） -->
+    <svg class="c-detail-unit__order-outline" aria-hidden="true"></svg>
 
     <!-- タブパネル -->
     <div class="c-detail-unit__order-panels">

@@ -804,18 +804,16 @@
 // ----------------------------------------
 
 // 注文ブロックのラッパー（タブ切替デザイン）
-// ── 方針: background-image 帯・negative margin は使わない
-// ── 非活性タブは枠線なし、アクティブタブのみ ::before で枠線を描く
+// ── 方針: 枠線はSVG path 1本で描画。CSS border の継ぎ目問題を根本解消。
 .c-detail-unit__order-wrapper {
+  position: relative;
   margin-top: rem(16);
-  isolation: isolate;
 }
 
 // タブボタン群
 .c-detail-unit__order-tabs {
   display: flex;
   gap: rem(8);
-  align-items: flex-end;
   position: relative;
   z-index: 2;
 }
@@ -827,28 +825,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: rem(52);
+  min-height: rem(52);
+  padding: rem(8) rem(12);
   border: none;
   border-radius: rem(8) rem(8) 0 0;
-  background-color: $bg-banner;
+  background: $bg-banner;
+  color: $primary-color;
   font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-medium;
   line-height: 1.5;
   letter-spacing: rem(0.56);
-  color: $primary-color;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  padding: rem(8) rem(12);
   margin: 0;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
 
   @include pc {
+    min-height: rem(56);
     font-size: rem(16);
-    height: rem(56);
   }
 
   &:hover:not(.is-active) {
-    background-color: rgba($bg-banner, 0.7);
+    background: rgba($bg-banner, 0.7);
   }
 
   &:focus-visible {
@@ -856,54 +855,30 @@
     outline-offset: rem(2);
   }
 
-  // アクティブタブ
+  // アクティブタブ: 背景だけ変更、枠線はSVGが担当
   &.is-active {
-    background-color: $bg-gray;
+    background: $bg-gray;
     color: $primary-color;
     cursor: default;
-    z-index: 3;
-    // タブをパネル上辺に 2px かぶせて隙間を防ぐ
-    margin-bottom: -2px;
-    padding-bottom: calc(#{rem(8)} + 2px);
-
-    // 枠線は ::before で上・左・右のみ描画
-    // left/right を -2px に広げてパネル左右線と繋げる
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -2px;
-      right: -2px;
-      bottom: 0;
-      border: 2px solid $primary-color;
-      border-bottom: none;
-      border-radius: rem(8) rem(8) 0 0;
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    // パネル上辺のネイビー線を隠す（左右を少し広げて確実にカバー）
-    &::after {
-      content: "";
-      position: absolute;
-      left: -3px;
-      right: -3px;
-      bottom: -1px;
-      height: 4px;
-      background: $bg-gray;
-      pointer-events: none;
-      z-index: 3;
-    }
   }
 }
 
-// タブパネル群（四辺すべて border）
+// SVG外枠線（wrapper全体に被せる）
+.c-detail-unit__order-outline {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  overflow: visible;
+}
+
+// タブパネル群（枠線はSVGが担当、背景のみ）
 .c-detail-unit__order-panels {
   position: relative;
   z-index: 1;
-  margin-top: 0;
-  background-color: $bg-gray;
-  border: 2px solid $primary-color;
+  background: $bg-gray;
   border-radius: 0 0 rem(8) rem(8);
 }
 

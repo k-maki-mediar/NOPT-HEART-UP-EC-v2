@@ -560,7 +560,8 @@ $(function () {
       'Q ' + right + ' ' + tabTop + ' ' + right + ' ' + (tabTop + radius),
       'L ' + right + ' ' + panelTop,
       'L ' + panelRight + ' ' + panelTop,
-      'L ' + panelRight + ' ' + panelBottom
+      'L ' + panelRight + ' ' + panelBottom,
+      'Z'
     ].join(' ');
 
     // 既存のpathを削除して再作成（SVG名前空間を使う）

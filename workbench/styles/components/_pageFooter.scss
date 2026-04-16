@@ -231,29 +231,29 @@
 }
 
 .c-page-footer__catchcopy {
-  font-size: rem(14);
+  font-size: rem(18);
   font-weight: $font-weight-normal;
   line-height: 1.75;
   letter-spacing: 0.04em;
   color: $text-color;
-  margin: 0 0 rem(8);
+  margin: 0 0 rem(10);
 
   @include pc {
-    font-size: rem(16);
-    margin-bottom: rem(12);
+    font-size: rem(22);
+    margin-bottom: rem(14);
   }
 }
 
 .c-page-footer__description {
-  font-size: rem(10);
+  font-size: rem(12);
   font-weight: $font-weight-normal;
-  line-height: 1.5;
+  line-height: 1.75;
   letter-spacing: 0.015em;
   color: $text-color;
   margin: 0 0 rem(24);
 
   @include pc {
-    font-size: rem(12);
+    font-size: rem(14);
     margin-bottom: rem(28);
   }
 }

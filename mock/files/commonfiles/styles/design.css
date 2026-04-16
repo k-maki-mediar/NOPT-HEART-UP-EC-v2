@@ -7849,6 +7849,14 @@
   color: #ffdedd;
 }
 
+.c-main--logged-in .c-campaign-topics__heading-en .c-heading-initial {
+  color: #E26464 !important;
+}
+
+.c-main--logged-in .c-campaign-topics__heading-ja {
+  color: #E26464;
+}
+
 .c-main--logged-in .c-service-grid__deco-rect {
   background-color: #fff0ad;
 }
@@ -7861,6 +7869,14 @@
   color: #fff0ad;
 }
 
+.c-main--logged-in .c-service-grid__heading-en .c-heading-initial {
+  color: #967B00 !important;
+}
+
+.c-main--logged-in .c-service-grid__heading-ja {
+  color: #967B00;
+}
+
 .c-main--logged-in .c-about-site-banner__deco-rect {
   background-color: #d6f2dd;
 }
@@ -7871,6 +7887,14 @@
 
 .c-main--logged-in .c-about-site-banner__deco-triangle {
   color: #d6f2dd;
+}
+
+.c-main--logged-in .c-about-site-banner__heading-en .c-heading-initial {
+  color: #2B7942 !important;
+}
+
+.c-main--logged-in .c-about-site-banner__heading-ja {
+  color: #2B7942;
 }
 
 .c-html {

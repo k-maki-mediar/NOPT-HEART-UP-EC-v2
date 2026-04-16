@@ -6162,7 +6162,7 @@
 
 .c-detail-unit__prescription-label-cell {
   padding: 0 0.5rem;
-  height: 2.875rem;
+  height: 2rem;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.75;
@@ -6189,7 +6189,7 @@
 
 .c-detail-unit__prescription-cell {
   padding: 0 0.75rem;
-  height: 2.875rem;
+  height: 2rem;
   font-size: 0.875rem;
   line-height: 1.75;
   letter-spacing: 0.035rem;
@@ -6222,8 +6222,8 @@
 }
 
 .c-detail-unit__prescription-cell--select .c-detail-unit__custom-select-trigger {
-  min-height: 2.875rem;
-  padding: 0.5rem 0.75rem;
+  min-height: 2rem;
+  padding: 0.25rem 0.75rem;
   border: none;
   font-size: 0.875rem;
   color: #00387d;

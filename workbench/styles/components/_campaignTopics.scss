@@ -56,8 +56,9 @@
   }
 
   @include pc {
-    height: rem(100);
-    top: 88%;
+    height: rem(160);
+    top: 72%;
+    width: 65vw;
   }
 }
 

@@ -1245,8 +1245,9 @@
 }
 @media (min-width: 992px) {
   .c-campaign-topics__deco-rect {
-    height: 6.25rem;
-    top: 88%;
+    height: 10rem;
+    top: 72%;
+    width: 65vw;
   }
 }
 

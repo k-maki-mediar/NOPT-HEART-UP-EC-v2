@@ -2577,17 +2577,48 @@
 }
 
 .c-rakutoku-info__card {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
   border: 0.0625rem solid #00387d;
   border-radius: 0.75rem;
   padding: 1rem;
   background-color: #FFFFFF;
+  box-shadow: 0 0.125rem 0 0 #002a5e;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-rakutoku-info__card:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 0 #002a5e;
+}
+
+.c-rakutoku-info__card-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .c-rakutoku-info__header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.c-rakutoku-info__arrow {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+.c-rakutoku-info__arrow::before {
+  content: "";
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #00387d;
+  border-right: 0.125rem solid #00387d;
+  transform: rotate(45deg);
 }
 
 .c-rakutoku-info__icon {
@@ -2609,40 +2640,18 @@
 
 .c-rakutoku-info__body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.75rem;
-}
-@media (min-width: 992px) {
-  .c-rakutoku-info__body {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
-.c-rakutoku-info__body > .c-rakutoku-info__link {
-  align-self: center;
-  width: auto;
-}
-@media (min-width: 992px) {
-  .c-rakutoku-info__body > .c-rakutoku-info__link {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
 }
 
 .c-rakutoku-info__plan {
   display: flex;
   flex-direction: column;
+  flex: 1;
   background-color: #f4f8fc;
   border-radius: 0.5rem;
   padding: 0.75rem 1rem;
   text-align: center;
-}
-@media (min-width: 992px) {
-  .c-rakutoku-info__plan {
-    flex: 1;
-  }
 }
 
 .c-rakutoku-info__plan-body {
@@ -2688,19 +2697,6 @@
   letter-spacing: 0.009375rem;
   color: #6B7280;
   margin: 0;
-}
-
-.c-rakutoku-info__link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 1.75;
-  letter-spacing: 0.009375rem;
-  color: #0074b3;
-  text-decoration: underline;
 }
 
 .c-contact-lens-btn {

@@ -13,17 +13,44 @@
 }
 
 .c-rakutoku-info__card {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
   border: rem(1) solid $primary-color;
   border-radius: rem(12);
   padding: rem(16);
   background-color: $bg-color;
+  @include button-press-effect;
+}
+
+.c-rakutoku-info__card-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .c-rakutoku-info__header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: rem(8);
   margin-bottom: rem(16);
+}
+
+.c-rakutoku-info__arrow {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: rem(8);
+
+  &::before {
+    content: "";
+    display: block;
+    width: rem(10);
+    height: rem(10);
+    border-top: rem(2) solid $primary-color;
+    border-right: rem(2) solid $primary-color;
+    transform: rotate(45deg);
+  }
 }
 
 .c-rakutoku-info__icon {
@@ -45,37 +72,19 @@
 
 .c-rakutoku-info__body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: rem(12);
-
-  @include pc {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
 }
 
-.c-rakutoku-info__body > .c-rakutoku-info__link {
-  align-self: center;
-  width: auto;
-
-  @include pc {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-}
 
 .c-rakutoku-info__plan {
   display: flex;
   flex-direction: column;
+  flex: 1;
   background-color: $bg-light;
   border-radius: rem(8);
   padding: rem(12) rem(16);
   text-align: center;
-
-  @include pc {
-    flex: 1;
-  }
 }
 
 .c-rakutoku-info__plan-body {
@@ -123,15 +132,3 @@
   margin: 0;
 }
 
-.c-rakutoku-info__link {
-  display: inline-flex;
-  align-items: center;
-  min-height: rem(44);
-  font-family: $font-family-base;
-  font-size: rem(12);
-  font-weight: $font-weight-normal;
-  line-height: 1.75;
-  letter-spacing: rem(0.15);
-  color: $calendar-sat;
-  text-decoration: underline;
-}

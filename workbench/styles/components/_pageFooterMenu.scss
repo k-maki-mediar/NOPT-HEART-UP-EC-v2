@@ -36,6 +36,11 @@
 
 .c-footer-menu__item {
   flex: 1;
+  border-right: rem(1) solid $border-color;
+
+  &:last-child {
+    border-right: none;
+  }
 }
 
 .c-footer-menu__link {

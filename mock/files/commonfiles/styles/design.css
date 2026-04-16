@@ -464,6 +464,10 @@
 
 .c-footer-menu__item {
   flex: 1;
+  border-right: 0.0625rem solid #e0e0e0;
+}
+.c-footer-menu__item:last-child {
+  border-right: none;
 }
 
 .c-footer-menu__link {

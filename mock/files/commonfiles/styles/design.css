@@ -1475,7 +1475,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
-  margin-top: 0.125rem;
+  margin-top: -1.125rem;
 }
 
 .c-campaign-topics .slick-dots {

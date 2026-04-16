@@ -53,6 +53,81 @@
   margin-top: rem(4);
 }
 
+// ----------------------------------------
+// How to Buy カードグリッド（Figma準拠）
+// 薄青背景 + ネイビーボーダー + 縦積み中央揃え
+// ----------------------------------------
+
+.c-about-site-banner__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(10);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include pc {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.c-about-site-banner__card {
+  &:last-child {
+    grid-column: 1;
+
+    @include pc {
+      grid-column: auto;
+    }
+  }
+}
+
+.c-about-site-banner__card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  background-color: #F4F8FC;
+  border: rem(1) solid $primary-color;
+  border-radius: rem(10);
+  overflow: hidden;
+  padding: 0 rem(12) rem(12);
+  @include button-press-effect;
+}
+
+.c-about-site-banner__card-title {
+  display: block;
+  margin-top: rem(12);
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  color: $primary-color;
+  text-align: center;
+}
+
+.c-about-site-banner__card-icon {
+  display: block;
+  width: rem(56);
+  height: rem(50);
+  margin-top: rem(8);
+}
+
+.c-about-site-banner__card-desc {
+  margin: rem(8) 0 0;
+  padding-top: rem(8);
+  border-top: rem(1) solid $primary-color;
+  font-family: $font-family-base;
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+  color: $text-color;
+  text-align: center;
+}
+
+// 旧バナー（後方互換、不要なら削除可）
 .c-about-site-banner__link {
   display: block;
   text-decoration: none;

@@ -9,11 +9,19 @@
   &::before {
     content: "";
     position: absolute;
-    left: 0;
+    left: 50%;
     right: 0;
     bottom: 0;
-    height: 85%;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(-50%);
     background-color: rgba($bg-banner, 0.6);
+
+    @include pc {
+      left: 0;
+      width: auto;
+      transform: none;
+    }
   }
 }
 
@@ -93,7 +101,7 @@
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: rem(8);
+  gap: rem(4);
 }
 
 // slick生成: ul.slick-dots > li（classなし）
@@ -101,7 +109,7 @@
 .c-banner-area .slick-dots > * {
   width: rem(20);
   height: rem(20);
-  margin: 0 rem(5);
+  margin: 0;
 }
 
 // slick生成: li > button（classなし）

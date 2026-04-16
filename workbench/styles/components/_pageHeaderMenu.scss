@@ -8,9 +8,7 @@
   left: 0;
   right: 0;
   z-index: $z-index-header;
-  background-color: rgba(180, 0, 3, 0.85);
-  backdrop-filter: blur(rem(16));
-  -webkit-backdrop-filter: blur(rem(16));
+  background-color: #B40003;
   border-bottom: none;
 }
 

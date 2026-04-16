@@ -160,9 +160,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: rgba(180, 0, 3, 0.85);
-  backdrop-filter: blur(1rem);
-  -webkit-backdrop-filter: blur(1rem);
+  background-color: #B40003;
   border-bottom: none;
 }
 
@@ -437,9 +435,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: rgba(180, 0, 3, 0.85);
-  backdrop-filter: blur(1rem);
-  -webkit-backdrop-filter: blur(1rem);
+  background-color: #B40003;
   border-top: none;
   height: 4.375rem;
   padding: 0 0 env(safe-area-inset-bottom, 0px);
@@ -4002,7 +3998,7 @@
 .c-user-bar__member-id {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
-  color: #6B7280;
+  color: #444444;
 }
 
 .c-category-heading {

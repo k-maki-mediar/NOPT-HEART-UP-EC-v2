@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   z-index: $z-index-header - 1;
-  background-color: rgba(215, 231, 251, 0.6);
+  background-color: rgba(251, 215, 216, 0.6);
   backdrop-filter: blur(rem(16));
   -webkit-backdrop-filter: blur(rem(16));
 
@@ -34,11 +34,11 @@
   font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-bold;
-  color: $primary-color;
+  color: $text-color;
 }
 
 .c-user-bar__member-id {
   font-family: $font-family-base;
   font-size: rem(12);
-  color: $text-light-on-tint;
+  color: $text-light;
 }

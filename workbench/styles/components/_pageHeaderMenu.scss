@@ -8,10 +8,10 @@
   left: 0;
   right: 0;
   z-index: $z-index-header;
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(180, 0, 3, 0.85);
   backdrop-filter: blur(rem(16));
   -webkit-backdrop-filter: blur(rem(16));
-  border-bottom: rem(1) solid $primary-color;
+  border-bottom: none;
 }
 
 // ヘッダーがfixedのため、直後のメインコンテンツがヘッダー下に潜り込まないようにスペーサーを確保
@@ -92,13 +92,14 @@
   min-height: rem(44);
   padding: rem(4);
   text-decoration: none;
-  color: $text-color;
+  color: $color-white;
 }
 
 .c-header__nav-icon {
   display: block;
   width: rem(24);
   height: rem(24);
+  filter: brightness(0) invert(1);
 
   &--diary {
     width: rem(20);
@@ -138,7 +139,7 @@
   line-height: 1.5;
   letter-spacing: rem(0.12);
   text-align: center;
-  color: $text-color;
+  color: $color-white;
 }
 
 // ========================================

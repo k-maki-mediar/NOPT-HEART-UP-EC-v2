@@ -31,7 +31,7 @@
   z-index: $z-index-deco;
 
   @include pc {
-    top: rem(160);
+    top: rem(30);
   }
 }
 
@@ -40,8 +40,8 @@
   position: absolute;
   right: calc((100% - 100vw) / 2);
   width: 55vw;
-  height: rem(550);
-  top: 33%;
+  height: rem(280);
+  top: 38%;
   transform: translateY(-30%);
   background-color: $deco-green;
   opacity: 0.6;
@@ -52,8 +52,8 @@
   }
 
   @include pc {
-    height: rem(400);
-    top: 45%;
+    height: rem(100);
+    top: 80%;
   }
 }
 

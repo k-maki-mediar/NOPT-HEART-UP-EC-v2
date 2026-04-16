@@ -1583,7 +1583,7 @@
 }
 @media (min-width: 992px) {
   .c-service-grid__deco {
-    top: 10rem;
+    top: 1.875rem;
   }
 }
 
@@ -1591,8 +1591,8 @@
   position: absolute;
   right: calc((100% - 100vw) / 2);
   width: 55vw;
-  height: 34.375rem;
-  top: 33%;
+  height: 17.5rem;
+  top: 38%;
   transform: translateY(-30%);
   background-color: #d6f2dd;
   opacity: 0.6;
@@ -1605,8 +1605,8 @@
 }
 @media (min-width: 992px) {
   .c-service-grid__deco-rect {
-    height: 25rem;
-    top: 45%;
+    height: 6.25rem;
+    top: 80%;
   }
 }
 

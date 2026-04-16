@@ -57,6 +57,10 @@
     --side-nav-content-offset: calc(var(--side-nav-right) - max(0px, (100vw - 70.625rem) / 2) + 0.5rem);
   }
 }
+.c-heading-initial {
+  font-size: 1.5em;
+}
+
 .c-html {
   font-size: 100%;
 }
@@ -816,7 +820,7 @@
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  color: #00387d;
+  color: #333;
   line-height: 1.5;
   letter-spacing: 0.06rem;
 }
@@ -826,7 +830,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #CC4843;
   margin-top: 0.25rem;
 }
 
@@ -1423,7 +1427,7 @@
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  color: #00387d;
+  color: #333;
   line-height: 1.5;
   letter-spacing: 0.06rem;
 }
@@ -1433,7 +1437,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #967B00;
   margin-top: 0.25rem;
 }
 
@@ -1781,7 +1785,7 @@
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  color: #00387d;
+  color: #333;
   line-height: 1.5;
   letter-spacing: 0.06rem;
 }
@@ -1791,7 +1795,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #2B7942;
   margin-top: 0.25rem;
 }
 
@@ -1874,7 +1878,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #01468E;
   margin-top: 0.25rem;
 }
 
@@ -2079,7 +2083,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #01468E;
   margin-top: 0.25rem;
 }
 

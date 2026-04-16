@@ -70,6 +70,12 @@
   }
 }
 
+@media (min-width: 992px) {
+  .c-sp-only {
+    display: none;
+  }
+}
+
 .u-text-xs {
   font-size: var(--font-size-xs);
 }
@@ -298,7 +304,7 @@
 @media (min-width: 992px) {
   .c-header__nav-label {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     min-height: 1.875rem;
   }

@@ -1383,7 +1383,7 @@
     width: 2.8125rem;
     height: 2.8125rem;
     right: -1.25rem;
-    top: 110%;
+    top: 60%;
   }
 }
 
@@ -1409,7 +1409,7 @@
     width: 1.75rem;
     height: 1.75rem;
     left: 15rem;
-    top: 115%;
+    top: 65%;
   }
 }
 
@@ -1578,6 +1578,7 @@
 .c-service-grid__deco {
   position: absolute;
   inset: 0;
+  top: 2.5rem;
   pointer-events: none;
   z-index: -1;
 }
@@ -1592,7 +1593,7 @@
   right: calc((100% - 100vw) / 2);
   width: 55vw;
   height: 17.5rem;
-  top: 38%;
+  top: 31%;
   transform: translateY(-30%);
   background-color: #d6f2dd;
   opacity: 0.6;
@@ -1723,7 +1724,7 @@
   width: 2.1875rem;
   height: 2.1875rem;
   left: -0.3125rem;
-  top: 20%;
+  top: 30%;
   transform: rotate(120deg);
   stroke-width: 1.5;
   animation: float-sg-ring-md 5s ease-in-out infinite;
@@ -1749,7 +1750,7 @@
   width: 1.25rem;
   height: 1.25rem;
   right: 0.625rem;
-  top: 25%;
+  top: 35%;
   transform: rotate(-45deg);
   stroke-width: 3;
   animation: float-sg-ring-sm 3.5s ease-in-out infinite;

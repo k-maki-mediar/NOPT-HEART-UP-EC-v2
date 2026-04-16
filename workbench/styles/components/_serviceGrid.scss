@@ -27,6 +27,7 @@
 .c-service-grid__deco {
   position: absolute;
   inset: 0;
+  top: rem(40);
   pointer-events: none;
   z-index: $z-index-deco;
 
@@ -41,7 +42,7 @@
   right: calc((100% - 100vw) / 2);
   width: 55vw;
   height: rem(280);
-  top: 38%;
+  top: 31%;
   transform: translateY(-30%);
   background-color: $deco-green;
   opacity: 0.6;
@@ -161,7 +162,7 @@
   width: rem(35);
   height: rem(35);
   left: rem(-5);
-  top: 20%;
+  top: 30%;
   transform: rotate(120deg);
   stroke-width: 1.5;
   animation: float-sg-ring-md 5s ease-in-out infinite;
@@ -186,7 +187,7 @@
   width: rem(20);
   height: rem(20);
   right: rem(10);
-  top: 25%;
+  top: 35%;
   transform: rotate(-45deg);
   stroke-width: 3;
   animation: float-sg-ring-sm 3.5s ease-in-out infinite;

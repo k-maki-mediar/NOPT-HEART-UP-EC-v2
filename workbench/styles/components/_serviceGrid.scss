@@ -6,7 +6,7 @@
   position: relative;
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(80) rem(16) 0;
+  padding: rem(80) rem(8) 0;
 
   @include pc {
     padding-left: var(--side-nav-content-offset);
@@ -232,7 +232,7 @@
 .c-service-grid__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: rem(16);
+  gap: rem(12);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -244,9 +244,7 @@
 
 .c-service-grid__link {
   display: block;
-  border-radius: rem(20);
   overflow: hidden;
-  box-shadow: $shadow-xs;
 }
 
 .c-service-grid__img {

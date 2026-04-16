@@ -86,11 +86,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @include pc {
+    justify-content: flex-end;
+  }
   min-width: rem(44);
   min-height: rem(44);
   padding: rem(4);
   text-decoration: none;
   color: $color-white;
+}
+
+// アイコンエリア: 固定高さでアイコンを上下中央揃え
+.c-header__nav-icon-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(24);
 }
 
 .c-header__nav-icon {
@@ -132,6 +144,13 @@
 .c-header__nav-label {
   display: block;
   margin-top: rem(4);
+
+  @include pc {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: rem(30);
+  }
   font-family: $font-family-heading;
   font-size: rem(10);
   line-height: 1.5;

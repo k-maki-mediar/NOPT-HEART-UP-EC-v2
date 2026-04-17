@@ -717,12 +717,18 @@
 }
 
 .c-detail-unit__select-wrap {
+  position: relative;
+  flex: 1;
+}
+
+// 度数・カラー選択テーブル内のセルスタイル
+.c-detail-unit__diopter-select .c-detail-unit__select-wrap,
+.c-detail-unit__color-select .c-detail-unit__select-wrap {
   display: table-cell;
   padding: 0;
   height: rem(32);
   border: 1px solid $bg-banner;
   vertical-align: middle;
-  position: relative;
   background-color: $color-white;
 
   select {

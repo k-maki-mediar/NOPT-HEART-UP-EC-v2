@@ -6313,15 +6313,21 @@
 }
 
 .c-detail-unit__select-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.c-detail-unit__diopter-select .c-detail-unit__select-wrap,
+.c-detail-unit__color-select .c-detail-unit__select-wrap {
   display: table-cell;
   padding: 0;
   height: 2rem;
   border: 1px solid #d7e7fb;
   vertical-align: middle;
-  position: relative;
   background-color: #FFFFFF;
 }
-.c-detail-unit__select-wrap select {
+.c-detail-unit__diopter-select .c-detail-unit__select-wrap select,
+.c-detail-unit__color-select .c-detail-unit__select-wrap select {
   width: 100%;
   height: 100%;
   padding: 0 0.75rem;
@@ -6336,7 +6342,8 @@
   text-align: right;
 }
 @media (max-width: 767px) {
-  .c-detail-unit__select-wrap select {
+  .c-detail-unit__diopter-select .c-detail-unit__select-wrap select,
+  .c-detail-unit__color-select .c-detail-unit__select-wrap select {
     font-size: 0.75rem;
   }
 }

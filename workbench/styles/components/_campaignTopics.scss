@@ -227,6 +227,10 @@
   letter-spacing: rem(0.96);
 }
 
+.c-campaign-topics__heading-en .c-heading-initial {
+  color: $heading-initial-yellow;
+}
+
 .c-campaign-topics__heading-ja {
   display: block;
   font-family: $font-family-heading;

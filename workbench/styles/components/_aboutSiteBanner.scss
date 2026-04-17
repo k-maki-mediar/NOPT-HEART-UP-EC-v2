@@ -44,6 +44,10 @@
   letter-spacing: rem(0.96);
 }
 
+.c-about-site-banner__heading-en .c-heading-initial {
+  color: $heading-initial-pink;
+}
+
 .c-about-site-banner__heading-ja {
   display: block;
   font-family: $font-family-heading;

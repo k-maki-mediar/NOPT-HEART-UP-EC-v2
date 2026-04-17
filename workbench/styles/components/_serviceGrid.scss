@@ -221,6 +221,10 @@
   letter-spacing: rem(0.96);
 }
 
+.c-service-grid__heading-en .c-heading-initial {
+  color: $heading-initial-green;
+}
+
 .c-service-grid__heading-ja {
   display: block;
   font-family: $font-family-heading;

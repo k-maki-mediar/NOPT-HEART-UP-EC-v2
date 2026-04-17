@@ -6942,15 +6942,15 @@
   justify-content: center;
   gap: 0.375rem;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #00387d;
-  text-decoration: none;
-  background-color: #FFFFFF;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: #0074b3;
+  text-decoration: underline;
+  background: none;
   border: none;
-  border-radius: 624.9375rem;
-  min-height: 2.75rem;
-  padding: 0.625rem 1rem;
+  border-radius: 0;
+  min-height: 1.5rem;
+  padding: 0.25rem 0;
   transition: opacity 0.2s;
 }
 .c-detail-unit__rakutoku-info-link:hover {

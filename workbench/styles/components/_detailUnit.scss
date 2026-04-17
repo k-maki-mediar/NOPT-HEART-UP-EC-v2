@@ -1408,15 +1408,15 @@
   justify-content: center;
   gap: rem(6);
   font-family: $font-family-base;
-  font-size: rem(12);
-  font-weight: $font-weight-medium;
-  color: $primary-color;
-  text-decoration: none;
-  background-color: $color-white;
+  font-size: rem(11);
+  font-weight: $font-weight-normal;
+  color: $calendar-sat;
+  text-decoration: underline;
+  background: none;
   border: none;
-  border-radius: rem(9999);
-  min-height: rem(44);
-  padding: rem(10) rem(16);
+  border-radius: 0;
+  min-height: rem(24);
+  padding: rem(4) 0;
   transition: opacity 0.2s;
 
   &:hover {

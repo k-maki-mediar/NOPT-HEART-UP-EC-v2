@@ -826,6 +826,10 @@
 // カスタムドロップダウン
 .c-detail-unit__custom-select {
   position: relative;
+
+  &--open {
+    z-index: $z-index-order-dropdown;
+  }
 }
 
 .c-detail-unit__custom-select-trigger {
@@ -885,6 +889,12 @@
 
   .c-detail-unit__custom-select--open & {
     display: block;
+  }
+
+  // fixed表示時（注文パネル・処方箋テーブル内）: スタッキングコンテキスト脱出
+  &[style*="position: fixed"] {
+    right: auto;
+    z-index: $z-index-dropdown;
   }
 }
 
@@ -988,6 +998,7 @@
   z-index: $z-index-order-outline;
   pointer-events: none;
   overflow: visible;
+
 }
 
 // タブパネル群（枠線はSVGが担当、背景のみ）

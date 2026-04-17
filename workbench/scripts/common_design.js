@@ -314,15 +314,31 @@ $(function () {
       const isOpen = $custom.hasClass('c-detail-unit__custom-select--open');
 
       // 他のドロップダウンを閉じる
-      $('.c-detail-unit__custom-select--open').removeClass('c-detail-unit__custom-select--open')
-        .find('.c-detail-unit__custom-select-trigger').attr('aria-expanded', 'false');
+      closeAllDropdowns();
 
       if (!isOpen) {
         $custom.addClass('c-detail-unit__custom-select--open');
         $trigger.attr('aria-expanded', 'true');
 
-        // 処方箋テーブル内: fixed位置でパネルを表示（テーブルのoverflow問題回避）
-        if ($select.hasClass('c-detail-unit__prescription-select')) {
+        // 注文パネル内: 初回のみパネルをbody直下に移動
+        if ($custom.closest('.c-detail-unit__order-panels').length && !$panel.data('moved-to-body')) {
+          $panel.appendTo('body');
+          $panel.data('moved-to-body', true);
+        }
+
+        // body直下に移動したパネル: display + fixed位置を直接制御
+        if ($panel.data('moved-to-body')) {
+          const rect = $trigger[0].getBoundingClientRect();
+          $panel.css({
+            display: 'block',
+            position: 'fixed',
+            top: rect.bottom + 'px',
+            left: rect.left + 'px',
+            width: rect.width + 'px',
+            'z-index': 1000
+          });
+        } else if ($select.hasClass('c-detail-unit__prescription-select')) {
+          // 処方箋テーブル内: fixed位置のみ（DOMはそのまま）
           const rect = $trigger[0].getBoundingClientRect();
           $panel.css({
             top: rect.bottom + 'px',
@@ -352,20 +368,31 @@ $(function () {
       // 閉じる
       $custom.removeClass('c-detail-unit__custom-select--open');
       $trigger.attr('aria-expanded', 'false');
+      if ($panel.data('moved-to-body')) { $panel.hide(); }
     });
   });
 
+  // body直下パネルも含めて全ドロップダウンを閉じるヘルパー
+  function closeAllDropdowns() {
+    $('.c-detail-unit__custom-select--open').each(function () {
+      $(this).removeClass('c-detail-unit__custom-select--open')
+        .find('.c-detail-unit__custom-select-trigger').attr('aria-expanded', 'false');
+    });
+    // body直下に移動されたパネルも非表示
+    $('.c-detail-unit__custom-select-panel').filter(function () {
+      return $(this).data('moved-to-body');
+    }).hide();
+  }
+
   // 外側クリックで閉じる
   $(document).on('click', function () {
-    $('.c-detail-unit__custom-select--open').removeClass('c-detail-unit__custom-select--open')
-      .find('.c-detail-unit__custom-select-trigger').attr('aria-expanded', 'false');
+    closeAllDropdowns();
   });
 
   // Escキーで閉じる
   $(document).on('keydown', function (e) {
     if (e.key === 'Escape') {
-      $('.c-detail-unit__custom-select--open').removeClass('c-detail-unit__custom-select--open')
-        .find('.c-detail-unit__custom-select-trigger').attr('aria-expanded', 'false');
+      closeAllDropdowns();
     }
   });
 

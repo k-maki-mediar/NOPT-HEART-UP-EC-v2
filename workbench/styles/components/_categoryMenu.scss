@@ -7,6 +7,7 @@
   max-width: rem(1130);
   margin: rem(80) auto 0;
   padding: rem(64) rem(16) rem(64);
+  background-color: rgba($bg-banner, 0.6); // explicit for axe-core contrast detection
 
   @include pc {
     padding-left: var(--side-nav-content-offset);
@@ -78,8 +79,8 @@
   color: $text-color;
 
   &::placeholder {
-    color: $text-color;
-    opacity: 0.3;
+    color: #767676; // WCAG AA 4.54:1 on white (was $text-color opacity 0.3 → ~1.8:1)
+    opacity: 1;
   }
 }
 

@@ -51,8 +51,8 @@ $color-dot-hover: #d0d0d0;
 $color-disabled: #cccccc;
 $text-secondary: #444444;
 $header-bg-alert: #B40003;
-$heading-initial-pink: #E26464;
-$heading-initial-yellow: #967B00;
+$heading-initial-pink: #C84040; // darkened from #E26464 for WCAG AA 4.5:1 on white (14px text)
+$heading-initial-yellow: #8A7100; // darkened from #967B00 for WCAG AA 4.5:1 on white (14px text)
 $heading-initial-green: #2B7942;
 
 // フォント

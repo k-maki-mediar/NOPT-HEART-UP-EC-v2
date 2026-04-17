@@ -12,6 +12,7 @@
   max-width: rem(1130);
   margin: 0 auto;
   padding: rem(80) rem(16) rem(64) rem(16);
+  background-color: $bg-gray; // explicit for axe-core contrast detection
 
   @include pc {
     padding: rem(64) rem(32) rem(64) calc(var(--side-nav-content-offset) + rem(32));
@@ -209,7 +210,7 @@
 }
 
 .c-business-calendar__day--other {
-  opacity: 0.15;
+  color: #767676; // WCAG AA 4.54:1 on white (was opacity 0.15 → ~1.3:1)
 }
 
 // ----------------------------------------

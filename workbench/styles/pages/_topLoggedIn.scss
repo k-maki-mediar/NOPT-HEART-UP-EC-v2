@@ -21,11 +21,11 @@
 
 // 見出し色もピンクに合わせる
 .c-main--logged-in .c-campaign-topics__heading-en .c-heading-initial {
-  color: #E26464 !important;
+  color: $heading-initial-pink;
 }
 
 .c-main--logged-in .c-campaign-topics__heading-ja {
-  color: #E26464;
+  color: $heading-initial-pink;
 }
 
 // serviceGrid: 緑 → 黄色
@@ -43,11 +43,11 @@
 
 // 見出し色も黄色に合わせる
 .c-main--logged-in .c-service-grid__heading-en .c-heading-initial {
-  color: #967B00 !important;
+  color: $heading-initial-yellow;
 }
 
 .c-main--logged-in .c-service-grid__heading-ja {
-  color: #967B00;
+  color: $heading-initial-yellow;
 }
 
 // aboutSiteBanner: ピンク → 緑
@@ -65,9 +65,9 @@
 
 // 見出し色も緑に合わせる
 .c-main--logged-in .c-about-site-banner__heading-en .c-heading-initial {
-  color: #2B7942 !important;
+  color: $heading-initial-green;
 }
 
 .c-main--logged-in .c-about-site-banner__heading-ja {
-  color: #2B7942;
+  color: $heading-initial-green;
 }

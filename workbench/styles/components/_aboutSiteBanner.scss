@@ -49,7 +49,7 @@
   font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-normal;
-  color: #E26464;
+  color: $heading-initial-pink;
   margin-top: rem(4);
 }
 
@@ -72,7 +72,7 @@
 }
 
 .c-about-site-banner__card {
-  &:last-child {
+  &--last {
     grid-column: 1;
 
     @include pc {
@@ -87,7 +87,7 @@
   align-items: center;
   height: 100%;
   text-decoration: none;
-  background-color: #F4F8FC;
+  background-color: $bg-light;
   border: rem(1) solid $primary-color;
   border-radius: rem(10);
   overflow: hidden;

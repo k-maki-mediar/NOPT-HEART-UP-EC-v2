@@ -38,7 +38,7 @@
   flex: 1;
   border-right: rem(1) solid $border-color;
 
-  &:last-child {
+  &--last {
     border-right: none;
   }
 }

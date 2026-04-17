@@ -6708,7 +6708,7 @@
   font-size: 0.8125rem;
   color: #333;
 }
-.c-detail-unit__price-per-unit strong {
+.c-detail-unit__price-per-unit .c-detail-unit__price-per-unit-value {
   font-size: 1rem;
   font-weight: 500;
   color: #c13b36;

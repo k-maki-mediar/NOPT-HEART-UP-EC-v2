@@ -254,46 +254,62 @@
           </tbody>
         </table>
 
-        <!-- 度数選択（遠用/近用）プルダウン -->
-        <div class="c-detail-unit__diopter-select">
-          <div class="c-detail-unit__select-row">
-            <span class="c-detail-unit__select-label">度数選択<br>（遠用／近用）</span>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select" name="diopterRight">
-                <option value="">選択してください</option>
-                <option value="1">-2.00</option>
-                <option value="2">-2.50</option>
-                <option value="3">-3.00</option>
-              </select>
+        <!-- ご注文内容を選択 -->
+        <div class="c-detail-unit__order-select">
+          <div class="c-detail-unit__order-select-cards">
+            <!-- 右目カード -->
+            <div class="c-detail-unit__eye-card">
+              <div class="c-detail-unit__eye-card-header">
+                <span class="c-detail-unit__eye-card-label">右目</span>
+              </div>
+              <div class="c-detail-unit__eye-card-field">
+                <label class="c-detail-unit__eye-card-field-label">度数</label>
+                <div class="c-detail-unit__select-wrap">
+                  <select class="c-detail-unit__select" name="diopterRight">
+                    <option value="">選択してください</option>
+                    <option value="1">-2.00</option>
+                    <option value="2">-2.50</option>
+                    <option value="3">-3.00</option>
+                  </select>
+                </div>
+              </div>
+              <div class="c-detail-unit__eye-card-field">
+                <label class="c-detail-unit__eye-card-field-label">カラー</label>
+                <div class="c-detail-unit__select-wrap">
+                  <select class="c-detail-unit__select js-detail-color-select" name="colorRight" data-eye="right">
+                    <option value="">選択してください</option>
+                    <option value="1">ブラウン</option>
+                    <option value="2">ブラック</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select" name="diopterLeft">
-                <option value="">選択してください</option>
-                <option value="1">-2.00</option>
-                <option value="2">-2.50</option>
-                <option value="3">-3.00</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- カラー選択プルダウン -->
-        <div class="c-detail-unit__color-select">
-          <div class="c-detail-unit__select-row">
-            <span class="c-detail-unit__select-label">カラー選択</span>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select js-detail-color-select" name="colorRight" data-eye="right">
-                <option value="">選択してください</option>
-                <option value="1">ブラウン</option>
-                <option value="2">ブラック</option>
-              </select>
-            </div>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select js-detail-color-select" name="colorLeft" data-eye="left">
-                <option value="">選択してください</option>
-                <option value="1">ブラウン</option>
-                <option value="2">ブラック</option>
-              </select>
+            <!-- 左目カード -->
+            <div class="c-detail-unit__eye-card">
+              <div class="c-detail-unit__eye-card-header">
+                <span class="c-detail-unit__eye-card-label">左目</span>
+              </div>
+              <div class="c-detail-unit__eye-card-field">
+                <label class="c-detail-unit__eye-card-field-label">度数</label>
+                <div class="c-detail-unit__select-wrap">
+                  <select class="c-detail-unit__select" name="diopterLeft">
+                    <option value="">選択してください</option>
+                    <option value="1">-2.00</option>
+                    <option value="2">-2.50</option>
+                    <option value="3">-3.00</option>
+                  </select>
+                </div>
+              </div>
+              <div class="c-detail-unit__eye-card-field">
+                <label class="c-detail-unit__eye-card-field-label">カラー</label>
+                <div class="c-detail-unit__select-wrap">
+                  <select class="c-detail-unit__select js-detail-color-select" name="colorLeft" data-eye="left">
+                    <option value="">選択してください</option>
+                    <option value="1">ブラウン</option>
+                    <option value="2">ブラック</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
         </div>

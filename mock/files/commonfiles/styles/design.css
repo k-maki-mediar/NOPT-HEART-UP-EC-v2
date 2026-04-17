@@ -6265,87 +6265,144 @@
   }
 }
 
-.c-detail-unit__diopter-select,
-.c-detail-unit__color-select {
-  margin-top: 0.5rem;
-  display: table;
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
+.c-detail-unit__order-select {
+  margin-top: 1rem;
+}
+
+.c-detail-unit__order-select-heading {
+  margin-bottom: 0.75rem;
+}
+
+.c-detail-unit__order-select-title {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
+  font-weight: 700;
+  color: #00387d;
+  line-height: 1.5;
 }
 
-.c-detail-unit__select-row {
-  display: table-row;
-  flex-wrap: wrap;
-}
-.c-detail-unit__select-row + .c-detail-unit__select-row {
-  margin-top: 0.5rem;
-}
-
-.c-detail-unit__select-label {
-  display: table-cell;
-  padding: 0 0.5rem;
-  height: 2rem;
+.c-detail-unit__order-select-note {
+  display: block;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.75;
-  letter-spacing: 0.035rem;
-  color: #333;
-  background-color: #f4f8fc;
-  text-align: right;
-  white-space: nowrap;
-  border: 1px solid #d7e7fb;
-  vertical-align: middle;
+  font-size: 0.6875rem;
+  color: #6B7280;
+  margin-top: 0.25rem;
 }
-@media (max-width: 767px) {
-  .c-detail-unit__select-label {
-    width: 4.375rem;
-    padding: 0 0.25rem;
-    font-size: 0.75rem;
-  }
+
+.c-detail-unit__order-select-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 @media (min-width: 992px) {
-  .c-detail-unit__select-label {
-    padding: 0 0.75rem;
+  .c-detail-unit__order-select-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+}
+
+.c-detail-unit__eye-card {
+  border: 1px solid #00387d;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__eye-card {
+    flex: 1;
+  }
+}
+
+.c-detail-unit__eye-card-header {
+  padding: 0.5rem 0.75rem;
+  background-color: #F7F7F7;
+  text-align: center;
+}
+
+.c-detail-unit__eye-card-label {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__eye-card-label {
+    font-size: 1rem;
+  }
+}
+
+.c-detail-unit__eye-card-data {
+  padding: 0.5rem 0.75rem;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.6875rem;
+  color: #6B7280;
+  background-color: #f4f8fc;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.c-detail-unit__eye-card-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #F7F7F7;
+}
+
+.c-detail-unit__eye-card-field-label {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: 2.75rem;
+}
+
+.c-detail-unit__eye-card-field .c-detail-unit__select-wrap {
+  flex: 1;
+}
+
+.c-detail-unit__eye-card-field .c-detail-unit__select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: #00387d;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+
+.c-detail-unit__eye-same-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__eye-same-check {
+    width: 100%;
+    order: 1;
+  }
+}
+
+.c-detail-unit__eye-same-input {
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: #00387d;
+  cursor: pointer;
+}
+
+.c-detail-unit__eye-same-text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.8125rem;
+  color: #333;
 }
 
 .c-detail-unit__select-wrap {
   position: relative;
   flex: 1;
-}
-
-.c-detail-unit__diopter-select .c-detail-unit__select-wrap,
-.c-detail-unit__color-select .c-detail-unit__select-wrap {
-  display: table-cell;
-  padding: 0;
-  height: 2rem;
-  border: 1px solid #d7e7fb;
-  vertical-align: middle;
-  background-color: #FFFFFF;
-}
-.c-detail-unit__diopter-select .c-detail-unit__select-wrap select,
-.c-detail-unit__color-select .c-detail-unit__select-wrap select {
-  width: 100%;
-  height: 100%;
-  padding: 0 0.75rem;
-  border: none;
-  background: none;
-  font-size: 0.875rem;
-  color: #00387d;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  text-align: right;
-}
-@media (max-width: 767px) {
-  .c-detail-unit__diopter-select .c-detail-unit__select-wrap select,
-  .c-detail-unit__color-select .c-detail-unit__select-wrap select {
-    font-size: 0.75rem;
-  }
 }
 
 .c-detail-unit__select {

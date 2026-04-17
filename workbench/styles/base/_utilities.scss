@@ -1,3 +1,6 @@
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
 // ========================================
 // Utilities
 // ユーティリティクラス
@@ -5,7 +8,7 @@
 
 // SP時のみ表示（PC時非表示）
 .c-sp-only {
-  @media (min-width: 992px) {
+  @include pc {
     display: none;
   }
 }

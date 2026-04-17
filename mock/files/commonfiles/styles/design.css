@@ -499,7 +499,7 @@
   flex: 1;
   border-right: 0.0625rem solid #e0e0e0;
 }
-.c-footer-menu__item:last-child {
+.c-footer-menu__item--last {
   border-right: none;
 }
 
@@ -878,11 +878,11 @@
   }
 }
 
-.c-about-site-banner__card:last-child {
+.c-about-site-banner__card--last {
   grid-column: 1;
 }
 @media (min-width: 992px) {
-  .c-about-site-banner__card:last-child {
+  .c-about-site-banner__card--last {
     grid-column: auto;
   }
 }
@@ -893,7 +893,7 @@
   align-items: center;
   height: 100%;
   text-decoration: none;
-  background-color: #F4F8FC;
+  background-color: #f4f8fc;
   border: 0.0625rem solid #00387d;
   border-radius: 0.625rem;
   overflow: hidden;
@@ -1908,7 +1908,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #01468E;
+  color: #01468e;
   margin-top: 0.25rem;
 }
 
@@ -2113,7 +2113,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #01468E;
+  color: #01468e;
   margin-top: 0.25rem;
 }
 
@@ -8018,7 +8018,7 @@
 }
 
 .c-main--logged-in .c-campaign-topics__heading-en .c-heading-initial {
-  color: #E26464 !important;
+  color: #E26464;
 }
 
 .c-main--logged-in .c-campaign-topics__heading-ja {
@@ -8038,7 +8038,7 @@
 }
 
 .c-main--logged-in .c-service-grid__heading-en .c-heading-initial {
-  color: #967B00 !important;
+  color: #967B00;
 }
 
 .c-main--logged-in .c-service-grid__heading-ja {
@@ -8058,7 +8058,7 @@
 }
 
 .c-main--logged-in .c-about-site-banner__heading-en .c-heading-initial {
-  color: #2B7942 !important;
+  color: #2B7942;
 }
 
 .c-main--logged-in .c-about-site-banner__heading-ja {

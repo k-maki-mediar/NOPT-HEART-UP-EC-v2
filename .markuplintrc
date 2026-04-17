@@ -1,0 +1,33 @@
+{
+  "overrides": {
+    "workbench/includes/parts/general/pageSideNav.html": {
+      "rules": {
+        "wai-aria": false,
+        "permitted-contents": false
+      }
+    },
+    "workbench/includes/parts/general/pageSideNavLoggedIn.html": {
+      "rules": {
+        "wai-aria": false,
+        "permitted-contents": false
+      }
+    },
+    "workbench/includes/parts/general/pageHeaderMenu.html": {
+      "rules": {
+        "wai-aria": false,
+        "permitted-contents": false
+      }
+    },
+    "workbench/includes/parts/general/pageHeaderMenuLoggedIn.html": {
+      "rules": {
+        "wai-aria": false,
+        "permitted-contents": false
+      }
+    },
+    "workbench/includes/parts/main/mypage/sectionDecoEnd.html": {
+      "rules": {
+        "no-orphaned-end-tag": false
+      }
+    }
+  }
+}

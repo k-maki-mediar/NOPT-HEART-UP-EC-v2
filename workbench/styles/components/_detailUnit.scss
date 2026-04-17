@@ -760,7 +760,7 @@
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: $z-index-order-dropdown;
   max-height: rem(200);
   overflow-y: auto;
   border: 1px solid $primary-color;
@@ -815,7 +815,7 @@
   display: flex;
   gap: rem(8);
   position: relative;
-  z-index: 2;
+  z-index: $z-index-order-tabs;
 }
 
 // 個別タブ
@@ -869,7 +869,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: $z-index-order-outline;
   pointer-events: none;
   overflow: visible;
 }
@@ -877,7 +877,7 @@
 // タブパネル群（枠線はSVGが担当、背景のみ）
 .c-detail-unit__order-panels {
   position: relative;
-  z-index: 1;
+  z-index: $z-index-order-panels;
   background: $bg-gray;
   border-radius: 0 0 rem(8) rem(8);
 }

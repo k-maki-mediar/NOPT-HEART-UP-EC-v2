@@ -526,31 +526,31 @@ $(function () {
   // 注文ブロック SVG外枠描画
   // ----------------------------------------
   function drawOrderOutline(wrapper) {
-    var svgNS = 'http://www.w3.org/2000/svg';
-    var svg = wrapper.querySelector('.c-detail-unit__order-outline');
-    var activeTab = wrapper.querySelector('.c-detail-unit__order-tab.is-active');
-    var panels = wrapper.querySelector('.c-detail-unit__order-panels');
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = wrapper.querySelector('.c-detail-unit__order-outline');
+    const activeTab = wrapper.querySelector('.c-detail-unit__order-tab.is-active');
+    const panels = wrapper.querySelector('.c-detail-unit__order-panels');
 
     if (!svg || !activeTab || !panels) return;
 
-    var wrapRect = wrapper.getBoundingClientRect();
-    var tabRect = activeTab.getBoundingClientRect();
-    var panelRect = panels.getBoundingClientRect();
+    const wrapRect = wrapper.getBoundingClientRect();
+    const tabRect = activeTab.getBoundingClientRect();
+    const panelRect = panels.getBoundingClientRect();
 
-    var stroke = 2;
-    var radius = 8;
+    const stroke = 2;
+    const radius = 8;
 
-    var left = tabRect.left - wrapRect.left;
-    var right = tabRect.right - wrapRect.left;
-    var tabTop = tabRect.top - wrapRect.top;
-    var panelTop = panelRect.top - wrapRect.top;
-    var panelLeft = panelRect.left - wrapRect.left;
-    var panelRight = panelRect.right - wrapRect.left;
-    var panelBottom = panelRect.bottom - wrapRect.top;
+    const left = tabRect.left - wrapRect.left;
+    const right = tabRect.right - wrapRect.left;
+    const tabTop = tabRect.top - wrapRect.top;
+    const panelTop = panelRect.top - wrapRect.top;
+    const panelLeft = panelRect.left - wrapRect.left;
+    const panelRight = panelRect.right - wrapRect.left;
+    const panelBottom = panelRect.bottom - wrapRect.top;
 
     svg.setAttribute('viewBox', '0 0 ' + wrapRect.width + ' ' + wrapRect.height);
 
-    var d = [
+    const d = [
       'M ' + panelLeft + ' ' + panelBottom,
       'L ' + panelLeft + ' ' + panelTop,
       'L ' + left + ' ' + panelTop,
@@ -568,7 +568,7 @@ $(function () {
     while (svg.firstChild) {
       svg.removeChild(svg.firstChild);
     }
-    var path = document.createElementNS(svgNS, 'path');
+    const path = document.createElementNS(svgNS, 'path');
     path.setAttribute('d', d);
     path.setAttribute('fill', 'none');
     path.setAttribute('stroke', '#00387d');
@@ -580,7 +580,7 @@ $(function () {
   }
 
   // 初期描画 + リサイズ対応
-  var orderWrappers = document.querySelectorAll('.js-order-wrap');
+  const orderWrappers = document.querySelectorAll('.js-order-wrap');
   orderWrappers.forEach(function (w) {
     drawOrderOutline(w);
   });
@@ -699,8 +699,8 @@ $(function () {
 $(function () {
   'use strict';
 
-  var TOTAL_SLOTS = 7;
-  var pagers = document.querySelectorAll('.js-pager');
+  const TOTAL_SLOTS = 7;
+  const pagers = document.querySelectorAll('.js-pager');
   if (!pagers.length) return;
 
   function getPageSlots(current, total) {
@@ -823,14 +823,14 @@ $(function () {
  * おすすめ商品・最近見た商品リスト
  * ======================================== */
 $(function () {
-  var DRAG_THRESHOLD = 5;
+  const DRAG_THRESHOLD = 5;
 
   $('.c-recommend__list, .c-browsing-history__list').each(function () {
-    var el = this;
-    var isDown = false;
-    var hasDragged = false;
-    var startX = 0;
-    var scrollLeft = 0;
+    const el = this;
+    let isDown = false;
+    let hasDragged = false;
+    let startX = 0;
+    let scrollLeft = 0;
 
     $(el).on('mousedown', function (e) {
       if (e.button !== 0) return;
@@ -849,7 +849,7 @@ $(function () {
 
     $(document).on('mousemove', function (e) {
       if (!isDown) return;
-      var dx = e.clientX - startX;
+      const dx = e.clientX - startX;
       if (Math.abs(dx) > DRAG_THRESHOLD) {
         hasDragged = true;
       }
@@ -875,7 +875,7 @@ $(function () {
       if (hasDragged) return;
       // リンク自体のクリックはそのまま通す
       if ($(e.target).closest('a').length) return;
-      var href = $(this).find('.c-product-card__name-link').attr('href');
+      const href = $(this).find('.c-product-card__name-link').attr('href');
       if (href) {
         window.location.href = href;
       }

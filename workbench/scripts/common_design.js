@@ -86,11 +86,11 @@ $(function () {
  * キャンペーン＆トピックス カルーセル
  * ======================================== */
 $(function () {
-  var $carousel = $(".js-campaign-carousel");
-  var $btn = $(".js-campaign-play-toggle");
-  var $pauseIcon = $(".js-campaign-pause-icon");
-  var $playIcon = $(".js-campaign-play-icon");
-  var isPlaying = true;
+  const $carousel = $(".js-campaign-carousel");
+  const $btn = $(".js-campaign-play-toggle");
+  const $pauseIcon = $(".js-campaign-pause-icon");
+  const $playIcon = $(".js-campaign-play-icon");
+  let isPlaying = true;
 
   $carousel.slick({
     autoplay: true,

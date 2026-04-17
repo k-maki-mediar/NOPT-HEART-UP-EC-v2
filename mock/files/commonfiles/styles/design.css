@@ -6267,6 +6267,7 @@
 
 .c-detail-unit__order-select {
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .c-detail-unit__order-select-heading {
@@ -6603,7 +6604,7 @@
 }
 
 .c-detail-unit__quantity-contact {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
 }
 
 .c-detail-unit__quantity-row {
@@ -6634,7 +6635,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-top: 0.625rem;
+  margin: 1rem 0;
   padding: 0.5rem 0.75rem;
   background-color: #FFFFFF;
   border-radius: 0.25rem;
@@ -6670,7 +6671,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .c-detail-unit__quantity-label {
@@ -6682,7 +6683,7 @@
 }
 
 .c-detail-unit__price-area {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .c-detail-unit__price-row {
@@ -6693,6 +6694,25 @@
 
 .c-detail-unit__price-label {
   display: none;
+}
+
+.c-detail-unit__price-per-unit {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-top: 0.625rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #FFFFFF;
+  border-radius: 0.25rem;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.8125rem;
+  color: #333;
+}
+.c-detail-unit__price-per-unit strong {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #c13b36;
+  margin: 0 0.125rem;
 }
 
 .c-detail-unit__price--strike {
@@ -6894,7 +6914,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
 }
 
 .c-detail-unit__out-of-stock {
@@ -6971,7 +6990,7 @@
 .c-detail-unit__rakutoku-check {
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
   background-color: #FFFFFF;
   padding: 0.375rem 0.75rem;
@@ -7011,9 +7030,9 @@
 }
 
 .c-detail-unit__cycle-radio {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
   background-color: #d7e7fb;
-  padding: 0.375rem 0.75rem;
+  padding: 0.75rem;
   border-radius: 0;
 }
 
@@ -7026,12 +7045,19 @@
 }
 
 .c-detail-unit__cycle-radio-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.c-detail-unit__cycle-radio-detail {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.8125rem;
+  color: #333;
+  margin: 0.5rem 0 0;
 }
 
 .c-detail-unit__cycle-radio-label {

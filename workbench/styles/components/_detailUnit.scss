@@ -675,6 +675,7 @@
 
 .c-detail-unit__order-select {
   margin-top: rem(16);
+  margin-bottom: rem(16);
 }
 
 .c-detail-unit__order-select-heading {
@@ -1034,7 +1035,7 @@
 // ----------------------------------------
 
 .c-detail-unit__quantity-contact {
-  margin-bottom: rem(12);
+  margin-bottom: 0;
 }
 
 .c-detail-unit__quantity-row {
@@ -1065,7 +1066,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-top: rem(10);
+  margin: rem(16) 0;
   padding: rem(8) rem(12);
   background-color: $color-white;
   border-radius: rem(4);
@@ -1102,7 +1103,7 @@
   display: flex;
   align-items: center;
   gap: rem(12);
-  margin-bottom: rem(12);
+  margin-bottom: rem(16);
 }
 
 .c-detail-unit__quantity-label {
@@ -1119,7 +1120,7 @@
 // ----------------------------------------
 
 .c-detail-unit__price-area {
-  margin-bottom: rem(12);
+  margin-bottom: rem(16);
 }
 
 .c-detail-unit__price-row {
@@ -1135,6 +1136,26 @@
   // font-family: $font-family-base;
   // font-size: rem(12);
   // color: $text-light;
+}
+
+.c-detail-unit__price-per-unit {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-top: rem(10);
+  padding: rem(8) rem(12);
+  background-color: $color-white;
+  border-radius: rem(4);
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $text-color;
+
+  strong {
+    font-size: rem(16);
+    font-weight: $font-weight-medium;
+    color: $price-color;
+    margin: 0 rem(2);
+  }
 }
 
 .c-detail-unit__price--strike {
@@ -1347,7 +1368,6 @@
   display: flex;
   flex-direction: column;
   gap: rem(8);
-  margin-bottom: rem(12);
 }
 
 // ----------------------------------------
@@ -1444,7 +1464,7 @@
 .c-detail-unit__rakutoku-check {
   display: flex;
   gap: rem(12);
-  margin-bottom: rem(12);
+  margin-bottom: rem(16);
   flex-wrap: wrap;
   background-color: $color-white;
   padding: rem(6) rem(12);
@@ -1487,9 +1507,9 @@
 // ----------------------------------------
 
 .c-detail-unit__cycle-radio {
-  margin-bottom: rem(12);
+  margin-bottom: 0;
   background-color: $bg-banner;
-  padding: rem(6) rem(12);
+  padding: rem(12);
   border-radius: 0;
 }
 
@@ -1502,12 +1522,19 @@
 }
 
 .c-detail-unit__cycle-radio-list {
-  display: flex;
-  flex-direction: column;
-  gap: rem(8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(16);
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.c-detail-unit__cycle-radio-detail {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $text-color;
+  margin: rem(8) 0 0;
 }
 
 .c-detail-unit__cycle-radio-label {

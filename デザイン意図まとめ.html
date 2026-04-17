@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECサイト デザイン意図まとめ v2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #e8e8e8;
+    color: #333;
+    line-height: 1.8;
+  }
+
+  .slide {
+    width: 960px;
+    min-height: 540px;
+    margin: 24px auto;
+    background: #fff;
+    padding: 48px 56px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.12);
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .slide--top { justify-content: flex-start; }
+
+  .slide--title {
+    text-align: center;
+    justify-content: center;
+  }
+  .slide--title h1 {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: .04em;
+  }
+  .slide--title .meta {
+    margin-top: 48px;
+    font-size: 16px;
+    color: #666;
+  }
+  .slide--title .meta span { display: block; margin-top: 4px; }
+
+  .slide h2 {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #333;
+  }
+
+  .slide h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #00387d;
+    margin-bottom: 10px;
+    margin-top: 18px;
+  }
+  .slide h3:first-of-type { margin-top: 0; }
+
+  .slide ul {
+    list-style: none;
+    padding: 0;
+  }
+  .slide ul li {
+    font-size: 15px;
+    line-height: 1.75;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .slide ul li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+  .slide ul li strong { font-weight: 700; }
+
+  .red { color: #d42f2f; font-weight: 700; }
+
+  /* カラースウォッチ */
+  .color-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .color-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+  }
+
+  /* スクショ付きレイアウト（SPメイン） */
+  .with-sp {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+  }
+  .with-sp__img {
+    flex: 0 0 220px;
+    max-height: 520px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  }
+  .with-sp__img img {
+    width: 100%;
+    display: block;
+  }
+  .with-sp__text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* PC補足ブロック */
+  .pc-note {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: #f4f8fc;
+    border-left: 4px solid #00387d;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .pc-note strong { color: #00387d; }
+
+  /* フッター */
+  .slide-footer {
+    position: absolute;
+    bottom: 14px;
+    right: 22px;
+    font-size: 11px;
+    color: #aaa;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .slide {
+      box-shadow: none;
+      margin: 0;
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== タイトル ===== -->
+<div class="slide slide--title">
+  <h1>ECサイト<br>デザイン意図まとめ</h1>
+  <div class="meta">
+    <span>ハートアップ オンラインショップ</span>
+    <span>メディアライツ</span>
+    <span>2026/04/09</span>
+  </div>
+</div>
+
+<!-- ===== カラー ===== -->
+<div class="slide">
+  <h2>カラー</h2>
+
+  <ul>
+    <li>コンタクトレンズは<strong>高度管理医療機器</strong>。ネイビー・青系を基調にすることで「信頼できる」「清潔」「安心」という印象を色から伝えている</li>
+    <li>白背景 + 薄青のセクション背景の組み合わせで<strong>目に疲れにくい、すっきりとした画面</strong>にしている</li>
+    <li>赤はキャンペーンバッジやSALE価格など<strong>注意を引きたい箇所だけに限定</strong>し、画面全体のトーンを崩さないようにしている</li>
+    <li>装飾のパステルカラー（黄・ピンク・緑）は、ネイビーだけだと<strong>堅くなりすぎるのを和らげる</strong>ために差し色として使っている</li>
+  </ul>
+
+  <h3>パレット</h3>
+  <div class="color-row">
+    <span class="color-swatch" style="background:#00387d"></span>
+    <strong>#00387d</strong> ― 基調色。ヘッダー、ボタン、見出し、アイコン背景
+  </div>
+  <div class="color-row">
+    <span class="color-swatch" style="background:#d7e7fb"></span>
+    <strong>#d7e7fb</strong> ― 薄青。バナー背景、アイコンの丸背景、セクション装飾
+  </div>
+  <div class="color-row">
+    <span class="color-swatch" style="background:#f4f8fc"></span>
+    <strong>#f4f8fc</strong> ― ほぼ白。セクション背景に使い、純白との境界をつくる
+  </div>
+  <div class="color-row">
+    <span class="color-swatch" style="background:#d42f2f"></span>
+    <strong>#d42f2f</strong> ― 赤。SALE・在庫なし・重要ラベルなどアクセント限定
+  </div>
+  <div class="color-row">
+    <span class="color-swatch" style="background:#333"></span>
+    <strong>#333333</strong> ― テキスト。真っ黒ではなく少し柔らかいダークグレー
+  </div>
+  <span class="slide-footer">1</span>
+</div>
+
+<!-- ===== フォント・装飾 ===== -->
+<div class="slide">
+  <h2>フォント・装飾</h2>
+
+  <h3>書体の選定</h3>
+  <ul>
+    <li><strong>Noto Sans JP</strong>（本文）― 癖のないゴシック体。医療系の硬い商材でも読み疲れしにくく、どの端末でも安定して表示される</li>
+    <li><strong>Raleway</strong>（セクション見出しの英字：GUIDE, SERVICE, CATEGORY等）― 細身で余白を活かした書体。日本語のセクション名だけだと単調になるため、<strong>英字見出し + 日本語サブタイトルの2段構成</strong>にしてリズムを出している</li>
+    <li>フォントウェイトは<strong>Light(300) / Regular(400) / Bold(700)</strong>の3段階で情報の強弱をつけている。極端に太いウェイトは使わず、落ち着いた印象を維持</li>
+  </ul>
+
+  <h3>SVG装飾モチーフ</h3>
+  <ul>
+    <li>トップページの背景に<strong>ランドルト環（視力検査のCマーク）・円・三角形</strong>のSVGを散らしている</li>
+    <li>これは「コンタクトレンズ → 眼科 → 視力検査」という連想を自然に喚起するためのモチーフ</li>
+    <li>ゆっくり浮遊するアニメーションをつけ、<strong>静的なページに動きと親しみやすさ</strong>を加えている</li>
+    <li>パステルカラー（黄・ピンク・青・緑）で描き、主張しすぎない<strong>背景装飾として機能</strong>させている</li>
+  </ul>
+  <span class="slide-footer">2</span>
+</div>
+
+<!-- ===== トップページ（ログイン前） ===== -->
+<div class="slide slide--top">
+  <h2>トップページ（ログイン前）</h2>
+  <div class="with-sp">
+    <div class="with-sp__img">
+      <img src="screenshots/sp-top-before.png" alt="トップページ ログイン前 SP">
+    </div>
+    <div class="with-sp__text">
+      <h3>バナーカルーセル</h3>
+      <ul>
+        <li>最大幅を制限して<strong>中央配置</strong>にし、左右に余白を持たせたレイアウト</li>
+        <li>下部の<strong>ドットインジケータ</strong>で現在のスライド位置を示し、複数枚あることを視覚的に伝えている</li>
+        <li>一時停止/再生ボタンをドット横に配置。<strong>自動スライドを止められる操作</strong>を用意し、じっくり読みたいユーザーに配慮</li>
+      </ul>
+
+      <h3>SERVICEグリッド</h3>
+      <ul>
+        <li><strong>2列 x 3行のグリッド</strong>で6つのサービスをバナー形式で並べている</li>
+      </ul>
+
+      <h3>CATEGORYブロック</h3>
+      <ul>
+        <li>薄青背景で他セクションと<strong>視覚的に区切り</strong>をつけている</li>
+      </ul>
+
+      <div class="pc-note">
+        <strong>PC表示：</strong>サイドナビが左カラムに常時表示され、メインコンテンツは右カラムに配置。SPではサイドナビはハンバーガーメニューに収納し、コンテンツを1カラムで全幅表示。
+      </div>
+    </div>
+  </div>
+  <span class="slide-footer">3</span>
+</div>
+
+<!-- ===== トップページ（ログイン後） ===== -->
+<div class="slide slide--top">
+  <h2>トップページ（ログイン後）</h2>
+  <div class="with-sp">
+    <div class="with-sp__img">
+      <img src="screenshots/sp-top-after.png" alt="トップページ ログイン後 SP">
+    </div>
+    <div class="with-sp__text">
+      <h3>らくとく定期便 利用状況カード</h3>
+      <ul>
+        <li><strong>白背景のカード</strong>にアイコン + 見出し + 利用ステータスをまとめた構成</li>
+        <li>ステータスは色分け（<strong>緑:利用中 / 赤:停止中</strong>）で状態を直感的に伝えている</li>
+      </ul>
+
+      <h3>購入可能コンタクトレンズボタン</h3>
+      <ul>
+        <li>見出しの2段構成はトップページ全体のセクション見出し（GUIDE, SERVICE等）と<strong>同じフォーマットで統一</strong>している</li>
+      </ul>
+
+      <h3>共通部分</h3>
+      <ul>
+        <li>CAMPAIGN & TOPICS、SERVICE、CATEGORY、CALENDARの構成・レイアウトは<strong>ログイン前と共通</strong></li>
+      </ul>
+    </div>
+  </div>
+  <span class="slide-footer">4</span>
+</div>
+
+<!-- ===== マイページ ===== -->
+<div class="slide slide--top">
+  <h2>マイページ</h2>
+  <div class="with-sp">
+    <div class="with-sp__img">
+      <img src="screenshots/sp-mypage-closed.png" alt="マイページ SP">
+    </div>
+    <div class="with-sp__text">
+      <h3>らくとく定期便バナー</h3>
+      <ul>
+        <li>画像バナー形式で、ネイビー系の配色で<strong>ページ内で最も目を引く要素</strong>にしている</li>
+      </ul>
+
+      <h3>アコーディオンセクション</h3>
+      <ul>
+        <li>注文履歴・購入可能レンズ・クーポン・お気に入りを<strong>ネイビーのアコーディオンバー</strong>で統一</li>
+        <li>各セクションは<strong>アイコン + テキスト</strong>で区別。色ではなくアイコンの違いで「何のセクションか」を伝えている</li>
+        <li>閉じた状態がデフォルト。SPの限られた画面内で<strong>全セクションを一覧できる</strong>ことを優先</li>
+        <li>バーに<strong>角丸</strong>をつけ、操作できる要素であることを視覚的に示唆</li>
+      </ul>
+
+      <h3>マイページメニュー（下部）</h3>
+      <ul>
+        <li>リスト形式の<strong>シンプルなリンク一覧</strong>。装飾を抑え、上部のアコーディオンとの<strong>メリハリ</strong>をつけている</li>
+      </ul>
+
+      <div class="pc-note">
+        <strong>PC表示：</strong>PCでは左カラムにサイドナビ（メニューリンク一覧）を常時表示。マイページメニューの項目はサイドナビに移動するため、メインエリアはアコーディオン中心のすっきりした構成になる。
+      </div>
+    </div>
+  </div>
+  <span class="slide-footer">5</span>
+</div>
+
+<!-- ===== 商品一覧 ===== -->
+<div class="slide slide--top">
+  <h2>商品一覧</h2>
+  <div class="with-sp">
+    <div class="with-sp__img">
+      <img src="screenshots/sp-list.png" alt="商品一覧 SP">
+    </div>
+    <div class="with-sp__text">
+      <h3>カテゴリ見出し</h3>
+      <ul>
+        <li><strong>薄青背景の帯</strong>でカテゴリ名を表示し、他のセクションとの区切りを明確にしている</li>
+      </ul>
+
+      <h3>商品カード</h3>
+      <ul>
+        <li><strong>2列グリッド</strong>。SPの画面幅で一覧性と情報量のバランスが取れるレイアウト</li>
+        <li>用途アイコン（1DAY / 乱視用 等）は<strong>薄青の丸ピル</strong>で表示。基調色と統一しつつ、テキストだけより視認性が高い</li>
+        <li>価格は<strong>赤字（特別価格）/ グレー（通常価格）</strong>で色分けし、お得感を視覚的に伝えている</li>
+        <li>在庫なしは画像左上に<strong>黒背景のバッジ</strong>を表示し、ステータスを明示している</li>
+      </ul>
+
+      <h3>ソート・件数コントロール</h3>
+      <ul>
+        <li>検索結果件数の下に並び順・表示件数のドロップダウンを配置し、<strong>コンパクトにまとめている</strong></li>
+      </ul>
+
+      <h3>ページネーション</h3>
+      <ul>
+        <li>現在ページは<strong>薄青背景 + ネイビー文字</strong>、他ページは<strong>背景なしのネイビー文字</strong>。背景色の有無で現在位置を区別している</li>
+        <li>一覧の<strong>上下両方に配置</strong>し、スクロール位置に関わらずページ移動できるようにしている</li>
+      </ul>
+
+      <div class="pc-note">
+        <strong>PC表示：</strong>PCでは3列グリッドに拡張。カード間のgapを広げ、ホバー時に浮き上がるインタラクションを追加している。
+      </div>
+    </div>
+  </div>
+  <span class="slide-footer">6</span>
+</div>
+
+<!-- ===== 商品詳細 ===== -->
+<div class="slide slide--top">
+  <h2>商品詳細</h2>
+  <div class="with-sp">
+    <div class="with-sp__img">
+      <img src="screenshots/sp-detail.png" alt="商品詳細 SP">
+    </div>
+    <div class="with-sp__text">
+      <h3>処方箋・規格テーブル</h3>
+      <ul>
+        <li>テーブルヘッダーは<strong>ネイビー背景 + 白文字</strong>、ラベルセルは<strong>薄青背景</strong>、選択操作部分は<strong>白背景</strong>。3段階の色分けで情報の役割を区別している</li>
+      </ul>
+
+      <h3>注文タブ</h3>
+      <ul>
+        <li>非アクティブタブが<strong>ネイビー背景 + 白文字</strong>、アクティブ（選択中）タブが<strong>グレー背景 + ネイビー文字</strong>。※選択中が分かりづらいとの指摘があり、<strong>コントラストを改善予定</strong></li>
+        <li>カートボタンは<strong>ネイビーベタ塗りの全幅ボタン</strong>。ページ内で最も目立つ配色とサイズにしている</li>
+      </ul>
+
+      <h3>Recommend / Browsing History</h3>
+      <ul>
+        <li>背景に黄・緑系の<strong>SVG装飾を配置</strong>し、ページ下部でも視覚的な楽しさを維持</li>
+        <li>商品カードは<strong>一覧ページと同じ形式</strong>を踏襲し、サイト内の統一感を持たせている</li>
+      </ul>
+
+      <div class="pc-note">
+        <strong>PC表示：</strong>PCでは左カラムに画像（固定幅280px）、右カラムに商品情報の2カラムレイアウト。おすすめ・閲覧履歴はPC幅では横スクロール形式になる。
+      </div>
+    </div>
+  </div>
+  <span class="slide-footer">7</span>
+</div>
+
+<!-- ===== 共通パーツ ===== -->
+<div class="slide">
+  <h2>共通パーツのデザイン</h2>
+
+  <h3>ヘッダー</h3>
+  <ul>
+    <li>半透明白の背景 + 下辺のネイビーボーダーで<strong>軽さと区切りを両立</strong>。背景を少し透かすことで圧迫感を軽減</li>
+    <li>ネイビーのボーダーラインやアイコン配色など、<strong>既存の公式サイトとは異なるECサイト独自のトーン</strong>を持たせ、ユーザーが「オンラインショップにいる」と認識できるようにしている</li>
+    <li>SPでは<strong>ロゴ + ログアウト + カートの最小構成</strong>に絞り、他の機能はハンバーガーメニューに収納。画面幅を圧迫しない</li>
+    <li>PCではアイコンナビ（Eyeデータ・らくとく・クーポン・マイページ等）を横並び表示。<strong>テキストよりアイコンを優先</strong>することでヘッダー高さを抑えている</li>
+  </ul>
+
+  <h3>フッター</h3>
+  <ul>
+    <li>SPでは<strong>リスト形式で縦に展開</strong>。区切り線で各行を分け、見やすさを確保</li>
+    <li>リンク行の左右余白を<strong>画面端まで広げ</strong>、SPの画面幅をフルに使い切るレイアウト</li>
+    <li>ページ最下部のキャッチコピー「あなたの瞳に、確かな安心を。」はセンタリング + 小さめの文字サイズで<strong>押し付けがましくない締め</strong>に</li>
+    <li>PCでは3カラムのナビゲーション構成に切り替わる</li>
+  </ul>
+
+  <h3>ユーザーバー</h3>
+  <ul>
+    <li>ヘッダー直下に<strong>薄青背景の細いバー</strong>で会員番号・名前を表示</li>
+    <li>小さいが常に見える位置に置くことで、<strong>ログイン状態の認識</strong>を維持</li>
+  </ul>
+  <span class="slide-footer">8</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECサイト デザイン意図まとめ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #e8e8e8;
+    color: #333;
+    line-height: 1.8;
+  }
+
+  .slide {
+    width: 960px;
+    min-height: 540px;
+    margin: 24px auto;
+    background: #fff;
+    padding: 56px 64px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.12);
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .slide--top { justify-content: flex-start; }
+
+  /* タイトルスライド */
+  .slide--title {
+    text-align: center;
+    justify-content: center;
+  }
+  .slide--title h1 {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: .04em;
+  }
+  .slide--title .meta {
+    margin-top: 48px;
+    font-size: 16px;
+    color: #666;
+  }
+  .slide--title .meta span { display: block; margin-top: 4px; }
+
+  /* セクション見出し */
+  .slide h2 {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #333;
+  }
+
+  .slide h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #d42f2f;
+    margin-bottom: 16px;
+    margin-top: 20px;
+  }
+  .slide h3:first-of-type { margin-top: 0; }
+
+  /* 箇条書き */
+  .slide ul {
+    list-style: none;
+    padding: 0;
+  }
+  .slide ul li {
+    font-size: 16px;
+    line-height: 1.75;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .slide ul li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+  .slide ul li strong { font-weight: 700; }
+
+  .red { color: #d42f2f; font-weight: 700; }
+
+  /* 注釈ボックス */
+  .note-box {
+    margin-top: 20px;
+    padding: 16px 20px;
+    border: 2px solid #d42f2f;
+    border-radius: 8px;
+  }
+  .note-box p {
+    font-size: 14px;
+    color: #d42f2f;
+    line-height: 1.7;
+  }
+  .note-box p::before {
+    content: "\2713\0020";
+    font-weight: 700;
+  }
+
+  /* カラースウォッチ */
+  .color-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .color-swatch {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+  }
+
+  /* スクショ付きレイアウト */
+  .with-screenshot {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  .with-screenshot__img {
+    flex: 0 0 280px;
+    max-height: 480px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  .with-screenshot__img img {
+    width: 100%;
+    display: block;
+  }
+  .with-screenshot__text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* フッター */
+  .slide-footer {
+    position: absolute;
+    bottom: 16px;
+    right: 24px;
+    font-size: 11px;
+    color: #aaa;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .slide {
+      box-shadow: none;
+      margin: 0;
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== タイトル ===== -->
+<div class="slide slide--title">
+  <h1>ECサイト<br>デザイン意図まとめ</h1>
+  <div class="meta">
+    <span>ハートアップ オンラインショップ</span>
+    <span>メディアライツ</span>
+    <span>2026/04/09</span>
+  </div>
+</div>
+
+<!-- ===== カラー・トーン ===== -->
+<div class="slide">
+  <h2>カラー・トーン</h2>
+
+  <h3>ネイビー基調の配色</h3>
+  <ul>
+    <li>コンタクトレンズは<strong>高度管理医療機器</strong>。ネイビー・青系で「信頼」「清潔」「安心」を色から伝える</li>
+    <li>白背景 + 薄青セクションの組み合わせで<strong>目に優しく、すっきりとした印象</strong>に</li>
+    <li>赤はアクセント（キャンペーン・注意喚起）に限定し、画面全体の<strong>落ち着いたトーンを維持</strong></li>
+  </ul>
+
+  <h3>カラーパレット</h3>
+  <div class="color-row">
+    <span class="color-swatch" style="background:#00387d"></span>
+    <strong>#00387d</strong> ― ヘッダー・ボタン・見出し。サイト全体の基調色
+  </div>
+  <div class="color-row">
+    <span class="color-swatch" style="background:#d7e7fb"></span>
+    <strong>#d7e7fb</strong> ― バナー・アイコン背景。柔らかいヘルスケアトーン
+  </div>
+  <div class="color-row">
+    <span class="color-swatch" style="background:#f4f8fc"></span>
+    <strong>#f4f8fc</strong> ― セクション背景。純白より温かみのある白
+  </div>
+  <div class="color-row">
+    <span class="color-swatch" style="background:#d42f2f"></span>
+    <strong>#d42f2f</strong> ― アクセント。SALE・注意喚起などポイント使い
+  </div>
+  <div class="color-row">
+    <span class="color-swatch" style="background:#333"></span>
+    <strong>#333333</strong> ― 本文テキスト。白背景に対して十分なコントラスト
+  </div>
+  <span class="slide-footer">1</span>
+</div>
+
+<!-- ===== フォント・装飾 ===== -->
+<div class="slide">
+  <h2>フォント・装飾</h2>
+
+  <h3>書体</h3>
+  <ul>
+    <li><strong>Noto Sans JP</strong>（本文）― 癖のないゴシック体で可読性を最優先</li>
+    <li><strong>Raleway</strong>（セクション見出しの英字）― 細身で上品な印象。セクション区切りのアクセント</li>
+  </ul>
+
+  <h3>装飾モチーフ</h3>
+  <ul>
+    <li>トップページにランドルト環（視力検査のCマーク）・円・三角形の<strong>SVGモチーフ</strong>を配置</li>
+    <li>ゆっくり浮遊するアニメーションで、堅くなりがちな医療系ECに<strong>親しみやすさ・遊び心</strong>を加えている</li>
+    <li>装飾色はパステル系（黄・ピンク・青・緑）を使い、メインのネイビーが担う<strong>信頼感と対比的に柔らかさを補完</strong></li>
+  </ul>
+  <span class="slide-footer">2</span>
+</div>
+
+<!-- ===== トップページ ===== -->
+<div class="slide slide--top">
+  <h2>トップページ</h2>
+  <div class="with-screenshot">
+    <div class="with-screenshot__img">
+      <img src="screenshots/top.png" alt="トップページ">
+    </div>
+    <div class="with-screenshot__text">
+      <h3>メインバナー（ファーストビュー）</h3>
+      <ul>
+        <li>カルーセル形式で<strong>キャンペーンやお知らせ</strong>を掲出</li>
+        <li>ネイビーの帯で囲まれたヘッダーの直下に配置し、<strong>ページの顔</strong>として機能</li>
+      </ul>
+
+      <h3>GUIDE（ご利用ガイド）</h3>
+      <ul>
+        <li>「ハートアップでの買い方を教えて！」で<strong>初めてのユーザーの不安を解消</strong></li>
+        <li>購入手順・処方箋の扱い・店舗検索への導線を<strong>1ブロックに集約</strong></li>
+      </ul>
+
+      <h3>CAMPAIGN &amp; TOPICS</h3>
+      <ul>
+        <li>らくとく定期便・キャンペーン等の<strong>お得情報をバナーで訴求</strong></li>
+      </ul>
+
+      <h3>SERVICE / CATEGORY / CALENDAR</h3>
+      <ul>
+        <li>サービス紹介はグリッドで<strong>6つの主要導線を一覧化</strong>（決済方法・定期便・送料無料等）</li>
+        <li>カテゴリ検索はキーワード入力 + タグボタンで<strong>シンプルに商品探索</strong>へ誘導</li>
+        <li>営業カレンダーで<strong>配送スケジュールの見通し</strong>を提供</li>
+      </ul>
+    </div>
+  </div>
+  <span class="slide-footer">3</span>
+</div>
+
+<!-- ===== マイページ ===== -->
+<div class="slide slide--top">
+  <h2>マイページ</h2>
+  <div class="with-screenshot">
+    <div class="with-screenshot__img">
+      <img src="screenshots/mypage.png" alt="マイページ">
+    </div>
+    <div class="with-screenshot__text">
+      <h3>ユーザー名・会員番号</h3>
+      <ul>
+        <li>ページ冒頭に会員名と番号を表示し、<strong>「自分のページ」であることを明示</strong></li>
+        <li>会員番号は店舗での問い合わせ時にも使うため<strong>見やすい位置に配置</strong></li>
+      </ul>
+
+      <h3>らくとく定期便バナー</h3>
+      <ul>
+        <li>ネイビー背景の目立つバナーで<strong>定期購入への導線</strong>を最上部に配置</li>
+        <li>コンタクトレンズは消耗品 → 定期購入が最も合理的な買い方であるため<strong>優先的に案内</strong></li>
+      </ul>
+
+      <h3>注文履歴・購入可能レンズ・クーポン・お気に入り</h3>
+      <ul>
+        <li>各セクションを<strong>アコーディオンで整理</strong>。一画面に収まりつつ必要な情報にアクセス可能</li>
+        <li>セクション見出しにアイコン + 色分けで<strong>視認性を確保</strong>（青:注文、緑:レンズ、赤:クーポン、ピンク:お気に入り）</li>
+      </ul>
+
+      <h3>お客様情報・お取引情報</h3>
+      <ul>
+        <li>会員情報変更・配送先・クレジットカード等の<strong>管理系リンクを下部にまとめ配置</strong></li>
+        <li>普段使いの機能（上部）と設定系（下部）を<strong>頻度で分離</strong></li>
+      </ul>
+    </div>
+  </div>
+  <span class="slide-footer">4</span>
+</div>
+
+<!-- ===== 商品一覧 ===== -->
+<div class="slide slide--top">
+  <h2>商品一覧</h2>
+  <div class="with-screenshot">
+    <div class="with-screenshot__img">
+      <img src="screenshots/catalog-list.png" alt="商品一覧">
+    </div>
+    <div class="with-screenshot__text">
+      <h3>カテゴリ見出し</h3>
+      <ul>
+        <li>商品画像付きの見出しで<strong>「今どのカテゴリを見ているか」</strong>を明確に</li>
+        <li>パンくずリスト併用で<strong>現在地の把握と上位カテゴリへの移動</strong>を両立</li>
+      </ul>
+
+      <h3>並び順・件数・ページネーション</h3>
+      <ul>
+        <li>新着順 / 価格順のソート + 表示件数切替をコントロール行に集約</li>
+        <li>ページネーションを<strong>上下両方に配置</strong>し、一覧が長くても迷わない</li>
+      </ul>
+
+      <h3>商品カード</h3>
+      <ul>
+        <li><strong>PC 3列 / SP 2列</strong>のグリッド。ホバーで浮き上がるフィードバック</li>
+        <li>カード1枚に<strong>画像・用途アイコン・メーカー・商品名・価格</strong>を集約</li>
+        <li>用途アイコン（1DAY / 乱視用 / 遠近両用 等）で<strong>自分に合うレンズかを即判別</strong></li>
+        <li>特別価格は赤字 + 取消線で<strong>お得感を視覚的に表現</strong></li>
+        <li>在庫なしはバッジで明示し、<strong>購入可能な商品に視線を自然に誘導</strong></li>
+      </ul>
+    </div>
+  </div>
+  <span class="slide-footer">5</span>
+</div>
+
+<!-- ===== 商品詳細 ===== -->
+<div class="slide slide--top">
+  <h2>商品詳細</h2>
+  <div class="with-screenshot">
+    <div class="with-screenshot__img">
+      <img src="screenshots/catalog-detail.png" alt="商品詳細">
+    </div>
+    <div class="with-screenshot__text">
+      <h3>商品画像 + 基本情報</h3>
+      <ul>
+        <li>画像スライダーで<strong>複数アングルを確認可能</strong>。お気に入りボタン付き</li>
+        <li>商品名・メーカー・内容量・医療機器承認番号を上部に集約し<strong>信頼性を提示</strong></li>
+      </ul>
+
+      <h3>処方箋データ・規格選択</h3>
+      <ul>
+        <li>登録済みのEyeデータ（BC・度数等）を<strong>テーブル形式で見やすく表示</strong></li>
+        <li>コンタクトレンズ購入に必要な情報を<strong>ここで完結</strong>させ、選択ミスを防止</li>
+      </ul>
+
+      <h3>注文エリア</h3>
+      <ul>
+        <li>「スポット便」と「らくとく定期便」を<strong>タブ切替で並列提示</strong></li>
+        <li>数量選択 → 価格表示 → カートボタンの<strong>自然な流れで注文完了</strong></li>
+      </ul>
+
+      <h3>商品説明・支払い・配送</h3>
+      <ul>
+        <li>スペック・説明テキスト・メーカーサイトリンクで<strong>納得感を補強</strong></li>
+        <li>支払い方法・配送・返品をページ下部にまとめ、<strong>購入前の不安を払拭</strong></li>
+      </ul>
+
+      <h3>Recommend / Browsing History</h3>
+      <ul>
+        <li>おすすめ商品・閲覧履歴を下部に配置し<strong>離脱を防いで回遊を促進</strong></li>
+      </ul>
+    </div>
+  </div>
+  <span class="slide-footer">6</span>
+</div>
+
+<!-- ===== 共通パーツ ===== -->
+<div class="slide">
+  <h2>共通パーツ</h2>
+
+  <h3>ヘッダー</h3>
+  <ul>
+    <li>白背景 + ネイビーのボーダーで<strong>清潔感のある固定ヘッダー</strong></li>
+    <li>ロゴ左寄せ、右側にEyeデータ・らくとく・クーポン・マイページ・カート等の<strong>主要ナビをアイコンで配置</strong></li>
+    <li>文字よりアイコンを優先し、<strong>ヘッダー幅を圧迫しないコンパクトな設計</strong></li>
+  </ul>
+
+  <h3>サイドナビ</h3>
+  <ul>
+    <li>PC表示で左カラムに固定。お知らせ・商品メニュー・各種リンクを<strong>常時アクセス可能</strong></li>
+    <li>商品メニューはアコーディオンで展開し、<strong>必要な時だけ表示</strong></li>
+  </ul>
+
+  <h3>フッター</h3>
+  <ul>
+    <li>カテゴリ・ご案内・企業情報の<strong>3カラムナビゲーション</strong></li>
+    <li>「あなたの瞳に、確かな安心を。」のキャッチコピーで<strong>ブランドメッセージを締め</strong></li>
+    <li>SNSリンク（X・LINE）で<strong>ブランドとの接点を維持</strong></li>
+  </ul>
+  <span class="slide-footer">7</span>
+</div>
+
+</body>
+</html>

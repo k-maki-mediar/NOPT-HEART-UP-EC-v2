@@ -18,6 +18,10 @@
   z-index: $z-index-content;
   max-width: rem(600);
   margin: 0 auto;
+
+  @include pc {
+    max-width: rem(900);
+  }
 }
 
 // ----------------------------------------
@@ -42,7 +46,7 @@
   width: 55vw;
   height: rem(320);
   top: 50%;
-  transform: translateY(-40%);
+  transform: translateY(-45%);
   background-color: $deco-yellow;
   opacity: 0.4;
   border-radius: 0 rem(20) rem(20) 0;
@@ -52,8 +56,9 @@
   }
 
   @include pc {
-    height: rem(100);
-    top: 88%;
+    height: rem(160);
+    top: 72%;
+    width: 65vw;
   }
 }
 
@@ -178,7 +183,7 @@
     width: rem(45);
     height: rem(45);
     right: rem(-20);
-    top: 110%;
+    top: 60%;
   }
 }
 
@@ -203,7 +208,7 @@
     width: rem(28);
     height: rem(28);
     left: rem(240);
-    top: 115%;
+    top: 65%;
   }
 }
 
@@ -217,7 +222,7 @@
   font-family: $font-family-heading-en;
   font-size: rem(24);
   font-weight: $font-weight-light;
-  color: $primary-color;
+  color: $text-color;
   line-height: 1.5;
   letter-spacing: rem(0.96);
 }
@@ -227,34 +232,42 @@
   font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-normal;
-  color: $text-light;
+  color: #967B00;
   margin-top: rem(4);
 }
 
-.c-campaign-topics__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+// ----------------------------------------
+// カルーセル
+// ----------------------------------------
+
+.c-campaign-topics__carousel {
+  max-width: rem(480);
+  margin: 0 auto;
 
   @include pc {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: rem(12);
+    max-width: rem(700);
+  }
+
+  // slick初期化前のちらつき防止
+  &:not(.slick-initialized) {
+    overflow: hidden;
+    white-space: nowrap;
+
+    .c-campaign-topics__slide ~ .c-campaign-topics__slide {
+      display: none;
+    }
   }
 }
 
-.c-campaign-topics__item + .c-campaign-topics__item {
-  margin-top: rem(12);
-
-  @include pc {
-    margin-top: 0;
-  }
+.c-campaign-topics__slide {
+  padding: rem(8);
 }
 
 .c-campaign-topics__link {
   display: block;
-  border-radius: rem(20);
+  border-radius: rem(10);
   overflow: hidden;
+  box-shadow: $shadow-xs;
 }
 
 .c-campaign-topics__img {
@@ -263,14 +276,90 @@
   height: auto;
 }
 
-.c-campaign-topics__placeholder {
+// dotsとボタンを横並びにするラッパー
+.c-campaign-topics__carousel-controls {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 345 / 106;
-  border: rem(2) dashed $border-color;
-  border-radius: rem(20);
-  font-family: $font-family-heading;
-  font-size: rem(14);
-  color: $text-light;
+  gap: rem(4);
+  margin-top: rem(-18);
+}
+
+// slick dots
+.c-campaign-topics .slick-dots {
+  position: static;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: rem(4);
+}
+
+.c-campaign-topics .slick-dots > * {
+  width: rem(20);
+  height: rem(20);
+  margin: 0;
+}
+
+.c-campaign-topics .slick-dots > * > [type="button"] {
+  display: block;
+  width: rem(20);
+  height: rem(20);
+  padding: rem(5);
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  font-size: 0;
+  cursor: pointer;
+  background-clip: content-box;
+  background-color: $border-color;
+}
+
+.c-campaign-topics .slick-dots > * > [type="button"]::before {
+  display: none;
+}
+
+.c-campaign-topics .slick-dots .slick-active > [type="button"] {
+  background-color: $primary-color;
+}
+
+// slick arrows
+.c-campaign-topics .slick-prev,
+.c-campaign-topics .slick-next {
+  z-index: $z-index-content;
+  width: rem(44);
+  height: rem(44);
+}
+
+.c-campaign-topics .slick-prev::before,
+.c-campaign-topics .slick-next::before {
+  color: $primary-color;
+  opacity: 0.8;
+}
+
+.c-campaign-topics .slick-prev {
+  left: rem(4);
+}
+
+.c-campaign-topics .slick-next {
+  right: rem(4);
+}
+
+.c-campaign-topics__play-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(20);
+  height: rem(20);
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.c-campaign-topics__play-icon {
+  font-size: rem(18);
+  color: $primary-color;
+  line-height: 1;
 }

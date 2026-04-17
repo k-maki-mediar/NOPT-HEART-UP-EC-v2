@@ -1,0 +1,1 @@
+- [Figmaデザインの忠実な再現](feedback_figma_accuracy.md) — スタイル値を正確に反映→スクリーンショットで最終確認

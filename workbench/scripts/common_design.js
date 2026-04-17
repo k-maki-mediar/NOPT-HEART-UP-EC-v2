@@ -83,6 +83,64 @@ $(function () {
 });
 
 /* ========================================
+ * キャンペーン＆トピックス カルーセル
+ * ======================================== */
+$(function () {
+  var $carousel = $(".js-campaign-carousel");
+  var $btn = $(".js-campaign-play-toggle");
+  var $pauseIcon = $(".js-campaign-pause-icon");
+  var $playIcon = $(".js-campaign-play-icon");
+  var isPlaying = true;
+
+  $carousel.slick({
+    autoplay: true,
+    autoplaySpeed: 4000,
+    speed: 500,
+    arrows: false,
+    dots: true,
+    appendDots: $(".js-campaign-dots"),
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnHover: true,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 99999,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+
+  $btn.show();
+
+  $btn.on("click", function () {
+    if (isPlaying) {
+      $carousel.slick("slickPause");
+      $pauseIcon.hide();
+      $playIcon.show();
+      $btn.attr("aria-label", "スライドショーを再生");
+    } else {
+      $carousel.slick("slickPlay");
+      $playIcon.hide();
+      $pauseIcon.show();
+      $btn.attr("aria-label", "スライドショーを一時停止");
+    }
+    isPlaying = !isPlaying;
+  });
+});
+
+/* ========================================
  * バナーエリア（bannerArea）
  * ======================================== */
 $(function () {

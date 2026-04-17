@@ -251,68 +251,36 @@
               <td class="c-detail-unit__prescription-cell"></td>
               <td class="c-detail-unit__prescription-cell"></td>
             </tr>
-            <tr class="c-detail-unit__prescription-row">
-              <th class="c-detail-unit__prescription-label-cell" scope="row">度数選択<br>（遠用／近用）</th>
-              <td class="c-detail-unit__prescription-cell">-2.00</td>
-              <td class="c-detail-unit__prescription-cell">-2.00</td>
-            </tr>
-            <tr class="c-detail-unit__prescription-row">
-              <th class="c-detail-unit__prescription-label-cell" scope="row">カラー選択</th>
-              <td class="c-detail-unit__prescription-cell">-</td>
-              <td class="c-detail-unit__prescription-cell">-</td>
-            </tr>
           </tbody>
         </table>
 
-        <!-- 度数選択（遠用/近用）プルダウン（選択肢が1件以上ある場合） -->
-        <!-- <div class="c-detail-unit__diopter-select">
-          <div class="c-detail-unit__select-row">
-            <span class="c-detail-unit__select-label">右（遠用）</span>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select" name="diopterRight">
-                <option value="">選択してください</option>
-                <option value="1">-2.00</option>
-                <option value="2">-2.50</option>
-                <option value="3">-3.00</option>
-              </select>
+        <!-- 度数・カラー（選択肢なし/1件パターン：固定値表示） -->
+        <div class="c-detail-unit__order-select">
+          <div class="c-detail-unit__order-select-cards">
+            <!-- 右目カード -->
+            <div class="c-detail-unit__eye-card">
+              <div class="c-detail-unit__eye-card-header">
+                <span class="c-detail-unit__eye-card-label">右目</span>
+              </div>
+              <div class="c-detail-unit__eye-card-field">
+                <span class="c-detail-unit__eye-card-field-label">度数</span>
+                <span class="c-detail-unit__eye-card-field-value">-2.00</span>
+              </div>
+              <!-- カラー選択肢なしのため非表示 -->
+            </div>
+            <!-- 左目カード -->
+            <div class="c-detail-unit__eye-card">
+              <div class="c-detail-unit__eye-card-header">
+                <span class="c-detail-unit__eye-card-label">左目</span>
+              </div>
+              <div class="c-detail-unit__eye-card-field">
+                <span class="c-detail-unit__eye-card-field-label">度数</span>
+                <span class="c-detail-unit__eye-card-field-value">-2.00</span>
+              </div>
+              <!-- カラー選択肢なしのため非表示 -->
             </div>
           </div>
-          <div class="c-detail-unit__select-row">
-            <span class="c-detail-unit__select-label">左（遠用）</span>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select" name="diopterLeft">
-                <option value="">選択してください</option>
-                <option value="1">-2.00</option>
-                <option value="2">-2.50</option>
-                <option value="3">-3.00</option>
-              </select>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- カラー選択プルダウン（選択肢が1件以上ある場合） -->
-        <!-- <div class="c-detail-unit__color-select">
-          <div class="c-detail-unit__select-row">
-            <span class="c-detail-unit__select-label">右カラー</span>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select js-detail-color-select" name="colorRight" data-eye="right">
-                <option value="">選択してください</option>
-                <option value="1">ブラウン</option>
-                <option value="2">ブラック</option>
-              </select>
-            </div>
-          </div>
-          <div class="c-detail-unit__select-row">
-            <span class="c-detail-unit__select-label">左カラー</span>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select js-detail-color-select" name="colorLeft" data-eye="left">
-                <option value="">選択してください</option>
-                <option value="1">ブラウン</option>
-                <option value="2">ブラック</option>
-              </select>
-            </div>
-          </div>
-        </div> -->
+        </div>
 
       </div>
       <!-- /処方箋情報部 -->
@@ -324,8 +292,8 @@
 
     <!-- タブボタン -->
     <div class="c-detail-unit__order-tabs js-detail-order-tabs" role="tablist">
-      <button class="c-detail-unit__order-tab is-active js-detail-order-tab" role="tab" aria-selected="true" data-target="normal" type="button">スポット便の注文</button>
-      <button class="c-detail-unit__order-tab js-detail-order-tab" role="tab" aria-selected="false" data-target="rakutoku" type="button">らくとく定期便の注文</button>
+      <button class="c-detail-unit__order-tab is-active js-detail-order-tab" role="tab" aria-selected="true" data-target="rakutoku" type="button">らくとく定期便の注文</button>
+      <button class="c-detail-unit__order-tab js-detail-order-tab" role="tab" aria-selected="false" data-target="normal" type="button">スポット便の注文</button>
     </div>
 
     <!-- タブ〜パネル外枠（SVG 1本線） -->
@@ -337,7 +305,7 @@
   <!-- ============================================================
     通常購入部
   ============================================================ -->
-      <div class="c-detail-unit__order-normal c-detail-unit__order-panel is-active js-detail-order-panel" data-panel="normal" role="tabpanel">
+      <div class="c-detail-unit__order-normal c-detail-unit__order-panel js-detail-order-panel" data-panel="normal" role="tabpanel">
         <div class="c-detail-unit__order-body">
 
           <!-- 近日発売（事前掲載期間中のみ） -->
@@ -466,7 +434,7 @@
       <!-- ============================================================
         らくとく定期便部（定期購入可能商品・ページ側で表示制御）
       ============================================================ -->
-      <div class="c-detail-unit__order-rakutoku c-detail-unit__order-panel js-detail-order-panel" data-panel="rakutoku" role="tabpanel">
+      <div class="c-detail-unit__order-rakutoku c-detail-unit__order-panel is-active js-detail-order-panel" data-panel="rakutoku" role="tabpanel">
         <div class="c-detail-unit__order-body">
 
           <!-- コンタクトレンズ：左右チェックボックス -->
@@ -500,7 +468,7 @@
               <!-- 3ヶ月コース -->
               <li>
                 <label class="c-detail-unit__cycle-radio-label">
-                  <input class="c-detail-unit__cycle-radio-input js-detail-cycle-radio" type="radio" name="deliveryCycle" value="3">
+                  <input class="c-detail-unit__cycle-radio-input js-detail-cycle-radio" type="radio" name="deliveryCycle" value="3" checked>
                   <span class="c-detail-unit__cycle-radio-text">3か月コース</span>
                 </label>
               </li>
@@ -512,6 +480,11 @@
                 </label>
               </li> -->
             </ul>
+          </div>
+
+          <div class="c-detail-unit__quantity-total">
+            <span class="c-detail-unit__quantity-total-count">片眼計 <strong class="c-detail-unit__quantity-total-num">3</strong>箱</span>
+            <span class="c-detail-unit__quantity-total-unit">1箱あたり <strong class="c-detail-unit__quantity-total-price">3,951</strong>円</span>
           </div>
 
           <!-- 定期便価格エリア（サイクル選択後に表示） -->
@@ -532,6 +505,7 @@
               <span class="c-detail-unit__price-strike-unit">円</span>
             </div> -->
 
+
             <!-- 処方箋なしメッセージ（コンタクトレンズかつ処方箋なし） -->
             <!-- <p class="c-detail-unit__no-prescription-msg">コンタクトレンズのご購入には、あらかじめ処方箋データの登録が必要です</p> -->
           </div>
@@ -545,7 +519,7 @@
             <!-- <p class="c-detail-unit__out-of-stock-msg">※申し訳ございませんが、ただいま品切れ中です。（入荷時期未定）</p> -->
           </div>
 
-          <a href="#" class="c-detail-unit__rakutoku-info-link" target="_blank" rel="noopener noreferrer">らくとく定期便とは<svg class="c-detail-unit__rakutoku-info-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
+          <a href="#" class="c-detail-unit__rakutoku-info-link" target="_blank" rel="noopener noreferrer">らくとく定期便とは</a>
 
         </div>
       </div>

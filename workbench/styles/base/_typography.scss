@@ -1,9 +1,14 @@
+@use '../foundation/mixins' as *;
+
 // ========================================
 // Typography
 // タイポグラフィ基盤（classベースのみ）
 // ========================================
 
-@use '../foundation/mixins' as *;
+// セクション見出しの頭文字を大きく表示
+.c-heading-initial {
+  font-size: 1.5em;
+}
 
 .c-html {
   font-size: 100%; // SP: 16px（デフォルト）

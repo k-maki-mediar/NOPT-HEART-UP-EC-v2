@@ -6,7 +6,7 @@
   position: relative;
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(80) rem(16) 0;
+  padding: rem(80) rem(8) 0;
 
   @include pc {
     padding-left: var(--side-nav-content-offset);
@@ -27,11 +27,12 @@
 .c-service-grid__deco {
   position: absolute;
   inset: 0;
+  top: rem(40);
   pointer-events: none;
   z-index: $z-index-deco;
 
   @include pc {
-    top: rem(160);
+    top: rem(30);
   }
 }
 
@@ -40,9 +41,9 @@
   position: absolute;
   right: calc((100% - 100vw) / 2);
   width: 55vw;
-  height: rem(550);
-  top: 33%;
-  transform: translateY(-30%);
+  height: rem(300);
+  top: 31%;
+  transform: translateY(-27%);
   background-color: $deco-green;
   opacity: 0.6;
   border-radius: rem(20) 0 0 rem(20);
@@ -52,8 +53,8 @@
   }
 
   @include pc {
-    height: rem(400);
-    top: 45%;
+    height: rem(100);
+    top: 80%;
   }
 }
 
@@ -161,7 +162,7 @@
   width: rem(35);
   height: rem(35);
   left: rem(-5);
-  top: 20%;
+  top: 30%;
   transform: rotate(120deg);
   stroke-width: 1.5;
   animation: float-sg-ring-md 5s ease-in-out infinite;
@@ -186,7 +187,7 @@
   width: rem(20);
   height: rem(20);
   right: rem(10);
-  top: 25%;
+  top: 35%;
   transform: rotate(-45deg);
   stroke-width: 3;
   animation: float-sg-ring-sm 3.5s ease-in-out infinite;
@@ -215,7 +216,7 @@
   font-family: $font-family-heading-en;
   font-size: rem(24);
   font-weight: $font-weight-light;
-  color: $primary-color;
+  color: $text-color;
   line-height: 1.5;
   letter-spacing: rem(0.96);
 }
@@ -225,14 +226,14 @@
   font-family: $font-family-heading;
   font-size: rem(14);
   font-weight: $font-weight-normal;
-  color: $text-light;
+  color: #2B7942;
   margin-top: rem(4);
 }
 
 .c-service-grid__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: rem(16);
+  gap: rem(12);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -244,9 +245,7 @@
 
 .c-service-grid__link {
   display: block;
-  border-radius: rem(20);
   overflow: hidden;
-  box-shadow: $shadow-xs;
 }
 
 .c-service-grid__img {

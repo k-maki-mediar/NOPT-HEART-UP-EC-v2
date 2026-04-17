@@ -7,7 +7,7 @@
       </button>
       <h1 class="c-header__logo">
         <a href="../common/トップページ（ログイン後）.html" class="c-header__logo-link">
-          <img src="../../../files/commonfiles/images/logo.png" alt="コンタクトのハートアップ" class="c-header__logo-img">
+          <img src="../../../files/commonfiles/images/online_logo.svg" alt="コンタクトのハートアップ" class="c-header__logo-img">
         </a>
       </h1>
     </div>
@@ -15,25 +15,25 @@
       <ul class="c-header__nav-list">
         <li class="c-header__nav-item c-header__nav-item--pc">
           <a href="#" class="c-header__nav-link">
-            <img src="../../../files/commonfiles/images/icon-footer-diary.svg" alt="" class="c-header__nav-icon c-header__nav-icon--diary">
+            <span class="c-header__nav-icon-area"><img src="../../../files/commonfiles/images/icon-footer-diary.svg" alt="" class="c-header__nav-icon c-header__nav-icon--diary"></span>
             <span class="c-header__nav-label">Eyeデータ</span>
           </a>
         </li>
         <li class="c-header__nav-item c-header__nav-item--pc">
           <a href="#" class="c-header__nav-link">
-            <img src="../../../files/commonfiles/images/icon-footer-rakutoku.svg" alt="" class="c-header__nav-icon c-header__nav-icon--rakutoku">
-            <span class="c-header__nav-label">らくとく</span>
+            <span class="c-header__nav-icon-area"><img src="../../../files/commonfiles/images/icon-footer-rakutoku.svg" alt="" class="c-header__nav-icon c-header__nav-icon--rakutoku"></span>
+            <span class="c-header__nav-label">らくとく定期便<br>マイページ</span>
           </a>
         </li>
         <li class="c-header__nav-item c-header__nav-item--pc">
           <a href="#" class="c-header__nav-link">
-            <img src="../../../files/commonfiles/images/icon-footer-coupon.svg" alt="" class="c-header__nav-icon c-header__nav-icon--coupon">
+            <span class="c-header__nav-icon-area"><img src="../../../files/commonfiles/images/icon-footer-coupon.svg" alt="" class="c-header__nav-icon c-header__nav-icon--coupon"></span>
             <span class="c-header__nav-label">クーポン</span>
           </a>
         </li>
         <li class="c-header__nav-item c-header__nav-item--pc">
           <a href="../mypage/マイページ.html" class="c-header__nav-link">
-            <img src="../../../files/commonfiles/images/icon-footer-mypage.svg" alt="" class="c-header__nav-icon c-header__nav-icon--mypage">
+            <span class="c-header__nav-icon-area"><img src="../../../files/commonfiles/images/icon-footer-mypage.svg" alt="" class="c-header__nav-icon c-header__nav-icon--mypage"></span>
             <span class="c-header__nav-label">マイページ</span>
           </a>
         </li>
@@ -60,38 +60,49 @@
           <span class="c-header-menu__arrow" aria-hidden="true"></span>
         </a>
       </li>
-      <li class="c-header-menu__item c-header-menu__item--accordion">
-        <button type="button" class="c-header-menu__toggle js-header-menu-accordion" aria-expanded="false">
-          <span class="c-header-menu__toggle-text">商品メニュー</span>
+      <li class="c-header-menu__item">
+        <a href="#" class="c-header-menu__link">
+          <span class="c-header-menu__link-text">らくとく定期便 マイページ</span>
+          <span class="c-header-menu__arrow" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li class="c-header-menu__item c-header-menu__item--accordion c-header-menu__item--open">
+        <button type="button" class="c-header-menu__toggle js-header-menu-accordion" aria-expanded="true">
+          <span class="c-header-menu__toggle-text">マイページ</span>
           <span class="c-header-menu__toggle-icon" aria-hidden="true"></span>
         </button>
-        <ul class="c-header-menu__submenu c-product-menu">
-          @@include('./productMenuItems.html')
+        <ul class="c-header-menu__submenu">
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">マイページTOP</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">注文履歴</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">クーポン一覧</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">お気に入り商品一覧</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">会員情報の確認・変更</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">登録住所一覧</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">クレジットカードの登録・削除</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">パスワード変更</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">二段階認証の設定・解除</a>
+          </li>
+          <li class="c-header-menu__subitem">
+            <a href="#" class="c-header-menu__sublink">LINEアカウントの連携・解除</a>
+          </li>
         </ul>
-      </li>
-      <li class="c-header-menu__item">
-        <a href="#" class="c-header-menu__link">
-          <span class="c-header-menu__link-text">クーポン一覧</span>
-          <span class="c-header-menu__arrow" aria-hidden="true"></span>
-        </a>
-      </li>
-      <li class="c-header-menu__item">
-        <a href="#" class="c-header-menu__link">
-          <span class="c-header-menu__link-text">購入履歴</span>
-          <span class="c-header-menu__arrow" aria-hidden="true"></span>
-        </a>
-      </li>
-      <li class="c-header-menu__item">
-        <a href="#" class="c-header-menu__link">
-          <span class="c-header-menu__link-text">お気に入り一覧</span>
-          <span class="c-header-menu__arrow" aria-hidden="true"></span>
-        </a>
-      </li>
-      <li class="c-header-menu__item">
-        <a href="#" class="c-header-menu__link">
-          <span class="c-header-menu__link-text">らくとく定期便 確認・変更</span>
-          <span class="c-header-menu__arrow" aria-hidden="true"></span>
-        </a>
       </li>
       <li class="c-header-menu__item c-header-menu__item--accordion c-header-menu__item--open">
         <button type="button" class="c-header-menu__toggle js-header-menu-accordion" aria-expanded="true">
@@ -107,30 +118,13 @@
           </li>
         </ul>
       </li>
-      <li class="c-header-menu__item c-header-menu__item--accordion c-header-menu__item--open">
-        <button type="button" class="c-header-menu__toggle js-header-menu-accordion" aria-expanded="true">
-          <span class="c-header-menu__toggle-text">登録情報確認・変更</span>
+      <li class="c-header-menu__item c-header-menu__item--accordion">
+        <button type="button" class="c-header-menu__toggle js-header-menu-accordion" aria-expanded="false">
+          <span class="c-header-menu__toggle-text">商品メニュー</span>
           <span class="c-header-menu__toggle-icon" aria-hidden="true"></span>
         </button>
-        <ul class="c-header-menu__submenu">
-          <li class="c-header-menu__subitem">
-            <a href="#" class="c-header-menu__sublink">会員登録内容変更</a>
-          </li>
-          <li class="c-header-menu__subitem">
-            <a href="#" class="c-header-menu__sublink">登録住所一覧</a>
-          </li>
-          <li class="c-header-menu__subitem">
-            <a href="#" class="c-header-menu__sublink">クレジットカード一覧</a>
-          </li>
-          <li class="c-header-menu__subitem">
-            <a href="#" class="c-header-menu__sublink">パスワード変更</a>
-          </li>
-          <li class="c-header-menu__subitem">
-            <a href="#" class="c-header-menu__sublink">二段階認証の設定・解除</a>
-          </li>
-          <li class="c-header-menu__subitem">
-            <a href="#" class="c-header-menu__sublink">LINEアカウントの連携・解除</a>
-          </li>
+        <ul class="c-header-menu__submenu c-product-menu">
+          @@include('./productMenuItems.html')
         </ul>
       </li>
       <li class="c-header-menu__item">

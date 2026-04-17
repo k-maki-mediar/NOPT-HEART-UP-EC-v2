@@ -564,7 +564,7 @@
 
 .c-detail-unit__prescription-label-cell {
   padding: 0 rem(8);
-  height: rem(46);
+  height: rem(32);
   font-weight: $font-weight-normal;
   font-size: rem(14);
   line-height: 1.75;
@@ -589,7 +589,7 @@
 
 .c-detail-unit__prescription-cell {
   padding: 0 rem(12);
-  height: rem(46);
+  height: rem(32);
   font-size: rem(14);
   line-height: 1.75;
   letter-spacing: rem(0.56);
@@ -627,8 +627,8 @@
 
 // 処方箋テーブル内カスタムドロップダウン
 .c-detail-unit__prescription-cell--select .c-detail-unit__custom-select-trigger {
-  min-height: rem(46);
-  padding: rem(8) rem(12);
+  min-height: rem(32);
+  padding: rem(4) rem(12);
   border: none;
   font-size: rem(14);
   color: $primary-color;
@@ -669,38 +669,154 @@
   }
 }
 
-// 度数選択・カラー選択エリア
-.c-detail-unit__diopter-select,
-.c-detail-unit__color-select {
-  padding: rem(12);
-  border-top: 1px solid $border-color;
-  background-color: $bg-light;
+// ----------------------------------------
+// ご注文内容を選択（右目/左目カードUI）
+// ----------------------------------------
+
+.c-detail-unit__order-select {
+  margin-top: rem(16);
+  margin-bottom: rem(16);
 }
 
-.c-detail-unit__select-row {
-  display: flex;
-  align-items: center;
-  gap: rem(8);
-  flex-wrap: wrap;
+.c-detail-unit__order-select-heading {
+  margin-bottom: rem(12);
+}
 
-  & + & {
-    margin-top: rem(8);
+.c-detail-unit__order-select-title {
+  display: block;
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  line-height: 1.5;
+}
+
+.c-detail-unit__order-select-note {
+  display: block;
+  font-family: $font-family-base;
+  font-size: rem(11);
+  color: $text-light;
+  margin-top: rem(4);
+}
+
+.c-detail-unit__order-select-cards {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+
+  @include pc {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
-.c-detail-unit__select-label {
+.c-detail-unit__eye-card {
+  border: 1px solid $primary-color;
+
+  @include pc {
+    flex: 1;
+  }
+}
+
+.c-detail-unit__eye-card-header {
+  padding: rem(8) rem(12);
+  background-color: $bg-gray;
+  text-align: center;
+}
+
+.c-detail-unit__eye-card-label {
+  font-family: $font-family-heading;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.56);
+  color: $primary-color;
+
+  @include pc {
+    font-size: rem(16);
+  }
+}
+
+.c-detail-unit__eye-card-data {
+  padding: rem(8) rem(12);
+  font-family: $font-family-base;
+  font-size: rem(11);
+  color: $text-light;
+  background-color: $bg-light;
+  border-bottom: 1px solid $border-color;
+}
+
+.c-detail-unit__eye-card-field {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  padding: rem(16);
+  background-color: $bg-gray;
+}
+
+.c-detail-unit__eye-card-field-label {
   font-family: $font-family-base;
   font-size: rem(13);
   font-weight: $font-weight-medium;
   color: $text-color;
-  flex: 0 0 auto;
-  min-width: rem(60);
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: rem(44);
+}
+
+.c-detail-unit__eye-card-field .c-detail-unit__select-wrap {
+  flex: 1;
+}
+
+.c-detail-unit__eye-card-field-value {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+}
+
+.c-detail-unit__eye-card-field .c-detail-unit__select {
+  width: 100%;
+  padding: rem(8) rem(12);
+  border: 1px solid $border-color;
+  border-radius: rem(6);
+  font-size: rem(14);
+  color: $primary-color;
+  background-color: $color-white;
+  cursor: pointer;
+}
+
+.c-detail-unit__eye-same-check {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  cursor: pointer;
+  min-height: rem(44);
+
+  @include pc {
+    width: 100%;
+    order: 1;
+  }
+}
+
+.c-detail-unit__eye-same-input {
+  width: rem(18);
+  height: rem(18);
+  accent-color: $primary-color;
+  cursor: pointer;
+}
+
+.c-detail-unit__eye-same-text {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $text-color;
 }
 
 .c-detail-unit__select-wrap {
   position: relative;
   flex: 1;
 }
+
 
 // ネイティブselectを非表示（カスタムUI使用時）
 .c-detail-unit__select {
@@ -919,7 +1035,7 @@
 // ----------------------------------------
 
 .c-detail-unit__quantity-contact {
-  margin-bottom: rem(12);
+  margin-bottom: 0;
 }
 
 .c-detail-unit__quantity-row {
@@ -950,7 +1066,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-top: rem(10);
+  margin: rem(16) 0;
   padding: rem(8) rem(12);
   background-color: $color-white;
   border-radius: rem(4);
@@ -987,7 +1103,7 @@
   display: flex;
   align-items: center;
   gap: rem(12);
-  margin-bottom: rem(12);
+  margin-bottom: rem(16);
 }
 
 .c-detail-unit__quantity-label {
@@ -1004,7 +1120,7 @@
 // ----------------------------------------
 
 .c-detail-unit__price-area {
-  margin-bottom: rem(12);
+  margin-bottom: rem(16);
 }
 
 .c-detail-unit__price-row {
@@ -1020,6 +1136,26 @@
   // font-family: $font-family-base;
   // font-size: rem(12);
   // color: $text-light;
+}
+
+.c-detail-unit__price-per-unit {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-top: rem(10);
+  padding: rem(8) rem(12);
+  background-color: $color-white;
+  border-radius: rem(4);
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $text-color;
+
+  strong {
+    font-size: rem(16);
+    font-weight: $font-weight-medium;
+    color: $price-color;
+    margin: 0 rem(2);
+  }
 }
 
 .c-detail-unit__price--strike {
@@ -1232,7 +1368,6 @@
   display: flex;
   flex-direction: column;
   gap: rem(8);
-  margin-bottom: rem(12);
 }
 
 // ----------------------------------------
@@ -1293,15 +1428,15 @@
   justify-content: center;
   gap: rem(6);
   font-family: $font-family-base;
-  font-size: rem(12);
-  font-weight: $font-weight-medium;
-  color: $primary-color;
-  text-decoration: none;
-  background-color: $color-white;
+  font-size: rem(11);
+  font-weight: $font-weight-normal;
+  color: $calendar-sat;
+  text-decoration: underline;
+  background: none;
   border: none;
-  border-radius: rem(9999);
-  min-height: rem(44);
-  padding: rem(10) rem(16);
+  border-radius: 0;
+  min-height: rem(24);
+  padding: rem(4) 0;
   transition: opacity 0.2s;
 
   &:hover {
@@ -1329,7 +1464,7 @@
 .c-detail-unit__rakutoku-check {
   display: flex;
   gap: rem(12);
-  margin-bottom: rem(12);
+  margin-bottom: rem(16);
   flex-wrap: wrap;
   background-color: $color-white;
   padding: rem(6) rem(12);
@@ -1372,9 +1507,9 @@
 // ----------------------------------------
 
 .c-detail-unit__cycle-radio {
-  margin-bottom: rem(12);
+  margin-bottom: 0;
   background-color: $bg-banner;
-  padding: rem(6) rem(12);
+  padding: rem(12);
   border-radius: 0;
 }
 
@@ -1387,12 +1522,19 @@
 }
 
 .c-detail-unit__cycle-radio-list {
-  display: flex;
-  flex-direction: column;
-  gap: rem(8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(16);
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.c-detail-unit__cycle-radio-detail {
+  font-family: $font-family-base;
+  font-size: rem(13);
+  color: $text-color;
+  margin: rem(8) 0 0;
 }
 
 .c-detail-unit__cycle-radio-label {

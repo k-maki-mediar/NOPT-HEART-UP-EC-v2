@@ -3,6 +3,13 @@
 // ユーティリティクラス
 // ========================================
 
+// SP時のみ表示（PC時非表示）
+.c-sp-only {
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
 // テキストサイズ
 .u-text-xs { font-size: var(--font-size-xs); }
 .u-text-sm { font-size: var(--font-size-sm); }

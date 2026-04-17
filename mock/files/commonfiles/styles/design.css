@@ -57,12 +57,22 @@
     --side-nav-content-offset: calc(var(--side-nav-right) - max(0px, (100vw - 70.625rem) / 2) + 0.5rem);
   }
 }
+.c-heading-initial {
+  font-size: 1.5em;
+}
+
 .c-html {
   font-size: 100%;
 }
 @media (min-width: 992px) {
   .c-html {
     font-size: 112.5%;
+  }
+}
+
+@media (min-width: 992px) {
+  .c-sp-only {
+    display: none;
   }
 }
 
@@ -160,10 +170,8 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(1rem);
-  -webkit-backdrop-filter: blur(1rem);
-  border-bottom: 0.0625rem solid #00387d;
+  background-color: #B40003;
+  border-bottom: none;
 }
 
 .c-main {
@@ -236,17 +244,32 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@media (min-width: 992px) {
+  .c-header__nav-link {
+    justify-content: flex-end;
+  }
+}
+.c-header__nav-link {
   min-width: 2.75rem;
   min-height: 2.75rem;
   padding: 0.25rem;
   text-decoration: none;
-  color: #333;
+  color: #FFFFFF;
+}
+
+.c-header__nav-icon-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
 }
 
 .c-header__nav-icon {
   display: block;
   width: 1.5rem;
   height: 1.5rem;
+  filter: brightness(0) invert(1);
 }
 .c-header__nav-icon--diary {
   width: 1.25rem;
@@ -277,12 +300,22 @@
 .c-header__nav-label {
   display: block;
   margin-top: 0.25rem;
+}
+@media (min-width: 992px) {
+  .c-header__nav-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.875rem;
+  }
+}
+.c-header__nav-label {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.625rem;
   line-height: 1.5;
   letter-spacing: 0.0075rem;
   text-align: center;
-  color: #333;
+  color: #FFFFFF;
 }
 
 .c-header-menu {
@@ -464,6 +497,10 @@
 
 .c-footer-menu__item {
   flex: 1;
+  border-right: 0.0625rem solid #e0e0e0;
+}
+.c-footer-menu__item:last-child {
+  border-right: none;
 }
 
 .c-footer-menu__link {
@@ -645,11 +682,20 @@
 .c-banner-area::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   right: 0;
   bottom: 0;
-  height: 85%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
   background-color: rgba(215, 231, 251, 0.6);
+}
+@media (min-width: 992px) {
+  .c-banner-area::before {
+    left: 0;
+    width: auto;
+    transform: none;
+  }
 }
 
 .c-banner-area__inner {
@@ -723,13 +769,13 @@
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .c-banner-area .slick-dots > * {
   width: 1.25rem;
   height: 1.25rem;
-  margin: 0 0.3125rem;
+  margin: 0;
 }
 
 .c-banner-area .slick-dots > * > [type=button] {
@@ -804,7 +850,7 @@
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  color: #00387d;
+  color: #333;
   line-height: 1.5;
   letter-spacing: 0.06rem;
 }
@@ -814,8 +860,82 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #E26464;
   margin-top: 0.25rem;
+}
+
+.c-about-site-banner__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.625rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 992px) {
+  .c-about-site-banner__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.c-about-site-banner__card:last-child {
+  grid-column: 1;
+}
+@media (min-width: 992px) {
+  .c-about-site-banner__card:last-child {
+    grid-column: auto;
+  }
+}
+
+.c-about-site-banner__card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  background-color: #F4F8FC;
+  border: 0.0625rem solid #00387d;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  padding: 0 0.75rem 0.75rem;
+  box-shadow: 0 0.125rem 0 0 #002a5e;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-about-site-banner__card-link:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 0 #002a5e;
+}
+
+.c-about-site-banner__card-title {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+  text-align: center;
+}
+
+.c-about-site-banner__card-icon {
+  display: block;
+  width: 3.5rem;
+  height: 3.125rem;
+  margin-top: 0.5rem;
+}
+
+.c-about-site-banner__card-desc {
+  margin: 0.5rem 0 0;
+  padding-top: 0.5rem;
+  border-top: 0.0625rem solid #00387d;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.625rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.009375rem;
+  color: #333;
+  text-align: center;
 }
 
 .c-about-site-banner__link {
@@ -842,9 +962,9 @@
   position: absolute;
   right: calc((100% - 100vw) / 2);
   width: 55vw;
-  height: 13.75rem;
-  top: 50%;
-  transform: translateY(-50%);
+  top: calc(50% - 12.5rem);
+  height: 28.125rem;
+  transform: none;
   background-color: #ffdedd;
   opacity: 0.5;
   border-radius: 1.25rem 0 0 1.25rem;
@@ -856,7 +976,10 @@
 }
 @media (min-width: 992px) {
   .c-about-site-banner__deco-rect {
-    height: 17.5rem;
+    height: 11.25rem;
+    top: auto;
+    bottom: -1.25rem;
+    transform: none;
   }
 }
 
@@ -1120,6 +1243,11 @@
   max-width: 37.5rem;
   margin: 0 auto;
 }
+@media (min-width: 992px) {
+  .c-campaign-topics__inner {
+    max-width: 56.25rem;
+  }
+}
 
 .c-campaign-topics__deco {
   position: absolute;
@@ -1139,7 +1267,7 @@
   width: 55vw;
   height: 20rem;
   top: 50%;
-  transform: translateY(-40%);
+  transform: translateY(-45%);
   background-color: #fff0ad;
   opacity: 0.4;
   border-radius: 0 1.25rem 1.25rem 0;
@@ -1151,8 +1279,9 @@
 }
 @media (min-width: 992px) {
   .c-campaign-topics__deco-rect {
-    height: 6.25rem;
-    top: 88%;
+    height: 10rem;
+    top: 72%;
+    width: 65vw;
   }
 }
 
@@ -1288,7 +1417,7 @@
     width: 2.8125rem;
     height: 2.8125rem;
     right: -1.25rem;
-    top: 110%;
+    top: 60%;
   }
 }
 
@@ -1314,7 +1443,7 @@
     width: 1.75rem;
     height: 1.75rem;
     left: 15rem;
-    top: 115%;
+    top: 65%;
   }
 }
 
@@ -1328,7 +1457,7 @@
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  color: #00387d;
+  color: #333;
   line-height: 1.5;
   letter-spacing: 0.06rem;
 }
@@ -1338,36 +1467,36 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #967B00;
   margin-top: 0.25rem;
 }
 
-.c-campaign-topics__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.c-campaign-topics__carousel {
+  max-width: 30rem;
+  margin: 0 auto;
 }
 @media (min-width: 992px) {
-  .c-campaign-topics__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+  .c-campaign-topics__carousel {
+    max-width: 43.75rem;
   }
+}
+.c-campaign-topics__carousel:not(.slick-initialized) {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.c-campaign-topics__carousel:not(.slick-initialized) .c-campaign-topics__slide ~ .c-campaign-topics__slide {
+  display: none;
 }
 
-.c-campaign-topics__item + .c-campaign-topics__item {
-  margin-top: 0.75rem;
-}
-@media (min-width: 992px) {
-  .c-campaign-topics__item + .c-campaign-topics__item {
-    margin-top: 0;
-  }
+.c-campaign-topics__slide {
+  padding: 0.5rem;
 }
 
 .c-campaign-topics__link {
   display: block;
-  border-radius: 1.25rem;
+  border-radius: 0.625rem;
   overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
 }
 
 .c-campaign-topics__img {
@@ -1376,23 +1505,96 @@
   height: auto;
 }
 
-.c-campaign-topics__placeholder {
+.c-campaign-topics__carousel-controls {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 345/106;
-  border: 0.125rem dashed #e0e0e0;
-  border-radius: 1.25rem;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 0.875rem;
-  color: #6B7280;
+  gap: 0.25rem;
+  margin-top: -1.125rem;
+}
+
+.c-campaign-topics .slick-dots {
+  position: static;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.c-campaign-topics .slick-dots > * {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+}
+
+.c-campaign-topics .slick-dots > * > [type=button] {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0.3125rem;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  font-size: 0;
+  cursor: pointer;
+  background-clip: content-box;
+  background-color: #e0e0e0;
+}
+
+.c-campaign-topics .slick-dots > * > [type=button]::before {
+  display: none;
+}
+
+.c-campaign-topics .slick-dots .slick-active > [type=button] {
+  background-color: #00387d;
+}
+
+.c-campaign-topics .slick-prev,
+.c-campaign-topics .slick-next {
+  z-index: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.c-campaign-topics .slick-prev::before,
+.c-campaign-topics .slick-next::before {
+  color: #00387d;
+  opacity: 0.8;
+}
+
+.c-campaign-topics .slick-prev {
+  left: 0.25rem;
+}
+
+.c-campaign-topics .slick-next {
+  right: 0.25rem;
+}
+
+.c-campaign-topics__play-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.c-campaign-topics__play-icon {
+  font-size: 1.125rem;
+  color: #00387d;
+  line-height: 1;
 }
 
 .c-service-grid {
   position: relative;
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 5rem 1rem 0;
+  padding: 5rem 0.5rem 0;
 }
 @media (min-width: 992px) {
   .c-service-grid {
@@ -1410,12 +1612,13 @@
 .c-service-grid__deco {
   position: absolute;
   inset: 0;
+  top: 2.5rem;
   pointer-events: none;
   z-index: -1;
 }
 @media (min-width: 992px) {
   .c-service-grid__deco {
-    top: 10rem;
+    top: 1.875rem;
   }
 }
 
@@ -1423,9 +1626,9 @@
   position: absolute;
   right: calc((100% - 100vw) / 2);
   width: 55vw;
-  height: 34.375rem;
-  top: 33%;
-  transform: translateY(-30%);
+  height: 18.75rem;
+  top: 31%;
+  transform: translateY(-27%);
   background-color: #d6f2dd;
   opacity: 0.6;
   border-radius: 1.25rem 0 0 1.25rem;
@@ -1437,8 +1640,8 @@
 }
 @media (min-width: 992px) {
   .c-service-grid__deco-rect {
-    height: 25rem;
-    top: 45%;
+    height: 6.25rem;
+    top: 80%;
   }
 }
 
@@ -1555,7 +1758,7 @@
   width: 2.1875rem;
   height: 2.1875rem;
   left: -0.3125rem;
-  top: 20%;
+  top: 30%;
   transform: rotate(120deg);
   stroke-width: 1.5;
   animation: float-sg-ring-md 5s ease-in-out infinite;
@@ -1581,7 +1784,7 @@
   width: 1.25rem;
   height: 1.25rem;
   right: 0.625rem;
-  top: 25%;
+  top: 35%;
   transform: rotate(-45deg);
   stroke-width: 3;
   animation: float-sg-ring-sm 3.5s ease-in-out infinite;
@@ -1612,7 +1815,7 @@
   font-family: "Raleway", "Noto Sans JP", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  color: #00387d;
+  color: #333;
   line-height: 1.5;
   letter-spacing: 0.06rem;
 }
@@ -1622,14 +1825,14 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #2B7942;
   margin-top: 0.25rem;
 }
 
 .c-service-grid__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 0.75rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1642,9 +1845,7 @@
 
 .c-service-grid__link {
   display: block;
-  border-radius: 1.25rem;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
 }
 
 .c-service-grid__img {
@@ -1707,7 +1908,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #01468E;
   margin-top: 0.25rem;
 }
 
@@ -1912,7 +2113,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #01468E;
   margin-top: 0.25rem;
 }
 
@@ -2376,17 +2577,48 @@
 }
 
 .c-rakutoku-info__card {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
   border: 0.0625rem solid #00387d;
   border-radius: 0.75rem;
   padding: 1rem;
   background-color: #FFFFFF;
+  box-shadow: 0 0.125rem 0 0 #002a5e;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-rakutoku-info__card:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 0 #002a5e;
+}
+
+.c-rakutoku-info__card-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .c-rakutoku-info__header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.c-rakutoku-info__arrow {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+.c-rakutoku-info__arrow::before {
+  content: "";
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #00387d;
+  border-right: 0.125rem solid #00387d;
+  transform: rotate(45deg);
 }
 
 .c-rakutoku-info__icon {
@@ -2408,40 +2640,18 @@
 
 .c-rakutoku-info__body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.75rem;
-}
-@media (min-width: 992px) {
-  .c-rakutoku-info__body {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
-.c-rakutoku-info__body > .c-rakutoku-info__link {
-  align-self: center;
-  width: auto;
-}
-@media (min-width: 992px) {
-  .c-rakutoku-info__body > .c-rakutoku-info__link {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
 }
 
 .c-rakutoku-info__plan {
   display: flex;
   flex-direction: column;
+  flex: 1;
   background-color: #f4f8fc;
   border-radius: 0.5rem;
   padding: 0.75rem 1rem;
   text-align: center;
-}
-@media (min-width: 992px) {
-  .c-rakutoku-info__plan {
-    flex: 1;
-  }
 }
 
 .c-rakutoku-info__plan-body {
@@ -2489,23 +2699,13 @@
   margin: 0;
 }
 
-.c-rakutoku-info__link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 1.75;
-  letter-spacing: 0.009375rem;
-  color: #0074b3;
-  text-decoration: underline;
-}
-
 .c-contact-lens-btn {
   max-width: 70.625rem;
   margin: 5rem auto 0;
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @media (min-width: 992px) {
   .c-contact-lens-btn {
@@ -2513,35 +2713,67 @@
   }
 }
 
-.c-contact-lens-btn__heading {
-  margin-bottom: 1rem;
-  text-align: center;
+.c-contact-lens-btn__deco-line {
+  display: block;
+  width: 21.625rem;
+  height: auto;
+}
+@media (min-width: 992px) {
+  .c-contact-lens-btn__deco-line {
+    width: 37.5rem;
+  }
 }
 
-.c-contact-lens-btn__heading-en {
+.c-contact-lens-btn__logo {
   display: block;
-  font-family: "Raleway", "Noto Sans JP", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #00387d;
-  line-height: 1.5;
-  letter-spacing: 0.06rem;
+  width: 8.8125rem;
+  height: auto;
+  margin-top: 1rem;
+}
+@media (min-width: 992px) {
+  .c-contact-lens-btn__logo {
+    margin-top: 1.5rem;
+  }
 }
 
-.c-contact-lens-btn__heading-ja {
+.c-contact-lens-btn__divider {
   display: block;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 0.875rem;
+  width: 18.5625rem;
+  height: 0.0625rem;
+  margin: 0.5rem 0;
+}
+@media (min-width: 992px) {
+  .c-contact-lens-btn__divider {
+    width: 31.25rem;
+    margin: 0.875rem 0;
+  }
+}
+
+.c-contact-lens-btn__subtitle {
+  display: block;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.75rem;
   font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.009375rem;
   color: #6B7280;
-  margin-top: 0.25rem;
+  text-align: center;
 }
 
 .c-contact-lens-btn__link {
   max-width: 37.5rem;
-  margin: 0 auto;
+  margin: 0.5rem auto 1rem;
+}
+@media (min-width: 992px) {
+  .c-contact-lens-btn__link {
+    max-width: 30rem;
+    margin: 0.875rem auto 1.5rem;
+  }
+}
+.c-contact-lens-btn__link {
   display: block;
   text-decoration: none;
+  overflow: hidden;
 }
 
 .c-contact-lens-btn__img {
@@ -3960,7 +4192,7 @@
   left: 0;
   right: 0;
   z-index: 99;
-  background-color: rgba(215, 231, 251, 0.6);
+  background-color: rgba(251, 215, 216, 0.6);
   backdrop-filter: blur(1rem);
   -webkit-backdrop-filter: blur(1rem);
 }
@@ -3988,13 +4220,13 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
-  color: #00387d;
+  color: #333;
 }
 
 .c-user-bar__member-id {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
-  color: #4B5563;
+  color: #444444;
 }
 
 .c-category-heading {
@@ -5252,31 +5484,31 @@
 }
 
 .c-page-footer__catchcopy {
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.75;
   letter-spacing: 0.04em;
   color: #333;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.625rem;
 }
 @media (min-width: 992px) {
   .c-page-footer__catchcopy {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.375rem;
+    margin-bottom: 0.875rem;
   }
 }
 
 .c-page-footer__description {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.75;
   letter-spacing: 0.015em;
   color: #333;
   margin: 0 0 1.5rem;
 }
 @media (min-width: 992px) {
   .c-page-footer__description {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     margin-bottom: 1.75rem;
   }
 }
@@ -5930,7 +6162,7 @@
 
 .c-detail-unit__prescription-label-cell {
   padding: 0 0.5rem;
-  height: 2.875rem;
+  height: 2rem;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.75;
@@ -5957,7 +6189,7 @@
 
 .c-detail-unit__prescription-cell {
   padding: 0 0.75rem;
-  height: 2.875rem;
+  height: 2rem;
   font-size: 0.875rem;
   line-height: 1.75;
   letter-spacing: 0.035rem;
@@ -5990,8 +6222,8 @@
 }
 
 .c-detail-unit__prescription-cell--select .c-detail-unit__custom-select-trigger {
-  min-height: 2.875rem;
-  padding: 0.5rem 0.75rem;
+  min-height: 2rem;
+  padding: 0.25rem 0.75rem;
   border: none;
   font-size: 0.875rem;
   color: #00387d;
@@ -6033,30 +6265,147 @@
   }
 }
 
-.c-detail-unit__diopter-select,
-.c-detail-unit__color-select {
-  padding: 0.75rem;
-  border-top: 1px solid #e0e0e0;
-  background-color: #f4f8fc;
+.c-detail-unit__order-select {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.c-detail-unit__select-row {
+.c-detail-unit__order-select-heading {
+  margin-bottom: 0.75rem;
+}
+
+.c-detail-unit__order-select-title {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #00387d;
+  line-height: 1.5;
+}
+
+.c-detail-unit__order-select-note {
+  display: block;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.6875rem;
+  color: #6B7280;
+  margin-top: 0.25rem;
+}
+
+.c-detail-unit__order-select-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__order-select-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.c-detail-unit__eye-card {
+  border: 1px solid #00387d;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__eye-card {
+    flex: 1;
+  }
+}
+
+.c-detail-unit__eye-card-header {
+  padding: 0.5rem 0.75rem;
+  background-color: #F7F7F7;
+  text-align: center;
+}
+
+.c-detail-unit__eye-card-label {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__eye-card-label {
+    font-size: 1rem;
+  }
+}
+
+.c-detail-unit__eye-card-data {
+  padding: 0.5rem 0.75rem;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.6875rem;
+  color: #6B7280;
+  background-color: #f4f8fc;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.c-detail-unit__eye-card-field {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.c-detail-unit__select-row + .c-detail-unit__select-row {
-  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: #F7F7F7;
 }
 
-.c-detail-unit__select-label {
+.c-detail-unit__eye-card-field-label {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
   color: #333;
-  flex: 0 0 auto;
-  min-width: 3.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: 2.75rem;
+}
+
+.c-detail-unit__eye-card-field .c-detail-unit__select-wrap {
+  flex: 1;
+}
+
+.c-detail-unit__eye-card-field-value {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #00387d;
+}
+
+.c-detail-unit__eye-card-field .c-detail-unit__select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: #00387d;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+
+.c-detail-unit__eye-same-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__eye-same-check {
+    width: 100%;
+    order: 1;
+  }
+}
+
+.c-detail-unit__eye-same-input {
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: #00387d;
+  cursor: pointer;
+}
+
+.c-detail-unit__eye-same-text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.8125rem;
+  color: #333;
 }
 
 .c-detail-unit__select-wrap {
@@ -6255,7 +6604,7 @@
 }
 
 .c-detail-unit__quantity-contact {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
 }
 
 .c-detail-unit__quantity-row {
@@ -6286,7 +6635,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-top: 0.625rem;
+  margin: 1rem 0;
   padding: 0.5rem 0.75rem;
   background-color: #FFFFFF;
   border-radius: 0.25rem;
@@ -6322,7 +6671,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .c-detail-unit__quantity-label {
@@ -6334,7 +6683,7 @@
 }
 
 .c-detail-unit__price-area {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .c-detail-unit__price-row {
@@ -6345,6 +6694,25 @@
 
 .c-detail-unit__price-label {
   display: none;
+}
+
+.c-detail-unit__price-per-unit {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-top: 0.625rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #FFFFFF;
+  border-radius: 0.25rem;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.8125rem;
+  color: #333;
+}
+.c-detail-unit__price-per-unit strong {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #c13b36;
+  margin: 0 0.125rem;
 }
 
 .c-detail-unit__price--strike {
@@ -6546,7 +6914,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
 }
 
 .c-detail-unit__out-of-stock {
@@ -6594,15 +6961,15 @@
   justify-content: center;
   gap: 0.375rem;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #00387d;
-  text-decoration: none;
-  background-color: #FFFFFF;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: #0074b3;
+  text-decoration: underline;
+  background: none;
   border: none;
-  border-radius: 624.9375rem;
-  min-height: 2.75rem;
-  padding: 0.625rem 1rem;
+  border-radius: 0;
+  min-height: 1.5rem;
+  padding: 0.25rem 0;
   transition: opacity 0.2s;
 }
 .c-detail-unit__rakutoku-info-link:hover {
@@ -6623,7 +6990,7 @@
 .c-detail-unit__rakutoku-check {
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
   background-color: #FFFFFF;
   padding: 0.375rem 0.75rem;
@@ -6663,9 +7030,9 @@
 }
 
 .c-detail-unit__cycle-radio {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
   background-color: #d7e7fb;
-  padding: 0.375rem 0.75rem;
+  padding: 0.75rem;
   border-radius: 0;
 }
 
@@ -6678,12 +7045,19 @@
 }
 
 .c-detail-unit__cycle-radio-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.c-detail-unit__cycle-radio-detail {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.8125rem;
+  color: #333;
+  margin: 0.5rem 0 0;
 }
 
 .c-detail-unit__cycle-radio-label {
@@ -6749,7 +7123,7 @@
 .c-detail-description__section {
   margin-bottom: 2rem;
 }
-.c-detail-description__section:last-child {
+.c-detail-description__section--last {
   margin-bottom: 0;
 }
 
@@ -6868,7 +7242,7 @@
   gap: 1rem;
   padding: 1rem 0;
 }
-.c-detail-description-payment__section:first-child {
+.c-detail-description-payment__section--first {
   padding-top: 0;
 }
 @media (min-width: 992px) {
@@ -6877,7 +7251,7 @@
     break-inside: avoid;
     border-bottom: 1px dashed #e0e0e0;
   }
-  .c-detail-description-payment__section:last-of-type {
+  .c-detail-description-payment__section--last {
     border-bottom: none;
   }
   .c-detail-description-payment__section--col-end {
@@ -7643,6 +8017,14 @@
   color: #ffdedd;
 }
 
+.c-main--logged-in .c-campaign-topics__heading-en .c-heading-initial {
+  color: #E26464 !important;
+}
+
+.c-main--logged-in .c-campaign-topics__heading-ja {
+  color: #E26464;
+}
+
 .c-main--logged-in .c-service-grid__deco-rect {
   background-color: #fff0ad;
 }
@@ -7655,6 +8037,14 @@
   color: #fff0ad;
 }
 
+.c-main--logged-in .c-service-grid__heading-en .c-heading-initial {
+  color: #967B00 !important;
+}
+
+.c-main--logged-in .c-service-grid__heading-ja {
+  color: #967B00;
+}
+
 .c-main--logged-in .c-about-site-banner__deco-rect {
   background-color: #d6f2dd;
 }
@@ -7665,6 +8055,14 @@
 
 .c-main--logged-in .c-about-site-banner__deco-triangle {
   color: #d6f2dd;
+}
+
+.c-main--logged-in .c-about-site-banner__heading-en .c-heading-initial {
+  color: #2B7942 !important;
+}
+
+.c-main--logged-in .c-about-site-banner__heading-ja {
+  color: #2B7942;
 }
 
 .c-html {

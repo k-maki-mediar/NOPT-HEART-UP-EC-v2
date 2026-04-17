@@ -79,7 +79,7 @@
   color: $text-color;
 
   &::placeholder {
-    color: #767676; // WCAG AA 4.54:1 on white (was $text-color opacity 0.3 → ~1.8:1)
+    color: $color-placeholder;
     opacity: 1;
   }
 }

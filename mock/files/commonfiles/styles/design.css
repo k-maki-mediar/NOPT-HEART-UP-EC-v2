@@ -6362,6 +6362,13 @@
   flex: 1;
 }
 
+.c-detail-unit__eye-card-field-value {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #00387d;
+}
+
 .c-detail-unit__eye-card-field .c-detail-unit__select {
   width: 100%;
   padding: 0.5rem 0.75rem;

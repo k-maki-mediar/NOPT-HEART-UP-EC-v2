@@ -767,6 +767,13 @@
   flex: 1;
 }
 
+.c-detail-unit__eye-card-field-value {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+}
+
 .c-detail-unit__eye-card-field .c-detail-unit__select {
   width: 100%;
   padding: rem(8) rem(12);

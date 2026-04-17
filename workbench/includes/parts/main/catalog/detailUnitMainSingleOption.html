@@ -251,68 +251,36 @@
               <td class="c-detail-unit__prescription-cell"></td>
               <td class="c-detail-unit__prescription-cell"></td>
             </tr>
-            <tr class="c-detail-unit__prescription-row">
-              <th class="c-detail-unit__prescription-label-cell" scope="row">度数選択<br>（遠用／近用）</th>
-              <td class="c-detail-unit__prescription-cell">-2.00</td>
-              <td class="c-detail-unit__prescription-cell">-2.00</td>
-            </tr>
-            <tr class="c-detail-unit__prescription-row">
-              <th class="c-detail-unit__prescription-label-cell" scope="row">カラー選択</th>
-              <td class="c-detail-unit__prescription-cell">-</td>
-              <td class="c-detail-unit__prescription-cell">-</td>
-            </tr>
           </tbody>
         </table>
 
-        <!-- 度数選択（遠用/近用）プルダウン（選択肢が1件以上ある場合） -->
-        <!-- <div class="c-detail-unit__diopter-select">
-          <div class="c-detail-unit__select-row">
-            <span class="c-detail-unit__select-label">右（遠用）</span>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select" name="diopterRight">
-                <option value="">選択してください</option>
-                <option value="1">-2.00</option>
-                <option value="2">-2.50</option>
-                <option value="3">-3.00</option>
-              </select>
+        <!-- 度数・カラー（選択肢なし/1件パターン：固定値表示） -->
+        <div class="c-detail-unit__order-select">
+          <div class="c-detail-unit__order-select-cards">
+            <!-- 右目カード -->
+            <div class="c-detail-unit__eye-card">
+              <div class="c-detail-unit__eye-card-header">
+                <span class="c-detail-unit__eye-card-label">右目</span>
+              </div>
+              <div class="c-detail-unit__eye-card-field">
+                <span class="c-detail-unit__eye-card-field-label">度数</span>
+                <span class="c-detail-unit__eye-card-field-value">-2.00</span>
+              </div>
+              <!-- カラー選択肢なしのため非表示 -->
+            </div>
+            <!-- 左目カード -->
+            <div class="c-detail-unit__eye-card">
+              <div class="c-detail-unit__eye-card-header">
+                <span class="c-detail-unit__eye-card-label">左目</span>
+              </div>
+              <div class="c-detail-unit__eye-card-field">
+                <span class="c-detail-unit__eye-card-field-label">度数</span>
+                <span class="c-detail-unit__eye-card-field-value">-2.00</span>
+              </div>
+              <!-- カラー選択肢なしのため非表示 -->
             </div>
           </div>
-          <div class="c-detail-unit__select-row">
-            <span class="c-detail-unit__select-label">左（遠用）</span>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select" name="diopterLeft">
-                <option value="">選択してください</option>
-                <option value="1">-2.00</option>
-                <option value="2">-2.50</option>
-                <option value="3">-3.00</option>
-              </select>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- カラー選択プルダウン（選択肢が1件以上ある場合） -->
-        <!-- <div class="c-detail-unit__color-select">
-          <div class="c-detail-unit__select-row">
-            <span class="c-detail-unit__select-label">右カラー</span>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select js-detail-color-select" name="colorRight" data-eye="right">
-                <option value="">選択してください</option>
-                <option value="1">ブラウン</option>
-                <option value="2">ブラック</option>
-              </select>
-            </div>
-          </div>
-          <div class="c-detail-unit__select-row">
-            <span class="c-detail-unit__select-label">左カラー</span>
-            <div class="c-detail-unit__select-wrap">
-              <select class="c-detail-unit__select js-detail-color-select" name="colorLeft" data-eye="left">
-                <option value="">選択してください</option>
-                <option value="1">ブラウン</option>
-                <option value="2">ブラック</option>
-              </select>
-            </div>
-          </div>
-        </div> -->
+        </div>
 
       </div>
       <!-- /処方箋情報部 -->

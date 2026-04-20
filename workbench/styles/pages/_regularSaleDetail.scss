@@ -360,6 +360,16 @@
   margin: 0;
 }
 
+// 商品変更ボタン（パネル最下部）
+.c-teiki-products__actions {
+  @include accordion-card-actions;
+  margin-bottom: rem(24);
+}
+
+.c-teiki-products__action-btn {
+  @include accordion-card-btn;
+}
+
 // 価格変更メッセージ（赤文字）
 .c-teiki-products__price-notice {
   font-size: rem(12);

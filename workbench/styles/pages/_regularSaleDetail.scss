@@ -294,118 +294,108 @@
 }
 
 // ----------------------------------------
-// PKG標準テーブル（購入情報・お届け先情報）
+// 購入情報アコーディオン（accordion-card-* mixin 流用）
 // ----------------------------------------
 .c-teiki-info-block {
-  border: 2px solid $bg-banner;
   margin-top: rem(16);
 }
 
-.c-teiki-info-block__heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: rem(10) rem(14);
-  cursor: pointer;
-  gap: rem(8);
+.c-teiki-info-block__inner {
+  @include accordion-card-inner;
 }
 
-.c-teiki-info-block__heading-text {
-  font-size: rem(16);
-  font-weight: $font-weight-medium;
-  color: $primary-color;
-  margin: 0;
+.c-teiki-info-block__header {
+  @include accordion-card-header;
 }
 
-.c-teiki-info-block__toggle {
-  width: rem(20);
-  height: rem(20);
-  flex-shrink: 0;
-  position: relative;
+.c-teiki-info-block__header-title {
+  @include accordion-card-header-title;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    background-color: $primary-color;
-    transition: transform $transition-fast;
-  }
+.c-teiki-info-block__header-toggle {
+  @include accordion-card-toggle;
+}
 
-  // 横棒
-  &::before {
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    transform: translateY(-50%);
-  }
-
-  // 縦棒（開いているときは非表示）
-  &::after {
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    transform: translateX(-50%);
-  }
-
-  // 開いているとき縦棒を非表示
-  .c-teiki-info-block--open & {
-    &::after {
-      transform: translateX(-50%) scaleY(0);
-    }
-  }
+// 開いている状態: 縦棒を消す（−表示）
+.c-teiki-info-block__header[aria-expanded="true"] .c-teiki-info-block__header-toggle::after {
+  transform: translateX(-50%) scaleY(0);
 }
 
 .c-teiki-info-block__body {
-  border-top: 2px solid $bg-banner;
+  @include accordion-card-body;
+
+  &--open {
+    display: block;
+  }
 }
 
 // ----------------------------------------
 // インフォテーブル（左th右td）
+// c-detail-unit__prescription-label-cell / prescription-cell 準拠
 // ----------------------------------------
 .c-teiki-info-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
+  font-family: $font-family-base;
+  font-size: rem(14);
 }
 
 .c-teiki-info-table__row {
-  border-bottom: 1px solid $bg-banner;
-
-  &:last-child {
-    border-bottom: none;
-  }
+  // 行ごとのborderはセル側で制御（prescription-table 準拠）
 }
 
+// c-detail-unit__prescription-label-cell と同じスタイル
 .c-teiki-info-table__header {
   background-color: $bg-light;
-  color: $text-light;
-  font-size: rem(13);
+  color: $text-color;
+  font-size: rem(14);
   font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
   padding: rem(10) rem(12);
   width: rem(130);
-  vertical-align: top;
-  border-right: 1px solid $bg-banner;
+  vertical-align: middle;
+  border: 1px solid $bg-banner;
   text-align: left;
 
   @include sp {
     width: rem(105);
     font-size: rem(12);
-    padding: rem(8) rem(10);
+    padding: rem(8) rem(8);
   }
 }
 
+// c-detail-unit__prescription-cell と同じスタイル
 .c-teiki-info-table__data {
   background-color: $color-white;
   font-size: rem(14);
-  font-weight: $font-weight-medium;
-  padding: rem(8) rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  padding: rem(10) rem(12);
   vertical-align: middle;
+  border: 1px solid $bg-banner;
 
   @include sp {
     font-size: rem(13);
     padding: rem(8) rem(10);
   }
+}
+
+// サブセクション見出し（「お届け先情報」等）
+// c-detail-unit__eye-data-heading と同じスタイル
+.c-teiki-info-table__section-heading {
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  margin: 0;
+  padding: rem(11) rem(12);
+  background-color: $bg-banner;
+  border: 1px solid $bg-banner;
 }
 
 .c-teiki-info-table__data-inner {
@@ -449,69 +439,38 @@
 }
 
 // ----------------------------------------
-// 金額セクション
+// 金額アコーディオン（accordion-card-* mixin 流用）
 // ----------------------------------------
 .c-teiki-amount-block {
-  border: 2px solid $bg-banner;
   margin-top: rem(16);
 }
 
-.c-teiki-amount-block__heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: rem(10) rem(14);
-  cursor: pointer;
-  gap: rem(8);
+.c-teiki-amount-block__inner {
+  @include accordion-card-inner;
 }
 
-.c-teiki-amount-block__heading-text {
-  font-size: rem(16);
-  font-weight: $font-weight-medium;
-  color: $primary-color;
-  margin: 0;
+.c-teiki-amount-block__header {
+  @include accordion-card-header;
 }
 
-.c-teiki-amount-block__toggle {
-  width: rem(20);
-  height: rem(20);
-  flex-shrink: 0;
-  position: relative;
+.c-teiki-amount-block__header-title {
+  @include accordion-card-header-title;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    background-color: $primary-color;
-    transition: transform $transition-fast;
-  }
+.c-teiki-amount-block__header-toggle {
+  @include accordion-card-toggle;
+}
 
-  &::before {
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    transform: translateY(-50%);
-  }
-
-  &::after {
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    transform: translateX(-50%);
-  }
-
-  .c-teiki-amount-block--open & {
-    &::after {
-      transform: translateX(-50%) scaleY(0);
-    }
-  }
+.c-teiki-amount-block__header[aria-expanded="true"] .c-teiki-amount-block__header-toggle::after {
+  transform: translateX(-50%) scaleY(0);
 }
 
 .c-teiki-amount-block__body {
-  border-top: 2px solid $bg-banner;
-  padding: rem(12) rem(16);
+  @include accordion-card-body;
+
+  &--open {
+    display: block;
+  }
 }
 
 .c-teiki-amount-block__list {
@@ -670,28 +629,24 @@
 }
 
 // ----------------------------------------
-// 購入履歴アイテム
+// 購入履歴アイテム（accordion-card-inner 流用）
 // ----------------------------------------
 .c-teiki-history-item {
   margin-bottom: rem(16);
-  border: 2px solid $bg-banner;
+}
+
+.c-teiki-history-item__inner {
+  @include accordion-card-inner;
 }
 
 .c-teiki-history-item__bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: rem(46);
-  padding: rem(8) rem(16);
-  background-color: $primary-color;
-  gap: rem(8);
+  @include accordion-card-header;
+  cursor: default; // 履歴バーは開閉しない
 }
 
 .c-teiki-history-item__order-num {
+  @include accordion-card-header-title;
   font-size: rem(14);
-  font-weight: $font-weight-medium;
-  color: $color-white;
-  margin: 0;
 }
 
 .c-teiki-history-item__detail-btn {
@@ -718,6 +673,7 @@
 
 .c-teiki-history-item__table-wrap {
   overflow-x: auto;
+  background-color: $bg-color;
 }
 
 // ========================================

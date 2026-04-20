@@ -969,6 +969,20 @@ $(function () {
 });
 
 /* ========================================
+ * 定期契約確認変更：購入情報・金額アコーディオン開閉
+ * ======================================== */
+$(function () {
+  $('.js-teiki-toggle').on('click', function () {
+    var $btn = $(this);
+    var $body = $btn.next('.js-teiki-toggle-body');
+    var isOpen = $btn.attr('aria-expanded') === 'true';
+    $btn.attr('aria-expanded', !isOpen);
+    $body.toggleClass('c-teiki-info-block__body--open');
+    $body.toggleClass('c-teiki-amount-block__body--open');
+  });
+});
+
+/* ========================================
  * 定期契約確認変更：お届け先選択モーダル
  * ======================================== */
 (function () {

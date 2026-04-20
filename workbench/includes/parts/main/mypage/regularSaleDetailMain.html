@@ -93,15 +93,16 @@
       </div>
     </section>
 
-    <!-- ===== 購入情報セクション（折りたたみ可） ===== -->
-    <div class="c-teiki-info-block c-teiki-info-block--open">
-      <div class="c-teiki-info-block__heading js-teiki-toggle" role="button" aria-expanded="true" tabindex="0">
-        <h2 class="c-teiki-info-block__heading-text">購入情報</h2>
-        <span class="c-teiki-info-block__toggle" aria-hidden="true"></span>
-      </div>
-      <div class="c-teiki-info-block__body js-teiki-toggle-body">
-        <table class="c-teiki-info-table" aria-label="購入情報詳細">
-          <tbody>
+    <!-- ===== 購入情報セクション（アコーディオン：accordion-card mixin流用） ===== -->
+    <section class="c-teiki-info-block" aria-label="購入情報">
+      <div class="c-teiki-info-block__inner">
+        <button type="button" class="c-teiki-info-block__header js-teiki-toggle" aria-expanded="false">
+          <span class="c-teiki-info-block__header-title">購入情報</span>
+          <span class="c-teiki-info-block__header-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="c-teiki-info-block__body js-teiki-toggle-body">
+          <table class="c-teiki-info-table" aria-label="購入情報詳細">
+            <tbody>
             <tr class="c-teiki-info-table__row">
               <th class="c-teiki-info-table__header" scope="row">お支払い方法</th>
               <td class="c-teiki-info-table__data">
@@ -151,19 +152,15 @@
           </tbody>
         </table>
 
-        <!-- お届け先情報 -->
-        <table class="c-teiki-info-table" aria-label="お届け先情報">
-          <thead>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="col" colspan="2">
-                <div class="c-teiki-info-table__data-inner">
-                  お届け先情報
-                  <button type="button" class="c-teiki-info-table__change-btn js-teiki-modal-open" aria-haspopup="dialog">変更</button>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
+          <!-- お届け先情報（eye-data-heading風サブセクション見出し） -->
+          <div class="c-teiki-info-table__section-heading">
+            <div class="c-teiki-info-table__data-inner">
+              お届け先情報
+              <button type="button" class="c-teiki-info-table__change-btn js-teiki-modal-open" aria-haspopup="dialog">変更</button>
+            </div>
+          </div>
+          <table class="c-teiki-info-table" aria-label="お届け先情報">
+            <tbody>
             <tr class="c-teiki-info-table__row">
               <th class="c-teiki-info-table__header" scope="row">氏名</th>
               <td class="c-teiki-info-table__data">山田 太郎</td>
@@ -190,17 +187,18 @@
           </tbody>
         </table>
 
-        <!-- 状態操作ボタン群 -->
-        <div class="c-teiki-status-actions">
-          <!-- 通常状態 -->
-          <button type="button" class="c-teiki-status-btn c-teiki-status-btn--cancel">解約</button>
-          <button type="button" class="c-teiki-status-btn c-teiki-status-btn--pause">休止</button>
-          <!-- 休止中時のみ表示（通常時は非表示）
-          <button type="button" class="c-teiki-status-btn c-teiki-status-btn--resume">再開</button>
-          -->
+          <!-- 状態操作ボタン群 -->
+          <div class="c-teiki-status-actions">
+            <!-- 通常状態 -->
+            <button type="button" class="c-teiki-status-btn c-teiki-status-btn--cancel">解約</button>
+            <button type="button" class="c-teiki-status-btn c-teiki-status-btn--pause">休止</button>
+            <!-- 休止中時のみ表示（通常時は非表示）
+            <button type="button" class="c-teiki-status-btn c-teiki-status-btn--resume">再開</button>
+            -->
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- ===== 次回出荷情報セクション ===== -->
     <div class="c-teiki-next-section">
@@ -242,13 +240,14 @@
       </div>
     </div>
 
-    <!-- ===== 金額セクション（折りたたみ可） ===== -->
-    <div class="c-teiki-amount-block c-teiki-amount-block--open">
-      <div class="c-teiki-amount-block__heading js-teiki-toggle" role="button" aria-expanded="true" tabindex="0">
-        <h2 class="c-teiki-amount-block__heading-text">金額</h2>
-        <span class="c-teiki-amount-block__toggle" aria-hidden="true"></span>
-      </div>
-      <div class="c-teiki-amount-block__body js-teiki-toggle-body">
+    <!-- ===== 金額セクション（アコーディオン：accordion-card mixin流用） ===== -->
+    <section class="c-teiki-amount-block" aria-label="金額">
+      <div class="c-teiki-amount-block__inner">
+        <button type="button" class="c-teiki-amount-block__header js-teiki-toggle" aria-expanded="false">
+          <span class="c-teiki-amount-block__header-title">金額</span>
+          <span class="c-teiki-amount-block__header-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="c-teiki-amount-block__body js-teiki-toggle-body">
         <dl class="c-teiki-amount-block__list">
           <div class="c-teiki-amount-block__row">
             <dt class="c-teiki-amount-block__label">商品合計</dt>
@@ -278,8 +277,9 @@
             <dd class="c-teiki-amount-block__value">¥264</dd>
           </div>
         </dl>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- ===== スキップエリア ===== -->
     <div class="c-teiki-skip-area">
@@ -301,52 +301,56 @@
 
     <!-- 履歴アイテム -->
     <div class="c-teiki-history-item">
-      <div class="c-teiki-history-item__bar">
-        <p class="c-teiki-history-item__order-num">注文番号：123456789</p>
-        <a href="#" class="c-teiki-history-item__detail-btn">詳細を見る</a>
-      </div>
-      <div class="c-teiki-history-item__table-wrap">
-        <table class="c-teiki-info-table" aria-label="注文123456789の詳細">
-          <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">注文日</th>
-              <td class="c-teiki-info-table__data">2025/08/30</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">お届け予定日</th>
-              <td class="c-teiki-info-table__data">2025/09/05</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">合計金額</th>
-              <td class="c-teiki-info-table__data">¥2,904</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="c-teiki-history-item__inner">
+        <div class="c-teiki-history-item__bar">
+          <p class="c-teiki-history-item__order-num">注文番号：123456789</p>
+          <a href="#" class="c-teiki-history-item__detail-btn">詳細を見る</a>
+        </div>
+        <div class="c-teiki-history-item__table-wrap">
+          <table class="c-teiki-info-table" aria-label="注文123456789の詳細">
+            <tbody>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header" scope="row">注文日</th>
+                <td class="c-teiki-info-table__data">2025/08/30</td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header" scope="row">お届け予定日</th>
+                <td class="c-teiki-info-table__data">2025/09/05</td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header" scope="row">合計金額</th>
+                <td class="c-teiki-info-table__data">¥2,904</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
     <div class="c-teiki-history-item">
-      <div class="c-teiki-history-item__bar">
-        <p class="c-teiki-history-item__order-num">注文番号：123456788</p>
-        <a href="#" class="c-teiki-history-item__detail-btn">詳細を見る</a>
-      </div>
-      <div class="c-teiki-history-item__table-wrap">
-        <table class="c-teiki-info-table" aria-label="注文123456788の詳細">
-          <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">注文日</th>
-              <td class="c-teiki-info-table__data">2025/07/30</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">お届け予定日</th>
-              <td class="c-teiki-info-table__data">2025/08/05</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">合計金額</th>
-              <td class="c-teiki-info-table__data">¥2,904</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="c-teiki-history-item__inner">
+        <div class="c-teiki-history-item__bar">
+          <p class="c-teiki-history-item__order-num">注文番号：123456788</p>
+          <a href="#" class="c-teiki-history-item__detail-btn">詳細を見る</a>
+        </div>
+        <div class="c-teiki-history-item__table-wrap">
+          <table class="c-teiki-info-table" aria-label="注文123456788の詳細">
+            <tbody>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header" scope="row">注文日</th>
+                <td class="c-teiki-info-table__data">2025/07/30</td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header" scope="row">お届け予定日</th>
+                <td class="c-teiki-info-table__data">2025/08/05</td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header" scope="row">合計金額</th>
+                <td class="c-teiki-info-table__data">¥2,904</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>

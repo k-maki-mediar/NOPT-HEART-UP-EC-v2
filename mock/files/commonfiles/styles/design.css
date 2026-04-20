@@ -8207,8 +8207,8 @@
 .c-teiki-schedule__card {
   flex: 0 0 88%;
   max-width: 22.5rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 0.5rem;
+  border: none;
+  border-radius: 0;
   overflow: hidden;
   background-color: #F7F7F7;
   scroll-snap-align: center;
@@ -8225,8 +8225,7 @@
   }
 }
 .c-teiki-schedule__card.is-active {
-  border-color: #cc4843;
-  border-width: 2px;
+  border: none;
   background-color: #fff2f1;
 }
 

@@ -8089,12 +8089,13 @@
 }
 
 .p-teiki-detail {
-  padding: 1rem 0.75rem 2.5rem;
+  max-width: 70.625rem;
+  margin: 1.5rem auto 0;
+  padding: 0 1rem 2.5rem;
 }
 @media (min-width: 992px) {
   .p-teiki-detail {
-    padding: 1.5rem 2rem 3.75rem;
-    max-width: 53.75rem;
+    padding: 1.5rem 2rem 3.75rem calc(var(--side-nav-content-offset) + 2rem);
   }
 }
 

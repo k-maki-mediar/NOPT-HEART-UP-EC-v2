@@ -8172,6 +8172,63 @@
   background-color: #f4f8fc;
 }
 
+.p-teiki-detail__coupon-action {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.p-teiki-detail__coupon-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid #00387d;
+  border-radius: 1.4375rem;
+  background-color: #FFFFFF;
+  box-shadow: 0 0.125rem 0 0 #002a5e;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+  color: #00387d;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.p-teiki-detail__coupon-btn:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 0 #002a5e;
+}
+.p-teiki-detail__coupon-btn {
+  display: inline-flex;
+  gap: 0.5rem;
+  max-width: 25rem;
+  width: 100%;
+  position: relative;
+  padding-right: 2.25rem;
+}
+.p-teiki-detail__coupon-btn::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 0.125rem solid #00387d;
+  border-bottom: 0.125rem solid #00387d;
+  transform: translateY(-60%) rotate(45deg);
+}
+
+.p-teiki-detail__coupon-btn-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
 .c-teiki-schedule {
   margin-bottom: 1.25rem;
   margin-left: -1rem;

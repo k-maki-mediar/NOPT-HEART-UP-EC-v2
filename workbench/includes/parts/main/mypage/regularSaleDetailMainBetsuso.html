@@ -62,13 +62,13 @@
     </div>
   </div>
 
-  <!-- ===== 同梱/別送テキスト + 切替バー ===== -->
-    <div class="p-teiki-detail__bundle-bar">
-      <p class="p-teiki-detail__bundle-text">現在コンタクトレンズとケア用品は【別送】を選択されています。</p>
-      <button type="button" class="p-teiki-detail__bundle-btn js-teiki-dokoni-btn">
-        同梱する
-      </button>
-    </div>
+  <!-- ===== クーポン確認ボタン ===== -->
+  <div class="p-teiki-detail__coupon-action">
+    <a href="#" class="p-teiki-detail__coupon-btn">
+      <img src="../../../files/commonfiles/images/icon-coupon.png" alt="" class="p-teiki-detail__coupon-btn-icon" width="24" height="24">
+      設定されているクーポンを確認する
+    </a>
+  </div>
 
     <!-- ===== オーダーブロック①（コンタクトレンズ） ===== -->
     <div class="c-teiki-order-block" aria-label="らくとく定期便オーダー①（コンタクトレンズ）">
@@ -302,15 +302,18 @@
       <!-- ===== ブロック見出し ===== -->
       <h2 class="c-teiki-info-table__section-heading p-teiki-detail__order-heading">オーダー② お届けスケジュール</h2>
 
-      <!-- ===== お届けスケジュールカード（横並び3枚） ===== -->
-      <div class="c-teiki-schedule">
-        <div class="c-teiki-schedule__scroll">
+      <!-- ===== お届けスケジュールカード（カルーセル） ===== -->
+      <div class="c-teiki-schedule js-teiki-carousel">
+        <button type="button" class="c-teiki-schedule__nav c-teiki-schedule__nav--prev js-teiki-carousel-prev" aria-label="前へ">◀</button>
+        <button type="button" class="c-teiki-schedule__nav c-teiki-schedule__nav--next js-teiki-carousel-next" aria-label="次へ">▶</button>
+        <div class="c-teiki-schedule__scroll js-teiki-carousel-scroll">
           <div class="c-teiki-schedule__card c-teiki-schedule__card--prev">
             <div class="c-teiki-schedule__card-header">前回のお届け</div>
             <div class="c-teiki-schedule__card-body">
-              <p class="c-teiki-schedule__date-label">お届け希望日</p>
-              <p class="c-teiki-schedule__date">2025/01/01</p>
-            </div>
+              <div class="c-teiki-schedule__date-row">
+                <p class="c-teiki-schedule__date-label">お届け希望日</p>
+                <p class="c-teiki-schedule__date">2025/01/01</p>
+              </div>
               <span class="c-teiki-schedule__status c-teiki-schedule__status--done">発送済</span>
               <ul class="c-teiki-schedule__products">
                 <li>【定期便】オプティーフリープラス</li>
@@ -318,13 +321,14 @@
               <a href="#" class="c-teiki-schedule__history-link">購入履歴を見る</a>
             </div>
           </div>
-          <span class="c-teiki-schedule__arrow" aria-hidden="true">▶</span>
+          <span class="c-teiki-schedule__arrow" aria-hidden="true"></span>
           <div class="c-teiki-schedule__card c-teiki-schedule__card--next is-active">
             <div class="c-teiki-schedule__card-header c-teiki-schedule__card-header--next">次回のお届け</div>
             <div class="c-teiki-schedule__card-body">
-              <p class="c-teiki-schedule__date-label">お届け希望日</p>
-              <p class="c-teiki-schedule__date">2025/06/01</p>
-            </div>
+              <div class="c-teiki-schedule__date-row">
+                <p class="c-teiki-schedule__date-label">お届け希望日</p>
+                <p class="c-teiki-schedule__date">2025/06/01</p>
+              </div>
               <span class="c-teiki-schedule__status c-teiki-schedule__status--changeable">変更受付中</span>
               <ul class="c-teiki-schedule__products">
                 <li>【定期便】オプティーフリープラス</li>
@@ -332,18 +336,24 @@
               <a href="#" class="c-teiki-schedule__change-btn">お届け日の変更・スキップ</a>
             </div>
           </div>
-          <span class="c-teiki-schedule__arrow" aria-hidden="true">▶</span>
+          <span class="c-teiki-schedule__arrow" aria-hidden="true"></span>
           <div class="c-teiki-schedule__card c-teiki-schedule__card--future">
             <div class="c-teiki-schedule__card-header">次々回のお届け</div>
             <div class="c-teiki-schedule__card-body">
-              <p class="c-teiki-schedule__date-label">お届け希望日</p>
-              <p class="c-teiki-schedule__date">2025/12/01</p>
-            </div>
+              <div class="c-teiki-schedule__date-row">
+                <p class="c-teiki-schedule__date-label">お届け希望日</p>
+                <p class="c-teiki-schedule__date">2025/12/01</p>
+              </div>
               <ul class="c-teiki-schedule__products">
                 <li>【定期便】オプティーフリープラス</li>
               </ul>
             </div>
           </div>
+        </div>
+        <div class="c-teiki-schedule__dots js-teiki-carousel-dots">
+          <button type="button" class="c-teiki-schedule__dot js-teiki-carousel-dot" data-index="0" aria-label="前回のお届け"></button>
+          <button type="button" class="c-teiki-schedule__dot is-active js-teiki-carousel-dot" data-index="1" aria-label="次回のお届け"></button>
+          <button type="button" class="c-teiki-schedule__dot js-teiki-carousel-dot" data-index="2" aria-label="次々回のお届け"></button>
         </div>
       </div>
 

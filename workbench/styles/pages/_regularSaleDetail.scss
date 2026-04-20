@@ -106,7 +106,10 @@
 .c-teiki-schedule {
   margin-bottom: rem(20);
   position: relative;
-  overflow: hidden;
+
+  @include pc {
+    overflow: hidden;
+  }
 }
 
 .c-teiki-schedule__scroll {

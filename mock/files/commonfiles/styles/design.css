@@ -8175,7 +8175,11 @@
 .c-teiki-schedule {
   margin-bottom: 1.25rem;
   position: relative;
-  overflow: hidden;
+}
+@media (min-width: 992px) {
+  .c-teiki-schedule {
+    overflow: hidden;
+  }
 }
 
 .c-teiki-schedule__scroll {

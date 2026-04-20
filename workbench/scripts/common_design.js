@@ -1003,6 +1003,74 @@ $(function () {
 });
 
 /* ========================================
+ * 定期契約確認変更：お届けスケジュールカルーセル
+ * ======================================== */
+$(function () {
+  var PC_MIN = 992;
+
+  function initCarousel() {
+    $('.js-teiki-carousel').each(function () {
+      var $carousel = $(this);
+      var $scroll = $carousel.find('.js-teiki-carousel-scroll');
+      var $cards = $scroll.children('.c-teiki-schedule__card');
+      var $dots = $carousel.find('.js-teiki-carousel-dot');
+      var $prevBtn = $carousel.find('.js-teiki-carousel-prev');
+      var $nextBtn = $carousel.find('.js-teiki-carousel-next');
+      var currentIndex = 1;
+
+      function isPC() { return window.innerWidth >= PC_MIN; }
+
+      function updateNav() {
+        if (isPC()) { $prevBtn.hide(); $nextBtn.hide(); return; }
+        $prevBtn.toggle(currentIndex > 0);
+        $nextBtn.toggle(currentIndex < $cards.length - 1);
+      }
+
+      function goTo(index) {
+        if (isPC()) return;
+        if (index < 0 || index >= $cards.length) return;
+        currentIndex = index;
+        var card = $cards.eq(index)[0];
+        card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        $dots.removeClass('is-active');
+        $dots.eq(index).addClass('is-active');
+        updateNav();
+      }
+
+      setTimeout(function () { goTo(1); }, 100);
+
+      $prevBtn.on('click', function () { goTo(currentIndex - 1); });
+      $nextBtn.on('click', function () { goTo(currentIndex + 1); });
+      $dots.on('click', function () { goTo(parseInt($(this).data('index'), 10)); });
+
+      var scrollTimer = null;
+      $scroll.on('scroll', function () {
+        if (isPC()) return;
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function () {
+          var scrollCenter = $scroll.scrollLeft() + $scroll.width() / 2;
+          var closest = 0;
+          var minDist = Infinity;
+          $cards.each(function (i) {
+            var cardCenter = this.offsetLeft - $scroll[0].offsetLeft + this.offsetWidth / 2;
+            var dist = Math.abs(scrollCenter - cardCenter);
+            if (dist < minDist) { minDist = dist; closest = i; }
+          });
+          if (closest !== currentIndex) {
+            currentIndex = closest;
+            $dots.removeClass('is-active');
+            $dots.eq(currentIndex).addClass('is-active');
+            updateNav();
+          }
+        }, 80);
+      });
+    });
+  }
+
+  initCarousel();
+});
+
+/* ========================================
  * 定期契約確認変更：購入情報・金額アコーディオン開閉
  * ======================================== */
 $(function () {

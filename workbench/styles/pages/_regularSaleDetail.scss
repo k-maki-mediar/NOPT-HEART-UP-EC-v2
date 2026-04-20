@@ -22,21 +22,34 @@
 
 // ----------------------------------------
 // ページ見出し（h1）
+// c-user-heading__title と同じスタイルを適用
 // ----------------------------------------
 .p-teiki-detail__heading {
+  font-family: $font-family-heading;
   font-size: rem(24);
   font-weight: $font-weight-medium;
-  color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
   text-align: center;
-  margin: 0 0 rem(8);
+  color: $primary-color;
+  padding: rem(24) rem(24) rem(8);
+  margin: 0;
 }
 
+// c-user-heading__line と同じスタイルを適用（全幅ライン）
 .p-teiki-detail__heading-line {
   display: block;
-  text-align: center;
-  margin: 0 auto rem(24);
-  width: rem(120);
-  height: auto;
+  position: relative;
+  left: calc((100% - 100vw) / 2);
+  width: 100vw;
+  height: rem(1);
+  background-color: $bg-banner;
+  margin: 0 0 rem(24);
+
+  @include pc {
+    left: 0;
+    width: 100%;
+  }
 }
 
 // ----------------------------------------
@@ -160,24 +173,43 @@
   align-items: flex-start;
 }
 
+// バッジ行：Figmaでは商品画像上に幅120pxのラベルバーとして配置
 .c-teiki-product__badge-row {
   display: flex;
-  gap: rem(6);
-  margin-bottom: rem(8);
+  gap: 0;
+  margin-bottom: rem(4);
+  width: rem(120);
 }
 
+// Figmaデザイン：矩形バー（pill形ではなく角丸なし）、幅120px（badge-row全体）、高さ20px
+// bg: #d7e7fb, color: #00387d, テキスト中央
 .c-teiki-product__eye-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: rem(20);
   background-color: $bg-banner;
   color: $primary-color;
-  font-size: rem(11);
-  font-weight: $font-weight-bold;
-  padding: rem(2) rem(8);
-  border-radius: rem(3);
+  font-family: $font-family-base;
+  font-size: rem(10);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+// 画像エリア（バッジ + 画像を縦に積む）
+.c-teiki-product__img-area {
+  flex-shrink: 0;
+  width: rem(120);
+  display: flex;
+  flex-direction: column;
 }
 
 .c-teiki-product__img-wrap {
-  width: rem(80);
+  width: rem(120);
   height: rem(80);
   flex-shrink: 0;
   overflow: hidden;
@@ -196,9 +228,14 @@
   min-width: 0;
 }
 
+// c-detail-unit__maker と同じスタイルを適用
 .c-teiki-product__maker {
-  font-size: rem(12);
-  color: $text-light;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  color: $text-color;
   margin: 0 0 rem(4);
 }
 
@@ -210,13 +247,13 @@
 }
 
 .c-teiki-product__spec {
-  font-size: rem(12);
+  font-size: rem(10);
   color: $text-light;
   margin: 0 0 rem(4);
 }
 
 .c-teiki-product__expire {
-  font-size: rem(12);
+  font-size: rem(10);
   color: $text-light;
   margin: rem(4) 0 0;
 }
@@ -239,7 +276,10 @@
     background-color: $bg-gray;
     padding: rem(6) rem(8);
     margin-top: rem(4);
-    grid-template-columns: rem(120) 1fr;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: rem(8);
   }
 }
 
@@ -376,12 +416,14 @@
 }
 
 // インライン変更ボタン（テーブル内）
+// Figmaデザイン：bg: #00387d（ベタ塗り）, white文字, 角丸8px, 12px, 幅60px, 高さ32px
 .c-teiki-info-table__change-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: rem(32);
-  min-width: rem(44);
+  min-width: rem(60);
+  width: rem(60);
   padding: rem(4) rem(10);
   border: none;
   border-radius: rem(8);
@@ -488,17 +530,20 @@
     border-bottom: none;
   }
 
+  // Figmaデザイン：合計行は dashed 区切り + 濃紺テキスト 16px medium
   &--grand {
-    font-weight: $font-weight-bold;
-    font-size: rem(15);
+    font-weight: $font-weight-medium;
+    font-size: rem(16);
+    color: $primary-color;
     padding: rem(12) 0;
     border-top: 1px dashed $bg-banner;
     border-bottom: none;
     margin-top: rem(4);
   }
 
+  // Figmaデザイン：内消費税行は #c2c2c2 10px
   &--tax {
-    font-size: rem(12);
+    font-size: rem(10);
     color: $border-color-dark;
     border-bottom: none;
     padding-top: rem(4);
@@ -508,6 +553,12 @@
 .c-teiki-amount-block__label {
   color: $text-light;
   font-size: rem(13);
+
+  .c-teiki-amount-block__row--grand & {
+    color: $primary-color;
+    font-weight: $font-weight-medium;
+    font-size: rem(16);
+  }
 }
 
 .c-teiki-amount-block__value {
@@ -516,6 +567,7 @@
   text-align: right;
 }
 
+// Figmaデザイン：合計金額テキスト #00387d bold
 .c-teiki-amount-block__grand-total {
   color: $primary-color;
   font-size: rem(20);
@@ -533,29 +585,33 @@
   gap: rem(10);
 }
 
+// Figmaデザイン：ピンクバッジ bg #ffdedd, color #cc4843, pill形状
 .c-teiki-skip-area__badge {
   display: inline-flex;
   align-items: center;
   padding: rem(4) rem(14);
-  border-radius: rem(14);
+  border-radius: rem(16);
   background-color: $deco-pink;
   color: $price-color;
   font-size: rem(12);
   font-weight: $font-weight-bold;
 }
 
+// Figmaデザイン：スキップボタン border: 1px solid #cc4843, bg white, pill(32px), 3D影付き
 .c-teiki-skip-area__btn {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: rem(52);
   padding: rem(10) rem(24);
-  border: 2px solid $price-color;
-  border-radius: rem(23);
+  border: 1px solid $price-color;
+  border-bottom: 3px solid $price-color;
+  border-radius: rem(32);
   color: $price-color;
   font-size: rem(14);
   font-weight: $font-weight-bold;
-  background: transparent;
+  background: $color-white;
   cursor: pointer;
   text-align: center;
   line-height: 1.5;
@@ -564,10 +620,17 @@
   &:hover {
     background-color: $bg-danger-light;
   }
+
+}
+
+// スキップボタン内 1行目テキスト（カテゴリ名）12px
+.c-teiki-skip-area__btn-category {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
 }
 
 .c-teiki-skip-area__link {
-  font-size: rem(13);
+  font-size: rem(12);
   color: #0087cb;
   text-decoration: underline;
 
@@ -578,15 +641,20 @@
 
 // ----------------------------------------
 // 購入履歴見出し
+// p-teiki-detail__heading と同スタイルベース（20px版）
 // ----------------------------------------
 .p-teiki-detail__history-heading {
+  font-family: $font-family-heading;
   font-size: rem(20);
   font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
   color: $primary-color;
   text-align: center;
   margin: rem(32) 0 rem(6);
 }
 
+// 購入履歴見出し下のSVGライン
 .p-teiki-detail__history-heading-line {
   display: block;
   text-align: center;
@@ -689,6 +757,7 @@
 
 // ========================================
 // 状態操作ボタン（解約/休止/再開）
+// Figmaデザイン：「変更」ボタンと同スタイル（bg: #00387d, 白文字, 角丸8px）
 // ========================================
 .c-teiki-status-actions {
   display: flex;
@@ -701,12 +770,13 @@
 .c-teiki-status-btn {
   min-height: rem(44);
   padding: rem(10) rem(20);
-  border-radius: rem(22);
+  border-radius: rem(8);
   font-size: rem(14);
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-medium;
   cursor: pointer;
   transition: background-color $transition-fast, color $transition-fast;
 
+  // Figmaデザイン：解約ボタンはアウトライン（危険色）
   &--cancel {
     background-color: $color-white;
     color: $danger-color;
@@ -717,16 +787,18 @@
     }
   }
 
+  // Figmaデザイン：休止ボタンは濃紺ベタ塗り
   &--pause {
-    background-color: $color-white;
-    color: $text-color;
-    border: 2px solid $border-color-dark;
+    background-color: $primary-color;
+    color: $color-white;
+    border: 2px solid $primary-color;
 
     &:hover {
-      background-color: $bg-gray;
+      background-color: $primary-color-dark;
     }
   }
 
+  // 再開ボタン：濃紺ベタ塗り
   &--resume {
     background-color: $primary-color;
     color: $color-white;

@@ -21,6 +21,73 @@
 }
 
 // ----------------------------------------
+// ページ見出し（h1）
+// ----------------------------------------
+.p-teiki-detail__heading {
+  font-size: rem(24);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  text-align: center;
+  margin: 0 0 rem(8);
+}
+
+.p-teiki-detail__heading-line {
+  display: block;
+  text-align: center;
+  margin: 0 auto rem(24);
+  width: rem(120);
+  height: auto;
+}
+
+// ----------------------------------------
+// 同梱/別送テキスト + 切替エリア
+// ----------------------------------------
+.p-teiki-detail__bundle-bar {
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+  margin-bottom: rem(20);
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
+  border: 1px solid $bg-banner;
+
+  @include pc {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.p-teiki-detail__bundle-text {
+  font-size: rem(14);
+  color: $text-color;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.p-teiki-detail__bundle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(44);
+  padding: rem(10) rem(24);
+  border: 2px solid $primary-color;
+  border-radius: rem(23);
+  color: $primary-color;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  align-self: flex-start;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $bg-light;
+  }
+}
+
+// ----------------------------------------
 // 定期なし状態
 // ----------------------------------------
 .p-teiki-detail__empty {
@@ -30,67 +97,392 @@
   font-size: rem(16);
 }
 
+// ========================================
+// オーダーブロック（各定期便単位）
+// ========================================
+.c-teiki-order-block {
+  margin-bottom: rem(32);
+}
+
 // ----------------------------------------
-// アラートエリア
+// セクション共通バー見出し（濃紺ベタ）
 // ----------------------------------------
-.p-teiki-detail__alerts {
-  margin-bottom: rem(16);
+.c-teiki-section-bar {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: rem(46);
+  padding: rem(8) rem(16);
+  background-color: $primary-color;
   gap: rem(8);
 }
 
+.c-teiki-section-bar__title {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  margin: 0;
+}
+
+.c-teiki-section-bar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(36);
+  padding: rem(6) rem(14);
+  border: 2px solid $color-white;
+  border-radius: rem(8);
+  color: $color-white;
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
 // ----------------------------------------
-// 次々回出荷情報
+// 商品表示エリア
 // ----------------------------------------
-.p-teiki-detail__next {
-  margin-top: rem(16);
+.c-teiki-product {
+  padding: rem(12) rem(16);
+  border-bottom: 1px dashed $bg-banner;
+}
+
+.c-teiki-product__inner {
+  display: flex;
+  gap: rem(12);
+  align-items: flex-start;
+}
+
+.c-teiki-product__badge-row {
+  display: flex;
+  gap: rem(6);
+  margin-bottom: rem(8);
+}
+
+.c-teiki-product__eye-badge {
+  display: inline-block;
+  background-color: $bg-banner;
+  color: $primary-color;
+  font-size: rem(11);
+  font-weight: $font-weight-bold;
+  padding: rem(2) rem(8);
+  border-radius: rem(3);
+}
+
+.c-teiki-product__img-wrap {
+  width: rem(80);
+  height: rem(80);
+  flex-shrink: 0;
+  overflow: hidden;
   background-color: $bg-light;
-  border: rem(1) solid $border-color;
-  border-radius: rem(12);
-  padding: rem(16);
+  border: 1px solid $border-color;
 }
 
-.p-teiki-detail__next-title {
-  font-size: rem(15);
-  font-weight: $font-weight-bold;
+.c-teiki-product__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.c-teiki-product__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.c-teiki-product__maker {
+  font-size: rem(12);
+  color: $text-light;
+  margin: 0 0 rem(4);
+}
+
+.c-teiki-product__name {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  margin: 0 0 rem(4);
+  line-height: 1.5;
+}
+
+.c-teiki-product__spec {
+  font-size: rem(12);
+  color: $text-light;
+  margin: 0 0 rem(4);
+}
+
+.c-teiki-product__expire {
+  font-size: rem(12);
+  color: $text-light;
+  margin: rem(4) 0 0;
+}
+
+// 申込コース・お届け箱数（小テーブル）
+.c-teiki-product__detail {
+  margin: rem(10) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.c-teiki-product__detail-row {
+  display: grid;
+  grid-template-columns: rem(110) 1fr;
+  font-size: rem(13);
+  padding: rem(4) 0;
+
+  &--delivery-date {
+    background-color: $bg-gray;
+    padding: rem(6) rem(8);
+    margin-top: rem(4);
+    grid-template-columns: rem(120) 1fr;
+  }
+}
+
+.c-teiki-product__detail-label {
+  color: $text-light;
+  font-size: rem(13);
+}
+
+.c-teiki-product__detail-value {
+  font-weight: $font-weight-medium;
+  font-size: rem(13);
+}
+
+// ----------------------------------------
+// PKG標準テーブル（購入情報・お届け先情報）
+// ----------------------------------------
+.c-teiki-info-block {
+  border: 2px solid $bg-banner;
+  margin-top: rem(16);
+}
+
+.c-teiki-info-block__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(10) rem(14);
+  cursor: pointer;
+  gap: rem(8);
+}
+
+.c-teiki-info-block__heading-text {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
   color: $primary-color;
-  margin: 0 0 rem(16);
-  padding-bottom: rem(8);
-  border-bottom: rem(2) solid $primary-color;
+  margin: 0;
+}
+
+.c-teiki-info-block__toggle {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: $primary-color;
+    transition: transform $transition-fast;
+  }
+
+  // 横棒
+  &::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  // 縦棒（開いているときは非表示）
+  &::after {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  // 開いているとき縦棒を非表示
+  .c-teiki-info-block--open & {
+    &::after {
+      transform: translateX(-50%) scaleY(0);
+    }
+  }
+}
+
+.c-teiki-info-block__body {
+  border-top: 2px solid $bg-banner;
 }
 
 // ----------------------------------------
-// お支払い金額部
+// インフォテーブル（左th右td）
 // ----------------------------------------
-.p-teiki-detail__total {
-  margin-top: rem(24);
-  border: rem(1) solid $border-color;
-  border-radius: rem(12);
-  padding: rem(16);
+.c-teiki-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.c-teiki-info-table__row {
+  border-bottom: 1px solid $bg-banner;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.c-teiki-info-table__header {
+  background-color: $bg-light;
+  color: $text-light;
+  font-size: rem(13);
+  font-weight: $font-weight-normal;
+  padding: rem(10) rem(12);
+  width: rem(130);
+  vertical-align: top;
+  border-right: 1px solid $bg-banner;
+  text-align: left;
+
+  @include sp {
+    width: rem(105);
+    font-size: rem(12);
+    padding: rem(8) rem(10);
+  }
+}
+
+.c-teiki-info-table__data {
   background-color: $color-white;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  padding: rem(8) rem(12);
+  vertical-align: middle;
+
+  @include sp {
+    font-size: rem(13);
+    padding: rem(8) rem(10);
+  }
 }
 
-.p-teiki-detail__total-title {
-  font-size: rem(15);
-  font-weight: $font-weight-bold;
+.c-teiki-info-table__data-inner {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  flex-wrap: wrap;
+}
+
+// インライン変更ボタン（テーブル内）
+.c-teiki-info-table__change-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(32);
+  min-width: rem(44);
+  padding: rem(4) rem(10);
+  border: none;
+  border-radius: rem(8);
+  background-color: $primary-color;
+  color: $color-white;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $primary-color-dark;
+  }
+}
+
+// ----------------------------------------
+// 次回出荷情報セクション（見出しバー + 商品）
+// ----------------------------------------
+.c-teiki-next-section {
+  margin-top: rem(24);
+}
+
+// ----------------------------------------
+// 金額セクション
+// ----------------------------------------
+.c-teiki-amount-block {
+  border: 2px solid $bg-banner;
+  margin-top: rem(16);
+}
+
+.c-teiki-amount-block__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(10) rem(14);
+  cursor: pointer;
+  gap: rem(8);
+}
+
+.c-teiki-amount-block__heading-text {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
   color: $primary-color;
-  margin: 0 0 rem(12);
-  padding-bottom: rem(8);
-  border-bottom: rem(2) solid $primary-color;
+  margin: 0;
 }
 
-.p-teiki-detail__total-list {
+.c-teiki-amount-block__toggle {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: $primary-color;
+    transition: transform $transition-fast;
+  }
+
+  &::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  .c-teiki-amount-block--open & {
+    &::after {
+      transform: translateX(-50%) scaleY(0);
+    }
+  }
+}
+
+.c-teiki-amount-block__body {
+  border-top: 2px solid $bg-banner;
+  padding: rem(12) rem(16);
+}
+
+.c-teiki-amount-block__list {
   display: block;
 }
 
-.p-teiki-detail__total-row {
+.c-teiki-amount-block__row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   padding: rem(7) 0;
   font-size: rem(14);
-  border-bottom: rem(1) solid $border-color;
+  border-bottom: 1px solid $bg-banner;
 
   &:last-child {
     border-bottom: none;
@@ -100,447 +492,164 @@
     font-weight: $font-weight-bold;
     font-size: rem(15);
     padding: rem(12) 0;
-    border-top: rem(2) solid $border-color;
+    border-top: 1px dashed $bg-banner;
     border-bottom: none;
     margin-top: rem(4);
   }
 
   &--tax {
     font-size: rem(12);
-    color: $text-light;
+    color: $border-color-dark;
     border-bottom: none;
     padding-top: rem(4);
   }
-
-  dt {
-    color: $text-light;
-  }
-
-  dd {
-    margin: 0;
-    font-weight: $font-weight-medium;
-    text-align: right;
-  }
 }
 
-.p-teiki-detail__grand-total {
-  color: $price-color;
+.c-teiki-amount-block__label {
+  color: $text-light;
+  font-size: rem(13);
+}
+
+.c-teiki-amount-block__value {
+  font-weight: $font-weight-medium;
+  font-size: rem(14);
+  text-align: right;
+}
+
+.c-teiki-amount-block__grand-total {
+  color: $primary-color;
   font-size: rem(20);
   font-weight: $font-weight-bold;
 }
 
-// ========================================
-// 定期オーダーカード
-// ========================================
-.c-teiki-order-card {
-  background-color: $color-white;
-  border: rem(1) solid $border-color;
-  border-radius: rem(12);
-  margin-bottom: rem(16);
-  overflow: hidden;
-  box-shadow: $shadow-xs;
-}
-
 // ----------------------------------------
-// カードヘッダー
+// スキップエリア
 // ----------------------------------------
-.c-teiki-order-card__header {
-  background-color: $primary-color;
-  color: $color-white;
-  padding: rem(12) rem(16);
+.c-teiki-skip-area {
+  margin-top: rem(20);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: rem(10);
 }
 
-.c-teiki-order-card__order-label {
-  font-size: rem(16);
-  font-weight: $font-weight-bold;
-  color: $color-white;
-  margin: 0;
-}
-
-.c-teiki-order-card__skip-zone,
-.c-teiki-order-card__bundle-zone {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-radius: rem(8);
-  padding: rem(10) rem(12);
-  display: flex;
-  flex-direction: column;
-  gap: rem(8);
-}
-
-.c-teiki-order-card__skip-note,
-.c-teiki-order-card__bundle-note {
-  font-size: rem(12);
-  color: $color-white;
-  margin: 0;
-  line-height: 1.6;
-}
-
-// スキップ/同梱/別送 ボタン
-.c-teiki-order-card__btn {
+.c-teiki-skip-area__badge {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: rem(44);
-  padding: rem(10) rem(20);
-  border-radius: rem(22);
-  font-size: rem(14);
-  font-weight: $font-weight-bold;
-  cursor: pointer;
-  transition: background-color $transition-fast, color $transition-fast;
-  align-self: flex-start;
-
-  &--skip {
-    background-color: $color-white;
-    color: $primary-color;
-    border: rem(2) solid $color-white;
-
-    &:hover {
-      background-color: $bg-light;
-    }
-  }
-
-  &--bundle {
-    background-color: transparent;
-    color: $color-white;
-    border: rem(2) solid $color-white;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.15);
-    }
-  }
-}
-
-// ----------------------------------------
-// カードボディ
-// ----------------------------------------
-.c-teiki-order-card__body {
-  padding: rem(16);
-  display: flex;
-  flex-direction: column;
-  gap: rem(20);
-}
-
-// ----------------------------------------
-// セクション共通
-// ----------------------------------------
-.c-teiki-order-card__section {
-  padding-bottom: rem(20);
-  border-bottom: rem(1) solid $border-color;
-
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-}
-
-.c-teiki-order-card__section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: rem(12);
-  gap: rem(8);
-}
-
-.c-teiki-order-card__section-title {
-  font-size: rem(14);
-  font-weight: $font-weight-bold;
-  color: $primary-color;
-  margin: 0;
-  padding-bottom: rem(6);
-  border-bottom: rem(2) solid $primary-color;
-}
-
-// ----------------------------------------
-// 変更ボタン（セクションヘッダー用）
-// ----------------------------------------
-.c-teiki-order-card__change-btn {
-  min-height: rem(36);
-  padding: rem(6) rem(16);
-  border: rem(1) solid $primary-color;
-  border-radius: rem(18);
-  color: $primary-color;
-  font-size: rem(13);
-  font-weight: $font-weight-medium;
-  background: transparent;
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: background-color $transition-fast;
-
-  &:hover {
-    background-color: $bg-light;
-  }
-}
-
-// インライン変更ボタン（dl内）
-.c-teiki-order-card__change-btn--inline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: rem(32);
-  min-width: rem(44);
-  padding: rem(4) rem(12);
-  border: rem(1) solid $primary-color;
-  border-radius: rem(16);
-  color: $primary-color;
-  font-size: rem(12);
-  font-weight: $font-weight-medium;
-  background: transparent;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background-color $transition-fast;
-
-  &:hover {
-    background-color: $bg-light;
-  }
-}
-
-// ----------------------------------------
-// 商品表示
-// ----------------------------------------
-.c-teiki-order-card__product {
-  display: flex;
-  gap: rem(12);
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.c-teiki-order-card__eye-badge {
-  display: inline-block;
-  background-color: $primary-color;
-  color: $color-white;
-  font-size: rem(11);
-  font-weight: $font-weight-bold;
-  padding: rem(3) rem(8);
-  border-radius: rem(4);
-  margin-bottom: rem(6);
-  width: 100%;
-}
-
-.c-teiki-order-card__product-img-wrap {
-  width: rem(80);
-  height: rem(80);
-  flex-shrink: 0;
-  overflow: hidden;
-  border-radius: rem(8);
-  border: rem(1) solid $border-color;
-  background-color: $bg-light;
-}
-
-.c-teiki-order-card__product-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.c-teiki-order-card__product-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.c-teiki-order-card__maker {
-  font-size: rem(12);
-  color: $text-light;
-  margin: 0 0 rem(4);
-}
-
-.c-teiki-order-card__product-name {
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  margin: 0 0 rem(4);
-  line-height: 1.5;
-}
-
-.c-teiki-order-card__spec {
-  font-size: rem(12);
-  color: $text-light;
-  margin: 0 0 rem(4);
-}
-
-.c-teiki-order-card__type-icon {
-  display: inline-block;
-  font-size: rem(11);
-  padding: rem(2) rem(6);
-  border-radius: rem(3);
-  background-color: $bg-light;
-  color: $primary-color;
-  border: rem(1) solid $border-color;
-  margin-top: rem(4);
-}
-
-// ----------------------------------------
-// 処方箋テーブル
-// ----------------------------------------
-.c-teiki-order-card__prescription {
-  margin: rem(12) 0 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: rem(4) rem(6);
-
-  @include pc {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.c-teiki-order-card__prescription-row {
-  background-color: $bg-light;
-  border-radius: rem(4);
-  padding: rem(6) rem(8);
-}
-
-.c-teiki-order-card__prescription-label {
-  font-size: rem(11);
-  color: $text-light;
-  margin: 0;
-  display: block;
-}
-
-.c-teiki-order-card__prescription-value {
-  font-size: rem(13);
-  font-weight: $font-weight-medium;
-  margin: rem(2) 0 0;
-  display: block;
-}
-
-// ----------------------------------------
-// 詳細 dl
-// ----------------------------------------
-.c-teiki-order-card__detail {
-  margin: rem(12) 0 0;
-}
-
-.c-teiki-order-card__detail-row {
-  display: grid;
-  grid-template-columns: rem(120) 1fr;
-  gap: rem(8);
-  padding: rem(8) 0;
-  border-bottom: rem(1) solid $border-color;
-  font-size: rem(14);
-  align-items: start;
-
-  &:last-child {
-    border-bottom: none;
-  }
-
-  @include pc {
-    grid-template-columns: rem(160) 1fr;
-  }
-
-  dt {
-    color: $text-light;
-    font-weight: $font-weight-normal;
-    font-size: rem(13);
-    padding-top: rem(4);
-  }
-
-  dd {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: rem(4);
-    margin: 0;
-    font-weight: $font-weight-medium;
-  }
-}
-
-.c-teiki-order-card__course-items {
-  display: flex;
-  flex-direction: column;
-  gap: rem(2);
-  width: 100%;
-}
-
-.c-teiki-order-card__course-item {
-  font-size: rem(13);
-  color: $text-color;
-}
-
-.c-teiki-order-card__price {
-  font-weight: $font-weight-bold;
+  padding: rem(4) rem(14);
+  border-radius: rem(14);
+  background-color: $deco-pink;
   color: $price-color;
-}
-
-.c-teiki-order-card__price-tax {
   font-size: rem(12);
-  color: $text-light;
+  font-weight: $font-weight-bold;
 }
 
-// ----------------------------------------
-// 状態操作ボタン（解約/休止/再開）
-// ----------------------------------------
-.c-teiki-order-card__status-actions {
-  display: flex;
-  gap: rem(8);
-  margin-top: rem(16);
-  flex-wrap: wrap;
-}
-
-.c-teiki-order-card__status-btn {
-  min-height: rem(44);
-  padding: rem(10) rem(20);
-  border-radius: rem(22);
+.c-teiki-skip-area__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(52);
+  padding: rem(10) rem(24);
+  border: 2px solid $price-color;
+  border-radius: rem(23);
+  color: $price-color;
   font-size: rem(14);
   font-weight: $font-weight-bold;
+  background: transparent;
   cursor: pointer;
-  transition: background-color $transition-fast, color $transition-fast;
+  text-align: center;
+  line-height: 1.5;
+  transition: background-color $transition-fast;
 
-  &--cancel {
-    background-color: $color-white;
-    color: $danger-color;
-    border: rem(2) solid $danger-color;
-
-    &:hover {
-      background-color: $bg-danger-light;
-    }
-  }
-
-  &--pause {
-    background-color: $color-white;
-    color: $text-color;
-    border: rem(2) solid $border-color-dark;
-
-    &:hover {
-      background-color: $bg-gray;
-    }
-  }
-
-  &--resume {
-    background-color: $primary-color;
-    color: $color-white;
-    border: rem(2) solid $primary-color;
-
-    &:hover {
-      background-color: $primary-color-dark;
-    }
+  &:hover {
+    background-color: $bg-danger-light;
   }
 }
 
-// ----------------------------------------
-// 注意書き
-// ----------------------------------------
-.c-teiki-order-card__caution {
-  font-size: rem(12);
-  color: $text-light;
-  margin: rem(8) 0 0;
-  line-height: 1.6;
-
-  &::before {
-    content: '※ ';
-  }
-}
-
-.c-teiki-order-card__email-link {
-  font-size: rem(12);
-  color: $primary-color;
+.c-teiki-skip-area__link {
+  font-size: rem(13);
+  color: #0087cb;
   text-decoration: underline;
-  margin-left: rem(4);
 
   &:hover {
     text-decoration: none;
   }
+}
+
+// ----------------------------------------
+// 購入履歴見出し
+// ----------------------------------------
+.p-teiki-detail__history-heading {
+  font-size: rem(20);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  text-align: center;
+  margin: rem(32) 0 rem(6);
+}
+
+.p-teiki-detail__history-heading-line {
+  display: block;
+  text-align: center;
+  margin: 0 auto rem(16);
+  width: rem(100);
+  height: auto;
+}
+
+.p-teiki-detail__history-count {
+  font-size: rem(13);
+  color: $text-light;
+  margin: 0 0 rem(12);
+}
+
+// ----------------------------------------
+// 購入履歴アイテム
+// ----------------------------------------
+.c-teiki-history-item {
+  margin-bottom: rem(16);
+  border: 2px solid $bg-banner;
+}
+
+.c-teiki-history-item__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: rem(46);
+  padding: rem(8) rem(16);
+  background-color: $primary-color;
+  gap: rem(8);
+}
+
+.c-teiki-history-item__order-num {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  margin: 0;
+}
+
+.c-teiki-history-item__detail-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(34);
+  padding: rem(6) rem(14);
+  border: 2px solid $color-white;
+  border-radius: rem(8);
+  color: $color-white;
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.c-teiki-history-item__table-wrap {
+  overflow-x: auto;
 }
 
 // ========================================
@@ -551,9 +660,9 @@
   align-items: flex-start;
   gap: rem(8);
   padding: rem(12) rem(16);
-  border-radius: rem(8);
   font-size: rem(13);
   line-height: 1.6;
+  margin-top: rem(8);
 
   &--warning {
     background-color: $deco-yellow;
@@ -576,6 +685,57 @@
 
 .c-teiki-message__text {
   margin: 0;
+}
+
+// ========================================
+// 状態操作ボタン（解約/休止/再開）
+// ========================================
+.c-teiki-status-actions {
+  display: flex;
+  gap: rem(8);
+  margin-top: rem(16);
+  flex-wrap: wrap;
+  padding: 0 rem(16) rem(16);
+}
+
+.c-teiki-status-btn {
+  min-height: rem(44);
+  padding: rem(10) rem(20);
+  border-radius: rem(22);
+  font-size: rem(14);
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+  transition: background-color $transition-fast, color $transition-fast;
+
+  &--cancel {
+    background-color: $color-white;
+    color: $danger-color;
+    border: 2px solid $danger-color;
+
+    &:hover {
+      background-color: $bg-danger-light;
+    }
+  }
+
+  &--pause {
+    background-color: $color-white;
+    color: $text-color;
+    border: 2px solid $border-color-dark;
+
+    &:hover {
+      background-color: $bg-gray;
+    }
+  }
+
+  &--resume {
+    background-color: $primary-color;
+    color: $color-white;
+    border: 2px solid $primary-color;
+
+    &:hover {
+      background-color: $primary-color-dark;
+    }
+  }
 }
 
 // ========================================
@@ -630,7 +790,7 @@
   color: $text-light;
   margin: 0 0 rem(8);
   padding: rem(4) 0;
-  border-bottom: rem(1) solid $border-color;
+  border-bottom: 1px solid $border-color;
 }
 
 .c-teiki-modal__list {
@@ -643,7 +803,7 @@
 }
 
 .c-teiki-modal__item {
-  border: rem(1) solid $border-color;
+  border: 1px solid $border-color;
   border-radius: rem(8);
   overflow: hidden;
   transition: border-color $transition-fast;
@@ -695,7 +855,7 @@
   justify-content: center;
   width: 100%;
   min-height: rem(44);
-  border: rem(1) dashed $primary-color;
+  border: 1px dashed $primary-color;
   border-radius: rem(8);
   color: $primary-color;
   font-size: rem(14);
@@ -716,7 +876,7 @@
   gap: rem(8);
   margin-top: rem(16);
   padding-top: rem(16);
-  border-top: rem(1) solid $border-color;
+  border-top: 1px solid $border-color;
 }
 
 .c-teiki-modal__submit-btn {
@@ -747,7 +907,7 @@
   min-height: rem(44);
   background-color: $color-white;
   color: $text-color;
-  border: rem(1) solid $border-color-dark;
+  border: 1px solid $border-color-dark;
   border-radius: rem(22);
   font-size: rem(14);
   cursor: pointer;

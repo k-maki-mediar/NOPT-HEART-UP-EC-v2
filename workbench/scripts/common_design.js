@@ -1071,6 +1071,19 @@ $(function () {
 });
 
 /* ========================================
+ * 定期契約確認変更：申込商品アコーディオン開閉
+ * ======================================== */
+$(function () {
+  $('.js-teiki-products-toggle').on('click', function () {
+    var $btn = $(this);
+    var $body = $btn.next('.js-teiki-products-body');
+    var isOpen = $btn.attr('aria-expanded') === 'true';
+    $btn.attr('aria-expanded', !isOpen);
+    $body.toggleClass('c-teiki-products__body--open');
+  });
+});
+
+/* ========================================
  * 定期契約確認変更：購入情報・金額アコーディオン開閉
  * ======================================== */
 $(function () {

@@ -172,6 +172,203 @@
 }
 
 // ----------------------------------------
+// 申込商品（注文履歴と同じアコーディオンカードスタイル）
+// ----------------------------------------
+.c-teiki-products {
+  margin-top: rem(16);
+}
+
+.c-teiki-products__inner {
+  @include accordion-card-inner;
+}
+
+.c-teiki-products__header {
+  @include accordion-card-header;
+}
+
+.c-teiki-products__header-title {
+  @include accordion-card-header-title;
+}
+
+.c-teiki-products__header-toggle {
+  @include accordion-card-toggle;
+}
+
+.c-teiki-products__header[aria-expanded="true"] .c-teiki-products__header-toggle::after {
+  transform: translateX(-50%) scaleY(0);
+}
+
+.c-teiki-products__body {
+  @include accordion-card-body;
+  padding: rem(8);
+}
+
+// ヘッダー内「商品変更」ボタン（白枠角丸8px）
+.c-teiki-products__header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(6);
+  padding: rem(6) rem(14);
+  border: 2px solid $color-white;
+  border-radius: rem(8);
+  color: $color-white;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  background: transparent;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: rem(24);
+}
+
+.c-teiki-products__header-btn-arrow {
+  display: inline-block;
+  width: rem(6);
+  height: rem(6);
+  border-top: rem(2) solid $color-white;
+  border-right: rem(2) solid $color-white;
+  transform: rotate(45deg);
+}
+
+.c-teiki-products__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-teiki-products__item {
+  border-bottom: 1px dashed $bg-banner;
+  padding: rem(12) rem(10);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// 商品カード: 左に画像エリア（ラベル+画像）、右にテキスト情報
+.c-teiki-products__product {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+}
+
+// 画像+テキスト横並びエリア
+.c-teiki-products__product-main {
+  display: flex;
+  gap: rem(12);
+  align-items: flex-start;
+}
+
+// 左側: ラベル + 画像（Figma: 120px幅）
+.c-teiki-products__img-area {
+  flex-shrink: 0;
+  width: rem(120);
+  display: flex;
+  flex-direction: column;
+}
+
+// 「左」「ケア」ラベルバー（bg: #d7e7fb）
+.c-teiki-products__eye-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(20);
+  background-color: $bg-banner;
+  color: $primary-color;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  letter-spacing: rem(0.15);
+}
+
+.c-teiki-products__product-img-wrap {
+  width: rem(120);
+  height: rem(80);
+  border: 1px solid #eee;
+  background-color: $color-white;
+}
+
+.c-teiki-products__product-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+// 右側: メーカー名・商品名・処方箋データ・有効期限
+.c-teiki-products__product-detail {
+  flex: 1;
+  min-width: 0;
+}
+
+.c-teiki-products__maker {
+  font-size: rem(10);
+  color: $text-color;
+  margin: 0 0 rem(4);
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+.c-teiki-products__name {
+  font-size: rem(14);
+  color: $text-color;
+  margin: 0 0 rem(6);
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+}
+
+.c-teiki-products__spec {
+  font-size: rem(10);
+  color: $text-color;
+  margin: 0 0 rem(4);
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+.c-teiki-products__expire {
+  font-size: rem(10);
+  color: $text-color;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+// 申込コース・箱数（フル幅）
+.c-teiki-products__course-info {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+}
+
+.c-teiki-products__course-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: rem(12);
+  color: $text-color;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+}
+
+// 次回お届け日バー（bg: #f7f7f7、中央揃え）
+.c-teiki-products__delivery-date {
+  background-color: $bg-gray;
+  padding: rem(6) rem(8);
+  text-align: center;
+  font-size: rem(12);
+  color: $text-color;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  margin: 0;
+}
+
+// 価格変更メッセージ（赤文字）
+.c-teiki-products__price-notice {
+  font-size: rem(12);
+  color: #cc4843;
+  margin: rem(4) 0 0;
+  line-height: 1.6;
+}
+
+// ----------------------------------------
 // クーポン確認ボタン
 // ----------------------------------------
 .p-teiki-detail__coupon-action {
@@ -204,8 +401,9 @@
 
 .p-teiki-detail__coupon-btn-icon {
   width: rem(24);
-  height: rem(24);
+  height: auto;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 // ----------------------------------------

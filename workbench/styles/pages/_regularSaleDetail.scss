@@ -105,10 +105,14 @@
 // ----------------------------------------
 .c-teiki-schedule {
   margin-bottom: rem(20);
+  margin-left: rem(-16);
+  margin-right: rem(-16);
   position: relative;
 
   @include pc {
     overflow: hidden;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -339,20 +343,16 @@
   height: rem(32);
   border-radius: 50%;
   background-color: $color-white;
-  border: 1px solid $border-color;
+  border: rem(1) solid $primary-color;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 2;
-  box-shadow: 0 rem(1) rem(3) rgba(0, 0, 0, 0.1);
   font-size: rem(12);
-  color: $text-color;
+  color: $primary-color;
   padding: 0;
-
-  &:hover {
-    background-color: $bg-gray;
-  }
+  box-shadow: 0 rem(1) 0 0 $primary-color-dark;
 
   &--prev {
     left: rem(-4);

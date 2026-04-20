@@ -8174,11 +8174,15 @@
 
 .c-teiki-schedule {
   margin-bottom: 1.25rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
   position: relative;
 }
 @media (min-width: 992px) {
   .c-teiki-schedule {
     overflow: hidden;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -8403,19 +8407,16 @@
   height: 2rem;
   border-radius: 50%;
   background-color: #FFFFFF;
-  border: 1px solid #e0e0e0;
+  border: 0.0625rem solid #00387d;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 2;
-  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
   font-size: 0.75rem;
-  color: #333;
+  color: #00387d;
   padding: 0;
-}
-.c-teiki-schedule__nav:hover {
-  background-color: #F7F7F7;
+  box-shadow: 0 0.0625rem 0 0 #002a5e;
 }
 .c-teiki-schedule__nav--prev {
   left: -0.25rem;

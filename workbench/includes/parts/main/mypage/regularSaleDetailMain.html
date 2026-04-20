@@ -1,359 +1,438 @@
 <section class="p-teiki-detail" aria-label="らくとく定期便 確認・変更">
 
   <!-- ===== ページ見出し ===== -->
-  <h1 class="p-teiki-detail__heading">らくとく定期便　オーダー</h1>
+  <h1 class="p-teiki-detail__heading">らくとく定期便 確認・変更</h1>
   <span class="p-teiki-detail__heading-line" aria-hidden="true"></span>
 
-  <!-- ===== 定期なし状態（定期契約なし時のみ表示） ===== -->
-  <!-- <div class="p-teiki-detail__empty">
-    <p>現在契約中のらくとく定期便はありません</p>
-  </div> -->
-
-  <!-- ===== 同梱/別送テキスト + 切替バー ===== -->
-  <div class="p-teiki-detail__bundle-bar">
-    <p class="p-teiki-detail__bundle-text">現在コンタクトレンズとケア用品は【同梱】を選択されています。</p>
-    <button type="button" class="p-teiki-detail__bundle-btn js-teiki-betsuso-btn">
-      別送する
-    </button>
+  <!-- ===== タブ切替（3タブ） ===== -->
+  <div class="p-teiki-detail__tabs" role="tablist" aria-label="定期便情報">
+    <button type="button" class="p-teiki-detail__tab is-active js-teiki-tab" role="tab" aria-selected="true" aria-controls="teiki-panel-1" id="teiki-tab-1">定期購入情報一覧</button>
+    <button type="button" class="p-teiki-detail__tab js-teiki-tab" role="tab" aria-selected="false" aria-controls="teiki-panel-2" id="teiki-tab-2" tabindex="-1">定期購入履歴一覧</button>
+    <button type="button" class="p-teiki-detail__tab js-teiki-tab" role="tab" aria-selected="false" aria-controls="teiki-panel-3" id="teiki-tab-3" tabindex="-1">定期購入振替情報</button>
   </div>
 
-  <!-- ===== オーダーブロック（同梱パターン：1枚） ===== -->
-  <div class="c-teiki-order-block" aria-label="らくとく定期便オーダー">
+  <!-- ===== タブパネル1: 定期購入情報一覧 ===== -->
+  <div class="p-teiki-detail__tab-panel" id="teiki-panel-1" role="tabpanel" aria-labelledby="teiki-tab-1">
 
-    <!-- ===== 申込情報セクション ===== -->
-    <section aria-label="申込情報">
-      <div class="c-teiki-section-bar">
-        <h2 class="c-teiki-section-bar__title">申込情報</h2>
-        <button type="button" class="c-teiki-section-bar__btn">商品変更</button>
-      </div>
+    <!-- ===== らくとく定期便 お届けカレンダー 見出し ===== -->
+    <div class="c-teiki-info-table__section-heading p-teiki-detail__calendar-heading">
+      らくとく定期便 お届けカレンダー
+    </div>
 
-      <!-- 商品1: コンタクトレンズ（右眼） -->
-      <div class="c-teiki-product">
-        <div class="c-teiki-product__inner">
-          <div class="c-teiki-product__img-area">
-            <div class="c-teiki-product__badge-row">
-              <span class="c-teiki-product__eye-badge">右</span>
-              <span class="c-teiki-product__eye-badge">ケア</span>
-            </div>
-            <div class="c-teiki-product__img-wrap">
-              <img src="../../../files/commonfiles/images/noimage.png" alt="アキュビュー オアシス" class="c-teiki-product__img" width="120" height="80">
-            </div>
-          </div>
-          <div class="c-teiki-product__info">
-            <p class="c-teiki-product__maker">ジョンソン・エンド・ジョンソン</p>
-            <p class="c-teiki-product__name">アキュビュー オアシス</p>
-            <p class="c-teiki-product__spec">6枚入り</p>
-            <p class="c-teiki-product__expire">処方箋有効期限：2026/12/31</p>
-          </div>
+    <!-- ===== お届けカレンダー（横スクロール） ===== -->
+    <div class="c-teiki-calendar">
+      <div class="c-teiki-calendar__scroll" aria-label="お届けカレンダー" role="region">
+        <div class="c-teiki-calendar__card" aria-label="1月">
+          <p class="c-teiki-calendar__month">1月</p>
+          <p class="c-teiki-calendar__date">1/15</p>
         </div>
-        <dl class="c-teiki-product__detail">
-          <div class="c-teiki-product__detail-row">
-            <span class="c-teiki-product__detail-label">申込コース</span>
-            <span class="c-teiki-product__detail-value">1ヶ月ごと</span>
-          </div>
-          <div class="c-teiki-product__detail-row">
-            <span class="c-teiki-product__detail-label">お届け箱数</span>
-            <span class="c-teiki-product__detail-value">1箱</span>
-          </div>
-          <div class="c-teiki-product__detail-row c-teiki-product__detail-row--delivery-date">
-            <span class="c-teiki-product__detail-label">次回お届け日</span>
-            <span class="c-teiki-product__detail-value">2025/09/30</span>
-          </div>
-        </dl>
-      </div>
-
-      <!-- 商品2: ケア用品（同梱パターンのため商品間は点線区切り） -->
-      <div class="c-teiki-product">
-        <div class="c-teiki-product__inner">
-          <div class="c-teiki-product__img-area">
-            <div class="c-teiki-product__img-wrap">
-              <img src="../../../files/commonfiles/images/noimage.png" alt="コンプリート ダブルモイスト 360ml" class="c-teiki-product__img" width="120" height="80">
-            </div>
-          </div>
-          <div class="c-teiki-product__info">
-            <p class="c-teiki-product__maker">AMO ジャパン</p>
-            <p class="c-teiki-product__name">コンプリート ダブルモイスト 360ml</p>
-            <p class="c-teiki-product__spec">360ml×1本</p>
-          </div>
+        <div class="c-teiki-calendar__card is-active" aria-label="2月（選択中）">
+          <p class="c-teiki-calendar__month">2月</p>
+          <p class="c-teiki-calendar__date">2/15</p>
         </div>
-        <dl class="c-teiki-product__detail">
-          <div class="c-teiki-product__detail-row">
-            <span class="c-teiki-product__detail-label">申込コース</span>
-            <span class="c-teiki-product__detail-value">2ヶ月ごと</span>
-          </div>
-          <div class="c-teiki-product__detail-row">
-            <span class="c-teiki-product__detail-label">お届け箱数</span>
-            <span class="c-teiki-product__detail-value">1本</span>
-          </div>
-          <div class="c-teiki-product__detail-row c-teiki-product__detail-row--delivery-date">
-            <span class="c-teiki-product__detail-label">次回お届け日</span>
-            <span class="c-teiki-product__detail-value">2025/09/30</span>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- ===== 購入情報セクション（アコーディオン：accordion-card mixin流用） ===== -->
-    <section class="c-teiki-info-block" aria-label="購入情報">
-      <div class="c-teiki-info-block__inner">
-        <button type="button" class="c-teiki-info-block__header js-teiki-toggle" aria-expanded="false">
-          <span class="c-teiki-info-block__header-title">購入情報</span>
-          <span class="c-teiki-info-block__header-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="c-teiki-info-block__body js-teiki-toggle-body">
-          <table class="c-teiki-info-table" aria-label="購入情報詳細">
-            <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">お支払い方法</th>
-              <td class="c-teiki-info-table__data">
-                <div class="c-teiki-info-table__data-inner">
-                  クレジットカード
-                  <button type="button" class="c-teiki-info-table__change-btn">変更</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">申込コース</th>
-              <td class="c-teiki-info-table__data">
-                <div class="c-teiki-info-table__data-inner">
-                  <span>コンタクトレンズ：1ヶ月ごと<br>ケア用品：2ヶ月ごと</span>
-                  <button type="button" class="c-teiki-info-table__change-btn">変更</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">お届け予定日</th>
-              <td class="c-teiki-info-table__data">
-                <div class="c-teiki-info-table__data-inner">
-                  2026/05/15
-                  <button type="button" class="c-teiki-info-table__change-btn">変更</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">らくとく定期便<br>利用状況</th>
-              <td class="c-teiki-info-table__data">
-                コンタクトレンズ：利用中<br>ケア用品：利用中
-              </td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">クーポン利用</th>
-              <td class="c-teiki-info-table__data">
-                <div class="c-teiki-info-table__data-inner">
-                  <!-- クーポン利用中の場合 -->
-                  XXXX円OFFクーポン（-¥500）
-                  <!-- クーポン未利用の場合
-                  未使用
-                  -->
-                  <button type="button" class="c-teiki-info-table__change-btn">変更</button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-          <!-- お届け先情報（eye-data-heading風サブセクション見出し） -->
-          <div class="c-teiki-info-table__section-heading">
-            <div class="c-teiki-info-table__data-inner">
-              お届け先情報
-              <button type="button" class="c-teiki-info-table__change-btn js-teiki-modal-open" aria-haspopup="dialog">変更</button>
-            </div>
-          </div>
-          <table class="c-teiki-info-table" aria-label="お届け先情報">
-            <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">氏名</th>
-              <td class="c-teiki-info-table__data">山田 太郎</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">フリガナ</th>
-              <td class="c-teiki-info-table__data">ヤマダ タロウ</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">住所</th>
-              <td class="c-teiki-info-table__data">〒100-0001 東京都千代田区千代田1-1-1 山田マンション101</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">電話番号</th>
-              <td class="c-teiki-info-table__data">090-0000-0000</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">メールアドレス</th>
-              <td class="c-teiki-info-table__data">
-                example@email.com<br>
-                <a href="#" class="c-teiki-skip-area__link">メールアドレスを変更する</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-          <!-- 状態操作ボタン群 -->
-          <div class="c-teiki-status-actions">
-            <!-- 通常状態 -->
-            <button type="button" class="c-teiki-status-btn c-teiki-status-btn--cancel">解約</button>
-            <button type="button" class="c-teiki-status-btn c-teiki-status-btn--pause">休止</button>
-            <!-- 休止中時のみ表示（通常時は非表示）
-            <button type="button" class="c-teiki-status-btn c-teiki-status-btn--resume">再開</button>
-            -->
-          </div>
+        <div class="c-teiki-calendar__card" aria-label="3月">
+          <p class="c-teiki-calendar__month">3月</p>
+          <p class="c-teiki-calendar__date">3/15</p>
         </div>
-      </div>
-    </section>
-
-    <!-- ===== 次回出荷情報セクション ===== -->
-    <div class="c-teiki-next-section">
-      <div class="c-teiki-section-bar">
-        <h2 class="c-teiki-section-bar__title">次回出荷情報</h2>
-      </div>
-      <div class="c-teiki-product">
-        <div class="c-teiki-product__inner">
-          <div class="c-teiki-product__img-area">
-            <div class="c-teiki-product__badge-row">
-              <span class="c-teiki-product__eye-badge">右</span>
-              <span class="c-teiki-product__eye-badge">ケア</span>
-            </div>
-            <div class="c-teiki-product__img-wrap">
-              <img src="../../../files/commonfiles/images/noimage.png" alt="アキュビュー オアシス" class="c-teiki-product__img" width="120" height="80">
-            </div>
-          </div>
-          <div class="c-teiki-product__info">
-            <p class="c-teiki-product__maker">ジョンソン・エンド・ジョンソン</p>
-            <p class="c-teiki-product__name">アキュビュー オアシス</p>
-            <p class="c-teiki-product__spec">6枚入り</p>
-            <p class="c-teiki-product__expire">処方箋有効期限：2026/12/31</p>
-          </div>
+        <div class="c-teiki-calendar__card" aria-label="4月">
+          <p class="c-teiki-calendar__month">4月</p>
+          <p class="c-teiki-calendar__date">4/15</p>
         </div>
-        <dl class="c-teiki-product__detail">
-          <div class="c-teiki-product__detail-row">
-            <span class="c-teiki-product__detail-label">申込コース</span>
-            <span class="c-teiki-product__detail-value">1ヶ月ごと</span>
-          </div>
-          <div class="c-teiki-product__detail-row">
-            <span class="c-teiki-product__detail-label">お届け箱数</span>
-            <span class="c-teiki-product__detail-value">1箱</span>
-          </div>
-          <div class="c-teiki-product__detail-row c-teiki-product__detail-row--delivery-date">
-            <span class="c-teiki-product__detail-label">次回お届け日</span>
-            <span class="c-teiki-product__detail-value">2025/10/30</span>
-          </div>
-        </dl>
+        <div class="c-teiki-calendar__card" aria-label="5月">
+          <p class="c-teiki-calendar__month">5月</p>
+          <p class="c-teiki-calendar__date">5/15</p>
+        </div>
+        <div class="c-teiki-calendar__card" aria-label="6月">
+          <p class="c-teiki-calendar__month">6月</p>
+          <p class="c-teiki-calendar__date">6/15</p>
+        </div>
+        <div class="c-teiki-calendar__card" aria-label="7月">
+          <p class="c-teiki-calendar__month">7月</p>
+          <p class="c-teiki-calendar__date">7/15</p>
+        </div>
       </div>
     </div>
 
-    <!-- ===== 金額セクション（アコーディオン：accordion-card mixin流用） ===== -->
-    <section class="c-teiki-amount-block" aria-label="金額">
-      <div class="c-teiki-amount-block__inner">
-        <button type="button" class="c-teiki-amount-block__header js-teiki-toggle" aria-expanded="false">
-          <span class="c-teiki-amount-block__header-title">金額</span>
-          <span class="c-teiki-amount-block__header-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="c-teiki-amount-block__body js-teiki-toggle-body">
-        <dl class="c-teiki-amount-block__list">
-          <div class="c-teiki-amount-block__row">
-            <dt class="c-teiki-amount-block__label">商品合計</dt>
-            <dd class="c-teiki-amount-block__value">¥2,778</dd>
-          </div>
-          <div class="c-teiki-amount-block__row">
-            <dt class="c-teiki-amount-block__label">送料</dt>
-            <dd class="c-teiki-amount-block__value">¥500</dd>
-          </div>
-          <div class="c-teiki-amount-block__row">
-            <dt class="c-teiki-amount-block__label">手数料</dt>
-            <dd class="c-teiki-amount-block__value">¥0</dd>
-          </div>
-          <!-- 同梱値引（同梱時のみ表示） -->
-          <div class="c-teiki-amount-block__row">
-            <dt class="c-teiki-amount-block__label">値引（同梱割引）</dt>
-            <dd class="c-teiki-amount-block__value">-¥182</dd>
-          </div>
-          <div class="c-teiki-amount-block__row c-teiki-amount-block__row--grand">
-            <dt class="c-teiki-amount-block__label">合計金額（税込）</dt>
-            <dd class="c-teiki-amount-block__value">
-              <span class="c-teiki-amount-block__grand-total">¥2,904</span>
-            </dd>
-          </div>
-          <div class="c-teiki-amount-block__row c-teiki-amount-block__row--tax">
-            <dt class="c-teiki-amount-block__label">内消費税（10%）</dt>
-            <dd class="c-teiki-amount-block__value">¥264</dd>
-          </div>
-        </dl>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== スキップエリア ===== -->
     <div class="c-teiki-skip-area">
+      <a href="#" class="c-teiki-skip-area__link">スキップについてはこちら</a>
       <span class="c-teiki-skip-area__badge">スキップ受付中</span>
       <button type="button" class="c-teiki-skip-area__btn">
         <span class="c-teiki-skip-area__btn-category">コンタクトレンズ・ケア用品</span>
         <span>次回のお届けをスキップする</span>
       </button>
-      <a href="#" class="c-teiki-skip-area__link">スキップについてはこちら</a>
     </div>
 
-  </div><!-- /.c-teiki-order-block -->
+    <!-- ===== ブロック見出し ===== -->
+    <h2 class="c-teiki-info-table__section-heading p-teiki-detail__order-heading">オーダー① お届けスケジュール</h2>
 
-  <!-- ===== らくとく定期便 購入履歴一覧 ===== -->
-  <section aria-label="らくとく定期便 購入履歴一覧">
-    <h2 class="p-teiki-detail__history-heading">らくとく定期便　購入履歴一覧</h2>
-    <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="p-teiki-detail__history-heading-line" aria-hidden="true" width="100" height="6">
-    <p class="p-teiki-detail__history-count">全3件</p>
+    <!-- ===== 同梱/別送テキスト + 切替バー ===== -->
+    <div class="p-teiki-detail__bundle-bar">
+      <p class="p-teiki-detail__bundle-text">現在コンタクトレンズとケア用品は【同梱】を選択されています。</p>
+      <button type="button" class="p-teiki-detail__bundle-btn js-teiki-betsuso-btn">
+        別送する
+      </button>
+    </div>
 
-    <!-- 履歴アイテム -->
-    <div class="c-teiki-history-item">
-      <div class="c-teiki-history-item__inner">
-        <div class="c-teiki-history-item__bar">
-          <p class="c-teiki-history-item__order-num">注文番号：123456789</p>
-          <a href="#" class="c-teiki-history-item__detail-btn">詳細を見る</a>
+    <!-- ===== オーダーブロック（同梱パターン：1枚） ===== -->
+    <div class="c-teiki-order-block" aria-label="らくとく定期便オーダー">
+
+      <!-- ===== 申込情報セクション ===== -->
+      <section aria-label="申込情報">
+        <div class="c-teiki-section-bar">
+          <h2 class="c-teiki-section-bar__title">申込情報</h2>
+          <button type="button" class="c-teiki-section-bar__btn">商品変更</button>
         </div>
-        <div class="c-teiki-history-item__table-wrap">
-          <table class="c-teiki-info-table" aria-label="注文123456789の詳細">
-            <tbody>
+
+        <!-- 商品1: コンタクトレンズ（右眼） -->
+        <div class="c-teiki-product">
+          <div class="c-teiki-product__inner">
+            <div class="c-teiki-product__img-area">
+              <div class="c-teiki-product__badge-row">
+                <span class="c-teiki-product__eye-badge">右</span>
+                <span class="c-teiki-product__eye-badge">ケア</span>
+              </div>
+              <div class="c-teiki-product__img-wrap">
+                <img src="../../../files/commonfiles/images/noimage.png" alt="アキュビュー オアシス" class="c-teiki-product__img" width="120" height="80">
+              </div>
+            </div>
+            <div class="c-teiki-product__info">
+              <p class="c-teiki-product__maker">ジョンソン・エンド・ジョンソン</p>
+              <p class="c-teiki-product__name">アキュビュー オアシス</p>
+              <p class="c-teiki-product__spec">6枚入り</p>
+              <p class="c-teiki-product__expire">処方箋有効期限：2026/12/31</p>
+            </div>
+          </div>
+          <dl class="c-teiki-product__detail">
+            <div class="c-teiki-product__detail-row">
+              <span class="c-teiki-product__detail-label">申込コース</span>
+              <span class="c-teiki-product__detail-value">1ヶ月ごと</span>
+            </div>
+            <div class="c-teiki-product__detail-row">
+              <span class="c-teiki-product__detail-label">お届け箱数</span>
+              <span class="c-teiki-product__detail-value">1箱</span>
+            </div>
+            <div class="c-teiki-product__detail-row c-teiki-product__detail-row--delivery-date">
+              <span class="c-teiki-product__detail-label">次回お届け日</span>
+              <span class="c-teiki-product__detail-value">2025/09/30</span>
+            </div>
+          </dl>
+        </div>
+
+        <!-- 商品2: ケア用品（同梱パターンのため商品間は点線区切り） -->
+        <div class="c-teiki-product">
+          <div class="c-teiki-product__inner">
+            <div class="c-teiki-product__img-area">
+              <div class="c-teiki-product__img-wrap">
+                <img src="../../../files/commonfiles/images/noimage.png" alt="コンプリート ダブルモイスト 360ml" class="c-teiki-product__img" width="120" height="80">
+              </div>
+            </div>
+            <div class="c-teiki-product__info">
+              <p class="c-teiki-product__maker">AMO ジャパン</p>
+              <p class="c-teiki-product__name">コンプリート ダブルモイスト 360ml</p>
+              <p class="c-teiki-product__spec">360ml×1本</p>
+            </div>
+          </div>
+          <dl class="c-teiki-product__detail">
+            <div class="c-teiki-product__detail-row">
+              <span class="c-teiki-product__detail-label">申込コース</span>
+              <span class="c-teiki-product__detail-value">2ヶ月ごと</span>
+            </div>
+            <div class="c-teiki-product__detail-row">
+              <span class="c-teiki-product__detail-label">お届け箱数</span>
+              <span class="c-teiki-product__detail-value">1本</span>
+            </div>
+            <div class="c-teiki-product__detail-row c-teiki-product__detail-row--delivery-date">
+              <span class="c-teiki-product__detail-label">次回お届け日</span>
+              <span class="c-teiki-product__detail-value">2025/09/30</span>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ===== 次回のお届け予定ブロック ===== -->
+      <div class="c-teiki-next-delivery">
+        <h3 class="c-teiki-next-delivery__heading">次回のお届け予定</h3>
+        <div class="c-teiki-next-delivery__list">
+          <div class="c-teiki-next-delivery__item">
+            <p class="c-teiki-next-delivery__maker">ジョンソン・エンド・ジョンソン</p>
+            <p class="c-teiki-next-delivery__name">【定期便】アキュビュー オアシス</p>
+            <p class="c-teiki-next-delivery__course">1ヶ月ごと ¥2,778</p>
+            <p class="c-teiki-next-delivery__boxes">お届け箱数：1箱</p>
+          </div>
+          <div class="c-teiki-next-delivery__divider" aria-hidden="true"></div>
+          <div class="c-teiki-next-delivery__item">
+            <p class="c-teiki-next-delivery__maker">AMO ジャパン</p>
+            <p class="c-teiki-next-delivery__name">【定期便】コンプリート ダブルモイスト 360ml</p>
+            <p class="c-teiki-next-delivery__course">2ヶ月ごと ¥1,200</p>
+            <p class="c-teiki-next-delivery__boxes">お届け箱数：1本</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 次々回出荷情報セクション（次々回分受注が存在する場合のみ表示） ===== -->
+      <div class="c-teiki-next-section">
+        <div class="c-teiki-section-bar">
+          <h2 class="c-teiki-section-bar__title">次々回出荷情報</h2>
+        </div>
+        <div class="c-teiki-product">
+          <div class="c-teiki-product__inner">
+            <div class="c-teiki-product__img-area">
+              <div class="c-teiki-product__badge-row">
+                <span class="c-teiki-product__eye-badge">右</span>
+                <span class="c-teiki-product__eye-badge">ケア</span>
+              </div>
+              <div class="c-teiki-product__img-wrap">
+                <img src="../../../files/commonfiles/images/noimage.png" alt="アキュビュー オアシス" class="c-teiki-product__img" width="120" height="80">
+              </div>
+            </div>
+            <div class="c-teiki-product__info">
+              <p class="c-teiki-product__maker">ジョンソン・エンド・ジョンソン</p>
+              <p class="c-teiki-product__name">アキュビュー オアシス</p>
+              <p class="c-teiki-product__spec">6枚入り</p>
+              <p class="c-teiki-product__expire">処方箋有効期限：2026/12/31</p>
+            </div>
+          </div>
+          <dl class="c-teiki-product__detail">
+            <div class="c-teiki-product__detail-row">
+              <span class="c-teiki-product__detail-label">申込コース</span>
+              <span class="c-teiki-product__detail-value">1ヶ月ごと</span>
+            </div>
+            <div class="c-teiki-product__detail-row">
+              <span class="c-teiki-product__detail-label">お届け箱数</span>
+              <span class="c-teiki-product__detail-value">1箱</span>
+            </div>
+            <div class="c-teiki-product__detail-row c-teiki-product__detail-row--delivery-date">
+              <span class="c-teiki-product__detail-label">次回お届け日</span>
+              <span class="c-teiki-product__detail-value">2025/10/30</span>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- ===== 金額セクション（アコーディオン：accordion-card mixin流用） ===== -->
+      <section class="c-teiki-amount-block" aria-label="金額">
+        <div class="c-teiki-amount-block__inner">
+          <button type="button" class="c-teiki-amount-block__header js-teiki-toggle" aria-expanded="false">
+            <span class="c-teiki-amount-block__header-title">金額</span>
+            <span class="c-teiki-amount-block__header-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="c-teiki-amount-block__body js-teiki-toggle-body">
+          <dl class="c-teiki-amount-block__list">
+            <div class="c-teiki-amount-block__row">
+              <dt class="c-teiki-amount-block__label">商品合計</dt>
+              <dd class="c-teiki-amount-block__value">¥2,778</dd>
+            </div>
+            <div class="c-teiki-amount-block__row">
+              <dt class="c-teiki-amount-block__label">送料</dt>
+              <dd class="c-teiki-amount-block__value">¥500</dd>
+            </div>
+            <div class="c-teiki-amount-block__row">
+              <dt class="c-teiki-amount-block__label">手数料</dt>
+              <dd class="c-teiki-amount-block__value">¥0</dd>
+            </div>
+            <!-- 同梱値引（同梱時のみ表示） -->
+            <div class="c-teiki-amount-block__row">
+              <dt class="c-teiki-amount-block__label">値引（同梱割引）</dt>
+              <dd class="c-teiki-amount-block__value">-¥182</dd>
+            </div>
+            <div class="c-teiki-amount-block__row c-teiki-amount-block__row--grand">
+              <dt class="c-teiki-amount-block__label">合計金額（税込）</dt>
+              <dd class="c-teiki-amount-block__value">
+                <span class="c-teiki-amount-block__grand-total">¥2,904</span>
+              </dd>
+            </div>
+            <div class="c-teiki-amount-block__row c-teiki-amount-block__row--tax">
+              <dt class="c-teiki-amount-block__label">内消費税（10%）</dt>
+              <dd class="c-teiki-amount-block__value">¥264</dd>
+            </div>
+          </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 購入情報セクション（アコーディオン：accordion-card mixin流用） ===== -->
+      <section class="c-teiki-info-block" aria-label="購入情報">
+        <div class="c-teiki-info-block__inner">
+          <button type="button" class="c-teiki-info-block__header js-teiki-toggle" aria-expanded="false">
+            <span class="c-teiki-info-block__header-title">購入情報</span>
+            <span class="c-teiki-info-block__header-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="c-teiki-info-block__body js-teiki-toggle-body">
+            <table class="c-teiki-info-table" aria-label="購入情報詳細">
+              <tbody>
               <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header" scope="row">注文日</th>
-                <td class="c-teiki-info-table__data">2025/08/30</td>
+                <th class="c-teiki-info-table__header" scope="row">お支払い方法</th>
+                <td class="c-teiki-info-table__data">
+                  <div class="c-teiki-info-table__data-inner">
+                    クレジットカード
+                    <button type="button" class="c-teiki-info-table__change-btn">変更</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header" scope="row">申込コース</th>
+                <td class="c-teiki-info-table__data">
+                  <div class="c-teiki-info-table__data-inner">
+                    <span>コンタクトレンズ：1ヶ月ごと<br>ケア用品：2ヶ月ごと</span>
+                    <button type="button" class="c-teiki-info-table__change-btn">変更</button>
+                  </div>
+                </td>
               </tr>
               <tr class="c-teiki-info-table__row">
                 <th class="c-teiki-info-table__header" scope="row">お届け予定日</th>
-                <td class="c-teiki-info-table__data">2025/09/05</td>
+                <td class="c-teiki-info-table__data">
+                  <div class="c-teiki-info-table__data-inner">
+                    2026/05/15
+                    <button type="button" class="c-teiki-info-table__change-btn">変更</button>
+                  </div>
+                </td>
               </tr>
               <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header" scope="row">合計金額</th>
-                <td class="c-teiki-info-table__data">¥2,904</td>
+                <th class="c-teiki-info-table__header" scope="row">らくとく定期便<br>利用状況</th>
+                <td class="c-teiki-info-table__data">
+                  コンタクトレンズ：利用中<br>ケア用品：利用中
+                </td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header" scope="row">クーポン利用</th>
+                <td class="c-teiki-info-table__data">
+                  <div class="c-teiki-info-table__data-inner">
+                    <!-- クーポン利用中の場合 -->
+                    XXXX円OFFクーポン（-¥500）
+                    <!-- クーポン未利用の場合
+                    未使用
+                    -->
+                    <button type="button" class="c-teiki-info-table__change-btn">変更</button>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
 
-    <div class="c-teiki-history-item">
-      <div class="c-teiki-history-item__inner">
-        <div class="c-teiki-history-item__bar">
-          <p class="c-teiki-history-item__order-num">注文番号：123456788</p>
-          <a href="#" class="c-teiki-history-item__detail-btn">詳細を見る</a>
-        </div>
-        <div class="c-teiki-history-item__table-wrap">
-          <table class="c-teiki-info-table" aria-label="注文123456788の詳細">
-            <tbody>
+            <!-- お届け先情報（eye-data-heading風サブセクション見出し） -->
+            <div class="c-teiki-info-table__section-heading">
+              <div class="c-teiki-info-table__data-inner">
+                お届け先情報
+                <button type="button" class="c-teiki-info-table__change-btn js-teiki-modal-open" aria-haspopup="dialog">変更</button>
+              </div>
+            </div>
+            <table class="c-teiki-info-table" aria-label="お届け先情報">
+              <tbody>
               <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header" scope="row">注文日</th>
-                <td class="c-teiki-info-table__data">2025/07/30</td>
+                <th class="c-teiki-info-table__header" scope="row">氏名</th>
+                <td class="c-teiki-info-table__data">山田 太郎</td>
               </tr>
               <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header" scope="row">お届け予定日</th>
-                <td class="c-teiki-info-table__data">2025/08/05</td>
+                <th class="c-teiki-info-table__header" scope="row">フリガナ</th>
+                <td class="c-teiki-info-table__data">ヤマダ タロウ</td>
               </tr>
               <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header" scope="row">合計金額</th>
-                <td class="c-teiki-info-table__data">¥2,904</td>
+                <th class="c-teiki-info-table__header" scope="row">住所</th>
+                <td class="c-teiki-info-table__data">〒100-0001 東京都千代田区千代田1-1-1 山田マンション101</td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header" scope="row">電話番号</th>
+                <td class="c-teiki-info-table__data">090-0000-0000</td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header" scope="row">メールアドレス</th>
+                <td class="c-teiki-info-table__data">
+                  example@email.com<br>
+                  <a href="#" class="c-teiki-skip-area__link">メールアドレスを変更する</a>
+                </td>
               </tr>
             </tbody>
           </table>
+
+            <!-- 状態操作ボタン群 -->
+            <div class="c-teiki-status-actions">
+              <!-- 通常状態 -->
+              <button type="button" class="c-teiki-status-btn c-teiki-status-btn--cancel">解約</button>
+              <button type="button" class="c-teiki-status-btn c-teiki-status-btn--pause">休止</button>
+              <!-- 休止中時のみ表示（通常時は非表示）
+              <button type="button" class="c-teiki-status-btn c-teiki-status-btn--resume">再開</button>
+              -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.c-teiki-order-block -->
+
+  </div><!-- /#teiki-panel-1 -->
+
+  <!-- ===== タブパネル2: 定期購入履歴一覧 ===== -->
+  <div class="p-teiki-detail__tab-panel" id="teiki-panel-2" role="tabpanel" aria-labelledby="teiki-tab-2" hidden>
+
+    <!-- ===== らくとく定期便 購入履歴一覧 ===== -->
+    <section aria-label="らくとく定期便 購入履歴一覧">
+      <h2 class="p-teiki-detail__history-heading">らくとく定期便　購入履歴一覧</h2>
+      <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="p-teiki-detail__history-heading-line" aria-hidden="true" width="100" height="6">
+      <p class="p-teiki-detail__history-count">全3件</p>
+
+      <!-- 履歴アイテム -->
+      <div class="c-teiki-history-item">
+        <div class="c-teiki-history-item__inner">
+          <div class="c-teiki-history-item__bar">
+            <p class="c-teiki-history-item__order-num">注文番号：123456789</p>
+            <a href="#" class="c-teiki-history-item__detail-btn">詳細を見る</a>
+          </div>
+          <div class="c-teiki-history-item__table-wrap">
+            <table class="c-teiki-info-table" aria-label="注文123456789の詳細">
+              <tbody>
+                <tr class="c-teiki-info-table__row">
+                  <th class="c-teiki-info-table__header" scope="row">注文日</th>
+                  <td class="c-teiki-info-table__data">2025/08/30</td>
+                </tr>
+                <tr class="c-teiki-info-table__row">
+                  <th class="c-teiki-info-table__header" scope="row">お届け予定日</th>
+                  <td class="c-teiki-info-table__data">2025/09/05</td>
+                </tr>
+                <tr class="c-teiki-info-table__row">
+                  <th class="c-teiki-info-table__header" scope="row">合計金額</th>
+                  <td class="c-teiki-info-table__data">¥2,904</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+
+      <div class="c-teiki-history-item">
+        <div class="c-teiki-history-item__inner">
+          <div class="c-teiki-history-item__bar">
+            <p class="c-teiki-history-item__order-num">注文番号：123456788</p>
+            <a href="#" class="c-teiki-history-item__detail-btn">詳細を見る</a>
+          </div>
+          <div class="c-teiki-history-item__table-wrap">
+            <table class="c-teiki-info-table" aria-label="注文123456788の詳細">
+              <tbody>
+                <tr class="c-teiki-info-table__row">
+                  <th class="c-teiki-info-table__header" scope="row">注文日</th>
+                  <td class="c-teiki-info-table__data">2025/07/30</td>
+                </tr>
+                <tr class="c-teiki-info-table__row">
+                  <th class="c-teiki-info-table__header" scope="row">お届け予定日</th>
+                  <td class="c-teiki-info-table__data">2025/08/05</td>
+                </tr>
+                <tr class="c-teiki-info-table__row">
+                  <th class="c-teiki-info-table__header" scope="row">合計金額</th>
+                  <td class="c-teiki-info-table__data">¥2,904</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#teiki-panel-2 -->
+
+  <!-- ===== タブパネル3: 定期購入振替情報 ===== -->
+  <div class="p-teiki-detail__tab-panel" id="teiki-panel-3" role="tabpanel" aria-labelledby="teiki-tab-3" hidden>
+    <p class="p-teiki-detail__panel-placeholder">定期購入振替情報は現在準備中です。</p>
+  </div><!-- /#teiki-panel-3 -->
 
 </section><!-- /.p-teiki-detail -->
 

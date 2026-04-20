@@ -676,6 +676,220 @@
   background-color: $bg-color;
 }
 
+// ----------------------------------------
+// タブ切替
+// ----------------------------------------
+.p-teiki-detail__tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.p-teiki-detail__tab {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(52);
+  padding: rem(8) rem(10);
+  border: 1px solid $bg-banner;
+  border-bottom: none;
+  border-radius: rem(6) rem(6) 0 0;
+  background-color: $color-white;
+  color: $primary-color;
+  font-family: $font-family-base;
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  line-height: 1.4;
+  letter-spacing: rem(0.2);
+  cursor: pointer;
+  text-align: center;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color $transition-fast, color $transition-fast;
+
+  @include pc {
+    font-size: rem(14);
+    padding: rem(10) rem(16);
+    min-height: rem(56);
+  }
+
+  &:hover:not(.is-active) {
+    background-color: $bg-light;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+
+  &.is-active {
+    background-color: $primary-color;
+    color: $color-white;
+    border-color: $primary-color;
+    cursor: default;
+  }
+}
+
+// タブパネル
+.p-teiki-detail__tab-panel {
+  border-top: 2px solid $primary-color;
+  padding-top: rem(20);
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// カレンダー見出しの上余白調整
+.p-teiki-detail__calendar-heading {
+  margin-bottom: rem(12);
+}
+
+// オーダーブロック見出しの上余白調整
+.p-teiki-detail__order-heading {
+  margin-top: rem(20);
+  margin-bottom: rem(16);
+}
+
+// タブパネル内プレースホルダー
+.p-teiki-detail__panel-placeholder {
+  padding: rem(32) rem(16);
+  text-align: center;
+  color: $text-light;
+  font-size: rem(14);
+}
+
+// ----------------------------------------
+// お届けカレンダー
+// ----------------------------------------
+.c-teiki-calendar {
+  margin-bottom: rem(16);
+}
+
+.c-teiki-calendar__scroll {
+  display: flex;
+  gap: rem(8);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: rem(8);
+
+  // スクロールバーを細くしてデザインを整える
+  &::-webkit-scrollbar {
+    height: rem(4);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bg-gray;
+    border-radius: rem(2);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $bg-banner;
+    border-radius: rem(2);
+  }
+}
+
+.c-teiki-calendar__card {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: rem(72);
+  min-height: rem(64);
+  padding: rem(8) rem(4);
+  background-color: $color-white;
+  border: 1px solid $border-color;
+  border-radius: rem(6);
+  cursor: pointer;
+  transition: border-color $transition-fast;
+
+  &:hover:not(.is-active) {
+    border-color: $primary-color;
+  }
+
+  &.is-active {
+    border: 2px solid $primary-color;
+    background-color: $bg-light;
+  }
+}
+
+.c-teiki-calendar__month {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: 0 0 rem(4);
+  line-height: 1.2;
+}
+
+.c-teiki-calendar__date {
+  font-size: rem(12);
+  color: $text-light;
+  margin: 0;
+  line-height: 1.2;
+}
+
+// ----------------------------------------
+// 次回のお届け予定
+// ----------------------------------------
+.c-teiki-next-delivery {
+  padding: rem(14) rem(16);
+  background-color: $bg-light;
+  margin-top: rem(12);
+}
+
+.c-teiki-next-delivery__heading {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $price-color;
+  margin: 0 0 rem(10);
+  padding-left: rem(8);
+  border-left: 3px solid $price-color;
+  line-height: 1.5;
+}
+
+.c-teiki-next-delivery__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.c-teiki-next-delivery__item {
+  padding: rem(8) 0;
+}
+
+.c-teiki-next-delivery__divider {
+  border-top: 1px dashed $border-color-dark;
+  margin: rem(4) 0;
+}
+
+.c-teiki-next-delivery__maker {
+  font-size: rem(12);
+  color: $text-light;
+  margin: 0 0 rem(2);
+}
+
+.c-teiki-next-delivery__name {
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0 0 rem(4);
+  line-height: 1.5;
+}
+
+.c-teiki-next-delivery__course {
+  font-size: rem(13);
+  color: $text-color;
+  margin: 0 0 rem(2);
+}
+
+.c-teiki-next-delivery__boxes {
+  font-size: rem(12);
+  color: $text-light;
+  margin: 0;
+}
+
 // ========================================
 // アラートメッセージ
 // ========================================

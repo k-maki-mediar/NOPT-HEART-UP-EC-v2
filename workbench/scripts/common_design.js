@@ -969,6 +969,40 @@ $(function () {
 });
 
 /* ========================================
+ * 定期契約確認変更：タブ切替
+ * ======================================== */
+$(function () {
+  const $tabs = $('.js-teiki-tab');
+  if (!$tabs.length) return;
+
+  $tabs.on('click', function () {
+    const $clickedTab = $(this);
+    const $tabList = $clickedTab.closest('[role="tablist"]');
+    const panelId = $clickedTab.attr('aria-controls');
+    const $panel = $('#' + panelId);
+
+    // 同じタブリスト内のタブをすべてリセット
+    $tabList.find('.js-teiki-tab').each(function () {
+      $(this).removeClass('is-active')
+        .attr('aria-selected', 'false')
+        .attr('tabindex', '-1');
+    });
+
+    // クリックされたタブをアクティブに
+    $clickedTab.addClass('is-active')
+      .attr('aria-selected', 'true')
+      .removeAttr('tabindex');
+
+    // パネルの切替
+    const $allPanels = $tabList.closest('.p-teiki-detail').find('.p-teiki-detail__tab-panel');
+    $allPanels.each(function () {
+      $(this).attr('hidden', '');
+    });
+    $panel.removeAttr('hidden');
+  });
+});
+
+/* ========================================
  * 定期契約確認変更：購入情報・金額アコーディオン開閉
  * ======================================== */
 $(function () {

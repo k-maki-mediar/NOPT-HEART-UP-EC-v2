@@ -969,66 +969,36 @@ $(function () {
 });
 
 /* ========================================
- * 定期契約確認変更：お届けスケジュールカルーセル
+ * 定期契約確認変更：タブ切替
  * ======================================== */
 $(function () {
-  $('.js-teiki-carousel').each(function () {
-    var $carousel = $(this);
-    var $scroll = $carousel.find('.js-teiki-carousel-scroll');
-    var $cards = $scroll.children('.c-teiki-schedule__card');
-    var $dots = $carousel.find('.js-teiki-carousel-dot');
-    var $prevBtn = $carousel.find('.js-teiki-carousel-prev');
-    var $nextBtn = $carousel.find('.js-teiki-carousel-next');
-    var currentIndex = 1; // 初期表示: 次回のお届け（2番目）
+  const $tabs = $('.js-teiki-tab');
+  if (!$tabs.length) return;
 
-    function updateNav() {
-      $prevBtn.toggle(currentIndex > 0);
-      $nextBtn.toggle(currentIndex < $cards.length - 1);
-    }
+  $tabs.on('click', function () {
+    const $clickedTab = $(this);
+    const $tabList = $clickedTab.closest('[role="tablist"]');
+    const panelId = $clickedTab.attr('aria-controls');
+    const $panel = $('#' + panelId);
 
-    function goTo(index) {
-      if (index < 0 || index >= $cards.length) return;
-      currentIndex = index;
-      var card = $cards.eq(index)[0];
-      card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-      $dots.removeClass('is-active');
-      $dots.eq(index).addClass('is-active');
-      updateNav();
-    }
-
-    // 初期位置: 次回のお届け（index=1）を中央に
-    setTimeout(function () {
-      goTo(1);
-    }, 100);
-
-    $prevBtn.on('click', function () { goTo(currentIndex - 1); });
-    $nextBtn.on('click', function () { goTo(currentIndex + 1); });
-    $dots.on('click', function () { goTo(parseInt($(this).data('index'), 10)); });
-
-    // スワイプ/スクロール後にどのカードが中央か検知してドット・矢印を同期
-    var scrollTimer = null;
-    $scroll.on('scroll', function () {
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(function () {
-        var scrollCenter = $scroll.scrollLeft() + $scroll.width() / 2;
-        var closest = 0;
-        var minDist = Infinity;
-        $cards.each(function (i) {
-          var cardCenter = this.offsetLeft - $scroll[0].offsetLeft + this.offsetWidth / 2;
-          var dist = Math.abs(scrollCenter - cardCenter);
-          if (dist < minDist) {
-            minDist = dist;
-            closest = i;
-          }
-        });
-        if (closest !== currentIndex) {
-          currentIndex = closest;
-          $dots.removeClass('is-active');
-          $dots.eq(currentIndex).addClass('is-active');
-          updateNav();
-        }
-      }, 80);
+    // 同じタブリスト内のタブをすべてリセット
+    $tabList.find('.js-teiki-tab').each(function () {
+      $(this).removeClass('is-active')
+        .attr('aria-selected', 'false')
+        .attr('tabindex', '-1');
     });
+
+    // クリックされたタブをアクティブに
+    $clickedTab.addClass('is-active')
+      .attr('aria-selected', 'true')
+      .removeAttr('tabindex');
+
+    // パネルの切替
+    const $allPanels = $tabList.closest('.p-teiki-detail').find('.p-teiki-detail__tab-panel');
+    $allPanels.each(function () {
+      $(this).attr('hidden', '');
+    });
+    $panel.removeAttr('hidden');
   });
 });
 

@@ -8175,6 +8175,7 @@
 .c-teiki-schedule {
   margin-bottom: 1.25rem;
   position: relative;
+  overflow: hidden;
 }
 
 .c-teiki-schedule__scroll {
@@ -8189,6 +8190,14 @@
 }
 .c-teiki-schedule__scroll::-webkit-scrollbar {
   display: none;
+}
+@media (min-width: 992px) {
+  .c-teiki-schedule__scroll {
+    overflow: visible;
+    scroll-snap-type: none;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+  }
 }
 
 .c-teiki-schedule__card {
@@ -8205,7 +8214,10 @@
 }
 @media (min-width: 992px) {
   .c-teiki-schedule__card {
-    flex: 0 0 21.25rem;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
   }
 }
 .c-teiki-schedule__card.is-active {
@@ -8219,6 +8231,11 @@
   justify-content: center;
   gap: 0.5rem;
   margin-top: 0.25rem;
+}
+@media (min-width: 992px) {
+  .c-teiki-schedule__dots {
+    display: none;
+  }
 }
 
 .c-teiki-schedule__dot {
@@ -8402,6 +8419,33 @@
 }
 .c-teiki-schedule__nav--next {
   right: -0.25rem;
+}
+@media (min-width: 992px) {
+  .c-teiki-schedule__nav {
+    display: none;
+  }
+}
+
+.c-teiki-schedule__arrow {
+  display: none;
+}
+@media (min-width: 992px) {
+  .c-teiki-schedule__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    align-self: center;
+  }
+  .c-teiki-schedule__arrow::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.5rem 0 0.5rem 0.75rem;
+    border-color: transparent transparent transparent #6B7280;
+  }
 }
 
 .p-teiki-detail__empty {

@@ -106,6 +106,7 @@
 .c-teiki-schedule {
   margin-bottom: rem(20);
   position: relative;
+  overflow: hidden;
 }
 
 .c-teiki-schedule__scroll {
@@ -123,6 +124,13 @@
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @include pc {
+    overflow: visible;
+    scroll-snap-type: none;
+    gap: rem(8);
+    padding: rem(4) 0;
+  }
 }
 
 .c-teiki-schedule__card {
@@ -138,7 +146,10 @@
   flex-direction: column;
 
   @include pc {
-    flex: 0 0 rem(340);
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
   }
 
   &.is-active {
@@ -154,6 +165,10 @@
   justify-content: center;
   gap: rem(8);
   margin-top: rem(4);
+
+  @include pc {
+    display: none;
+  }
 }
 
 .c-teiki-schedule__dot {
@@ -343,6 +358,33 @@
 
   &--next {
     right: rem(-4);
+  }
+
+  @include pc {
+    display: none;
+  }
+}
+
+// カード間の矢印（PC時のみ表示）
+.c-teiki-schedule__arrow {
+  display: none;
+
+  @include pc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    align-self: center;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: rem(8) 0 rem(8) rem(12);
+      border-color: transparent transparent transparent $text-light;
+    }
   }
 }
 

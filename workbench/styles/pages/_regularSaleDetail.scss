@@ -131,7 +131,7 @@
   border: 1px solid $border-color;
   border-radius: rem(8);
   overflow: hidden;
-  background-color: $color-white;
+  background-color: $bg-gray;
   scroll-snap-align: center;
   margin: 0 rem(6);
   display: flex;
@@ -142,8 +142,9 @@
   }
 
   &.is-active {
-    border-color: $price-color;
+    border-color: #cc4843;
     border-width: 2px;
+    background-color: #fff2f1;
   }
 }
 
@@ -174,12 +175,12 @@
   font-size: rem(13);
   font-weight: $font-weight-medium;
   text-align: center;
-  background-color: $bg-gray;
-  color: $text-color;
-  border-bottom: 1px solid $border-color;
+  background-color: #999;
+  color: $color-white;
+  border-bottom: none;
 
   &--next {
-    background-color: $price-color;
+    background-color: #cc4843;
     color: $color-white;
     border-bottom: none;
   }
@@ -236,12 +237,12 @@
   text-align: center;
 
   &--done {
-    background-color: $bg-gray;
-    color: $text-light;
+    background-color: #999;
+    color: $color-white;
   }
 
   &--changeable {
-    background-color: $price-color;
+    background-color: #cc4843;
     color: $color-white;
   }
 }
@@ -269,16 +270,22 @@
   width: 100%;
   margin-top: auto;
   padding: rem(10) rem(12);
-  border: rem(1) solid $primary-color;
+  border: rem(1) solid #cc4843;
   border-radius: rem(23);
-  background-color: $bg-color;
-  color: $primary-color;
+  background-color: $color-white;
+  color: #cc4843;
   font-size: rem(12);
   font-weight: $font-weight-medium;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  @include button-press-effect;
+  box-shadow: 0 rem(2) 0 0 #cc4843;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 #cc4843;
+  }
 }
 
 .c-teiki-schedule__note {
@@ -803,20 +810,21 @@
   justify-content: center;
   min-height: rem(52);
   padding: rem(10) rem(24);
-  border: 1px solid $price-color;
-  border-bottom: 3px solid $price-color;
-  border-radius: rem(32);
-  color: $price-color;
+  border: none;
+  border-radius: rem(23);
+  color: $color-white;
   font-size: rem(14);
-  font-weight: $font-weight-bold;
-  background: $color-white;
+  font-weight: $font-weight-medium;
+  background-color: #cc4843;
+  box-shadow: 0 rem(2) 0 0 #b91b15;
   cursor: pointer;
   text-align: center;
-  line-height: 1.5;
-  transition: background-color $transition-fast;
+  line-height: 1.75;
+  transition: transform $transition-fast, box-shadow $transition-fast;
 
   &:hover {
-    background-color: $bg-danger-light;
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 #b91b15;
   }
 
 }

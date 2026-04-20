@@ -101,6 +101,77 @@
 }
 
 // ----------------------------------------
+// 同梱/別送ステータス（Figma準拠: 薄ピンク背景 + 赤枠）
+// ----------------------------------------
+.c-teiki-bundle-status {
+  margin-top: rem(16);
+  background-color: #fff2f1;
+  border: 1px solid #cc4843;
+  padding: rem(16) rem(16) rem(12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(12);
+}
+
+.c-teiki-bundle-status__header {
+  display: flex;
+  align-items: flex-start;
+  gap: rem(8);
+}
+
+.c-teiki-bundle-status__icon {
+  flex-shrink: 0;
+  width: rem(24);
+  height: rem(24);
+}
+
+.c-teiki-bundle-status__text {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: #cc4843;
+  margin: 0;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+}
+
+.c-teiki-bundle-status__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(8);
+  min-height: rem(44);
+  width: 100%;
+  max-width: rem(300);
+  padding: rem(10) rem(16);
+  border: rem(1) solid #cc4843;
+  border-radius: rem(23);
+  background-color: $color-white;
+  color: #cc4843;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 rem(2) 0 0 #cc4843;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 #cc4843;
+  }
+}
+
+.c-teiki-bundle-status__btn-arrow {
+  flex-shrink: 0;
+  display: inline-block;
+  width: rem(6);
+  height: rem(6);
+  border-top: rem(2) solid #cc4843;
+  border-right: rem(2) solid #cc4843;
+  transform: rotate(45deg);
+}
+
+// ----------------------------------------
 // クーポン確認ボタン
 // ----------------------------------------
 .p-teiki-detail__coupon-action {

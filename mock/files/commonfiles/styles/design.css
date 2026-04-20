@@ -8172,6 +8172,73 @@
   background-color: #f4f8fc;
 }
 
+.c-teiki-bundle-status {
+  margin-top: 1rem;
+  background-color: #fff2f1;
+  border: 1px solid #cc4843;
+  padding: 1rem 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.c-teiki-bundle-status__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.c-teiki-bundle-status__icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.c-teiki-bundle-status__text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #cc4843;
+  margin: 0;
+  line-height: 1.75;
+  letter-spacing: 0.035rem;
+}
+
+.c-teiki-bundle-status__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  width: 100%;
+  max-width: 18.75rem;
+  padding: 0.625rem 1rem;
+  border: 0.0625rem solid #cc4843;
+  border-radius: 1.4375rem;
+  background-color: #FFFFFF;
+  color: #cc4843;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0.125rem 0 0 #cc4843;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-teiki-bundle-status__btn:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 0 #cc4843;
+}
+
+.c-teiki-bundle-status__btn-arrow {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-top: 0.125rem solid #cc4843;
+  border-right: 0.125rem solid #cc4843;
+  transform: rotate(45deg);
+}
+
 .p-teiki-detail__coupon-action {
   display: flex;
   justify-content: center;

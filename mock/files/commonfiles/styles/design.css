@@ -4206,7 +4206,7 @@
   left: 0;
   right: 0;
   z-index: 99;
-  background-color: rgba(251, 215, 216, 0.6);
+  background-color: rgba(215, 231, 251, 0.6);
   backdrop-filter: blur(1rem);
   -webkit-backdrop-filter: blur(1rem);
 }
@@ -4234,13 +4234,13 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
-  color: #333;
+  color: #00387d;
 }
 
 .c-user-bar__member-id {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
-  color: #444444;
+  color: #6B7280;
 }
 
 .c-category-heading {

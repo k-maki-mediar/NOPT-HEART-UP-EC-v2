@@ -10215,6 +10215,49 @@
   margin: 0;
 }
 
+.c-teiki-address {
+  margin-top: 1rem;
+  border: 1px solid #d7e7fb;
+}
+.c-teiki-address .c-teiki-info-table {
+  border: none;
+}
+.c-teiki-address .c-teiki-info-table__header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #d7e7fb;
+  border-right: 1px solid #d7e7fb;
+  border-top: none;
+  border-left: none;
+  font-weight: 400;
+}
+.c-teiki-address .c-teiki-info-table__data {
+  border-bottom: 1px solid #d7e7fb;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-weight: 400;
+}
+.c-teiki-address .c-teiki-info-table__row:last-child .c-teiki-info-table__header,
+.c-teiki-address .c-teiki-info-table__row:last-child .c-teiki-info-table__data {
+  border-bottom: none;
+}
+
+.c-teiki-address__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  background-color: #f4f8fc;
+  border-bottom: 1px solid #d7e7fb;
+}
+
+.c-teiki-address__header-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #00387d;
+  letter-spacing: 0.04rem;
+}
+
 .c-teiki-usage-rows {
   display: flex;
   flex-direction: column;

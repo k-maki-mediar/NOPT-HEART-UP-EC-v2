@@ -2049,6 +2049,56 @@
 // 状態操作ボタン（解約/休止/再開）
 // Figmaデザイン：「変更」ボタンと同スタイル（bg: #00387d, 白文字, 角丸8px）
 // ========================================
+// お届け先住所ブロック（Figma準拠）
+.c-teiki-address {
+  margin-top: rem(16);
+  border: 1px solid $bg-banner;
+
+  .c-teiki-info-table {
+    border: none;
+  }
+
+  .c-teiki-info-table__header {
+    background-color: $color-white;
+    border-bottom: 1px solid $bg-banner;
+    border-right: 1px solid $bg-banner;
+    border-top: none;
+    border-left: none;
+    font-weight: $font-weight-normal;
+  }
+
+  .c-teiki-info-table__data {
+    border-bottom: 1px solid $bg-banner;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    font-weight: $font-weight-normal;
+  }
+
+  .c-teiki-info-table__row:last-child {
+    .c-teiki-info-table__header,
+    .c-teiki-info-table__data {
+      border-bottom: none;
+    }
+  }
+}
+
+.c-teiki-address__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(14) rem(16);
+  background-color: $bg-light;
+  border-bottom: 1px solid $bg-banner;
+}
+
+.c-teiki-address__header-title {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  letter-spacing: rem(0.64);
+}
+
 // ご利用状況（eye-data-heading風帯）
 .c-teiki-usage-rows {
   display: flex;

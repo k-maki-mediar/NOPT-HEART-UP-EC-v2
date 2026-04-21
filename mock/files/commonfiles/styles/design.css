@@ -10213,9 +10213,8 @@
 .c-teiki-status-actions {
   display: flex;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   flex-wrap: wrap;
-  padding: 0 1rem 1rem;
 }
 
 .c-teiki-status-btn {

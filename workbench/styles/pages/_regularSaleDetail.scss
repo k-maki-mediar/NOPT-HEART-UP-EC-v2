@@ -494,6 +494,12 @@
   border-top: 1px dashed rgba(#333, 0.5);
   padding-top: rem(20);
   margin-top: rem(20);
+
+  &:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
 }
 
 .c-teiki-amount__section-header {

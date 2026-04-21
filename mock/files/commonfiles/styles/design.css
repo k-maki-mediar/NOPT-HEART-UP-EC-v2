@@ -8647,6 +8647,11 @@
   padding-top: 1.25rem;
   margin-top: 1.25rem;
 }
+.c-teiki-amount__section:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
 
 .c-teiki-amount__section-header {
   display: flex;

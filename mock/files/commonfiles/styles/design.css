@@ -8531,30 +8531,45 @@
 }
 
 .c-teiki-amount__header-toggle {
-  width: 0.875rem;
-  height: 0.5625rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.75rem;
+  height: 0.75rem;
   flex-shrink: 0;
-  position: relative;
 }
 .c-teiki-amount__header-toggle::before, .c-teiki-amount__header-toggle::after {
   content: "";
   position: absolute;
-  background-color: #00387d;
+  background-color: #FFFFFF;
   transition: transform 0.15s ease-in-out;
 }
 .c-teiki-amount__header-toggle::before {
   top: 50%;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 0.125rem;
   transform: translateY(-50%);
 }
 .c-teiki-amount__header-toggle::after {
   top: 0;
   left: 50%;
-  width: 2px;
+  width: 0.125rem;
   height: 100%;
   transform: translateX(-50%);
+}
+.c-teiki-amount__header-toggle {
+  position: relative;
+  right: auto;
+  top: auto;
+  transform: none;
+}
+.c-teiki-amount__header-toggle::before {
+  background-color: #00387d !important;
+}
+.c-teiki-amount__header-toggle::after {
+  background-color: #00387d !important;
 }
 
 .c-teiki-amount__header[aria-expanded=true] .c-teiki-amount__header-toggle::after {

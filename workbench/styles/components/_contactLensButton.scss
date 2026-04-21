@@ -34,12 +34,12 @@
 // ロゴ
 .c-contact-lens-btn__logo {
   display: block;
-  width: rem(141);
+  width: rem(176);
   height: auto;
-  margin-top: rem(16);
+  margin-top: rem(24);
 
   @include pc {
-    margin-top: rem(24);
+    margin-top: rem(32);
   }
 }
 
@@ -48,23 +48,23 @@
   display: block;
   width: rem(297);
   height: rem(1);
-  margin: rem(8) 0;
+  margin: rem(12) 0;
 
   @include pc {
     width: rem(500);
-    margin: rem(14) 0;
+    margin: rem(16) 0;
   }
 }
 
 // サブテキスト
 .c-contact-lens-btn__subtitle {
   display: block;
-  font-family: $font-family-base;
-  font-size: rem(12);
+  font-family: $font-family-heading;
+  font-size: rem(14);
   font-weight: $font-weight-normal;
   line-height: 1.75;
-  letter-spacing: rem(0.15);
-  color: $text-light;
+  letter-spacing: rem(0.56);
+  color: #2DB5A9;
   text-align: center;
 }
 

@@ -570,17 +570,19 @@
 
 .c-teiki-delivery-datetime__row {
   display: flex;
-  gap: rem(24);
+  gap: rem(12);
 }
 
 .c-teiki-delivery-datetime__col {
   flex: 1;
+  background-color: $bg-light;
+  padding: rem(12) rem(16);
 }
 
 .c-teiki-delivery-datetime__label {
   font-size: rem(12);
   font-weight: $font-weight-medium;
-  color: $text-color;
+  color: $primary-color;
   margin: 0 0 rem(4);
   line-height: 1.5;
   letter-spacing: rem(0.15);
@@ -588,7 +590,7 @@
 
 .c-teiki-delivery-datetime__value {
   font-size: rem(14);
-  color: $text-color;
+  color: $primary-color;
   margin: 0;
   line-height: 1.75;
   letter-spacing: rem(0.56);

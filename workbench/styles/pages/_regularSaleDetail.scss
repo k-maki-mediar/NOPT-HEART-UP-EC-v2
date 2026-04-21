@@ -245,24 +245,22 @@
   }
 }
 
-// 商品カード: 左に画像エリア（ラベル+画像）、右にテキスト情報
+// 商品カード: 2列グリッド（左:画像/ラベル、右:テキスト/値）
 .c-teiki-products__product {
-  display: flex;
-  flex-direction: column;
-  gap: rem(16);
+  display: grid;
+  grid-template-columns: rem(140) 1fr;
+  gap: rem(16) rem(12);
+  align-items: start;
 }
 
-// 画像+テキスト横並びエリア
+// 右カラム用ラッパー（不要だが互換性のため維持）
 .c-teiki-products__product-main {
-  display: flex;
-  gap: rem(12);
-  align-items: flex-start;
+  display: contents;
 }
 
-// 左側: ラベル + 画像（Figma: 120px幅）
+// 左側: ラベル + 画像（グリッド左列）
 .c-teiki-products__img-area {
-  flex-shrink: 0;
-  width: rem(120);
+  grid-column: 1;
   display: flex;
   flex-direction: column;
 }
@@ -281,8 +279,8 @@
 }
 
 .c-teiki-products__product-img-wrap {
-  width: rem(120);
-  height: rem(80);
+  width: 100%;
+  height: rem(100);
   border: 1px solid #eee;
   background-color: $color-white;
 }
@@ -294,9 +292,9 @@
   object-fit: contain;
 }
 
-// 右側: メーカー名・商品名・処方箋データ・有効期限
+// 右側: メーカー名・商品名・処方箋データ・有効期限（グリッド右列）
 .c-teiki-products__product-detail {
-  flex: 1;
+  grid-column: 2;
   min-width: 0;
 }
 
@@ -332,24 +330,33 @@
   letter-spacing: rem(0.15);
 }
 
-// 申込コース・箱数（フル幅）
+// 申込コース・箱数（グリッド2列に跨がる）
 .c-teiki-products__course-info {
-  display: flex;
-  flex-direction: column;
-  gap: rem(4);
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: rem(140) 1fr;
+  gap: rem(4) rem(12);
 }
 
 .c-teiki-products__course-row {
-  display: flex;
-  justify-content: space-between;
+  display: contents;
   font-size: rem(12);
   color: $text-color;
   line-height: 1.75;
   letter-spacing: rem(0.15);
+
+  span:first-child {
+    grid-column: 1;
+  }
+
+  span:last-child {
+    grid-column: 2;
+  }
 }
 
-// 次回お届け日バー（bg: #f7f7f7、中央揃え）
+// 次回お届け日バー（bg: #f7f7f7、グリッド全幅）
 .c-teiki-products__delivery-date {
+  grid-column: 1 / -1;
   background-color: $bg-gray;
   padding: rem(6) rem(8);
   text-align: center;

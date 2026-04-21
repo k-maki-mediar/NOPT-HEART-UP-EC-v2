@@ -12,7 +12,7 @@
   border-bottom: none;
   backdrop-filter: blur(rem(8));
   -webkit-backdrop-filter: blur(rem(8));
-  background-color: rgba($primary-color, 0.9);
+  background-color: rgba($primary-color, 0.8);
 }
 
 // ヘッダーがfixedのため、直後のメインコンテンツがヘッダー下に潜り込まないようにスペーサーを確保

@@ -6327,6 +6327,7 @@
 
 .c-detail-unit__eye-card {
   border: 1px solid #00387d;
+  padding-bottom: 0.5rem;
 }
 @media (min-width: 992px) {
   .c-detail-unit__eye-card {
@@ -6367,7 +6368,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: #F7F7F7;
 }
 

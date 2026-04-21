@@ -712,6 +712,7 @@
 
 .c-detail-unit__eye-card {
   border: 1px solid $primary-color;
+  padding-bottom: rem(8);
 
   @include pc {
     flex: 1;
@@ -750,7 +751,7 @@
   display: flex;
   align-items: center;
   gap: rem(8);
-  padding: rem(16);
+  padding: rem(8) rem(16);
   background-color: $bg-gray;
 }
 

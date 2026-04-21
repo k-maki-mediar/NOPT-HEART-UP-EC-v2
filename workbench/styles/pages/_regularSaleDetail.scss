@@ -552,6 +552,161 @@
 }
 
 // ----------------------------------------
+// お届け日時指定（金額ブロック内）
+// ----------------------------------------
+.c-teiki-delivery-datetime {
+  margin-bottom: rem(12);
+}
+
+.c-teiki-delivery-datetime__row {
+  display: flex;
+  gap: rem(24);
+}
+
+.c-teiki-delivery-datetime__col {
+  flex: 1;
+}
+
+.c-teiki-delivery-datetime__label {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0 0 rem(4);
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+.c-teiki-delivery-datetime__value {
+  font-size: rem(14);
+  color: $text-color;
+  margin: 0;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+}
+
+.c-teiki-delivery-datetime__action {
+  padding-top: rem(16);
+  display: flex;
+  justify-content: center;
+}
+
+.c-teiki-delivery-datetime__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: rem(400);
+  min-height: rem(48);
+  padding: rem(10) rem(16);
+  border: 1px solid #cc4843;
+  border-radius: rem(32);
+  background-color: $color-white;
+  color: #cc4843;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 rem(2) 0 0 #cc4843;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 #cc4843;
+  }
+}
+
+// スキップエリア（Figma準拠）
+.c-teiki-skip-figma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(12);
+}
+
+.c-teiki-skip-figma__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: rem(32);
+  background-color: #ffdedd;
+  border-radius: rem(16);
+  color: #cc4843;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  letter-spacing: rem(0.56);
+}
+
+.c-teiki-skip-figma__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: rem(400);
+  padding: rem(10) rem(16);
+  border: 1px solid #cc4843;
+  border-radius: rem(32);
+  background-color: $color-white;
+  color: #cc4843;
+  cursor: pointer;
+  box-shadow: 0 rem(2) 0 0 #cc4843;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 #cc4843;
+  }
+}
+
+.c-teiki-skip-figma__btn-category {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+.c-teiki-skip-figma__btn-text {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+}
+
+.c-teiki-skip-figma__link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  color: #0087cb;
+  text-decoration: underline;
+  letter-spacing: rem(0.15);
+  line-height: 1.75;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.c-teiki-skip-figma__link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(14);
+  height: rem(14);
+  border-radius: 50%;
+  border: none;
+  background-color: #0087cb;
+  font-size: rem(8);
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+// ----------------------------------------
 // 次回のお届け予定リスト
 // ----------------------------------------
 .c-teiki-next-list {

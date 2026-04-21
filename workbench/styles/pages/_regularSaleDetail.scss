@@ -2043,6 +2043,28 @@
 // 状態操作ボタン（解約/休止/再開）
 // Figmaデザイン：「変更」ボタンと同スタイル（bg: #00387d, 白文字, 角丸8px）
 // ========================================
+// ご利用状況 2列レイアウト
+.c-teiki-usage-layout {
+  display: flex;
+  gap: rem(16);
+  align-items: flex-start;
+}
+
+.c-teiki-usage-layout__status {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+}
+
+.c-teiki-usage-layout__actions {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  align-self: flex-start;
+}
+
 .c-teiki-status-actions {
   display: flex;
   gap: rem(8);

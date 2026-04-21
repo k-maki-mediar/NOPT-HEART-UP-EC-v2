@@ -9030,6 +9030,7 @@
   display: flex;
   justify-content: center;
   margin: 1rem 0;
+  padding: 0 1rem;
 }
 
 .p-teiki-detail__coupon-btn {

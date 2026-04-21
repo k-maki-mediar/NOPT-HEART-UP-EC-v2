@@ -1874,7 +1874,29 @@
 // オーダーブロック見出しの上余白調整
 .p-teiki-detail__order-heading {
   margin-top: rem(20);
-  margin-bottom: rem(16);
+  margin-bottom: 0;
+}
+
+.p-teiki-detail__order-badges {
+  display: flex;
+  gap: rem(8);
+  margin-bottom: rem(12);
+  padding: rem(6) rem(12);
+  background-color: $bg-light;
+}
+
+.p-teiki-detail__order-badge {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  letter-spacing: rem(0.15);
+  line-height: 1.5;
+
+  & + &::before {
+    content: '／';
+    margin-right: rem(8);
+    color: $primary-color;
+  }
 }
 
 // タブパネル内プレースホルダー

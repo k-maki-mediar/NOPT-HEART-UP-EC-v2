@@ -10064,7 +10064,28 @@
 
 .p-teiki-detail__order-heading {
   margin-top: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+.p-teiki-detail__order-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  background-color: #f4f8fc;
+}
+
+.p-teiki-detail__order-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #00387d;
+  letter-spacing: 0.009375rem;
+  line-height: 1.5;
+}
+.p-teiki-detail__order-badge + .p-teiki-detail__order-badge::before {
+  content: "／";
+  margin-right: 0.5rem;
+  color: #00387d;
 }
 
 .p-teiki-detail__panel-placeholder {

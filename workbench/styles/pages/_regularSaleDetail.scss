@@ -180,6 +180,10 @@
 
 .c-teiki-products__inner {
   @include accordion-card-inner;
+
+  @include pc {
+    max-width: 100%;
+  }
 }
 
 .c-teiki-products__header {

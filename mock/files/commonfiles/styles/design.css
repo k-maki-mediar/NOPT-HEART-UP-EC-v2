@@ -8250,6 +8250,11 @@
   border: 0.0625rem solid #e0e0e0;
   overflow: hidden;
 }
+@media (min-width: 992px) {
+  .c-teiki-products__inner {
+    max-width: 100%;
+  }
+}
 
 .c-teiki-products__header {
   display: flex;

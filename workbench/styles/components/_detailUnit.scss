@@ -1077,7 +1077,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin: rem(16) 0;
+  margin: 0;
   padding: rem(8) rem(12);
   background-color: $color-white;
   border-radius: rem(4);
@@ -1114,7 +1114,7 @@
   display: flex;
   align-items: center;
   gap: rem(12);
-  margin-bottom: rem(16);
+  margin-bottom: 0;
 }
 
 .c-detail-unit__quantity-label {
@@ -1131,7 +1131,7 @@
 // ----------------------------------------
 
 .c-detail-unit__price-area {
-  margin-bottom: rem(16);
+  margin-bottom: 0;
 }
 
 .c-detail-unit__price-row {
@@ -1426,6 +1426,7 @@
 .c-detail-unit__order-body {
   display: flex;
   flex-direction: column;
+  gap: rem(16);
 }
 
 // ----------------------------------------
@@ -1475,7 +1476,7 @@
 .c-detail-unit__rakutoku-check {
   display: flex;
   gap: rem(12);
-  margin-bottom: rem(16);
+  margin-bottom: 0;
   flex-wrap: wrap;
   background-color: $color-white;
   padding: rem(6) rem(12);

@@ -1084,6 +1084,19 @@ $(function () {
 });
 
 /* ========================================
+ * 定期契約確認変更：金額ブロック開閉
+ * ======================================== */
+$(function () {
+  $('.js-teiki-amount-toggle').on('click', function () {
+    var $btn = $(this);
+    var $body = $btn.next('.js-teiki-amount-body');
+    var isOpen = $btn.attr('aria-expanded') === 'true';
+    $btn.attr('aria-expanded', !isOpen);
+    $body.slideToggle(200);
+  });
+});
+
+/* ========================================
  * 定期契約確認変更：購入情報・金額アコーディオン開閉
  * ======================================== */
 $(function () {

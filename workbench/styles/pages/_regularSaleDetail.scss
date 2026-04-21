@@ -378,6 +378,195 @@
 }
 
 // ----------------------------------------
+// 金額ブロック（Figma準拠: 白背景 + #d7e7fb枠）
+// ----------------------------------------
+.c-teiki-amount {
+  margin-top: rem(16);
+  background-color: $color-white;
+  border: 2px solid $bg-banner;
+}
+
+.c-teiki-amount__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(12) rem(16);
+  cursor: pointer;
+}
+
+.c-teiki-amount__header-title {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  letter-spacing: rem(0.64);
+}
+
+.c-teiki-amount__header-toggle {
+  width: rem(14);
+  height: rem(9);
+  flex-shrink: 0;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: $primary-color;
+    transition: transform $transition-fast;
+  }
+
+  &::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+}
+
+.c-teiki-amount__header[aria-expanded="true"] .c-teiki-amount__header-toggle::after {
+  transform: translateX(-50%) scaleY(0);
+}
+
+.c-teiki-amount__body {
+  padding: rem(0) rem(16) rem(16);
+}
+
+.c-teiki-amount__list {
+  margin: 0;
+}
+
+.c-teiki-amount__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: rem(4) 0;
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+
+  dt {
+    font-weight: $font-weight-normal;
+  }
+
+  dd {
+    margin: 0;
+    text-align: right;
+  }
+}
+
+.c-teiki-amount__total-wrap {
+  background-color: $bg-light;
+  padding: rem(10) rem(12);
+  margin-top: rem(8);
+}
+
+.c-teiki-amount__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.c-teiki-amount__total-label {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  letter-spacing: rem(0.64);
+}
+
+.c-teiki-amount__total-value {
+  font-size: rem(16);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  letter-spacing: rem(0.64);
+}
+
+.c-teiki-amount__tax {
+  margin-top: rem(4);
+  padding: 0;
+}
+
+.c-teiki-amount__tax-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: rem(10);
+  color: #999;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+// 金額ブロック内サブセクション（クーポン利用・お支払方法）
+.c-teiki-amount__section {
+  border-top: 1px dashed rgba(#333, 0.5);
+  padding-top: rem(12);
+  margin-top: rem(12);
+}
+
+.c-teiki-amount__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: rem(8);
+}
+
+.c-teiki-amount__section-title {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  letter-spacing: rem(0.64);
+}
+
+.c-teiki-amount__section-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(60);
+  height: rem(32);
+  padding: rem(4) rem(12);
+  border: none;
+  border-radius: rem(8);
+  background-color: $primary-color;
+  color: $color-white;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  letter-spacing: rem(0.15);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 rem(2) 0 0 #002552;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 #002552;
+  }
+}
+
+.c-teiki-amount__section-btn-arrow {
+  display: none;
+}
+
+.c-teiki-amount__section-body {
+  padding: 0;
+}
+
+.c-teiki-amount__section-text {
+  font-size: rem(14);
+  color: $text-color;
+  margin: 0;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+}
+
+// ----------------------------------------
 // 次回のお届け予定リスト
 // ----------------------------------------
 .c-teiki-next-list {

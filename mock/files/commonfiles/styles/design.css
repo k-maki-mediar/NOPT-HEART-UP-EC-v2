@@ -6664,7 +6664,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin: 0;
+  margin-top: 0;
   padding: 0.5rem 0.75rem;
   background-color: #FFFFFF;
   border-radius: 0.25rem;
@@ -6752,14 +6752,14 @@
 
 .c-detail-unit__price-strike-value {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.8125rem;
+  font-size: 1.125rem;
   color: #6B7280;
   text-decoration: line-through;
 }
 
 .c-detail-unit__price-strike-unit {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: #6B7280;
   text-decoration: line-through;
 }
@@ -6772,35 +6772,35 @@
 
 .c-detail-unit__price-value {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.3;
   letter-spacing: 0.05rem;
   color: #c13b36;
 }
 @media (min-width: 992px) {
   .c-detail-unit__price-value {
-    font-size: 1.75rem;
+    font-size: 2.25rem;
   }
 }
 
 .c-detail-unit__price-unit {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.3;
   letter-spacing: 0.05rem;
   color: #c13b36;
 }
 @media (min-width: 992px) {
   .c-detail-unit__price-unit {
-    font-size: 1.75rem;
+    font-size: 1.375rem;
   }
 }
 
 .c-detail-unit__price-tax {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: #6B7280;
 }
 
@@ -6819,14 +6819,17 @@
 }
 
 .c-detail-unit__discount-rate {
-  display: inline-block;
-  padding: 0.125rem 0.5rem;
-  background-color: #c13b36;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: baseline;
+  padding: 0;
+  background-color: transparent;
   border-radius: 0;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #c13b36;
+  white-space: nowrap;
   margin-bottom: 0.25rem;
 }
 

@@ -1077,7 +1077,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin: 0;
+  margin-top: 0;
   padding: rem(8) rem(12);
   background-color: $color-white;
   border-radius: rem(4);
@@ -1177,14 +1177,14 @@
 
 .c-detail-unit__price-strike-value {
   font-family: $font-family-base;
-  font-size: rem(13);
+  font-size: rem(18);
   color: $text-light;
   text-decoration: line-through;
 }
 
 .c-detail-unit__price-strike-unit {
   font-family: $font-family-base;
-  font-size: rem(11);
+  font-size: rem(14);
   color: $text-light;
   text-decoration: line-through;
 }
@@ -1197,33 +1197,33 @@
 
 .c-detail-unit__price-value {
   font-family: $font-family-base;
-  font-size: rem(20);
+  font-size: rem(40);
   font-weight: $font-weight-medium;
-  line-height: 1.5;
+  line-height: 1.3;
   letter-spacing: rem(0.8);
   color: $price-color;
 
   @include pc {
-    font-size: rem(28);
+    font-size: rem(36);
   }
 }
 
 .c-detail-unit__price-unit {
   font-family: $font-family-base;
-  font-size: rem(20);
+  font-size: rem(22);
   font-weight: $font-weight-medium;
-  line-height: 1.5;
+  line-height: 1.3;
   letter-spacing: rem(0.8);
   color: $price-color;
 
   @include pc {
-    font-size: rem(28);
+    font-size: rem(22);
   }
 }
 
 .c-detail-unit__price-tax {
   font-family: $font-family-base;
-  font-size: rem(11);
+  font-size: rem(14);
   color: $text-light;
 }
 
@@ -1242,14 +1242,17 @@
 }
 
 .c-detail-unit__discount-rate {
-  display: inline-block;
-  padding: rem(2) rem(8);
-  background-color: $price-color;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: baseline;
+  padding: 0;
+  background-color: transparent;
   border-radius: 0;
   font-family: $font-family-base;
-  font-size: rem(12);
-  font-weight: $font-weight-bold;
-  color: $color-white;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $price-color;
+  white-space: nowrap;
   margin-bottom: rem(4);
 }
 

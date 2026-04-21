@@ -237,8 +237,8 @@
 }
 
 .c-teiki-products__item {
-  border-bottom: 1px dashed $bg-banner;
-  padding: rem(12) rem(10);
+  border-bottom: 1px dashed rgba(#333, 0.5);
+  padding: rem(24) rem(10);
 
   &:last-child {
     border-bottom: none;
@@ -368,6 +368,171 @@
 
 .c-teiki-products__action-btn {
   @include accordion-card-btn;
+}
+
+// ----------------------------------------
+// 次回のお届け予定リスト
+// ----------------------------------------
+.c-teiki-next-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-teiki-next-list__item {
+  padding: rem(16) rem(10);
+  border-bottom: 1px dashed rgba(#333, 0.5);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// 上段: 商品名（左）+ お届け予定日（右）
+.c-teiki-next-list__row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: rem(12);
+  padding-bottom: rem(10);
+  border-bottom: 1px solid #eee;
+  margin-bottom: rem(10);
+}
+
+.c-teiki-next-list__product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.c-teiki-next-list__maker {
+  font-size: rem(14);
+  color: $text-color;
+  margin: 0 0 rem(2);
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+}
+
+.c-teiki-next-list__name {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  margin: 0;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+}
+
+.c-teiki-next-list__date {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.c-teiki-next-list__date-label {
+  font-size: rem(10);
+  color: $text-light;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+.c-teiki-next-list__date-value {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+}
+
+// 下段: 金額 + 数量（右寄せ）
+.c-teiki-next-list__row-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: rem(8);
+  margin-bottom: rem(8);
+}
+
+.c-teiki-next-list__price-group {
+  display: flex;
+  align-items: center;
+  gap: rem(4);
+}
+
+.c-teiki-next-list__price {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+.c-teiki-next-list__price-tax {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  letter-spacing: rem(0.15);
+}
+
+.c-teiki-next-list__qty-group {
+  display: flex;
+  align-items: center;
+  gap: rem(4);
+}
+
+.c-teiki-next-list__qty-label {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+.c-teiki-next-list__qty-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(50);
+  height: rem(32);
+  border: 1px solid #c2c2c2;
+  background-color: $color-white;
+  font-size: rem(12);
+  color: $text-color;
+  margin: 0;
+  padding: 0 rem(8);
+}
+
+// 小計行（bg: #f7f7f7）
+.c-teiki-next-list__subtotal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: rem(4);
+  background-color: $bg-gray;
+  padding: rem(10) rem(12);
+  margin: 0;
+}
+
+.c-teiki-next-list__subtotal-label {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  letter-spacing: rem(0.15);
+}
+
+.c-teiki-next-list__subtotal-value {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  letter-spacing: rem(0.56);
+}
+
+.c-teiki-next-list__subtotal-tax {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  letter-spacing: rem(0.15);
 }
 
 // 価格変更メッセージ（赤文字）

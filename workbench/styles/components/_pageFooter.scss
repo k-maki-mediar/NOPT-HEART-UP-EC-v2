@@ -77,7 +77,7 @@
 // ===== ナビゲーション =====
 .c-page-footer__nav {
   position: relative;
-  background-color: $bg-gray; // explicit for axe-core contrast detection
+  background-color: #F2F2F2;
 
   &::before {
     content: '';
@@ -86,7 +86,7 @@
     bottom: 0;
     left: calc((100% - 100vw) / 2);
     right: calc((100% - 100vw) / 2);
-    background-color: $bg-gray;
+    background-color: #F2F2F2;
     z-index: -1;
   }
 
@@ -103,15 +103,20 @@
 .c-page-footer__nav-inner {
   @include pc {
     display: flex;
-    gap: rem(40);
-    padding: rem(40) rem(24);
+    justify-content: center;
+    gap: rem(48);
+    padding: rem(36) rem(24);
   }
 }
 
 // カラムグループ
 .c-page-footer__nav-group {
   @include pc {
-    flex: 1;
+    flex: 0 0 rem(160);
+
+    &:last-child {
+      flex-basis: rem(240);
+    }
     min-width: 0;
   }
 }
@@ -156,10 +161,10 @@
 .c-page-footer__link {
   display: flex;
   align-items: center;
-  min-height: rem(64);
+  min-height: rem(52);
   width: 100%;
-  padding: rem(18) rem(24);
-  font-size: rem(16);
+  padding: rem(14) rem(24);
+  font-size: rem(14);
   font-weight: $font-weight-normal;
   line-height: 1.75;
   letter-spacing: rem(0.64);
@@ -184,8 +189,8 @@
   @include pc {
     min-height: 0;
     padding: rem(4) 0;
-    font-size: rem(13);
-    letter-spacing: rem(0.52);
+    font-size: rem(12);
+    letter-spacing: rem(0.48);
 
     &::before {
       content: '';

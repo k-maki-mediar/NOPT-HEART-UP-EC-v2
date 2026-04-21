@@ -4,24 +4,13 @@
 
 .c-category-menu {
   position: relative;
-  max-width: rem(1130);
   margin: rem(80) auto 0;
   padding: rem(64) rem(16) rem(64);
-  background-color: rgba($bg-banner, 0.6); // explicit for axe-core contrast detection
+  background-color: rgba($bg-banner, 0.6);
 
   @include pc {
-    padding-left: var(--side-nav-content-offset);
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: calc((100% - 100vw) / 2);
-    right: calc((100% - 100vw) / 2);
-    background-color: rgba($bg-banner, 0.6);
-    z-index: $z-index-deco;
+    padding-left: calc(var(--side-nav-content-offset) + (100% - rem(1130)) / 2);
+    padding-right: calc((100% - rem(1130)) / 2);
   }
 }
 

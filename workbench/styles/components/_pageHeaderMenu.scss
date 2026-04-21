@@ -8,8 +8,11 @@
   left: 0;
   right: 0;
   z-index: $z-index-header;
-  background-color: $header-bg-alert;
+  background-color: $primary-color;
   border-bottom: none;
+  backdrop-filter: blur(rem(8));
+  -webkit-backdrop-filter: blur(rem(8));
+  background-color: rgba($primary-color, 0.9);
 }
 
 // ヘッダーがfixedのため、直後のメインコンテンツがヘッダー下に潜り込まないようにスペーサーを確保

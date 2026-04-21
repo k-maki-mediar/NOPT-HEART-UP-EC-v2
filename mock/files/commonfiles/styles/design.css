@@ -6327,7 +6327,7 @@
 
 .c-detail-unit__eye-card {
   border: 1px solid #00387d;
-  padding-bottom: 0.5rem;
+  background-color: #F7F7F7;
 }
 @media (min-width: 992px) {
   .c-detail-unit__eye-card {
@@ -6369,7 +6369,9 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: #F7F7F7;
+}
+.c-detail-unit__eye-card-field:last-child {
+  padding-bottom: 1rem;
 }
 
 .c-detail-unit__eye-card-field-label {

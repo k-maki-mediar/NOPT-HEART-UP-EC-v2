@@ -712,7 +712,7 @@
 
 .c-detail-unit__eye-card {
   border: 1px solid $primary-color;
-  padding-bottom: rem(8);
+  background-color: $bg-gray;
 
   @include pc {
     flex: 1;
@@ -752,7 +752,10 @@
   align-items: center;
   gap: rem(8);
   padding: rem(8) rem(16);
-  background-color: $bg-gray;
+
+  &:last-child {
+    padding-bottom: rem(16);
+  }
 }
 
 .c-detail-unit__eye-card-field-label {

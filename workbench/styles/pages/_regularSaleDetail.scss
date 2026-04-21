@@ -399,7 +399,7 @@
 .c-teiki-next-list__row-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   gap: rem(12);
   padding-bottom: rem(10);
   border-bottom: 1px solid #eee;
@@ -430,12 +430,17 @@
 
 .c-teiki-next-list__date {
   flex-shrink: 0;
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-light;
+  padding: rem(8) rem(12);
 }
 
 .c-teiki-next-list__date-label {
   font-size: rem(10);
-  color: $text-light;
+  color: $primary-color;
   margin: 0;
   line-height: 1.5;
   letter-spacing: rem(0.15);
@@ -444,7 +449,7 @@
 .c-teiki-next-list__date-value {
   font-size: rem(14);
   font-weight: $font-weight-medium;
-  color: $text-color;
+  color: $primary-color;
   margin: 0;
   line-height: 1.75;
   letter-spacing: rem(0.56);

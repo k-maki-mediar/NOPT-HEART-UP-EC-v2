@@ -397,30 +397,22 @@
       <span class="c-teiki-amount__header-toggle" aria-hidden="true"></span>
     </div>
     <div class="c-teiki-amount__body js-teiki-amount-body">
-      <div class="c-teiki-usage-layout">
-        <!-- 左: ステータス縦並び -->
-        <div class="c-teiki-usage-layout__status">
-          <div class="c-rakutoku-info__plan">
-            <span class="c-rakutoku-info__plan-name">コンタクトレンズ</span>
-            <div class="c-rakutoku-info__plan-body">
-              <span class="c-rakutoku-info__plan-status c-rakutoku-info__plan-status--active">利用中</span>
-            </div>
-          </div>
-          <div class="c-rakutoku-info__plan">
-            <span class="c-rakutoku-info__plan-name">ケア用品</span>
-            <div class="c-rakutoku-info__plan-body">
-              <span class="c-rakutoku-info__plan-status c-rakutoku-info__plan-status--active">利用中</span>
-            </div>
-          </div>
+      <div class="c-teiki-usage-rows">
+        <div class="c-teiki-usage-rows__item">
+          <span class="c-teiki-usage-rows__label">コンタクトレンズ定期便</span>
+          <span class="c-teiki-usage-rows__status">利用中</span>
         </div>
-        <!-- 右: ボタン縦並び -->
-        <div class="c-teiki-usage-layout__actions">
-          <a href="#" class="c-teiki-amount__section-btn">解約<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
-          <a href="#" class="c-teiki-amount__section-btn">休止<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
-          <!-- 休止中時のみ表示
-          <a href="#" class="c-teiki-amount__section-btn">再開<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
-          -->
+        <div class="c-teiki-usage-rows__item">
+          <span class="c-teiki-usage-rows__label">ケア用品定期便</span>
+          <span class="c-teiki-usage-rows__status">利用中</span>
         </div>
+      </div>
+      <div class="c-teiki-status-actions">
+        <a href="#" class="c-teiki-amount__section-btn">解約<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+        <a href="#" class="c-teiki-amount__section-btn">休止<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+        <!-- 休止中時のみ表示
+        <a href="#" class="c-teiki-amount__section-btn">再開<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+        -->
       </div>
     </div>
   </div>

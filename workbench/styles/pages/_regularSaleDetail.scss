@@ -2043,26 +2043,37 @@
 // 状態操作ボタン（解約/休止/再開）
 // Figmaデザイン：「変更」ボタンと同スタイル（bg: #00387d, 白文字, 角丸8px）
 // ========================================
-// ご利用状況 2列レイアウト
-.c-teiki-usage-layout {
-  display: flex;
-  gap: rem(16);
-  align-items: flex-start;
-}
-
-.c-teiki-usage-layout__status {
-  flex: 1;
+// ご利用状況（eye-data-heading風帯）
+.c-teiki-usage-rows {
   display: flex;
   flex-direction: column;
-  gap: rem(8);
+  margin-bottom: rem(16);
 }
 
-.c-teiki-usage-layout__actions {
-  flex-shrink: 0;
+.c-teiki-usage-rows__item {
   display: flex;
-  flex-direction: column;
-  gap: rem(8);
-  align-self: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(10) rem(12);
+  background-color: $bg-light;
+
+  & + & {
+    margin-top: rem(8);
+  }
+}
+
+.c-teiki-usage-rows__label {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  letter-spacing: rem(0.56);
+}
+
+.c-teiki-usage-rows__status {
+  font-size: rem(14);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  letter-spacing: rem(0.56);
 }
 
 .c-teiki-status-actions {

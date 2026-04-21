@@ -1886,9 +1886,11 @@
 
 .c-category-menu {
   position: relative;
-  margin: 5rem auto 0;
+  margin: 5rem 0 0;
   padding: 4rem 1rem 4rem;
   background-color: rgba(215, 231, 251, 0.6);
+  width: 100vw;
+  margin-left: calc((100% - 100vw) / 2);
 }
 @media (min-width: 992px) {
   .c-category-menu {

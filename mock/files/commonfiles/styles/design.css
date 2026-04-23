@@ -179,6 +179,7 @@
 
 .c-main {
   margin-top: 6.875rem;
+  padding-top: 0.5rem;
 }
 
 .c-header__nav-link.c-header__nav-link--btn {
@@ -8053,6 +8054,199 @@
 .c-cart-modal__btn--primary:focus-visible {
   outline: 2px solid #FFFFFF;
   outline-offset: 0.125rem;
+}
+
+:root {
+  --font-size-switcher-offset-default: rem(172);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --font-size-switcher-offset-default: rem(180);
+  }
+}
+.font-size-switcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  z-index: 50;
+}
+
+.font-size-switcher__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48PX;
+  height: 44PX;
+  padding: 0 4PX 0 0;
+  background-color: rgba(0, 40, 85, 0.8);
+  border: none;
+  border-radius: 0 22PX 22PX 0;
+}
+@media (min-width: 992px) {
+  .font-size-switcher__trigger {
+    padding: 0 0 0 4PX;
+    border-radius: 22PX 0 0 22PX;
+  }
+}
+.font-size-switcher__trigger {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+.font-size-switcher__trigger:focus-visible {
+  outline: 2px solid #00387d;
+  outline-offset: 2px;
+}
+.font-size-switcher__trigger[aria-expanded=true] {
+  border-radius: 0;
+}
+
+.font-size-switcher__icon {
+  font-size: 18PX;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.font-size-switcher__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.font-size-switcher__menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  right: auto;
+  min-width: 100PX;
+  background-color: #FFFFFF;
+  border: 2px solid #00387d;
+  border-radius: 0 8PX 8PX 8PX;
+  box-shadow: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-8px);
+}
+@media (min-width: 992px) {
+  .font-size-switcher__menu {
+    left: auto;
+    right: 100%;
+    border-radius: 8PX 0 8PX 8PX;
+    transform: translateX(8px);
+  }
+}
+.font-size-switcher__menu {
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 100;
+}
+.font-size-switcher__menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.font-size-switcher__option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 10px 16px 10px 40PX;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  color: #00387d;
+  text-align: center;
+  transition: background-color 0.15s ease;
+}
+.font-size-switcher__option::before {
+  content: "✓";
+  font-size: 14PX;
+  font-weight: 700;
+  color: transparent;
+  width: 14PX;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.font-size-switcher__option[data-font-size-option=normal] {
+  font-size: 16PX;
+}
+.font-size-switcher__option[data-font-size-option=large] {
+  font-size: 18PX;
+}
+.font-size-switcher__option[data-font-size-option=x-large] {
+  font-size: 20PX;
+}
+.font-size-switcher__option:hover {
+  background-color: #f4f8fc;
+}
+.font-size-switcher__option:focus-visible {
+  outline: none;
+  background-color: #f4f8fc;
+}
+.font-size-switcher__option.is-active {
+  background-color: #f4f8fc;
+  color: #00387d;
+  font-weight: 500;
+}
+.font-size-switcher__option.is-active::before {
+  color: #00387d;
+}
+.font-size-switcher__option:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+}
+.font-size-switcher__option:first-child {
+  border-radius: 0 6PX 0 0;
+}
+@media (min-width: 992px) {
+  .font-size-switcher__option:first-child {
+    border-radius: 6PX 0 0 0;
+  }
+}
+.font-size-switcher__option:last-child {
+  border-radius: 0 0 6PX 6PX;
+}
+
+.font-size-switcher-wrapper {
+  position: fixed;
+  top: var(--font-size-switcher-offset, var(--font-size-switcher-offset-default));
+  left: 0;
+  right: auto;
+  z-index: 98;
+}
+@media (min-width: 992px) {
+  .font-size-switcher-wrapper {
+    left: auto;
+    right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .font-size-switcher__trigger {
+    width: 40PX;
+    height: 40PX;
+  }
+  .font-size-switcher__icon {
+    font-size: 16PX;
+  }
+}
+html[data-font-size=large] {
+  font-size: 112.5%;
+}
+
+html[data-font-size=x-large] {
+  font-size: 125%;
 }
 
 .c-main--logged-in .c-campaign-topics__deco-rect {

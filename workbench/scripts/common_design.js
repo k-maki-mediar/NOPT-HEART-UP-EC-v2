@@ -1177,3 +1177,133 @@ $(function () {
     }
   });
 })();
+
+/* ========================================
+ * フォントサイズ切り替え（fontSizeSwitcher）
+ * ======================================== */
+(function() {
+  'use strict';
+
+  var STORAGE_KEY = 'user-font-size';
+  var FONT_SIZES = ['normal', 'large', 'x-large'];
+  var SWITCHER_GAP = 48;
+
+  function applyFontSize(size) {
+    if (size === 'normal' || FONT_SIZES.indexOf(size) === -1) {
+      document.documentElement.removeAttribute('data-font-size');
+    } else {
+      document.documentElement.setAttribute('data-font-size', size);
+    }
+  }
+
+  function saveFontSize(size) {
+    try { localStorage.setItem(STORAGE_KEY, size); } catch (e) {}
+  }
+
+  function getSavedFontSize() {
+    try { return localStorage.getItem(STORAGE_KEY) || 'normal'; } catch (e) { return 'normal'; }
+  }
+
+  function updateMenuActiveState(size) {
+    var options = document.querySelectorAll('[data-font-size-option]');
+    for (var i = 0; i < options.length; i++) {
+      var optionSize = options[i].getAttribute('data-font-size-option');
+      if (optionSize === size) {
+        options[i].classList.add('is-active');
+      } else {
+        options[i].classList.remove('is-active');
+      }
+    }
+  }
+
+  function toggleDropdown(open) {
+    var trigger = document.querySelector('[data-font-size-trigger]');
+    var menu = document.querySelector('[data-font-size-menu]');
+    if (!trigger || !menu) return;
+    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) { menu.classList.add('is-open'); } else { menu.classList.remove('is-open'); }
+  }
+
+  function isDropdownOpen() {
+    var menu = document.querySelector('[data-font-size-menu]');
+    return menu && menu.classList.contains('is-open');
+  }
+
+  function setupSwitcherOffset(header, wrapper) {
+    if (!header || !wrapper) return;
+    var updateOffset = function() {
+      var userBar = document.querySelector('.c-user-bar');
+      var headerH = header.getBoundingClientRect().height;
+      var userBarH = userBar ? userBar.getBoundingClientRect().height : 0;
+      var notice = document.querySelector('.c-important-notice');
+      var offset = headerH + userBarH + SWITCHER_GAP;
+      wrapper.style.setProperty('--font-size-switcher-offset', offset + 'px');
+    };
+    updateOffset();
+    if (typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(updateOffset).observe(header);
+    } else {
+      window.addEventListener('resize', updateOffset);
+    }
+  }
+
+  // FOUC防止: 即座に適用
+  applyFontSize(getSavedFontSize());
+
+  // DOM読み込み後
+  function initFontSizeSwitcher() {
+    var switcher = document.querySelector('[data-font-size-switcher]');
+    var wrapper = document.querySelector('.font-size-switcher-wrapper');
+    var header = document.querySelector('.c-header');
+    var trigger = document.querySelector('[data-font-size-trigger]');
+    var menu = document.querySelector('[data-font-size-menu]');
+    var options = document.querySelectorAll('[data-font-size-option]');
+
+    if (!switcher || !wrapper || !trigger || !menu || options.length === 0) return;
+
+    setupSwitcherOffset(header, wrapper);
+    updateMenuActiveState(getSavedFontSize());
+
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleDropdown(!isDropdownOpen());
+    });
+
+    for (var i = 0; i < options.length; i++) {
+      options[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        var size = this.getAttribute('data-font-size-option');
+        applyFontSize(size);
+        saveFontSize(size);
+        updateMenuActiveState(size);
+      });
+    }
+
+    document.addEventListener('click', function(e) {
+      if (!switcher.contains(e.target)) { toggleDropdown(false); }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { toggleDropdown(false); trigger.focus(); }
+    });
+
+    menu.addEventListener('keydown', function(e) {
+      var optionsArray = Array.prototype.slice.call(options);
+      var currentIndex = optionsArray.indexOf(document.activeElement);
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        optionsArray[(currentIndex + 1) % optionsArray.length].focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        optionsArray[(currentIndex - 1 + optionsArray.length) % optionsArray.length].focus();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFontSizeSwitcher);
+  } else {
+    initFontSizeSwitcher();
+  }
+})();

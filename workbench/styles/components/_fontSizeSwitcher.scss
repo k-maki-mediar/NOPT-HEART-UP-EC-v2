@@ -1,0 +1,221 @@
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// フォントサイズ切り替えUI
+// ========================================
+
+:root {
+  --font-size-switcher-offset-default: rem(172);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --font-size-switcher-offset-default: rem(180);
+  }
+}
+
+// コンテナ
+.font-size-switcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  z-index: 50;
+}
+
+// トリガーボタン
+.font-size-switcher__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48PX;
+  height: 44PX;
+  padding: 0 4PX 0 0;
+  background-color: rgba($primary-color-active, 0.8);
+  border: none;
+  border-radius: 0 22PX 22PX 0;
+
+  @include pc {
+    padding: 0 0 0 4PX;
+    border-radius: 22PX 0 0 22PX;
+  }
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: $font-family-base;
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+
+  &[aria-expanded="true"] {
+    border-radius: 0;
+  }
+}
+
+// 「文」アイコン
+.font-size-switcher__icon {
+  font-size: 18PX;
+  font-weight: 700;
+  color: $color-white;
+  line-height: 1;
+}
+
+// ラベル（SR用）
+.font-size-switcher__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// ドロップダウンメニュー
+.font-size-switcher__menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  right: auto;
+  min-width: 100PX;
+  background-color: $color-white;
+  border: 2px solid $primary-color;
+  border-radius: 0 8PX 8PX 8PX;
+  box-shadow: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-8px);
+
+  @include pc {
+    left: auto;
+    right: 100%;
+    border-radius: 8PX 0 8PX 8PX;
+    transform: translateX(8px);
+  }
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 100;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+// メニュー項目
+.font-size-switcher__option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 10px 16px 10px 40PX;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: $font-family-base;
+  color: $primary-color;
+  text-align: center;
+  transition: background-color 0.15s ease;
+
+  &::before {
+    content: '✓';
+    font-size: 14PX;
+    font-weight: 700;
+    color: transparent;
+    width: 14PX;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &[data-font-size-option="normal"] {
+    font-size: 16PX;
+  }
+
+  &[data-font-size-option="large"] {
+    font-size: 18PX;
+  }
+
+  &[data-font-size-option="x-large"] {
+    font-size: 20PX;
+  }
+
+  &:hover {
+    background-color: $bg-light;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: $bg-light;
+  }
+
+  &.is-active {
+    background-color: $bg-light;
+    color: $primary-color;
+    font-weight: $font-weight-medium;
+
+    &::before {
+      color: $primary-color;
+    }
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+  }
+
+  &:first-child {
+    border-radius: 0 6PX 0 0;
+
+    @include pc {
+      border-radius: 6PX 0 0 0;
+    }
+  }
+
+  &:last-child {
+    border-radius: 0 0 6PX 6PX;
+  }
+}
+
+// ラッパー（fixed配置・SP左/PC右）
+.font-size-switcher-wrapper {
+  position: fixed;
+  top: var(--font-size-switcher-offset, var(--font-size-switcher-offset-default));
+  left: 0;
+  right: auto;
+  z-index: $z-index-header - 2;
+
+  @include pc {
+    left: auto;
+    right: 0;
+  }
+}
+
+// モバイル調整
+@media (max-width: 767px) {
+  .font-size-switcher__trigger {
+    width: 40PX;
+    height: 40PX;
+  }
+
+  .font-size-switcher__icon {
+    font-size: 16PX;
+  }
+}
+
+// ========================================
+// フォントサイズ切り替え（data-font-size属性）
+// 標準: 100% (16px) / 大: 112.5% (18px) / 特大: 125% (20px)
+// ========================================
+html[data-font-size="large"] {
+  font-size: 112.5%;
+}
+
+html[data-font-size="x-large"] {
+  font-size: 125%;
+}

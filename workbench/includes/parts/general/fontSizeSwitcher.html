@@ -1,0 +1,48 @@
+<!-- フォントサイズ切り替えUI -->
+<!-- ヘッダー下の左上部に表示 -->
+<!-- 標準・大・特大の3段階で切り替え可能 -->
+
+<div class="font-size-switcher-wrapper">
+  <div class="font-size-switcher" data-font-size-switcher>
+    <!-- トリガーボタン -->
+    <button
+      type="button"
+      class="font-size-switcher__trigger"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="文字サイズを変更"
+      data-font-size-trigger
+    >
+      <span class="font-size-switcher__icon">文</span>
+      <span class="font-size-switcher__label">文字サイズ</span>
+    </button>
+
+    <!-- ドロップダウンメニュー -->
+    <div class="font-size-switcher__menu" role="menu" data-font-size-menu>
+      <button
+        type="button"
+        class="font-size-switcher__option is-active"
+        role="menuitem"
+        data-font-size-option="normal"
+      >
+        標準
+      </button>
+      <button
+        type="button"
+        class="font-size-switcher__option"
+        role="menuitem"
+        data-font-size-option="large"
+      >
+        大
+      </button>
+      <button
+        type="button"
+        class="font-size-switcher__option"
+        role="menuitem"
+        data-font-size-option="x-large"
+      >
+        特大
+      </button>
+    </div>
+  </div>
+</div>

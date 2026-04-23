@@ -773,10 +773,17 @@
 }
 
 .c-detail-unit__eye-card-field-value {
+  flex: 1;
+  width: 100%;
+  padding: rem(8) rem(12);
+  border: none;
+  border-radius: 0;
   font-family: $font-family-base;
   font-size: rem(14);
   font-weight: $font-weight-medium;
   color: $primary-color;
+  background-color: $color-white;
+  text-align: center;
 }
 
 .c-detail-unit__eye-card-field .c-detail-unit__select {

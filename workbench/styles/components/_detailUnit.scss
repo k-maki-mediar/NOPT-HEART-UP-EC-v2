@@ -398,13 +398,13 @@
 
 .c-detail-unit__rakutoku-banner {
   margin: 0 0 rem(8);
-  padding: 0 rem(12);
+  padding: 0;
 }
 
 .c-detail-unit__rakutoku-banner--sp {
   display: block;
   max-width: rem(1130);
-  margin: 0 auto rem(8);
+  margin: 0 auto rem(24);
 
   @include pc {
     display: none;
@@ -416,7 +416,7 @@
 
   @include pc {
     display: block;
-    margin-top: rem(16);
+    margin-top: rem(32);
     padding: 0;
   }
 }

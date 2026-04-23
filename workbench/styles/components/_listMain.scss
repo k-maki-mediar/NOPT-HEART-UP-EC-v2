@@ -10,7 +10,7 @@
 .c-list-main {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(16) rem(16) rem(32);
+  padding: rem(16) 0 rem(32);
 
   @include pc {
     padding: rem(16) rem(32) rem(32) calc(var(--side-nav-content-offset) + rem(32));

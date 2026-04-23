@@ -4588,7 +4588,7 @@
 .c-list-main {
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 1rem 1rem 2rem;
+  padding: 1rem 0 2rem;
 }
 @media (min-width: 992px) {
   .c-list-main {

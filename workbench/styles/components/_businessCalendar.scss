@@ -11,11 +11,11 @@
   position: relative;
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(80) rem(16) rem(64) rem(16);
+  padding: rem(32) rem(16) rem(32) rem(16);
   background-color: $bg-gray; // explicit for axe-core contrast detection
 
   @include pc {
-    padding: rem(64) rem(32) rem(64) calc(var(--side-nav-content-offset) + rem(32));
+    padding: rem(32) rem(32) rem(32) calc(var(--side-nav-content-offset) + rem(32));
   }
 
   &::before {
@@ -33,6 +33,10 @@
 .c-business-calendar__inner {
   max-width: rem(600);
   margin: 0 auto;
+
+  @include pc {
+    max-width: rem(600);
+  }
 }
 
 .c-business-calendar__heading {
@@ -77,6 +81,8 @@
   border-radius: rem(10);
   padding: rem(24) rem(20);
   margin-bottom: rem(16);
+  min-width: 0;
+  overflow: hidden;
 
   &--second {
     display: none;
@@ -86,6 +92,7 @@
   @include pc {
     flex: 1;
     margin-bottom: 0;
+    padding: rem(16) rem(12);
 
     &--second {
       display: block;
@@ -169,9 +176,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: rem(35);
+  height: rem(30);
   font-family: $font-family-heading;
-  font-size: rem(12);
+  font-size: rem(11);
   font-weight: $font-weight-normal;
   line-height: 1.75;
   letter-spacing: rem(0.15);
@@ -191,8 +198,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: rem(35);
-  height: rem(35);
+  width: rem(30);
+  height: rem(30);
   margin: 0 auto;
   font-family: $font-family-heading;
   font-size: rem(12);

@@ -2643,10 +2643,10 @@
 .c-rakutoku-info__title {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.4;
-  letter-spacing: 0.035rem;
+  letter-spacing: 0.04rem;
   color: #00387d;
 }
 
@@ -2687,7 +2687,7 @@
 
 .c-rakutoku-info__plan-status {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: 0.009375rem;

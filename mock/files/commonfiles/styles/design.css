@@ -6715,7 +6715,7 @@
 }
 
 .c-detail-unit__price-area {
-  margin-bottom: 0;
+  padding: 1rem 0;
 }
 
 .c-detail-unit__price-row {

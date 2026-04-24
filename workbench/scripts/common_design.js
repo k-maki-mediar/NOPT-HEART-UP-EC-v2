@@ -1130,14 +1130,13 @@ $(function () {
 (function () {
   'use strict';
 
-  var modal = document.querySelector('.js-teiki-modal');
+  const modal = document.querySelector('.js-teiki-modal');
   if (!modal) return;
 
-  var openBtns = document.querySelectorAll('.js-teiki-modal-open');
-  var closeBtns = document.querySelectorAll('.js-teiki-modal-close');
-  var modalInner = modal.querySelector('.c-teiki-modal__inner');
+  const openBtns = document.querySelectorAll('.js-teiki-modal-open');
+  const closeBtns = document.querySelectorAll('.js-teiki-modal-close');
+  const modalInner = modal.querySelector('.c-teiki-modal__inner');
 
-  // モーダルを開く
   function openModal(e) {
     e.preventDefault();
     modal.removeAttribute('hidden');
@@ -1147,38 +1146,33 @@ $(function () {
     document.body.style.overflow = 'hidden';
   }
 
-  // モーダルを閉じる
   function closeModal() {
     modal.setAttribute('hidden', '');
     document.body.style.overflow = '';
   }
 
-  // 開くボタン
-  for (var i = 0; i < openBtns.length; i++) {
+  for (let i = 0; i < openBtns.length; i++) {
     openBtns[i].addEventListener('click', openModal);
   }
 
-  // 閉じるボタン（オーバーレイ含む）
-  for (var j = 0; j < closeBtns.length; j++) {
+  for (let j = 0; j < closeBtns.length; j++) {
     closeBtns[j].addEventListener('click', closeModal);
   }
 
-  // Escキーで閉じる
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !modal.hasAttribute('hidden')) {
       closeModal();
     }
   });
 
-  // モーダル内フォーカストラップ
   modal.addEventListener('keydown', function (e) {
     if (e.key !== 'Tab') return;
-    var focusable = modal.querySelectorAll(
+    const focusable = modal.querySelectorAll(
       'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
     );
     if (!focusable.length) return;
-    var first = focusable[0];
-    var last = focusable[focusable.length - 1];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
     if (e.shiftKey) {
       if (document.activeElement === first) {
         e.preventDefault();
@@ -1192,15 +1186,14 @@ $(function () {
     }
   });
 
-  // ラジオ選択時にカード枠線を切り替え
-  var radios = modal.querySelectorAll('.c-teiki-address-select__radio');
-  for (var r = 0; r < radios.length; r++) {
+  const radios = modal.querySelectorAll('.c-teiki-address-select__radio');
+  for (let r = 0; r < radios.length; r++) {
     radios[r].addEventListener('change', function () {
-      var cards = modal.querySelectorAll('.c-teiki-address-select__card');
-      for (var c = 0; c < cards.length; c++) {
+      const cards = modal.querySelectorAll('.c-teiki-address-select__card');
+      for (let c = 0; c < cards.length; c++) {
         cards[c].classList.remove('c-teiki-address-select__card--selected');
       }
-      var card = this.closest('.c-teiki-address-select__card');
+      const card = this.closest('.c-teiki-address-select__card');
       if (card) {
         card.classList.add('c-teiki-address-select__card--selected');
       }
@@ -1214,19 +1207,18 @@ $(function () {
 (function () {
   'use strict';
 
-  var modal = document.querySelector('.js-skip-modal');
+  const modal = document.querySelector('.js-skip-modal');
   if (!modal) return;
 
-  var openBtns = document.querySelectorAll('.js-skip-modal-open');
-  var closeBtns = modal.querySelectorAll('.js-skip-modal-close');
-  var modalInner = modal.querySelector('.c-teiki-modal__inner');
-  var titleAccent = modal.querySelector('.c-teiki-modal__skip-title-accent');
+  const openBtns = document.querySelectorAll('.js-skip-modal-open');
+  const closeBtns = modal.querySelectorAll('.js-skip-modal-close');
+  const modalInner = modal.querySelector('.c-teiki-modal__inner');
+  const titleAccent = modal.querySelector('.c-teiki-modal__skip-title-accent');
 
   function openModal(e) {
     e.preventDefault();
-    // ボタン内のカテゴリ名を取得してタイトルを動的に変更
-    var btn = e.currentTarget;
-    var category = btn.querySelector('.c-teiki-skip-figma__btn-category');
+    const btn = e.currentTarget;
+    const category = btn.querySelector('.c-teiki-skip-figma__btn-category');
     if (category && titleAccent) {
       titleAccent.textContent = category.textContent + '定期便';
     }
@@ -1242,11 +1234,11 @@ $(function () {
     document.body.style.overflow = '';
   }
 
-  for (var i = 0; i < openBtns.length; i++) {
+  for (let i = 0; i < openBtns.length; i++) {
     openBtns[i].addEventListener('click', openModal);
   }
 
-  for (var j = 0; j < closeBtns.length; j++) {
+  for (let j = 0; j < closeBtns.length; j++) {
     closeBtns[j].addEventListener('click', closeModal);
   }
 
@@ -1258,12 +1250,12 @@ $(function () {
 
   modal.addEventListener('keydown', function (e) {
     if (e.key !== 'Tab') return;
-    var focusable = modal.querySelectorAll(
+    const focusable = modal.querySelectorAll(
       'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
     );
     if (!focusable.length) return;
-    var first = focusable[0];
-    var last = focusable[focusable.length - 1];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
     if (e.shiftKey) {
       if (document.activeElement === first) {
         e.preventDefault();
@@ -1284,16 +1276,16 @@ $(function () {
 (function () {
   'use strict';
 
-  var modal = document.querySelector('.js-pause-modal');
+  const modal = document.querySelector('.js-pause-modal');
   if (!modal) return;
 
-  var openBtns = document.querySelectorAll('.js-pause-modal-open');
-  var closeBtns = modal.querySelectorAll('.js-pause-modal-close');
-  var modalInner = modal.querySelector('.c-teiki-modal__inner');
-  var surveyGroups = modal.querySelectorAll('.js-survey-group');
+  const openBtns = document.querySelectorAll('.js-pause-modal-open');
+  const closeBtns = modal.querySelectorAll('.js-pause-modal-close');
+  const modalInner = modal.querySelector('.c-teiki-modal__inner');
+  const surveyGroups = modal.querySelectorAll('.js-survey-group');
 
   function showGroups(category) {
-    for (var g = 0; g < surveyGroups.length; g++) {
+    for (let g = 0; g < surveyGroups.length; g++) {
       if (!category) {
         surveyGroups[g].style.display = '';
       } else if (surveyGroups[g].getAttribute('data-survey-group') === category) {
@@ -1306,7 +1298,7 @@ $(function () {
 
   function openModal(e) {
     e.preventDefault();
-    var category = e.currentTarget.getAttribute('data-survey-category');
+    const category = e.currentTarget.getAttribute('data-survey-category');
     showGroups(category);
     modal.removeAttribute('hidden');
     if (modalInner) {
@@ -1320,11 +1312,11 @@ $(function () {
     document.body.style.overflow = '';
   }
 
-  for (var i = 0; i < openBtns.length; i++) {
+  for (let i = 0; i < openBtns.length; i++) {
     openBtns[i].addEventListener('click', openModal);
   }
 
-  for (var j = 0; j < closeBtns.length; j++) {
+  for (let j = 0; j < closeBtns.length; j++) {
     closeBtns[j].addEventListener('click', closeModal);
   }
 
@@ -1336,12 +1328,12 @@ $(function () {
 
   modal.addEventListener('keydown', function (e) {
     if (e.key !== 'Tab') return;
-    var focusable = modal.querySelectorAll(
+    const focusable = modal.querySelectorAll(
       'a[href], button:not([disabled]), input, textarea, [tabindex]:not([tabindex="-1"])'
     );
     if (!focusable.length) return;
-    var first = focusable[0];
-    var last = focusable[focusable.length - 1];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
     if (e.shiftKey) {
       if (document.activeElement === first) {
         e.preventDefault();
@@ -1355,11 +1347,10 @@ $(function () {
     }
   });
 
-  // 「その他」チェック時にテキストエリア表示切り替え
-  var otherToggles = modal.querySelectorAll('.js-survey-other-toggle');
-  for (var k = 0; k < otherToggles.length; k++) {
+  const otherToggles = modal.querySelectorAll('.js-survey-other-toggle');
+  for (let k = 0; k < otherToggles.length; k++) {
     otherToggles[k].addEventListener('change', function () {
-      var textarea = this.closest('.c-teiki-survey__item').querySelector('.js-survey-other-textarea');
+      const textarea = this.closest('.c-teiki-survey__item').querySelector('.js-survey-other-textarea');
       if (!textarea) return;
       if (this.checked) {
         textarea.removeAttribute('hidden');
@@ -1377,16 +1368,16 @@ $(function () {
 (function () {
   'use strict';
 
-  var modal = document.querySelector('.js-cancel-modal');
+  const modal = document.querySelector('.js-cancel-modal');
   if (!modal) return;
 
-  var openBtns = document.querySelectorAll('.js-cancel-modal-open');
-  var closeBtns = modal.querySelectorAll('.js-cancel-modal-close');
-  var modalInner = modal.querySelector('.c-teiki-modal__inner');
-  var surveyGroups = modal.querySelectorAll('.js-survey-group');
+  const openBtns = document.querySelectorAll('.js-cancel-modal-open');
+  const closeBtns = modal.querySelectorAll('.js-cancel-modal-close');
+  const modalInner = modal.querySelector('.c-teiki-modal__inner');
+  const surveyGroups = modal.querySelectorAll('.js-survey-group');
 
   function showGroups(category) {
-    for (var g = 0; g < surveyGroups.length; g++) {
+    for (let g = 0; g < surveyGroups.length; g++) {
       if (!category) {
         surveyGroups[g].style.display = '';
       } else if (surveyGroups[g].getAttribute('data-survey-group') === category) {
@@ -1399,7 +1390,7 @@ $(function () {
 
   function openModal(e) {
     e.preventDefault();
-    var category = e.currentTarget.getAttribute('data-survey-category');
+    const category = e.currentTarget.getAttribute('data-survey-category');
     showGroups(category);
     modal.removeAttribute('hidden');
     if (modalInner) {
@@ -1413,11 +1404,11 @@ $(function () {
     document.body.style.overflow = '';
   }
 
-  for (var i = 0; i < openBtns.length; i++) {
+  for (let i = 0; i < openBtns.length; i++) {
     openBtns[i].addEventListener('click', openModal);
   }
 
-  for (var j = 0; j < closeBtns.length; j++) {
+  for (let j = 0; j < closeBtns.length; j++) {
     closeBtns[j].addEventListener('click', closeModal);
   }
 
@@ -1429,12 +1420,12 @@ $(function () {
 
   modal.addEventListener('keydown', function (e) {
     if (e.key !== 'Tab') return;
-    var focusable = modal.querySelectorAll(
+    const focusable = modal.querySelectorAll(
       'a[href], button:not([disabled]), input, textarea, [tabindex]:not([tabindex="-1"])'
     );
     if (!focusable.length) return;
-    var first = focusable[0];
-    var last = focusable[focusable.length - 1];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
     if (e.shiftKey) {
       if (document.activeElement === first) {
         e.preventDefault();
@@ -1448,10 +1439,10 @@ $(function () {
     }
   });
 
-  var otherToggles = modal.querySelectorAll('.js-survey-other-toggle');
-  for (var k = 0; k < otherToggles.length; k++) {
+  const otherToggles = modal.querySelectorAll('.js-survey-other-toggle');
+  for (let k = 0; k < otherToggles.length; k++) {
     otherToggles[k].addEventListener('change', function () {
-      var textarea = this.closest('.c-teiki-survey__item').querySelector('.js-survey-other-textarea');
+      const textarea = this.closest('.c-teiki-survey__item').querySelector('.js-survey-other-textarea');
       if (!textarea) return;
       if (this.checked) {
         textarea.removeAttribute('hidden');
@@ -1469,12 +1460,12 @@ $(function () {
 (function () {
   'use strict';
 
-  var modal = document.querySelector('.js-bundle-modal');
+  const modal = document.querySelector('.js-bundle-modal');
   if (!modal) return;
 
-  var openBtns = document.querySelectorAll('.js-bundle-modal-open');
-  var closeBtns = modal.querySelectorAll('.js-bundle-modal-close');
-  var modalInner = modal.querySelector('.c-teiki-modal__inner');
+  const openBtns = document.querySelectorAll('.js-bundle-modal-open');
+  const closeBtns = modal.querySelectorAll('.js-bundle-modal-close');
+  const modalInner = modal.querySelector('.c-teiki-modal__inner');
 
   function openModal(e) {
     e.preventDefault();
@@ -1490,11 +1481,11 @@ $(function () {
     document.body.style.overflow = '';
   }
 
-  for (var i = 0; i < openBtns.length; i++) {
+  for (let i = 0; i < openBtns.length; i++) {
     openBtns[i].addEventListener('click', openModal);
   }
 
-  for (var j = 0; j < closeBtns.length; j++) {
+  for (let j = 0; j < closeBtns.length; j++) {
     closeBtns[j].addEventListener('click', closeModal);
   }
 
@@ -1506,12 +1497,12 @@ $(function () {
 
   modal.addEventListener('keydown', function (e) {
     if (e.key !== 'Tab') return;
-    var focusable = modal.querySelectorAll(
+    const focusable = modal.querySelectorAll(
       'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
     );
     if (!focusable.length) return;
-    var first = focusable[0];
-    var last = focusable[focusable.length - 1];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
     if (e.shiftKey) {
       if (document.activeElement === first) {
         e.preventDefault();

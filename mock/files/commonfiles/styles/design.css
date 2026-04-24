@@ -8570,11 +8570,11 @@ html[data-font-size=x-large] {
 }
 
 .c-teiki-products__item {
-  border-bottom: 1px dashed rgba(51, 51, 51, 0.5);
   padding: 1.5rem 0.625rem;
 }
-.c-teiki-products__item:last-child {
-  border-bottom: none;
+
+.c-teiki-products__item ~ .c-teiki-products__item {
+  border-top: 1px dashed rgba(51, 51, 51, 0.5);
 }
 
 .c-teiki-products__product {
@@ -8672,10 +8672,10 @@ html[data-font-size=x-large] {
   line-height: 1.75;
   letter-spacing: 0.009375rem;
 }
-.c-teiki-products__course-row span:first-child {
+.c-teiki-products__course-row .c-teiki-products__course-label {
   grid-column: 1;
 }
-.c-teiki-products__course-row span:last-child {
+.c-teiki-products__course-row .c-teiki-products__course-value {
   grid-column: 2;
 }
 
@@ -8782,11 +8782,13 @@ html[data-font-size=x-large] {
   top: auto;
   transform: none;
 }
-.c-teiki-amount__header-toggle::before {
-  background-color: #00387d !important;
+.c-teiki-amount__header-toggle::before, .c-teiki-amount__header-toggle::after {
+  background-color: #00387d;
 }
-.c-teiki-amount__header-toggle::after {
-  background-color: #00387d !important;
+
+.c-teiki-amount__header .c-teiki-amount__header-toggle::before,
+.c-teiki-amount__header .c-teiki-amount__header-toggle::after {
+  background-color: #00387d;
 }
 
 .c-teiki-amount__header[aria-expanded=true] .c-teiki-amount__header-toggle::after {
@@ -8864,7 +8866,7 @@ html[data-font-size=x-large] {
   padding-top: 1.25rem;
   margin-top: 1.25rem;
 }
-.c-teiki-amount__section:first-child {
+.c-teiki-amount__body > .c-teiki-amount__section:first-child {
   border-top: none;
   padding-top: 0;
   margin-top: 0;
@@ -9082,10 +9084,10 @@ html[data-font-size=x-large] {
 
 .c-teiki-next-list__item {
   padding: 1rem 0.625rem;
-  border-bottom: 1px dashed rgba(51, 51, 51, 0.5);
 }
-.c-teiki-next-list__item:last-child {
-  border-bottom: none;
+
+.c-teiki-next-list__item ~ .c-teiki-next-list__item {
+  border-top: 1px dashed rgba(51, 51, 51, 0.5);
 }
 
 .c-teiki-next-list__row-top {
@@ -9524,7 +9526,7 @@ html[data-font-size=x-large] {
   color: #333;
   line-height: 1.6;
 }
-.c-teiki-schedule__products li {
+.c-teiki-schedule__products .c-teiki-schedule__product-item {
   padding-left: 0;
 }
 
@@ -10024,11 +10026,12 @@ html[data-font-size=x-large] {
   align-items: baseline;
   padding: 0.4375rem 0;
   font-size: 0.875rem;
-  border-bottom: 1px solid #d7e7fb;
 }
-.c-teiki-amount-block__row:last-child {
-  border-bottom: none;
+
+.c-teiki-amount-block__row ~ .c-teiki-amount-block__row {
+  border-top: 1px solid #d7e7fb;
 }
+
 .c-teiki-amount-block__row--grand {
   font-weight: 500;
   font-size: 1rem;
@@ -10478,8 +10481,8 @@ html[data-font-size=x-large] {
   border-left: none;
   font-weight: 400;
 }
-.c-teiki-address .c-teiki-info-table__row:last-child .c-teiki-info-table__header,
-.c-teiki-address .c-teiki-info-table__row:last-child .c-teiki-info-table__data {
+.c-teiki-address .c-teiki-info-table__row:not(:has(~ .c-teiki-info-table__row)) .c-teiki-info-table__header,
+.c-teiki-address .c-teiki-info-table__row:not(:has(~ .c-teiki-info-table__row)) .c-teiki-info-table__data {
   border-bottom: none;
 }
 
@@ -10915,7 +10918,7 @@ html[data-font-size=x-large] {
   letter-spacing: 0.009375rem;
   margin: 0 0 0.5rem;
 }
-.c-teiki-survey__intro:last-of-type {
+.c-teiki-survey__intro:not(:has(~ .c-teiki-survey__intro)) {
   margin-bottom: 1.5rem;
 }
 
@@ -11041,7 +11044,8 @@ html[data-font-size=x-large] {
   border: 1px solid #e0e0e0;
   margin-bottom: 1rem;
 }
-.c-teiki-address-select__card:last-of-type {
+
+.c-teiki-address-select__card:not(:has(~ .c-teiki-address-select__card)) {
   margin-bottom: 0;
 }
 

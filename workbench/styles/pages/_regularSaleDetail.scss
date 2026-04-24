@@ -245,12 +245,11 @@
 }
 
 .c-teiki-products__item {
-  border-bottom: 1px dashed rgba(#333, 0.5);
   padding: rem(24) rem(10);
+}
 
-  &:last-child {
-    border-bottom: none;
-  }
+.c-teiki-products__item ~ .c-teiki-products__item {
+  border-top: 1px dashed rgba(#333, 0.5);
 }
 
 // 商品カード: 2列グリッド（左:画像/ラベル、右:テキスト/値）
@@ -353,11 +352,11 @@
   line-height: 1.75;
   letter-spacing: rem(0.15);
 
-  span:first-child {
+  .c-teiki-products__course-label {
     grid-column: 1;
   }
 
-  span:last-child {
+  .c-teiki-products__course-value {
     grid-column: 2;
   }
 }
@@ -416,13 +415,15 @@
   top: auto;
   transform: none;
 
-  &::before {
-    background-color: $primary-color !important;
-  }
-
+  &::before,
   &::after {
-    background-color: $primary-color !important;
+    background-color: $primary-color;
   }
+}
+
+.c-teiki-amount__header .c-teiki-amount__header-toggle::before,
+.c-teiki-amount__header .c-teiki-amount__header-toggle::after {
+  background-color: $primary-color;
 }
 
 .c-teiki-amount__header[aria-expanded="true"] .c-teiki-amount__header-toggle::after {
@@ -503,7 +504,7 @@
   padding-top: rem(20);
   margin-top: rem(20);
 
-  &:first-child {
+  .c-teiki-amount__body > &:first-child {
     border-top: none;
     padding-top: 0;
     margin-top: 0;
@@ -733,11 +734,10 @@
 
 .c-teiki-next-list__item {
   padding: rem(16) rem(10);
-  border-bottom: 1px dashed rgba(#333, 0.5);
+}
 
-  &:last-child {
-    border-bottom: none;
-  }
+.c-teiki-next-list__item ~ .c-teiki-next-list__item {
+  border-top: 1px dashed rgba(#333, 0.5);
 }
 
 // 上段: 商品名（左）+ お届け予定日（右）
@@ -1164,7 +1164,7 @@
   color: $text-color;
   line-height: 1.6;
 
-  li {
+  .c-teiki-schedule__product-item {
     padding-left: 0;
   }
 }
@@ -1613,12 +1613,13 @@
   align-items: baseline;
   padding: rem(7) 0;
   font-size: rem(14);
-  border-bottom: 1px solid $bg-banner;
+}
 
-  &:last-child {
-    border-bottom: none;
-  }
+.c-teiki-amount-block__row ~ .c-teiki-amount-block__row {
+  border-top: 1px solid $bg-banner;
+}
 
+.c-teiki-amount-block__row {
   // Figmaデザイン：合計行は dashed 区切り + 濃紺テキスト 16px medium
   &--grand {
     font-weight: $font-weight-medium;
@@ -2108,7 +2109,7 @@
     font-weight: $font-weight-normal;
   }
 
-  .c-teiki-info-table__row:last-child {
+  .c-teiki-info-table__row:not(:has(~ .c-teiki-info-table__row)) {
     .c-teiki-info-table__header,
     .c-teiki-info-table__data {
       border-bottom: none;
@@ -2576,7 +2577,7 @@
   letter-spacing: rem(0.15);
   margin: 0 0 rem(8);
 
-  &:last-of-type {
+  &:not(:has(~ .c-teiki-survey__intro)) {
     margin-bottom: rem(24);
   }
 }
@@ -2705,10 +2706,10 @@
 .c-teiki-address-select__card {
   border: 1px solid $border-color;
   margin-bottom: rem(16);
+}
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
+.c-teiki-address-select__card:not(:has(~ .c-teiki-address-select__card)) {
+  margin-bottom: 0;
 }
 
 .c-teiki-address-select__card--selected {

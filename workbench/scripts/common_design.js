@@ -675,6 +675,20 @@ $(function () {
     });
   });
 
+  // フォントサイズ変更時にも再描画
+  var fontSizeObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (m) {
+      if (m.attributeName === 'data-font-size') {
+        setTimeout(function () {
+          orderWrappers.forEach(function (w) {
+            drawOrderOutline(w);
+          });
+        }, 50);
+      }
+    });
+  });
+  fontSizeObserver.observe(document.documentElement, { attributes: true });
+
   // ----------------------------------------
   // お気に入りボタン トグル
   // ----------------------------------------

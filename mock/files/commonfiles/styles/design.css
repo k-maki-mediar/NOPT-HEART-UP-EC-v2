@@ -174,7 +174,7 @@
   border-bottom: none;
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
-  background-color: rgba(0, 40, 85, 0.8);
+  background-color: rgba(1, 70, 142, 0.9);
 }
 
 .c-main {
@@ -473,7 +473,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: rgba(0, 40, 85, 0.8);
+  background-color: rgba(1, 70, 142, 0.9);
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
   border-top: none;
@@ -2747,7 +2747,7 @@
 
 .c-contact-lens-btn__logo {
   display: block;
-  width: 11rem;
+  width: 13.125rem;
   height: auto;
   margin-top: 1.5rem;
 }
@@ -2758,20 +2758,12 @@
 }
 
 .c-contact-lens-btn__divider {
-  display: block;
-  width: 18.5625rem;
-  height: 0.0625rem;
-  margin: 0.75rem 0;
-}
-@media (min-width: 992px) {
-  .c-contact-lens-btn__divider {
-    width: 31.25rem;
-    margin: 1rem 0;
-  }
+  display: none;
 }
 
 .c-contact-lens-btn__subtitle {
   display: block;
+  margin-top: 0.25rem;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;

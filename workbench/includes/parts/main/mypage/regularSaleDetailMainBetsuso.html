@@ -41,7 +41,7 @@
           <ul class="c-teiki-schedule__products">
             <li>【定期便】バイオフィニティ&lt;シリコーンレンズ&gt;</li>
           </ul>
-          <a href="#" class="c-teiki-schedule__change-btn">お届け日の変更・スキップ</a>
+          <a href="#" class="c-teiki-schedule__change-btn js-skip-modal-open">お届け日の変更・スキップ</a>
         </div>
       </div>
       <span class="c-teiki-schedule__arrow" aria-hidden="true"></span>
@@ -101,7 +101,7 @@
           <ul class="c-teiki-schedule__products">
             <li>【定期便】コンプリート ダブルモイスト 360ml</li>
           </ul>
-          <a href="#" class="c-teiki-schedule__change-btn">お届け日の変更・スキップ</a>
+          <a href="#" class="c-teiki-schedule__change-btn js-skip-modal-open">お届け日の変更・スキップ</a>
         </div>
       </div>
       <span class="c-teiki-schedule__arrow" aria-hidden="true"></span>
@@ -789,6 +789,29 @@
     <div class="c-teiki-modal__footer">
       <button type="button" class="c-teiki-modal__submit-btn js-teiki-modal-submit">お届け先を変更する</button>
       <button type="button" class="c-teiki-modal__back-btn js-teiki-modal-close">戻る</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== スキップ確認モーダル ===== -->
+<div class="c-teiki-modal c-teiki-modal--skip js-skip-modal" role="dialog" aria-modal="true" aria-labelledby="skip-modal-title" hidden>
+  <div class="c-teiki-modal__overlay js-skip-modal-close" aria-label="モーダルを閉じる"></div>
+  <div class="c-teiki-modal__inner c-teiki-modal__inner--skip" tabindex="-1">
+    <button type="button" class="c-teiki-modal__close-btn js-skip-modal-close" aria-label="閉じる">
+      <span class="c-teiki-modal__close-icon" aria-hidden="true"></span>
+    </button>
+    <h2 class="c-teiki-modal__skip-title" id="skip-modal-title">
+      <span class="c-teiki-modal__skip-title-accent">コンタクトレンズ・ケア用品定期便</span>の<br>お届けをスキップします
+    </h2>
+    <div class="c-teiki-modal__skip-body">
+      <p class="c-teiki-modal__skip-label">スキップ後のお客様の次回のお届け予定日</p>
+      <div class="c-teiki-modal__skip-date-box">
+        <p class="c-teiki-modal__skip-date">2025年10月24日(金)</p>
+      </div>
+    </div>
+    <div class="c-teiki-modal__skip-footer">
+      <button type="button" class="c-teiki-modal__skip-submit-btn">スキップする</button>
+      <button type="button" class="c-teiki-modal__skip-back-btn js-skip-modal-close">戻る</button>
     </div>
   </div>
 </div>

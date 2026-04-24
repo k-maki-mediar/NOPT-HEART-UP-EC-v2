@@ -2390,3 +2390,148 @@
     background-color: $bg-gray;
   }
 }
+
+/* ========================================
+ * スキップ確認モーダル
+ * ======================================== */
+
+.c-teiki-modal__inner--skip {
+  text-align: center;
+  padding: rem(48) rem(24) rem(32);
+  border-radius: rem(8);
+}
+
+.c-teiki-modal__close-btn {
+  position: absolute;
+  top: rem(12);
+  right: rem(12);
+  width: rem(44);
+  height: rem(44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.c-teiki-modal__close-icon {
+  position: relative;
+  display: block;
+  width: rem(16);
+  height: rem(16);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: rem(16);
+    height: rem(1.5);
+    background-color: $primary-color;
+    border-radius: rem(1);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.c-teiki-modal__skip-title {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  margin: 0 0 rem(20);
+}
+
+.c-teiki-modal__skip-title-accent {
+  color: #cc4843;
+}
+
+.c-teiki-modal__skip-body {
+  margin-bottom: rem(24);
+}
+
+.c-teiki-modal__skip-label {
+  font-size: rem(12);
+  color: $text-color;
+  line-height: 1.75;
+  letter-spacing: rem(0.15);
+  margin: 0 0 rem(8);
+}
+
+.c-teiki-modal__skip-date-box {
+  background-color: #fff2f1;
+  padding: rem(12) rem(16);
+  margin: 0 auto;
+  max-width: rem(297);
+}
+
+.c-teiki-modal__skip-date {
+  font-size: rem(16);
+  color: $text-color;
+  line-height: 1.75;
+  letter-spacing: rem(0.64);
+  margin: 0;
+}
+
+.c-teiki-modal__skip-footer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  max-width: rem(297);
+  margin: 0 auto;
+}
+
+.c-teiki-modal__skip-submit-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(46);
+  background-color: #cc4843;
+  color: $color-white;
+  border: none;
+  border-radius: rem(23);
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  letter-spacing: rem(0.56);
+  cursor: pointer;
+  box-shadow: 0 rem(2) 0 0 #b91b15;
+  transition: box-shadow $transition-fast;
+
+  &:hover {
+    box-shadow: 0 0 0 0 #b91b15;
+  }
+}
+
+.c-teiki-modal__skip-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(46);
+  background-color: $color-white;
+  color: #cc4843;
+  border: 1px solid #cc4843;
+  border-radius: rem(23);
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  letter-spacing: rem(0.56);
+  cursor: pointer;
+  box-shadow: 0 rem(2) 0 0 #cc4843;
+  transition: box-shadow $transition-fast;
+
+  &:hover {
+    box-shadow: 0 0 0 0 #cc4843;
+  }
+}

@@ -139,7 +139,7 @@
   <!-- ===== 同梱/別送ステータス ===== -->
   <div class="c-teiki-bundle-status">
     <p class="c-teiki-bundle-status__text">現在コンタクトレンズとケア用品は【別送】を選択されています。</p>
-    <a href="#" class="c-teiki-bundle-status__btn">同梱する</a>
+    <a href="#" class="c-teiki-bundle-status__btn js-bundle-modal-open">同梱する</a>
   </div>
 
   <!-- ===== 申込商品（アコーディオンカード） ===== -->
@@ -1056,6 +1056,34 @@
       <div class="c-teiki-survey__footer">
         <button type="button" class="c-teiki-modal__skip-submit-btn">解約する</button>
         <button type="button" class="c-teiki-modal__skip-back-btn js-cancel-modal-close">戻る</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 同梱対象選択モーダル ===== -->
+<div class="c-teiki-modal c-teiki-modal--bundle js-bundle-modal" role="dialog" aria-modal="true" aria-labelledby="bundle-modal-title" hidden>
+  <div class="c-teiki-modal__overlay js-bundle-modal-close" aria-label="モーダルを閉じる"></div>
+  <div class="c-teiki-modal__inner c-teiki-modal__inner--bundle" tabindex="-1">
+    <button type="button" class="c-teiki-modal__close-btn js-bundle-modal-close" aria-label="閉じる">
+      <span class="c-teiki-modal__close-icon" aria-hidden="true"></span>
+    </button>
+
+    <div class="c-teiki-bundle">
+      <p class="c-teiki-bundle__notice-title" id="bundle-modal-title">同梱時の注意事項をご確認ください。</p>
+      <ul class="c-teiki-bundle__notice-list">
+        <li class="c-teiki-bundle__notice-item">コンタクトレンズ定期便で設定した「お届け日」と「配送先」へ統合されます。</li>
+        <li class="c-teiki-bundle__notice-item">支払方法は「クレジット払い(定期)(一括)」が設定されます。</li>
+      </ul>
+
+      <ul class="c-teiki-bundle__product-list">
+        <li class="c-teiki-bundle__product-item">コンタクトレンズ</li>
+        <li class="c-teiki-bundle__product-item">ケア用品</li>
+      </ul>
+
+      <div class="c-teiki-modal__skip-footer">
+        <button type="button" class="c-teiki-modal__skip-submit-btn">同梱する</button>
+        <button type="button" class="c-teiki-modal__skip-back-btn js-bundle-modal-close">戻る</button>
       </div>
     </div>
   </div>

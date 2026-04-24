@@ -1427,6 +1427,69 @@ $(function () {
 })();
 
 /* ========================================
+ * 定期契約確認変更：同梱対象選択モーダル
+ * ======================================== */
+(function () {
+  'use strict';
+
+  var modal = document.querySelector('.js-bundle-modal');
+  if (!modal) return;
+
+  var openBtns = document.querySelectorAll('.js-bundle-modal-open');
+  var closeBtns = modal.querySelectorAll('.js-bundle-modal-close');
+  var modalInner = modal.querySelector('.c-teiki-modal__inner');
+
+  function openModal(e) {
+    e.preventDefault();
+    modal.removeAttribute('hidden');
+    if (modalInner) {
+      modalInner.focus();
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+
+  for (var i = 0; i < openBtns.length; i++) {
+    openBtns[i].addEventListener('click', openModal);
+  }
+
+  for (var j = 0; j < closeBtns.length; j++) {
+    closeBtns[j].addEventListener('click', closeModal);
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hasAttribute('hidden')) {
+      closeModal();
+    }
+  });
+
+  modal.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab') return;
+    var focusable = modal.querySelectorAll(
+      'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusable.length) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+})();
+
+/* ========================================
  * フォントサイズ切り替え（fontSizeSwitcher）
  * ======================================== */
 (function() {

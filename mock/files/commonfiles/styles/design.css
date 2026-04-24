@@ -11136,6 +11136,59 @@ html[data-font-size=x-large] {
   margin: 2rem auto 0;
 }
 
+/* ========================================
+ * 同梱対象選択モーダル
+ * ======================================== */
+.c-teiki-bundle__notice-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #cc4843;
+  line-height: 1.75;
+  margin: 0 0 0.75rem;
+}
+
+.c-teiki-bundle__notice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.c-teiki-bundle__notice-item {
+  font-size: 0.75rem;
+  color: #333;
+  line-height: 1.75;
+  padding-left: 1rem;
+  position: relative;
+}
+.c-teiki-bundle__notice-item::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+}
+
+.c-teiki-modal__inner--bundle {
+  text-align: left;
+  padding: 4rem 1.5rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.c-teiki-bundle__product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.c-teiki-bundle__product-item {
+  padding: 0.75rem 1rem;
+  background-color: #f4f8fc;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #00387d;
+}
+
 .c-html {
   font-size: 100%;
   scroll-behavior: smooth;

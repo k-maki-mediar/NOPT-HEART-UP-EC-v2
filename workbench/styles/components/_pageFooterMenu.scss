@@ -63,15 +63,7 @@
 
   // アクティブ状態（該当ページ）
   &--active {
-    color: $primary-color;
-
-    .c-footer-menu__icon--default {
-      display: none;
-    }
-
-    .c-footer-menu__icon--active {
-      display: block;
-    }
+    color: $color-white;
   }
 }
 

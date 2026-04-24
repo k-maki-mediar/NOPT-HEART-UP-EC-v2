@@ -525,13 +525,7 @@
   color: rgba(255, 255, 255, 0.7);
 }
 .c-footer-menu__link--active {
-  color: #00387d;
-}
-.c-footer-menu__link--active .c-footer-menu__icon--default {
-  display: none;
-}
-.c-footer-menu__link--active .c-footer-menu__icon--active {
-  display: block;
+  color: #FFFFFF;
 }
 
 .c-footer-menu__icon-wrap {

@@ -676,7 +676,7 @@ $(function () {
   });
 
   // フォントサイズ変更時にも再描画
-  var fontSizeObserver = new MutationObserver(function (mutations) {
+  const fontSizeObserver = new MutationObserver(function (mutations) {
     mutations.forEach(function (m) {
       if (m.attributeName === 'data-font-size') {
         setTimeout(function () {
@@ -1020,17 +1020,17 @@ $(function () {
  * 定期契約確認変更：お届けスケジュールカルーセル
  * ======================================== */
 $(function () {
-  var PC_MIN = 992;
+  const PC_MIN = 992;
 
   function initCarousel() {
     $('.js-teiki-carousel').each(function () {
-      var $carousel = $(this);
-      var $scroll = $carousel.find('.js-teiki-carousel-scroll');
-      var $cards = $scroll.children('.c-teiki-schedule__card');
-      var $dots = $carousel.find('.js-teiki-carousel-dot');
-      var $prevBtn = $carousel.find('.js-teiki-carousel-prev');
-      var $nextBtn = $carousel.find('.js-teiki-carousel-next');
-      var currentIndex = 1;
+      const $carousel = $(this);
+      const $scroll = $carousel.find('.js-teiki-carousel-scroll');
+      const $cards = $scroll.children('.c-teiki-schedule__card');
+      const $dots = $carousel.find('.js-teiki-carousel-dot');
+      const $prevBtn = $carousel.find('.js-teiki-carousel-prev');
+      const $nextBtn = $carousel.find('.js-teiki-carousel-next');
+      let currentIndex = 1;
 
       function isPC() { return window.innerWidth >= PC_MIN; }
 
@@ -1044,7 +1044,7 @@ $(function () {
         if (isPC()) return;
         if (index < 0 || index >= $cards.length) return;
         currentIndex = index;
-        var card = $cards.eq(index)[0];
+        const card = $cards.eq(index)[0];
         card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
         $dots.removeClass('is-active');
         $dots.eq(index).addClass('is-active');
@@ -1057,17 +1057,17 @@ $(function () {
       $nextBtn.on('click', function () { goTo(currentIndex + 1); });
       $dots.on('click', function () { goTo(parseInt($(this).data('index'), 10)); });
 
-      var scrollTimer = null;
+      let scrollTimer = null;
       $scroll.on('scroll', function () {
         if (isPC()) return;
         clearTimeout(scrollTimer);
         scrollTimer = setTimeout(function () {
-          var scrollCenter = $scroll.scrollLeft() + $scroll.width() / 2;
-          var closest = 0;
-          var minDist = Infinity;
+          const scrollCenter = $scroll.scrollLeft() + $scroll.width() / 2;
+          let closest = 0;
+          let minDist = Infinity;
           $cards.each(function (i) {
-            var cardCenter = this.offsetLeft - $scroll[0].offsetLeft + this.offsetWidth / 2;
-            var dist = Math.abs(scrollCenter - cardCenter);
+            const cardCenter = this.offsetLeft - $scroll[0].offsetLeft + this.offsetWidth / 2;
+            const dist = Math.abs(scrollCenter - cardCenter);
             if (dist < minDist) { minDist = dist; closest = i; }
           });
           if (closest !== currentIndex) {
@@ -1089,9 +1089,9 @@ $(function () {
  * ======================================== */
 $(function () {
   $('.js-teiki-products-toggle').on('click', function () {
-    var $btn = $(this);
-    var $body = $btn.next('.js-teiki-products-body');
-    var isOpen = $btn.attr('aria-expanded') === 'true';
+    const $btn = $(this);
+    const $body = $btn.next('.js-teiki-products-body');
+    const isOpen = $btn.attr('aria-expanded') === 'true';
     $btn.attr('aria-expanded', !isOpen);
     $body.toggleClass('c-teiki-products__body--open');
   });
@@ -1102,9 +1102,9 @@ $(function () {
  * ======================================== */
 $(function () {
   $('.js-teiki-amount-toggle').on('click', function () {
-    var $btn = $(this);
-    var $body = $btn.next('.js-teiki-amount-body');
-    var isOpen = $btn.attr('aria-expanded') === 'true';
+    const $btn = $(this);
+    const $body = $btn.next('.js-teiki-amount-body');
+    const isOpen = $btn.attr('aria-expanded') === 'true';
     $btn.attr('aria-expanded', !isOpen);
     $body.slideToggle(200);
   });
@@ -1115,9 +1115,9 @@ $(function () {
  * ======================================== */
 $(function () {
   $('.js-teiki-toggle').on('click', function () {
-    var $btn = $(this);
-    var $body = $btn.next('.js-teiki-toggle-body');
-    var isOpen = $btn.attr('aria-expanded') === 'true';
+    const $btn = $(this);
+    const $body = $btn.next('.js-teiki-toggle-body');
+    const isOpen = $btn.attr('aria-expanded') === 'true';
     $btn.attr('aria-expanded', !isOpen);
     $body.toggleClass('c-teiki-info-block__body--open');
     $body.toggleClass('c-teiki-amount-block__body--open');
@@ -1523,9 +1523,9 @@ $(function () {
 (function() {
   'use strict';
 
-  var STORAGE_KEY = 'user-font-size';
-  var FONT_SIZES = ['normal', 'large', 'x-large'];
-  var SWITCHER_GAP = 48;
+  const STORAGE_KEY = 'user-font-size';
+  const FONT_SIZES = ['normal', 'large', 'x-large'];
+  const SWITCHER_GAP = 48;
 
   function applyFontSize(size) {
     if (size === 'normal' || FONT_SIZES.indexOf(size) === -1) {
@@ -1544,9 +1544,9 @@ $(function () {
   }
 
   function updateMenuActiveState(size) {
-    var options = document.querySelectorAll('[data-font-size-option]');
-    for (var i = 0; i < options.length; i++) {
-      var optionSize = options[i].getAttribute('data-font-size-option');
+    const options = document.querySelectorAll('[data-font-size-option]');
+    for (let i = 0; i < options.length; i++) {
+      const optionSize = options[i].getAttribute('data-font-size-option');
       if (optionSize === size) {
         options[i].classList.add('is-active');
       } else {
@@ -1556,26 +1556,26 @@ $(function () {
   }
 
   function toggleDropdown(open) {
-    var trigger = document.querySelector('[data-font-size-trigger]');
-    var menu = document.querySelector('[data-font-size-menu]');
+    const trigger = document.querySelector('[data-font-size-trigger]');
+    const menu = document.querySelector('[data-font-size-menu]');
     if (!trigger || !menu) return;
     trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
     if (open) { menu.classList.add('is-open'); } else { menu.classList.remove('is-open'); }
   }
 
   function isDropdownOpen() {
-    var menu = document.querySelector('[data-font-size-menu]');
+    const menu = document.querySelector('[data-font-size-menu]');
     return menu && menu.classList.contains('is-open');
   }
 
   function setupSwitcherOffset(header, wrapper) {
     if (!header || !wrapper) return;
-    var updateOffset = function() {
-      var userBar = document.querySelector('.c-user-bar');
-      var headerH = header.getBoundingClientRect().height;
-      var userBarH = userBar ? userBar.getBoundingClientRect().height : 0;
-      var notice = document.querySelector('.c-important-notice');
-      var offset = headerH + userBarH + SWITCHER_GAP;
+    const updateOffset = function() {
+      const userBar = document.querySelector('.c-user-bar');
+      const headerH = header.getBoundingClientRect().height;
+      const userBarH = userBar ? userBar.getBoundingClientRect().height : 0;
+      const notice = document.querySelector('.c-important-notice');
+      const offset = headerH + userBarH + SWITCHER_GAP;
       wrapper.style.setProperty('--font-size-switcher-offset', offset + 'px');
     };
     updateOffset();
@@ -1591,12 +1591,12 @@ $(function () {
 
   // DOM読み込み後
   function initFontSizeSwitcher() {
-    var switcher = document.querySelector('[data-font-size-switcher]');
-    var wrapper = document.querySelector('.font-size-switcher-wrapper');
-    var header = document.querySelector('.c-header');
-    var trigger = document.querySelector('[data-font-size-trigger]');
-    var menu = document.querySelector('[data-font-size-menu]');
-    var options = document.querySelectorAll('[data-font-size-option]');
+    const switcher = document.querySelector('[data-font-size-switcher]');
+    const wrapper = document.querySelector('.c-font-size-switcher-wrapper');
+    const header = document.querySelector('.c-header');
+    const trigger = document.querySelector('[data-font-size-trigger]');
+    const menu = document.querySelector('[data-font-size-menu]');
+    const options = document.querySelectorAll('[data-font-size-option]');
 
     if (!switcher || !wrapper || !trigger || !menu || options.length === 0) return;
 
@@ -1609,10 +1609,10 @@ $(function () {
       toggleDropdown(!isDropdownOpen());
     });
 
-    for (var i = 0; i < options.length; i++) {
+    for (let i = 0; i < options.length; i++) {
       options[i].addEventListener('click', function(e) {
         e.preventDefault();
-        var size = this.getAttribute('data-font-size-option');
+        const size = this.getAttribute('data-font-size-option');
         applyFontSize(size);
         saveFontSize(size);
         updateMenuActiveState(size);
@@ -1628,8 +1628,8 @@ $(function () {
     });
 
     menu.addEventListener('keydown', function(e) {
-      var optionsArray = Array.prototype.slice.call(options);
-      var currentIndex = optionsArray.indexOf(document.activeElement);
+      const optionsArray = Array.prototype.slice.call(options);
+      const currentIndex = optionsArray.indexOf(document.activeElement);
       if (e.key === 'ArrowDown') {
         e.preventDefault();
         optionsArray[(currentIndex + 1) % optionsArray.length].focus();

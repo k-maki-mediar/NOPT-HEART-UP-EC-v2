@@ -2701,6 +2701,10 @@
 .c-teiki-address-select__card {
   border: 1px solid $border-color;
   margin-bottom: rem(16);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .c-teiki-address-select__card--selected {
@@ -2783,7 +2787,7 @@
   font-weight: $font-weight-medium;
   background: transparent;
   cursor: pointer;
-  margin-bottom: rem(16);
+  margin-bottom: rem(32);
   box-shadow: 0 rem(2) 0 0 #cc4843;
   transition: box-shadow $transition-fast;
 
@@ -2797,5 +2801,5 @@
   flex-direction: column;
   gap: rem(12);
   max-width: rem(297);
-  margin: 0 auto;
+  margin: rem(32) auto 0;
 }

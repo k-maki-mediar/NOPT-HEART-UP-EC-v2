@@ -11037,6 +11037,9 @@ html[data-font-size=x-large] {
   border: 1px solid #e0e0e0;
   margin-bottom: 1rem;
 }
+.c-teiki-address-select__card:last-of-type {
+  margin-bottom: 0;
+}
 
 .c-teiki-address-select__card--selected {
   border-color: #00387d;
@@ -11117,7 +11120,7 @@ html[data-font-size=x-large] {
   font-weight: 500;
   background: transparent;
   cursor: pointer;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   box-shadow: 0 0.125rem 0 0 #cc4843;
   transition: box-shadow 0.15s ease-in-out;
 }
@@ -11130,7 +11133,7 @@ html[data-font-size=x-large] {
   flex-direction: column;
   gap: 0.75rem;
   max-width: 18.5625rem;
-  margin: 0 auto;
+  margin: 2rem auto 0;
 }
 
 .c-html {

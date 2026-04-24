@@ -1256,6 +1256,84 @@ $(function () {
 })();
 
 /* ========================================
+ * 定期契約確認変更：休止理由モーダル
+ * ======================================== */
+(function () {
+  'use strict';
+
+  var modal = document.querySelector('.js-pause-modal');
+  if (!modal) return;
+
+  var openBtns = document.querySelectorAll('.js-pause-modal-open');
+  var closeBtns = modal.querySelectorAll('.js-pause-modal-close');
+  var modalInner = modal.querySelector('.c-teiki-modal__inner');
+
+  function openModal(e) {
+    e.preventDefault();
+    modal.removeAttribute('hidden');
+    if (modalInner) {
+      modalInner.focus();
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+
+  for (var i = 0; i < openBtns.length; i++) {
+    openBtns[i].addEventListener('click', openModal);
+  }
+
+  for (var j = 0; j < closeBtns.length; j++) {
+    closeBtns[j].addEventListener('click', closeModal);
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hasAttribute('hidden')) {
+      closeModal();
+    }
+  });
+
+  modal.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab') return;
+    var focusable = modal.querySelectorAll(
+      'a[href], button:not([disabled]), input, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusable.length) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  // 「その他」チェック時にテキストエリア表示切り替え
+  var otherToggles = modal.querySelectorAll('.js-survey-other-toggle');
+  for (var k = 0; k < otherToggles.length; k++) {
+    otherToggles[k].addEventListener('change', function () {
+      var textarea = this.closest('.c-teiki-survey__item').querySelector('.js-survey-other-textarea');
+      if (!textarea) return;
+      if (this.checked) {
+        textarea.removeAttribute('hidden');
+      } else {
+        textarea.setAttribute('hidden', '');
+        textarea.value = '';
+      }
+    });
+  }
+})();
+
+/* ========================================
  * フォントサイズ切り替え（fontSizeSwitcher）
  * ======================================== */
 (function() {

@@ -1052,14 +1052,12 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: rem(8);
+  gap: rem(12);
 }
 
 .c-teiki-schedule__date-row {
-  display: flex;
-  align-items: flex-start;
-  gap: rem(6);
   margin: 0;
+  text-align: center;
 }
 
 .c-teiki-schedule__date-col {
@@ -1071,7 +1069,6 @@
   font-size: rem(11);
   color: $text-light;
   margin: 0;
-  margin-top: rem(6);
   white-space: nowrap;
 }
 
@@ -1160,7 +1157,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: rem(11);
+  font-size: rem(14);
   color: $text-color;
   line-height: 1.6;
 

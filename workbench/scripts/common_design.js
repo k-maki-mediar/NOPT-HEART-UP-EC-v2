@@ -1138,7 +1138,8 @@ $(function () {
   var modalInner = modal.querySelector('.c-teiki-modal__inner');
 
   // モーダルを開く
-  function openModal() {
+  function openModal(e) {
+    e.preventDefault();
     modal.removeAttribute('hidden');
     if (modalInner) {
       modalInner.focus();
@@ -1190,6 +1191,21 @@ $(function () {
       }
     }
   });
+
+  // ラジオ選択時にカード枠線を切り替え
+  var radios = modal.querySelectorAll('.c-teiki-address-select__radio');
+  for (var r = 0; r < radios.length; r++) {
+    radios[r].addEventListener('change', function () {
+      var cards = modal.querySelectorAll('.c-teiki-address-select__card');
+      for (var c = 0; c < cards.length; c++) {
+        cards[c].classList.remove('c-teiki-address-select__card--selected');
+      }
+      var card = this.closest('.c-teiki-address-select__card');
+      if (card) {
+        card.classList.add('c-teiki-address-select__card--selected');
+      }
+    });
+  }
 })();
 
 /* ========================================

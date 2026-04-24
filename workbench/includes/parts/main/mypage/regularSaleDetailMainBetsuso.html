@@ -438,7 +438,7 @@
   <div class="c-teiki-address">
     <div class="c-teiki-address__header">
       <span class="c-teiki-address__header-title">お届け先情報</span>
-      <a href="#" class="c-teiki-amount__section-btn">変更<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+      <a href="#" class="c-teiki-amount__section-btn js-teiki-modal-open">変更<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
     </div>
     <table class="c-teiki-info-table" aria-label="お届け先情報">
       <tbody>
@@ -709,7 +709,7 @@
   <div class="c-teiki-address">
     <div class="c-teiki-address__header">
       <span class="c-teiki-address__header-title">お届け先情報</span>
-      <a href="#" class="c-teiki-amount__section-btn">変更<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+      <a href="#" class="c-teiki-amount__section-btn js-teiki-modal-open">変更<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
     </div>
     <table class="c-teiki-info-table" aria-label="お届け先情報">
       <tbody>
@@ -747,48 +747,68 @@
 </section><!-- /.p-teiki-detail -->
 
 <!-- ===== お届け先選択モーダル ===== -->
-<div class="c-teiki-modal js-teiki-modal" role="dialog" aria-modal="true" aria-labelledby="teiki-modal-title-betsuso" hidden>
+<div class="c-teiki-modal c-teiki-modal--address js-teiki-modal" role="dialog" aria-modal="true" aria-labelledby="teiki-modal-title-betsuso" hidden>
   <div class="c-teiki-modal__overlay js-teiki-modal-close" aria-label="モーダルを閉じる"></div>
-  <div class="c-teiki-modal__inner" tabindex="-1">
-    <h2 class="c-teiki-modal__title" id="teiki-modal-title-betsuso">お届け先を選択</h2>
-    <div class="c-teiki-modal__body">
+  <div class="c-teiki-modal__inner c-teiki-modal__inner--address" tabindex="-1">
+    <button type="button" class="c-teiki-modal__close-btn js-teiki-modal-close" aria-label="閉じる">
+      <span class="c-teiki-modal__close-icon" aria-hidden="true"></span>
+    </button>
+
+    <div class="c-teiki-address-select">
+      <h2 class="c-teiki-address-select__title" id="teiki-modal-title-betsuso">お届け先変更</h2>
+
       <!-- 基本住所 -->
-      <section aria-label="基本住所">
-        <p class="c-teiki-modal__section-label">基本住所</p>
-        <ul class="c-teiki-modal__list">
-          <li class="c-teiki-modal__item c-teiki-modal__item--selected">
-            <label class="c-teiki-modal__item-label">
-              <input type="radio" name="delivery-address-betsuso" value="basic" class="c-teiki-modal__radio" checked>
-              <div class="c-teiki-modal__address">
-                <p class="c-teiki-modal__address-name">山田 太郎</p>
-                <p class="c-teiki-modal__address-detail">〒100-0001 東京都千代田区千代田1-1-1 山田マンション101</p>
-                <p class="c-teiki-modal__address-tel">090-0000-0000</p>
-              </div>
-            </label>
-          </li>
-        </ul>
-        <button type="button" class="c-teiki-modal__new-btn">新規お届け先に変更する</button>
-      </section>
-      <!-- 追加住所 -->
-      <section aria-label="追加住所">
-        <p class="c-teiki-modal__section-label">追加住所</p>
-        <ul class="c-teiki-modal__list">
-          <li class="c-teiki-modal__item">
-            <label class="c-teiki-modal__item-label">
-              <input type="radio" name="delivery-address-betsuso" value="extra-1" class="c-teiki-modal__radio">
-              <div class="c-teiki-modal__address">
-                <p class="c-teiki-modal__address-name">山田 花子</p>
-                <p class="c-teiki-modal__address-detail">〒220-0000 神奈川県横浜市西区みなとみらい1-1-1</p>
-                <p class="c-teiki-modal__address-tel">080-0000-0000</p>
-              </div>
-            </label>
-          </li>
-        </ul>
-      </section>
-    </div>
-    <div class="c-teiki-modal__footer">
-      <button type="button" class="c-teiki-modal__submit-btn js-teiki-modal-submit">お届け先を変更する</button>
-      <button type="button" class="c-teiki-modal__back-btn js-teiki-modal-close">戻る</button>
+      <div class="c-teiki-address-select__card">
+        <div class="c-teiki-address-select__card-header">
+          <label class="c-teiki-address-select__radio-label">
+            <input type="radio" name="delivery-address-betsuso" value="basic" class="c-teiki-address-select__radio">
+            <span class="c-teiki-address-select__radio-text">基本住所</span>
+          </label>
+        </div>
+        <div class="c-teiki-address-select__card-body">
+          <p class="c-teiki-address-select__name">情　シス子 様</p>
+          <p class="c-teiki-address-select__detail">〒451-0051 名古屋市西区則武新町1</p>
+          <p class="c-teiki-address-select__tel">000-0000-0000</p>
+        </div>
+      </div>
+
+      <button type="button" class="c-teiki-address-select__new-btn">新規お届け先に変更する</button>
+
+      <!-- 追加住所1 -->
+      <div class="c-teiki-address-select__card c-teiki-address-select__card--selected">
+        <div class="c-teiki-address-select__card-header">
+          <label class="c-teiki-address-select__radio-label">
+            <input type="radio" name="delivery-address-betsuso" value="extra-1" class="c-teiki-address-select__radio" checked>
+            <span class="c-teiki-address-select__radio-text">追加住所1</span>
+          </label>
+          <span class="c-teiki-address-select__badge">設定中</span>
+        </div>
+        <div class="c-teiki-address-select__card-body">
+          <p class="c-teiki-address-select__name">情　シス子 様</p>
+          <p class="c-teiki-address-select__detail">〒451-0051 名古屋市西区則武新町1</p>
+          <p class="c-teiki-address-select__tel">000-0000-0000</p>
+        </div>
+      </div>
+
+      <!-- 追加住所2 -->
+      <div class="c-teiki-address-select__card">
+        <div class="c-teiki-address-select__card-header">
+          <label class="c-teiki-address-select__radio-label">
+            <input type="radio" name="delivery-address-betsuso" value="extra-2" class="c-teiki-address-select__radio">
+            <span class="c-teiki-address-select__radio-text">追加住所2</span>
+          </label>
+        </div>
+        <div class="c-teiki-address-select__card-body">
+          <p class="c-teiki-address-select__name">情　シス子 様</p>
+          <p class="c-teiki-address-select__detail">〒451-0051 名古屋市西区則武新町1</p>
+          <p class="c-teiki-address-select__tel">000-0000-0000</p>
+        </div>
+      </div>
+
+      <div class="c-teiki-address-select__footer">
+        <button type="button" class="c-teiki-modal__skip-submit-btn js-teiki-modal-submit">お届け先を変更する</button>
+        <button type="button" class="c-teiki-modal__skip-back-btn js-teiki-modal-close">戻る</button>
+      </div>
     </div>
   </div>
 </div>

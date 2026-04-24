@@ -174,7 +174,7 @@
   border-bottom: none;
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
-  background-color: rgba(1, 70, 142, 0.9);
+  background-color: rgba(0, 40, 85, 0.8);
 }
 
 .c-main {
@@ -473,7 +473,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: rgba(1, 70, 142, 0.9);
+  background-color: rgba(0, 40, 85, 0.8);
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
   border-top: none;

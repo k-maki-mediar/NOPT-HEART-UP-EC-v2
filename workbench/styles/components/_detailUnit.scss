@@ -563,7 +563,7 @@
 }
 
 .c-detail-unit__prescription-label-cell {
-  padding: 0 rem(8);
+  padding: rem(4) rem(8);
   height: rem(32);
   font-weight: $font-weight-normal;
   font-size: rem(14);
@@ -572,7 +572,7 @@
   color: $text-color;
   background-color: $bg-light;
   text-align: right;
-  white-space: nowrap;
+  overflow-wrap: break-word;
   border: 1px solid $bg-banner;
   vertical-align: middle;
 
@@ -588,8 +588,9 @@
 }
 
 .c-detail-unit__prescription-cell {
-  padding: 0 rem(12);
+  padding: rem(4) rem(12);
   height: rem(32);
+  overflow-wrap: break-word;
   font-size: rem(14);
   line-height: 1.75;
   letter-spacing: rem(0.56);

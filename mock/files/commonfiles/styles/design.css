@@ -6178,7 +6178,7 @@
 }
 
 .c-detail-unit__prescription-label-cell {
-  padding: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
   height: 2rem;
   font-weight: 400;
   font-size: 0.875rem;
@@ -6187,7 +6187,7 @@
   color: #333;
   background-color: #f4f8fc;
   text-align: right;
-  white-space: nowrap;
+  overflow-wrap: break-word;
   border: 1px solid #d7e7fb;
   vertical-align: middle;
 }
@@ -6205,8 +6205,9 @@
 }
 
 .c-detail-unit__prescription-cell {
-  padding: 0 0.75rem;
+  padding: 0.25rem 0.75rem;
   height: 2rem;
+  overflow-wrap: break-word;
   font-size: 0.875rem;
   line-height: 1.75;
   letter-spacing: 0.035rem;

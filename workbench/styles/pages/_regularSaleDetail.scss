@@ -1188,7 +1188,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 2;
+  z-index: $z-index-above-content;
   font-size: rem(12);
   color: $primary-color;
   padding: 0;
@@ -2241,7 +2241,7 @@
 
 .c-teiki-modal__inner {
   position: relative;
-  z-index: 1;
+  z-index: $z-index-content;
   background-color: $color-white;
   border-radius: rem(12);
   padding: rem(24) rem(20);
@@ -2561,7 +2561,7 @@
     position: absolute;
     top: rem(6);
     right: rem(6);
-    z-index: 2;
+    z-index: $z-index-above-content;
   }
 
   > .c-teiki-survey {
@@ -2685,7 +2685,7 @@
     position: absolute;
     top: rem(6);
     right: rem(6);
-    z-index: 2;
+    z-index: $z-index-above-content;
   }
 
   > .c-teiki-address-select {

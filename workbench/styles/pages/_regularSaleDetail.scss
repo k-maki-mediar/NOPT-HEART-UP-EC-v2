@@ -2661,16 +2661,8 @@
 
 .c-teiki-survey__footer {
   display: flex;
+  flex-direction: column;
   gap: rem(12);
-  align-items: center;
-}
-
-.c-teiki-survey__footer .c-teiki-modal__skip-submit-btn {
-  flex: 1;
-}
-
-.c-teiki-survey__footer .c-teiki-modal__skip-back-btn {
-  width: auto;
-  min-width: rem(80);
-  flex-shrink: 0;
+  max-width: rem(297);
+  margin: 0 auto;
 }

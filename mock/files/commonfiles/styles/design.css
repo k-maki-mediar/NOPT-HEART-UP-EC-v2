@@ -8409,6 +8409,10 @@ html[data-font-size=x-large] {
   color: #cc4843;
   margin: 0;
   line-height: 1.75;
+}
+
+.c-teiki-bundle-status__emphasis {
+  font-weight: 700;
   letter-spacing: 0.035rem;
 }
 

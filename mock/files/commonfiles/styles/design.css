@@ -8813,10 +8813,10 @@ html[data-font-size=x-large] {
   line-height: 1.75;
   letter-spacing: 0.035rem;
 }
-.c-teiki-amount__row dt {
+.c-teiki-amount__row .c-teiki-amount__row-label {
   font-weight: 400;
 }
-.c-teiki-amount__row dd {
+.c-teiki-amount__row .c-teiki-amount__row-value {
   margin: 0;
   text-align: right;
 }

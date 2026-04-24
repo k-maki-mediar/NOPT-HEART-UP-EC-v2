@@ -448,11 +448,11 @@
   line-height: 1.75;
   letter-spacing: rem(0.56);
 
-  dt {
+  .c-teiki-amount__row-label {
     font-weight: $font-weight-normal;
   }
 
-  dd {
+  .c-teiki-amount__row-value {
     margin: 0;
     text-align: right;
   }

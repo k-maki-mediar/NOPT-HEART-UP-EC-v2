@@ -10,22 +10,22 @@
   --font-size-switcher-offset-default: rem(172);
 }
 
-@media (max-width: 767px) {
+@include sp {
   :root {
     --font-size-switcher-offset-default: rem(180);
   }
 }
 
 // コンテナ
-.font-size-switcher {
+.c-font-size-switcher {
   position: relative;
   display: inline-flex;
   align-items: center;
-  z-index: 50;
+  z-index: $z-index-side-nav;
 }
 
 // トリガーボタン
-.font-size-switcher__trigger {
+.c-font-size-switcher__trigger {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +55,7 @@
 }
 
 // 「文」アイコン
-.font-size-switcher__icon {
+.c-font-size-switcher__icon {
   font-size: 18PX;
   font-weight: 700;
   color: $color-white;
@@ -63,7 +63,7 @@
 }
 
 // ラベル（SR用）
-.font-size-switcher__label {
+.c-font-size-switcher__label {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -76,7 +76,7 @@
 }
 
 // ドロップダウンメニュー
-.font-size-switcher__menu {
+.c-font-size-switcher__menu {
   position: absolute;
   top: 0;
   left: 100%;
@@ -97,7 +97,7 @@
     transform: translateX(8px);
   }
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-  z-index: 100;
+  z-index: $z-index-header;
 
   &.is-open {
     opacity: 1;
@@ -107,7 +107,7 @@
 }
 
 // メニュー項目
-.font-size-switcher__option {
+.c-font-size-switcher__option {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,11 +165,13 @@
     }
   }
 
-  &:not(:last-child) {
-    border-bottom: 1px solid $border-color;
+  // 項目間の境界線（最終項目以外）
+  & + & {
+    border-top: 1px solid $border-color;
   }
 
-  &:first-child {
+  // 先頭項目の角丸
+  &--first {
     border-radius: 0 6PX 0 0;
 
     @include pc {
@@ -177,13 +179,14 @@
     }
   }
 
-  &:last-child {
+  // 末尾項目の角丸
+  &--last {
     border-radius: 0 0 6PX 6PX;
   }
 }
 
 // ラッパー（fixed配置・SP左/PC右）
-.font-size-switcher-wrapper {
+.c-font-size-switcher-wrapper {
   position: fixed;
   top: var(--font-size-switcher-offset, var(--font-size-switcher-offset-default));
   left: 0;
@@ -197,13 +200,13 @@
 }
 
 // モバイル調整
-@media (max-width: 767px) {
-  .font-size-switcher__trigger {
+@include sp {
+  .c-font-size-switcher__trigger {
     width: 40PX;
     height: 40PX;
   }
 
-  .font-size-switcher__icon {
+  .c-font-size-switcher__icon {
     font-size: 16PX;
   }
 }
@@ -212,10 +215,10 @@
 // フォントサイズ切り替え（data-font-size属性）
 // 標準: 100% (16px) / 大: 112.5% (18px) / 特大: 125% (20px)
 // ========================================
-html[data-font-size="large"] {
+.c-html[data-font-size="large"] {
   font-size: 112.5%;
 }
 
-html[data-font-size="x-large"] {
+.c-html[data-font-size="x-large"] {
   font-size: 125%;
 }

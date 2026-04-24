@@ -1220,9 +1220,16 @@ $(function () {
   var openBtns = document.querySelectorAll('.js-skip-modal-open');
   var closeBtns = modal.querySelectorAll('.js-skip-modal-close');
   var modalInner = modal.querySelector('.c-teiki-modal__inner');
+  var titleAccent = modal.querySelector('.c-teiki-modal__skip-title-accent');
 
   function openModal(e) {
     e.preventDefault();
+    // ボタン内のカテゴリ名を取得してタイトルを動的に変更
+    var btn = e.currentTarget;
+    var category = btn.querySelector('.c-teiki-skip-figma__btn-category');
+    if (category && titleAccent) {
+      titleAccent.textContent = category.textContent + '定期便';
+    }
     modal.removeAttribute('hidden');
     if (modalInner) {
       modalInner.focus();
@@ -1283,9 +1290,24 @@ $(function () {
   var openBtns = document.querySelectorAll('.js-pause-modal-open');
   var closeBtns = modal.querySelectorAll('.js-pause-modal-close');
   var modalInner = modal.querySelector('.c-teiki-modal__inner');
+  var surveyGroups = modal.querySelectorAll('.js-survey-group');
+
+  function showGroups(category) {
+    for (var g = 0; g < surveyGroups.length; g++) {
+      if (!category) {
+        surveyGroups[g].style.display = '';
+      } else if (surveyGroups[g].getAttribute('data-survey-group') === category) {
+        surveyGroups[g].style.display = '';
+      } else {
+        surveyGroups[g].style.display = 'none';
+      }
+    }
+  }
 
   function openModal(e) {
     e.preventDefault();
+    var category = e.currentTarget.getAttribute('data-survey-category');
+    showGroups(category);
     modal.removeAttribute('hidden');
     if (modalInner) {
       modalInner.focus();
@@ -1361,9 +1383,24 @@ $(function () {
   var openBtns = document.querySelectorAll('.js-cancel-modal-open');
   var closeBtns = modal.querySelectorAll('.js-cancel-modal-close');
   var modalInner = modal.querySelector('.c-teiki-modal__inner');
+  var surveyGroups = modal.querySelectorAll('.js-survey-group');
+
+  function showGroups(category) {
+    for (var g = 0; g < surveyGroups.length; g++) {
+      if (!category) {
+        surveyGroups[g].style.display = '';
+      } else if (surveyGroups[g].getAttribute('data-survey-group') === category) {
+        surveyGroups[g].style.display = '';
+      } else {
+        surveyGroups[g].style.display = 'none';
+      }
+    }
+  }
 
   function openModal(e) {
     e.preventDefault();
+    var category = e.currentTarget.getAttribute('data-survey-category');
+    showGroups(category);
     modal.removeAttribute('hidden');
     if (modalInner) {
       modalInner.focus();

@@ -399,8 +399,8 @@
         </div>
       </div>
       <div class="c-teiki-status-actions">
-        <a href="#" class="c-teiki-amount__section-btn js-cancel-modal-open">解約<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
-        <a href="#" class="c-teiki-amount__section-btn js-pause-modal-open">休止<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+        <a href="#" class="c-teiki-amount__section-btn js-cancel-modal-open" data-survey-category="cl">解約<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+        <a href="#" class="c-teiki-amount__section-btn js-pause-modal-open" data-survey-category="cl">休止<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
       </div>
     </div>
   </div>
@@ -672,8 +672,8 @@
         </div>
       </div>
       <div class="c-teiki-status-actions">
-        <a href="#" class="c-teiki-amount__section-btn js-cancel-modal-open">解約<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
-        <a href="#" class="c-teiki-amount__section-btn js-pause-modal-open">休止<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+        <a href="#" class="c-teiki-amount__section-btn js-cancel-modal-open" data-survey-category="care">解約<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+        <a href="#" class="c-teiki-amount__section-btn js-pause-modal-open" data-survey-category="care">休止<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
       </div>
     </div>
   </div>
@@ -849,7 +849,7 @@
       <p class="c-teiki-survey__intro">該当の理由を選択いただき、「休止する」ボタンを押してください。（複数回答可）</p>
 
       <!-- コンタクトレンズ定期便 -->
-      <fieldset class="c-teiki-survey__group">
+      <fieldset class="c-teiki-survey__group js-survey-group" data-survey-group="cl">
         <legend class="c-teiki-survey__group-title">コンタクトレンズ定期便</legend>
         <ul class="c-teiki-survey__list">
           <li class="c-teiki-survey__item">
@@ -905,7 +905,7 @@
       </fieldset>
 
       <!-- ケア用品定期便 -->
-      <fieldset class="c-teiki-survey__group">
+      <fieldset class="c-teiki-survey__group js-survey-group" data-survey-group="care">
         <legend class="c-teiki-survey__group-title">ケア用品定期便</legend>
         <ul class="c-teiki-survey__list">
           <li class="c-teiki-survey__item">
@@ -984,7 +984,7 @@
       <p class="c-teiki-survey__intro">なお、次回出荷商品からの解約となります。<br>解約完了後、再度ご利用いただく場合は新規申込が必要となります。</p>
 
       <!-- コンタクトレンズ定期便 -->
-      <fieldset class="c-teiki-survey__group">
+      <fieldset class="c-teiki-survey__group js-survey-group" data-survey-group="cl">
         <legend class="c-teiki-survey__group-title">コンタクトレンズ定期便</legend>
         <ul class="c-teiki-survey__list">
           <li class="c-teiki-survey__item">
@@ -1044,6 +1044,74 @@
           <li class="c-teiki-survey__item">
             <label class="c-teiki-survey__label">
               <input type="checkbox" name="cancel-reason-cl-b" value="other" class="c-teiki-survey__checkbox js-survey-other-toggle">
+              <span class="c-teiki-survey__text">その他（フリーワード）</span>
+            </label>
+            <textarea class="c-teiki-survey__textarea js-survey-other-textarea" rows="3" placeholder="" hidden></textarea>
+          </li>
+        </ul>
+      </fieldset>
+
+      <!-- ケア用品定期便 -->
+      <fieldset class="c-teiki-survey__group js-survey-group" data-survey-group="care">
+        <legend class="c-teiki-survey__group-title">ケア用品定期便</legend>
+        <ul class="c-teiki-survey__list">
+          <li class="c-teiki-survey__item">
+            <label class="c-teiki-survey__label">
+              <input type="checkbox" name="cancel-reason-care-b" value="store" class="c-teiki-survey__checkbox">
+              <span class="c-teiki-survey__text">ハートアップの店舗で購入する（購入した）</span>
+            </label>
+          </li>
+          <li class="c-teiki-survey__item">
+            <label class="c-teiki-survey__label">
+              <input type="checkbox" name="cancel-reason-care-b" value="sale" class="c-teiki-survey__checkbox">
+              <span class="c-teiki-survey__text">オンラインショップのSALEで購入する（購入した）</span>
+            </label>
+          </li>
+          <li class="c-teiki-survey__item">
+            <label class="c-teiki-survey__label">
+              <input type="checkbox" name="cancel-reason-care-b" value="other-shop" class="c-teiki-survey__checkbox">
+              <span class="c-teiki-survey__text">別のお店で買う（買った）</span>
+            </label>
+          </li>
+          <li class="c-teiki-survey__item">
+            <label class="c-teiki-survey__label">
+              <input type="checkbox" name="cancel-reason-care-b" value="payment" class="c-teiki-survey__checkbox">
+              <span class="c-teiki-survey__text">支払い方法に不満</span>
+            </label>
+          </li>
+          <li class="c-teiki-survey__item">
+            <label class="c-teiki-survey__label">
+              <input type="checkbox" name="cancel-reason-care-b" value="delivery" class="c-teiki-survey__checkbox">
+              <span class="c-teiki-survey__text">配送・受取方法に不満</span>
+            </label>
+          </li>
+          <li class="c-teiki-survey__item">
+            <label class="c-teiki-survey__label">
+              <input type="checkbox" name="cancel-reason-care-b" value="price" class="c-teiki-survey__checkbox">
+              <span class="c-teiki-survey__text">価格に不満</span>
+            </label>
+          </li>
+          <li class="c-teiki-survey__item">
+            <label class="c-teiki-survey__label">
+              <input type="checkbox" name="cancel-reason-care-b" value="surplus" class="c-teiki-survey__checkbox">
+              <span class="c-teiki-survey__text">商品が余っている</span>
+            </label>
+          </li>
+          <li class="c-teiki-survey__item">
+            <label class="c-teiki-survey__label">
+              <input type="checkbox" name="cancel-reason-care-b" value="no-use" class="c-teiki-survey__checkbox">
+              <span class="c-teiki-survey__text">ケア用品を使わなくなった</span>
+            </label>
+          </li>
+          <li class="c-teiki-survey__item">
+            <label class="c-teiki-survey__label">
+              <input type="checkbox" name="cancel-reason-care-b" value="mistake" class="c-teiki-survey__checkbox">
+              <span class="c-teiki-survey__text">間違えて申し込んだ</span>
+            </label>
+          </li>
+          <li class="c-teiki-survey__item">
+            <label class="c-teiki-survey__label">
+              <input type="checkbox" name="cancel-reason-care-b" value="other" class="c-teiki-survey__checkbox js-survey-other-toggle">
               <span class="c-teiki-survey__text">その他（フリーワード）</span>
             </label>
             <textarea class="c-teiki-survey__textarea js-survey-other-textarea" rows="3" placeholder="" hidden></textarea>

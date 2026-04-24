@@ -2397,14 +2397,14 @@
 
 .c-teiki-modal__inner--skip {
   text-align: center;
-  padding: rem(48) rem(24) rem(32);
+  padding: rem(64) rem(24) rem(32);
   border-radius: rem(8);
 }
 
 .c-teiki-modal__close-btn {
   position: absolute;
-  top: rem(12);
-  right: rem(12);
+  top: rem(6);
+  right: rem(6);
   width: rem(44);
   height: rem(44);
   display: flex;

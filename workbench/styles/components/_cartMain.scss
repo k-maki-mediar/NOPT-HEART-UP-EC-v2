@@ -147,22 +147,40 @@
 }
 
 // ----------------------------------------
-// 商品行レイアウト
+// 商品行レイアウト（定期契約確認画面と同じ2カラム構成）
 // ----------------------------------------
 
-.c-cart-main__item-row {
+.c-cart-main__item-product {
   display: flex;
   gap: rem(12);
   align-items: flex-start;
 }
 
 // ----------------------------------------
-// 商品画像
+// 画像エリア（ラベル＋画像、左カラム）
 // ----------------------------------------
 
-.c-cart-main__item-img-wrap {
+.c-cart-main__item-img-area {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
   width: rem(120);
+}
+
+.c-cart-main__item-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(20);
+  background-color: $bg-banner;
+  color: $primary-color;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  letter-spacing: rem(0.15);
+}
+
+.c-cart-main__item-img-wrap {
+  width: 100%;
   height: rem(80);
   border: 1px solid $border-thin;
   background-color: $color-white;
@@ -176,10 +194,10 @@
 }
 
 // ----------------------------------------
-// 商品情報
+// 商品詳細（右カラム）
 // ----------------------------------------
 
-.c-cart-main__item-info {
+.c-cart-main__item-detail {
   flex: 1;
   min-width: 0;
 }
@@ -200,50 +218,16 @@
 }
 
 // ----------------------------------------
-// バッジ＋規格/処方箋行（インライン表示）
+// 処方箋情報・規格
 // ----------------------------------------
 
-.c-cart-main__item-spec-row {
-  display: flex;
-  align-items: center;
-  gap: rem(6);
-  margin-bottom: rem(8);
-}
-
-.c-cart-main__item-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: rem(16);
-  height: rem(16);
-  padding: 0 rem(3);
-  border-radius: rem(23);
-  background-color: $border-color-dark;
-  color: $color-white;
-  font-size: rem(10);
-  font-weight: $font-weight-medium;
-  line-height: 1.5;
-  letter-spacing: rem(0.15);
-  flex-shrink: 0;
-}
-
-.c-cart-main__item-rx-text {
+.c-cart-main__item-spec {
   font-size: rem(10);
   font-weight: $font-weight-normal;
-  color: $border-color-dark;
+  color: $text-light;
   line-height: 1.5;
   letter-spacing: rem(0.15);
-}
-
-// ----------------------------------------
-// 価格＋数量（横並び）
-// ----------------------------------------
-
-.c-cart-main__item-price-qty {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: rem(8) rem(16);
+  margin: 0 0 rem(8);
 }
 
 // ----------------------------------------
@@ -278,6 +262,18 @@
   color: $text-color;
   line-height: 1.5;
   letter-spacing: rem(0.15);
+}
+
+// ----------------------------------------
+// 数量・削除コントロール行（コース情報行の位置）
+// ----------------------------------------
+
+.c-cart-main__item-control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(12);
+  padding: rem(8) 0;
 }
 
 // ----------------------------------------
@@ -381,52 +377,6 @@
   flex-shrink: 0;
 }
 
-// ----------------------------------------
-// 小計行
-// ----------------------------------------
-
-.c-cart-main__item-subtotal-row {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  min-height: rem(46);
-  padding: rem(6) rem(8);
-  background-color: $bg-gray;
-  margin-top: rem(12);
-}
-
-.c-cart-main__item-subtotal-label {
-  font-size: rem(10);
-  font-weight: $font-weight-normal;
-  color: $text-color;
-  margin-right: rem(8);
-  line-height: 1.5;
-  letter-spacing: rem(0.15);
-}
-
-.c-cart-main__item-subtotal {
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  color: $text-color;
-  line-height: 1.75;
-  letter-spacing: rem(0.56);
-}
-
-.c-cart-main__item-subtotal-tax {
-  font-size: rem(10);
-  font-weight: $font-weight-normal;
-  color: $text-color;
-  margin-left: rem(2);
-  line-height: 1.5;
-  letter-spacing: rem(0.15);
-}
-
-// 削除ボタンラッパー（小計行の下）
-.c-cart-main__item-delete-wrap {
-  display: flex;
-  justify-content: flex-end;
-  padding: rem(8) 0;
-}
 
 // ----------------------------------------
 // 数量変更エリア

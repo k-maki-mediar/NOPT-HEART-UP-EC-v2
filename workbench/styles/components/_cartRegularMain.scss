@@ -35,6 +35,8 @@
 .c-cart-regular-main__nav-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: rem(8);
   padding: rem(6) rem(16);
   border: 1px solid $primary-color;
   border-radius: rem(4);
@@ -46,6 +48,17 @@
 
   &:hover {
     background-color: $bg-light;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: rem(6);
+    height: rem(6);
+    border-top: rem(2) solid $primary-color;
+    border-right: rem(2) solid $primary-color;
+    transform: rotate(45deg);
+    flex-shrink: 0;
   }
 }
 

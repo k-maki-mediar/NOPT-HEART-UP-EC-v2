@@ -55,10 +55,10 @@
             <span class="c-cart-regular-main__item-price-tax">(税込)</span>
           </div>
           <!-- 数量（SP: ステッパー） -->
-          <div class="c-cart-regular-main__item-qty-stepper">
-            <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--minus js-cart-regular-stepper-minus" aria-label="数量を減らす">−</button>
-            <span class="c-cart-regular-main__item-qty-value js-cart-regular-stepper-value">1</span>
-            <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--plus js-cart-regular-stepper-plus" aria-label="数量を増やす">＋</button>
+          <div class="c-cart-regular-main__item-qty-stepper js-cart-qty-stepper" data-qty-min="1" data-qty-max="9999">
+            <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--minus js-cart-qty-minus" aria-label="数量を減らす">-</button>
+            <input type="text" class="c-cart-regular-main__item-qty-value js-cart-qty-value" value="1" maxlength="4" aria-label="数量">
+            <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--plus js-cart-qty-plus" aria-label="数量を増やす">+</button>
           </div>
           <!-- 数量（PC/Tablet: テキストボックス） -->
           <div class="c-cart-regular-main__item-qty-area">
@@ -110,10 +110,10 @@
             <span class="c-cart-regular-main__item-price">2,150円</span>
             <span class="c-cart-regular-main__item-price-tax">(税込)</span>
           </div>
-          <div class="c-cart-regular-main__item-qty-stepper">
-            <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--minus js-cart-regular-stepper-minus" aria-label="数量を減らす">−</button>
-            <span class="c-cart-regular-main__item-qty-value js-cart-regular-stepper-value">1</span>
-            <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--plus js-cart-regular-stepper-plus" aria-label="数量を増やす">＋</button>
+          <div class="c-cart-regular-main__item-qty-stepper js-cart-qty-stepper" data-qty-min="1" data-qty-max="9999">
+            <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--minus js-cart-qty-minus" aria-label="数量を減らす">-</button>
+            <input type="text" class="c-cart-regular-main__item-qty-value js-cart-qty-value" value="1" maxlength="4" aria-label="数量">
+            <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--plus js-cart-qty-plus" aria-label="数量を増やす">+</button>
           </div>
           <div class="c-cart-regular-main__item-qty-area">
             <input type="text" class="c-cart-regular-main__item-qty-input" value="1" maxlength="4" aria-label="数量">

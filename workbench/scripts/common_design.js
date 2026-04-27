@@ -1518,26 +1518,62 @@ $(function () {
 })();
 
 /* ========================================
- * カート定期購入：SP数量ステッパー
- * SPのみ表示される ±ボタンで数量を増減
+ * カート：数量ステッパー（通常購入・定期購入共通）
+ * data-qty-min / data-qty-max でDGBT側から動的に上下限をセット可能
  * ======================================== */
 $(function () {
-  $(document).on('click', '.js-cart-regular-stepper-minus', function () {
-    const $item = $(this).closest('.c-cart-regular-main__item-qty-stepper');
-    const $val = $item.find('.js-cart-regular-stepper-value');
-    let current = parseInt($val.text(), 10);
-    if (current > 1) {
-      current -= 1;
-      $val.text(current);
+  function updateStepperState($stepper) {
+    const $input = $stepper.find('.js-cart-qty-value');
+    const $minus = $stepper.find('.js-cart-qty-minus');
+    const $plus = $stepper.find('.js-cart-qty-plus');
+    const current = parseInt($input.val(), 10) || 1;
+    const min = parseInt($stepper.data('qty-min'), 10) || 1;
+    const max = parseInt($stepper.data('qty-max'), 10) || 9999;
+
+    $minus.prop('disabled', current <= min);
+    $plus.prop('disabled', current >= max);
+  }
+
+  // マイナスボタン
+  $(document).on('click', '.js-cart-qty-minus', function () {
+    const $stepper = $(this).closest('.js-cart-qty-stepper');
+    const $input = $stepper.find('.js-cart-qty-value');
+    const min = parseInt($stepper.data('qty-min'), 10) || 1;
+    let current = parseInt($input.val(), 10) || 1;
+    if (current > min) {
+      $input.val(current - 1);
     }
+    updateStepperState($stepper);
   });
 
-  $(document).on('click', '.js-cart-regular-stepper-plus', function () {
-    const $item = $(this).closest('.c-cart-regular-main__item-qty-stepper');
-    const $val = $item.find('.js-cart-regular-stepper-value');
-    let current = parseInt($val.text(), 10);
-    current += 1;
-    $val.text(current);
+  // プラスボタン
+  $(document).on('click', '.js-cart-qty-plus', function () {
+    const $stepper = $(this).closest('.js-cart-qty-stepper');
+    const $input = $stepper.find('.js-cart-qty-value');
+    const max = parseInt($stepper.data('qty-max'), 10) || 9999;
+    let current = parseInt($input.val(), 10) || 1;
+    if (current < max) {
+      $input.val(current + 1);
+    }
+    updateStepperState($stepper);
+  });
+
+  // 手入力時のバリデーション
+  $(document).on('change', '.js-cart-qty-value', function () {
+    const $input = $(this);
+    const $stepper = $input.closest('.js-cart-qty-stepper');
+    const min = parseInt($stepper.data('qty-min'), 10) || 1;
+    const max = parseInt($stepper.data('qty-max'), 10) || 9999;
+    let val = parseInt($input.val(), 10);
+    if (isNaN(val) || val < min) { val = min; }
+    if (val > max) { val = max; }
+    $input.val(val);
+    updateStepperState($stepper);
+  });
+
+  // 初期状態更新
+  $('.js-cart-qty-stepper').each(function () {
+    updateStepperState($(this));
   });
 });
 

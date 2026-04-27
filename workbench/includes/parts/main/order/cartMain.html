@@ -24,37 +24,30 @@
     <!-- 商品行：コンタクトレンズ（右目）例 -->
     <li class="c-cart-main__item">
       <div class="c-cart-main__item-row">
-        <!-- 商品画像エリア（ラベル＋画像） -->
-        <div class="c-cart-main__item-img-area">
-          <span class="c-cart-main__item-badge">右</span>
-          <div class="c-cart-main__item-img-wrap">
-            <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
-          </div>
+        <!-- 商品画像 -->
+        <div class="c-cart-main__item-img-wrap">
+          <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
         </div>
         <!-- 商品情報 -->
         <div class="c-cart-main__item-info">
-          <!-- 商品名 -->
           <a href="#" class="c-cart-main__item-name">アキュビュー オアシス（1箱）</a>
-          <!-- 処方箋情報（コンタクトレンズのみ） -->
-          <div class="c-cart-main__item-rx">
-            <div class="c-cart-main__item-rx-row">
-              <span class="c-cart-main__item-rx-label">BC</span><span>8.80</span>
-              <span class="c-cart-main__item-rx-label">P</span><span>-1.00</span>
-              <span class="c-cart-main__item-rx-label">C</span><span>0.00</span>
-              <span class="c-cart-main__item-rx-label">AX</span><span>0</span>
-              <span class="c-cart-main__item-rx-label">DIA</span><span>14.20</span>
-              <span class="c-cart-main__item-rx-label">ADD</span><span>0.00</span>
+          <!-- バッジ＋処方箋情報 -->
+          <div class="c-cart-main__item-spec-row">
+            <span class="c-cart-main__item-badge">右</span>
+            <span class="c-cart-main__item-rx-text">BC 8.80 P -1.00 C 0.00 AX 0 DIA 14.20 ADD 0.00</span>
+          </div>
+          <!-- 価格＋数量（横並び） -->
+          <div class="c-cart-main__item-price-qty">
+            <div class="c-cart-main__item-price-wrap">
+              <span class="c-cart-main__item-price">2,150円</span>
+              <span class="c-cart-main__item-price-tax">(税込)</span>
             </div>
-          </div>
-          <!-- 販売価格 -->
-          <div class="c-cart-main__item-price-wrap">
-            <span class="c-cart-main__item-price">2,150円</span>
-            <span class="c-cart-main__item-price-tax">(税込)</span>
-          </div>
-          <!-- 数量 -->
-          <div class="c-cart-main__item-qty-area">
-            <span class="c-cart-main__item-qty-label">数量：</span>
-            <input type="text" class="c-cart-main__item-qty-input" value="1" maxlength="4" aria-label="数量">
+            <div class="c-cart-main__item-qty-stepper js-cart-qty-stepper" data-qty-min="1" data-qty-max="9999">
+              <span class="c-cart-main__item-qty-label">数量：</span>
+              <button type="button" class="c-cart-main__item-qty-btn c-cart-main__item-qty-btn--minus js-cart-qty-minus" aria-label="数量を減らす">-</button>
+              <input type="text" class="c-cart-main__item-qty-input js-cart-qty-value" value="1" maxlength="4" aria-label="数量">
+              <button type="button" class="c-cart-main__item-qty-btn c-cart-main__item-qty-btn--plus js-cart-qty-plus" aria-label="数量を増やす">+</button>
+            </div>
           </div>
         </div>
       </div>
@@ -78,31 +71,26 @@
     <!-- 商品行：コンタクトレンズ（左目）例 -->
     <li class="c-cart-main__item">
       <div class="c-cart-main__item-row">
-        <div class="c-cart-main__item-img-area">
-          <span class="c-cart-main__item-badge">左</span>
-          <div class="c-cart-main__item-img-wrap">
-            <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
-          </div>
+        <div class="c-cart-main__item-img-wrap">
+          <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
         </div>
         <div class="c-cart-main__item-info">
           <a href="#" class="c-cart-main__item-name">アキュビュー オアシス（1箱）</a>
-          <div class="c-cart-main__item-rx">
-            <div class="c-cart-main__item-rx-row">
-              <span class="c-cart-main__item-rx-label">BC</span><span>8.80</span>
-              <span class="c-cart-main__item-rx-label">P</span><span>-0.75</span>
-              <span class="c-cart-main__item-rx-label">C</span><span>0.00</span>
-              <span class="c-cart-main__item-rx-label">AX</span><span>0</span>
-              <span class="c-cart-main__item-rx-label">DIA</span><span>14.20</span>
-              <span class="c-cart-main__item-rx-label">ADD</span><span>0.00</span>
+          <div class="c-cart-main__item-spec-row">
+            <span class="c-cart-main__item-badge">左</span>
+            <span class="c-cart-main__item-rx-text">BC 8.80 P -0.75 C 0.00 AX 0 DIA 14.20 ADD 0.00</span>
+          </div>
+          <div class="c-cart-main__item-price-qty">
+            <div class="c-cart-main__item-price-wrap">
+              <span class="c-cart-main__item-price">2,150円</span>
+              <span class="c-cart-main__item-price-tax">(税込)</span>
             </div>
-          </div>
-          <div class="c-cart-main__item-price-wrap">
-            <span class="c-cart-main__item-price">2,150円</span>
-            <span class="c-cart-main__item-price-tax">(税込)</span>
-          </div>
-          <div class="c-cart-main__item-qty-area">
-            <span class="c-cart-main__item-qty-label">数量：</span>
-            <input type="text" class="c-cart-main__item-qty-input" value="1" maxlength="4" aria-label="数量">
+            <div class="c-cart-main__item-qty-stepper js-cart-qty-stepper" data-qty-min="1" data-qty-max="9999">
+              <span class="c-cart-main__item-qty-label">数量：</span>
+              <button type="button" class="c-cart-main__item-qty-btn c-cart-main__item-qty-btn--minus js-cart-qty-minus" aria-label="数量を減らす">-</button>
+              <input type="text" class="c-cart-main__item-qty-input js-cart-qty-value" value="1" maxlength="4" aria-label="数量">
+              <button type="button" class="c-cart-main__item-qty-btn c-cart-main__item-qty-btn--plus js-cart-qty-plus" aria-label="数量を増やす">+</button>
+            </div>
           </div>
         </div>
       </div>
@@ -124,23 +112,27 @@
     <!-- 商品行：ケア用品（非コンタクト商品例） -->
     <li class="c-cart-main__item">
       <div class="c-cart-main__item-row">
-        <div class="c-cart-main__item-img-area">
-          <span class="c-cart-main__item-badge">ケア</span>
-          <div class="c-cart-main__item-img-wrap">
-            <img src="../../../files/commonfiles/images/product-sample-05.png" alt="コンプリート ダブルモイスト 360ml" class="c-cart-main__item-img" width="120" height="80">
-          </div>
+        <div class="c-cart-main__item-img-wrap">
+          <img src="../../../files/commonfiles/images/product-sample-05.png" alt="コンプリート ダブルモイスト 360ml" class="c-cart-main__item-img" width="120" height="80">
         </div>
         <div class="c-cart-main__item-info">
           <a href="#" class="c-cart-main__item-name">コンプリート ダブルモイスト 360ml</a>
-          <p class="c-cart-main__item-spec">360ml</p>
-          <div class="c-cart-main__item-price-wrap">
-            <span class="c-cart-main__item-price--discount">1,200円</span>
-            <span class="c-cart-main__item-price">980円</span>
-            <span class="c-cart-main__item-price-tax">(税込)</span>
+          <div class="c-cart-main__item-spec-row">
+            <span class="c-cart-main__item-badge">ケア</span>
+            <span class="c-cart-main__item-rx-text">360ml</span>
           </div>
-          <div class="c-cart-main__item-qty-area">
-            <span class="c-cart-main__item-qty-label">数量：</span>
-            <input type="text" class="c-cart-main__item-qty-input" value="2" maxlength="4" aria-label="数量">
+          <div class="c-cart-main__item-price-qty">
+            <div class="c-cart-main__item-price-wrap">
+              <span class="c-cart-main__item-price--discount">1,200円</span>
+              <span class="c-cart-main__item-price">980円</span>
+              <span class="c-cart-main__item-price-tax">(税込)</span>
+            </div>
+            <div class="c-cart-main__item-qty-stepper js-cart-qty-stepper" data-qty-min="1" data-qty-max="9999">
+              <span class="c-cart-main__item-qty-label">数量：</span>
+              <button type="button" class="c-cart-main__item-qty-btn c-cart-main__item-qty-btn--minus js-cart-qty-minus" aria-label="数量を減らす">-</button>
+              <input type="text" class="c-cart-main__item-qty-input js-cart-qty-value" value="2" maxlength="4" aria-label="数量">
+              <button type="button" class="c-cart-main__item-qty-btn c-cart-main__item-qty-btn--plus js-cart-qty-plus" aria-label="数量を増やす">+</button>
+            </div>
           </div>
         </div>
       </div>

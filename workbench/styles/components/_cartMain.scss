@@ -147,29 +147,23 @@
 }
 
 // ----------------------------------------
-// 商品行レイアウト（定期契約確認画面と同じグリッド）
+// 商品行レイアウト
 // ----------------------------------------
 
 .c-cart-main__item-row {
-  display: grid;
-  grid-template-columns: rem(140) 1fr;
-  gap: rem(16) rem(12);
-  align-items: start;
-}
-
-// ----------------------------------------
-// 画像エリア（ラベル + 画像、グリッド左列）
-// ----------------------------------------
-
-.c-cart-main__item-img-area {
-  grid-column: 1;
   display: flex;
-  flex-direction: column;
+  gap: rem(12);
+  align-items: flex-start;
 }
+
+// ----------------------------------------
+// 商品画像
+// ----------------------------------------
 
 .c-cart-main__item-img-wrap {
-  width: 100%;
-  height: rem(100);
+  flex-shrink: 0;
+  width: rem(120);
+  height: rem(80);
   border: 1px solid $border-thin;
   background-color: $color-white;
 }
@@ -182,11 +176,11 @@
 }
 
 // ----------------------------------------
-// 商品情報（グリッド右列）
+// 商品情報
 // ----------------------------------------
 
 .c-cart-main__item-info {
-  grid-column: 2;
+  flex: 1;
   min-width: 0;
 }
 
@@ -198,7 +192,7 @@
   text-decoration: none;
   line-height: 1.75;
   letter-spacing: rem(0.56);
-  margin: 0 0 rem(6);
+  margin: 0 0 rem(4);
 
   &:hover {
     text-decoration: underline;
@@ -206,54 +200,50 @@
 }
 
 // ----------------------------------------
-// ラベルバー（「右」「左」「ケア」— 定期契約確認画面と同じスタイル）
+// バッジ＋規格/処方箋行（インライン表示）
 // ----------------------------------------
 
-.c-cart-main__item-badge {
+.c-cart-main__item-spec-row {
   display: flex;
   align-items: center;
+  gap: rem(6);
+  margin-bottom: rem(8);
+}
+
+.c-cart-main__item-badge {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  height: rem(20);
-  background-color: $bg-banner;
-  color: $primary-color;
-  font-size: rem(12);
+  min-width: rem(16);
+  height: rem(16);
+  padding: 0 rem(3);
+  border-radius: rem(23);
+  background-color: $border-color-dark;
+  color: $color-white;
+  font-size: rem(10);
   font-weight: $font-weight-medium;
-  letter-spacing: rem(0.15);
-}
-
-// ----------------------------------------
-// 規格名（処方箋情報）
-// ----------------------------------------
-
-.c-cart-main__item-spec {
-  font-size: rem(10);
-  color: $text-color;
   line-height: 1.5;
   letter-spacing: rem(0.15);
-  margin: 0 0 rem(4);
-}
-
-// ----------------------------------------
-// 処方箋情報
-// ----------------------------------------
-
-.c-cart-main__item-rx {
-  margin-bottom: rem(4);
-}
-
-.c-cart-main__item-rx-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: rem(4) rem(8);
-  font-size: rem(10);
-  color: $text-color;
-  line-height: 1.5;
-  letter-spacing: rem(0.15);
-}
-
-.c-cart-main__item-rx-label {
-  color: $text-color;
   flex-shrink: 0;
+}
+
+.c-cart-main__item-rx-text {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $border-color-dark;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+// ----------------------------------------
+// 価格＋数量（横並び）
+// ----------------------------------------
+
+.c-cart-main__item-price-qty {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(8) rem(16);
 }
 
 // ----------------------------------------
@@ -291,13 +281,13 @@
 }
 
 // ----------------------------------------
-// 数量エリア
+// 数量ステッパー
 // ----------------------------------------
 
-.c-cart-main__item-qty-area {
+.c-cart-main__item-qty-stepper {
   display: flex;
   align-items: center;
-  gap: rem(8);
+  gap: 0;
 }
 
 .c-cart-main__item-qty-label {
@@ -305,14 +295,54 @@
   font-weight: $font-weight-medium;
   color: $text-color;
   flex-shrink: 0;
+  margin-right: rem(8);
+}
+
+.c-cart-main__item-qty-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(32);
+  height: rem(32);
+  border: 1px solid $border-color-dark;
+  background-color: $bg-banner;
+  font-family: Arial, sans-serif;
+  font-size: rem(20);
+  line-height: 1;
+  color: $primary-color;
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 0;
+  padding: 0;
+
+  &:hover {
+    background-color: darken($bg-banner, 5%);
+  }
+
+  &:disabled {
+    background-color: $bg-gray;
+    color: $border-color-dark;
+    cursor: not-allowed;
+  }
+}
+
+.c-cart-main__item-qty-btn--minus {
+  border-radius: 0;
+}
+
+.c-cart-main__item-qty-btn--plus {
+  border-radius: 0;
 }
 
 .c-cart-main__item-qty-input {
   width: rem(50);
   height: rem(32);
   padding: 0 rem(6);
-  border: 1px solid $border-color-dark;
-  border-radius: rem(4);
+  border-top: 1px solid $border-color-dark;
+  border-bottom: 1px solid $border-color-dark;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
   font-size: rem(14);
   text-align: center;
   color: $text-color;
@@ -396,7 +426,6 @@
   display: flex;
   justify-content: flex-end;
   padding: rem(8) 0;
-  border-bottom: 1px solid $border-color;
 }
 
 // ----------------------------------------

@@ -22,16 +22,22 @@
             <div class="wsparts-include">
               <div class="c-main">
                 <div class="wsparts-include">
-                  @@include('../../includes/parts/general/messageArea.html')
-                </div>
-                <div class="wsparts-include">
                   @@include('../../includes/parts/main/order/cartTopicPath.html')
                 </div>
                 <div class="wsparts-include">
-                  @@include('../../includes/parts/main/order/cartHeading.html')
+                  @@include('../../includes/parts/general/stepNav.html')
                 </div>
                 <div class="wsparts-include">
-                  @@include('../../includes/parts/general/stepNav.html')
+                  @@include('../../includes/parts/general/messageArea.html')
+                </div>
+                <!-- ===== 送料無料メッセージバー（条件付き表示：送料無料未達時） ===== -->
+                <div class="wsparts-include">
+                  <div class="c-cart-shipping-msg">
+                    <p class="c-cart-shipping-msg__text">お買い上げ商品の合計金額は<strong class="c-cart-shipping-msg__amount">3,000円</strong>です。あと<strong class="c-cart-shipping-msg__amount">2,000円</strong>で送料無料です！！</p>
+                  </div>
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/main/order/cartHeading.html')
                 </div>
                 <div class="wsparts-include">
                   @@include('../../includes/parts/main/order/cartMain.html')

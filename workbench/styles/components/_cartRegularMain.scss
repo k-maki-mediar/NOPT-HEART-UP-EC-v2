@@ -719,19 +719,10 @@
 }
 
 .c-cart-regular-main__btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include accordion-card-btn;
   width: 100%;
-  min-height: rem(46);
   padding: rem(10) rem(24);
-  border-radius: rem(23);
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  text-decoration: none;
-  text-align: center;
   cursor: pointer;
-  transition: transform $transition-fast, box-shadow $transition-fast;
   box-sizing: border-box;
 
   @include tablet-up {
@@ -741,24 +732,13 @@
 
 .c-cart-regular-main__btn--primary {
   background-color: $primary-color;
-  border: none;
-  box-shadow: 0 rem(2) 0 $primary-shadow;
+  border-color: $primary-color;
   color: $color-white;
-
-  &:hover {
-    transform: translateY(rem(2));
-    box-shadow: 0 0 0 $primary-shadow;
-  }
 }
 
 .c-cart-regular-main__btn--secondary {
   background-color: $color-white;
-  border: 1px solid $primary-color;
   color: $primary-color;
-
-  &:hover {
-    background-color: $bg-light;
-  }
 }
 
 .c-cart-regular-main__btn--clear {

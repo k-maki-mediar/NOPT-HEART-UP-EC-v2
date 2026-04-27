@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja" class="c-html">
+<head>
+@@include('../../includes/head.html', {"title": "カート"})
+</head>
+<body class="c-body">
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageHeaderMenu.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/stepNav.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/messageArea.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <div class="c-main">
+                <!-- ===== カート空状態 ===== -->
+                <section class="c-cart-main" aria-label="カート" data-cart-section="normal">
+                  <h1 class="c-cart-main__page-title">カート</h1>
+
+                  <!-- 空状態エラーメッセージ -->
+                  <div class="c-cart-main__empty">
+                    <p class="c-cart-main__empty-text">現在、お客様のカートに品物は入っておりません。</p>
+                  </div>
+
+                  <!-- カタログから商品を購入 -->
+                  <div class="c-cart-main__catalog-link-wrap">
+                    <a href="#" class="c-cart-main__catalog-link">カタログから商品を購入</a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageSideNav.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooterMenu.html')
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,719 @@
+// ========================================
+// Cart Main（通常購入カート）
+// 格納先HTML: workbench/includes/parts/main/cart/cartMain.html
+// BEM: .c-cart-main / .c-cart-shipping-msg
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// 送料無料メッセージバー
+// ========================================
+
+.c-cart-shipping-msg {
+  display: flex;
+  align-items: center;
+  min-height: rem(46);
+  padding: rem(10) rem(16);
+  margin: 0;
+  background-color: $bg-red-light;
+  border: 1px solid $accent-red;
+  box-sizing: border-box;
+}
+
+.c-cart-shipping-msg__text {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $accent-red;
+  margin: 0;
+}
+
+.c-cart-shipping-msg__amount {
+  font-weight: $font-weight-bold;
+}
+
+// ========================================
+// 通常購入カート全体
+// ========================================
+
+.c-cart-main {
+  padding-bottom: rem(24);
+}
+
+// ----------------------------------------
+// ページタイトル
+// ----------------------------------------
+
+.c-cart-main__page-title {
+  font-size: rem(18);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: rem(16) rem(16) rem(8);
+  padding: 0;
+}
+
+// ----------------------------------------
+// 「定期購入はこちら」ナビリンク
+// ----------------------------------------
+
+.c-cart-main__nav-link-wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding: rem(8) rem(16);
+}
+
+.c-cart-main__nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: rem(6) rem(16);
+  border: 1px solid $primary-color;
+  border-radius: rem(4);
+  background-color: $color-white;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $bg-light;
+  }
+}
+
+// ----------------------------------------
+// セクションヘッダー
+// ----------------------------------------
+
+.c-cart-main__section-header {
+  display: flex;
+  align-items: center;
+  min-height: rem(46);
+  padding: rem(8) rem(16);
+  background-color: $bg-banner;
+}
+
+.c-cart-main__section-title {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: 0;
+}
+
+// ----------------------------------------
+// ショップ名ラベル
+// ----------------------------------------
+
+.c-cart-main__shop-label {
+  display: block;
+  padding: rem(8) rem(16);
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+}
+
+// ----------------------------------------
+// 商品カードリスト
+// ----------------------------------------
+
+.c-cart-main__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-cart-main__item {
+  padding: rem(12) rem(16);
+  border-bottom: 1px solid $border-color;
+}
+
+// ----------------------------------------
+// 商品行レイアウト（SP: 横並び）
+// ----------------------------------------
+
+.c-cart-main__item-row {
+  display: flex;
+  gap: rem(12);
+  align-items: flex-start;
+}
+
+// ----------------------------------------
+// 商品画像
+// ----------------------------------------
+
+.c-cart-main__item-img-wrap {
+  flex-shrink: 0;
+  width: rem(80);
+
+  @include tablet-up {
+    width: rem(120);
+  }
+}
+
+.c-cart-main__item-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid $border-thin;
+  object-fit: contain;
+}
+
+// ----------------------------------------
+// 商品情報（名前・バッジ・価格）
+// ----------------------------------------
+
+.c-cart-main__item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.c-cart-main__item-name {
+  display: block;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  text-decoration: none;
+  line-height: 1.6;
+  margin-bottom: rem(4);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ----------------------------------------
+// バッジ群（商品種別・RL区分）
+// ----------------------------------------
+
+.c-cart-main__item-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(4);
+  margin-bottom: rem(4);
+}
+
+.c-cart-main__item-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(32);
+  height: rem(20);
+  padding: 0 rem(6);
+  border-radius: rem(10);
+  background-color: $border-color-dark;
+  font-size: rem(10);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  line-height: 1;
+}
+
+.c-cart-main__item-badge--rl {
+  background-color: $accent-red;
+}
+
+// ----------------------------------------
+// 規格名
+// ----------------------------------------
+
+.c-cart-main__item-spec {
+  font-size: rem(12);
+  color: $text-light;
+  margin-bottom: rem(4);
+}
+
+// ----------------------------------------
+// 処方箋情報
+// ----------------------------------------
+
+.c-cart-main__item-rx {
+  margin-bottom: rem(6);
+}
+
+.c-cart-main__item-rx-row {
+  display: flex;
+  gap: rem(8);
+  font-size: rem(10);
+  color: $text-color;
+  line-height: 1.6;
+}
+
+.c-cart-main__item-rx-label {
+  color: $text-light;
+  flex-shrink: 0;
+  min-width: rem(32);
+}
+
+// ----------------------------------------
+// 価格
+// ----------------------------------------
+
+.c-cart-main__item-price-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: rem(4);
+  margin-bottom: rem(4);
+}
+
+.c-cart-main__item-price {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+}
+
+.c-cart-main__item-price--discount {
+  font-size: rem(10);
+  color: $text-light;
+  text-decoration: line-through;
+}
+
+.c-cart-main__item-price-tax {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+}
+
+// ----------------------------------------
+// 数量エリア
+// ----------------------------------------
+
+.c-cart-main__item-qty-area {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  margin-bottom: rem(8);
+}
+
+.c-cart-main__item-qty-label {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  flex-shrink: 0;
+}
+
+.c-cart-main__item-qty-input {
+  width: rem(50);
+  height: rem(32);
+  padding: 0 rem(6);
+  border: 1px solid $border-color-dark;
+  border-radius: rem(4);
+  font-size: rem(14);
+  text-align: center;
+  color: $text-color;
+  background-color: $color-white;
+}
+
+// ----------------------------------------
+// 削除ボタン
+// ----------------------------------------
+
+.c-cart-main__item-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(4);
+  min-width: rem(74);
+  height: rem(32);
+  padding: 0 rem(10);
+  border: none;
+  border-radius: rem(8);
+  background-color: $border-color-dark;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $text-light;
+  }
+}
+
+.c-cart-main__item-delete-icon {
+  width: rem(14);
+  height: rem(14);
+  flex-shrink: 0;
+}
+
+// ----------------------------------------
+// 小計行
+// ----------------------------------------
+
+.c-cart-main__item-subtotal-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: rem(40);
+  padding: rem(8) rem(12);
+  background-color: $bg-gray;
+  margin-top: rem(8);
+}
+
+.c-cart-main__item-subtotal-label {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+  margin-right: rem(8);
+}
+
+.c-cart-main__item-subtotal {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+}
+
+.c-cart-main__item-subtotal-tax {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+  margin-left: rem(2);
+}
+
+// ----------------------------------------
+// 数量変更エリア
+// ----------------------------------------
+
+.c-cart-main__update-area {
+  padding: rem(12) rem(16) rem(8);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: rem(8);
+}
+
+.c-cart-main__update-note {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $accent-red;
+  line-height: 1.6;
+  text-align: right;
+  margin: 0;
+}
+
+.c-cart-main__update-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(100);
+  height: rem(32);
+  padding: 0 rem(16);
+  border: none;
+  border-radius: rem(4);
+  background-color: $primary-color;
+  box-shadow: 0 rem(2) 0 $primary-shadow;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 $primary-shadow;
+  }
+}
+
+// ----------------------------------------
+// 集計エリア
+// ----------------------------------------
+
+.c-cart-main__summary {
+  padding: rem(0) rem(16) rem(8);
+}
+
+.c-cart-main__summary-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: rem(8);
+  padding: rem(6) 0;
+}
+
+.c-cart-main__summary-row--total {
+  min-height: rem(46);
+  padding: rem(8) rem(12);
+  margin: rem(8) rem(-16) 0;
+  background-color: $bg-light;
+  align-items: center;
+}
+
+.c-cart-main__summary-label {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+}
+
+.c-cart-main__summary-label--total {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+}
+
+.c-cart-main__summary-amount {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+}
+
+.c-cart-main__summary-amount--total {
+  font-size: rem(24);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+}
+
+.c-cart-main__summary-tax {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+}
+
+.c-cart-main__summary-tax--total {
+  font-size: rem(12);
+  color: $primary-color;
+}
+
+// ----------------------------------------
+// コンタクトレンズ購入同意エリア
+// ----------------------------------------
+
+.c-cart-main__agreement {
+  margin: rem(16) rem(16) 0;
+  padding: rem(16);
+  background-color: $bg-red-light;
+  border: 1px solid $accent-red;
+}
+
+.c-cart-main__agreement-text {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  line-height: 1.7;
+  color: $text-color;
+  margin: 0 0 rem(12);
+}
+
+.c-cart-main__agreement-check {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  min-height: rem(44);
+  cursor: pointer;
+}
+
+.c-cart-main__agreement-check-input {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: $accent-red;
+}
+
+.c-cart-main__agreement-check-label {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  cursor: pointer;
+}
+
+// ----------------------------------------
+// アクションボタンエリア
+// ----------------------------------------
+
+.c-cart-main__actions {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  padding: rem(16) rem(16) 0;
+
+  @include tablet-up {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+
+.c-cart-main__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(46);
+  padding: rem(10) rem(24);
+  border-radius: rem(23);
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+  box-sizing: border-box;
+
+  @include tablet-up {
+    flex: 1;
+  }
+}
+
+.c-cart-main__btn--primary {
+  background-color: $primary-color;
+  border: none;
+  box-shadow: 0 rem(2) 0 $primary-shadow;
+  color: $color-white;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 $primary-shadow;
+  }
+}
+
+.c-cart-main__btn--secondary {
+  background-color: $color-white;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+
+  &:hover {
+    background-color: $bg-light;
+  }
+}
+
+.c-cart-main__btn--clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(44);
+  margin-top: rem(12);
+  padding: rem(8) rem(24);
+  border: 1px solid $border-color-dark;
+  border-radius: rem(4);
+  background-color: $bg-gray;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: $border-color;
+  }
+
+  @include tablet-up {
+    width: auto;
+    min-width: rem(160);
+  }
+}
+
+// ----------------------------------------
+// 各種注記・リンク
+// ----------------------------------------
+
+.c-cart-main__reduced-tax-note {
+  padding: rem(8) rem(16) 0;
+  font-size: rem(10);
+  color: $text-light;
+  margin: 0;
+}
+
+.c-cart-main__catalog-link-wrap {
+  padding: rem(8) rem(16) rem(16);
+}
+
+.c-cart-main__catalog-link {
+  font-size: rem(14);
+  color: $link-blue;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// ----------------------------------------
+// 空状態メッセージ
+// ----------------------------------------
+
+.c-cart-main__empty {
+  margin: rem(16);
+  padding: rem(16);
+  background-color: $bg-red-light;
+  border: 1px solid $accent-red;
+}
+
+.c-cart-main__empty-text {
+  font-size: rem(14);
+  color: $accent-red;
+  margin: 0;
+  line-height: 1.6;
+}
+
+// ========================================
+// PC: テーブル形式レイアウト
+// ========================================
+
+@include tablet-up {
+  .c-cart-main__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: rem(8);
+  }
+
+  .c-cart-main__table-header {
+    background-color: $bg-banner;
+  }
+
+  .c-cart-main__table-th {
+    padding: rem(10) rem(12);
+    font-size: rem(12);
+    font-weight: $font-weight-medium;
+    color: $primary-color;
+    text-align: center;
+    border: 1px solid $border-color;
+  }
+
+  .c-cart-main__table-th--name {
+    text-align: left;
+    width: 45%;
+  }
+
+  .c-cart-main__table-td {
+    padding: rem(12);
+    border: 1px solid $border-color;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .c-cart-main__table-td--name {
+    text-align: left;
+  }
+
+  .c-cart-main__table-cell-product {
+    display: flex;
+    gap: rem(12);
+    align-items: flex-start;
+  }
+
+  // PC: 商品行（テーブル行のSP用要素を非表示）
+  .c-cart-main__item-row {
+    display: none;
+  }
+
+  .c-cart-main__item-subtotal-row {
+    display: none;
+  }
+
+  // PC: アクションエリア調整
+  .c-cart-main__actions {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+
+  .c-cart-main__btn {
+    width: auto;
+    min-width: rem(180);
+  }
+
+  .c-cart-main__update-area {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

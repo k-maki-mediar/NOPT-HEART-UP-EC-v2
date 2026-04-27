@@ -1518,6 +1518,30 @@ $(function () {
 })();
 
 /* ========================================
+ * カート定期購入：SP数量ステッパー
+ * SPのみ表示される ±ボタンで数量を増減
+ * ======================================== */
+$(function () {
+  $(document).on('click', '.js-cart-regular-stepper-minus', function () {
+    const $item = $(this).closest('.c-cart-regular-main__item-qty-stepper');
+    const $val = $item.find('.js-cart-regular-stepper-value');
+    let current = parseInt($val.text(), 10);
+    if (current > 1) {
+      current -= 1;
+      $val.text(current);
+    }
+  });
+
+  $(document).on('click', '.js-cart-regular-stepper-plus', function () {
+    const $item = $(this).closest('.c-cart-regular-main__item-qty-stepper');
+    const $val = $item.find('.js-cart-regular-stepper-value');
+    let current = parseInt($val.text(), 10);
+    current += 1;
+    $val.text(current);
+  });
+});
+
+/* ========================================
  * フォントサイズ切り替え（fontSizeSwitcher）
  * ======================================== */
 (function() {

@@ -1,0 +1,124 @@
+// ========================================
+// Step Navigation（ステップナビゲーション）
+// 購入フロー共通パーツ
+// 格納先HTML: workbench/includes/parts/general/stepNav.html
+// BEM: .c-step-nav
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ----------------------------------------
+// ラッパー
+// ----------------------------------------
+.c-step-nav {
+  background-color: $color-white;
+  padding: rem(16) rem(16) rem(12);
+  border-bottom: 1px solid $border-color;
+}
+
+.c-step-nav__list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+// ----------------------------------------
+// ステップ項目
+// ----------------------------------------
+.c-step-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+
+}
+
+// ステップ間の接続線（2番目以降のステップに付与）
+.c-step-nav__item + .c-step-nav__item::before {
+  content: '';
+  position: absolute;
+  top: rem(18); // 円の中心（36px÷2）
+  left: calc(-50% + rem(18));
+  right: calc(50% + rem(18));
+  height: rem(2);
+  background-color: $bg-banner;
+}
+
+// ----------------------------------------
+// ステップ番号円
+// ----------------------------------------
+.c-step-nav__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(36);
+  height: rem(36);
+  border-radius: 50%;
+  background-color: $bg-banner;
+  color: $color-white;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  line-height: 1;
+  flex-shrink: 0;
+  position: relative;
+  z-index: $z-index-content;
+}
+
+// ----------------------------------------
+// ステップ名テキスト
+// ----------------------------------------
+.c-step-nav__label {
+  margin-top: rem(4);
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  line-height: 1.4;
+  color: $bg-banner;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  @include sp {
+    font-size: rem(9);
+  }
+}
+
+// ----------------------------------------
+// アクティブステップ
+// ----------------------------------------
+.c-step-nav__item--active {
+  .c-step-nav__circle {
+    background-color: $primary-color;
+  }
+
+  .c-step-nav__label {
+    color: $primary-color;
+    font-weight: $font-weight-medium;
+  }
+}
+
+// ----------------------------------------
+// PC: フルラベル表示
+// ----------------------------------------
+@include tablet-up {
+  .c-step-nav {
+    padding: rem(20) rem(24) rem(16);
+  }
+
+  .c-step-nav__label {
+    font-size: rem(11);
+    white-space: nowrap;
+  }
+}
+
+@include pc {
+  .c-step-nav__label {
+    font-size: rem(12);
+  }
+}

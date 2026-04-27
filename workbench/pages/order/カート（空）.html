@@ -15,20 +15,26 @@
           </div>
           <div>
             <div class="wsparts-include">
-              @@include('../../includes/parts/general/stepNav.html')
-            </div>
-          </div>
-          <div>
-            <div class="wsparts-include">
-              @@include('../../includes/parts/general/messageArea.html')
+              @@include('../../includes/parts/general/pageSideNav.html')
             </div>
           </div>
           <div>
             <div class="wsparts-include">
               <div class="c-main">
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/stepNav.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/messageArea.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/main/order/cartTopicPath.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/main/order/cartHeading.html')
+                </div>
                 <!-- ===== カート空状態 ===== -->
                 <section class="c-cart-main" aria-label="カート" data-cart-section="normal">
-                  <h1 class="c-cart-main__page-title">カート</h1>
 
                   <!-- 空状態エラーメッセージ -->
                   <div class="c-cart-main__empty">
@@ -45,7 +51,7 @@
           </div>
           <div>
             <div class="wsparts-include">
-              @@include('../../includes/parts/general/pageSideNav.html')
+              @@include('../../includes/parts/general/pageFooter.html')
             </div>
           </div>
           <div>

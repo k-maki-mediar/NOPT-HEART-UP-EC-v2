@@ -13,6 +13,8 @@
 // ラッパー
 // ----------------------------------------
 .c-step-nav {
+  max-width: rem(1130);
+  margin: 0 auto;
   background-color: $color-white;
   padding: rem(16) rem(16) rem(12);
   border-bottom: 1px solid $border-color;
@@ -118,6 +120,10 @@
 }
 
 @include pc {
+  .c-step-nav {
+    padding: rem(20) rem(32) rem(16) calc(var(--side-nav-content-offset) + rem(32));
+  }
+
   .c-step-nav__label {
     font-size: rem(12);
   }

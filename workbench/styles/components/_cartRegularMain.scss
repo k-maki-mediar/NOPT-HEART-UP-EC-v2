@@ -13,7 +13,13 @@
 // ========================================
 
 .c-cart-regular-main {
-  padding-bottom: rem(24);
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 rem(16) rem(24);
+
+  @include pc {
+    padding: 0 rem(32) rem(24) calc(var(--side-nav-content-offset) + rem(32));
+  }
 }
 
 // ----------------------------------------

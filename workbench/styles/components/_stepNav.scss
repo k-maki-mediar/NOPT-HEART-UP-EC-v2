@@ -14,10 +14,9 @@
 // ----------------------------------------
 .c-step-nav {
   max-width: rem(1130);
-  margin: 0 auto;
+  margin: rem(40) auto;
   background-color: $color-white;
-  padding: rem(16) rem(16) rem(12);
-  border-bottom: 1px solid $border-color;
+  padding: 0 rem(16);
 }
 
 .c-step-nav__list {

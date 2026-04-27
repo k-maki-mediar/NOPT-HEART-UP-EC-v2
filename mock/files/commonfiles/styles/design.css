@@ -8238,10 +8238,9 @@
 
 .c-step-nav {
   max-width: 70.625rem;
-  margin: 0 auto;
+  margin: 2.5rem auto;
   background-color: #FFFFFF;
-  padding: 1rem 1rem 0.75rem;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 0 1rem;
 }
 
 .c-step-nav__list {

@@ -8357,11 +8357,11 @@
 .c-cart-main {
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 0 1rem 1.5rem;
+  padding: 0 0 1.5rem;
 }
 @media (min-width: 992px) {
   .c-cart-main {
-    padding: 0 2rem 1.5rem calc(var(--side-nav-content-offset) + 2rem);
+    padding: 0 0 1.5rem;
   }
 }
 
@@ -8406,17 +8406,17 @@
 }
 
 .c-cart-main__section-header {
-  display: flex;
-  align-items: center;
-  min-height: 2.875rem;
-  padding: 0.5rem 1rem;
+  padding: 0.6875rem 0.75rem;
   background-color: #d7e7fb;
 }
 
 .c-cart-main__section-title {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 1rem;
   font-weight: 500;
   color: #00387d;
+  line-height: 1.5;
+  letter-spacing: 0.04rem;
   margin: 0;
 }
 
@@ -8531,7 +8531,7 @@
 }
 
 .c-cart-main__item-price {
-  font-size: 0.75rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #333;
   line-height: 1.75;
@@ -8953,11 +8953,11 @@
 .c-cart-regular-main {
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 0 1rem 1.5rem;
+  padding: 0 0 1.5rem;
 }
 @media (min-width: 992px) {
   .c-cart-regular-main {
-    padding: 0 2rem 1.5rem calc(var(--side-nav-content-offset) + 2rem);
+    padding: 0 0 1.5rem;
   }
 }
 
@@ -8996,17 +8996,17 @@
 }
 
 .c-cart-regular-main__section-header {
-  display: flex;
-  align-items: center;
-  min-height: 2.875rem;
-  padding: 0.5rem 1rem;
+  padding: 0.6875rem 0.75rem;
   background-color: #d7e7fb;
 }
 
 .c-cart-regular-main__section-title {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 1rem;
   font-weight: 500;
   color: #00387d;
+  line-height: 1.5;
+  letter-spacing: 0.04rem;
   margin: 0;
 }
 

@@ -15,10 +15,10 @@
 .c-cart-regular-main {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: 0 rem(16) rem(24);
+  padding: 0 0 rem(24);
 
   @include pc {
-    padding: 0 rem(32) rem(24) calc(var(--side-nav-content-offset) + rem(32));
+    padding: 0 0 rem(24);
   }
 }
 
@@ -67,17 +67,17 @@
 // ----------------------------------------
 
 .c-cart-regular-main__section-header {
-  display: flex;
-  align-items: center;
-  min-height: rem(46);
-  padding: rem(8) rem(16);
+  padding: rem(11) rem(12);
   background-color: $bg-banner;
 }
 
 .c-cart-regular-main__section-title {
+  font-family: $font-family-base;
   font-size: rem(16);
   font-weight: $font-weight-medium;
   color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
   margin: 0;
 }
 

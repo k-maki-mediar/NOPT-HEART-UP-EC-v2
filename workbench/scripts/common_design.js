@@ -1522,6 +1522,19 @@ $(function () {
  * data-qty-min / data-qty-max でDGBT側から動的に上下限をセット可能
  * ======================================== */
 $(function () {
+  function formatPrice(num) {
+    return num.toLocaleString() + '円';
+  }
+
+  function updateSubtotal($stepper) {
+    const $item = $stepper.closest('.js-cart-item');
+    if (!$item.length) return;
+    const unitPrice = parseInt($item.data('unit-price'), 10);
+    if (isNaN(unitPrice)) return;
+    const qty = parseInt($stepper.find('.js-cart-qty-value').val(), 10) || 1;
+    $item.find('.js-cart-item-subtotal').text(formatPrice(unitPrice * qty));
+  }
+
   function updateStepperState($stepper) {
     const $input = $stepper.find('.js-cart-qty-value');
     const $minus = $stepper.find('.js-cart-qty-minus');
@@ -1532,6 +1545,7 @@ $(function () {
 
     $minus.prop('disabled', current <= min);
     $plus.prop('disabled', current >= max);
+    updateSubtotal($stepper);
   }
 
   // マイナスボタン

@@ -14,16 +14,14 @@
   <ul class="c-cart-main__list">
 
     <!-- 商品行：コンタクトレンズ（右目）例 -->
-    <li class="c-cart-main__item">
+    <li class="c-cart-main__item js-cart-item" data-unit-price="2150">
       <div class="c-cart-main__item-product">
-        <!-- 画像エリア（ラベル＋画像） -->
         <div class="c-cart-main__item-img-area">
           <span class="c-cart-main__item-badge">右</span>
           <div class="c-cart-main__item-img-wrap">
             <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
           </div>
         </div>
-        <!-- 商品詳細 -->
         <div class="c-cart-main__item-detail">
           <a href="#" class="c-cart-main__item-name">アキュビュー オアシス（1箱）</a>
           <p class="c-cart-main__item-spec">BC : 8.80 / P : -1.00 / C : 0.00 / AX : 0 / DIA : 14.20 / ADD : 0.00</p>
@@ -33,7 +31,6 @@
           </div>
         </div>
       </div>
-      <!-- 数量＋削除行（画像と左端揃え） -->
       <div class="c-cart-main__item-control-row">
         <div class="c-cart-main__item-qty-stepper js-cart-qty-stepper" data-qty-min="1" data-qty-max="9999">
           <span class="c-cart-main__item-qty-label">数量</span>
@@ -48,10 +45,15 @@
           削除
         </button>
       </div>
+      <div class="c-cart-main__item-subtotal-row">
+        <span class="c-cart-main__item-subtotal-label">小計</span>
+        <span class="c-cart-main__item-subtotal js-cart-item-subtotal">2,150円</span>
+        <span class="c-cart-main__item-subtotal-tax">(税込)</span>
+      </div>
     </li>
 
     <!-- 商品行：コンタクトレンズ（左目）例 -->
-    <li class="c-cart-main__item">
+    <li class="c-cart-main__item js-cart-item" data-unit-price="2150">
       <div class="c-cart-main__item-product">
         <div class="c-cart-main__item-img-area">
           <span class="c-cart-main__item-badge">左</span>
@@ -82,10 +84,15 @@
           削除
         </button>
       </div>
+      <div class="c-cart-main__item-subtotal-row">
+        <span class="c-cart-main__item-subtotal-label">小計</span>
+        <span class="c-cart-main__item-subtotal js-cart-item-subtotal">2,150円</span>
+        <span class="c-cart-main__item-subtotal-tax">(税込)</span>
+      </div>
     </li>
 
     <!-- 商品行：ケア用品（非コンタクト商品例） -->
-    <li class="c-cart-main__item">
+    <li class="c-cart-main__item js-cart-item" data-unit-price="980">
       <div class="c-cart-main__item-product">
         <div class="c-cart-main__item-img-area">
           <span class="c-cart-main__item-badge">ケア</span>
@@ -116,6 +123,11 @@
           </svg>
           削除
         </button>
+      </div>
+      <div class="c-cart-main__item-subtotal-row">
+        <span class="c-cart-main__item-subtotal-label">小計</span>
+        <span class="c-cart-main__item-subtotal js-cart-item-subtotal">1,960円</span>
+        <span class="c-cart-main__item-subtotal-tax">(税込)</span>
       </div>
     </li>
 

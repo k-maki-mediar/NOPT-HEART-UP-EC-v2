@@ -379,6 +379,46 @@
 
 
 // ----------------------------------------
+// 小計行
+// ----------------------------------------
+
+.c-cart-main__item-subtotal-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: rem(46);
+  padding: rem(6) rem(8);
+  background-color: $bg-gray;
+  margin-top: rem(12);
+}
+
+.c-cart-main__item-subtotal-label {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  margin-right: rem(8);
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+.c-cart-main__item-subtotal {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+}
+
+.c-cart-main__item-subtotal-tax {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  margin-left: rem(2);
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+}
+
+// ----------------------------------------
 // 数量変更エリア
 // ----------------------------------------
 

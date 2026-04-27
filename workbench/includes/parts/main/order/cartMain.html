@@ -24,16 +24,15 @@
     <!-- 商品行：コンタクトレンズ（右目）例 -->
     <li class="c-cart-main__item">
       <div class="c-cart-main__item-row">
-        <!-- 商品画像 -->
-        <div class="c-cart-main__item-img-wrap">
-          <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
+        <!-- 商品画像エリア（ラベル＋画像） -->
+        <div class="c-cart-main__item-img-area">
+          <span class="c-cart-main__item-badge">右</span>
+          <div class="c-cart-main__item-img-wrap">
+            <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
+          </div>
         </div>
         <!-- 商品情報 -->
         <div class="c-cart-main__item-info">
-          <!-- バッジ群 -->
-          <div class="c-cart-main__item-badges">
-            <span class="c-cart-main__item-badge c-cart-main__item-badge--rl">右</span>
-          </div>
           <!-- 商品名 -->
           <a href="#" class="c-cart-main__item-name">アキュビュー オアシス（1箱）</a>
           <!-- 処方箋情報（コンタクトレンズのみ） -->
@@ -52,16 +51,10 @@
             <span class="c-cart-main__item-price">2,150円</span>
             <span class="c-cart-main__item-price-tax">(税込)</span>
           </div>
-          <!-- 数量・削除ボタン行 -->
+          <!-- 数量 -->
           <div class="c-cart-main__item-qty-area">
             <span class="c-cart-main__item-qty-label">数量：</span>
             <input type="text" class="c-cart-main__item-qty-input" value="1" maxlength="4" aria-label="数量">
-            <button type="button" class="c-cart-main__item-delete">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="currentColor">
-                <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              </svg>
-              削除
-            </button>
           </div>
         </div>
       </div>
@@ -71,18 +64,27 @@
         <span class="c-cart-main__item-subtotal">2,150円</span>
         <span class="c-cart-main__item-subtotal-tax">(税込)</span>
       </div>
+      <!-- 削除ボタン -->
+      <div class="c-cart-main__item-delete-wrap">
+        <button type="button" class="c-cart-main__item-delete">
+          <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+            <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
+          </svg>
+          削除
+        </button>
+      </div>
     </li>
 
     <!-- 商品行：コンタクトレンズ（左目）例 -->
     <li class="c-cart-main__item">
       <div class="c-cart-main__item-row">
-        <div class="c-cart-main__item-img-wrap">
-          <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
+        <div class="c-cart-main__item-img-area">
+          <span class="c-cart-main__item-badge">左</span>
+          <div class="c-cart-main__item-img-wrap">
+            <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
+          </div>
         </div>
         <div class="c-cart-main__item-info">
-          <div class="c-cart-main__item-badges">
-            <span class="c-cart-main__item-badge c-cart-main__item-badge--rl">左</span>
-          </div>
           <a href="#" class="c-cart-main__item-name">アキュビュー オアシス（1箱）</a>
           <div class="c-cart-main__item-rx">
             <div class="c-cart-main__item-rx-row">
@@ -101,12 +103,6 @@
           <div class="c-cart-main__item-qty-area">
             <span class="c-cart-main__item-qty-label">数量：</span>
             <input type="text" class="c-cart-main__item-qty-input" value="1" maxlength="4" aria-label="数量">
-            <button type="button" class="c-cart-main__item-delete">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-                <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
-              </svg>
-              削除
-            </button>
           </div>
         </div>
       </div>
@@ -115,18 +111,26 @@
         <span class="c-cart-main__item-subtotal">2,150円</span>
         <span class="c-cart-main__item-subtotal-tax">(税込)</span>
       </div>
+      <div class="c-cart-main__item-delete-wrap">
+        <button type="button" class="c-cart-main__item-delete">
+          <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+            <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
+          </svg>
+          削除
+        </button>
+      </div>
     </li>
 
     <!-- 商品行：ケア用品（非コンタクト商品例） -->
     <li class="c-cart-main__item">
       <div class="c-cart-main__item-row">
-        <div class="c-cart-main__item-img-wrap">
-          <img src="../../../files/commonfiles/images/product-sample-05.png" alt="コンプリート ダブルモイスト 360ml" class="c-cart-main__item-img" width="120" height="80">
+        <div class="c-cart-main__item-img-area">
+          <span class="c-cart-main__item-badge">ケア</span>
+          <div class="c-cart-main__item-img-wrap">
+            <img src="../../../files/commonfiles/images/product-sample-05.png" alt="コンプリート ダブルモイスト 360ml" class="c-cart-main__item-img" width="120" height="80">
+          </div>
         </div>
         <div class="c-cart-main__item-info">
-          <div class="c-cart-main__item-badges">
-            <span class="c-cart-main__item-badge">ケア</span>
-          </div>
           <a href="#" class="c-cart-main__item-name">コンプリート ダブルモイスト 360ml</a>
           <p class="c-cart-main__item-spec">360ml</p>
           <div class="c-cart-main__item-price-wrap">
@@ -137,12 +141,6 @@
           <div class="c-cart-main__item-qty-area">
             <span class="c-cart-main__item-qty-label">数量：</span>
             <input type="text" class="c-cart-main__item-qty-input" value="2" maxlength="4" aria-label="数量">
-            <button type="button" class="c-cart-main__item-delete">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-                <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
-              </svg>
-              削除
-            </button>
           </div>
         </div>
       </div>
@@ -151,154 +149,17 @@
         <span class="c-cart-main__item-subtotal">1,960円</span>
         <span class="c-cart-main__item-subtotal-tax">(税込)</span>
       </div>
+      <div class="c-cart-main__item-delete-wrap">
+        <button type="button" class="c-cart-main__item-delete">
+          <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+            <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
+          </svg>
+          削除
+        </button>
+      </div>
     </li>
 
   </ul>
-
-  <!-- ===== PC: テーブル形式（SP時は非表示） ===== -->
-  <table class="c-cart-main__table" aria-label="通常購入商品一覧">
-    <thead class="c-cart-main__table-header">
-      <tr>
-        <th class="c-cart-main__table-th c-cart-main__table-th--name" scope="col">商品名</th>
-        <th class="c-cart-main__table-th" scope="col">販売価格</th>
-        <th class="c-cart-main__table-th" scope="col">数量</th>
-        <th class="c-cart-main__table-th" scope="col">小計(税込)</th>
-        <th class="c-cart-main__table-th" scope="col">削除</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- コンタクト（右目） -->
-      <tr>
-        <td class="c-cart-main__table-td c-cart-main__table-td--name">
-          <div class="c-cart-main__table-cell-product">
-            <div class="c-cart-main__item-img-wrap">
-              <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
-            </div>
-            <div class="c-cart-main__item-info">
-              <div class="c-cart-main__item-badges">
-                <span class="c-cart-main__item-badge c-cart-main__item-badge--rl">右</span>
-              </div>
-              <a href="#" class="c-cart-main__item-name">アキュビュー オアシス（1箱）</a>
-              <div class="c-cart-main__item-rx">
-                <div class="c-cart-main__item-rx-row">
-                  <span class="c-cart-main__item-rx-label">BC</span><span>8.80</span>
-                  <span class="c-cart-main__item-rx-label">P</span><span>-1.00</span>
-                  <span class="c-cart-main__item-rx-label">C</span><span>0.00</span>
-                  <span class="c-cart-main__item-rx-label">AX</span><span>0</span>
-                  <span class="c-cart-main__item-rx-label">DIA</span><span>14.20</span>
-                  <span class="c-cart-main__item-rx-label">ADD</span><span>0.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </td>
-        <td class="c-cart-main__table-td">
-          <div class="c-cart-main__item-price-wrap">
-            <span class="c-cart-main__item-price">2,150円</span>
-            <span class="c-cart-main__item-price-tax">(税込)</span>
-          </div>
-        </td>
-        <td class="c-cart-main__table-td">
-          <input type="text" class="c-cart-main__item-qty-input" value="1" maxlength="4" aria-label="数量">
-        </td>
-        <td class="c-cart-main__table-td">
-          <span class="c-cart-main__item-subtotal">2,150円</span>
-        </td>
-        <td class="c-cart-main__table-td">
-          <button type="button" class="c-cart-main__item-delete">
-            <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
-            </svg>
-            削除
-          </button>
-        </td>
-      </tr>
-      <!-- コンタクト（左目） -->
-      <tr>
-        <td class="c-cart-main__table-td c-cart-main__table-td--name">
-          <div class="c-cart-main__table-cell-product">
-            <div class="c-cart-main__item-img-wrap">
-              <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
-            </div>
-            <div class="c-cart-main__item-info">
-              <div class="c-cart-main__item-badges">
-                <span class="c-cart-main__item-badge c-cart-main__item-badge--rl">左</span>
-              </div>
-              <a href="#" class="c-cart-main__item-name">アキュビュー オアシス（1箱）</a>
-              <div class="c-cart-main__item-rx">
-                <div class="c-cart-main__item-rx-row">
-                  <span class="c-cart-main__item-rx-label">BC</span><span>8.80</span>
-                  <span class="c-cart-main__item-rx-label">P</span><span>-0.75</span>
-                  <span class="c-cart-main__item-rx-label">C</span><span>0.00</span>
-                  <span class="c-cart-main__item-rx-label">AX</span><span>0</span>
-                  <span class="c-cart-main__item-rx-label">DIA</span><span>14.20</span>
-                  <span class="c-cart-main__item-rx-label">ADD</span><span>0.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </td>
-        <td class="c-cart-main__table-td">
-          <div class="c-cart-main__item-price-wrap">
-            <span class="c-cart-main__item-price">2,150円</span>
-            <span class="c-cart-main__item-price-tax">(税込)</span>
-          </div>
-        </td>
-        <td class="c-cart-main__table-td">
-          <input type="text" class="c-cart-main__item-qty-input" value="1" maxlength="4" aria-label="数量">
-        </td>
-        <td class="c-cart-main__table-td">
-          <span class="c-cart-main__item-subtotal">2,150円</span>
-        </td>
-        <td class="c-cart-main__table-td">
-          <button type="button" class="c-cart-main__item-delete">
-            <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
-            </svg>
-            削除
-          </button>
-        </td>
-      </tr>
-      <!-- ケア用品 -->
-      <tr>
-        <td class="c-cart-main__table-td c-cart-main__table-td--name">
-          <div class="c-cart-main__table-cell-product">
-            <div class="c-cart-main__item-img-wrap">
-              <img src="../../../files/commonfiles/images/product-sample-05.png" alt="コンプリート ダブルモイスト 360ml" class="c-cart-main__item-img" width="120" height="80">
-            </div>
-            <div class="c-cart-main__item-info">
-              <div class="c-cart-main__item-badges">
-                <span class="c-cart-main__item-badge">ケア</span>
-              </div>
-              <a href="#" class="c-cart-main__item-name">コンプリート ダブルモイスト 360ml</a>
-              <p class="c-cart-main__item-spec">360ml</p>
-            </div>
-          </div>
-        </td>
-        <td class="c-cart-main__table-td">
-          <div class="c-cart-main__item-price-wrap">
-            <span class="c-cart-main__item-price--discount">1,200円</span>
-            <span class="c-cart-main__item-price">980円</span>
-            <span class="c-cart-main__item-price-tax">(税込)</span>
-          </div>
-        </td>
-        <td class="c-cart-main__table-td">
-          <input type="text" class="c-cart-main__item-qty-input" value="2" maxlength="4" aria-label="数量">
-        </td>
-        <td class="c-cart-main__table-td">
-          <span class="c-cart-main__item-subtotal">1,960円</span>
-        </td>
-        <td class="c-cart-main__table-td">
-          <button type="button" class="c-cart-main__item-delete">
-            <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
-            </svg>
-            削除
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 
   <!-- ===== 数量変更エリア ===== -->
   <div class="c-cart-main__update-area">

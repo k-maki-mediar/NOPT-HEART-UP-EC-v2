@@ -142,8 +142,8 @@
   padding: rem(24) rem(10);
 }
 
-.c-cart-main__item ~ .c-cart-main__item {
-  border-top: 1px dashed rgba($text-color, 0.5);
+.c-cart-main__item {
+  border-bottom: 1px dashed rgba($text-color, 0.5);
 }
 
 // ----------------------------------------
@@ -154,7 +154,7 @@
   display: grid;
   grid-template-columns: rem(140) 1fr;
   gap: rem(16) rem(12);
-  align-items: start;
+  align-items: stretch;
 }
 
 // ----------------------------------------
@@ -181,7 +181,7 @@
 
 .c-cart-main__item-img-wrap {
   width: 100%;
-  height: rem(100);
+  flex: 1;
   border: 1px solid $border-thin;
   background-color: $color-white;
 }
@@ -378,6 +378,13 @@
 }
 
 
+// 削除ボタンラッパー（小計行の下）
+.c-cart-main__item-delete-wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding: rem(8) 0;
+}
+
 // ----------------------------------------
 // 小計行
 // ----------------------------------------
@@ -423,15 +430,18 @@
 // ----------------------------------------
 
 .c-cart-main__update-area {
-  padding: rem(16) 0 rem(8);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: rem(12);
+  padding: rem(16);
+  margin-top: rem(24);
+  background-color: $color-white;
+  border: rem(2) solid $bg-banner;
 }
 
 .c-cart-main__update-note {
-  font-size: rem(10);
+  font-size: rem(12);
   font-weight: $font-weight-normal;
   color: $accent-red;
   line-height: 1.5;
@@ -444,14 +454,14 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  min-width: rem(100);
-  height: rem(32);
+  min-width: rem(120);
+  min-height: rem(40);
   padding: 0 rem(16);
   border: none;
   border-radius: rem(8);
   background-color: $primary-color;
-  box-shadow: 0 rem(3) 0 $primary-shadow;
-  font-size: rem(12);
+  box-shadow: 0 rem(3) 0 $primary-color-dark;
+  font-size: rem(14);
   font-weight: $font-weight-medium;
   color: $color-white;
   cursor: pointer;
@@ -468,7 +478,7 @@
 // ----------------------------------------
 
 .c-cart-main__summary {
-  padding: rem(0) rem(16) rem(8);
+  padding: rem(24) rem(16) rem(8);
 }
 
 .c-cart-main__summary-row {
@@ -527,10 +537,47 @@
 // ----------------------------------------
 
 .c-cart-main__agreement {
-  margin: rem(16) rem(16) 0;
-  padding: rem(16);
-  background-color: $bg-red-light;
-  border: 1px solid $accent-red;
+  margin: rem(24) 0 0;
+  padding: 0;
+}
+
+.c-cart-main__agreement-notice {
+  margin-bottom: rem(16);
+}
+
+.c-cart-main__agreement-notice-text {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  line-height: 1.7;
+  color: $text-color;
+  margin: 0;
+}
+
+.c-cart-main__agreement-heading {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  text-align: center;
+  line-height: 1.7;
+  margin: 0 0 rem(16);
+}
+
+.c-cart-main__agreement-box {
+  background-color: $color-white;
+  border: rem(2) solid $bg-banner;
+  padding: rem(24);
+}
+
+.c-cart-main__agreement-section-title {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.7;
+  margin: rem(24) 0 rem(8);
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .c-cart-main__agreement-text {
@@ -538,7 +585,17 @@
   font-weight: $font-weight-normal;
   line-height: 1.7;
   color: $text-color;
-  margin: 0 0 rem(12);
+  margin: 0 0 rem(4);
+}
+
+.c-cart-main__agreement-link {
+  color: $link-blue;
+  text-decoration: underline;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .c-cart-main__agreement-check {
@@ -546,6 +603,9 @@
   align-items: center;
   gap: rem(10);
   min-height: rem(44);
+  margin-top: rem(16);
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
   cursor: pointer;
 }
 
@@ -554,7 +614,7 @@
   height: rem(20);
   flex-shrink: 0;
   cursor: pointer;
-  accent-color: $accent-red;
+  accent-color: $primary-color;
 }
 
 .c-cart-main__agreement-check-label {

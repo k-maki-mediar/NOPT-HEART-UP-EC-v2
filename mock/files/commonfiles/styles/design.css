@@ -8895,6 +8895,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1rem;
 }
 
@@ -9030,6 +9033,14 @@
   .c-cart-main .c-step-nav {
     padding-left: 0;
     padding-right: 0;
+  }
+  .c-cart-main__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .c-cart-main__btn {
+    width: 100%;
+    min-width: auto;
   }
 }
 .c-cart-regular-main {
@@ -9598,6 +9609,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1rem;
 }
 @media (min-width: 768px) {
@@ -9661,12 +9675,16 @@
 
 @media (min-width: 768px) {
   .c-cart-regular-main__actions {
-    flex-direction: row-reverse;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
   }
   .c-cart-regular-main__btn {
-    width: auto;
-    min-width: 11.25rem;
+    width: 100%;
+    min-width: auto;
+  }
+  .c-cart-regular-main .c-step-nav {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .c-main--logged-in .c-campaign-topics__deco-rect {

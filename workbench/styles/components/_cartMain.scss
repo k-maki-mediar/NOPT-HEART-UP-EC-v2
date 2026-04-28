@@ -651,6 +651,9 @@
   display: flex;
   flex-direction: column;
   gap: rem(12);
+  max-width: rem(400);
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 rem(16);
 }
 
@@ -777,5 +780,16 @@
   .c-cart-main .c-step-nav {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  // ボタンはPC時も縦並び・max-width内でwidth 100%
+  .c-cart-main__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .c-cart-main__btn {
+    width: 100%;
+    min-width: auto;
   }
 }

@@ -706,6 +706,10 @@
   &:hover {
     text-decoration: none;
   }
+
+  &--small {
+    font-size: rem(10);
+  }
 }
 
 .c-teiki-skip-figma__link-icon {
@@ -1269,7 +1273,7 @@
   transition: background-color $transition-fast;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba($color-white, 0.15);
   }
 }
 
@@ -1783,7 +1787,7 @@
   transition: background-color $transition-fast;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba($color-white, 0.15);
   }
 }
 

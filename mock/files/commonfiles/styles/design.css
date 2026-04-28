@@ -10508,6 +10508,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 25rem;
   height: 2rem;
   background-color: #ffdedd;
   border-radius: 1rem;
@@ -10565,6 +10566,9 @@
 }
 .c-teiki-skip-figma__link:hover {
   text-decoration: none;
+}
+.c-teiki-skip-figma__link--small {
+  font-size: 0.625rem;
 }
 
 .c-teiki-skip-figma__link-icon {
@@ -10791,23 +10795,10 @@
   gap: 0.5rem;
   max-width: 25rem;
   width: 100%;
-  position: relative;
-  padding-right: 2.25rem;
-}
-.p-teiki-detail__coupon-btn::after {
-  content: "";
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-right: 0.125rem solid #00387d;
-  border-bottom: 0.125rem solid #00387d;
-  transform: translateY(-60%) rotate(45deg);
 }
 
 .p-teiki-detail__coupon-btn-icon {
-  width: 1.5rem;
+  width: 2rem;
   height: auto;
   flex-shrink: 0;
   -o-object-fit: contain;
@@ -10957,8 +10948,8 @@
   display: block;
   font-size: 0.6875rem;
   font-weight: 500;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 62.4375rem;
   margin: 0;
   text-align: center;
 }
@@ -11044,18 +11035,18 @@
   transform: translateY(-50%);
   width: 2rem;
   height: 2rem;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  border: 0.0625rem solid #00387d;
+  border-radius: 0;
+  background: none;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 2;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #00387d;
   padding: 0;
-  box-shadow: 0 0.0625rem 0 0 #002a5e;
+  box-shadow: none;
 }
 .c-teiki-schedule__nav--prev {
   left: -0.25rem;

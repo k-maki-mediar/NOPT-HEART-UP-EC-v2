@@ -386,6 +386,21 @@
 }
 
 // ----------------------------------------
+// 同梱メッセージ（新規CL+ケア定期購入時）
+.c-cart-regular-main__bundling-auto-msg {
+  margin-top: rem(24);
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
+}
+
+.c-cart-regular-main__bundling-auto-msg-text {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  line-height: 1.7;
+  color: $primary-color;
+  margin: 0;
+}
+
 // 数量変更エリア
 // ----------------------------------------
 

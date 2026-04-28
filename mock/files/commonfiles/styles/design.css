@@ -9368,6 +9368,20 @@
   letter-spacing: 0.009375rem;
 }
 
+.c-cart-regular-main__bundling-auto-msg {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #f4f8fc;
+}
+
+.c-cart-regular-main__bundling-auto-msg-text {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #00387d;
+  margin: 0;
+}
+
 .c-cart-regular-main__update-area {
   display: flex;
   align-items: center;

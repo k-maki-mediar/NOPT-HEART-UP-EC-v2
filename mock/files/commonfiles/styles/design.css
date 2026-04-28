@@ -9224,17 +9224,26 @@
 }
 
 .c-cart-regular-main__item-delivery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.25rem;
+  display: grid;
+  grid-template-columns: 8.75rem 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 1rem 0;
 }
 
-.c-cart-regular-main__item-cycle,
-.c-cart-regular-main__item-count {
-  font-size: 0.625rem;
-  font-weight: 400;
-  color: #c2c2c2;
+.c-cart-regular-main__item-delivery-row {
+  display: contents;
+  font-size: 0.75rem;
+  color: #333;
+  line-height: 1.75;
+  letter-spacing: 0.009375rem;
+}
+
+.c-cart-regular-main__item-delivery-label {
+  grid-column: 1;
+}
+
+.c-cart-regular-main__item-delivery-value {
+  grid-column: 2;
 }
 
 .c-cart-regular-main__item-price-wrap {

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja" class="c-html">
+<head>
+@@include('../../includes/head.html', {"title": "カート"})
+</head>
+<body class="c-body">
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageHeaderMenu.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageSideNav.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <div class="c-main">
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/main/order/cartTopicPath.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/stepNav.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/messageArea.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/main/order/cartHeading.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/main/order/cartRegularMain.html')
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="c-footer-sticky-wrap">
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooterCopyright.html')
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

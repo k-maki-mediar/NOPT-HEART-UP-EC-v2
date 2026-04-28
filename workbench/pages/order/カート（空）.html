@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja" class="c-html">
+<head>
+@@include('../../includes/head.html', {"title": "カート"})
+</head>
+<body class="c-body">
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageHeaderMenu.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageSideNav.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <div class="c-main">
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/main/order/cartTopicPath.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/stepNav.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/messageArea.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/main/order/cartHeading.html')
+                </div>
+                <!-- ===== カート空状態 ===== -->
+                <section class="c-cart-main" aria-label="カート" data-cart-section="normal">
+
+                  <!-- 通常購入はこちら -->
+                  <div class="c-cart-main__nav-link-wrap">
+                    <a href="#" class="c-cart-main__nav-link">通常購入商品はこちら</a>
+                  </div>
+
+                  <!-- 空状態エラーメッセージ -->
+                  <div class="c-cart-main__empty">
+                    <p class="c-cart-main__empty-text">現在、お客様のカートに品物は入っておりません。</p>
+                  </div>
+
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="c-footer-sticky-wrap">
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooterCopyright.html')
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

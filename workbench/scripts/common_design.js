@@ -1518,6 +1518,102 @@ $(function () {
 })();
 
 /* ========================================
+ * カート：数量ステッパー（通常購入・定期購入共通）
+ * data-qty-min / data-qty-max でDGBT側から動的に上下限をセット可能
+ * ======================================== */
+$(function () {
+  function formatPrice(num) {
+    return num.toLocaleString() + '円';
+  }
+
+  function updateShippingMsg() {
+    const $msg = $('.js-cart-shipping-msg');
+    if (!$msg.length) return;
+    const threshold = parseInt($msg.data('free-shipping-threshold'), 10) || 5500;
+    let cartTotal = 0;
+    $('.js-cart-item').each(function () {
+      const unitPrice = parseInt($(this).data('unit-price'), 10) || 0;
+      const qty = parseInt($(this).find('.js-cart-qty-value').val(), 10) || 1;
+      cartTotal += unitPrice * qty;
+    });
+    $('.js-cart-total-amount').text(formatPrice(cartTotal));
+    if (cartTotal >= threshold) {
+      $('.js-cart-shipping-msg-short').hide();
+      $('.js-cart-shipping-msg-free').show();
+    } else {
+      $('.js-cart-shipping-msg-short').show();
+      $('.js-cart-shipping-msg-free').hide();
+      $('.js-cart-remaining-amount').text(formatPrice(threshold - cartTotal));
+    }
+  }
+
+  function updateSubtotal($stepper) {
+    const $item = $stepper.closest('.js-cart-item');
+    if (!$item.length) return;
+    const unitPrice = parseInt($item.data('unit-price'), 10);
+    if (isNaN(unitPrice)) return;
+    const qty = parseInt($stepper.find('.js-cart-qty-value').val(), 10) || 1;
+    $item.find('.js-cart-item-subtotal').text(formatPrice(unitPrice * qty));
+  }
+
+  function updateStepperState($stepper) {
+    const $input = $stepper.find('.js-cart-qty-value');
+    const $minus = $stepper.find('.js-cart-qty-minus');
+    const $plus = $stepper.find('.js-cart-qty-plus');
+    const current = parseInt($input.val(), 10) || 1;
+    const min = parseInt($stepper.data('qty-min'), 10) || 1;
+    const max = parseInt($stepper.data('qty-max'), 10) || 9999;
+
+    $minus.prop('disabled', current <= min);
+    $plus.prop('disabled', current >= max);
+    updateSubtotal($stepper);
+    updateShippingMsg();
+  }
+
+  // マイナスボタン
+  $(document).on('click', '.js-cart-qty-minus', function () {
+    const $stepper = $(this).closest('.js-cart-qty-stepper');
+    const $input = $stepper.find('.js-cart-qty-value');
+    const min = parseInt($stepper.data('qty-min'), 10) || 1;
+    let current = parseInt($input.val(), 10) || 1;
+    if (current > min) {
+      $input.val(current - 1);
+    }
+    updateStepperState($stepper);
+  });
+
+  // プラスボタン
+  $(document).on('click', '.js-cart-qty-plus', function () {
+    const $stepper = $(this).closest('.js-cart-qty-stepper');
+    const $input = $stepper.find('.js-cart-qty-value');
+    const max = parseInt($stepper.data('qty-max'), 10) || 9999;
+    let current = parseInt($input.val(), 10) || 1;
+    if (current < max) {
+      $input.val(current + 1);
+    }
+    updateStepperState($stepper);
+  });
+
+  // 手入力時のバリデーション
+  $(document).on('change', '.js-cart-qty-value', function () {
+    const $input = $(this);
+    const $stepper = $input.closest('.js-cart-qty-stepper');
+    const min = parseInt($stepper.data('qty-min'), 10) || 1;
+    const max = parseInt($stepper.data('qty-max'), 10) || 9999;
+    let val = parseInt($input.val(), 10);
+    if (isNaN(val) || val < min) { val = min; }
+    if (val > max) { val = max; }
+    $input.val(val);
+    updateStepperState($stepper);
+  });
+
+  // 初期状態更新
+  $('.js-cart-qty-stepper').each(function () {
+    updateStepperState($(this));
+  });
+});
+
+/* ========================================
  * フォントサイズ切り替え（fontSizeSwitcher）
  * ======================================== */
 (function() {

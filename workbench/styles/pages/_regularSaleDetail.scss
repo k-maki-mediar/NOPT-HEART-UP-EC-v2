@@ -1178,18 +1178,18 @@
   transform: translateY(-50%);
   width: rem(32);
   height: rem(32);
-  border-radius: 50%;
-  background-color: $color-white;
-  border: rem(1) solid $primary-color;
+  border-radius: 0;
+  background: none;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: $z-index-above-content;
-  font-size: rem(12);
+  font-size: rem(16);
   color: $primary-color;
   padding: 0;
-  box-shadow: 0 rem(1) 0 0 $primary-color-dark;
+  box-shadow: none;
 
   &--prev {
     left: rem(-4);

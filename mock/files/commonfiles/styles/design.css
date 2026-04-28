@@ -8414,9 +8414,9 @@
   justify-content: center;
   gap: 0.5rem;
   width: 10rem;
-  height: 2rem;
+  min-height: 2.75rem;
   border: 1px solid #00387d;
-  border-radius: 1.0625rem;
+  border-radius: 1.375rem;
   background-color: #FFFFFF;
   font-size: 0.75rem;
   font-weight: 400;
@@ -8603,12 +8603,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 1px solid #c2c2c2;
   background-color: #d7e7fb;
   font-family: Arial, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 1;
   color: #00387d;
   cursor: pointer;
@@ -8635,7 +8635,7 @@
 
 .c-cart-main__item-qty-input {
   width: 3.125rem;
-  height: 2rem;
+  height: 2.75rem;
   padding: 0 0.375rem;
   border-top: 1px solid #c2c2c2;
   border-bottom: 1px solid #c2c2c2;
@@ -8652,9 +8652,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   min-width: 4.625rem;
-  height: 2rem;
+  min-height: 2.75rem;
   padding: 0 0.625rem;
   border: none;
   border-radius: 0.5rem;
@@ -9093,9 +9093,9 @@
   justify-content: center;
   gap: 0.5rem;
   width: 10rem;
-  height: 2rem;
+  min-height: 2.75rem;
   border: 1px solid #00387d;
-  border-radius: 1.0625rem;
+  border-radius: 1.375rem;
   background-color: #FFFFFF;
   font-size: 0.75rem;
   font-weight: 400;
@@ -9271,12 +9271,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 1px solid #c2c2c2;
   background-color: #d7e7fb;
   font-family: Arial, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 1;
   color: #00387d;
   cursor: pointer;
@@ -9303,7 +9303,7 @@
 
 .c-cart-regular-main__item-qty-input {
   width: 3.125rem;
-  height: 2rem;
+  height: 2.75rem;
   padding: 0 0.375rem;
   border-top: 1px solid #c2c2c2;
   border-bottom: 1px solid #c2c2c2;
@@ -9320,9 +9320,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   min-width: 4.625rem;
-  height: 2rem;
+  min-height: 2.75rem;
   padding: 0 0.625rem;
   border: none;
   border-radius: 0.5rem;

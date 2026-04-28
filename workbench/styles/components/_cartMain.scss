@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // ========================================
 // Cart Main（通常購入カート）
 // 格納先HTML: workbench/includes/parts/main/cart/cartMain.html
@@ -80,9 +82,9 @@
   justify-content: center;
   gap: rem(8);
   width: rem(160);
-  height: rem(32);
+  min-height: rem(44);
   border: 1px solid $primary-color;
-  border-radius: rem(17);
+  border-radius: rem(22);
   background-color: $color-white;
   font-size: rem(12);
   font-weight: $font-weight-normal;
@@ -311,12 +313,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: rem(32);
-  height: rem(32);
+  width: rem(44);
+  height: rem(44);
   border: 1px solid $border-color-dark;
   background-color: $bg-banner;
   font-family: Arial, sans-serif;
-  font-size: rem(20);
+  font-size: rem(24);
   line-height: 1;
   color: $primary-color;
   cursor: pointer;
@@ -325,7 +327,7 @@
   padding: 0;
 
   &:hover {
-    background-color: darken($bg-banner, 5%);
+    background-color: color.adjust($bg-banner, $lightness: -5%);
   }
 
   &:disabled {
@@ -345,7 +347,7 @@
 
 .c-cart-main__item-qty-input {
   width: rem(50);
-  height: rem(32);
+  height: rem(44);
   padding: 0 rem(6);
   border-top: 1px solid $border-color-dark;
   border-bottom: 1px solid $border-color-dark;
@@ -366,9 +368,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: rem(4);
+  gap: rem(8);
   min-width: rem(74);
-  height: rem(32);
+  min-height: rem(44);
   padding: 0 rem(10);
   border: none;
   border-radius: rem(8);

@@ -656,7 +656,7 @@ $(function () {
     const path = document.createElementNS(svgNS, 'path');
     path.setAttribute('d', d);
     path.setAttribute('fill', 'none');
-    path.setAttribute('stroke', '#00387d');
+    path.setAttribute('stroke', getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim() || '#00387d');
     path.setAttribute('stroke-width', stroke);
     path.setAttribute('stroke-linejoin', 'round');
     path.setAttribute('stroke-linecap', 'round');
@@ -1538,11 +1538,11 @@ $(function () {
     });
     $('.js-cart-total-amount').text(formatPrice(cartTotal));
     if (cartTotal >= threshold) {
-      $('.js-cart-shipping-msg-short').hide();
-      $('.js-cart-shipping-msg-free').show();
+      $('.js-cart-shipping-msg-short').prop('hidden', true);
+      $('.js-cart-shipping-msg-free').prop('hidden', false);
     } else {
-      $('.js-cart-shipping-msg-short').show();
-      $('.js-cart-shipping-msg-free').hide();
+      $('.js-cart-shipping-msg-short').prop('hidden', false);
+      $('.js-cart-shipping-msg-free').prop('hidden', true);
       $('.js-cart-remaining-amount').text(formatPrice(threshold - cartTotal));
     }
   }

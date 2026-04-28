@@ -9412,8 +9412,10 @@
 }
 
 .c-cart-regular-main__bundling {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  background-color: #FFFFFF;
+  border: 0.125rem solid #d7e7fb;
 }
 
 .c-cart-regular-main__bundling-check {

@@ -438,8 +438,10 @@
 // ----------------------------------------
 
 .c-cart-regular-main__bundling {
-  padding: rem(12) rem(16);
-  border-bottom: 1px solid $border-color;
+  padding: rem(16);
+  margin-top: rem(24);
+  background-color: $color-white;
+  border: rem(2) solid $bg-banner;
 }
 
 .c-cart-regular-main__bundling-check {

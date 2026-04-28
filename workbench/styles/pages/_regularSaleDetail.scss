@@ -646,6 +646,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: rem(400);
   height: rem(32);
   background-color: $deco-pink;
   border-radius: rem(16);

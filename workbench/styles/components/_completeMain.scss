@@ -1,0 +1,292 @@
+@use 'sass:color';
+
+// ========================================
+// Complete Main（注文完了）
+// 格納先HTML: workbench/includes/parts/main/order/completeMain.html
+// BEM: .c-complete-main
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ----------------------------------------
+// ラッパー全体
+// ----------------------------------------
+
+.c-complete-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 0 rem(48);
+
+  @include pc {
+    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ----------------------------------------
+// サンクスブロック（常時表示）
+// ----------------------------------------
+
+.c-complete-main__thanks-block {
+  text-align: center;
+  padding: rem(32) rem(16) rem(24);
+
+  @include tablet-up {
+    padding: rem(40) rem(32) rem(32);
+  }
+}
+
+.c-complete-main__heading {
+  font-family: $font-family-heading;
+  font-size: rem(20);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.8);
+  margin: 0 0 rem(24);
+
+  @include tablet-up {
+    font-size: rem(24);
+  }
+}
+
+.c-complete-main__order-info {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0 0 rem(8);
+}
+
+.c-complete-main__order-no-link {
+  color: $link-blue;
+  text-decoration: underline;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.c-complete-main__order-no-label {
+  font-weight: $font-weight-medium;
+  color: $text-color;
+}
+
+.c-complete-main__datetime {
+  font-size: rem(12);
+  color: $text-light;
+  margin: 0 0 rem(16);
+  line-height: 1.75;
+}
+
+.c-complete-main__datetime-value {
+  font-weight: $font-weight-normal;
+}
+
+.c-complete-main__mypage-note {
+  font-size: rem(12);
+  color: $text-light;
+  margin: 0 0 rem(8);
+  line-height: 1.75;
+}
+
+.c-complete-main__mail-note {
+  font-size: rem(14);
+  color: $text-color;
+  margin: 0;
+  line-height: 1.75;
+}
+
+// ----------------------------------------
+// 補足説明ブロック
+// ----------------------------------------
+
+.c-complete-main__supplement {
+  padding: rem(24) rem(16);
+  border-top: 1px solid $border-color;
+  margin-top: rem(8);
+
+  @include tablet-up {
+    padding: rem(24) rem(32);
+  }
+}
+
+.c-complete-main__supplement-text {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0 0 rem(16);
+}
+
+// ----------------------------------------
+// カスタマーセンター情報ボックス
+// ----------------------------------------
+
+.c-complete-main__info-box {
+  background-color: $bg-gray;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-md;
+  padding: rem(16) rem(24);
+  margin-top: rem(16);
+}
+
+.c-complete-main__info-box-title {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: 0 0 rem(8);
+  line-height: 1.5;
+}
+
+.c-complete-main__info-box-text {
+  font-size: rem(14);
+  color: $text-color;
+  margin: 0 0 rem(4);
+  line-height: 1.75;
+}
+
+.c-complete-main__info-box-note {
+  font-size: rem(12);
+  color: $text-light;
+  margin: rem(8) 0 0;
+  line-height: 1.75;
+}
+
+// ----------------------------------------
+// リンク共通
+// ----------------------------------------
+
+.c-complete-main__link {
+  color: $link-blue;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// ----------------------------------------
+// カート遷移ブロック
+// ----------------------------------------
+
+.c-complete-main__cart-block {
+  background-color: $bg-light;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-md;
+  padding: rem(16) rem(24);
+  margin: rem(16) rem(16) 0;
+
+  @include tablet-up {
+    margin: rem(16) rem(32) 0;
+  }
+}
+
+.c-complete-main__cart-notice {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0 0 rem(16);
+  text-align: center;
+}
+
+// ----------------------------------------
+// アンケートブロック
+// ----------------------------------------
+
+.c-complete-main__enquete-block {
+  background-color: $bg-banner;
+  border-radius: $border-radius-md;
+  padding: rem(24) rem(16);
+  margin: rem(16) rem(16) 0;
+  text-align: center;
+
+  @include tablet-up {
+    margin: rem(16) rem(32) 0;
+    padding: rem(24) rem(32);
+  }
+}
+
+.c-complete-main__enquete-text {
+  font-size: rem(14);
+  color: $primary-color;
+  line-height: 1.75;
+  margin: 0 0 rem(8);
+}
+
+.c-complete-main__enquete-point {
+  font-weight: $font-weight-bold;
+  font-size: rem(16);
+  color: $primary-color;
+}
+
+// ----------------------------------------
+// ボタンエリア
+// ----------------------------------------
+
+.c-complete-main__actions {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  max-width: rem(400);
+  margin: rem(24) auto 0;
+  padding: 0 rem(16);
+
+  &--main {
+    margin-top: rem(32);
+  }
+
+  &--cart,
+  &--enquete {
+    max-width: rem(320);
+  }
+}
+
+// ----------------------------------------
+// ボタン共通
+// ----------------------------------------
+
+.c-complete-main__btn {
+  @include accordion-card-btn;
+  width: 100%;
+  padding: rem(10) rem(24);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+// トップページへ（ダークレッド・全幅）
+.c-complete-main__btn--top {
+  background-color: $danger-color;
+  border-color: $danger-color;
+  color: $color-white;
+  box-shadow: 0 rem(2) 0 $danger-color-dark;
+
+  &:hover {
+    background-color: color.adjust($danger-color, $lightness: -5%);
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 $danger-color-dark;
+    color: $color-white;
+  }
+}
+
+// 買い物を続ける（セカンダリ）
+.c-complete-main__btn--secondary {
+  background-color: $color-white;
+  border-color: $primary-color;
+  color: $primary-color;
+}
+
+// 回答する（プライマリ）
+.c-complete-main__btn--primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: $color-white;
+  box-shadow: 0 rem(2) 0 $primary-color-dark;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 $primary-color-dark;
+    color: $color-white;
+  }
+}

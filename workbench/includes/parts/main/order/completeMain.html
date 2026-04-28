@@ -1,0 +1,97 @@
+<section class="c-complete-main" aria-label="注文完了">
+
+  <!-- ===== サンクスブロック（常時表示） ===== -->
+  <div class="c-complete-main__thanks-block">
+    <h1 class="c-complete-main__heading">ご注文ありがとうございました。</h1>
+
+    <p class="c-complete-main__order-info">
+      ご注文番号は
+      <!-- 顧客の場合: リンク形式（ゲスト購入では非表示） -->
+      <a href="#" class="c-complete-main__order-no-link" hidden>6666</a>
+      <!-- ゲスト購入の場合: ラベル形式 -->
+      <span class="c-complete-main__order-no-label">6666</span>
+      になります。
+    </p>
+
+    <p class="c-complete-main__datetime">
+      (受付日時：<span class="c-complete-main__datetime-value">2026/04/28 10:00:00</span>)
+    </p>
+
+    <!-- 顧客の場合のみ表示（ゲスト購入では非表示） -->
+    <p class="c-complete-main__mypage-note" hidden>※ご注文内容の詳細は、マイページからご確認いただけます。</p>
+
+    <p class="c-complete-main__mail-note">ご登録いただいたメールアドレスに注文受付メールを送信しました。</p>
+  </div>
+
+  <!-- ===== 補足説明（通常注文） ===== -->
+  <div class="c-complete-main__supplement c-complete-main__supplement--normal">
+    <p class="c-complete-main__supplement-text">
+      ただいま、ご注文の確認メールをお送りさせていただきました。<br>
+      万が一、ご確認メールが届かない場合は、トラブルの可能性もありますので下記までお問い合わせくださいませ。
+    </p>
+    <p class="c-complete-main__supplement-text">
+      尚、注文が完了しますとマイページの【購入履歴一覧】、<br>
+      らくとく定期便は【定期確認変更（購入履歴）】に追加されますので、そちらでも注文内容をご確認いただくことは可能です。
+    </p>
+    <p class="c-complete-main__supplement-text">今後ともご愛顧賜りますよう宜しくお願い申し上げます。</p>
+
+    <!-- カスタマーセンター情報ボックス -->
+    <div class="c-complete-main__info-box">
+      <p class="c-complete-main__info-box-title">ノブトカスタマーセンター</p>
+      <p class="c-complete-main__info-box-text">フリーダイヤル　0120-710-158</p>
+      <p class="c-complete-main__info-box-text">営業時間：平日10:00～13:00、14:00～18:00</p>
+      <p class="c-complete-main__info-box-note">※土・日・祝日や、ゴールデンウィーク・お盆・年末年始等はお休みさせて頂きます。</p>
+    </div>
+  </div>
+
+  <!-- ===== 補足説明（定期注文）ゲスト購入では非表示 ===== -->
+  <div class="c-complete-main__supplement c-complete-main__supplement--regular" hidden>
+    <p class="c-complete-main__supplement-text">
+      ただいま、ご注文の確認メールをお送りさせていただきました。<br>
+      万が一、ご確認メールが届かない場合は、トラブルの可能性もありますので下記までお問い合わせくださいませ。
+    </p>
+    <p class="c-complete-main__supplement-text">
+      尚、注文が完了しますとマイページの【購入履歴一覧】、<br>
+      らくとく定期便は【定期確認変更（購入履歴）】に追加されますので、そちらでも注文内容をご確認いただくことは可能です。
+    </p>
+    <p class="c-complete-main__supplement-text">
+      コンタクトレンズとケア用品を別々に配送ご希望の方は、らくとく定期便確認・変更画面より別送を選択ください。<br>
+      ※らくとく定期便確認・変更画面は<a href="#" class="c-complete-main__link">こちら</a> から
+    </p>
+
+    <!-- カスタマーセンター情報ボックス（定期でも同じ） -->
+    <div class="c-complete-main__info-box">
+      <p class="c-complete-main__info-box-title">ノブトカスタマーセンター</p>
+      <p class="c-complete-main__info-box-text">フリーダイヤル　0120-710-158</p>
+      <p class="c-complete-main__info-box-text">営業時間：平日10:00～13:00、14:00～18:00</p>
+      <p class="c-complete-main__info-box-note">※土・日・祝日や、ゴールデンウィーク・お盆・年末年始等はお休みさせて頂きます。</p>
+    </div>
+  </div>
+
+  <!-- ===== カート遷移ブロック（カートに商品が残っている場合のみ表示） ===== -->
+  <div class="c-complete-main__cart-block" hidden>
+    <p class="c-complete-main__cart-notice">注文が完了していない商品がカートに残っています。買い物を続ける場合はこちら</p>
+    <div class="c-complete-main__actions c-complete-main__actions--cart">
+      <a href="#" class="c-complete-main__btn c-complete-main__btn--secondary">買い物を続ける</a>
+    </div>
+  </div>
+
+  <!-- ===== アンケートブロック（条件を満たす顧客のみ表示、ゲスト購入では非表示） ===== -->
+  <div class="c-complete-main__enquete-block" hidden>
+    <p class="c-complete-main__enquete-text">ただいま、ご購入いただいたお客様へのアンケートを実施中。</p>
+    <p class="c-complete-main__enquete-text">
+      アンケートに回答いただいたお客様にもれなく
+      <span class="c-complete-main__enquete-point">500</span>ptプレゼント。
+    </p>
+    <p class="c-complete-main__enquete-text">アンケートへの回答はこちら</p>
+    <div class="c-complete-main__actions c-complete-main__actions--enquete">
+      <a href="#" class="c-complete-main__btn c-complete-main__btn--primary">回答する</a>
+    </div>
+  </div>
+
+  <!-- ===== メインアクション（常時表示） ===== -->
+  <div class="c-complete-main__actions c-complete-main__actions--main">
+    <a href="/" class="c-complete-main__btn c-complete-main__btn--top">トップページへ</a>
+  </div>
+
+</section>

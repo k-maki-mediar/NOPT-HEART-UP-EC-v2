@@ -5610,12 +5610,18 @@
   padding-bottom: 0;
 }
 
-.c-page-footer--copyright-only {
-  position: fixed;
+.c-footer-sticky-wrap {
+  display: block;
+  position: sticky;
   bottom: 0;
-  left: 0;
-  right: 0;
   z-index: 1;
+  margin-top: auto;
+}
+
+.c-body:has(.c-footer-sticky-wrap) > main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .c-detail-heading {

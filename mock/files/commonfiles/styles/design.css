@@ -8344,6 +8344,7 @@
 @media (min-width: 992px) {
   .wsparts-include.c-cart-content-wrap {
     padding-left: calc(var(--side-nav-content-offset) + 2rem);
+    padding-right: 2rem;
   }
 }
 
@@ -8380,7 +8381,7 @@
 }
 @media (min-width: 992px) {
   .c-cart-main {
-    padding: 0 0 3rem calc(var(--side-nav-content-offset) + 2rem);
+    padding: 0 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
   }
 }
 
@@ -9026,6 +9027,10 @@
     width: auto;
     min-width: 11.25rem;
   }
+  .c-cart-main .c-step-nav {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .c-cart-regular-main {
   max-width: 70.625rem;
@@ -9034,7 +9039,7 @@
 }
 @media (min-width: 992px) {
   .c-cart-regular-main {
-    padding: 0 0 3rem calc(var(--side-nav-content-offset) + 2rem);
+    padding: 0 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
   }
 }
 

@@ -20,6 +20,7 @@
 
   @include pc {
     padding-left: calc(var(--side-nav-content-offset) + rem(32));
+    padding-right: rem(32);
   }
 }
 
@@ -59,7 +60,7 @@
   padding: 0 0 rem(48);
 
   @include pc {
-    padding: 0 0 rem(48) calc(var(--side-nav-content-offset) + rem(32));
+    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 
@@ -770,5 +771,11 @@
   .c-cart-main__btn {
     width: auto;
     min-width: rem(180);
+  }
+
+  // c-cart-main内のstepNavはpadding不要（親のpaddingで既にオフセット済み）
+  .c-cart-main .c-step-nav {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

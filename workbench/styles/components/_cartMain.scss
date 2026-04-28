@@ -655,6 +655,13 @@
   margin-left: auto;
   margin-right: auto;
   padding: 0 rem(16);
+
+  @include tablet-up {
+    &.c-cart-main__actions--main {
+      flex-direction: row-reverse;
+      max-width: none;
+    }
+  }
 }
 
 .c-cart-main__actions--main {
@@ -782,10 +789,16 @@
     padding-right: 0;
   }
 
-  // ボタンはPC時も縦並び・max-width内でwidth 100%
+  // ボタンはPC時も縦並び・max-width内でwidth 100%（カートを空にする等）
   .c-cart-main__actions {
     flex-direction: column;
     align-items: center;
+  }
+
+  // 注文手続き+お買い物を続けるはPC時横並び
+  .c-cart-main__actions--main {
+    flex-direction: row-reverse;
+    max-width: none;
   }
 
   .c-cart-main__btn {

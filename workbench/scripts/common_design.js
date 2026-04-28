@@ -983,6 +983,29 @@ $(function () {
 });
 
 /* ========================================
+ * ゲスト購入画面: 別お届け先チェック
+ * ======================================== */
+$(function () {
+  // 別のお届け先に送るチェックボックス: 配送先フォームの表示/非表示を切り替える
+  $(document).on('change', '.js-other-address-toggle', function () {
+    const $area = $('#otherAddressArea');
+    if (!$area.length) { return; }
+    if (this.checked) {
+      $area.removeAttr('hidden');
+    } else {
+      $area.attr('hidden', '');
+    }
+  });
+
+  // 同意チェックボックス: 次へボタンの活性/非活性を切り替える
+  $(document).on('change', '.js-agree-checkbox', function () {
+    const $btn = $('.js-guest-submit');
+    if (!$btn.length) { return; }
+    $btn.prop('disabled', !this.checked);
+  });
+});
+
+/* ========================================
  * 定期契約確認変更：タブ切替
  * ======================================== */
 $(function () {

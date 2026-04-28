@@ -1,0 +1,505 @@
+// ========================================
+// Guest Main（ゲスト購入フォーム）
+// 格納先HTML: workbench/includes/parts/main/order/guestMain.html
+// BEM: .c-guest-main / .c-guest-validation-popup
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-guest-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 rem(16) rem(48);
+
+  @include pc {
+    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// セクションヘッダー（購入者情報・お届け先情報）
+// ========================================
+
+.c-guest-main__section-header {
+  padding: rem(11) rem(12);
+  background-color: $bg-banner;
+  margin-bottom: rem(4);
+}
+
+.c-guest-main__section-title {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: 0;
+  line-height: 1.5;
+}
+
+// ========================================
+// フォームテーブル（dl / dt / dd 構造）
+// ========================================
+
+.c-guest-main__form-body {
+  margin-bottom: rem(24);
+}
+
+.c-guest-main__form-table {
+  margin: 0;
+  padding: 0;
+}
+
+.c-guest-main__field {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $border-color;
+  padding: rem(12) rem(8);
+
+  @include tablet-up {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: rem(16);
+  }
+}
+
+.c-guest-main__field-label {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0 0 rem(6);
+  min-width: rem(150);
+  padding-top: rem(2);
+  flex-shrink: 0;
+
+  @include tablet-up {
+    margin: 0;
+    padding-top: rem(10);
+  }
+}
+
+.c-guest-main__field-body {
+  flex: 1;
+  margin: 0;
+}
+
+.c-guest-main__field-note {
+  font-size: rem(12);
+  color: $text-light;
+  margin: rem(4) 0 0;
+  line-height: 1.5;
+}
+
+// ========================================
+// 必須バッジ
+// ========================================
+
+.c-guest-main__required {
+  display: inline-block;
+  margin-left: rem(6);
+  padding: rem(2) rem(6);
+  background-color: $danger-color;
+  color: $color-white;
+  font-size: rem(10);
+  font-weight: $font-weight-medium;
+  border-radius: rem(10);
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+// ========================================
+// テキストボックス共通
+// ========================================
+
+.c-guest-main__input {
+  display: block;
+  width: 100%;
+  min-height: rem(44);
+  padding: rem(8) rem(12);
+  border: 1px solid $border-color-dark;
+  border-radius: $border-radius-sm;
+  font-size: rem(14);
+  color: $text-color;
+  background-color: $color-white;
+  box-sizing: border-box;
+  font-family: inherit;
+
+  &::placeholder {
+    color: $color-placeholder;
+  }
+
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: -1px;
+  }
+
+  &--postal {
+    max-width: rem(130);
+    width: rem(130);
+  }
+
+  &--phone {
+    max-width: rem(90);
+    width: rem(90);
+    min-width: rem(60);
+  }
+
+  &--address {
+    max-width: rem(300);
+  }
+
+  &--email {
+    max-width: rem(360);
+  }
+
+  &--confirm-code {
+    max-width: rem(130);
+    width: rem(130);
+  }
+}
+
+// ========================================
+// プルダウン共通
+// ========================================
+
+.c-guest-main__select {
+  min-height: rem(44);
+  padding: rem(8) rem(12);
+  border: 1px solid $border-color-dark;
+  border-radius: $border-radius-sm;
+  font-size: rem(14);
+  color: $text-color;
+  background-color: $color-white;
+  cursor: pointer;
+  font-family: inherit;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: -1px;
+  }
+
+  &--birthdate {
+    min-width: rem(80);
+    width: auto;
+  }
+
+  &--prefecture {
+    min-width: rem(160);
+    width: auto;
+  }
+
+  // リストボックス（配送先都道府県）
+  &--listbox {
+    width: 100%;
+    max-width: rem(220);
+    min-height: rem(100);
+    padding: rem(4);
+    overflow-y: auto;
+  }
+}
+
+// ========================================
+// 横並びグループ共通
+// ========================================
+
+.c-guest-main__input-group,
+.c-guest-main__postal-group,
+.c-guest-main__phone-group,
+.c-guest-main__birthdate-group,
+.c-guest-main__confirm-code-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(8);
+}
+
+// 電話番号・生年月日の区切り文字
+.c-guest-main__phone-sep,
+.c-guest-main__birthdate-sep {
+  font-size: rem(14);
+  color: $text-color;
+  flex-shrink: 0;
+}
+
+// ========================================
+// ボタン共通
+// ========================================
+
+.c-guest-main__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(44);
+  padding: rem(8) rem(20);
+  border: 1px solid $primary-color;
+  border-radius: rem(22);
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  line-height: 1.5;
+  box-sizing: border-box;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  // 郵便番号検索ボタン
+  &--search {
+    background-color: $primary-color;
+    color: $color-white;
+    flex-shrink: 0;
+    box-shadow: 0 rem(2) 0 $primary-color-dark;
+
+    &:hover {
+      transform: translateY(rem(2));
+      box-shadow: 0 0 0 $primary-color-dark;
+    }
+  }
+
+  // 確認コード発行ボタン
+  &--issue {
+    background-color: $primary-color;
+    color: $color-white;
+    white-space: nowrap;
+    box-shadow: 0 rem(2) 0 $primary-color-dark;
+
+    &:hover {
+      transform: translateY(rem(2));
+      box-shadow: 0 0 0 $primary-color-dark;
+    }
+  }
+
+  // 前へ戻るボタン（アウトライン）
+  &--back {
+    background-color: $color-white;
+    color: $primary-color;
+    box-shadow: 0 rem(2) 0 $primary-color-dark;
+    min-width: rem(120);
+
+    &:hover {
+      transform: translateY(rem(2));
+      box-shadow: 0 0 0 $primary-color-dark;
+    }
+  }
+
+  // 次へボタン（プライマリ）
+  &--next {
+    background-color: $primary-color;
+    color: $color-white;
+    box-shadow: 0 rem(2) 0 $primary-color-dark;
+    min-width: rem(120);
+
+    &:disabled {
+      background-color: $color-disabled;
+      border-color: $color-disabled;
+      box-shadow: none;
+      cursor: not-allowed;
+      color: $color-white;
+    }
+
+    &:not(:disabled):hover {
+      transform: translateY(rem(2));
+      box-shadow: 0 0 0 $primary-color-dark;
+    }
+  }
+}
+
+// ========================================
+// 個人情報のお取り扱いについて
+// ========================================
+
+.c-guest-main__privacy {
+  margin-top: rem(24);
+  margin-bottom: rem(8);
+}
+
+.c-guest-main__privacy-title {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: 0 0 rem(8);
+  line-height: 1.5;
+}
+
+.c-guest-main__privacy-box {
+  height: rem(160);
+  overflow-y: auto;
+  padding: rem(16);
+  border: 2px solid $bg-banner;
+  background-color: $color-white;
+  font-size: rem(12);
+  color: $text-color;
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+.c-guest-main__privacy-text {
+  margin: 0;
+}
+
+// ========================================
+// 別お届け先チェック
+// ========================================
+
+.c-guest-main__other-address-wrap {
+  margin-top: rem(32);
+}
+
+.c-guest-main__other-address-check {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  min-height: rem(48);
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
+  cursor: pointer;
+}
+
+.c-guest-main__other-address-input {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: $primary-color;
+}
+
+.c-guest-main__other-address-text {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+}
+
+// 配送先エリア（hidden時は非表示）
+.c-guest-main__other-address-area {
+  margin-top: rem(16);
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// ========================================
+// ラジオボタングループ
+// ========================================
+
+.c-guest-main__radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(16);
+}
+
+.c-guest-main__radio-label {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  min-height: rem(44);
+  font-size: rem(14);
+  color: $text-color;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.c-guest-main__radio {
+  width: rem(18);
+  height: rem(18);
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: $primary-color;
+}
+
+// ========================================
+// 同意チェックボックス
+// ========================================
+
+.c-guest-main__agree-check {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  min-height: rem(44);
+  cursor: pointer;
+  margin-bottom: rem(12);
+}
+
+.c-guest-main__agree-input {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: $primary-color;
+}
+
+.c-guest-main__agree-text {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+}
+
+// ========================================
+// ボタンエリア（前へ / 同意チェック+次へ）
+// ========================================
+
+.c-guest-main__actions {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  padding-top: rem(32);
+  border-top: 1px solid $border-color;
+  margin-top: rem(32);
+
+  @include tablet-up {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.c-guest-main__actions-right {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: rem(8);
+
+  @include tablet-up {
+    align-items: flex-end;
+  }
+}
+
+// ========================================
+// リアルタイムバリデーションポップアップ
+// ========================================
+
+.c-guest-validation-popup {
+  position: absolute;
+  z-index: $z-index-tooltip;
+  min-width: rem(200);
+  max-width: rem(300);
+  padding: rem(10) rem(14);
+  background-color: $danger-color;
+  color: $color-white;
+  border-radius: $border-radius-md;
+  font-size: rem(13);
+  line-height: 1.5;
+
+  &[hidden] {
+    display: none;
+  }
+
+  &__message {
+    margin: 0;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: rem(-8);
+    left: rem(16);
+    width: rem(12);
+    height: rem(8);
+    background-color: $danger-color;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+}

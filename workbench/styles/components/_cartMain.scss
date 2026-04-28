@@ -14,6 +14,7 @@
 
 .c-cart-shipping-msg {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: rem(46);
@@ -44,10 +45,10 @@
 .c-cart-main {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: 0 0 rem(24);
+  padding: 0 0 rem(48);
 
   @include pc {
-    padding: 0 0 rem(24);
+    padding: 0 0 rem(48);
   }
 }
 
@@ -543,6 +544,8 @@
 
 .c-cart-main__agreement-notice {
   margin-bottom: rem(16);
+  padding: rem(16);
+  background-color: $bg-red-light;
 }
 
 .c-cart-main__agreement-notice-text {
@@ -554,12 +557,16 @@
 }
 
 .c-cart-main__agreement-heading {
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
+  font-size: rem(12);
+  font-weight: $font-weight-bold;
   color: $primary-color;
   text-align: center;
   line-height: 1.7;
   margin: 0 0 rem(16);
+
+  @include tablet-up {
+    font-size: rem(16);
+  }
 }
 
 .c-cart-main__agreement-box {
@@ -620,7 +627,7 @@
 .c-cart-main__agreement-check-label {
   font-size: rem(14);
   font-weight: $font-weight-medium;
-  color: $text-color;
+  color: $primary-color;
   cursor: pointer;
 }
 

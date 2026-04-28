@@ -1526,6 +1526,27 @@ $(function () {
     return num.toLocaleString() + '円';
   }
 
+  function updateShippingMsg() {
+    const $msg = $('.js-cart-shipping-msg');
+    if (!$msg.length) return;
+    const threshold = parseInt($msg.data('free-shipping-threshold'), 10) || 5500;
+    let cartTotal = 0;
+    $('.js-cart-item').each(function () {
+      const unitPrice = parseInt($(this).data('unit-price'), 10) || 0;
+      const qty = parseInt($(this).find('.js-cart-qty-value').val(), 10) || 1;
+      cartTotal += unitPrice * qty;
+    });
+    $('.js-cart-total-amount').text(formatPrice(cartTotal));
+    if (cartTotal >= threshold) {
+      $('.js-cart-shipping-msg-short').hide();
+      $('.js-cart-shipping-msg-free').show();
+    } else {
+      $('.js-cart-shipping-msg-short').show();
+      $('.js-cart-shipping-msg-free').hide();
+      $('.js-cart-remaining-amount').text(formatPrice(threshold - cartTotal));
+    }
+  }
+
   function updateSubtotal($stepper) {
     const $item = $stepper.closest('.js-cart-item');
     if (!$item.length) return;
@@ -1546,6 +1567,7 @@ $(function () {
     $minus.prop('disabled', current <= min);
     $plus.prop('disabled', current >= max);
     updateSubtotal($stepper);
+    updateShippingMsg();
   }
 
   // マイナスボタン

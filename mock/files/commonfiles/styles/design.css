@@ -8331,6 +8331,7 @@
 }
 .c-cart-shipping-msg {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 2.875rem;
@@ -8357,11 +8358,11 @@
 .c-cart-main {
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 0 0 1.5rem;
+  padding: 0 0 3rem;
 }
 @media (min-width: 992px) {
   .c-cart-main {
-    padding: 0 0 1.5rem;
+    padding: 0 0 3rem;
   }
 }
 
@@ -8785,6 +8786,8 @@
 
 .c-cart-main__agreement-notice {
   margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #fff2f1;
 }
 
 .c-cart-main__agreement-notice-text {
@@ -8796,12 +8799,17 @@
 }
 
 .c-cart-main__agreement-heading {
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 700;
   color: #00387d;
   text-align: center;
   line-height: 1.7;
   margin: 0 0 1rem;
+}
+@media (min-width: 768px) {
+  .c-cart-main__agreement-heading {
+    font-size: 1rem;
+  }
 }
 
 .c-cart-main__agreement-box {
@@ -8860,7 +8868,7 @@
 .c-cart-main__agreement-check-label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #333;
+  color: #00387d;
   cursor: pointer;
 }
 

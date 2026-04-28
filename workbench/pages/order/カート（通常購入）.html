@@ -30,10 +30,14 @@
                 <div class="wsparts-include">
                   @@include('../../includes/parts/general/messageArea.html')
                 </div>
-                <!-- ===== 送料無料メッセージバー（条件付き表示：送料無料未達時） ===== -->
+                <!-- ===== 送料無料メッセージバー ===== -->
                 <div class="wsparts-include">
-                  <div class="c-cart-shipping-msg">
-                    <p class="c-cart-shipping-msg__text">お買い上げ商品の合計金額は<strong class="c-cart-shipping-msg__amount">3,000円</strong>です。あと<strong class="c-cart-shipping-msg__amount">2,000円</strong>で送料無料です！！</p>
+                  <div class="c-cart-shipping-msg js-cart-shipping-msg" data-free-shipping-threshold="5500">
+                    <p class="c-cart-shipping-msg__text">お買い上げ商品の合計金額は<strong class="c-cart-shipping-msg__amount js-cart-total-amount">3,000円</strong>です。</p>
+                    <!-- 送料無料未達時 -->
+                    <p class="c-cart-shipping-msg__text js-cart-shipping-msg-short">あと<strong class="c-cart-shipping-msg__amount js-cart-remaining-amount">2,500円</strong>で送料無料です！！</p>
+                    <!-- 送料無料達成時 -->
+                    <p class="c-cart-shipping-msg__text js-cart-shipping-msg-free" style="display:none;">現在送料無料です！！</p>
                   </div>
                 </div>
                 <div class="wsparts-include">

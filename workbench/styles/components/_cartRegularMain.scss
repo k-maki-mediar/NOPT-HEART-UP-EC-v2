@@ -608,20 +608,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: rem(44);
+  min-height: rem(48);
   padding: rem(8) rem(16);
-  margin: rem(12) 0;
+  margin: rem(16) 0;
   border: 1px solid $primary-color;
   border-radius: rem(4);
   background-color: $color-white;
+  box-shadow: 0 rem(2) 0 0 $primary-color-dark;
   font-size: rem(14);
   font-weight: $font-weight-medium;
   color: $primary-color;
   text-decoration: none;
   text-align: center;
+  transition: transform $transition-fast, box-shadow $transition-fast;
 
   &:hover {
-    background-color: $bg-light;
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 $primary-color-dark;
   }
 }
 

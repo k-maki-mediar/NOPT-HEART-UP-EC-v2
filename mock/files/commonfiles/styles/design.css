@@ -9573,20 +9573,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.75rem;
+  min-height: 3rem;
   padding: 0.5rem 1rem;
-  margin: 0.75rem 0;
+  margin: 1rem 0;
   border: 1px solid #00387d;
   border-radius: 0.25rem;
   background-color: #FFFFFF;
+  box-shadow: 0 0.125rem 0 0 #002a5e;
   font-size: 0.875rem;
   font-weight: 500;
   color: #00387d;
   text-decoration: none;
   text-align: center;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .c-cart-regular-main__agreement-terms-btn:hover {
-  background-color: #f4f8fc;
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 0 #002a5e;
 }
 
 .c-cart-regular-main__agreement-check {

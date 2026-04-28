@@ -12,6 +12,17 @@
 // 送料無料メッセージバー
 // ========================================
 
+// 送料メッセージ等、c-cart-mainの外にあるがc-cart-mainと同じ幅に揃えるラッパー
+.wsparts-include.c-cart-content-wrap {
+  display: block;
+  max-width: rem(1130);
+  margin: 0 auto;
+
+  @include pc {
+    padding-left: calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
 .c-cart-shipping-msg {
   display: flex;
   flex-direction: column;
@@ -48,7 +59,7 @@
   padding: 0 0 rem(48);
 
   @include pc {
-    padding: 0 0 rem(48);
+    padding: 0 0 rem(48) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 

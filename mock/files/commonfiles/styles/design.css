@@ -8336,6 +8336,17 @@
     font-size: 0.75rem;
   }
 }
+.wsparts-include.c-cart-content-wrap {
+  display: block;
+  max-width: 70.625rem;
+  margin: 0 auto;
+}
+@media (min-width: 992px) {
+  .wsparts-include.c-cart-content-wrap {
+    padding-left: calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
 .c-cart-shipping-msg {
   display: flex;
   flex-direction: column;
@@ -8369,7 +8380,7 @@
 }
 @media (min-width: 992px) {
   .c-cart-main {
-    padding: 0 0 3rem;
+    padding: 0 0 3rem calc(var(--side-nav-content-offset) + 2rem);
   }
 }
 
@@ -9023,7 +9034,7 @@
 }
 @media (min-width: 992px) {
   .c-cart-regular-main {
-    padding: 0 0 3rem;
+    padding: 0 0 3rem calc(var(--side-nav-content-offset) + 2rem);
   }
 }
 

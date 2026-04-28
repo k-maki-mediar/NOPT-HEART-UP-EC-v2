@@ -1,0 +1,674 @@
+// ========================================
+// Confirm Main（注文内容確認）
+// 格納先HTML: workbench/includes/parts/main/order/confirmMain.html
+// BEM: .c-confirm-main
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// 注文内容確認 全体ラッパー
+// ========================================
+
+.c-confirm-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 0 rem(48);
+
+  @include pc {
+    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ----------------------------------------
+// ページ見出し（h1 + サブテキスト）
+// ----------------------------------------
+
+.c-confirm-heading {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(12) 0;
+
+  @include pc {
+    padding: rem(24) rem(32) 0 calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+.c-confirm-heading__inner {
+  text-align: center;
+}
+
+.c-confirm-heading__title {
+  font-family: $font-family-heading;
+  font-size: rem(24);
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  letter-spacing: rem(0.96);
+  color: $primary-color;
+  margin: 0 0 rem(8);
+  text-align: center;
+}
+
+.c-confirm-heading__subtitle {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  line-height: 1.75;
+  color: $text-color;
+  margin: 0 0 rem(16);
+  text-align: center;
+}
+
+.c-confirm-heading__line {
+  display: block;
+  position: relative;
+  left: calc((100% - 100vw) / 2);
+  width: 100vw;
+  height: rem(1);
+
+  @include pc {
+    left: 0;
+    width: 100%;
+  }
+}
+
+// ========================================
+// 2カラムレイアウト（PC）
+// ========================================
+
+.c-confirm-main__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  @include pc {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: rem(24);
+  }
+}
+
+// ----------------------------------------
+// 左カラム（詳細情報）
+// ----------------------------------------
+
+.c-confirm-main__left {
+  flex: 1;
+  min-width: 0;
+}
+
+// ----------------------------------------
+// 右カラム（お支払金額パネル）
+// ----------------------------------------
+
+.c-confirm-main__right {
+  @include pc {
+    width: rem(340);
+    flex-shrink: 0;
+    position: sticky;
+    top: rem(100);
+  }
+}
+
+// ========================================
+// セクション共通
+// ========================================
+
+.c-confirm-main__section {
+  margin-bottom: rem(24);
+  border: 1px solid $border-color;
+}
+
+.c-confirm-main__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(11) rem(12);
+  background-color: $bg-banner;
+}
+
+.c-confirm-main__section-heading {
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  margin: 0;
+}
+
+.c-confirm-main__section-heading-sub {
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+}
+
+.c-confirm-main__section-body {
+  padding: rem(16) rem(12);
+}
+
+// ----------------------------------------
+// 変更ボタン
+// ----------------------------------------
+
+.c-confirm-main__change-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(54);
+  min-height: rem(30);
+  padding: 0 rem(12);
+  border: 1px solid $primary-color;
+  border-radius: rem(15);
+  background-color: $color-white;
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  color: $primary-color;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $bg-light;
+  }
+}
+
+// ========================================
+// 定義リスト（お客様情報・お届け先情報）
+// ========================================
+
+.c-confirm-main__info-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.c-confirm-main__info-row {
+  display: grid;
+  grid-template-columns: rem(120) 1fr;
+  gap: rem(4) rem(12);
+  padding: rem(10) 0;
+  border-top: 1px solid $border-color;
+}
+
+.c-confirm-main__info-row--first {
+  border-top: none;
+}
+
+.c-confirm-main__info-label {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-light;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: rem(2);
+}
+
+.c-confirm-main__info-value {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// ----------------------------------------
+// クーポンリスト
+// ----------------------------------------
+
+.c-confirm-main__coupon-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-confirm-main__coupon-item {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+}
+
+.c-confirm-main__coupon-discount {
+  font-size: rem(12);
+  color: $accent-red;
+}
+
+// ========================================
+// 商品情報エリア（お届け日時）
+// ========================================
+
+.c-confirm-main__delivery-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(4) rem(16);
+  padding: rem(12) rem(12);
+  background-color: $bg-gray;
+  margin-bottom: rem(4);
+}
+
+.c-confirm-main__delivery-date,
+.c-confirm-main__delivery-time {
+  font-size: rem(13);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.c-confirm-main__delivery-label {
+  font-weight: $font-weight-medium;
+  color: $text-light;
+}
+
+// ========================================
+// 商品リスト
+// ========================================
+
+.c-confirm-main__item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-confirm-main__item {
+  padding: rem(16) rem(12);
+  border-top: 1px dashed rgba($text-color, 0.3);
+}
+
+.c-confirm-main__item--first {
+  border-top: none;
+}
+
+// ----------------------------------------
+// 商品行レイアウト（画像 + 詳細の2列）
+// ----------------------------------------
+
+.c-confirm-main__item-product {
+  display: grid;
+  grid-template-columns: rem(120) 1fr;
+  gap: rem(12);
+  align-items: start;
+}
+
+// ----------------------------------------
+// 商品画像エリア
+// ----------------------------------------
+
+.c-confirm-main__item-img-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-confirm-main__item-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(20);
+  background-color: $bg-banner;
+  color: $primary-color;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  letter-spacing: rem(0.15);
+}
+
+.c-confirm-main__item-img-wrap {
+  width: 100%;
+  border: 1px solid $border-thin;
+  background-color: $color-white;
+}
+
+.c-confirm-main__item-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+// ----------------------------------------
+// 商品詳細（右列）
+// ----------------------------------------
+
+.c-confirm-main__item-detail {
+  min-width: 0;
+}
+
+.c-confirm-main__item-name {
+  display: block;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  text-decoration: none;
+  line-height: 1.75;
+  letter-spacing: rem(0.56);
+  margin: 0 0 rem(4);
+}
+
+.c-confirm-main__item-spec {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+  line-height: 1.5;
+  letter-spacing: rem(0.15);
+  margin: 0 0 rem(8);
+}
+
+.c-confirm-main__item-price-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: rem(4);
+  margin-bottom: rem(4);
+}
+
+.c-confirm-main__item-price {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.75;
+}
+
+.c-confirm-main__item-price-tax-mark {
+  font-size: rem(10);
+  color: $accent-red;
+}
+
+.c-confirm-main__item-price-tax {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+}
+
+.c-confirm-main__item-qty {
+  font-size: rem(13);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  margin: 0;
+}
+
+// ----------------------------------------
+// 小計行
+// ----------------------------------------
+
+.c-confirm-main__item-subtotal-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: rem(40);
+  padding: rem(6) rem(8);
+  background-color: $bg-gray;
+  margin-top: rem(12);
+  gap: rem(4);
+}
+
+.c-confirm-main__item-subtotal-label {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  margin-right: rem(4);
+}
+
+.c-confirm-main__item-subtotal {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+}
+
+.c-confirm-main__item-subtotal-tax {
+  font-size: rem(10);
+  font-weight: $font-weight-normal;
+  color: $text-light;
+}
+
+// ========================================
+// お支払金額パネル（右カラム）
+// ========================================
+
+.c-confirm-main__amount-panel {
+  background-color: $bg-light;
+  border: 1px solid $border-color;
+  padding: rem(16) rem(16) rem(20);
+
+  @include pc {
+    padding: rem(20) rem(20) rem(24);
+  }
+}
+
+.c-confirm-main__amount-heading {
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  margin: 0 0 rem(12);
+  padding-bottom: rem(10);
+  border-bottom: 1px solid $border-color;
+}
+
+// ----------------------------------------
+// 金額リスト
+// ----------------------------------------
+
+.c-confirm-main__amount-list {
+  margin: 0;
+  padding: 0;
+}
+
+.c-confirm-main__amount-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: rem(8);
+  padding: rem(6) 0;
+  border-top: 1px solid $border-color;
+}
+
+.c-confirm-main__amount-row--first {
+  border-top: none;
+}
+
+.c-confirm-main__amount-row--total {
+  padding: rem(10) 0;
+  border-top: 2px solid $primary-color;
+  border-bottom: 2px solid $primary-color;
+  margin: rem(4) 0;
+}
+
+.c-confirm-main__amount-row--tax {
+  border-bottom: none;
+  padding: rem(3) 0;
+}
+
+.c-confirm-main__amount-label {
+  font-size: rem(13);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  flex-shrink: 0;
+}
+
+.c-confirm-main__amount-label--total {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+}
+
+.c-confirm-main__amount-label--tax {
+  font-size: rem(11);
+  color: $text-light;
+}
+
+.c-confirm-main__amount-value {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  text-align: right;
+}
+
+.c-confirm-main__amount-value--total {
+  font-size: rem(22);
+  font-weight: $font-weight-bold;
+  color: $price-color;
+}
+
+.c-confirm-main__amount-value--tax {
+  font-size: rem(11);
+  color: $text-light;
+  font-weight: $font-weight-normal;
+}
+
+// ----------------------------------------
+// 軽減税率注記
+// ----------------------------------------
+
+.c-confirm-main__tax-note {
+  font-size: rem(10);
+  color: $text-light;
+  margin: rem(8) 0 0;
+}
+
+// ========================================
+// アクションボタン共通
+// ========================================
+
+.c-confirm-main__actions {
+  margin-top: rem(16);
+}
+
+// ----------------------------------------
+// 注文確定ボタン（オレンジ）
+// ----------------------------------------
+
+.c-confirm-main__btn {
+  @include accordion-card-btn;
+  display: flex;
+  width: 100%;
+  padding: rem(12) rem(24);
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.c-confirm-main__btn--primary {
+  background-color: #ff8c00;
+  border-color: #ff8c00;
+  color: $color-white;
+  box-shadow: 0 rem(2) 0 #d97600;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    background-color: #e07d00;
+    border-color: #e07d00;
+    box-shadow: 0 0 0 #d97600;
+  }
+}
+
+.c-confirm-main__btn--secondary {
+  background-color: $bg-gray;
+  border-color: $border-color-dark;
+  color: $text-light;
+  box-shadow: 0 rem(2) 0 $border-color-dark;
+
+  &:hover {
+    background-color: $border-color;
+    box-shadow: 0 0 0 $border-color-dark;
+  }
+}
+
+// ----------------------------------------
+// 戻るボタンラッパー（左寄せ・PC時）
+// ----------------------------------------
+
+.c-confirm-main__actions--back {
+  @include tablet-up {
+    display: flex;
+    justify-content: flex-start;
+
+    .c-confirm-main__btn--secondary {
+      width: auto;
+      min-width: rem(180);
+    }
+  }
+}
+
+// ========================================
+// フッターリンク・ボタンエリア
+// ========================================
+
+.c-confirm-main__footer {
+  padding: rem(16) rem(12) 0;
+
+  @include pc {
+    padding: rem(16) 0 0;
+  }
+}
+
+.c-confirm-main__footer-link-wrap {
+  margin: 0 0 rem(12);
+}
+
+.c-confirm-main__footer-link {
+  font-size: rem(13);
+  color: $link-blue;
+  text-decoration: underline;
+  line-height: 1.75;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.c-confirm-main__footer-link-inner {
+  font-weight: $font-weight-medium;
+}
+
+// ----------------------------------------
+// らくとく定期便説明文（定期購入時のみ）
+// ----------------------------------------
+
+.c-confirm-main__regular-notice {
+  padding: rem(16);
+  background-color: $bg-gray;
+  border: 1px solid $border-color;
+  margin-bottom: rem(16);
+}
+
+.c-confirm-main__regular-notice-text {
+  font-size: rem(12);
+  font-weight: $font-weight-normal;
+  line-height: 1.7;
+  color: $text-color;
+  margin: 0;
+}
+
+// ========================================
+// SP: レイアウト調整
+// ========================================
+
+@include sp {
+  // SP: 右カラム（お支払金額パネル）を左カラムの前（上部）に移動
+  .c-confirm-main__layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .c-confirm-main__right {
+    order: -1;
+  }
+
+  .c-confirm-main__btn--secondary {
+    width: 100%;
+  }
+}
+
+// ========================================
+// PC: レイアウト調整
+// ========================================
+
+@include pc {
+  .c-confirm-main__info-row {
+    grid-template-columns: rem(140) 1fr;
+  }
+}

@@ -10,35 +10,21 @@
     <h2 class="c-cart-regular-main__section-title">定期購入商品</h2>
   </div>
 
-  <!-- ===== 商品カードリスト（SP: カード形式） ===== -->
+  <!-- ===== 商品カードリスト ===== -->
   <ul class="c-cart-regular-main__list">
 
     <!-- 商品行：コンタクトレンズ（右目）定期購入例 -->
-    <li class="c-cart-regular-main__item">
-      <div class="c-cart-regular-main__item-row">
-        <!-- 商品画像 -->
-        <div class="c-cart-regular-main__item-img-wrap">
-          <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-regular-main__item-img" width="120" height="80">
+    <li class="c-cart-regular-main__item js-cart-item" data-unit-price="2150">
+      <div class="c-cart-regular-main__item-product">
+        <div class="c-cart-regular-main__item-img-area">
+          <span class="c-cart-regular-main__item-badge">右</span>
+          <div class="c-cart-regular-main__item-img-wrap">
+            <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-regular-main__item-img" width="120" height="80">
+          </div>
         </div>
-        <!-- 商品情報 -->
-        <div class="c-cart-regular-main__item-info">
-          <!-- バッジ群 -->
-          <div class="c-cart-regular-main__item-badges">
-            <span class="c-cart-regular-main__item-badge c-cart-regular-main__item-badge--rl">右</span>
-          </div>
-          <!-- 商品名 -->
+        <div class="c-cart-regular-main__item-detail">
           <a href="#" class="c-cart-regular-main__item-name">【定期便】アキュビュー オアシス（1箱）</a>
-          <!-- 処方箋情報（コンタクトレンズのみ） -->
-          <div class="c-cart-regular-main__item-rx">
-            <div class="c-cart-regular-main__item-rx-row">
-              <span class="c-cart-regular-main__item-rx-label">BC</span><span>8.80</span>
-              <span class="c-cart-regular-main__item-rx-label">P</span><span>-1.00</span>
-              <span class="c-cart-regular-main__item-rx-label">C</span><span>0.00</span>
-              <span class="c-cart-regular-main__item-rx-label">AX</span><span>0</span>
-              <span class="c-cart-regular-main__item-rx-label">DIA</span><span>14.20</span>
-              <span class="c-cart-regular-main__item-rx-label">ADD</span><span>0.00</span>
-            </div>
-          </div>
+          <p class="c-cart-regular-main__item-spec">BC : 8.80 / P : -1.00 / C : 0.00 / AX : 0 / DIA : 14.20 / ADD : 0.00</p>
           <!-- 価格変更メッセージ（価格変更告知対象商品のみ表示） -->
           <p class="c-cart-regular-main__item-price-change">※本商品は2026年6月1日到着分より価格が2,300円（税込）に変更されます。</p>
           <!-- 配送サイクル・配送数 -->
@@ -46,59 +32,44 @@
             <span class="c-cart-regular-main__item-cycle">3ヶ月コース</span>
             <span class="c-cart-regular-main__item-count">1回あたり 1箱</span>
           </div>
-          <!-- 価格 -->
           <div class="c-cart-regular-main__item-price-wrap">
             <span class="c-cart-regular-main__item-price">2,150円</span>
             <span class="c-cart-regular-main__item-price-tax">(税込)</span>
           </div>
-          <!-- 数量（SP: ステッパー） -->
           <div class="c-cart-regular-main__item-qty-stepper js-cart-qty-stepper" data-qty-min="1" data-qty-max="9999">
             <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--minus js-cart-qty-minus" aria-label="数量を減らす">-</button>
-            <input type="text" class="c-cart-regular-main__item-qty-value js-cart-qty-value" value="1" maxlength="4" aria-label="数量">
+            <input type="text" class="c-cart-regular-main__item-qty-input js-cart-qty-value" value="1" maxlength="4" aria-label="数量">
             <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--plus js-cart-qty-plus" aria-label="数量を増やす">+</button>
           </div>
-          <!-- 数量（PC/Tablet: テキストボックス） -->
-          <div class="c-cart-regular-main__item-qty-area">
-            <input type="text" class="c-cart-regular-main__item-qty-input" value="1" maxlength="4" aria-label="数量">
-          </div>
-          <!-- 削除ボタン -->
-          <button type="button" class="c-cart-regular-main__item-delete">
-            <svg class="c-cart-regular-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
-            </svg>
-            削除
-          </button>
         </div>
       </div>
-      <!-- 小計行（SP表示） -->
       <div class="c-cart-regular-main__item-subtotal-row">
         <span class="c-cart-regular-main__item-subtotal-label">小計</span>
-        <span class="c-cart-regular-main__item-subtotal">2,150円</span>
+        <span class="c-cart-regular-main__item-subtotal js-cart-item-subtotal">2,150円</span>
         <span class="c-cart-regular-main__item-subtotal-tax">(税込)</span>
+      </div>
+      <div class="c-cart-regular-main__item-delete-wrap">
+        <button type="button" class="c-cart-regular-main__item-delete">
+          <svg class="c-cart-regular-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+            <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
+          </svg>
+          削除
+        </button>
       </div>
     </li>
 
     <!-- 商品行：コンタクトレンズ（左目）定期購入例 -->
-    <li class="c-cart-regular-main__item">
-      <div class="c-cart-regular-main__item-row">
-        <div class="c-cart-regular-main__item-img-wrap">
-          <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-regular-main__item-img" width="120" height="80">
+    <li class="c-cart-regular-main__item js-cart-item" data-unit-price="2150">
+      <div class="c-cart-regular-main__item-product">
+        <div class="c-cart-regular-main__item-img-area">
+          <span class="c-cart-regular-main__item-badge">左</span>
+          <div class="c-cart-regular-main__item-img-wrap">
+            <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-regular-main__item-img" width="120" height="80">
+          </div>
         </div>
-        <div class="c-cart-regular-main__item-info">
-          <div class="c-cart-regular-main__item-badges">
-            <span class="c-cart-regular-main__item-badge c-cart-regular-main__item-badge--rl">左</span>
-          </div>
+        <div class="c-cart-regular-main__item-detail">
           <a href="#" class="c-cart-regular-main__item-name">【定期便】アキュビュー オアシス（1箱）</a>
-          <div class="c-cart-regular-main__item-rx">
-            <div class="c-cart-regular-main__item-rx-row">
-              <span class="c-cart-regular-main__item-rx-label">BC</span><span>8.80</span>
-              <span class="c-cart-regular-main__item-rx-label">P</span><span>-0.75</span>
-              <span class="c-cart-regular-main__item-rx-label">C</span><span>0.00</span>
-              <span class="c-cart-regular-main__item-rx-label">AX</span><span>0</span>
-              <span class="c-cart-regular-main__item-rx-label">DIA</span><span>14.20</span>
-              <span class="c-cart-regular-main__item-rx-label">ADD</span><span>0.00</span>
-            </div>
-          </div>
+          <p class="c-cart-regular-main__item-spec">BC : 8.80 / P : -0.75 / C : 0.00 / AX : 0 / DIA : 14.20 / ADD : 0.00</p>
           <div class="c-cart-regular-main__item-delivery">
             <span class="c-cart-regular-main__item-cycle">3ヶ月コース</span>
             <span class="c-cart-regular-main__item-count">1回あたり 1箱</span>
@@ -109,139 +80,29 @@
           </div>
           <div class="c-cart-regular-main__item-qty-stepper js-cart-qty-stepper" data-qty-min="1" data-qty-max="9999">
             <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--minus js-cart-qty-minus" aria-label="数量を減らす">-</button>
-            <input type="text" class="c-cart-regular-main__item-qty-value js-cart-qty-value" value="1" maxlength="4" aria-label="数量">
+            <input type="text" class="c-cart-regular-main__item-qty-input js-cart-qty-value" value="1" maxlength="4" aria-label="数量">
             <button type="button" class="c-cart-regular-main__item-qty-btn c-cart-regular-main__item-qty-btn--plus js-cart-qty-plus" aria-label="数量を増やす">+</button>
           </div>
-          <div class="c-cart-regular-main__item-qty-area">
-            <input type="text" class="c-cart-regular-main__item-qty-input" value="1" maxlength="4" aria-label="数量">
-          </div>
-          <button type="button" class="c-cart-regular-main__item-delete">
-            <svg class="c-cart-regular-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
-            </svg>
-            削除
-          </button>
         </div>
       </div>
       <div class="c-cart-regular-main__item-subtotal-row">
         <span class="c-cart-regular-main__item-subtotal-label">小計</span>
-        <span class="c-cart-regular-main__item-subtotal">2,150円</span>
+        <span class="c-cart-regular-main__item-subtotal js-cart-item-subtotal">2,150円</span>
         <span class="c-cart-regular-main__item-subtotal-tax">(税込)</span>
+      </div>
+      <div class="c-cart-regular-main__item-delete-wrap">
+        <button type="button" class="c-cart-regular-main__item-delete">
+          <svg class="c-cart-regular-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+            <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
+          </svg>
+          削除
+        </button>
       </div>
     </li>
 
   </ul>
 
-  <!-- ===== PC: テーブル形式（SP時は非表示） ===== -->
-  <table class="c-cart-regular-main__table" aria-label="定期購入商品一覧">
-    <thead class="c-cart-regular-main__table-header">
-      <tr>
-        <th class="c-cart-regular-main__table-th c-cart-regular-main__table-th--name" scope="col">商品内容</th>
-        <th class="c-cart-regular-main__table-th" scope="col">数量</th>
-        <th class="c-cart-regular-main__table-th" scope="col">小計</th>
-        <th class="c-cart-regular-main__table-th" scope="col">削除</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- コンタクト（右目） -->
-      <tr>
-        <td class="c-cart-regular-main__table-td c-cart-regular-main__table-td--name">
-          <div class="c-cart-regular-main__table-cell-product">
-            <div class="c-cart-regular-main__item-img-wrap">
-              <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-regular-main__item-img" width="120" height="80">
-            </div>
-            <div class="c-cart-regular-main__item-info">
-              <div class="c-cart-regular-main__item-badges">
-                <span class="c-cart-regular-main__item-badge c-cart-regular-main__item-badge--rl">右</span>
-              </div>
-              <a href="#" class="c-cart-regular-main__item-name">【定期便】アキュビュー オアシス（1箱）</a>
-              <div class="c-cart-regular-main__item-rx">
-                <div class="c-cart-regular-main__item-rx-row">
-                  <span class="c-cart-regular-main__item-rx-label">BC</span><span>8.80</span>
-                  <span class="c-cart-regular-main__item-rx-label">P</span><span>-1.00</span>
-                </div>
-              </div>
-              <p class="c-cart-regular-main__item-price-change">※本商品は2026年6月1日到着分より価格が2,300円（税込）に変更されます。</p>
-              <div class="c-cart-regular-main__item-delivery">
-                <span class="c-cart-regular-main__item-cycle">3ヶ月コース</span>
-                <span class="c-cart-regular-main__item-count">1回あたり 1箱</span>
-              </div>
-              <div class="c-cart-regular-main__item-price-wrap">
-                <span class="c-cart-regular-main__item-price">2,150円</span>
-                <span class="c-cart-regular-main__item-price-tax">(税込)</span>
-              </div>
-            </div>
-          </div>
-        </td>
-        <td class="c-cart-regular-main__table-td">
-          <div class="c-cart-regular-main__item-qty-area" style="display:flex;">
-            <input type="text" class="c-cart-regular-main__item-qty-input" value="1" maxlength="4" aria-label="数量">
-          </div>
-        </td>
-        <td class="c-cart-regular-main__table-td">
-          <span class="c-cart-regular-main__item-subtotal">2,150円</span>
-          <span class="c-cart-regular-main__item-subtotal-tax">(税込)</span>
-        </td>
-        <td class="c-cart-regular-main__table-td">
-          <button type="button" class="c-cart-regular-main__item-delete">
-            <svg class="c-cart-regular-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
-            </svg>
-            削除
-          </button>
-        </td>
-      </tr>
-      <!-- コンタクト（左目） -->
-      <tr>
-        <td class="c-cart-regular-main__table-td c-cart-regular-main__table-td--name">
-          <div class="c-cart-regular-main__table-cell-product">
-            <div class="c-cart-regular-main__item-img-wrap">
-              <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-regular-main__item-img" width="120" height="80">
-            </div>
-            <div class="c-cart-regular-main__item-info">
-              <div class="c-cart-regular-main__item-badges">
-                <span class="c-cart-regular-main__item-badge c-cart-regular-main__item-badge--rl">左</span>
-              </div>
-              <a href="#" class="c-cart-regular-main__item-name">【定期便】アキュビュー オアシス（1箱）</a>
-              <div class="c-cart-regular-main__item-rx">
-                <div class="c-cart-regular-main__item-rx-row">
-                  <span class="c-cart-regular-main__item-rx-label">BC</span><span>8.80</span>
-                  <span class="c-cart-regular-main__item-rx-label">P</span><span>-0.75</span>
-                </div>
-              </div>
-              <div class="c-cart-regular-main__item-delivery">
-                <span class="c-cart-regular-main__item-cycle">3ヶ月コース</span>
-                <span class="c-cart-regular-main__item-count">1回あたり 1箱</span>
-              </div>
-              <div class="c-cart-regular-main__item-price-wrap">
-                <span class="c-cart-regular-main__item-price">2,150円</span>
-                <span class="c-cart-regular-main__item-price-tax">(税込)</span>
-              </div>
-            </div>
-          </div>
-        </td>
-        <td class="c-cart-regular-main__table-td">
-          <div class="c-cart-regular-main__item-qty-area" style="display:flex;">
-            <input type="text" class="c-cart-regular-main__item-qty-input" value="1" maxlength="4" aria-label="数量">
-          </div>
-        </td>
-        <td class="c-cart-regular-main__table-td">
-          <span class="c-cart-regular-main__item-subtotal">2,150円</span>
-          <span class="c-cart-regular-main__item-subtotal-tax">(税込)</span>
-        </td>
-        <td class="c-cart-regular-main__table-td">
-          <button type="button" class="c-cart-regular-main__item-delete">
-            <svg class="c-cart-regular-main__item-delete-icon" aria-hidden="true" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-              <path d="M1 4h12l-1 10H2L1 4zm4-3h4a1 1 0 0 1 1 1H4a1 1 0 0 1 1-1zm2 5v6m-2-6v6m4-6v6"/>
-            </svg>
-            削除
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- ===== 数量変更エリア（PC/Tabletのみ表示） ===== -->
+  <!-- ===== 数量変更エリア ===== -->
   <div class="c-cart-regular-main__update-area">
     <p class="c-cart-regular-main__update-note">※数量を変更した場合は、必ず「数量変更」ボタンを押してください。</p>
     <button type="button" class="c-cart-regular-main__update-btn">数量変更</button>
@@ -263,11 +124,6 @@
 
   <!-- ===== 集計エリア ===== -->
   <div class="c-cart-regular-main__summary">
-    <div class="c-cart-regular-main__summary-row">
-      <span class="c-cart-regular-main__summary-label">商品合計 :</span>
-      <span class="c-cart-regular-main__summary-amount">4,300円</span>
-      <span class="c-cart-regular-main__summary-tax">(税込)</span>
-    </div>
     <div class="c-cart-regular-main__summary-row c-cart-regular-main__summary-row--total">
       <span class="c-cart-regular-main__summary-label--total">合計 :</span>
       <span class="c-cart-regular-main__summary-amount--total">4,300円</span>
@@ -276,37 +132,67 @@
   </div>
 
   <!-- ===== 同梱注記文言 ===== -->
-  <p class="c-cart-regular-main__bundling-note">※ご契約中のらくとく定期便が出荷準備中・休止中・処方箋待ちなどの場合、同梱（まとめて発送）できません。同梱（まとめて発送）できない場合は、別送でのお届けとなります。</p>
-
-  <!-- ===== 定期購入注意文言・同意ブロック（常時表示） ===== -->
   <div class="c-cart-regular-main__agreement">
-    <p class="c-cart-regular-main__agreement-heading">以下の内容を確認・同意の上、購入手続きへお進みください。</p>
+    <div class="c-cart-regular-main__agreement-notice">
+      <p class="c-cart-regular-main__agreement-notice-text">※ご契約中のらくとく定期便が出荷準備中・休止中・処方箋待ちなどの場合、同梱（まとめて発送）できません。同梱（まとめて発送）できない場合は、別送でのお届けとなります。</p>
+    </div>
 
-    <!-- コンタクトレンズ購入注意文言（コンタクトありの場合のみ表示） -->
-    <p class="c-cart-regular-main__agreement-contact">コンタクトレンズは高度管理医療機器です。必ず眼科医の定期的な検査と処方の範囲内でご使用ください。また処方箋有効期限内の商品をカートに入れてください。有効期限切れの場合は注文できません。</p>
-
-    <!-- 定期購入注意事項 -->
-    <p class="c-cart-regular-main__agreement-regular">らくとく定期便は、コンタクトレンズまたはケア用品を定期的にお届けするサービスです。選択されたコース期間で定期的にお届けします。ご利用には利用規約への同意が必要です。</p>
-
-    <!-- らくとく定期便 ご利用規約を確認するボタン -->
-    <a href="#" target="_blank" rel="noopener noreferrer" class="c-cart-regular-main__agreement-terms-btn">らくとく定期便 ご利用規約を確認する</a>
-
-    <!-- 同意チェックボックス -->
-    <label class="c-cart-regular-main__agreement-check">
-      <input type="checkbox" class="c-cart-regular-main__agreement-check-input" name="regular-agreement" value="1">
-      <span class="c-cart-regular-main__agreement-check-label">同意する</span>
-    </label>
+    <!-- ===== 定期購入注意文言・同意ブロック ===== -->
+    <div class="c-cart-regular-main__agreement-box">
+      <p class="c-cart-regular-main__agreement-heading">以下の内容を確認・同意の上、購入手続きへお進みください。</p>
+      <p class="c-cart-regular-main__agreement-section-title">注意事項</p>
+      <p class="c-cart-regular-main__agreement-text">コンタクトレンズは高度管理医療機器です。調子がよくても3か月に1度は定期検査を受けましょう。</p>
+      <p class="c-cart-regular-main__agreement-text">眼のデータは変化することがあります。コンタクトレンズ購入時はそのつど眼科にて検査を受けられることをお勧めします。</p>
+      <p class="c-cart-regular-main__agreement-text">当社及び加盟店にて購入されたコンタクトレンズデータ（処方に基づくデータ）はデータベースに登録し、適切に管理・保管しております。</p>
+      <p class="c-cart-regular-main__agreement-text">※保管有効期限は【<a href="#" class="c-cart-regular-main__agreement-link">処方箋データ一覧</a>】よりご確認ください。</p>
+      <p class="c-cart-regular-main__agreement-section-title">定期購入について</p>
+      <p class="c-cart-regular-main__agreement-text">らくとく定期便は、コンタクトレンズまたはケア用品を定期的にお届けするサービスです。選択されたコース期間で定期的にお届けします。ご利用には利用規約への同意が必要です。</p>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="c-cart-regular-main__agreement-terms-btn">らくとく定期便 ご利用規約を確認する</a>
+      <p class="c-cart-regular-main__agreement-section-title">確認事項</p>
+      <p class="c-cart-regular-main__agreement-text">・私は眼科より発行されたコンタクトレンズ処方に基づいて登録された処方箋データ（コンタクトレンズデータ）と上記の注意事項を確認した上でコンタクトレンズを購入します。</p>
+      <p class="c-cart-regular-main__agreement-text">・私は、今回購入するコンタクトレンズを使用するにあたり、取扱説明書を熟読し、内容を理解し、眼科医師の指示に従い、正しく取扱いをします。</p>
+      <label class="c-cart-regular-main__agreement-check">
+        <input type="checkbox" class="c-cart-regular-main__agreement-check-input" name="regular-agreement" value="1">
+        <span class="c-cart-regular-main__agreement-check-label">同意する</span>
+      </label>
+    </div>
   </div>
 
   <!-- ===== アクションボタン ===== -->
-  <div class="c-cart-regular-main__actions">
+  <div class="c-cart-regular-main__actions c-cart-regular-main__actions--main">
     <a href="#" class="c-cart-regular-main__btn c-cart-regular-main__btn--primary">注文手続きへ</a>
     <a href="#" class="c-cart-regular-main__btn c-cart-regular-main__btn--secondary">お買い物を続ける</a>
   </div>
 
+  <!-- ===== ステップインジケータ（下部） ===== -->
+  <nav class="c-step-nav" aria-label="購入フロー">
+    <ol class="c-step-nav__list">
+      <li class="c-step-nav__item c-step-nav__item--active">
+        <span class="c-step-nav__circle">1</span>
+        <span class="c-step-nav__label">カート</span>
+      </li>
+      <li class="c-step-nav__item">
+        <span class="c-step-nav__circle">2</span>
+        <span class="c-step-nav__label">お届け先・<br>ラッピング設定</span>
+      </li>
+      <li class="c-step-nav__item">
+        <span class="c-step-nav__circle">3</span>
+        <span class="c-step-nav__label">お支払い<br>方法選択</span>
+      </li>
+      <li class="c-step-nav__item">
+        <span class="c-step-nav__circle">4</span>
+        <span class="c-step-nav__label">注文内容<br>確認</span>
+      </li>
+      <li class="c-step-nav__item">
+        <span class="c-step-nav__circle">5</span>
+        <span class="c-step-nav__label">注文完了</span>
+      </li>
+    </ol>
+  </nav>
+
   <!-- ===== カートを空にする ===== -->
   <div class="c-cart-regular-main__actions">
-    <button type="button" class="c-cart-regular-main__btn--clear">カートを空にする</button>
+    <button type="button" class="c-cart-regular-main__btn c-cart-regular-main__btn--secondary">カートを空にする</button>
   </div>
 
 </section>

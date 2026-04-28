@@ -1,0 +1,445 @@
+// ========================================
+// Shipping Main（配送先選択）
+// 格納先HTML: workbench/includes/parts/main/order/shippingMain.html
+// BEM: .c-shipping-main
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// 全体ラッパー
+// ========================================
+
+.c-shipping-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 0 rem(48);
+
+  @include pc {
+    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// セクション共通
+// ========================================
+
+.c-shipping-main__section {
+  margin-bottom: rem(32);
+}
+
+.c-shipping-main__section-header {
+  padding: rem(11) rem(12);
+  background-color: $bg-banner;
+  margin: 0 0 rem(16);
+}
+
+.c-shipping-main__section-title {
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  margin: 0;
+}
+
+// ========================================
+// お届け先ブロック
+// ========================================
+
+// お届け先住所表示（ゲスト購入：顧客情報入力の住所を表示）
+.c-shipping-main__addr-display {
+  padding: rem(16) rem(12);
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  background-color: $bg-light;
+  margin-bottom: rem(8);
+}
+
+.c-shipping-main__addr-display-name {
+  font-size: rem(15);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0 0 rem(4);
+}
+
+.c-shipping-main__addr-display-kana {
+  font-size: rem(12);
+  color: $text-light;
+  line-height: 1.5;
+  margin: 0 0 rem(8);
+}
+
+.c-shipping-main__addr-display-address {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0 0 rem(4);
+}
+
+.c-shipping-main__addr-display-tel {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0;
+}
+
+// ========================================
+// 配送オプション行（ラベル左・値右）
+// ========================================
+
+.c-shipping-main__rows {
+  border-top: 1px solid $border-color;
+}
+
+.c-shipping-main__row {
+  display: grid;
+  grid-template-columns: rem(160) 1fr;
+  gap: rem(8);
+  padding: rem(16) rem(12);
+  border-bottom: 1px solid $border-color;
+  align-items: start;
+
+  @include sp {
+    grid-template-columns: 1fr;
+    gap: rem(6);
+  }
+}
+
+.c-shipping-main__row-label {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.75;
+}
+
+.c-shipping-main__row-label--required {
+  &::after {
+    content: '必須';
+    display: inline-block;
+    margin-left: rem(6);
+    padding: rem(2) rem(6);
+    font-size: rem(10);
+    font-weight: $font-weight-medium;
+    color: $color-white;
+    background-color: $danger-color;
+    border-radius: rem(2);
+    vertical-align: middle;
+    line-height: 1.4;
+  }
+}
+
+.c-shipping-main__row-value {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+}
+
+// ========================================
+// ラジオグループ（受取方法・置き配指定）
+// ========================================
+
+.c-shipping-main__radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+}
+
+.c-shipping-main__radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+  min-height: rem(44);
+  font-size: rem(14);
+  color: $text-color;
+  cursor: pointer;
+
+  &--disabled {
+    color: $color-disabled;
+    cursor: not-allowed;
+  }
+}
+
+.c-shipping-main__radio-input {
+  width: rem(18);
+  height: rem(18);
+  accent-color: $primary-color;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+// ========================================
+// 置き配エリア（受取方法：置き配選択時に表示）
+// ========================================
+
+.c-shipping-main__direct-area {
+  margin-top: rem(16);
+  padding: rem(16) rem(12);
+  background-color: $bg-gray;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+}
+
+.c-shipping-main__direct-area-title {
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0 0 rem(12);
+}
+
+// 置き配注意事項
+.c-shipping-main__direct-notice {
+  margin-top: rem(16);
+  padding: rem(16);
+  background-color: $color-white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+}
+
+.c-shipping-main__direct-notice-title {
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0 0 rem(8);
+}
+
+.c-shipping-main__direct-notice-text {
+  font-size: rem(12);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0;
+}
+
+// 置き配同意チェックボックス
+.c-shipping-main__direct-agree {
+  margin-top: rem(12);
+}
+
+.c-shipping-main__agree-label {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+  min-height: rem(44);
+  font-size: rem(14);
+  color: $text-color;
+  cursor: pointer;
+}
+
+.c-shipping-main__agree-input {
+  width: rem(18);
+  height: rem(18);
+  accent-color: $primary-color;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+// ========================================
+// お届け日プルダウン（select で代用）
+// ========================================
+
+.c-shipping-main__date-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: rem(8);
+}
+
+.c-shipping-main__date-label {
+  font-size: rem(14);
+  color: $text-color;
+}
+
+// プルダウン共通（時間帯・日付・年月日）
+.c-shipping-main__select {
+  min-height: rem(44);
+  padding: rem(10) rem(36) rem(10) rem(12);
+  border: 1px solid $border-color-dark;
+  border-radius: $border-radius-sm;
+  font-size: rem(14);
+  color: $text-color;
+  background-color: $color-white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right rem(12) center;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    background-color: $bg-gray;
+    color: $color-disabled;
+    cursor: not-allowed;
+  }
+}
+
+.c-shipping-main__select--year {
+  width: rem(100);
+}
+
+.c-shipping-main__select--month {
+  width: rem(80);
+}
+
+.c-shipping-main__select--day {
+  width: rem(80);
+}
+
+.c-shipping-main__select--time {
+  width: rem(180);
+}
+
+.c-shipping-main__select--week-no {
+  width: rem(80);
+}
+
+.c-shipping-main__select--week-day {
+  width: rem(80);
+}
+
+.c-shipping-main__select--date-num {
+  width: rem(80);
+}
+
+// ========================================
+// お届けの目安リンク
+// ========================================
+
+.c-shipping-main__hint-link {
+  display: inline-block;
+  font-size: rem(12);
+  color: $link-blue;
+  text-decoration: underline;
+  line-height: 1.75;
+  margin-top: rem(8);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// ========================================
+// 次回お届け予定日ラベル
+// ========================================
+
+.c-shipping-main__next-date-label {
+  font-size: rem(13);
+  color: $text-color;
+  line-height: 1.75;
+  margin-top: rem(8);
+}
+
+// ========================================
+// 注意文（※書き）
+// ========================================
+
+.c-shipping-main__caution {
+  font-size: rem(12);
+  color: $text-light;
+  line-height: 1.75;
+  margin: rem(8) 0 0;
+}
+
+// ========================================
+// 定期購入セクション（2回目以降）
+// ========================================
+
+.c-shipping-main__regular-section {
+  margin-bottom: rem(32);
+}
+
+.c-shipping-main__cycle-label {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+}
+
+// 週・曜日プルダウン横並び
+.c-shipping-main__week-selects {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  flex-wrap: wrap;
+}
+
+// ========================================
+// 下部ボタンエリア
+// ========================================
+
+.c-shipping-main__actions {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: rem(16);
+  justify-content: center;
+  padding: rem(32) 0 rem(48);
+
+  @include sp {
+    flex-direction: column;
+    align-items: stretch;
+    padding: rem(24) rem(16) rem(40);
+  }
+}
+
+.c-shipping-main__btn--next {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(240);
+  min-height: rem(52);
+  padding: 0 rem(24);
+  border: none;
+  border-radius: rem(26);
+  background-color: $primary-color;
+  box-shadow: 0 rem(3) 0 $primary-color-dark;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 rem(1) 0 $primary-shadow;
+  }
+
+  @include sp {
+    min-width: 100%;
+    order: -1;
+  }
+}
+
+.c-shipping-main__btn--back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(160);
+  min-height: rem(52);
+  padding: 0 rem(24);
+  border: 1px solid $border-color-dark;
+  border-radius: rem(26);
+  background-color: $bg-gray;
+  box-shadow: 0 rem(2) 0 $border-color-dark;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 $border-color-dark;
+  }
+
+  @include sp {
+    min-width: 100%;
+  }
+}

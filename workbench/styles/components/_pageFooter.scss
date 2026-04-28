@@ -333,3 +333,17 @@
     padding-bottom: 0;
   }
 }
+
+// ========================================
+// コピーライトのみフッター（受注系画面用）
+// ========================================
+
+.c-page-footer--copyright-only {
+  .c-page-footer__bottom {
+    background-color: #F2F2F2;
+
+    &::before {
+      background-color: #F2F2F2;
+    }
+  }
+}

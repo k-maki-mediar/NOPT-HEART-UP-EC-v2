@@ -5600,6 +5600,13 @@
   }
 }
 
+.c-page-footer--copyright-only .c-page-footer__bottom {
+  background-color: #F2F2F2;
+}
+.c-page-footer--copyright-only .c-page-footer__bottom::before {
+  background-color: #F2F2F2;
+}
+
 .c-detail-heading {
   max-width: 70.625rem;
   margin: 0 auto;

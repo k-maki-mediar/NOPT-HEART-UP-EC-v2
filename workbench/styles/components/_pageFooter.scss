@@ -346,4 +346,17 @@
       background-color: #F2F2F2;
     }
   }
+
+  .c-page-footer__copyright {
+    padding-bottom: 0;
+  }
+}
+
+// カートページ等、コンテンツが少ない時にフッターを画面下に固定
+.c-page-footer--copyright-only {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }

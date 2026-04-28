@@ -5606,6 +5606,17 @@
 .c-page-footer--copyright-only .c-page-footer__bottom::before {
   background-color: #F2F2F2;
 }
+.c-page-footer--copyright-only .c-page-footer__copyright {
+  padding-bottom: 0;
+}
+
+.c-page-footer--copyright-only {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
 
 .c-detail-heading {
   max-width: 70.625rem;

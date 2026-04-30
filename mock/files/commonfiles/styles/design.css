@@ -9788,11 +9788,21 @@
   margin: 0;
   padding: 0;
 }
+.c-shipping-main__products .c-cart-main__item {
+  padding-left: 0;
+  padding-right: 0;
+}
 .c-shipping-main__products .c-cart-main__item:last-child {
   border-bottom: none;
 }
 .c-shipping-main__products .c-cart-main__item-name:hover {
   text-decoration: none;
+}
+
+.c-shipping-main__products-qty {
+  font-size: 0.875rem;
+  color: #333;
+  margin: 0.25rem 0 0;
 }
 
 .c-shipping-main__section-header {

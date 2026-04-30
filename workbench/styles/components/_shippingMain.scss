@@ -11,10 +11,10 @@
 .c-shipping-main {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: 0 0 rem(48);
+  padding: rem(24) 0 rem(48);
 
   @include pc {
-    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+    padding: rem(24) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 
@@ -218,49 +218,27 @@
 
 .c-shipping-main__date-label {
   font-size: rem(14);
+  font-weight: $font-weight-medium;
   color: $text-color;
+  flex-shrink: 0;
 }
 
-.c-shipping-main__select {
-  min-height: rem(44);
-  padding: rem(10) rem(36) rem(10) rem(12);
-  border: 1px solid $border-color-dark;
-  border-radius: $border-radius-sm;
-  font-size: rem(14);
-  color: $text-color;
-  background-color: $color-white;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right rem(12) center;
-  appearance: none;
-  cursor: pointer;
+.c-shipping-main__date-field {
+  display: flex;
+  align-items: center;
+  gap: rem(6);
 
-  &:focus {
-    outline: 2px solid $primary-color;
-    outline-offset: 2px;
+  .c-detail-unit__select-wrap {
+    width: rem(90);
   }
 
-  &:disabled {
-    background-color: $bg-gray;
-    color: $color-disabled;
-    cursor: not-allowed;
+  &:first-child .c-detail-unit__select-wrap {
+    width: rem(100);
   }
 }
 
-.c-shipping-main__select--year {
-  width: rem(100);
-}
-
-.c-shipping-main__select--month {
-  width: rem(80);
-}
-
-.c-shipping-main__select--day {
-  width: rem(80);
-}
-
-.c-shipping-main__select--time {
-  width: rem(200);
+.c-shipping-main__select-wrap--time {
+  max-width: rem(250);
 }
 
 .c-shipping-main__hint-link {

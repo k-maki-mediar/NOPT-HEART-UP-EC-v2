@@ -9763,6 +9763,10 @@
   }
 }
 
+.c-shipping-main .c-teiki-amount {
+  margin-bottom: 2rem;
+}
+
 .c-shipping-main__section {
   margin-bottom: 2rem;
 }

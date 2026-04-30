@@ -1742,3 +1742,35 @@ $(function () {
     initFontSizeSwitcher();
   }
 })();
+
+/* ========================================
+ * 配送先住所ラジオ選択（c-teiki-address-select）
+ * ページ内（モーダル外）のラジオ切替で枠色を変更
+ * ======================================== */
+(function () {
+  function initShippingAddressRadio() {
+    var containers = document.querySelectorAll('.c-shipping-main .c-teiki-address-select');
+    for (var i = 0; i < containers.length; i++) {
+      var radios = containers[i].querySelectorAll('.c-teiki-address-select__radio');
+      for (var r = 0; r < radios.length; r++) {
+        radios[r].addEventListener('change', function () {
+          var parent = this.closest('.c-teiki-address-select').parentElement.closest('.c-teiki-amount__body') || this.closest('.c-shipping-main');
+          var allCards = parent.querySelectorAll('.c-teiki-address-select__card');
+          for (var c = 0; c < allCards.length; c++) {
+            allCards[c].classList.remove('c-teiki-address-select__card--selected');
+          }
+          var card = this.closest('.c-teiki-address-select__card');
+          if (card) {
+            card.classList.add('c-teiki-address-select__card--selected');
+          }
+        });
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initShippingAddressRadio);
+  } else {
+    initShippingAddressRadio();
+  }
+})();

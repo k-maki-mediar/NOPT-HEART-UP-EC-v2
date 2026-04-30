@@ -9808,7 +9808,7 @@
 .c-shipping-main__section-header {
   padding: 0.6875rem 0.75rem;
   background-color: #d7e7fb;
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 .c-shipping-main__section-title {
@@ -9859,7 +9859,7 @@
 }
 
 .c-shipping-main__rows {
-  border-top: 1px solid #e0e0e0;
+  border-top: none;
 }
 
 .c-shipping-main__row {
@@ -9869,6 +9869,9 @@
   padding: 1rem 0.75rem;
   border-bottom: 1px solid #e0e0e0;
   align-items: start;
+}
+.c-shipping-main__row:last-child {
+  border-bottom: none;
 }
 @media (max-width: 767px) {
   .c-shipping-main__row {
@@ -10049,9 +10052,15 @@
 .c-shipping-main__actions {
   display: flex;
   flex-direction: row-reverse;
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   padding: 2rem 0 3rem;
+}
+.c-shipping-main__actions .c-step-nav {
+  margin: 2.5rem 0;
+  padding: 0;
+  width: 100%;
 }
 @media (max-width: 767px) {
   .c-shipping-main__actions {
@@ -10097,13 +10106,13 @@
   min-width: 10rem;
   min-height: 3.25rem;
   padding: 0 1.5rem;
-  border: 1px solid #c2c2c2;
+  border: 1px solid #00387d;
   border-radius: 1.625rem;
-  background-color: #F7F7F7;
-  box-shadow: 0 0.125rem 0 #c2c2c2;
+  background-color: #FFFFFF;
+  box-shadow: 0 0.125rem 0 #00387d;
   font-size: 0.875rem;
-  font-weight: 400;
-  color: #333;
+  font-weight: 500;
+  color: #00387d;
   text-decoration: none;
   cursor: pointer;
   transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;

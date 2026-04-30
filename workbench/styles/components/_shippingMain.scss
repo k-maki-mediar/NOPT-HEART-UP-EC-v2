@@ -70,7 +70,7 @@
 .c-shipping-main__section-header {
   padding: rem(11) rem(12);
   background-color: $bg-banner;
-  margin: 0 0 rem(16);
+  margin: 0;
 }
 
 .c-shipping-main__section-title {
@@ -121,7 +121,7 @@
 }
 
 .c-shipping-main__rows {
-  border-top: 1px solid $border-color;
+  border-top: none;
 }
 
 .c-shipping-main__row {
@@ -131,6 +131,10 @@
   padding: rem(16) rem(12);
   border-bottom: 1px solid $border-color;
   align-items: start;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   @include sp {
     grid-template-columns: 1fr;
@@ -316,9 +320,16 @@
 .c-shipping-main__actions {
   display: flex;
   flex-direction: row-reverse;
+  flex-wrap: wrap;
   gap: rem(16);
   justify-content: center;
   padding: rem(32) 0 rem(48);
+
+  .c-step-nav {
+    margin: rem(40) 0;
+    padding: 0;
+    width: 100%;
+  }
 
   @include sp {
     flex-direction: column;
@@ -363,13 +374,13 @@
   min-width: rem(160);
   min-height: rem(52);
   padding: 0 rem(24);
-  border: 1px solid $border-color-dark;
+  border: 1px solid $primary-color;
   border-radius: rem(26);
-  background-color: $bg-gray;
-  box-shadow: 0 rem(2) 0 $border-color-dark;
+  background-color: $color-white;
+  box-shadow: 0 rem(2) 0 $primary-color;
   font-size: rem(14);
-  font-weight: $font-weight-normal;
-  color: $text-color;
+  font-weight: $font-weight-medium;
+  color: $primary-color;
   text-decoration: none;
   cursor: pointer;
   transition: transform $transition-fast, box-shadow $transition-fast;

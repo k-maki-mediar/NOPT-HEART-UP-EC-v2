@@ -1,18 +1,74 @@
 <section class="c-shipping-main" aria-labelledby="shipping-main-title">
 
-  <!-- お届け先住所（ゲスト購入：顧客情報入力で登録した住所） -->
-  <section class="c-shipping-main__section" aria-labelledby="addr-section-title">
-    <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="addr-section-title">お届け先住所</h2>
+  <!-- お届け先住所 -->
+  <div class="c-teiki-amount">
+    <div class="c-teiki-amount__header">
+      <span class="c-teiki-amount__header-title">お届け先住所</span>
     </div>
-    <div class="c-shipping-main__addr-display">
-      <p class="c-shipping-main__addr-display-name">日本 光子</p>
-      <p class="c-shipping-main__addr-display-kana">ニホン コウコ</p>
-      <p class="c-shipping-main__addr-display-address">〒150-0001</p>
-      <p class="c-shipping-main__addr-display-address">東京都 渋谷区 神宮前1丁目1-1 サンプルビル101</p>
-      <p class="c-shipping-main__addr-display-tel">TEL：090-0000-0000</p>
+    <div class="c-teiki-amount__body">
+      <!-- 基本住所 -->
+      <div class="c-teiki-amount__section">
+        <div class="c-teiki-amount__section-header">
+          <span class="c-teiki-amount__section-title">基本住所</span>
+        </div>
+        <div class="c-teiki-amount__section-body">
+          <div class="c-teiki-address-select">
+            <div class="c-teiki-address-select__card c-teiki-address-select__card--selected">
+              <div class="c-teiki-address-select__card-header">
+                <label class="c-teiki-address-select__radio-label">
+                  <input type="radio" name="delivery-address" value="basic" class="c-teiki-address-select__radio" checked>
+                  <span class="c-teiki-address-select__radio-text">基本住所</span>
+                </label>
+                <span class="c-teiki-address-select__badge">設定中</span>
+              </div>
+              <div class="c-teiki-address-select__card-body">
+                <p class="c-teiki-address-select__name">日本 光子 様</p>
+                <p class="c-teiki-address-select__detail">〒150-0001 東京都 渋谷区 神宮前1丁目1-1 サンプルビル101</p>
+                <p class="c-teiki-address-select__tel">090-0000-0000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 追加住所 -->
+      <div class="c-teiki-amount__section">
+        <div class="c-teiki-amount__section-header">
+          <span class="c-teiki-amount__section-title">追加住所</span>
+        </div>
+        <div class="c-teiki-amount__section-body">
+          <div class="c-teiki-address-select">
+            <div class="c-teiki-address-select__card">
+              <div class="c-teiki-address-select__card-header">
+                <label class="c-teiki-address-select__radio-label">
+                  <input type="radio" name="delivery-address" value="extra-1" class="c-teiki-address-select__radio">
+                  <span class="c-teiki-address-select__radio-text">追加住所1</span>
+                </label>
+              </div>
+              <div class="c-teiki-address-select__card-body">
+                <p class="c-teiki-address-select__name">日本 太郎 様</p>
+                <p class="c-teiki-address-select__detail">〒460-0008 愛知県 名古屋市中区栄3丁目1-1</p>
+                <p class="c-teiki-address-select__tel">052-000-0000</p>
+              </div>
+            </div>
+
+            <div class="c-teiki-address-select__card">
+              <div class="c-teiki-address-select__card-header">
+                <label class="c-teiki-address-select__radio-label">
+                  <input type="radio" name="delivery-address" value="extra-2" class="c-teiki-address-select__radio">
+                  <span class="c-teiki-address-select__radio-text">追加住所2</span>
+                </label>
+              </div>
+              <div class="c-teiki-address-select__card-body">
+                <p class="c-teiki-address-select__name">日本 花子 様</p>
+                <p class="c-teiki-address-select__detail">〒530-0001 大阪府 大阪市北区梅田1丁目2-3</p>
+                <p class="c-teiki-address-select__tel">06-0000-0000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 
   <!-- ご注文商品 -->
   <section class="c-shipping-main__section" aria-labelledby="product-section-title">

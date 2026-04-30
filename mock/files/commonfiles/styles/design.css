@@ -9767,6 +9767,13 @@
   margin-bottom: 2rem;
 }
 
+.c-shipping-main__add-address-wrap {
+  padding-top: 1.5rem;
+}
+.c-shipping-main__add-address-wrap .c-teiki-address-select__new-btn {
+  margin-bottom: 0.5rem;
+}
+
 .c-shipping-main__section {
   margin-bottom: 2rem;
 }

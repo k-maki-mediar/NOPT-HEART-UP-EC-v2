@@ -71,12 +71,11 @@
   </div>
 
   <!-- ご注文商品 -->
-  <div class="c-shipping-main__section">
+  <div class="c-shipping-main__products">
     <ul class="c-cart-main__items">
       <li class="c-cart-main__item">
         <div class="c-cart-main__item-product">
           <div class="c-cart-main__item-img-area">
-            <span class="c-cart-main__item-badge">右</span>
             <div class="c-cart-main__item-img-wrap">
               <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
             </div>
@@ -89,7 +88,6 @@
       <li class="c-cart-main__item">
         <div class="c-cart-main__item-product">
           <div class="c-cart-main__item-img-area">
-            <span class="c-cart-main__item-badge">左</span>
             <div class="c-cart-main__item-img-wrap">
               <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
             </div>
@@ -102,28 +100,35 @@
     </ul>
   </div>
 
-  <!-- 配送オプション -->
+  <!-- 配送情報 -->
   <section class="c-shipping-main__section" aria-labelledby="delivery-section-title">
     <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="delivery-section-title">配送オプション</h2>
+      <h2 class="c-shipping-main__section-title" id="delivery-section-title">配送情報</h2>
     </div>
     <div class="c-shipping-main__rows">
 
-      <!-- 配送方法（1次開発: ゆうパック固定） -->
+      <!-- 配送方法 -->
       <div class="c-shipping-main__row">
-        <span class="c-shipping-main__row-label">配送方法</span>
-        <span class="c-shipping-main__row-value">ゆうパック</span>
+        <label class="c-shipping-main__row-label" for="deliveryMethod">配送方法</label>
+        <div class="c-shipping-main__row-value">
+          <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--delivery">
+            <select class="c-detail-unit__select" name="deliveryMethod" id="deliveryMethod">
+              <option value="1">ゆうパック</option>
+              <option value="2">メール便</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       <!-- 受取方法 -->
       <div class="c-shipping-main__row">
-        <span class="c-shipping-main__row-label c-shipping-main__row-label--required">受取方法</span>
+        <span class="c-shipping-main__row-label">受取方法</span>
         <div class="c-shipping-main__row-value">
           <fieldset class="c-shipping-main__radio-group" aria-labelledby="receive-type-legend">
-            <legend class="c-shipping-main__direct-area-title" id="receive-type-legend">受取方法を選択してください</legend>
+            <legend class="c-shipping-main__direct-area-title" id="receive-type-legend" hidden>受取方法</legend>
             <label class="c-shipping-main__radio-label">
               <input type="radio" class="c-shipping-main__radio-input js-receive-type" name="receiveType" value="2" checked>
-              対面受取
+              指定しない
             </label>
             <label class="c-shipping-main__radio-label">
               <input type="radio" class="c-shipping-main__radio-input js-receive-type" name="receiveType" value="1">

@@ -26,6 +26,28 @@
   margin-bottom: rem(32);
 }
 
+.c-shipping-main__products {
+  border: 2px solid $bg-banner;
+  padding: rem(16);
+  margin-bottom: rem(32);
+
+  .c-cart-main__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .c-cart-main__item:last-child {
+    border-bottom: none;
+  }
+
+  .c-cart-main__item-name {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 .c-shipping-main__section-header {
   padding: rem(11) rem(12);
   background-color: $bg-banner;
@@ -243,6 +265,10 @@
 
 .c-shipping-main__select-wrap--time {
   max-width: rem(250);
+}
+
+.c-shipping-main__select-wrap--delivery {
+  max-width: rem(200);
 }
 
 .c-shipping-main__hint-link {

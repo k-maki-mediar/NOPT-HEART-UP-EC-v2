@@ -9863,7 +9863,7 @@
 .c-shipping-main__row-label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #333;
+  color: #00387d;
   line-height: 1.75;
 }
 
@@ -9917,16 +9917,18 @@
 
 .c-shipping-main__direct-area {
   margin-top: 1rem;
-  padding: 1rem 0.75rem;
-  background-color: #F7F7F7;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
+  padding: 1rem;
+  background-color: #f4f8fc;
+}
+.c-shipping-main__direct-area .c-cart-main__agreement-box {
+  border: 1px solid #00387d;
+  margin-top: 1.5rem;
 }
 
 .c-shipping-main__direct-area-title {
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #333;
+  color: #00387d;
   margin: 0 0 0.75rem;
 }
 

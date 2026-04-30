@@ -1774,3 +1774,30 @@ $(function () {
     initShippingAddressRadio();
   }
 })();
+
+/* ========================================
+ * 置き配エリア表示切替（配送先選択）
+ * ======================================== */
+(function () {
+  function initDirectAreaToggle() {
+    var radios = document.querySelectorAll('.js-receive-type');
+    var directArea = document.querySelector('.js-direct-area');
+    if (!radios.length || !directArea) return;
+
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function () {
+        if (this.value === '1') {
+          directArea.removeAttribute('hidden');
+        } else {
+          directArea.setAttribute('hidden', '');
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDirectAreaToggle);
+  } else {
+    initDirectAreaToggle();
+  }
+})();

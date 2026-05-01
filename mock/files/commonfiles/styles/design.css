@@ -11284,6 +11284,7 @@
   gap: 0.625rem;
   min-height: 3rem;
   padding: 0.75rem 1rem;
+  margin-top: 2rem;
   background-color: #f4f8fc;
   cursor: pointer;
 }

@@ -288,7 +288,9 @@
   align-items: center;
   gap: rem(8);
   margin-top: rem(8);
-  padding-left: rem(32);
+  margin-left: rem(32);
+  padding: rem(8) rem(12);
+  background-color: $bg-light;
   font-size: rem(12);
   color: $primary-color;
   cursor: pointer;

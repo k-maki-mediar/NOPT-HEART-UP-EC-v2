@@ -10444,7 +10444,9 @@
   align-items: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
-  padding-left: 2rem;
+  margin-left: 2rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #f4f8fc;
   font-size: 0.75rem;
   color: #00387d;
   cursor: pointer;

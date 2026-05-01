@@ -1801,3 +1801,44 @@ $(function () {
     initDirectAreaToggle();
   }
 })();
+
+/* ========================================
+ * お届け日指定エリア表示切替（配送先選択）
+ * ======================================== */
+(function () {
+  function initDeliveryDateToggle() {
+    var radios = document.querySelectorAll('.js-delivery-date-type');
+    var dateArea = document.querySelector('.js-delivery-date-area');
+    var dateInput = document.querySelector('.js-delivery-date-input');
+    if (!radios.length || !dateArea) return;
+
+    // 最短お届け日を算出（今日から3日後）
+    if (dateInput) {
+      var today = new Date();
+      var earliest = new Date(today);
+      earliest.setDate(today.getDate() + 3);
+      var yyyy = earliest.getFullYear();
+      var mm = String(earliest.getMonth() + 1).padStart(2, '0');
+      var dd = String(earliest.getDate()).padStart(2, '0');
+      var minDate = yyyy + '-' + mm + '-' + dd;
+      dateInput.min = minDate;
+      dateInput.value = minDate;
+    }
+
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function () {
+        if (this.value === '1') {
+          dateArea.removeAttribute('hidden');
+        } else {
+          dateArea.setAttribute('hidden', '');
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDeliveryDateToggle);
+  } else {
+    initDeliveryDateToggle();
+  }
+})();

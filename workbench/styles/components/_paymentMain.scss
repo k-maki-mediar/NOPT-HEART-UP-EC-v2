@@ -204,6 +204,96 @@
 // クレジットカード入力フォーム（Figma準拠）
 // ========================================
 
+// ========================================
+// 登録済みクレジットカード一覧
+// ========================================
+
+.c-payment-main__registered-cards {
+  margin-bottom: rem(16);
+
+  .c-payment-main__form-field-header {
+    display: flex;
+    align-items: center;
+    padding: rem(10) rem(16);
+
+    .c-payment-main__form-field-title {
+      &:first-child {
+        flex: 1;
+      }
+
+      &:last-child {
+        margin-right: rem(42);
+      }
+    }
+  }
+}
+
+.c-payment-main__card-row {
+  display: flex;
+  flex-direction: column;
+  padding: rem(12) rem(16);
+  border: 1px solid $border-color-dark;
+  border-top: none;
+}
+
+.c-payment-main__card-row--selected {
+  background-color: $bg-light;
+}
+
+.c-payment-main__card-row-main {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  cursor: pointer;
+  min-height: rem(44);
+}
+
+.c-payment-main__card-number {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  flex: 1;
+}
+
+.c-payment-main__card-expiry {
+  font-size: rem(14);
+  color: $text-color;
+  min-width: rem(50);
+  text-align: center;
+}
+
+.c-payment-main__card-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(4) rem(12);
+  border: 1px solid $border-color-dark;
+  background-color: $bg-gray;
+  font-family: $font-family-base;
+  font-size: rem(12);
+  color: $text-color;
+  cursor: pointer;
+  min-height: rem(32);
+}
+
+.c-payment-main__card-main-check {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  margin-top: rem(8);
+  padding-left: rem(32);
+  font-size: rem(12);
+  color: $primary-color;
+  cursor: pointer;
+}
+
+.c-payment-main__card-notice {
+  font-size: rem(12);
+  color: $text-color;
+  line-height: 1.75;
+  margin: rem(16) 0;
+}
+
 .c-payment-main__credit-label {
   font-size: rem(14);
   font-weight: $font-weight-medium;

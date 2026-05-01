@@ -74,6 +74,59 @@
         </label>
         <!-- クレジット詳細（選択時に展開） -->
         <div class="c-payment-main__method-detail js-payment-detail">
+
+          <!-- 登録済みクレジットカード一覧 -->
+          <div class="c-payment-main__registered-cards">
+            <div class="c-payment-main__form-field">
+              <div class="c-payment-main__form-field-header">
+                <span class="c-payment-main__form-field-title">クレジットカード番号</span>
+                <span class="c-payment-main__form-field-title">有効期限(月/年)</span>
+              </div>
+            </div>
+            <!-- カード1（選択中・メインカード） -->
+            <div class="c-payment-main__card-row c-payment-main__card-row--selected">
+              <label class="c-payment-main__card-row-main">
+                <input type="radio" class="c-payment-main__method-radio" name="registeredCard" value="1" checked>
+                <span class="c-payment-main__card-number">411111*******11</span>
+                <span class="c-payment-main__card-expiry">12/35</span>
+                <button type="button" class="c-payment-main__card-delete-btn">削除</button>
+              </label>
+              <label class="c-payment-main__card-main-check">
+                <input type="checkbox" class="c-payment-main__checkbox-input" name="mainCard" value="1" checked>
+                <span>メインカードに設定する</span>
+              </label>
+            </div>
+            <!-- カード2 -->
+            <div class="c-payment-main__card-row">
+              <label class="c-payment-main__card-row-main">
+                <input type="radio" class="c-payment-main__method-radio" name="registeredCard" value="2">
+                <span class="c-payment-main__card-number">411111*******11</span>
+                <span class="c-payment-main__card-expiry">10/29</span>
+                <button type="button" class="c-payment-main__card-delete-btn">削除</button>
+              </label>
+            </div>
+            <!-- カード3 -->
+            <div class="c-payment-main__card-row">
+              <label class="c-payment-main__card-row-main">
+                <input type="radio" class="c-payment-main__method-radio" name="registeredCard" value="3">
+                <span class="c-payment-main__card-number">411111*******11</span>
+                <span class="c-payment-main__card-expiry">08/33</span>
+                <button type="button" class="c-payment-main__card-delete-btn">削除</button>
+              </label>
+            </div>
+            <!-- カード4 -->
+            <div class="c-payment-main__card-row">
+              <label class="c-payment-main__card-row-main">
+                <input type="radio" class="c-payment-main__method-radio" name="registeredCard" value="4">
+                <span class="c-payment-main__card-number">352800*******07</span>
+                <span class="c-payment-main__card-expiry">12/30</span>
+                <button type="button" class="c-payment-main__card-delete-btn">削除</button>
+              </label>
+            </div>
+          </div>
+
+          <p class="c-payment-main__card-notice">標準カードについて<br>標準カードは定期購入決済に使用されるカードです。<br>今回の注文で標準カードを変更した場合、既に契約済み定期購入支払いに使用されるクレジットカードも変更されます。</p>
+
           <div class="c-payment-main__credit-detail-box">
             <p class="c-payment-main__credit-label">新しいクレジットカード情報を入力する</p>
 

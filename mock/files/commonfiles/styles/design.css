@@ -10370,6 +10370,87 @@
   padding: 1rem 0.75rem 1.25rem 2.5rem;
 }
 
+.c-payment-main__registered-cards {
+  margin-bottom: 1rem;
+}
+.c-payment-main__registered-cards .c-payment-main__form-field-header {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 1rem;
+}
+.c-payment-main__registered-cards .c-payment-main__form-field-header .c-payment-main__form-field-title:first-child {
+  flex: 1;
+}
+.c-payment-main__registered-cards .c-payment-main__form-field-header .c-payment-main__form-field-title:last-child {
+  margin-right: 2.625rem;
+}
+
+.c-payment-main__card-row {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  border: 1px solid #c2c2c2;
+  border-top: none;
+}
+
+.c-payment-main__card-row--selected {
+  background-color: #f4f8fc;
+}
+
+.c-payment-main__card-row-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+
+.c-payment-main__card-number {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+
+.c-payment-main__card-expiry {
+  font-size: 0.875rem;
+  color: #333;
+  min-width: 3.125rem;
+  text-align: center;
+}
+
+.c-payment-main__card-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #c2c2c2;
+  background-color: #F7F7F7;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.75rem;
+  color: #333;
+  cursor: pointer;
+  min-height: 2rem;
+}
+
+.c-payment-main__card-main-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding-left: 2rem;
+  font-size: 0.75rem;
+  color: #00387d;
+  cursor: pointer;
+}
+
+.c-payment-main__card-notice {
+  font-size: 0.75rem;
+  color: #333;
+  line-height: 1.75;
+  margin: 1rem 0;
+}
+
 .c-payment-main__credit-label {
   font-size: 0.875rem;
   font-weight: 500;

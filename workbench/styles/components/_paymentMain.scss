@@ -435,6 +435,13 @@
 // コンビニ後払い詳細テキスト
 // ========================================
 
+.c-payment-main__installment-note {
+  font-size: rem(12);
+  color: $accent-red;
+  margin: 0 0 rem(12);
+  line-height: 1.75;
+}
+
 .c-payment-main__checkbox-label {
   display: flex;
   align-items: center;

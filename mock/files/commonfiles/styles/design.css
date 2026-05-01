@@ -10586,6 +10586,13 @@
   color: #333;
 }
 
+.c-payment-main__installment-note {
+  font-size: 0.75rem;
+  color: #cc4843;
+  margin: 0 0 0.75rem;
+  line-height: 1.75;
+}
+
 .c-payment-main__checkbox-label {
   display: flex;
   align-items: center;

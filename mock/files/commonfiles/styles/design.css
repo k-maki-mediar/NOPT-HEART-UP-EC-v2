@@ -9772,6 +9772,9 @@
 }
 .c-shipping-main__add-address-wrap .c-teiki-address-select__new-btn {
   margin-bottom: 0.5rem;
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .c-shipping-main__section {

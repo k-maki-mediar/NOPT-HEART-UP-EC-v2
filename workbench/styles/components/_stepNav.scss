@@ -45,11 +45,12 @@
 .c-step-nav__item + .c-step-nav__item::before {
   content: '';
   position: absolute;
-  top: rem(18); // 円の中心（36px÷2）
-  left: calc(-50% + rem(18));
-  right: calc(50% + rem(18));
+  top: rem(17);
+  left: calc(-50%);
+  right: calc(50%);
   height: rem(2);
   background-color: $bg-banner;
+  z-index: 0;
 }
 
 // ----------------------------------------

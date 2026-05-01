@@ -8288,11 +8288,12 @@
 .c-step-nav__item + .c-step-nav__item::before {
   content: "";
   position: absolute;
-  top: 1.125rem;
-  left: calc(-50% + 1.125rem);
-  right: calc(50% + 1.125rem);
+  top: 1.0625rem;
+  left: -50%;
+  right: 50%;
   height: 0.125rem;
   background-color: #d7e7fb;
+  z-index: 0;
 }
 
 .c-step-nav__circle {

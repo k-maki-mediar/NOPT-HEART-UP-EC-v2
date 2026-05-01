@@ -10648,6 +10648,20 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.c-payment-main__coupon-code-box .c-shipping-main__row-label {
+  margin-bottom: 0.75rem;
+}
+
+.c-payment-main__coupon-link {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #0087cb;
+  text-decoration: underline;
+  margin-top: 1rem;
+}
+.c-payment-main__coupon-link:hover {
+  text-decoration: none;
+}
 
 .c-payment-main__coupon-input-row {
   display: flex;
@@ -10760,7 +10774,7 @@
   font-size: 0.75rem;
   color: #333;
   line-height: 1.75;
-  margin: 0 0 0.25rem;
+  margin: 0;
 }
 
 .c-main--logged-in .c-campaign-topics__deco-rect {

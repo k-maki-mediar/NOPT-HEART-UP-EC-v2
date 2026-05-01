@@ -500,6 +500,22 @@
   padding: rem(16);
   margin-top: rem(16);
   margin-bottom: rem(16);
+
+  .c-shipping-main__row-label {
+    margin-bottom: rem(12);
+  }
+}
+
+.c-payment-main__coupon-link {
+  display: inline-block;
+  font-size: rem(14);
+  color: $link-blue;
+  text-decoration: underline;
+  margin-top: rem(16);
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .c-payment-main__coupon-input-row {
@@ -618,5 +634,5 @@
   font-size: rem(12);
   color: $text-color;
   line-height: 1.75;
-  margin: 0 0 rem(4);
+  margin: 0;
 }

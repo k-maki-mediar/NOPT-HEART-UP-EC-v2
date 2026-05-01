@@ -10586,6 +10586,17 @@
   color: #333;
 }
 
+.c-payment-main__required-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #333;
+  margin: 0.5rem 0 1rem;
+  padding: 0.625rem 1rem;
+  background-color: #f4f8fc;
+}
+
 .c-payment-main__installment-note {
   font-size: 0.75rem;
   color: #cc4843;

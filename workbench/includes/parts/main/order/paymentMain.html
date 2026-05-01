@@ -55,14 +55,19 @@
     <div class="c-shipping-main__section-header">
       <h2 class="c-shipping-main__section-title">お支払い方法選択</h2>
     </div>
+    <a href="#" class="c-payment-main__coupon-link" target="_blank" rel="noopener noreferrer">お支払い方法についてはこちら</a>
+    <p class="c-payment-main__required-note"><span class="c-payment-main__form-required">必須</span> 必須入力項目です</p>
     <ul class="c-payment-main__method-list" role="radiogroup" aria-label="お支払い方法">
 
       <!-- 代金引換 -->
       <li class="c-payment-main__method-item">
         <label class="c-payment-main__method-row">
           <input type="radio" class="c-payment-main__method-radio js-payment-radio" name="paymentMethod" value="cod" checked>
-          <span class="c-payment-main__method-label">代金引換（手数料300円）</span>
+          <span class="c-payment-main__method-label">代金引換（手数料99円）</span>
         </label>
+        <div class="c-payment-main__method-sub">
+          <p class="c-payment-main__method-limit">上限金額 299,200円</p>
+        </div>
       </li>
 
       <!-- クレジット支払い -->

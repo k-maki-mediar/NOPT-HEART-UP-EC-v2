@@ -10592,7 +10592,7 @@
   gap: 0.5rem;
   font-size: 0.875rem;
   color: #333;
-  margin: 0.5rem 0 1rem;
+  margin: 1rem 0;
   padding: 0.625rem 1rem;
   background-color: #f4f8fc;
 }
@@ -10817,6 +10817,11 @@
 }
 .c-payment-main__coupon-link:hover {
   text-decoration: none;
+}
+
+.c-payment-main__external-icon {
+  vertical-align: text-top;
+  margin-left: 0.25rem;
 }
 
 .c-payment-main__coupon-input-row {

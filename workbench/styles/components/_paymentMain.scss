@@ -441,7 +441,7 @@
   gap: rem(8);
   font-size: rem(14);
   color: $text-color;
-  margin: rem(8) 0 rem(16);
+  margin: rem(16) 0;
   padding: rem(10) rem(16);
   background-color: $bg-light;
 }
@@ -683,6 +683,11 @@
   &:hover {
     text-decoration: none;
   }
+}
+
+.c-payment-main__external-icon {
+  vertical-align: text-top;
+  margin-left: rem(4);
 }
 
 .c-payment-main__coupon-input-row {

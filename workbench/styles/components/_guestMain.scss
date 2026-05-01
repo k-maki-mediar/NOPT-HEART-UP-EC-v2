@@ -104,11 +104,13 @@
 .c-guest-main__required-note {
   font-size: rem(14);
   color: $text-color;
-  margin: 0 0 rem(16);
+  margin: rem(16) 0;
   line-height: 1.5;
   display: flex;
   align-items: center;
-  gap: rem(6);
+  gap: rem(8);
+  padding: rem(10) rem(16);
+  background-color: $bg-light;
 }
 
 .c-guest-main__required {
@@ -488,7 +490,7 @@
 // 下部ステップインジケータ（SPで親パディング分を相殺）
 // ========================================
 
-.c-guest-main__actions .c-step-nav {
+.c-guest-main .c-shipping-main__actions .c-step-nav {
   @include sp {
     margin-left: calc(rem(-16) - rem(16));
     margin-right: calc(rem(-16) - rem(16));

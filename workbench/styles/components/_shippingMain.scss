@@ -448,11 +448,20 @@
   color: $color-white;
   text-decoration: none;
   cursor: pointer;
-  transition: transform $transition-fast, box-shadow $transition-fast;
 
   &:hover {
     transform: translateY(rem(2));
     box-shadow: 0 rem(1) 0 $primary-shadow;
+  }
+
+  &:disabled {
+    background-color: $border-color-dark;
+    box-shadow: 0 rem(3) 0 darken($border-color-dark, 10%);
+    cursor: not-allowed;
+
+    &:hover {
+      transform: none;
+    }
   }
 
   @include sp {

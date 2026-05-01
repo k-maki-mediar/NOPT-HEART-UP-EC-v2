@@ -10174,11 +10174,18 @@
   color: #FFFFFF;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .c-shipping-main__btn--next:hover {
   transform: translateY(0.125rem);
   box-shadow: 0 0.0625rem 0 #002552;
+}
+.c-shipping-main__btn--next:disabled {
+  background-color: #c2c2c2;
+  box-shadow: 0 0.1875rem 0 rgb(168.5, 168.5, 168.5);
+  cursor: not-allowed;
+}
+.c-shipping-main__btn--next:disabled:hover {
+  transform: none;
 }
 @media (max-width: 767px) {
   .c-shipping-main__btn--next {

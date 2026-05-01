@@ -10435,6 +10435,10 @@
   color: #FFFFFF;
   cursor: pointer;
 }
+.c-payment-main__card-delete-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 
 .c-payment-main__card-main-check {
   display: flex;

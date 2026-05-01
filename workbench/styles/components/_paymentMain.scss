@@ -278,6 +278,10 @@
   color: $color-white;
   cursor: pointer;
 
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
 }
 
 .c-payment-main__card-main-check {

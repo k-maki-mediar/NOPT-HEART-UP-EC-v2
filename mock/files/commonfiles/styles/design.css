@@ -11342,6 +11342,8 @@
   align-items: center;
   gap: 0.625rem;
   min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #f4f8fc;
   cursor: pointer;
   margin-bottom: 0.75rem;
 }

@@ -10367,7 +10367,12 @@
 }
 
 .c-payment-main__method-detail {
+  display: none;
   padding: 1rem 0.75rem 1.25rem 2.5rem;
+}
+
+.c-payment-main__method-detail--open {
+  display: block;
 }
 
 .c-payment-main__registered-cards {
@@ -10679,7 +10684,8 @@
   color: #333;
   line-height: 1.75;
 }
-.c-payment-main__convenience-list li {
+
+.c-payment-main__convenience-list__item {
   margin-bottom: 0.125rem;
 }
 

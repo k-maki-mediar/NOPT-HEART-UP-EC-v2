@@ -206,6 +206,7 @@
               <div class="c-payment-main__form-field-body">
                 <label class="c-payment-main__checkbox-label">
                   <input type="checkbox" class="c-payment-main__checkbox-input" name="defaultCard" value="1">
+                  <span>通常使うカードに設定する</span>
                 </label>
               </div>
             </div>
@@ -267,9 +268,9 @@
           <p class="c-payment-main__convenience-detail">詳しくは、<a href="#" class="c-payment-main__convenience-link" target="_blank" rel="noopener noreferrer">お支払い方法に関して <img src="../../../files/commonfiles/images/icon-external-link.svg" alt="" class="c-payment-main__external-icon" width="12" height="12"></a>をご確認ください。</p>
           <p class="c-payment-main__convenience-detail">ご利用者が未成年の場合は、法定代理人の利用同意を得てご利用ください。</p>
           <ul class="c-payment-main__convenience-list">
-            <li>後払い手数料：220円（税込）</li>
-            <li>合計5,500円以上の通常の注文、らくとく定期便の注文は、後払い手数料は無料となります。</li>
-            <li>利用限度額：55,000円（税込）</li>
+            <li class="c-payment-main__convenience-list__item">後払い手数料：220円（税込）</li>
+            <li class="c-payment-main__convenience-list__item">合計5,500円以上の通常の注文、らくとく定期便の注文は、後払い手数料は無料となります。</li>
+            <li class="c-payment-main__convenience-list__item">利用限度額：55,000円（税込）</li>
           </ul>
         </div>
       </li>
@@ -313,10 +314,10 @@
 </section>
 
 <!-- ===== クレジットカード削除確認モーダル（ゲスト購入では非表示だが構造は保持） ===== -->
-<div class="c-payment-modal" role="dialog" aria-modal="true" aria-labelledby="payment-modal-title" hidden>
+<div class="c-payment-modal" role="dialog" aria-modal="true" aria-label="クレジットカード削除確認" hidden>
   <div class="c-payment-modal__overlay js-payment-modal-overlay"></div>
   <div class="c-payment-modal__dialog">
-    <p id="payment-modal-title" class="c-payment-modal__text">削除しますか？</p>
+    <p class="c-payment-modal__text">削除しますか？</p>
     <div class="c-payment-modal__actions">
       <button type="button" class="c-payment-modal__btn--ok js-payment-modal-ok">OK</button>
       <button type="button" class="c-payment-modal__btn--cancel js-payment-modal-cancel">キャンセル</button>

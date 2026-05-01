@@ -10247,7 +10247,7 @@
 }
 
 .c-payment-main__amount-box {
-  border: 3px solid #d7e7fb;
+  border: 0.1875rem solid #d7e7fb;
   margin-top: 1rem;
 }
 
@@ -10367,12 +10367,7 @@
 }
 
 .c-payment-main__method-detail {
-  display: none;
   padding: 1rem 0.75rem 1.25rem 2.5rem;
-}
-
-.c-payment-main__method-detail--open {
-  display: block;
 }
 
 .c-payment-main__registered-cards {

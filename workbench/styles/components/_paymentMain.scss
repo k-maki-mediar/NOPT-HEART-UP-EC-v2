@@ -54,7 +54,7 @@
 // ========================================
 
 .c-payment-main__amount-box {
-  border: 3px solid $bg-banner;
+  border: rem(3) solid $bg-banner;
   margin-top: rem(16);
 }
 
@@ -197,12 +197,7 @@
 // ----------------------------------------
 
 .c-payment-main__method-detail {
-  display: none;
   padding: rem(16) rem(12) rem(20) rem(40);
-}
-
-.c-payment-main__method-detail--open {
-  display: block;
 }
 
 // ========================================

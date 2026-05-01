@@ -10428,15 +10428,12 @@
   padding: 0 0.625rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #c2c2c2;
+  background-color: #6B7280;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   color: #FFFFFF;
   cursor: pointer;
-}
-.c-payment-main__card-delete-btn:hover {
-  background-color: #6B7280;
 }
 
 .c-payment-main__card-main-check {
@@ -10453,10 +10450,24 @@
 }
 
 .c-payment-main__card-notice {
-  font-size: 0.75rem;
-  color: #333;
-  line-height: 1.75;
+  background-color: #f4f8fc;
+  padding: 1rem;
   margin: 1rem 0;
+}
+
+.c-payment-main__card-notice-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #00387d;
+  line-height: 1.75;
+  margin: 0 0 0.25rem;
+}
+
+.c-payment-main__card-notice-text {
+  font-size: 0.75rem;
+  color: #00387d;
+  line-height: 1.75;
+  margin: 0;
 }
 
 .c-payment-main__credit-label {
@@ -10586,7 +10597,8 @@
 }
 
 .c-payment-main__checkbox-label--register {
-  padding: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  background-color: #f4f8fc;
 }
 
 .c-payment-main__checkbox-input {

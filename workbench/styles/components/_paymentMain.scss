@@ -271,16 +271,13 @@
   padding: 0 rem(10);
   border: none;
   border-radius: rem(8);
-  background-color: $border-color-dark;
+  background-color: $text-light;
   font-family: $font-family-base;
   font-size: rem(12);
   font-weight: $font-weight-medium;
   color: $color-white;
   cursor: pointer;
 
-  &:hover {
-    background-color: $text-light;
-  }
 }
 
 .c-payment-main__card-main-check {
@@ -297,10 +294,24 @@
 }
 
 .c-payment-main__card-notice {
-  font-size: rem(12);
-  color: $text-color;
-  line-height: 1.75;
+  background-color: $bg-light;
+  padding: rem(16);
   margin: rem(16) 0;
+}
+
+.c-payment-main__card-notice-title {
+  font-size: rem(12);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  line-height: 1.75;
+  margin: 0 0 rem(4);
+}
+
+.c-payment-main__card-notice-text {
+  font-size: rem(12);
+  color: $primary-color;
+  line-height: 1.75;
+  margin: 0;
 }
 
 .c-payment-main__credit-label {
@@ -435,7 +446,8 @@
 }
 
 .c-payment-main__checkbox-label--register {
-  padding: rem(8) 0;
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
 }
 
 .c-payment-main__checkbox-input {

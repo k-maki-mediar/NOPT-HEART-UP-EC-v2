@@ -988,7 +988,7 @@ $(function () {
 $(function () {
   // 別のお届け先に送るチェックボックス: 配送先フォームの表示/非表示を切り替える
   $(document).on('change', '.js-other-address-toggle', function () {
-    const $area = $('#otherAddressArea');
+    const $area = $('.js-other-address-area');
     if (!$area.length) { return; }
     if (this.checked) {
       $area.removeAttr('hidden');

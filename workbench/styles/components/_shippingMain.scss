@@ -280,7 +280,8 @@
 }
 
 .c-shipping-main__direct-area {
-  margin-top: rem(16);
+  margin-top: 0;
+  margin-bottom: rem(16);
   padding: rem(16);
   background-color: $bg-light;
 

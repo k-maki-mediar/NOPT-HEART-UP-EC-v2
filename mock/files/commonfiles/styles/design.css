@@ -10010,7 +10010,8 @@
 }
 
 .c-shipping-main__direct-area {
-  margin-top: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
   padding: 1rem;
   background-color: #f4f8fc;
 }

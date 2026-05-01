@@ -226,62 +226,61 @@
         <div class="c-shipping-main__row-value">
           <fieldset class="c-shipping-main__radio-group">
             <legend hidden>お届け日時指定方法</legend>
+
             <label class="c-shipping-main__radio-label">
               <input type="radio" class="c-shipping-main__radio-input js-regular-date-type" name="regularDeliveryAppointedDateType" value="1" checked>
               日付指定
             </label>
+            <!-- 日付指定エリア（日付指定ラジオの直下） -->
+            <div class="c-shipping-main__direct-area js-regular-date-area">
+              <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--day">
+                <select class="c-detail-unit__select" name="regularDeliveryAppointedDateDate" id="regularDeliveryAppointedDateDate">
+                  <option value="1">1日</option><option value="2">2日</option><option value="3">3日</option>
+                  <option value="4">4日</option><option value="5">5日</option><option value="6">6日</option>
+                  <option value="7">7日</option><option value="8">8日</option><option value="9">9日</option>
+                  <option value="10">10日</option><option value="11">11日</option><option value="12">12日</option>
+                  <option value="13">13日</option><option value="14" selected>14日</option><option value="15">15日</option>
+                  <option value="16">16日</option><option value="17">17日</option><option value="18">18日</option>
+                  <option value="19">19日</option><option value="20">20日</option><option value="21">21日</option>
+                  <option value="22">22日</option><option value="23">23日</option><option value="24">24日</option>
+                  <option value="25">25日</option><option value="26">26日</option><option value="27">27日</option>
+                  <option value="28">28日</option><option value="29">29日</option><option value="30">30日</option>
+                  <option value="31">31日</option>
+                </select>
+              </div>
+              <p class="c-shipping-main__next-date">次回お届け予定日は2026/05/14です。</p>
+            </div>
+
             <label class="c-shipping-main__radio-label">
               <input type="radio" class="c-shipping-main__radio-input js-regular-date-type" name="regularDeliveryAppointedDateType" value="2">
               週・曜日指定
             </label>
+            <!-- 週・曜日指定エリア（週・曜日指定ラジオの直下） -->
+            <div class="c-shipping-main__direct-area js-regular-week-area" hidden>
+              <div class="c-shipping-main__date-row">
+                <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--week">
+                  <select class="c-detail-unit__select" name="regularDeliveryAppointedDateWeekNo" id="regularDeliveryAppointedDateWeekNo">
+                    <option value="2" selected>第2</option>
+                    <option value="3">第3</option>
+                    <option value="4">第4</option>
+                  </select>
+                </div>
+                <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--weekday">
+                  <select class="c-detail-unit__select" name="regularDeliveryAppointedDateWeek" id="regularDeliveryAppointedDateWeek">
+                    <option value="0">日曜日</option>
+                    <option value="1" selected>月曜日</option>
+                    <option value="2">火曜日</option>
+                    <option value="3">水曜日</option>
+                    <option value="4">木曜日</option>
+                    <option value="5">金曜日</option>
+                    <option value="6">土曜日</option>
+                  </select>
+                </div>
+              </div>
+              <p class="c-shipping-main__next-date">次回お届け予定日は2026/05/11です。</p>
+            </div>
+
           </fieldset>
-
-          <!-- 日付指定エリア -->
-          <div class="c-shipping-main__direct-area js-regular-date-area">
-            <p class="c-shipping-main__direct-area-title">日付指定</p>
-            <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--day">
-              <select class="c-detail-unit__select" name="regularDeliveryAppointedDateDate" id="regularDeliveryAppointedDateDate">
-                <option value="1">1日</option><option value="2">2日</option><option value="3">3日</option>
-                <option value="4">4日</option><option value="5">5日</option><option value="6">6日</option>
-                <option value="7">7日</option><option value="8">8日</option><option value="9">9日</option>
-                <option value="10">10日</option><option value="11">11日</option><option value="12">12日</option>
-                <option value="13">13日</option><option value="14" selected>14日</option><option value="15">15日</option>
-                <option value="16">16日</option><option value="17">17日</option><option value="18">18日</option>
-                <option value="19">19日</option><option value="20">20日</option><option value="21">21日</option>
-                <option value="22">22日</option><option value="23">23日</option><option value="24">24日</option>
-                <option value="25">25日</option><option value="26">26日</option><option value="27">27日</option>
-                <option value="28">28日</option><option value="29">29日</option><option value="30">30日</option>
-                <option value="31">31日</option>
-              </select>
-            </div>
-            <p class="c-shipping-main__next-date">次回お届け予定日は2026/05/14です。</p>
-          </div>
-
-          <!-- 週・曜日指定エリア -->
-          <div class="c-shipping-main__direct-area js-regular-week-area" hidden>
-            <p class="c-shipping-main__direct-area-title">週・曜日指定</p>
-            <div class="c-shipping-main__date-row">
-              <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--week">
-                <select class="c-detail-unit__select" name="regularDeliveryAppointedDateWeekNo" id="regularDeliveryAppointedDateWeekNo">
-                  <option value="2" selected>第2</option>
-                  <option value="3">第3</option>
-                  <option value="4">第4</option>
-                </select>
-              </div>
-              <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--weekday">
-                <select class="c-detail-unit__select" name="regularDeliveryAppointedDateWeek" id="regularDeliveryAppointedDateWeek">
-                  <option value="0">日曜日</option>
-                  <option value="1" selected>月曜日</option>
-                  <option value="2">火曜日</option>
-                  <option value="3">水曜日</option>
-                  <option value="4">木曜日</option>
-                  <option value="5">金曜日</option>
-                  <option value="6">土曜日</option>
-                </select>
-              </div>
-            </div>
-            <p class="c-shipping-main__next-date">次回お届け予定日は2026/05/11です。</p>
-          </div>
         </div>
       </div>
       <div class="c-shipping-main__row">

@@ -90,10 +90,10 @@
     </ul>
   </div>
 
-  <!-- 配送情報 -->
+  <!-- 配送オプション -->
   <section class="c-shipping-main__section" aria-labelledby="delivery-section-title">
     <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="delivery-section-title">配送情報</h2>
+      <h2 class="c-shipping-main__section-title" id="delivery-section-title">配送オプション</h2>
     </div>
     <div class="c-shipping-main__rows">
 
@@ -287,7 +287,7 @@
         <span class="c-shipping-main__row-label">配送時間帯</span>
         <div class="c-shipping-main__row-value">
           <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--time">
-            <select class="c-detail-unit__select" name="regularDeliveryAppointedTimeZone" id="regularDeliveryAppointedTimeZone">
+            <select class="c-detail-unit__select js-regular-timezone-contact" name="regularDeliveryAppointedTimeZone" id="regularDeliveryAppointedTimeZone">
               <option value="0">指定なし</option>
               <option value="1">午前中（8:00〜12:00）</option>
               <option value="2">14:00〜16:00</option>
@@ -320,18 +320,7 @@
       </div>
       <div class="c-shipping-main__row">
         <span class="c-shipping-main__row-label">配送時間帯</span>
-        <div class="c-shipping-main__row-value">
-          <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--time">
-            <select class="c-detail-unit__select" name="regularDeliveryAppointedTimeZoneCare" id="regularDeliveryAppointedTimeZoneCare">
-              <option value="0">指定なし</option>
-              <option value="1">午前中（8:00〜12:00）</option>
-              <option value="2">14:00〜16:00</option>
-              <option value="3">16:00〜18:00</option>
-              <option value="4">18:00〜20:00</option>
-              <option value="5">19:00〜21:00</option>
-            </select>
-          </div>
-        </div>
+        <span class="c-shipping-main__row-value js-regular-timezone-care-text">指定なし</span>
       </div>
       <div class="c-shipping-main__row c-shipping-main__row--full">
         <span class="c-shipping-main__row-value">※コンタクトレンズと同梱設定中のため、コンタクトレンズの次回お届け日時設定が反映されます。</span>

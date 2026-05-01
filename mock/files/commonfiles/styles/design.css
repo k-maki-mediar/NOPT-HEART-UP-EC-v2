@@ -10150,6 +10150,8 @@
   align-items: center;
   justify-content: center;
   min-width: 15rem;
+  max-width: 25rem;
+  width: 100%;
   min-height: 3.25rem;
   padding: 0 1.5rem;
   border: none;
@@ -10179,6 +10181,8 @@
   align-items: center;
   justify-content: center;
   min-width: 10rem;
+  max-width: 25rem;
+  width: 100%;
   min-height: 3.25rem;
   padding: 0 1.5rem;
   border: 1px solid #00387d;

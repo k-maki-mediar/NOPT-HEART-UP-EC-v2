@@ -1872,3 +1872,24 @@ $(function () {
     initRegularDateTypeToggle();
   }
 })();
+
+/* ========================================
+ * 定期購入：コンタクト配送時間帯→ケア用品に連動
+ * ======================================== */
+(function () {
+  function initTimezoneSync() {
+    var contactSelect = document.querySelector('.js-regular-timezone-contact');
+    var careText = document.querySelector('.js-regular-timezone-care-text');
+    if (!contactSelect || !careText) return;
+
+    contactSelect.addEventListener('change', function () {
+      careText.textContent = this.options[this.selectedIndex].text;
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTimezoneSync);
+  } else {
+    initTimezoneSync();
+  }
+})();

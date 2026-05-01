@@ -237,7 +237,7 @@
 }
 
 .c-payment-main__card-row--selected {
-  background-color: $bg-light;
+  background-color: transparent;
 }
 
 .c-payment-main__card-row-main {
@@ -266,14 +266,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: rem(4) rem(12);
-  border: 1px solid $border-color-dark;
-  background-color: $bg-gray;
+  min-width: rem(50);
+  min-height: rem(32);
+  padding: 0 rem(10);
+  border: none;
+  border-radius: rem(8);
+  background-color: $border-color-dark;
   font-family: $font-family-base;
   font-size: rem(12);
-  color: $text-color;
+  font-weight: $font-weight-medium;
+  color: $color-white;
   cursor: pointer;
-  min-height: rem(32);
+
+  &:hover {
+    background-color: $text-light;
+  }
 }
 
 .c-payment-main__card-main-check {

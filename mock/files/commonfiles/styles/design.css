@@ -10394,7 +10394,7 @@
 }
 
 .c-payment-main__card-row--selected {
-  background-color: #f4f8fc;
+  background-color: transparent;
 }
 
 .c-payment-main__card-row-main {
@@ -10423,14 +10423,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem 0.75rem;
-  border: 1px solid #c2c2c2;
-  background-color: #F7F7F7;
+  min-width: 3.125rem;
+  min-height: 2rem;
+  padding: 0 0.625rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #c2c2c2;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.75rem;
-  color: #333;
+  font-weight: 500;
+  color: #FFFFFF;
   cursor: pointer;
-  min-height: 2rem;
+}
+.c-payment-main__card-delete-btn:hover {
+  background-color: #6B7280;
 }
 
 .c-payment-main__card-main-check {

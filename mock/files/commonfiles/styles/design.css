@@ -11363,6 +11363,15 @@
   }
 }
 
+@media (max-width: 767px) {
+  .c-guest-main .c-shipping-main__actions .c-step-nav {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding: 0 1rem;
+    width: auto;
+  }
+}
+
 .c-guest-validation-popup {
   position: absolute;
   z-index: 1100;

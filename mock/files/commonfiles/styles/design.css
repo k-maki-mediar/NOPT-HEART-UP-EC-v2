@@ -9781,6 +9781,13 @@
   margin-bottom: 2rem;
 }
 
+.c-shipping-main__sub-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #00387d;
+  margin: 1rem 0 0.5rem;
+}
+
 .c-shipping-main__products {
   border: 2px solid #d7e7fb;
   padding: 1rem;
@@ -9794,6 +9801,9 @@
 .c-shipping-main__products .c-cart-main__item {
   padding-left: 0;
   padding-right: 0;
+}
+.c-shipping-main__products .c-cart-main__item-product {
+  gap: 1rem 1.5rem;
 }
 .c-shipping-main__products .c-cart-main__item:last-child {
   border-bottom: none;

@@ -37,6 +37,13 @@
   margin-bottom: rem(32);
 }
 
+.c-shipping-main__sub-title {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: rem(16) 0 rem(8);
+}
+
 .c-shipping-main__products {
   border: 2px solid $bg-banner;
   padding: rem(16);
@@ -51,6 +58,10 @@
   .c-cart-main__item {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .c-cart-main__item-product {
+    gap: rem(16) rem(24);
   }
 
   .c-cart-main__item:last-child {

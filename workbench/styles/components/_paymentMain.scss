@@ -318,6 +318,34 @@
   margin: 0;
 }
 
+.c-payment-main__card-register-wrap {
+  padding: rem(16);
+  display: flex;
+  justify-content: center;
+}
+
+.c-payment-main__card-register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(200);
+  min-height: rem(44);
+  padding: 0 rem(24);
+  border: 1px solid $primary-color;
+  border-radius: rem(22);
+  background-color: $primary-color;
+  box-shadow: 0 rem(2) 0 $primary-shadow;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 rem(1) 0 $primary-shadow;
+  }
+}
+
 .c-payment-main__credit-label {
   font-size: rem(14);
   font-weight: $font-weight-medium;

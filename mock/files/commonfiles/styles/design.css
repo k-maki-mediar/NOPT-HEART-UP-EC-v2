@@ -10474,6 +10474,33 @@
   margin: 0;
 }
 
+.c-payment-main__card-register-wrap {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.c-payment-main__card-register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 12.5rem;
+  min-height: 2.75rem;
+  padding: 0 1.5rem;
+  border: 1px solid #00387d;
+  border-radius: 1.375rem;
+  background-color: #00387d;
+  box-shadow: 0 0.125rem 0 #002552;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.c-payment-main__card-register-btn:hover {
+  box-shadow: 0 0.0625rem 0 #002552;
+}
+
 .c-payment-main__credit-label {
   font-size: 0.875rem;
   font-weight: 500;

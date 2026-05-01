@@ -138,10 +138,21 @@
           <div class="c-payment-main__credit-detail-box">
             <p class="c-payment-main__credit-label">新しいクレジットカード情報を入力する</p>
 
+            <!-- カード名義人 -->
+            <div class="c-payment-main__form-field">
+              <div class="c-payment-main__form-field-header">
+                <span class="c-payment-main__form-field-title">クレジットカード名義人（半角ローマ字）</span>
+                <span class="c-payment-main__form-required">必須</span>
+              </div>
+              <div class="c-payment-main__form-field-body">
+                <input type="text" name="cardholderName" class="c-payment-main__form-input" maxlength="45" autocomplete="cc-name">
+              </div>
+            </div>
+
             <!-- カード番号 -->
             <div class="c-payment-main__form-field">
               <div class="c-payment-main__form-field-header">
-                <span class="c-payment-main__form-field-title">クレジットカードカード番号</span>
+                <span class="c-payment-main__form-field-title">クレジットカード番号</span>
                 <span class="c-payment-main__form-required">必須</span>
               </div>
               <div class="c-payment-main__form-field-body">
@@ -197,6 +208,9 @@
                   <input type="checkbox" class="c-payment-main__checkbox-input" name="defaultCard" value="1">
                 </label>
               </div>
+            </div>
+            <div class="c-payment-main__card-register-wrap">
+              <button type="button" class="c-payment-main__card-register-btn">カード登録</button>
             </div>
           </div>
 

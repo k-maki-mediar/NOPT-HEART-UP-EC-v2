@@ -142,7 +142,7 @@
 // ----------------------------------------
 
 .c-payment-main__method-item {
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px dashed rgba($text-color, 0.3);
 }
 
 .c-payment-main__method-row {
@@ -163,40 +163,33 @@
 }
 
 .c-payment-main__method-label {
-  font-size: rem(14);
+  font-size: rem(16);
   color: $text-color;
-  line-height: 1.5;
+  line-height: 1.75;
   cursor: pointer;
-  flex: 1;
-}
-
-.c-payment-main__method-commission {
-  font-size: rem(12);
-  color: $text-light;
-  margin-left: rem(4);
 }
 
 .c-payment-main__method-limit {
-  font-size: rem(12);
-  color: $text-light;
-  margin-left: rem(4);
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0;
 }
 
-// カードブランドロゴ表示エリア
-.c-payment-main__card-logos {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: rem(6);
-  margin-left: rem(8);
+.c-payment-main__method-sub {
+  padding: 0 rem(12) rem(14) rem(40);
 }
 
-.c-payment-main__card-logo {
-  height: rem(24);
+.c-payment-main__card-brand-img {
+  height: rem(20);
   width: auto;
-  border: 1px solid $border-color;
-  border-radius: rem(2);
-  vertical-align: middle;
+  margin-left: rem(12);
+}
+
+.c-payment-main__paypay-logo {
+  height: rem(28);
+  width: auto;
+  margin-left: rem(12);
 }
 
 // ----------------------------------------
@@ -204,96 +197,112 @@
 // ----------------------------------------
 
 .c-payment-main__method-detail {
-  display: none;
-  padding: rem(16) rem(12) rem(20);
-  background-color: $bg-light;
-  border-top: 1px solid $border-color;
-}
-
-.c-payment-main__method-detail--open {
-  display: block;
+  padding: rem(16) rem(12) rem(20) rem(40);
 }
 
 // ========================================
-// 新規クレジットカード入力フォーム
+// クレジットカード入力フォーム（Figma準拠）
 // ========================================
 
-.c-payment-main__new-card-form {
+.c-payment-main__credit-label {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: 0 0 rem(16);
+}
+
+.c-payment-main__credit-detail-box {
   background-color: $color-white;
   border: 1px solid $border-color;
-  padding: rem(16) rem(16) rem(20);
-}
-
-.c-payment-main__form-row {
+  padding: rem(16);
   margin-bottom: rem(16);
 }
 
-.c-payment-main__form-row--last {
-  margin-bottom: 0;
+.c-payment-main__form-field {
+  margin-bottom: rem(0);
 }
 
-.c-payment-main__form-label {
-  display: block;
-  font-size: rem(13);
+.c-payment-main__form-field--outer {
+  margin-bottom: rem(16);
+}
+
+.c-payment-main__form-field-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(10) rem(16);
+  background-color: $bg-gray;
+  border: 1px solid $border-color-dark;
+  margin-top: -1px;
+}
+
+.c-payment-main__form-field:first-child .c-payment-main__form-field-header {
+  margin-top: 0;
+}
+
+.c-payment-main__form-field-title {
+  font-size: rem(12);
   font-weight: $font-weight-medium;
   color: $text-color;
-  line-height: 1.5;
-  margin-bottom: rem(6);
+}
+
+.c-payment-main__form-field-body {
+  padding: rem(16);
+  border: 1px solid $border-color-dark;
+  border-top: none;
 }
 
 .c-payment-main__form-required {
-  display: inline-block;
-  font-size: rem(11);
-  color: $price-color;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(2) rem(6);
+  font-size: rem(10);
+  color: $color-white;
+  background-color: $accent-red;
+  border-radius: rem(23);
   font-weight: $font-weight-medium;
-  margin-left: rem(4);
   vertical-align: middle;
 }
 
 .c-payment-main__form-input {
   display: block;
   width: 100%;
-  height: rem(44);
+  height: rem(32);
   padding: 0 rem(12);
   border: 1px solid $border-color-dark;
-  border-radius: $border-radius-sm;
+  font-family: $font-family-base;
   font-size: rem(14);
   color: $text-color;
   background-color: $color-white;
-  box-sizing: border-box;
 
-  &::placeholder {
-    color: $color-placeholder;
-  }
-
-  &:focus {
+  &:focus-visible {
     outline: none;
     border-color: $primary-color;
-    box-shadow: 0 0 0 rem(2) rgba($primary-color, 0.2);
   }
 }
 
 .c-payment-main__form-input--short {
-  max-width: rem(180);
+  max-width: rem(100);
 }
 
 .c-payment-main__form-select {
   display: inline-block;
-  height: rem(44);
-  padding: 0 rem(32) 0 rem(12);
+  height: rem(32);
+  padding: 0 rem(28) 0 rem(10);
   border: 1px solid $border-color-dark;
-  border-radius: $border-radius-sm;
+  font-family: $font-family-base;
   font-size: rem(14);
+  font-weight: $font-weight-medium;
   color: $text-color;
   background-color: $color-white;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%23333' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='7' viewBox='0 0 7 7'%3E%3Cpath d='M0 0l3.5 3.5L7 0' stroke='%2300387d' stroke-width='2' fill='none'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right rem(12) center;
+  background-position: right rem(8) center;
   appearance: none;
-  box-sizing: border-box;
   cursor: pointer;
 
-  &:focus {
+  &:focus-visible {
     outline: none;
     border-color: $primary-color;
   }
@@ -304,35 +313,64 @@
   display: flex;
   align-items: center;
   gap: rem(8);
-  flex-wrap: wrap;
 }
 
 .c-payment-main__expiry-sep {
   font-size: rem(14);
+  font-weight: $font-weight-medium;
   color: $text-color;
-}
-
-// お支払い回数
-.c-payment-main__installment-row {
-  margin-top: rem(16);
-}
-
-.c-payment-main__installment-note {
-  font-size: rem(12);
-  color: $text-light;
-  margin: rem(6) 0 0;
-  line-height: 1.6;
 }
 
 // ========================================
 // コンビニ後払い詳細テキスト
 // ========================================
 
+.c-payment-main__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  font-size: rem(14);
+  color: $text-color;
+  cursor: pointer;
+  min-height: rem(44);
+}
+
+.c-payment-main__checkbox-label--register {
+  padding: rem(8) 0;
+}
+
+.c-payment-main__checkbox-input {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: $primary-color;
+}
+
+.c-payment-main__convenience-box {
+  padding: rem(16);
+  border: 1px solid $border-color;
+  background-color: $color-white;
+  margin-top: rem(8);
+}
+
 .c-payment-main__convenience-detail {
   font-size: rem(14);
   color: $text-color;
-  line-height: 1.8;
-  margin: 0;
+  line-height: 1.75;
+  margin: 0 0 rem(4);
+}
+
+.c-payment-main__convenience-list {
+  margin: rem(8) 0 0;
+  padding-left: rem(20);
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+
+  li {
+    margin-bottom: rem(2);
+  }
 }
 
 .c-payment-main__convenience-link {

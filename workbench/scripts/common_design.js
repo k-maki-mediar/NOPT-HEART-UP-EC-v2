@@ -1920,3 +1920,40 @@ $(function () {
     initCouponToggle();
   }
 })();
+
+/* ========================================
+ * お支払い方法ラジオ選択→詳細展開（支払方法選択）
+ * ======================================== */
+(function () {
+  function initPaymentMethodToggle() {
+    const radios = document.querySelectorAll('.js-payment-radio');
+    if (!radios.length) return;
+
+    function toggleDetails() {
+      const items = document.querySelectorAll('.c-payment-main__method-item');
+      for (let i = 0; i < items.length; i++) {
+        const radio = items[i].querySelector('.js-payment-radio');
+        const detail = items[i].querySelector('.c-payment-main__method-detail');
+        if (!detail) continue;
+        if (radio && radio.checked) {
+          detail.classList.add('c-payment-main__method-detail--open');
+        } else {
+          detail.classList.remove('c-payment-main__method-detail--open');
+        }
+      }
+    }
+
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', toggleDetails);
+    }
+
+    // 初期表示
+    toggleDetails();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPaymentMethodToggle);
+  } else {
+    initPaymentMethodToggle();
+  }
+})();

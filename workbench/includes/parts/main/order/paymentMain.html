@@ -51,148 +51,157 @@
   </section>
 
   <!-- ===== お支払い方法選択セクション ===== -->
-  <div class="c-payment-main__section">
-    <div class="c-payment-main__section-header">
-      <h2 class="c-payment-main__section-title">お支払い方法選択</h2>
+  <section class="c-shipping-main__section" aria-label="お支払い方法選択">
+    <div class="c-shipping-main__section-header">
+      <h2 class="c-shipping-main__section-title">お支払い方法選択</h2>
     </div>
     <ul class="c-payment-main__method-list" role="radiogroup" aria-label="お支払い方法">
 
       <!-- 代金引換 -->
       <li class="c-payment-main__method-item">
         <label class="c-payment-main__method-row">
-          <input type="radio" class="c-payment-main__method-radio js-payment-radio" name="paymentMethod" value="cod" aria-describedby="cod-detail">
-          <span class="c-payment-main__method-label">代金引換</span>
-          <span class="c-payment-main__method-commission" id="cod-commission">手数料: 330円（税込）</span>
+          <input type="radio" class="c-payment-main__method-radio js-payment-radio" name="paymentMethod" value="cod" checked>
+          <span class="c-payment-main__method-label">代金引換（手数料300円）</span>
         </label>
-        <!-- 代金引換 詳細（選択時に展開） -->
-        <div class="c-payment-main__method-detail js-payment-detail" id="cod-detail">
-          <p class="c-payment-main__convenience-detail">商品お受け取り時に配達員へお支払いください。</p>
-        </div>
       </li>
 
       <!-- クレジット支払い -->
       <li class="c-payment-main__method-item">
         <label class="c-payment-main__method-row">
-          <input type="radio" class="c-payment-main__method-radio js-payment-radio" name="paymentMethod" value="credit" checked aria-describedby="credit-detail">
+          <input type="radio" class="c-payment-main__method-radio js-payment-radio" name="paymentMethod" value="credit">
           <span class="c-payment-main__method-label">クレジット支払い</span>
-          <span class="c-payment-main__card-logos" aria-label="利用可能カードブランド">
-            <img src="../../../files/commonfiles/images/card-visa.png" alt="VISA" class="c-payment-main__card-logo" width="36" height="24">
-            <img src="../../../files/commonfiles/images/card-master.png" alt="Mastercard" class="c-payment-main__card-logo" width="36" height="24">
-            <img src="../../../files/commonfiles/images/card-jcb.png" alt="JCB" class="c-payment-main__card-logo" width="36" height="24">
-            <img src="../../../files/commonfiles/images/card-amex.png" alt="American Express" class="c-payment-main__card-logo" width="36" height="24">
-          </span>
+          <img src="../../../files/commonfiles/images/card_5brand.png" alt="VISA / Mastercard / JCB / American Express / Diners Club" class="c-payment-main__card-brand-img" width="170" height="20">
         </label>
-        <!-- クレジット詳細（初期表示: 展開済み） -->
-        <div class="c-payment-main__method-detail c-payment-main__method-detail--open js-payment-detail" id="credit-detail">
-          <!-- 新規クレジットカード入力フォーム（ゲスト購入のみ表示） -->
-          <div class="c-payment-main__new-card-form">
-            <div class="c-payment-main__form-row">
-              <label class="c-payment-main__form-label" for="cardholderName">
-                クレジットカード名義人（半角ローマ字）
+        <!-- クレジット詳細（選択時に展開） -->
+        <div class="c-payment-main__method-detail js-payment-detail">
+          <div class="c-payment-main__credit-detail-box">
+            <p class="c-payment-main__credit-label">新しいクレジットカード情報を入力する</p>
+
+            <!-- カード番号 -->
+            <div class="c-payment-main__form-field">
+              <div class="c-payment-main__form-field-header">
+                <span class="c-payment-main__form-field-title">クレジットカードカード番号</span>
                 <span class="c-payment-main__form-required">必須</span>
-              </label>
-              <input type="text" id="cardholderName" name="cardholderName" class="c-payment-main__form-input" maxlength="45" autocomplete="cc-name" placeholder="TARO YAMADA">
-            </div>
-            <div class="c-payment-main__form-row">
-              <label class="c-payment-main__form-label" for="cardNo">
-                クレジットカード番号
-                <span class="c-payment-main__form-required">必須</span>
-              </label>
-              <input type="text" id="cardNo" name="cardNo" class="c-payment-main__form-input c-payment-main__form-input--short" maxlength="16" autocomplete="cc-number" inputmode="numeric" placeholder="半角数字・ハイフン不可">
-            </div>
-            <div class="c-payment-main__form-row">
-              <span class="c-payment-main__form-label">
-                有効期限
-                <span class="c-payment-main__form-required">必須</span>
-              </span>
-              <div class="c-payment-main__expiry-row">
-                <select name="cardExpirationMonth" class="c-payment-main__form-select" aria-label="有効期限 月" autocomplete="cc-exp-month">
-                  <option value="">月</option>
-                  <option value="01">01</option>
-                  <option value="02">02</option>
-                  <option value="03">03</option>
-                  <option value="04">04</option>
-                  <option value="05">05</option>
-                  <option value="06">06</option>
-                  <option value="07">07</option>
-                  <option value="08">08</option>
-                  <option value="09">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
-                <span class="c-payment-main__expiry-sep" aria-hidden="true">/</span>
-                <select name="cardExpirationYear" class="c-payment-main__form-select" aria-label="有効期限 年" autocomplete="cc-exp-year">
-                  <option value="">年</option>
-                  <option value="26">2026</option>
-                  <option value="27">2027</option>
-                  <option value="28">2028</option>
-                  <option value="29">2029</option>
-                  <option value="30">2030</option>
-                  <option value="31">2031</option>
-                  <option value="32">2032</option>
-                  <option value="33">2033</option>
-                  <option value="34">2034</option>
-                  <option value="35">2035</option>
-                </select>
+              </div>
+              <div class="c-payment-main__form-field-body">
+                <input type="text" name="cardNo" class="c-payment-main__form-input" maxlength="16" autocomplete="cc-number" inputmode="numeric">
               </div>
             </div>
-            <div class="c-payment-main__form-row">
-              <label class="c-payment-main__form-label" for="securityCode">
-                セキュリティコード
+
+            <!-- 有効期限 -->
+            <div class="c-payment-main__form-field">
+              <div class="c-payment-main__form-field-header">
+                <span class="c-payment-main__form-field-title">有効期限(月/年)</span>
                 <span class="c-payment-main__form-required">必須</span>
-              </label>
-              <input type="text" id="securityCode" name="securityCode" class="c-payment-main__form-input c-payment-main__form-input--short" maxlength="4" inputmode="numeric" autocomplete="cc-csc" placeholder="半角数字">
+              </div>
+              <div class="c-payment-main__form-field-body">
+                <div class="c-payment-main__expiry-row">
+                  <select name="cardExpirationMonth" class="c-payment-main__form-select" aria-label="有効期限 月" autocomplete="cc-exp-month">
+                    <option value="">---</option>
+                    <option value="01">01</option><option value="02">02</option><option value="03">03</option>
+                    <option value="04">04</option><option value="05">05</option><option value="06">06</option>
+                    <option value="07">07</option><option value="08">08</option><option value="09">09</option>
+                    <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                  </select>
+                  <span class="c-payment-main__expiry-sep" aria-hidden="true">/</span>
+                  <select name="cardExpirationYear" class="c-payment-main__form-select" aria-label="有効期限 年" autocomplete="cc-exp-year">
+                    <option value="">----</option>
+                    <option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option>
+                    <option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option>
+                    <option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option>
+                    <option value="2035">2035</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <!-- お支払い回数 -->
-            <div class="c-payment-main__form-row c-payment-main__form-row--last c-payment-main__installment-row">
-              <label class="c-payment-main__form-label" for="paymentInstallmentType">
-                お支払い回数
+
+            <!-- セキュリティコード -->
+            <div class="c-payment-main__form-field">
+              <div class="c-payment-main__form-field-header">
+                <span class="c-payment-main__form-field-title">セキュリティコード</span>
                 <span class="c-payment-main__form-required">必須</span>
-              </label>
-              <select id="paymentInstallmentType" name="paymentInstallmentType" class="c-payment-main__form-select" autocomplete="off">
+              </div>
+              <div class="c-payment-main__form-field-body">
+                <input type="text" name="securityCode" class="c-payment-main__form-input c-payment-main__form-input--short" maxlength="4" inputmode="numeric" autocomplete="cc-csc">
+              </div>
+            </div>
+
+            <!-- 通常使うカードに設定する -->
+            <div class="c-payment-main__form-field">
+              <div class="c-payment-main__form-field-header">
+                <span class="c-payment-main__form-field-title">通常使うカードに設定する</span>
+              </div>
+              <div class="c-payment-main__form-field-body">
+                <label class="c-payment-main__checkbox-label">
+                  <input type="checkbox" class="c-payment-main__checkbox-input" name="defaultCard" value="1">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- お支払い回数 -->
+          <div class="c-payment-main__form-field c-payment-main__form-field--outer">
+            <div class="c-payment-main__form-field-header">
+              <span class="c-payment-main__form-field-title">お支払い回数</span>
+              <span class="c-payment-main__form-required">必須</span>
+            </div>
+            <div class="c-payment-main__form-field-body">
+              <select name="paymentInstallmentType" class="c-payment-main__form-select" autocomplete="off">
                 <option value="1">一括</option>
                 <option value="3">3回</option>
                 <option value="6">6回払い</option>
               </select>
-              <p class="c-payment-main__installment-note">※分割支払い手数料はお客様負担となります。</p>
             </div>
           </div>
+
+          <!-- 決済時にクレジットカード情報を登録する -->
+          <label class="c-payment-main__checkbox-label c-payment-main__checkbox-label--register">
+            <input type="checkbox" class="c-payment-main__checkbox-input" name="registerCard" value="1">
+            <span>決済時にクレジットカード情報を登録する</span>
+          </label>
         </div>
       </li>
 
       <!-- PayPay決済 -->
       <li class="c-payment-main__method-item">
         <label class="c-payment-main__method-row">
-          <input type="radio" class="c-payment-main__method-radio js-payment-radio" name="paymentMethod" value="paypay" aria-describedby="paypay-detail">
+          <input type="radio" class="c-payment-main__method-radio js-payment-radio" name="paymentMethod" value="paypay">
           <span class="c-payment-main__method-label">PayPay決済</span>
-          <span class="c-payment-main__method-limit">上限金額: 100,000円</span>
+          <img src="../../../files/commonfiles/images/paypay_logo.png" alt="PayPay" class="c-payment-main__paypay-logo" width="75" height="28">
         </label>
-        <!-- PayPay 詳細（選択時に展開） -->
-        <div class="c-payment-main__method-detail js-payment-detail" id="paypay-detail">
-          <p class="c-payment-main__convenience-detail">PayPayアプリにて決済いただけます。上限金額（100,000円）を超える場合はご利用いただけません。</p>
+        <div class="c-payment-main__method-sub">
+          <p class="c-payment-main__method-limit">上限金額 500,000円</p>
         </div>
       </li>
 
       <!-- コンビニ後払い -->
       <li class="c-payment-main__method-item">
         <label class="c-payment-main__method-row">
-          <input type="radio" class="c-payment-main__method-radio js-payment-radio" name="paymentMethod" value="convenience" aria-describedby="convenience-detail">
-          <span class="c-payment-main__method-label">コンビニ後払い（ベリトランス後払い）</span>
+          <input type="radio" class="c-payment-main__method-radio js-payment-radio" name="paymentMethod" value="convenience">
+          <span class="c-payment-main__method-label">コンビニ後払い(ベリトランス後払い)</span>
         </label>
-        <!-- コンビニ後払い 詳細（選択時に展開） -->
-        <div class="c-payment-main__method-detail js-payment-detail" id="convenience-detail">
-          <p class="c-payment-main__convenience-detail">
-            払込票は商品とは別に株式会社SCOREより郵送されます。発行から14日以内にコンビニでお支払いください。<br>
-            手数料220円（税込）。合計5,500円以上の通常注文・らくとく定期便は手数料無料。<br>
-            利用限度額55,000円（税込）。<br>
-            <a href="#" class="c-payment-main__convenience-link">コンビニ後払い(ベリトランス後払い)の取扱いについて</a>
-          </p>
+        <div class="c-payment-main__method-sub">
+          <p class="c-payment-main__method-limit">上限金額 55,000円</p>
+        </div>
+        <!-- コンビニ後払い 詳細 -->
+        <div class="c-payment-main__convenience-box">
+          <p class="c-payment-main__convenience-detail">コンビニ後払い（ベリトランス後払い）の取扱いについて</p>
+          <p class="c-payment-main__convenience-detail">払込票は商品とは別に株式会社SCOREより郵送されます。発行から14日以内にコンビニでお支払いください。</p>
+          <p class="c-payment-main__convenience-detail">2025/04/01お受付分よりお支払い期限を一定期間過ぎてもご入金の確認がとれない場合、ご請求金額に回収事務手数料297円（税込）を加算します。（最大3回、合計891円）</p>
+          <p class="c-payment-main__convenience-detail">ベリトランス後払いを選択された場合、代金債権とそれに付帯する個人情報はDGフィナンシャルテクノロジー社と契約関係にある株式会社SCOREに債権管理のため譲渡・提供されます。当該第三者への譲渡・提供に同意の上、お申込みください。</p>
+          <p class="c-payment-main__convenience-detail">与審査の結果により他の決済方法をご利用していただく場合もございます。</p>
+          <p class="c-payment-main__convenience-detail">詳しくは、お支払い方法に関してをご確認ください。</p>
+          <p class="c-payment-main__convenience-detail">ご利用者が未成年の場合は、法定代理人の利用同意を得てご利用ください。</p>
+          <ul class="c-payment-main__convenience-list">
+            <li>後払い手数料：220円（税込）</li>
+            <li>合計5,500円以上の通常の注文、らくとく定期便の注文は、後払い手数料は無料となります。</li>
+            <li>利用限度額：55,000円（税込）</li>
+          </ul>
         </div>
       </li>
 
     </ul>
-  </div>
+  </section>
 
   <!-- ===== フッターボタンエリア ===== -->
   <div class="c-shipping-main__actions">

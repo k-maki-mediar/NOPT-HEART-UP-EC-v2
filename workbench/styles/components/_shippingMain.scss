@@ -210,6 +210,16 @@
     grid-template-columns: 1fr;
     gap: rem(6);
   }
+
+  &--full {
+    grid-template-columns: 1fr;
+    border-bottom: none;
+    padding: rem(4) 0;
+  }
+
+  &:not(&--full) + &--full {
+    padding-top: rem(16);
+  }
 }
 
 .c-shipping-main__row-label {

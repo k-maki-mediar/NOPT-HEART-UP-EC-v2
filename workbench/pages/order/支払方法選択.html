@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja" class="c-html">
+<head>
+@@include('../../includes/head.html', {"title": "お支払い方法選択"})
+</head>
+<body class="c-body">
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageHeaderMenu.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageSideNav.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <div class="c-main">
+                <!-- ゲスト購入用ステップナビ（ステップ3アクティブ） -->
+                <div class="wsparts-include">
+                  <nav class="c-step-nav" aria-label="購入フロー（ゲスト購入）">
+                    <ol class="c-step-nav__list">
+                      <li class="c-step-nav__item">
+                        <span class="c-step-nav__circle">1</span>
+                        <span class="c-step-nav__label">カート</span>
+                      </li>
+                      <li class="c-step-nav__item">
+                        <span class="c-step-nav__circle">2</span>
+                        <span class="c-step-nav__label">お客様情報<br>の入力</span>
+                      </li>
+                      <li class="c-step-nav__item c-step-nav__item--active">
+                        <span class="c-step-nav__circle">3</span>
+                        <span class="c-step-nav__label">お支払い<br>方法選択</span>
+                      </li>
+                      <li class="c-step-nav__item">
+                        <span class="c-step-nav__circle">4</span>
+                        <span class="c-step-nav__label">注文内容<br>確認</span>
+                      </li>
+                      <li class="c-step-nav__item">
+                        <span class="c-step-nav__circle">5</span>
+                        <span class="c-step-nav__label">注文完了</span>
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/messageArea.html')
+                </div>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/main/order/paymentMain.html')
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="c-footer-sticky-wrap">
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooterCopyright.html')
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

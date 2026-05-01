@@ -10216,6 +10216,548 @@
   }
 }
 
+.c-payment-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 0 0 3rem;
+}
+@media (min-width: 992px) {
+  .c-payment-main {
+    padding: 0 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-payment-main__section {
+  margin-top: 1.5rem;
+}
+
+.c-payment-main__section-header {
+  padding: 0.6875rem 0.75rem;
+  background-color: #d7e7fb;
+}
+
+.c-payment-main__section-title {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #00387d;
+  line-height: 1.5;
+  letter-spacing: 0.04rem;
+  margin: 0;
+}
+
+.c-payment-main__amount-box {
+  border: 3px solid #d7e7fb;
+  margin-top: 1rem;
+}
+
+.c-payment-main__amount-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.c-payment-main__amount-row {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.c-payment-main__amount-label,
+.c-payment-main__amount-value {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #333;
+  vertical-align: middle;
+}
+
+.c-payment-main__amount-value {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.c-payment-main__amount-row--total .c-payment-main__amount-label,
+.c-payment-main__amount-row--total .c-payment-main__amount-value {
+  font-weight: 700;
+}
+
+.c-payment-main__amount-row--payment {
+  background-color: #f4f8fc;
+}
+.c-payment-main__amount-row--payment .c-payment-main__amount-label,
+.c-payment-main__amount-row--payment .c-payment-main__amount-value {
+  font-weight: 700;
+  color: #c13b36;
+}
+.c-payment-main__amount-row--payment .c-payment-main__amount-value {
+  font-size: 1.125rem;
+}
+
+.c-payment-main__amount-row--tax .c-payment-main__amount-label,
+.c-payment-main__amount-row--tax .c-payment-main__amount-value {
+  font-size: 0.75rem;
+  color: #6B7280;
+}
+
+.c-payment-main__amount-row--hidden {
+  display: none;
+}
+
+.c-payment-main__note {
+  font-size: 0.75rem;
+  color: #6B7280;
+  line-height: 1.6;
+  margin: 0.5rem 0 0;
+  padding: 0 0.75rem 0.75rem;
+}
+
+.c-payment-main__method-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-payment-main__method-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.c-payment-main__method-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 0.75rem;
+  cursor: pointer;
+  min-height: 3rem;
+}
+
+.c-payment-main__method-radio {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: #00387d;
+}
+
+.c-payment-main__method-label {
+  font-size: 0.875rem;
+  color: #333;
+  line-height: 1.5;
+  cursor: pointer;
+  flex: 1;
+}
+
+.c-payment-main__method-commission {
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin-left: 0.25rem;
+}
+
+.c-payment-main__method-limit {
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin-left: 0.25rem;
+}
+
+.c-payment-main__card-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  margin-left: 0.5rem;
+}
+
+.c-payment-main__card-logo {
+  height: 1.5rem;
+  width: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.125rem;
+  vertical-align: middle;
+}
+
+.c-payment-main__method-detail {
+  display: none;
+  padding: 1rem 0.75rem 1.25rem;
+  background-color: #f4f8fc;
+  border-top: 1px solid #e0e0e0;
+}
+
+.c-payment-main__method-detail--open {
+  display: block;
+}
+
+.c-payment-main__new-card-form {
+  background-color: #FFFFFF;
+  border: 1px solid #e0e0e0;
+  padding: 1rem 1rem 1.25rem;
+}
+
+.c-payment-main__form-row {
+  margin-bottom: 1rem;
+}
+
+.c-payment-main__form-row--last {
+  margin-bottom: 0;
+}
+
+.c-payment-main__form-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 0.375rem;
+}
+
+.c-payment-main__form-required {
+  display: inline-block;
+  font-size: 0.6875rem;
+  color: #c13b36;
+  font-weight: 500;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+.c-payment-main__form-input {
+  display: block;
+  width: 100%;
+  height: 2.75rem;
+  padding: 0 0.75rem;
+  border: 1px solid #c2c2c2;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: #333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+}
+.c-payment-main__form-input::-moz-placeholder {
+  color: #767676;
+}
+.c-payment-main__form-input::placeholder {
+  color: #767676;
+}
+.c-payment-main__form-input:focus {
+  outline: none;
+  border-color: #00387d;
+  box-shadow: 0 0 0 0.125rem rgba(0, 56, 125, 0.2);
+}
+
+.c-payment-main__form-input--short {
+  max-width: 11.25rem;
+}
+
+.c-payment-main__form-select {
+  display: inline-block;
+  height: 2.75rem;
+  padding: 0 2rem 0 0.75rem;
+  border: 1px solid #c2c2c2;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: #333;
+  background-color: #FFFFFF;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%23333' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.c-payment-main__form-select:focus {
+  outline: none;
+  border-color: #00387d;
+}
+
+.c-payment-main__expiry-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.c-payment-main__expiry-sep {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.c-payment-main__installment-row {
+  margin-top: 1rem;
+}
+
+.c-payment-main__installment-note {
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin: 0.375rem 0 0;
+  line-height: 1.6;
+}
+
+.c-payment-main__convenience-detail {
+  font-size: 0.875rem;
+  color: #333;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.c-payment-main__convenience-link {
+  color: #0087cb;
+  text-decoration: underline;
+}
+.c-payment-main__convenience-link:hover {
+  text-decoration: none;
+}
+
+.c-payment-main__actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.75rem;
+  padding: 1.5rem 0.75rem 0.5rem;
+  margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .c-payment-main__actions {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0 0.5rem;
+  }
+}
+
+.c-payment-main__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+@media (max-width: 767px) {
+  .c-payment-main__btn {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .c-payment-main__btn {
+    min-width: 12.5rem;
+  }
+}
+
+.c-payment-main__btn--back {
+  background-color: #F7F7F7;
+  border-color: #c2c2c2;
+  color: #333;
+}
+.c-payment-main__btn--back:hover {
+  background-color: #e0e0e0;
+}
+
+.c-payment-main__btn--confirm {
+  background-color: #cc4843;
+  border-color: #cc4843;
+  color: #FFFFFF;
+  box-shadow: 0 0.1875rem 0 #b91b15;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-payment-main__btn--confirm:hover {
+  transform: translateY(0.1875rem);
+  box-shadow: 0 0 0 #b91b15;
+}
+
+.c-payment-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-payment-modal--open {
+  display: flex;
+}
+
+.c-payment-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.c-payment-modal__dialog {
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 2rem 1.5rem 1.5rem;
+  min-width: 17.5rem;
+  max-width: 25rem;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.c-payment-modal__text {
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
+.c-payment-modal__actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.c-payment-modal__btn--ok {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6.25rem;
+  min-height: 2.75rem;
+  background-color: #cc4843;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+.c-payment-modal__btn--cancel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6.25rem;
+  min-height: 2.75rem;
+  background-color: #FFFFFF;
+  color: #333;
+  border: 1px solid #c2c2c2;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+.c-payment-main__coupon-code-box {
+  border: 0.125rem solid #d7e7fb;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.c-payment-main__coupon-input-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.c-payment-main__coupon-input {
+  flex: 1;
+  min-height: 2.75rem;
+  padding: 0.625rem 1rem;
+  border: 1px solid #c2c2c2;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.c-payment-main__coupon-issue-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5rem;
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #00387d;
+  box-shadow: 0 0.1875rem 0 #002552;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.c-payment-main__coupon-issue-btn:hover {
+  box-shadow: 0 0.0625rem 0 #002552;
+}
+
+.c-payment-main__coupon-note {
+  font-size: 0.625rem;
+  color: #cc4843;
+  margin: 0.5rem 0 0;
+}
+
+.c-payment-main__coupon-guide {
+  font-size: 0.75rem;
+  color: #00387d;
+  line-height: 1.75;
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #f4f8fc;
+}
+
+.c-payment-main__coupon-card {
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.c-payment-main__coupon-card--selected {
+  border-color: #00387d;
+}
+
+.c-payment-main__coupon-card-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #00387d;
+  line-height: 1.75;
+  margin: 0 0 1rem;
+}
+
+.c-payment-main__coupon-card-desc {
+  font-size: 0.75rem;
+  color: #6B7280;
+  line-height: 1.75;
+  margin: 0 0 1.25rem;
+}
+
+.c-payment-main__coupon-select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 12.5rem;
+  min-height: 2.75rem;
+  margin: 0 auto;
+  border: 1px solid #00387d;
+  border-radius: 1.375rem;
+  background-color: #FFFFFF;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #00387d;
+  cursor: pointer;
+  box-shadow: 0 0.125rem 0 #00387d;
+}
+.c-payment-main__coupon-select-btn:hover {
+  box-shadow: 0 0.0625rem 0 #00387d;
+}
+.c-payment-main__coupon-select-btn--selected {
+  background-color: #00387d;
+  color: #FFFFFF;
+}
+
+.c-payment-main__coupon-caution {
+  font-size: 0.75rem;
+  color: #333;
+  line-height: 1.75;
+  margin: 0 0 0.25rem;
+}
+
 .c-main--logged-in .c-campaign-topics__deco-rect {
   background-color: #ffdedd;
 }

@@ -1893,3 +1893,30 @@ $(function () {
     initTimezoneSync();
   }
 })();
+
+/* ========================================
+ * クーポンコード入力エリア表示切替（支払方法選択）
+ * ======================================== */
+(function () {
+  function initCouponToggle() {
+    const radios = document.querySelectorAll('.js-coupon-type');
+    const codeArea = document.querySelector('.js-coupon-code-area');
+    if (!radios.length || !codeArea) return;
+
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function () {
+        if (this.value === '1') {
+          codeArea.removeAttribute('hidden');
+        } else {
+          codeArea.setAttribute('hidden', '');
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCouponToggle);
+  } else {
+    initCouponToggle();
+  }
+})();

@@ -10709,6 +10709,11 @@
 .c-payment-main__coupon-card--selected {
   border-color: #00387d;
 }
+.c-payment-main__coupon-card--disabled {
+  background-color: #e0e0e0;
+  opacity: 0.6;
+  pointer-events: none;
+}
 
 .c-payment-main__coupon-card-title {
   font-size: 0.875rem;

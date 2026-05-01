@@ -156,6 +156,12 @@
 
   &--address {
     max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    resize: none;
+    overflow: hidden;
+    field-sizing: content;
+    min-height: rem(44);
   }
 
   &--email {

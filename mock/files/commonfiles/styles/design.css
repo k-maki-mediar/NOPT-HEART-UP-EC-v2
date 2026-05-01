@@ -11102,6 +11102,12 @@
 }
 .c-guest-main__input--address {
   max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  resize: none;
+  overflow: hidden;
+  field-sizing: content;
+  min-height: 2.75rem;
 }
 .c-guest-main__input--email {
   max-width: 22.5rem;

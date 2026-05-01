@@ -1842,3 +1842,33 @@ $(function () {
     initDeliveryDateToggle();
   }
 })();
+
+/* ========================================
+ * 定期購入：日付指定/週・曜日指定 切替（配送先選択）
+ * ======================================== */
+(function () {
+  function initRegularDateTypeToggle() {
+    var radios = document.querySelectorAll('.js-regular-date-type');
+    var dateArea = document.querySelector('.js-regular-date-area');
+    var weekArea = document.querySelector('.js-regular-week-area');
+    if (!radios.length || !dateArea || !weekArea) return;
+
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function () {
+        if (this.value === '1') {
+          dateArea.removeAttribute('hidden');
+          weekArea.setAttribute('hidden', '');
+        } else {
+          dateArea.setAttribute('hidden', '');
+          weekArea.removeAttribute('hidden');
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRegularDateTypeToggle);
+  } else {
+    initRegularDateTypeToggle();
+  }
+})();

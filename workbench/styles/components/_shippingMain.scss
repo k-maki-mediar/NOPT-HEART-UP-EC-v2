@@ -115,6 +115,25 @@
   margin: rem(4) 0 0;
 }
 
+.c-shipping-main__next-date {
+  font-size: rem(14);
+  color: $primary-color;
+  font-weight: $font-weight-medium;
+  margin: rem(12) 0 0;
+}
+
+.c-shipping-main__select-wrap--day {
+  max-width: rem(120);
+}
+
+.c-shipping-main__select-wrap--week {
+  max-width: rem(100);
+}
+
+.c-shipping-main__select-wrap--weekday {
+  max-width: rem(120);
+}
+
 .c-shipping-main__section-header {
   padding: rem(11) rem(12);
   background-color: $bg-banner;
@@ -176,7 +195,7 @@
   display: grid;
   grid-template-columns: rem(160) 1fr;
   gap: rem(8);
-  padding: rem(16) rem(12);
+  padding: rem(16) 0;
   border-bottom: 1px solid $border-color;
   align-items: start;
 

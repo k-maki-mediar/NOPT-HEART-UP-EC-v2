@@ -9849,6 +9849,25 @@
   margin: 0.25rem 0 0;
 }
 
+.c-shipping-main__next-date {
+  font-size: 0.875rem;
+  color: #00387d;
+  font-weight: 500;
+  margin: 0.75rem 0 0;
+}
+
+.c-shipping-main__select-wrap--day {
+  max-width: 7.5rem;
+}
+
+.c-shipping-main__select-wrap--week {
+  max-width: 6.25rem;
+}
+
+.c-shipping-main__select-wrap--weekday {
+  max-width: 7.5rem;
+}
+
 .c-shipping-main__section-header {
   padding: 0.6875rem 0.75rem;
   background-color: #d7e7fb;
@@ -9910,7 +9929,7 @@
   display: grid;
   grid-template-columns: 10rem 1fr;
   gap: 0.5rem;
-  padding: 1rem 0.75rem;
+  padding: 1rem 0;
   border-bottom: 1px solid #e0e0e0;
   align-items: start;
 }

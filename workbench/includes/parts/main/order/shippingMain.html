@@ -1,0 +1,253 @@
+<section class="c-shipping-main" aria-label="配送先設定">
+
+  <!-- お届け先住所 -->
+  <section class="c-shipping-main__section" aria-label="お届け先住所">
+    <div class="c-shipping-main__section-header">
+      <h2 class="c-shipping-main__section-title">お届け先住所</h2>
+    </div>
+
+    <!-- 基本住所 -->
+    <p class="c-shipping-main__sub-title">基本住所</p>
+    <div class="c-teiki-address-select">
+      <div class="c-teiki-address-select__card c-teiki-address-select__card--selected">
+        <div class="c-teiki-address-select__card-header">
+          <label class="c-teiki-address-select__radio-label">
+            <input type="radio" name="delivery-address" value="basic" class="c-teiki-address-select__radio" checked>
+            <span class="c-teiki-address-select__radio-text">基本住所</span>
+          </label>
+        </div>
+        <div class="c-teiki-address-select__card-body">
+          <p class="c-teiki-address-select__name">日本 光子 様</p>
+          <p class="c-teiki-address-select__detail">〒150-0001 東京都 渋谷区 神宮前1丁目1-1 サンプルビル101</p>
+          <p class="c-teiki-address-select__tel">090-0000-0000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 追加住所 -->
+    <p class="c-shipping-main__sub-title">追加住所</p>
+    <div class="c-teiki-address-select">
+      <div class="c-teiki-address-select__card">
+        <div class="c-teiki-address-select__card-header">
+          <label class="c-teiki-address-select__radio-label">
+            <input type="radio" name="delivery-address" value="extra-1" class="c-teiki-address-select__radio">
+            <span class="c-teiki-address-select__radio-text">追加住所1</span>
+          </label>
+        </div>
+        <div class="c-teiki-address-select__card-body">
+          <p class="c-teiki-address-select__name">日本 太郎 様</p>
+          <p class="c-teiki-address-select__detail">〒460-0008 愛知県 名古屋市中区栄3丁目1-1</p>
+          <p class="c-teiki-address-select__tel">052-000-0000</p>
+        </div>
+      </div>
+
+      <div class="c-teiki-address-select__card">
+        <div class="c-teiki-address-select__card-header">
+          <label class="c-teiki-address-select__radio-label">
+            <input type="radio" name="delivery-address" value="extra-2" class="c-teiki-address-select__radio">
+            <span class="c-teiki-address-select__radio-text">追加住所2</span>
+          </label>
+        </div>
+        <div class="c-teiki-address-select__card-body">
+          <p class="c-teiki-address-select__name">日本 花子 様</p>
+          <p class="c-teiki-address-select__detail">〒530-0001 大阪府 大阪市北区梅田1丁目2-3</p>
+          <p class="c-teiki-address-select__tel">06-0000-0000</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="c-shipping-main__add-address-wrap">
+      <button type="button" class="c-teiki-address-select__new-btn">お届け先を追加</button>
+    </div>
+  </section>
+
+  <!-- ご注文商品 -->
+  <div class="c-shipping-main__products">
+    <ul class="c-cart-main__items">
+      <li class="c-cart-main__item">
+        <div class="c-cart-main__item-product">
+          <div class="c-cart-main__item-img-area">
+            <div class="c-cart-main__item-img-wrap">
+              <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
+            </div>
+          </div>
+          <div class="c-cart-main__item-detail">
+            <p class="c-cart-main__item-name">アキュビュー オアシス（1箱）</p>
+            <p class="c-shipping-main__products-qty">数量：1</p>
+          </div>
+        </div>
+      </li>
+      <li class="c-cart-main__item">
+        <div class="c-cart-main__item-product">
+          <div class="c-cart-main__item-img-area">
+            <div class="c-cart-main__item-img-wrap">
+              <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス" class="c-cart-main__item-img" width="120" height="80">
+            </div>
+          </div>
+          <div class="c-cart-main__item-detail">
+            <p class="c-cart-main__item-name">アキュビュー オアシス（1箱）</p>
+            <p class="c-shipping-main__products-qty">数量：1</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 配送オプション -->
+  <section class="c-shipping-main__section" aria-label="配送オプション">
+    <div class="c-shipping-main__section-header">
+      <h2 class="c-shipping-main__section-title">配送オプション</h2>
+    </div>
+    <div class="c-shipping-main__rows">
+
+      <!-- 配送方法 -->
+      <div class="c-shipping-main__row">
+        <label class="c-shipping-main__row-label" for="deliveryMethod">配送方法</label>
+        <div class="c-shipping-main__row-value">
+          <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--delivery">
+            <select class="c-detail-unit__select" name="deliveryMethod" id="deliveryMethod">
+              <option value="1">ゆうパック</option>
+              <option value="2">メール便</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- 受取方法 -->
+      <div class="c-shipping-main__row">
+        <span class="c-shipping-main__row-label">受取方法</span>
+        <div class="c-shipping-main__row-value">
+          <fieldset class="c-shipping-main__radio-group">
+            <legend class="c-shipping-main__direct-area-title" hidden>受取方法</legend>
+            <label class="c-shipping-main__radio-label">
+              <input type="radio" class="c-shipping-main__radio-input js-receive-type" name="receiveType" value="2" checked>
+              指定しない
+            </label>
+            <label class="c-shipping-main__radio-label">
+              <input type="radio" class="c-shipping-main__radio-input js-receive-type" name="receiveType" value="1">
+              指定場所ダイレクト（置き配）
+            </label>
+          </fieldset>
+
+          <!-- 置き配エリア（置き配選択時のみ表示） -->
+          <div class="c-shipping-main__direct-area js-direct-area" hidden>
+            <fieldset class="c-shipping-main__radio-group">
+              <legend class="c-shipping-main__direct-area-title">置き配指定</legend>
+              <label class="c-shipping-main__radio-label">
+                <input type="radio" class="c-shipping-main__radio-input" name="deliveryDirectType" value="1">
+                宅配BOX
+              </label>
+              <label class="c-shipping-main__radio-label">
+                <input type="radio" class="c-shipping-main__radio-input" name="deliveryDirectType" value="2">
+                管理人預け
+              </label>
+              <label class="c-shipping-main__radio-label">
+                <input type="radio" class="c-shipping-main__radio-input" name="deliveryDirectType" value="3">
+                玄関前鍵付きBOX
+              </label>
+            </fieldset>
+
+            <!-- 置き配注意事項 -->
+            <div class="c-cart-main__agreement-box" role="note">
+              <p class="c-cart-main__agreement-section-title">【指定場所ダイレクト（置き配）に関する注意事項】</p>
+              <p class="c-cart-main__agreement-text">・指定場所ダイレクト（置き配）は、お届け先の玄関前・宅配BOX等、指定いただいた場所に配達する受取方法です。</p>
+              <p class="c-cart-main__agreement-text">・置き配をご利用の場合、配達時に不在でも対応可能ですが、盗難・汚損等のリスクについてはお客様のご負担となります。</p>
+              <p class="c-cart-main__agreement-text">・置き配はお届け時間帯の指定ができません。</p>
+              <p class="c-cart-main__agreement-text">・置き配をご選択の場合、代金引換はご利用いただけません。</p>
+              <label class="c-cart-main__agreement-check">
+                <input type="checkbox" class="c-cart-main__agreement-check-input" name="deliveryDirectTypeAgreeFlg" value="1">
+                <span class="c-cart-main__agreement-check-label">上記に同意する</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- お届け予定 -->
+  <section class="c-shipping-main__section" aria-label="お届け予定">
+    <div class="c-shipping-main__section-header">
+      <h2 class="c-shipping-main__section-title">お届け予定</h2>
+    </div>
+    <div class="c-shipping-main__rows">
+
+      <!-- お届け日指定 -->
+      <div class="c-shipping-main__row">
+        <span class="c-shipping-main__row-label">お届け日</span>
+        <div class="c-shipping-main__row-value">
+          <fieldset class="c-shipping-main__radio-group">
+            <legend hidden>お届け日指定</legend>
+            <label class="c-shipping-main__radio-label">
+              <input type="radio" class="c-shipping-main__radio-input js-delivery-date-type" name="deliveryDateType" value="0" checked>
+              指定しない
+            </label>
+            <label class="c-shipping-main__radio-label">
+              <input type="radio" class="c-shipping-main__radio-input js-delivery-date-type" name="deliveryDateType" value="1">
+              指定する
+            </label>
+          </fieldset>
+
+          <!-- お届け日設定エリア（指定する選択時のみ表示） -->
+          <div class="c-shipping-main__direct-area js-delivery-date-area" hidden>
+            <p class="c-shipping-main__direct-area-title">お届け日</p>
+            <input type="date" class="c-shipping-main__date-input js-delivery-date-input" name="deliveryDate">
+          </div>
+        </div>
+      </div>
+
+      <!-- お届け予定時間帯 -->
+      <div class="c-shipping-main__row js-timezone-row">
+        <span class="c-shipping-main__row-label">お届け予定時間帯</span>
+        <div class="c-shipping-main__row-value">
+          <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--time">
+            <select class="c-detail-unit__select" name="deliveryAppointedTimeZone">
+              <option value="0">指定なし</option>
+              <option value="1">午前中（8:00〜12:00）</option>
+              <option value="2">14:00〜16:00</option>
+              <option value="3">16:00〜18:00</option>
+              <option value="4">18:00〜20:00</option>
+              <option value="5">19:00〜21:00</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 下部ボタン -->
+  <div class="c-shipping-main__actions">
+    <a href="#" class="c-shipping-main__btn--next">お支払い方法選択へ</a>
+
+    <!-- ステップインジケータ（下部） -->
+    <nav class="c-step-nav" aria-label="購入フロー">
+      <ol class="c-step-nav__list">
+        <li class="c-step-nav__item">
+          <span class="c-step-nav__circle">1</span>
+          <span class="c-step-nav__label">カート</span>
+        </li>
+        <li class="c-step-nav__item c-step-nav__item--active">
+          <span class="c-step-nav__circle">2</span>
+          <span class="c-step-nav__label">お届け先・<br>ラッピング設定</span>
+        </li>
+        <li class="c-step-nav__item">
+          <span class="c-step-nav__circle">3</span>
+          <span class="c-step-nav__label">お支払い方法<br>選択</span>
+        </li>
+        <li class="c-step-nav__item">
+          <span class="c-step-nav__circle">4</span>
+          <span class="c-step-nav__label">注文内容確認</span>
+        </li>
+        <li class="c-step-nav__item">
+          <span class="c-step-nav__circle">5</span>
+          <span class="c-step-nav__label">注文完了</span>
+        </li>
+      </ol>
+    </nav>
+
+    <a href="#" class="c-shipping-main__btn--back">前へ戻る</a>
+  </div>
+
+</section>

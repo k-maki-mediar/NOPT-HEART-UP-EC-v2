@@ -1,0 +1,843 @@
+// ========================================
+// Payment Main（支払方法選択）
+// 格納先HTML: workbench/includes/parts/main/order/paymentMain.html
+// BEM: .c-payment-main / .c-payment-modal
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// 全体ラッパー（cartMain と同構造）
+// ========================================
+
+.c-payment-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 0 rem(48);
+
+  @include pc {
+    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// セクション
+// ========================================
+
+.c-payment-main__section {
+  margin-top: rem(24);
+}
+
+// ----------------------------------------
+// セクションヘッダー帯（cartMain と同スタイル）
+// ----------------------------------------
+
+.c-payment-main__section-header {
+  padding: rem(11) rem(12);
+  background-color: $bg-banner;
+}
+
+.c-payment-main__section-title {
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  margin: 0;
+}
+
+// ========================================
+// お支払い金額テーブル
+// ========================================
+
+.c-payment-main__amount-box {
+  border: rem(3) solid $bg-banner;
+  margin-top: rem(16);
+}
+
+.c-payment-main__amount-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.c-payment-main__amount-row {
+  border-bottom: 1px solid $border-color;
+}
+
+.c-payment-main__amount-label,
+.c-payment-main__amount-value {
+  padding: rem(8) rem(12);
+  font-size: rem(14);
+  line-height: 1.5;
+  color: $text-color;
+  vertical-align: middle;
+}
+
+.c-payment-main__amount-value {
+  text-align: right;
+  white-space: nowrap;
+}
+
+// 合計行（太字）
+.c-payment-main__amount-row--total {
+  .c-payment-main__amount-label,
+  .c-payment-main__amount-value {
+    font-weight: $font-weight-bold;
+  }
+}
+
+// お支払い合計（赤・太字）
+.c-payment-main__amount-row--payment {
+  background-color: $bg-light;
+
+  .c-payment-main__amount-label,
+  .c-payment-main__amount-value {
+    font-weight: $font-weight-bold;
+    color: $price-color;
+  }
+
+  .c-payment-main__amount-value {
+    font-size: rem(18);
+  }
+}
+
+// 消費税行
+.c-payment-main__amount-row--tax {
+  .c-payment-main__amount-label,
+  .c-payment-main__amount-value {
+    font-size: rem(12);
+    color: $text-light;
+  }
+}
+
+// 条件付き表示行（8%対象商品があるときのみJS表示）
+.c-payment-main__amount-row--hidden {
+  display: none;
+}
+
+// ※注記テキスト
+.c-payment-main__note {
+  font-size: rem(12);
+  color: $text-light;
+  line-height: 1.6;
+  margin: rem(8) 0 0;
+  padding: 0 rem(12) rem(12);
+}
+
+// ========================================
+// お支払い方法セクション
+// ========================================
+
+.c-payment-main__method-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// ----------------------------------------
+// 各支払方法のラジオ行
+// ----------------------------------------
+
+.c-payment-main__method-item {
+  border-bottom: 1px dashed rgba($text-color, 0.3);
+}
+
+.c-payment-main__method-row {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  padding: rem(14) rem(12);
+  cursor: pointer;
+  min-height: rem(48);
+}
+
+.c-payment-main__method-radio {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: $primary-color;
+}
+
+.c-payment-main__method-label {
+  font-size: rem(16);
+  color: $text-color;
+  line-height: 1.75;
+  cursor: pointer;
+}
+
+.c-payment-main__method-limit {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.c-payment-main__method-sub {
+  padding: 0 rem(12) rem(14) rem(40);
+}
+
+.c-payment-main__card-brand-img {
+  height: rem(20);
+  width: auto;
+  margin-left: rem(12);
+}
+
+.c-payment-main__paypay-logo {
+  height: rem(28);
+  width: auto;
+  margin-left: rem(12);
+}
+
+// ----------------------------------------
+// 詳細展開エリア（ラジオ選択時に表示）
+// ----------------------------------------
+
+.c-payment-main__method-detail {
+  padding: rem(16) rem(12) rem(20) rem(40);
+}
+
+// ========================================
+// クレジットカード入力フォーム（Figma準拠）
+// ========================================
+
+// ========================================
+// 登録済みクレジットカード一覧
+// ========================================
+
+.c-payment-main__registered-cards {
+  margin-bottom: rem(16);
+
+  .c-payment-main__form-field-header {
+    display: flex;
+    align-items: center;
+    padding: rem(10) rem(16);
+
+    .c-payment-main__form-field-title {
+      &:first-child {
+        flex: 1;
+      }
+
+      &:last-child {
+        margin-right: rem(42);
+      }
+    }
+  }
+}
+
+.c-payment-main__card-row {
+  display: flex;
+  flex-direction: column;
+  padding: rem(12) rem(16);
+  border: 1px solid $border-color-dark;
+  border-top: none;
+}
+
+.c-payment-main__card-row--selected {
+  background-color: transparent;
+}
+
+.c-payment-main__card-row-main {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  cursor: pointer;
+  min-height: rem(44);
+}
+
+.c-payment-main__card-number {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  flex: 1;
+}
+
+.c-payment-main__card-expiry {
+  font-size: rem(14);
+  color: $text-color;
+  min-width: rem(50);
+  text-align: center;
+}
+
+.c-payment-main__card-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(50);
+  min-height: rem(32);
+  padding: 0 rem(10);
+  border: none;
+  border-radius: rem(8);
+  background-color: $border-color-dark;
+  font-family: $font-family-base;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.c-payment-main__card-main-check {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  margin-top: rem(8);
+  margin-left: rem(32);
+  padding: rem(8) rem(12);
+  background-color: $bg-light;
+  font-size: rem(12);
+  color: $primary-color;
+  cursor: pointer;
+}
+
+.c-payment-main__card-notice {
+  background-color: $bg-light;
+  padding: rem(16);
+  margin: rem(16) 0;
+}
+
+.c-payment-main__card-notice-title {
+  font-size: rem(12);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  line-height: 1.75;
+  margin: 0 0 rem(4);
+}
+
+.c-payment-main__card-notice-text {
+  font-size: rem(12);
+  color: $primary-color;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.c-payment-main__card-register-wrap {
+  padding: rem(16);
+  display: flex;
+  justify-content: center;
+}
+
+.c-payment-main__card-register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(200);
+  min-height: rem(44);
+  padding: 0 rem(24);
+  border: 1px solid $primary-color;
+  border-radius: rem(22);
+  background-color: $primary-color;
+  box-shadow: 0 rem(2) 0 $primary-shadow;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 rem(1) 0 $primary-shadow;
+  }
+}
+
+.c-payment-main__credit-label {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  margin: 0 0 rem(16);
+}
+
+.c-payment-main__credit-detail-box {
+  background-color: $color-white;
+  border: 1px solid $border-color;
+  padding: rem(16);
+  margin-bottom: rem(16);
+}
+
+.c-payment-main__form-field {
+  margin-bottom: rem(0);
+}
+
+.c-payment-main__form-field--outer {
+  margin-bottom: rem(16);
+}
+
+.c-payment-main__form-field-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(10) rem(16);
+  background-color: $bg-gray;
+  border: 1px solid $border-color-dark;
+  margin-top: -1px;
+}
+
+.c-payment-main__form-field:first-child .c-payment-main__form-field-header {
+  margin-top: 0;
+}
+
+.c-payment-main__form-field-title {
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+}
+
+.c-payment-main__form-field-body {
+  padding: rem(16);
+  border: 1px solid $border-color-dark;
+  border-top: none;
+}
+
+.c-payment-main__form-required {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(2) rem(6);
+  font-size: rem(10);
+  color: $color-white;
+  background-color: $accent-red;
+  border-radius: rem(23);
+  font-weight: $font-weight-medium;
+  vertical-align: middle;
+}
+
+.c-payment-main__form-input {
+  display: block;
+  width: 100%;
+  height: rem(32);
+  padding: 0 rem(12);
+  border: 1px solid $border-color-dark;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  color: $text-color;
+  background-color: $color-white;
+
+  &:focus-visible {
+    outline: none;
+    border-color: $primary-color;
+  }
+}
+
+.c-payment-main__form-input--short {
+  max-width: rem(100);
+}
+
+.c-payment-main__form-select {
+  display: inline-block;
+  height: rem(32);
+  padding: 0 rem(28) 0 rem(10);
+  border: 1px solid $border-color-dark;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  background-color: $color-white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='7' viewBox='0 0 7 7'%3E%3Cpath d='M0 0l3.5 3.5L7 0' stroke='%2300387d' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right rem(8) center;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: none;
+    border-color: $primary-color;
+  }
+}
+
+// 有効期限（月/年を横並び）
+.c-payment-main__expiry-row {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+}
+
+.c-payment-main__expiry-sep {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+}
+
+// ========================================
+// コンビニ後払い詳細テキスト
+// ========================================
+
+.c-payment-main__required-note {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  font-size: rem(14);
+  color: $text-color;
+  margin: rem(16) 0;
+  padding: rem(10) rem(16);
+  background-color: $bg-light;
+}
+
+.c-payment-main__installment-note {
+  font-size: rem(12);
+  color: $accent-red;
+  margin: 0 0 rem(12);
+  line-height: 1.75;
+}
+
+.c-payment-main__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  font-size: rem(14);
+  color: $text-color;
+  cursor: pointer;
+  min-height: rem(44);
+}
+
+.c-payment-main__checkbox-label--register {
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
+}
+
+.c-payment-main__checkbox-input {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: $primary-color;
+}
+
+.c-payment-main__convenience-box {
+  padding: rem(16);
+  border: 1px solid $border-color;
+  background-color: $color-white;
+  margin: rem(8) 0 rem(16) rem(40);
+}
+
+.c-payment-main__convenience-detail {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0 0 rem(4);
+}
+
+.c-payment-main__convenience-list {
+  margin: rem(8) 0 0;
+  padding-left: rem(20);
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+}
+
+.c-payment-main__convenience-list__item {
+  margin-bottom: rem(2);
+}
+
+.c-payment-main__convenience-link {
+  color: $link-blue;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// ========================================
+// フッターボタンエリア
+// ========================================
+
+.c-payment-main__actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: rem(12);
+  padding: rem(24) rem(12) rem(8);
+  margin-top: rem(8);
+
+  @include tablet-up {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(24) 0 rem(8);
+  }
+}
+
+.c-payment-main__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(48);
+  padding: rem(8) rem(32);
+  border-radius: rem(4);
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-family: $font-family-base;
+
+  @include sp {
+    width: 100%;
+  }
+
+  @include tablet-up {
+    min-width: rem(200);
+  }
+}
+
+// 前へ戻る（グレー系）
+.c-payment-main__btn--back {
+  background-color: $bg-gray;
+  border-color: $border-color-dark;
+  color: $text-color;
+
+  &:hover {
+    background-color: $border-color;
+  }
+}
+
+// 注文内容確認へ（オレンジ赤系）
+.c-payment-main__btn--confirm {
+  background-color: $accent-red;
+  border-color: $accent-red;
+  color: $color-white;
+  box-shadow: 0 rem(3) 0 $accent-red-dark;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(3));
+    box-shadow: 0 0 0 $accent-red-dark;
+  }
+}
+
+// ========================================
+// クレジットカード削除確認モーダル
+// ========================================
+
+.c-payment-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: $z-index-modal;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-payment-modal--open {
+  display: flex;
+}
+
+.c-payment-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: $overlay-dark;
+}
+
+.c-payment-modal__dialog {
+  position: relative;
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  padding: rem(32) rem(24) rem(24);
+  min-width: rem(280);
+  max-width: rem(400);
+  width: 90%;
+  box-shadow: $shadow-lg;
+}
+
+.c-payment-modal__text {
+  font-size: rem(16);
+  color: $text-color;
+  text-align: center;
+  margin: 0 0 rem(24);
+  line-height: 1.6;
+}
+
+.c-payment-modal__actions {
+  display: flex;
+  gap: rem(12);
+  justify-content: center;
+}
+
+.c-payment-modal__btn--ok {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(100);
+  min-height: rem(44);
+  background-color: $accent-red;
+  color: $color-white;
+  border: none;
+  border-radius: $border-radius-sm;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  font-family: $font-family-base;
+}
+
+.c-payment-modal__btn--cancel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(100);
+  min-height: rem(44);
+  background-color: $color-white;
+  color: $text-color;
+  border: 1px solid $border-color-dark;
+  border-radius: $border-radius-sm;
+  font-size: rem(14);
+  cursor: pointer;
+  font-family: $font-family-base;
+}
+
+// ========================================
+// クーポンセクション
+// ========================================
+
+.c-payment-main__coupon-code-box {
+  border: rem(2) solid $bg-banner;
+  padding: rem(16);
+  margin-top: rem(16);
+  margin-bottom: rem(16);
+
+  .c-shipping-main__row-label {
+    margin-bottom: rem(12);
+  }
+}
+
+.c-payment-main__coupon-link {
+  display: inline-block;
+  font-size: rem(14);
+  color: $link-blue;
+  text-decoration: underline;
+  margin-top: rem(16);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.c-payment-main__external-icon {
+  vertical-align: text-top;
+  margin-left: rem(4);
+  margin-right: rem(4);
+}
+
+.c-payment-main__coupon-input-row {
+  display: flex;
+  gap: rem(8);
+  align-items: center;
+}
+
+.c-payment-main__coupon-input {
+  flex: 1;
+  min-height: rem(44);
+  padding: rem(10) rem(16);
+  border: 1px solid $border-color-dark;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  color: $text-color;
+}
+
+.c-payment-main__coupon-issue-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(80);
+  min-height: rem(44);
+  padding: 0 rem(16);
+  border: none;
+  border-radius: rem(8);
+  background-color: $primary-color;
+  box-shadow: 0 rem(3) 0 $primary-shadow;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 rem(1) 0 $primary-shadow;
+  }
+}
+
+.c-payment-main__coupon-note {
+  font-size: rem(10);
+  color: $accent-red;
+  margin: rem(8) 0 0;
+}
+
+.c-payment-main__coupon-guide {
+  font-size: rem(12);
+  color: $primary-color;
+  line-height: 1.75;
+  margin: 0 0 rem(16);
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
+}
+
+.c-payment-main__coupon-card {
+  border: 1px solid $border-color;
+  padding: rem(16);
+  margin-bottom: rem(16);
+
+  &--selected {
+    border-color: $primary-color;
+  }
+
+  &--disabled {
+    background-color: $border-color;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.c-payment-main__coupon-card-title {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.75;
+  margin: 0 0 rem(16);
+}
+
+.c-payment-main__coupon-card-desc {
+  font-size: rem(12);
+  color: $text-light;
+  line-height: 1.75;
+  margin: 0 0 rem(20);
+}
+
+.c-payment-main__coupon-select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: rem(200);
+  min-height: rem(44);
+  margin: 0 auto;
+  border: 1px solid $primary-color;
+  border-radius: rem(22);
+  background-color: $color-white;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  cursor: pointer;
+  box-shadow: 0 rem(2) 0 $primary-color;
+
+  &:hover {
+    box-shadow: 0 rem(1) 0 $primary-color;
+  }
+
+  &--selected {
+    background-color: $primary-color;
+    color: $color-white;
+  }
+}
+
+.c-payment-main__coupon-caution {
+  font-size: rem(12);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0;
+}

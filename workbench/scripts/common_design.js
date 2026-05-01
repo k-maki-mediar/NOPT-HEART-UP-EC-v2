@@ -1765,3 +1765,218 @@ $(function () {
     initFontSizeSwitcher();
   }
 })();
+
+/* ========================================
+ * 配送先住所ラジオ選択（c-teiki-address-select）
+ * ページ内（モーダル外）のラジオ切替で枠色を変更
+ * ======================================== */
+(function () {
+  function initShippingAddressRadio() {
+    const containers = document.querySelectorAll('.c-shipping-main .c-teiki-address-select');
+    for (let i = 0; i < containers.length; i++) {
+      const radios = containers[i].querySelectorAll('.c-teiki-address-select__radio');
+      for (let r = 0; r < radios.length; r++) {
+        radios[r].addEventListener('change', function () {
+          const parent = this.closest('.c-teiki-address-select').parentElement.closest('.c-teiki-amount__body') || this.closest('.c-shipping-main');
+          const allCards = parent.querySelectorAll('.c-teiki-address-select__card');
+          for (let c = 0; c < allCards.length; c++) {
+            allCards[c].classList.remove('c-teiki-address-select__card--selected');
+          }
+          const card = this.closest('.c-teiki-address-select__card');
+          if (card) {
+            card.classList.add('c-teiki-address-select__card--selected');
+          }
+        });
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initShippingAddressRadio);
+  } else {
+    initShippingAddressRadio();
+  }
+})();
+
+/* ========================================
+ * 置き配エリア表示切替（配送先選択）
+ * ======================================== */
+(function () {
+  function initDirectAreaToggle() {
+    const radios = document.querySelectorAll('.js-receive-type');
+    const directArea = document.querySelector('.js-direct-area');
+    if (!radios.length || !directArea) return;
+
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function () {
+        if (this.value === '1') {
+          directArea.removeAttribute('hidden');
+        } else {
+          directArea.setAttribute('hidden', '');
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDirectAreaToggle);
+  } else {
+    initDirectAreaToggle();
+  }
+})();
+
+/* ========================================
+ * お届け日指定エリア表示切替（配送先選択）
+ * ======================================== */
+(function () {
+  function initDeliveryDateToggle() {
+    const radios = document.querySelectorAll('.js-delivery-date-type');
+    const dateArea = document.querySelector('.js-delivery-date-area');
+    const dateInput = document.querySelector('.js-delivery-date-input');
+    if (!radios.length || !dateArea) return;
+
+    // 最短お届け日を算出（今日から3日後）
+    if (dateInput) {
+      const today = new Date();
+      const earliest = new Date(today);
+      earliest.setDate(today.getDate() + 3);
+      const yyyy = earliest.getFullYear();
+      const mm = String(earliest.getMonth() + 1).padStart(2, '0');
+      const dd = String(earliest.getDate()).padStart(2, '0');
+      const minDate = yyyy + '-' + mm + '-' + dd;
+      dateInput.min = minDate;
+      dateInput.value = minDate;
+    }
+
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function () {
+        if (this.value === '1') {
+          dateArea.removeAttribute('hidden');
+        } else {
+          dateArea.setAttribute('hidden', '');
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDeliveryDateToggle);
+  } else {
+    initDeliveryDateToggle();
+  }
+})();
+
+/* ========================================
+ * 定期購入：日付指定/週・曜日指定 切替（配送先選択）
+ * ======================================== */
+(function () {
+  function initRegularDateTypeToggle() {
+    const radios = document.querySelectorAll('.js-regular-date-type');
+    const dateArea = document.querySelector('.js-regular-date-area');
+    const weekArea = document.querySelector('.js-regular-week-area');
+    if (!radios.length || !dateArea || !weekArea) return;
+
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function () {
+        if (this.value === '1') {
+          dateArea.removeAttribute('hidden');
+          weekArea.setAttribute('hidden', '');
+        } else {
+          dateArea.setAttribute('hidden', '');
+          weekArea.removeAttribute('hidden');
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRegularDateTypeToggle);
+  } else {
+    initRegularDateTypeToggle();
+  }
+})();
+
+/* ========================================
+ * 定期購入：コンタクト配送時間帯→ケア用品に連動
+ * ======================================== */
+(function () {
+  function initTimezoneSync() {
+    const contactSelect = document.querySelector('.js-regular-timezone-contact');
+    const careText = document.querySelector('.js-regular-timezone-care-text');
+    if (!contactSelect || !careText) return;
+
+    contactSelect.addEventListener('change', function () {
+      careText.textContent = this.options[this.selectedIndex].text;
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTimezoneSync);
+  } else {
+    initTimezoneSync();
+  }
+})();
+
+/* ========================================
+ * クーポンコード入力エリア表示切替（支払方法選択）
+ * ======================================== */
+(function () {
+  function initCouponToggle() {
+    const radios = document.querySelectorAll('.js-coupon-type');
+    const codeArea = document.querySelector('.js-coupon-code-area');
+    if (!radios.length || !codeArea) return;
+
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function () {
+        if (this.value === '1') {
+          codeArea.removeAttribute('hidden');
+        } else {
+          codeArea.setAttribute('hidden', '');
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCouponToggle);
+  } else {
+    initCouponToggle();
+  }
+})();
+
+/* ========================================
+ * お支払い方法ラジオ選択→詳細展開（支払方法選択）
+ * ======================================== */
+(function () {
+  function initPaymentMethodToggle() {
+    const radios = document.querySelectorAll('.js-payment-radio');
+    if (!radios.length) return;
+
+    function toggleDetails() {
+      const items = document.querySelectorAll('.c-payment-main__method-item');
+      for (let i = 0; i < items.length; i++) {
+        const radio = items[i].querySelector('.js-payment-radio');
+        const detail = items[i].querySelector('.c-payment-main__method-detail');
+        if (!detail) continue;
+        if (radio && radio.checked) {
+          detail.classList.add('c-payment-main__method-detail--open');
+        } else {
+          detail.classList.remove('c-payment-main__method-detail--open');
+        }
+      }
+    }
+
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', toggleDetails);
+    }
+
+    // 初期表示
+    toggleDetails();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPaymentMethodToggle);
+  } else {
+    initPaymentMethodToggle();
+  }
+})();

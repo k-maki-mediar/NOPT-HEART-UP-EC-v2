@@ -1,9 +1,9 @@
 <section class="c-guest-main" aria-label="お客様情報入力">
 
-  <form action="/api/order/guest/" method="post" novalidate>
+  <form action="" method="post" novalidate>
 
     <!-- ===== 購入者情報部 ===== -->
-    <p class="c-payment-main__required-note"><span class="c-guest-main__required" aria-label="必須">必須</span> は必須入力項目です</p>
+    <p class="c-guest-main__required-note"><span class="c-guest-main__required" aria-label="必須">必須</span> は必須入力項目です</p>
 
     <div class="c-guest-main__form-body">
       <dl class="c-guest-main__form-table">
@@ -39,7 +39,7 @@
             <div class="c-guest-main__postal-group">
               <span class="c-guest-main__postal-mark" aria-hidden="true">〒</span>
               <input type="text" class="c-guest-main__input c-guest-main__input--postal"
-                name="ownerPostalCode" id="ownerPostalCode"
+                name="ownerPostalCode"
                 maxlength="7" inputmode="numeric" placeholder="3306032"
                 aria-label="郵便番号（ハイフンなし7桁）" autocomplete="postal-code">
               <button type="button" class="c-guest-main__btn c-guest-main__btn--search js-postal-search" data-target="owner">
@@ -56,7 +56,7 @@
           </dt>
           <dd class="c-guest-main__field-body">
             <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--prefecture">
-              <select class="c-detail-unit__select" name="ownerPrefecture" id="ownerPrefecture" autocomplete="address-level1">
+              <select class="c-detail-unit__select" name="ownerPrefecture" autocomplete="address-level1" aria-label="都道府県">
                 <option value="">選択してください</option>
                 <option value="01">北海道</option>
                 <option value="02">青森県</option>
@@ -117,8 +117,8 @@
           </dt>
           <dd class="c-guest-main__field-body">
             <input type="text" class="c-guest-main__input c-guest-main__input--address"
-              name="ownerAddress2" id="ownerAddress2"
-              maxlength="15" autocomplete="address-level2" placeholder="例）さいたま市">
+              name="ownerAddress2"
+              maxlength="15" autocomplete="address-level2" placeholder="例）さいたま市" aria-label="市区郡">
           </dd>
         </div>
 
@@ -129,8 +129,8 @@
           </dt>
           <dd class="c-guest-main__field-body">
             <input type="text" class="c-guest-main__input c-guest-main__input--address"
-              name="ownerAddress3" id="ownerAddress3"
-              maxlength="15" autocomplete="address-line1" placeholder="例）中央区新都心11番地2丁目">
+              name="ownerAddress3"
+              maxlength="15" autocomplete="address-line1" placeholder="例）中央区新都心11番地2丁目" aria-label="町名">
           </dd>
         </div>
 
@@ -162,15 +162,15 @@
           <dd class="c-guest-main__field-body">
             <div class="c-guest-main__phone-group" role="group" aria-label="電話番号">
               <input type="text" class="c-guest-main__input c-guest-main__input--phone"
-                name="phoneNumber1" id="phoneNumber1"
+                name="phoneNumber1"
                 maxlength="6" inputmode="numeric" aria-label="電話番号1（市外局番）" autocomplete="tel-local">
               <span class="c-guest-main__phone-sep" aria-hidden="true">-</span>
               <input type="text" class="c-guest-main__input c-guest-main__input--phone"
-                name="phoneNumber2" id="phoneNumber2"
+                name="phoneNumber2"
                 maxlength="6" inputmode="numeric" aria-label="電話番号2（市内局番）">
               <span class="c-guest-main__phone-sep" aria-hidden="true">-</span>
               <input type="text" class="c-guest-main__input c-guest-main__input--phone"
-                name="phoneNumber3" id="phoneNumber3"
+                name="phoneNumber3"
                 maxlength="6" inputmode="numeric" aria-label="電話番号3（番号）">
             </div>
             <p class="c-guest-main__field-note">※自宅電話番号又は携帯電話番号を入力してください。</p>
@@ -185,7 +185,7 @@
           <dd class="c-guest-main__field-body">
             <div class="c-guest-main__birthdate-group" role="group" aria-label="生年月日">
               <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--year">
-                <select class="c-detail-unit__select" name="birthdateYear" id="birthdateYear" aria-label="生年（西暦）">
+                <select class="c-detail-unit__select" name="birthdateYear" aria-label="生年（西暦）">
                   <option value="">年</option>
                   <option value="2006">2006</option>
                   <option value="2005">2005</option>
@@ -236,7 +236,7 @@
               </div>
               <span class="c-guest-main__birthdate-sep" aria-hidden="true">年</span>
               <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--month">
-                <select class="c-detail-unit__select" name="birthdateMonth" id="birthdateMonth" aria-label="月">
+                <select class="c-detail-unit__select" name="birthdateMonth" aria-label="月">
                   <option value="">月</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -254,7 +254,7 @@
               </div>
               <span class="c-guest-main__birthdate-sep" aria-hidden="true">月</span>
               <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--day">
-                <select class="c-detail-unit__select" name="birthdateDate" id="birthdateDate" aria-label="日">
+                <select class="c-detail-unit__select" name="birthdateDate" aria-label="日">
                   <option value="">日</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -324,8 +324,8 @@
           </dt>
           <dd class="c-guest-main__field-body">
             <input type="email" class="c-guest-main__input c-guest-main__input--email"
-              name="ownerEmail" id="ownerEmail"
-              maxlength="70" autocomplete="email" placeholder="例）login@example.com">
+              name="ownerEmail"
+              maxlength="70" autocomplete="email" placeholder="例）login@example.com" aria-label="メールアドレス">
           </dd>
         </div>
 
@@ -335,7 +335,7 @@
           <dd class="c-guest-main__field-body">
             <div class="c-guest-main__confirm-code-group">
               <input type="text" class="c-guest-main__input c-guest-main__input--confirm-code"
-                name="confirmCode" id="confirmCode"
+                name="confirmCode"
                 maxlength="6" inputmode="numeric" aria-label="確認コード（6桁）">
               <button type="button" class="c-guest-main__btn c-guest-main__btn--issue js-issue-confirm-code">
                 確認コードを発行する
@@ -350,7 +350,7 @@
       <!-- 別のお届け先に送る -->
       <label class="c-guest-main__other-address-check">
         <input type="checkbox" class="c-guest-main__other-address-input js-other-address-toggle"
-          name="otherAddress" id="otherAddress" value="true">
+          name="otherAddress" value="true" aria-label="別のお届け先に送る">
         <span class="c-guest-main__other-address-text">別のお届け先に送る</span>
       </label>
 
@@ -443,7 +443,7 @@
               </dt>
               <dd class="c-guest-main__field-body">
                 <input type="text" class="c-guest-main__input c-guest-main__input--address"
-                  name="addressAddress2" maxlength="15" placeholder="例）さいたま市">
+                  name="addressAddress2" maxlength="15" placeholder="例）さいたま市" aria-label="配送先市区郡">
               </dd>
             </div>
 
@@ -454,7 +454,7 @@
               </dt>
               <dd class="c-guest-main__field-body">
                 <input type="text" class="c-guest-main__input c-guest-main__input--address"
-                  name="addressAddress3" maxlength="15" placeholder="例）中央区新都心11番地2丁目">
+                  name="addressAddress3" maxlength="15" placeholder="例）中央区新都心11番地2丁目" aria-label="配送先町名">
               </dd>
             </div>
 
@@ -529,13 +529,13 @@
 
 
     <!-- ===== 下部ボタンエリア ===== -->
-    <label class="c-cart-main__agreement-check">
-      <input type="checkbox" class="c-cart-main__agreement-check-input js-agree-checkbox" name="agree" value="1">
-      <span class="c-cart-main__agreement-check-label">利用規約、個人情報保護方針に同意する</span>
+    <label class="c-guest-main__agree-check">
+      <input type="checkbox" class="c-guest-main__agree-input js-agree-checkbox" name="agree" value="1">
+      <span class="c-guest-main__agree-text">利用規約、個人情報保護方針に同意する</span>
     </label>
 
-    <div class="c-shipping-main__actions">
-      <button type="submit" class="c-shipping-main__btn--next js-guest-submit" disabled>次へ</button>
+    <div class="c-guest-main__actions">
+      <button type="submit" class="c-guest-main__btn c-guest-main__btn--next js-guest-submit" disabled>次へ</button>
 
       <!-- ステップインジケータ（下部） -->
       <nav class="c-step-nav" aria-label="購入フロー">
@@ -567,7 +567,7 @@
         </ol>
       </nav>
 
-      <a href="#" class="c-shipping-main__btn--back">前へ戻る</a>
+      <a href="#" class="c-guest-main__btn c-guest-main__btn--back">前へ戻る</a>
     </div>
 
   </form>

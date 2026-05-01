@@ -11059,6 +11059,16 @@
   line-height: 1.5;
 }
 
+.c-guest-main__required-note {
+  font-size: 0.875rem;
+  color: #333;
+  margin: 0 0 1rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
 .c-guest-main__required {
   display: inline-flex;
   align-items: center;
@@ -11378,7 +11388,7 @@
 }
 
 @media (max-width: 767px) {
-  .c-guest-main .c-shipping-main__actions .c-step-nav {
+  .c-guest-main__actions .c-step-nav {
     margin-left: -2rem;
     margin-right: -2rem;
     padding: 0 1rem;

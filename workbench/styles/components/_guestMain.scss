@@ -101,6 +101,16 @@
 // 必須バッジ
 // ========================================
 
+.c-guest-main__required-note {
+  font-size: rem(14);
+  color: $text-color;
+  margin: 0 0 rem(16);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: rem(6);
+}
+
 .c-guest-main__required {
   display: inline-flex;
   align-items: center;
@@ -135,7 +145,7 @@
   font-family: inherit;
 
   &::placeholder {
-    color: rgba(#333, 0.3);
+    color: rgba($text-color, 0.3);
   }
 
   &:focus {
@@ -478,7 +488,7 @@
 // 下部ステップインジケータ（SPで親パディング分を相殺）
 // ========================================
 
-.c-guest-main .c-shipping-main__actions .c-step-nav {
+.c-guest-main__actions .c-step-nav {
   @include sp {
     margin-left: calc(rem(-16) - rem(16));
     margin-right: calc(rem(-16) - rem(16));

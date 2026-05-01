@@ -14,13 +14,8 @@
             氏名<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <div class="c-guest-main__input-group">
-              <input type="text" class="c-guest-main__input" name="ownerLastName" id="ownerLastName"
-                maxlength="20" placeholder="例）山田　太郎" aria-label="氏名（姓）" autocomplete="family-name">
-              <input type="text" class="c-guest-main__input" name="ownerFirstName" id="ownerFirstName"
-                maxlength="20" aria-label="氏名（名）" autocomplete="given-name">
-            </div>
-            <p class="c-guest-main__field-note">姓と名の間に全角スペースを入力してください</p>
+            <input type="text" class="c-guest-main__input" name="ownerName"
+              maxlength="40" placeholder="例）山田　太郎" aria-label="氏名" autocomplete="name">
           </dd>
         </div>
 
@@ -30,12 +25,8 @@
             フリガナ<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <div class="c-guest-main__input-group">
-              <input type="text" class="c-guest-main__input" name="ownerLastNameKana" id="ownerLastNameKana"
-                maxlength="21" placeholder="例）ヤマダ　タロウ" aria-label="フリガナ（姓）" autocomplete="family-name">
-              <input type="text" class="c-guest-main__input" name="ownerFirstNameKana" id="ownerFirstNameKana"
-                maxlength="21" aria-label="フリガナ（名）" autocomplete="given-name">
-            </div>
+            <input type="text" class="c-guest-main__input" name="ownerNameKana"
+              maxlength="42" placeholder="例）ヤマダ　タロウ" aria-label="氏名カナ">
           </dd>
         </div>
 
@@ -49,13 +40,12 @@
               <span class="c-guest-main__postal-mark" aria-hidden="true">〒</span>
               <input type="text" class="c-guest-main__input c-guest-main__input--postal"
                 name="ownerPostalCode" id="ownerPostalCode"
-                maxlength="7" inputmode="numeric" placeholder="例）3306032"
+                maxlength="7" inputmode="numeric" placeholder="3306032"
                 aria-label="郵便番号（ハイフンなし7桁）" autocomplete="postal-code">
               <button type="button" class="c-guest-main__btn c-guest-main__btn--search js-postal-search" data-target="owner">
                 検索
               </button>
             </div>
-            <p class="c-guest-main__field-note">ハイフンなしで入力してください（例：1234567）</p>
           </dd>
         </div>
 
@@ -163,7 +153,6 @@
             <input type="text" class="c-guest-main__input c-guest-main__input--address"
               name="ownerAddress4" id="ownerAddress4"
               maxlength="15" autocomplete="address-line3" placeholder="例）ランド・アクシス・タワー（明治安田生命さいたま新都心ビル）32階">
-            <p class="c-guest-main__field-note">例）ランド・アクシス・タワー（明治安田生命さいたま新都心ビル）32階</p>
           </dd>
         </div>
 
@@ -395,28 +384,19 @@
                 氏名<span class="c-guest-main__required" aria-label="必須">必須</span>
               </dt>
               <dd class="c-guest-main__field-body">
-                <div class="c-guest-main__input-group">
-                  <input type="text" class="c-guest-main__input" name="addressLastName" id="addressLastName"
-                    maxlength="20" placeholder="姓" aria-label="配送先氏名（姓）">
-                  <input type="text" class="c-guest-main__input" name="addressFirstName" id="addressFirstName"
-                    maxlength="20" placeholder="名" aria-label="配送先氏名（名）">
-                </div>
-                <p class="c-guest-main__field-note">姓と名の間に全角スペースを入力してください</p>
+                <input type="text" class="c-guest-main__input" name="addressName"
+                  maxlength="40" placeholder="例）山田　太郎" aria-label="配送先氏名">
               </dd>
             </div>
 
-            <!-- フリガナ（配送先） -->
+            <!-- 氏名カナ（配送先） -->
             <div class="c-guest-main__field">
               <dt class="c-guest-main__field-label">
-                フリガナ<span class="c-guest-main__required" aria-label="必須">必須</span>
+                氏名カナ<span class="c-guest-main__required" aria-label="必須">必須</span>
               </dt>
               <dd class="c-guest-main__field-body">
-                <div class="c-guest-main__input-group">
-                  <input type="text" class="c-guest-main__input" name="addressLastNameKana" id="addressLastNameKana"
-                    maxlength="21" placeholder="セイ" aria-label="配送先フリガナ（姓）">
-                  <input type="text" class="c-guest-main__input" name="addressFirstNameKana" id="addressFirstNameKana"
-                    maxlength="21" placeholder="メイ" aria-label="配送先フリガナ（名）">
-                </div>
+                <input type="text" class="c-guest-main__input" name="addressNameKana"
+                  maxlength="42" placeholder="例）ヤマダ　タロウ" aria-label="配送先氏名カナ">
               </dd>
             </div>
 
@@ -430,13 +410,13 @@
                   <span class="c-guest-main__postal-mark" aria-hidden="true">〒</span>
                   <input type="text" class="c-guest-main__input c-guest-main__input--postal"
                     name="addressPostalCode" id="addressPostalCode"
-                    maxlength="7" inputmode="numeric" placeholder="例）3306032"
+                    maxlength="7" inputmode="numeric" placeholder="3306032"
                     aria-label="配送先郵便番号（ハイフンなし7桁）">
                   <button type="button" class="c-guest-main__btn c-guest-main__btn--search js-postal-search" data-target="address">
                     検索
                   </button>
                 </div>
-                <p class="c-guest-main__field-note">ハイフンなしで入力してください（例：1234567）</p>
+                <p class="c-guest-main__field-note">例）3306032</p>
               </dd>
             </div>
 
@@ -509,7 +489,7 @@
               <dd class="c-guest-main__field-body">
                 <input type="text" class="c-guest-main__input c-guest-main__input--address"
                   name="addressAddress2" id="addressAddress2"
-                  maxlength="15">
+                  maxlength="15" placeholder="例）さいたま市">
               </dd>
             </div>
 
@@ -521,19 +501,19 @@
               <dd class="c-guest-main__field-body">
                 <input type="text" class="c-guest-main__input c-guest-main__input--address"
                   name="addressAddress3" id="addressAddress3"
-                  maxlength="15">
+                  maxlength="15" placeholder="例）中央区新都心11番地2丁目">
               </dd>
             </div>
 
-            <!-- 番地・建物名（配送先） -->
+            <!-- 番地・ビル名（配送先） -->
             <div class="c-guest-main__field">
               <dt class="c-guest-main__field-label">
-                番地・建物名<span class="c-guest-main__required" aria-label="必須">必須</span>
+                番地・ビル名<span class="c-guest-main__required" aria-label="必須">必須</span>
               </dt>
               <dd class="c-guest-main__field-body">
                 <input type="text" class="c-guest-main__input c-guest-main__input--address"
                   name="addressBanchi" id="addressBanchi"
-                  maxlength="15">
+                  maxlength="15" placeholder="例）中央区新都心11番地2丁目">
               </dd>
             </div>
 
@@ -543,7 +523,7 @@
               <dd class="c-guest-main__field-body">
                 <input type="text" class="c-guest-main__input c-guest-main__input--address"
                   name="addressAddress4" id="addressAddress4"
-                  maxlength="15">
+                  maxlength="15" placeholder="例）ランド・アクシス・タワー（明治安田生命さいたま新都心ビル）32階">
               </dd>
             </div>
 

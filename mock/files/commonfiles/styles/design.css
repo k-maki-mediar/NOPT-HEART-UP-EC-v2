@@ -10975,7 +10975,7 @@
 .c-guest-main {
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 0 1rem 3rem;
+  padding: 0 0 3rem;
 }
 @media (min-width: 992px) {
   .c-guest-main {

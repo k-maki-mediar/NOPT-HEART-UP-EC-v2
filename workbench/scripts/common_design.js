@@ -1749,17 +1749,17 @@ $(function () {
  * ======================================== */
 (function () {
   function initShippingAddressRadio() {
-    var containers = document.querySelectorAll('.c-shipping-main .c-teiki-address-select');
-    for (var i = 0; i < containers.length; i++) {
-      var radios = containers[i].querySelectorAll('.c-teiki-address-select__radio');
-      for (var r = 0; r < radios.length; r++) {
+    const containers = document.querySelectorAll('.c-shipping-main .c-teiki-address-select');
+    for (let i = 0; i < containers.length; i++) {
+      const radios = containers[i].querySelectorAll('.c-teiki-address-select__radio');
+      for (let r = 0; r < radios.length; r++) {
         radios[r].addEventListener('change', function () {
-          var parent = this.closest('.c-teiki-address-select').parentElement.closest('.c-teiki-amount__body') || this.closest('.c-shipping-main');
-          var allCards = parent.querySelectorAll('.c-teiki-address-select__card');
-          for (var c = 0; c < allCards.length; c++) {
+          const parent = this.closest('.c-teiki-address-select').parentElement.closest('.c-teiki-amount__body') || this.closest('.c-shipping-main');
+          const allCards = parent.querySelectorAll('.c-teiki-address-select__card');
+          for (let c = 0; c < allCards.length; c++) {
             allCards[c].classList.remove('c-teiki-address-select__card--selected');
           }
-          var card = this.closest('.c-teiki-address-select__card');
+          const card = this.closest('.c-teiki-address-select__card');
           if (card) {
             card.classList.add('c-teiki-address-select__card--selected');
           }
@@ -1780,11 +1780,11 @@ $(function () {
  * ======================================== */
 (function () {
   function initDirectAreaToggle() {
-    var radios = document.querySelectorAll('.js-receive-type');
-    var directArea = document.querySelector('.js-direct-area');
+    const radios = document.querySelectorAll('.js-receive-type');
+    const directArea = document.querySelector('.js-direct-area');
     if (!radios.length || !directArea) return;
 
-    for (var i = 0; i < radios.length; i++) {
+    for (let i = 0; i < radios.length; i++) {
       radios[i].addEventListener('change', function () {
         if (this.value === '1') {
           directArea.removeAttribute('hidden');
@@ -1807,25 +1807,25 @@ $(function () {
  * ======================================== */
 (function () {
   function initDeliveryDateToggle() {
-    var radios = document.querySelectorAll('.js-delivery-date-type');
-    var dateArea = document.querySelector('.js-delivery-date-area');
-    var dateInput = document.querySelector('.js-delivery-date-input');
+    const radios = document.querySelectorAll('.js-delivery-date-type');
+    const dateArea = document.querySelector('.js-delivery-date-area');
+    const dateInput = document.querySelector('.js-delivery-date-input');
     if (!radios.length || !dateArea) return;
 
     // 最短お届け日を算出（今日から3日後）
     if (dateInput) {
-      var today = new Date();
-      var earliest = new Date(today);
+      const today = new Date();
+      const earliest = new Date(today);
       earliest.setDate(today.getDate() + 3);
-      var yyyy = earliest.getFullYear();
-      var mm = String(earliest.getMonth() + 1).padStart(2, '0');
-      var dd = String(earliest.getDate()).padStart(2, '0');
-      var minDate = yyyy + '-' + mm + '-' + dd;
+      const yyyy = earliest.getFullYear();
+      const mm = String(earliest.getMonth() + 1).padStart(2, '0');
+      const dd = String(earliest.getDate()).padStart(2, '0');
+      const minDate = yyyy + '-' + mm + '-' + dd;
       dateInput.min = minDate;
       dateInput.value = minDate;
     }
 
-    for (var i = 0; i < radios.length; i++) {
+    for (let i = 0; i < radios.length; i++) {
       radios[i].addEventListener('change', function () {
         if (this.value === '1') {
           dateArea.removeAttribute('hidden');
@@ -1848,12 +1848,12 @@ $(function () {
  * ======================================== */
 (function () {
   function initRegularDateTypeToggle() {
-    var radios = document.querySelectorAll('.js-regular-date-type');
-    var dateArea = document.querySelector('.js-regular-date-area');
-    var weekArea = document.querySelector('.js-regular-week-area');
+    const radios = document.querySelectorAll('.js-regular-date-type');
+    const dateArea = document.querySelector('.js-regular-date-area');
+    const weekArea = document.querySelector('.js-regular-week-area');
     if (!radios.length || !dateArea || !weekArea) return;
 
-    for (var i = 0; i < radios.length; i++) {
+    for (let i = 0; i < radios.length; i++) {
       radios[i].addEventListener('change', function () {
         if (this.value === '1') {
           dateArea.removeAttribute('hidden');
@@ -1878,8 +1878,8 @@ $(function () {
  * ======================================== */
 (function () {
   function initTimezoneSync() {
-    var contactSelect = document.querySelector('.js-regular-timezone-contact');
-    var careText = document.querySelector('.js-regular-timezone-care-text');
+    const contactSelect = document.querySelector('.js-regular-timezone-contact');
+    const careText = document.querySelector('.js-regular-timezone-care-text');
     if (!contactSelect || !careText) return;
 
     contactSelect.addEventListener('change', function () {

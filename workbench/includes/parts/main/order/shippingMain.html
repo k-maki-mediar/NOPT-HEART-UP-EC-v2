@@ -1,9 +1,9 @@
-<section class="c-shipping-main" aria-labelledby="shipping-main-title">
+<section class="c-shipping-main" aria-label="配送先設定">
 
   <!-- お届け先住所 -->
-  <section class="c-shipping-main__section" aria-labelledby="addr-section-title">
+  <section class="c-shipping-main__section" aria-label="お届け先住所">
     <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="addr-section-title">お届け先住所</h2>
+      <h2 class="c-shipping-main__section-title">お届け先住所</h2>
     </div>
 
     <!-- 基本住所 -->
@@ -94,9 +94,9 @@
   </div>
 
   <!-- 配送オプション -->
-  <section class="c-shipping-main__section" aria-labelledby="delivery-section-title">
+  <section class="c-shipping-main__section" aria-label="配送オプション">
     <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="delivery-section-title">配送オプション</h2>
+      <h2 class="c-shipping-main__section-title">配送オプション</h2>
     </div>
     <div class="c-shipping-main__rows">
 
@@ -117,8 +117,8 @@
       <div class="c-shipping-main__row">
         <span class="c-shipping-main__row-label">受取方法</span>
         <div class="c-shipping-main__row-value">
-          <fieldset class="c-shipping-main__radio-group" aria-labelledby="receive-type-legend">
-            <legend class="c-shipping-main__direct-area-title" id="receive-type-legend" hidden>受取方法</legend>
+          <fieldset class="c-shipping-main__radio-group">
+            <legend class="c-shipping-main__direct-area-title" hidden>受取方法</legend>
             <label class="c-shipping-main__radio-label">
               <input type="radio" class="c-shipping-main__radio-input js-receive-type" name="receiveType" value="2" checked>
               指定しない
@@ -131,8 +131,8 @@
 
           <!-- 置き配エリア（置き配選択時のみ表示） -->
           <div class="c-shipping-main__direct-area js-direct-area" hidden>
-            <fieldset class="c-shipping-main__radio-group" aria-labelledby="direct-type-legend">
-              <legend class="c-shipping-main__direct-area-title" id="direct-type-legend">置き配指定</legend>
+            <fieldset class="c-shipping-main__radio-group">
+              <legend class="c-shipping-main__direct-area-title">置き配指定</legend>
               <label class="c-shipping-main__radio-label">
                 <input type="radio" class="c-shipping-main__radio-input" name="deliveryDirectType" value="1">
                 宅配BOX
@@ -167,9 +167,9 @@
   </section>
 
   <!-- お届け予定 -->
-  <section class="c-shipping-main__section" aria-labelledby="schedule-section-title">
+  <section class="c-shipping-main__section" aria-label="お届け予定">
     <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="schedule-section-title">お届け予定</h2>
+      <h2 class="c-shipping-main__section-title">お届け予定</h2>
     </div>
     <div class="c-shipping-main__rows">
 
@@ -192,7 +192,7 @@
           <!-- お届け日設定エリア（指定する選択時のみ表示） -->
           <div class="c-shipping-main__direct-area js-delivery-date-area" hidden>
             <p class="c-shipping-main__direct-area-title">お届け日</p>
-            <input type="date" class="c-shipping-main__date-input js-delivery-date-input" name="deliveryDate" id="deliveryDate">
+            <input type="date" class="c-shipping-main__date-input js-delivery-date-input" name="deliveryDate">
           </div>
         </div>
       </div>
@@ -202,7 +202,7 @@
         <span class="c-shipping-main__row-label">お届け予定時間帯</span>
         <div class="c-shipping-main__row-value">
           <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--time">
-            <select class="c-detail-unit__select" name="deliveryAppointedTimeZone" id="deliveryAppointedTimeZone">
+            <select class="c-detail-unit__select" name="deliveryAppointedTimeZone">
               <option value="0">指定なし</option>
               <option value="1">午前中（8:00〜12:00）</option>
               <option value="2">14:00〜16:00</option>
@@ -219,7 +219,7 @@
 
   <!-- 下部ボタン -->
   <div class="c-shipping-main__actions">
-    <a href="/front/app/order/payment/" class="c-shipping-main__btn--next">お支払い方法選択へ</a>
+    <a href="#" class="c-shipping-main__btn--next">お支払い方法選択へ</a>
 
     <!-- ステップインジケータ（下部） -->
     <nav class="c-step-nav" aria-label="購入フロー">
@@ -247,7 +247,7 @@
       </ol>
     </nav>
 
-    <a href="/cart/cart/" class="c-shipping-main__btn--back">前へ戻る</a>
+    <a href="#" class="c-shipping-main__btn--back">前へ戻る</a>
   </div>
 
 </section>

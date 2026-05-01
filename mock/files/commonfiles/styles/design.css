@@ -9789,7 +9789,7 @@
 }
 
 .c-shipping-main__products {
-  border: 2px solid #d7e7fb;
+  border: 0.125rem solid #d7e7fb;
   padding: 1rem;
   margin-bottom: 2rem;
 }

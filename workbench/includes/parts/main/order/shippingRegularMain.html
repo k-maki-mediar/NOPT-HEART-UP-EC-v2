@@ -1,9 +1,9 @@
-<section class="c-shipping-main" aria-labelledby="shipping-main-title">
+<section class="c-shipping-main" aria-label="配送先設定">
 
   <!-- お届け先住所 -->
-  <section class="c-shipping-main__section" aria-labelledby="addr-section-title">
+  <section class="c-shipping-main__section" aria-label="お届け先住所">
     <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="addr-section-title">お届け先住所</h2>
+      <h2 class="c-shipping-main__section-title">お届け先住所</h2>
     </div>
 
     <!-- 基本住所 -->
@@ -93,9 +93,9 @@
   </div>
 
   <!-- 配送オプション -->
-  <section class="c-shipping-main__section" aria-labelledby="delivery-section-title">
+  <section class="c-shipping-main__section" aria-label="配送オプション">
     <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="delivery-section-title">配送オプション</h2>
+      <h2 class="c-shipping-main__section-title">配送オプション</h2>
     </div>
     <div class="c-shipping-main__rows">
 
@@ -116,8 +116,8 @@
       <div class="c-shipping-main__row">
         <span class="c-shipping-main__row-label">受取方法</span>
         <div class="c-shipping-main__row-value">
-          <fieldset class="c-shipping-main__radio-group" aria-labelledby="receive-type-legend">
-            <legend class="c-shipping-main__direct-area-title" id="receive-type-legend" hidden>受取方法</legend>
+          <fieldset class="c-shipping-main__radio-group">
+            <legend class="c-shipping-main__direct-area-title" hidden>受取方法</legend>
             <label class="c-shipping-main__radio-label">
               <input type="radio" class="c-shipping-main__radio-input js-receive-type" name="receiveType" value="2" checked>
               指定しない
@@ -130,8 +130,8 @@
 
           <!-- 置き配エリア（置き配選択時のみ表示） -->
           <div class="c-shipping-main__direct-area js-direct-area" hidden>
-            <fieldset class="c-shipping-main__radio-group" aria-labelledby="direct-type-legend">
-              <legend class="c-shipping-main__direct-area-title" id="direct-type-legend">置き配指定</legend>
+            <fieldset class="c-shipping-main__radio-group">
+              <legend class="c-shipping-main__direct-area-title">置き配指定</legend>
               <label class="c-shipping-main__radio-label">
                 <input type="radio" class="c-shipping-main__radio-input" name="deliveryDirectType" value="1">
                 宅配BOX
@@ -166,9 +166,9 @@
   </section>
 
   <!-- 1回目お届け予定 -->
-  <section class="c-shipping-main__section" aria-labelledby="schedule-1st-title">
+  <section class="c-shipping-main__section" aria-label="1回目お届け予定">
     <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="schedule-1st-title">1回目お届け予定</h2>
+      <h2 class="c-shipping-main__section-title">1回目お届け予定</h2>
     </div>
     <div class="c-shipping-main__rows">
       <div class="c-shipping-main__row">
@@ -187,7 +187,7 @@
           </fieldset>
           <div class="c-shipping-main__direct-area js-delivery-date-area" hidden>
             <p class="c-shipping-main__direct-area-title">お届け日</p>
-            <input type="date" class="c-shipping-main__date-input js-delivery-date-input" name="deliveryDate" id="deliveryDate">
+            <input type="date" class="c-shipping-main__date-input js-delivery-date-input" name="deliveryDate">
           </div>
         </div>
       </div>
@@ -195,7 +195,7 @@
         <span class="c-shipping-main__row-label">お届け予定時間帯</span>
         <div class="c-shipping-main__row-value">
           <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--time">
-            <select class="c-detail-unit__select" name="deliveryAppointedTimeZone" id="deliveryAppointedTimeZone">
+            <select class="c-detail-unit__select" name="deliveryAppointedTimeZone">
               <option value="0">指定なし</option>
               <option value="1">午前中（8:00〜12:00）</option>
               <option value="2">14:00〜16:00</option>
@@ -210,9 +210,9 @@
   </section>
 
   <!-- 2回目以降お届け予定（コンタクトレンズ） -->
-  <section class="c-shipping-main__section" aria-labelledby="schedule-2nd-contact-title">
+  <section class="c-shipping-main__section" aria-label="2回目以降お届け予定（コンタクトレンズ）">
     <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="schedule-2nd-contact-title">2回目以降お届け予定（コンタクトレンズ）</h2>
+      <h2 class="c-shipping-main__section-title">2回目以降お届け予定（コンタクトレンズ）</h2>
     </div>
     <div class="c-shipping-main__rows">
       <div class="c-shipping-main__row">
@@ -232,7 +232,7 @@
             <!-- 日付指定エリア（日付指定ラジオの直下） -->
             <div class="c-shipping-main__direct-area js-regular-date-area">
               <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--day">
-                <select class="c-detail-unit__select" name="regularDeliveryAppointedDateDate" id="regularDeliveryAppointedDateDate">
+                <select class="c-detail-unit__select" name="regularDeliveryAppointedDateDate">
                   <option value="1">1日</option><option value="2">2日</option><option value="3">3日</option>
                   <option value="4">4日</option><option value="5">5日</option><option value="6">6日</option>
                   <option value="7">7日</option><option value="8">8日</option><option value="9">9日</option>
@@ -257,14 +257,14 @@
             <div class="c-shipping-main__direct-area js-regular-week-area" hidden>
               <div class="c-shipping-main__date-row">
                 <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--week">
-                  <select class="c-detail-unit__select" name="regularDeliveryAppointedDateWeekNo" id="regularDeliveryAppointedDateWeekNo">
+                  <select class="c-detail-unit__select" name="regularDeliveryAppointedDateWeekNo">
                     <option value="2" selected>第2</option>
                     <option value="3">第3</option>
                     <option value="4">第4</option>
                   </select>
                 </div>
                 <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--weekday">
-                  <select class="c-detail-unit__select" name="regularDeliveryAppointedDateWeek" id="regularDeliveryAppointedDateWeek">
+                  <select class="c-detail-unit__select" name="regularDeliveryAppointedDateWeek">
                     <option value="0">日曜日</option>
                     <option value="1" selected>月曜日</option>
                     <option value="2">火曜日</option>
@@ -285,7 +285,7 @@
         <span class="c-shipping-main__row-label">配送時間帯</span>
         <div class="c-shipping-main__row-value">
           <div class="c-detail-unit__select-wrap c-shipping-main__select-wrap--time">
-            <select class="c-detail-unit__select js-regular-timezone-contact" name="regularDeliveryAppointedTimeZone" id="regularDeliveryAppointedTimeZone">
+            <select class="c-detail-unit__select js-regular-timezone-contact" name="regularDeliveryAppointedTimeZone">
               <option value="0">指定なし</option>
               <option value="1">午前中（8:00〜12:00）</option>
               <option value="2">14:00〜16:00</option>
@@ -303,9 +303,9 @@
   </section>
 
   <!-- 2回目以降お届け予定（ケア用品） -->
-  <section class="c-shipping-main__section" aria-labelledby="schedule-2nd-care-title">
+  <section class="c-shipping-main__section" aria-label="2回目以降お届け予定（ケア用品）">
     <div class="c-shipping-main__section-header">
-      <h2 class="c-shipping-main__section-title" id="schedule-2nd-care-title">2回目以降お届け予定（ケア用品）</h2>
+      <h2 class="c-shipping-main__section-title">2回目以降お届け予定（ケア用品）</h2>
     </div>
     <div class="c-shipping-main__rows">
       <div class="c-shipping-main__row">
@@ -331,7 +331,7 @@
 
   <!-- 下部ボタン -->
   <div class="c-shipping-main__actions">
-    <a href="/front/app/order/payment/" class="c-shipping-main__btn--next">お支払い方法選択へ</a>
+    <a href="#" class="c-shipping-main__btn--next">お支払い方法選択へ</a>
 
     <!-- ステップインジケータ（下部） -->
     <nav class="c-step-nav" aria-label="購入フロー">
@@ -359,7 +359,7 @@
       </ol>
     </nav>
 
-    <a href="/cart/cart/" class="c-shipping-main__btn--back">前へ戻る</a>
+    <a href="#" class="c-shipping-main__btn--back">前へ戻る</a>
   </div>
 
 </section>

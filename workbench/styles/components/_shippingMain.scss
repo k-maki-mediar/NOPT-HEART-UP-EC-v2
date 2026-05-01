@@ -45,7 +45,7 @@
 }
 
 .c-shipping-main__products {
-  border: 2px solid $bg-banner;
+  border: rem(2) solid $bg-banner;
   padding: rem(16);
   margin-bottom: rem(32);
 

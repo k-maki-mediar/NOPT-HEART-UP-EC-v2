@@ -1,4 +1,4 @@
-<div class="c-confirm-main" id="confirmMain">
+<div class="c-confirm-main" data-part="confirmMain">
 
   <!-- ===== 2カラムレイアウト（PC） / シングルカラム（SP） ===== -->
   <div class="c-confirm-main__layout">
@@ -17,13 +17,13 @@
 
               <!-- お支払い名称（全バリエーション共通） -->
               <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header">お支払い方法</th>
+                <th class="c-teiki-info-table__header" scope="row">お支払い方法</th>
                 <td class="c-teiki-info-table__data">代金引換</td>
               </tr>
 
               <!-- 手数料（0円以外の場合のみ表示） -->
               <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header">手数料</th>
+                <th class="c-teiki-info-table__header" scope="row">手数料</th>
                 <!-- 物理名: paymentCommission（※同梱値引とphysical_name重複: 設計資料確認事項） -->
                 <td class="c-teiki-info-table__data">330円</td>
               </tr>
@@ -54,7 +54,7 @@
 
               <!-- クーポンエリア（使用クーポンがある場合） -->
               <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header">クーポン</th>
+                <th class="c-teiki-info-table__header" scope="row">クーポン</th>
                 <td class="c-teiki-info-table__data">
                   <ul class="c-confirm-main__coupon-list">
                     <li class="c-confirm-main__coupon-item">
@@ -76,12 +76,12 @@
         <table class="c-teiki-info-table" aria-label="お客様情報">
           <tbody>
               <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header">お名前</th>
+                <th class="c-teiki-info-table__header" scope="row">お名前</th>
                 <!-- lastName + firstName + 様 -->
                 <td class="c-teiki-info-table__data">山田 太郎 様</td>
               </tr>
               <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header">メールアドレス</th>
+                <th class="c-teiki-info-table__header" scope="row">メールアドレス</th>
                 <td class="c-teiki-info-table__data">yamada@example.com</td>
               </tr>
             </tbody>

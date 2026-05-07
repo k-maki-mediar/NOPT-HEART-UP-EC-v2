@@ -10,12 +10,12 @@
         <div class="row">
           <div>
             <div class="wsparts-include">
-              @@include('../../includes/parts/general/pageHeaderMenu.html')
+              @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
             </div>
           </div>
           <div>
             <div class="wsparts-include">
-              @@include('../../includes/parts/general/pageSideNav.html')
+              @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
             </div>
           </div>
           <div>
@@ -24,9 +24,30 @@
                 <div class="wsparts-include">
                   @@include('../../includes/parts/main/order/confirmTopicPath.html')
                 </div>
-                <div class="wsparts-include">
-                  @@include('../../includes/parts/general/guestStepNavConfirm.html')
-                </div>
+                <nav class="c-step-nav" aria-label="購入フロー">
+                  <ol class="c-step-nav__list">
+                    <li class="c-step-nav__item">
+                      <span class="c-step-nav__circle">1</span>
+                      <span class="c-step-nav__label">カート</span>
+                    </li>
+                    <li class="c-step-nav__item">
+                      <span class="c-step-nav__circle">2</span>
+                      <span class="c-step-nav__label">お届け先・<br>ラッピング設定</span>
+                    </li>
+                    <li class="c-step-nav__item">
+                      <span class="c-step-nav__circle">3</span>
+                      <span class="c-step-nav__label">お支払い方法<br>選択</span>
+                    </li>
+                    <li class="c-step-nav__item c-step-nav__item--active">
+                      <span class="c-step-nav__circle">4</span>
+                      <span class="c-step-nav__label">注文内容確認</span>
+                    </li>
+                    <li class="c-step-nav__item">
+                      <span class="c-step-nav__circle">5</span>
+                      <span class="c-step-nav__label">注文完了</span>
+                    </li>
+                  </ol>
+                </nav>
                 <div class="wsparts-include">
                   @@include('../../includes/parts/general/messageArea.html')
                 </div>
@@ -34,13 +55,13 @@
                   <div class="c-confirm-heading">
                     <div class="c-confirm-heading__inner">
                       <h1 class="c-confirm-heading__title">注文内容確認</h1>
-                      <p class="c-confirm-heading__subtitle">注文を確定します。この内容でよろしいですか？</p>
                     </div>
                     <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-confirm-heading__line" width="393" height="1" aria-hidden="true">
                   </div>
+                  <p class="c-confirm-heading__subtitle">注文を確定します。この内容でよろしいですか？</p>
                 </div>
                 <div class="wsparts-include">
-                  @@include('../../includes/parts/main/order/confirmMain.html')
+                  @@include('../../includes/parts/main/order/confirmRegularMain.html')
                 </div>
               </div>
             </div>

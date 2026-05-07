@@ -135,19 +135,57 @@
               <th class="c-teiki-info-table__header" scope="row">置き配指定</th>
               <td class="c-teiki-info-table__data">宅配BOX</td>
             </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">お届け日</th>
-              <td class="c-teiki-info-table__data">2025/11/15(土)</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">お届け時間</th>
-              <td class="c-teiki-info-table__data">指定なし</td>
-            </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- ===== 商品情報エリア（通常購入） ===== -->
+      <!-- ===== お届け予定エリア（定期購入のみ） ===== -->
+      <div class="c-teiki-amount">
+        <div class="c-teiki-amount__body">
+          <!-- 1回目お届け予定 -->
+          <div class="c-teiki-amount__section">
+            <div class="c-teiki-amount__section-header">
+              <span class="c-teiki-amount__section-title">1回目お届け予定</span>
+            </div>
+            <div class="c-teiki-amount__section-body">
+              <div class="c-teiki-delivery-datetime">
+                <div class="c-teiki-delivery-datetime__row">
+                  <div class="c-teiki-delivery-datetime__col">
+                    <p class="c-teiki-delivery-datetime__label">お届け日</p>
+                    <p class="c-teiki-delivery-datetime__value">指定なし（順次発送）</p>
+                  </div>
+                  <div class="c-teiki-delivery-datetime__col">
+                    <p class="c-teiki-delivery-datetime__label">お届け時間</p>
+                    <p class="c-teiki-delivery-datetime__value">指定なし</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 2回目以降お届け予定 -->
+          <div class="c-teiki-amount__section">
+            <div class="c-teiki-amount__section-header">
+              <span class="c-teiki-amount__section-title">2回目以降お届け予定</span>
+            </div>
+            <div class="c-teiki-amount__section-body">
+              <div class="c-teiki-delivery-datetime">
+                <div class="c-teiki-delivery-datetime__row">
+                  <div class="c-teiki-delivery-datetime__col">
+                    <p class="c-teiki-delivery-datetime__label">次回お届け日</p>
+                    <p class="c-teiki-delivery-datetime__value">第2　水曜日<br>2026/03/09(月)</p>
+                  </div>
+                  <div class="c-teiki-delivery-datetime__col">
+                    <p class="c-teiki-delivery-datetime__label">次回お届け時間</p>
+                    <p class="c-teiki-delivery-datetime__value">指定なし</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 商品情報エリア ===== -->
       <section class="c-confirm-main__section" aria-label="商品情報">
         <div class="c-confirm-main__section-header">
           <h2 class="c-confirm-main__section-heading">商品情報</h2>
@@ -173,7 +211,16 @@
                   <span class="c-cart-main__item-price">2,150円</span>
                   <span class="c-cart-main__item-price-tax">（税込）</span>
                 </div>
-                <p class="c-confirm-main__item-qty">数量：1</p>
+              </div>
+            </div>
+            <div class="c-cart-regular-main__item-delivery">
+              <div class="c-cart-regular-main__item-delivery-row">
+                <span class="c-cart-regular-main__item-delivery-label">申込コース</span>
+                <span class="c-cart-regular-main__item-delivery-value">3ヶ月コース</span>
+              </div>
+              <div class="c-cart-regular-main__item-delivery-row">
+                <span class="c-cart-regular-main__item-delivery-label">1回あたりのお届け箱数</span>
+                <span class="c-cart-regular-main__item-delivery-value">1箱</span>
               </div>
             </div>
           </li>
@@ -194,7 +241,16 @@
                   <span class="c-cart-main__item-price">2,150円</span>
                   <span class="c-cart-main__item-price-tax">（税込）</span>
                 </div>
-                <p class="c-confirm-main__item-qty">数量：1</p>
+              </div>
+            </div>
+            <div class="c-cart-regular-main__item-delivery">
+              <div class="c-cart-regular-main__item-delivery-row">
+                <span class="c-cart-regular-main__item-delivery-label">申込コース</span>
+                <span class="c-cart-regular-main__item-delivery-value">3ヶ月コース</span>
+              </div>
+              <div class="c-cart-regular-main__item-delivery-row">
+                <span class="c-cart-regular-main__item-delivery-label">1回あたりのお届け箱数</span>
+                <span class="c-cart-regular-main__item-delivery-value">1箱</span>
               </div>
             </div>
           </li>
@@ -215,7 +271,16 @@
                   <span class="c-cart-main__item-price">980円</span>
                   <span class="c-cart-main__item-price-tax">（税込）</span>
                 </div>
-                <p class="c-confirm-main__item-qty">数量：2</p>
+              </div>
+            </div>
+            <div class="c-cart-regular-main__item-delivery">
+              <div class="c-cart-regular-main__item-delivery-row">
+                <span class="c-cart-regular-main__item-delivery-label">申込コース</span>
+                <span class="c-cart-regular-main__item-delivery-value">3ヶ月コース</span>
+              </div>
+              <div class="c-cart-regular-main__item-delivery-row">
+                <span class="c-cart-regular-main__item-delivery-label">1回あたりのお届け箱数</span>
+                <span class="c-cart-regular-main__item-delivery-value">1箱</span>
               </div>
             </div>
           </li>
@@ -258,6 +323,10 @@
             <div class="c-teiki-amount__row">
               <dt class="c-teiki-amount__row-label">クーポン利用</dt>
               <dd class="c-teiki-amount__row-value">500円</dd>
+            </div>
+            <div class="c-teiki-amount__row">
+              <dt class="c-teiki-amount__row-label">同梱割引</dt>
+              <dd class="c-teiki-amount__row-value">330円</dd>
             </div>
           </dl>
           <div class="c-teiki-amount__total-wrap">

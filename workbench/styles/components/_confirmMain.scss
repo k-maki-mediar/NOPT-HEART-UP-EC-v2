@@ -52,12 +52,18 @@
 }
 
 .c-confirm-heading__subtitle {
+  max-width: rem(1130);
+  margin: rem(24) auto rem(16);
   font-size: rem(14);
   font-weight: $font-weight-normal;
   line-height: 1.75;
   color: $text-color;
-  margin: 0 0 rem(16);
   text-align: center;
+
+  @include pc {
+    padding-left: calc(var(--side-nav-content-offset) + rem(32));
+    padding-right: rem(32);
+  }
 }
 
 .c-confirm-heading__line {
@@ -116,8 +122,62 @@
 // ========================================
 
 .c-confirm-main__section {
-  margin-bottom: rem(24);
-  border: 1px solid $border-color;
+  margin-bottom: rem(32);
+
+  .c-cart-main__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .c-cart-main__item:last-child {
+    border-bottom: none;
+  }
+
+  > .c-cart-main__item-subtotal-row {
+    margin-top: 0;
+    padding: rem(8) rem(12);
+    background-color: $bg-light;
+    min-height: rem(46);
+
+    .c-cart-main__item-subtotal-label {
+      font-size: rem(12);
+      font-weight: $font-weight-medium;
+      color: $primary-color;
+    }
+
+    .c-cart-main__item-subtotal {
+      font-size: rem(24);
+      font-weight: $font-weight-medium;
+      color: $primary-color;
+    }
+
+    .c-cart-main__item-subtotal-tax {
+      font-size: rem(12);
+      color: $primary-color;
+    }
+  }
+}
+
+.c-confirm-main .c-teiki-address {
+  margin-bottom: rem(32);
+}
+
+.c-confirm-main .c-teiki-amount {
+  margin-bottom: rem(32);
+
+  .c-teiki-amount__body {
+    padding: rem(16);
+  }
+
+  .c-teiki-amount__section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .c-teiki-delivery-datetime {
+    margin-bottom: 0;
+  }
 }
 
 .c-confirm-main__section-header {
@@ -541,39 +601,42 @@
 // ----------------------------------------
 
 .c-confirm-main__btn {
-  @include accordion-card-btn;
-  display: flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: rem(400);
   width: 100%;
-  padding: rem(12) rem(24);
+  min-height: rem(52);
+  padding: 0 rem(24);
+  border: none;
+  border-radius: rem(26);
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  font-family: $font-family-base;
   cursor: pointer;
-  box-sizing: border-box;
-  text-align: center;
+  text-decoration: none;
 }
 
 .c-confirm-main__btn--primary {
-  background-color: #ff8c00;
-  border-color: #ff8c00;
+  background-color: $primary-color;
   color: $color-white;
-  box-shadow: 0 rem(2) 0 #d97600;
-  font-size: rem(16);
-  font-weight: $font-weight-medium;
+  box-shadow: 0 rem(3) 0 $primary-shadow;
 
   &:hover {
-    background-color: #e07d00;
-    border-color: #e07d00;
-    box-shadow: 0 0 0 #d97600;
+    transform: translateY(rem(2));
+    box-shadow: 0 rem(1) 0 $primary-shadow;
   }
 }
 
 .c-confirm-main__btn--secondary {
-  background-color: $bg-gray;
-  border-color: $border-color-dark;
-  color: $text-light;
-  box-shadow: 0 rem(2) 0 $border-color-dark;
+  background-color: $color-white;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  box-shadow: 0 rem(2) 0 $primary-color;
 
   &:hover {
-    background-color: $border-color;
-    box-shadow: 0 0 0 $border-color-dark;
+    transform: translateY(rem(2));
+    box-shadow: 0 rem(1) 0 $primary-color;
   }
 }
 
@@ -606,7 +669,10 @@
 }
 
 .c-confirm-main__footer-link-wrap {
-  margin: 0 0 rem(12);
+  margin: rem(16) 0 rem(12);
+  font-size: rem(13);
+  color: $text-color;
+  line-height: 1.75;
 }
 
 .c-confirm-main__footer-link {

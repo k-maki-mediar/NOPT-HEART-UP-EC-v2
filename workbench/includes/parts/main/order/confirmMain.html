@@ -153,93 +153,83 @@
         </div>
 
         <!-- 商品リスト -->
-        <ul class="c-confirm-main__item-list">
+        <ul class="c-cart-main__items">
 
           <!-- 商品行: コンタクトレンズ（右目）例 -->
-          <li class="c-confirm-main__item c-confirm-main__item--first">
-            <div class="c-confirm-main__item-product">
-              <div class="c-confirm-main__item-img-area">
-                <!-- commodityTypeIconType: 右/左/ケア/定期などのバッジ -->
-                <span class="c-confirm-main__item-badge">右</span>
-                <div class="c-confirm-main__item-img-wrap">
-                  <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス（1箱）" class="c-confirm-main__item-img" width="120" height="80">
+          <li class="c-cart-main__item">
+            <div class="c-cart-main__item-product">
+              <div class="c-cart-main__item-img-area">
+                <span class="c-cart-main__item-badge">右</span>
+                <div class="c-cart-main__item-img-wrap">
+                  <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス（1箱）" class="c-cart-main__item-img" width="120" height="80">
                 </div>
               </div>
-              <div class="c-confirm-main__item-detail">
-                <!-- commodityName -->
-                <p class="c-confirm-main__item-name">アキュビュー オアシス（1箱）</p>
-                <!-- standardDetail1Name（規格詳細1） -->
-                <!-- 処方箋情報（コンタクトレンズ商品のみ: BC/P/C/AX/DIA/ADD） -->
-                <p class="c-confirm-main__item-spec">BC : 8.80 / P : -1.00 / C : 0.00 / AX : 0 / DIA : 14.20 / ADD : 0.00</p>
-                <div class="c-confirm-main__item-price-wrap">
-                  <!-- retailPriceNoTax（税込）。軽減税率対象時は末尾に※ -->
-                  <span class="c-confirm-main__item-price">2,150円</span>
-                  <span class="c-confirm-main__item-price-tax">（税込）</span>
-                  <!-- 軽減税率対象時: <span class="c-confirm-main__item-price-tax-mark">※</span> -->
+              <div class="c-cart-main__item-detail">
+                <p class="c-cart-main__item-name">アキュビュー オアシス（1箱）</p>
+                <p class="c-cart-main__item-spec">BC : 8.80 / P : -1.00 / C : 0.00 / AX : 0 / DIA : 14.20 / ADD : 0.00</p>
+                <div class="c-cart-main__item-price-wrap">
+                  <span class="c-cart-main__item-price">2,150円</span>
+                  <span class="c-cart-main__item-price-tax">（税込）</span>
                 </div>
-                <!-- quantity（通常購入のみ表示） -->
                 <p class="c-confirm-main__item-qty">数量：1</p>
               </div>
             </div>
-            <!-- subtotal（税込） -->
-            <div class="c-confirm-main__item-subtotal-row">
-              <span class="c-confirm-main__item-subtotal-label">小計</span>
-              <span class="c-confirm-main__item-subtotal">2,150円</span>
-              <span class="c-confirm-main__item-subtotal-tax">（税込）</span>
+            <div class="c-cart-main__item-subtotal-row">
+              <span class="c-cart-main__item-subtotal-label">小計</span>
+              <span class="c-cart-main__item-subtotal">2,150円</span>
+              <span class="c-cart-main__item-subtotal-tax">（税込）</span>
             </div>
           </li>
 
           <!-- 商品行: コンタクトレンズ（左目）例 -->
-          <li class="c-confirm-main__item">
-            <div class="c-confirm-main__item-product">
-              <div class="c-confirm-main__item-img-area">
-                <span class="c-confirm-main__item-badge">左</span>
-                <div class="c-confirm-main__item-img-wrap">
-                  <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス（1箱）" class="c-confirm-main__item-img" width="120" height="80">
+          <li class="c-cart-main__item">
+            <div class="c-cart-main__item-product">
+              <div class="c-cart-main__item-img-area">
+                <span class="c-cart-main__item-badge">左</span>
+                <div class="c-cart-main__item-img-wrap">
+                  <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス（1箱）" class="c-cart-main__item-img" width="120" height="80">
                 </div>
               </div>
-              <div class="c-confirm-main__item-detail">
-                <p class="c-confirm-main__item-name">アキュビュー オアシス（1箱）</p>
-                <p class="c-confirm-main__item-spec">BC : 8.80 / P : -0.75 / C : 0.00 / AX : 0 / DIA : 14.20 / ADD : 0.00</p>
-                <div class="c-confirm-main__item-price-wrap">
-                  <span class="c-confirm-main__item-price">2,150円</span>
-                  <span class="c-confirm-main__item-price-tax">（税込）</span>
+              <div class="c-cart-main__item-detail">
+                <p class="c-cart-main__item-name">アキュビュー オアシス（1箱）</p>
+                <p class="c-cart-main__item-spec">BC : 8.80 / P : -0.75 / C : 0.00 / AX : 0 / DIA : 14.20 / ADD : 0.00</p>
+                <div class="c-cart-main__item-price-wrap">
+                  <span class="c-cart-main__item-price">2,150円</span>
+                  <span class="c-cart-main__item-price-tax">（税込）</span>
                 </div>
                 <p class="c-confirm-main__item-qty">数量：1</p>
               </div>
             </div>
-            <div class="c-confirm-main__item-subtotal-row">
-              <span class="c-confirm-main__item-subtotal-label">小計</span>
-              <span class="c-confirm-main__item-subtotal">2,150円</span>
-              <span class="c-confirm-main__item-subtotal-tax">（税込）</span>
+            <div class="c-cart-main__item-subtotal-row">
+              <span class="c-cart-main__item-subtotal-label">小計</span>
+              <span class="c-cart-main__item-subtotal">2,150円</span>
+              <span class="c-cart-main__item-subtotal-tax">（税込）</span>
             </div>
           </li>
 
           <!-- 商品行: ケア用品例 -->
-          <li class="c-confirm-main__item">
-            <div class="c-confirm-main__item-product">
-              <div class="c-confirm-main__item-img-area">
-                <span class="c-confirm-main__item-badge">ケア</span>
-                <div class="c-confirm-main__item-img-wrap">
-                  <img src="../../../files/commonfiles/images/product-sample-05.png" alt="コンプリート ダブルモイスト 360ml" class="c-confirm-main__item-img" width="120" height="80">
+          <li class="c-cart-main__item">
+            <div class="c-cart-main__item-product">
+              <div class="c-cart-main__item-img-area">
+                <span class="c-cart-main__item-badge">ケア</span>
+                <div class="c-cart-main__item-img-wrap">
+                  <img src="../../../files/commonfiles/images/product-sample-05.png" alt="コンプリート ダブルモイスト 360ml" class="c-cart-main__item-img" width="120" height="80">
                 </div>
               </div>
-              <div class="c-confirm-main__item-detail">
-                <p class="c-confirm-main__item-name">コンプリート ダブルモイスト 360ml</p>
-                <p class="c-confirm-main__item-spec">360ml</p>
-                <div class="c-confirm-main__item-price-wrap">
-                  <span class="c-confirm-main__item-price">980円</span>
-                  <span class="c-confirm-main__item-price-tax">（税込）</span>
-                  <!-- 軽減税率対象品目 -->
-                  <span class="c-confirm-main__item-price-tax-mark">※</span>
+              <div class="c-cart-main__item-detail">
+                <p class="c-cart-main__item-name">コンプリート ダブルモイスト 360ml</p>
+                <p class="c-cart-main__item-spec">360ml</p>
+                <div class="c-cart-main__item-price-wrap">
+                  <span class="c-cart-main__item-price">980円</span>
+                  <span class="c-cart-main__item-price-tax">（税込）</span>
                 </div>
                 <p class="c-confirm-main__item-qty">数量：2</p>
               </div>
             </div>
-            <div class="c-confirm-main__item-subtotal-row">
-              <span class="c-confirm-main__item-subtotal-label">小計</span>
-              <span class="c-confirm-main__item-subtotal">1,960円</span>
-              <span class="c-confirm-main__item-subtotal-tax">（税込）</span>
+            <div class="c-cart-main__item-subtotal-row">
+              <span class="c-cart-main__item-subtotal-label">小計</span>
+              <span class="c-cart-main__item-subtotal">1,960円</span>
+              <span class="c-cart-main__item-subtotal-tax">（税込）</span>
             </div>
           </li>
 
@@ -250,72 +240,54 @@
 
     <!-- ===== 右カラム（お支払金額パネル） ===== -->
     <div class="c-confirm-main__right">
-      <div class="c-confirm-main__amount-panel">
-        <h2 class="c-confirm-main__amount-heading">お支払い金額</h2>
-        <dl class="c-confirm-main__amount-list">
-
-          <!-- totalCommodityPrice: 商品合計（税込） -->
-          <div class="c-confirm-main__amount-row c-confirm-main__amount-row--first">
-            <dt class="c-confirm-main__amount-label">商品合計（税込）</dt>
-            <dd class="c-confirm-main__amount-value">6,260円</dd>
-          </div>
-
-          <!-- totalShippingCharge: 送料合計（税込） -->
-          <div class="c-confirm-main__amount-row">
-            <dt class="c-confirm-main__amount-label">送料合計（税込）</dt>
-            <dd class="c-confirm-main__amount-value">660円</dd>
-          </div>
-
-          <!-- useCoupon: クーポン利用（値引き額） -->
-          <div class="c-confirm-main__amount-row">
-            <dt class="c-confirm-main__amount-label">クーポン利用</dt>
-            <dd class="c-confirm-main__amount-value">-500円</dd>
-          </div>
-
-          <!-- bundleDiscount: 同梱値引（税込）
-               ※物理名paymentCommissionと重複: 設計資料確認事項 -->
-          <div class="c-confirm-main__amount-row">
-            <dt class="c-confirm-main__amount-label">同梱値引（税込）</dt>
-            <dd class="c-confirm-main__amount-value">-330円</dd>
-          </div>
-
-          <!-- paymentCommission: 手数料（税込）（0円以外の場合） -->
-          <div class="c-confirm-main__amount-row">
-            <dt class="c-confirm-main__amount-label">手数料（税込）</dt>
-            <dd class="c-confirm-main__amount-value">330円</dd>
-          </div>
-
-          <!-- orderTotalPrice: お支払い合計金額（赤字強調） -->
-          <div class="c-confirm-main__amount-row c-confirm-main__amount-row--total">
-            <dt class="c-confirm-main__amount-label c-confirm-main__amount-label--total">お支払い合計金額</dt>
-            <dd class="c-confirm-main__amount-value c-confirm-main__amount-value--total">6,420円</dd>
-          </div>
-
-          <!-- totalAmountByTaxRate: 消費税率別合計（繰り返し） -->
-          <div class="c-confirm-main__amount-row c-confirm-main__amount-row--tax">
-            <dt class="c-confirm-main__amount-label c-confirm-main__amount-label--tax">（10%対象）</dt>
-            <dd class="c-confirm-main__amount-value c-confirm-main__amount-value--tax">内税 424円</dd>
-          </div>
-          <div class="c-confirm-main__amount-row c-confirm-main__amount-row--tax">
-            <dt class="c-confirm-main__amount-label c-confirm-main__amount-label--tax">（8%対象）</dt>
-            <dd class="c-confirm-main__amount-value c-confirm-main__amount-value--tax">内税 145円</dd>
-          </div>
-
-        </dl>
-
-        <!-- ※は軽減税率対象品目 -->
-        <p class="c-confirm-main__tax-note">※は軽減税率対象品目</p>
-
-        <!-- 非表示: ベリトランス連携用 -->
-        <input type="hidden" name="displaySalesTotalPrice" value="0">
-
-        <!-- 注文確定ボタン（上部・PC右カラム） -->
-        <div class="c-confirm-main__actions">
-          <button type="button" class="c-confirm-main__btn c-confirm-main__btn--primary">
-            注文を確定する
-          </button>
+      <div class="c-teiki-amount">
+        <div class="c-teiki-amount__header">
+          <span class="c-teiki-amount__header-title">お支払い金額</span>
         </div>
+        <div class="c-teiki-amount__body">
+          <dl class="c-teiki-amount__list">
+            <div class="c-teiki-amount__row">
+              <dt class="c-teiki-amount__row-label">商品合計（税込）</dt>
+              <dd class="c-teiki-amount__row-value">6,260円</dd>
+            </div>
+            <div class="c-teiki-amount__row">
+              <dt class="c-teiki-amount__row-label">送料合計（税込）</dt>
+              <dd class="c-teiki-amount__row-value">660円</dd>
+            </div>
+            <div class="c-teiki-amount__row">
+              <dt class="c-teiki-amount__row-label">クーポン利用</dt>
+              <dd class="c-teiki-amount__row-value">-500円</dd>
+            </div>
+            <div class="c-teiki-amount__row">
+              <dt class="c-teiki-amount__row-label">同梱値引（税込）</dt>
+              <dd class="c-teiki-amount__row-value">-330円</dd>
+            </div>
+            <div class="c-teiki-amount__row">
+              <dt class="c-teiki-amount__row-label">手数料（税込）</dt>
+              <dd class="c-teiki-amount__row-value">330円</dd>
+            </div>
+          </dl>
+          <div class="c-teiki-amount__total-wrap">
+            <div class="c-teiki-amount__total">
+              <span class="c-teiki-amount__total-label">お支払い合計金額</span>
+              <span class="c-teiki-amount__total-value">6,420円</span>
+            </div>
+            <div class="c-teiki-amount__tax">
+              <div class="c-teiki-amount__tax-row">
+                <span>内消費税10%対象</span>
+                <span>内税 424円</span>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="displaySalesTotalPrice" value="0">
 
+          <!-- 注文確定ボタン -->
+          <div class="c-confirm-main__actions">
+            <button type="button" class="c-confirm-main__btn c-confirm-main__btn--primary">
+              注文を確定する
+            </button>
+          </div>
+        </div>
       </div>
     </div><!-- /.c-confirm-main__right -->
 

@@ -11975,7 +11975,10 @@
 }
 
 .c-confirm-main__footer-link-wrap {
-  margin: 0 0 0.75rem;
+  margin: 1rem 0 0.75rem;
+  font-size: 0.8125rem;
+  color: #333;
+  line-height: 1.75;
 }
 
 .c-confirm-main__footer-link {

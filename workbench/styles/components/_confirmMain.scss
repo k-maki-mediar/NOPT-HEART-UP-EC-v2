@@ -52,12 +52,18 @@
 }
 
 .c-confirm-heading__subtitle {
+  max-width: rem(1130);
+  margin: rem(24) auto rem(16);
   font-size: rem(14);
   font-weight: $font-weight-normal;
   line-height: 1.75;
   color: $text-color;
-  margin: rem(24) 0 rem(16);
   text-align: center;
+
+  @include pc {
+    padding-left: calc(var(--side-nav-content-offset) + rem(32));
+    padding-right: rem(32);
+  }
 }
 
 .c-confirm-heading__line {

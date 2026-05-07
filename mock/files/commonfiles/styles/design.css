@@ -11466,12 +11466,19 @@
 }
 
 .c-confirm-heading__subtitle {
+  max-width: 70.625rem;
+  margin: 1.5rem auto 1rem;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.75;
   color: #333;
-  margin: 1.5rem 0 1rem;
   text-align: center;
+}
+@media (min-width: 992px) {
+  .c-confirm-heading__subtitle {
+    padding-left: calc(var(--side-nav-content-offset) + 2rem);
+    padding-right: 2rem;
+  }
 }
 
 .c-confirm-heading__line {

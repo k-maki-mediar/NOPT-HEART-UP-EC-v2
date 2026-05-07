@@ -11516,8 +11516,12 @@
 }
 
 .c-confirm-main__section {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   border: 1px solid #e0e0e0;
+}
+
+.c-confirm-main .c-teiki-address {
+  margin-bottom: 2rem;
 }
 
 .c-confirm-main__section-header {

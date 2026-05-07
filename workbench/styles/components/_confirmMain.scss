@@ -116,8 +116,12 @@
 // ========================================
 
 .c-confirm-main__section {
-  margin-bottom: rem(24);
+  margin-bottom: rem(32);
   border: 1px solid $border-color;
+}
+
+.c-confirm-main .c-teiki-address {
+  margin-bottom: rem(32);
 }
 
 .c-confirm-main__section-header {

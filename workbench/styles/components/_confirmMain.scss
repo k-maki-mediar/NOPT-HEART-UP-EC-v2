@@ -124,6 +124,10 @@
     padding: 0;
   }
 
+  .c-cart-main__item:last-child {
+    border-bottom: none;
+  }
+
   > .c-cart-main__item-subtotal-row {
     margin-top: rem(16);
     padding: rem(8) rem(12);

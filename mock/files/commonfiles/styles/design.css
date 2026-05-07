@@ -11523,6 +11523,9 @@
   margin: 0;
   padding: 0;
 }
+.c-confirm-main__section .c-cart-main__item:last-child {
+  border-bottom: none;
+}
 .c-confirm-main__section > .c-cart-main__item-subtotal-row {
   margin-top: 1rem;
   padding: 0.5rem 0.75rem;

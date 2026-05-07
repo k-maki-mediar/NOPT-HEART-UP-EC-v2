@@ -11924,17 +11924,16 @@
 }
 
 .c-confirm-main__btn--primary {
-  background-color: #ff8c00;
-  border-color: #ff8c00;
+  background-color: #00387d;
+  border-color: #00387d;
   color: #FFFFFF;
-  box-shadow: 0 0.125rem 0 #d97600;
+  box-shadow: 0 0.1875rem 0 #002552;
   font-size: 1rem;
   font-weight: 500;
 }
 .c-confirm-main__btn--primary:hover {
-  background-color: #e07d00;
-  border-color: #e07d00;
-  box-shadow: 0 0 0 #d97600;
+  transform: translateY(0.125rem);
+  box-shadow: 0 0.0625rem 0 #002552;
 }
 
 .c-confirm-main__btn--secondary {

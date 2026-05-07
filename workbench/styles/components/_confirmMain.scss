@@ -163,6 +163,23 @@
   margin-bottom: rem(32);
 }
 
+.c-confirm-main .c-teiki-amount {
+  margin-bottom: rem(32);
+
+  .c-teiki-amount__body {
+    padding: 0 rem(16) rem(16);
+  }
+
+  .c-teiki-amount__section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .c-teiki-delivery-datetime {
+    margin-bottom: 0;
+  }
+}
+
 .c-confirm-main__section-header {
   display: flex;
   align-items: center;

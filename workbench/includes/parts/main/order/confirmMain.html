@@ -72,7 +72,6 @@
       <div class="c-teiki-address">
         <div class="c-teiki-address__header">
           <span class="c-teiki-address__header-title">お客様情報</span>
-          <a href="#" class="c-teiki-amount__section-btn">変更</a>
         </div>
         <table class="c-teiki-info-table" aria-label="お客様情報">
           <tbody>
@@ -97,40 +96,46 @@
         </div>
         <table class="c-teiki-info-table" aria-label="お届け先情報">
           <tbody>
-              <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header">お届け先氏名</th>
-                <!-- addressLastName + addressFirstName + 様 -->
-                <td class="c-teiki-info-table__data">山田 太郎 様</td>
-              </tr>
-              <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header">住所</th>
-                <!-- postalCode + address1 + address2 + address3 + address4 + address5 -->
-                <td class="c-teiki-info-table__data">
-                  〒123-4567<br>
-                  東京都千代田区OOOO<br>
-                  OOOOビル101号室
-                </td>
-              </tr>
-              <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header">電話番号</th>
-                <td class="c-teiki-info-table__data">09012345678</td>
-              </tr>
-              <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header">配送方法</th>
-                <td class="c-teiki-info-table__data">ヤマト運輸</td>
-              </tr>
-              <tr class="c-teiki-info-table__row">
-                <th class="c-teiki-info-table__header">受取方法</th>
-                <td class="c-teiki-info-table__data">通常受取</td>
-              </tr>
-              <!-- 置き配指定（受取方法区分が[1:置き配]の場合のみ表示） -->
-              <!--
-              <tr class="c-teiki-info-table__row" hidden>
-                <th class="c-teiki-info-table__header">置き配指定</th>
-                <td class="c-teiki-info-table__data">玄関前</td>
-              </tr>
-              -->
-            </tbody>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">お届け先氏名</th>
+              <td class="c-teiki-info-table__data">山田 太郎 様</td>
+            </tr>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">住所</th>
+              <td class="c-teiki-info-table__data">
+                〒123-4567<br>
+                東京都千代田区OOOO<br>
+                OOOOビル101号室
+              </td>
+            </tr>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">電話番号</th>
+              <td class="c-teiki-info-table__data">09012345678</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ===== 配送情報エリア ===== -->
+      <div class="c-teiki-address">
+        <div class="c-teiki-address__header">
+          <span class="c-teiki-address__header-title">配送情報</span>
+        </div>
+        <table class="c-teiki-info-table" aria-label="配送情報">
+          <tbody>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">配送方法</th>
+              <td class="c-teiki-info-table__data">ゆうパック</td>
+            </tr>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">受取方法</th>
+              <td class="c-teiki-info-table__data">指定場所ダイレクト（置き配）</td>
+            </tr>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">置き配指定</th>
+              <td class="c-teiki-info-table__data">宅配BOX</td>
+            </tr>
+          </tbody>
         </table>
       </div>
 

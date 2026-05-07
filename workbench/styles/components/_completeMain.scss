@@ -24,6 +24,13 @@
   }
 }
 
+.c-complete-main__main-wrap {
+  border: rem(2) solid $bg-banner;
+  padding: rem(24);
+  margin-top: rem(24);
+  margin-bottom: rem(32);
+}
+
 // ----------------------------------------
 // サンクスブロック（常時表示）
 // ----------------------------------------

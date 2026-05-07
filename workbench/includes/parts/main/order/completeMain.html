@@ -1,8 +1,10 @@
 <section class="c-complete-main" aria-label="注文完了">
 
+  <div class="c-complete-main__main-wrap">
+
   <!-- ===== サンクスブロック（常時表示） ===== -->
   <div class="c-complete-main__thanks-block">
-    <h1 class="c-complete-main__heading">ご注文ありがとうございました。</h1>
+    <p class="c-complete-main__heading">ご注文を受け付けました</p>
 
     <p class="c-complete-main__order-info">
       ご注文番号は
@@ -44,8 +46,24 @@
     </div>
   </div>
 
+  </div><!-- /.c-complete-main__main-wrap（通常） -->
+
   <!-- ===== 補足説明（定期注文）ゲスト購入では非表示 ===== -->
-  <div class="c-complete-main__supplement c-complete-main__supplement--regular" hidden>
+  <div class="c-complete-main__main-wrap" hidden>
+  <div class="c-complete-main__thanks-block">
+    <p class="c-complete-main__heading">ご注文を受け付けました</p>
+    <p class="c-complete-main__order-info">
+      ご注文番号は
+      <a href="#" class="c-complete-main__order-no-link">6666</a>
+      になります。
+    </p>
+    <p class="c-complete-main__datetime">
+      (受付日時：<span class="c-complete-main__datetime-value">2026/04/28 10:00:00</span>)
+    </p>
+    <p class="c-complete-main__mypage-note">※ご注文内容の詳細は、マイページからご確認いただけます。</p>
+    <p class="c-complete-main__mail-note">ご登録いただいたメールアドレスに注文受付メールを送信しました。</p>
+  </div>
+  <div class="c-complete-main__supplement c-complete-main__supplement--regular">
     <p class="c-complete-main__supplement-text">
       ただいま、ご注文の確認メールをお送りさせていただきました。<br>
       万が一、ご確認メールが届かない場合は、トラブルの可能性もありますので下記までお問い合わせくださいませ。
@@ -67,6 +85,8 @@
       <p class="c-complete-main__info-box-note">※土・日・祝日や、ゴールデンウィーク・お盆・年末年始等はお休みさせて頂きます。</p>
     </div>
   </div>
+
+  </div><!-- /.c-complete-main__main-wrap（定期） -->
 
   <!-- ===== カート遷移ブロック（カートに商品が残っている場合のみ表示） ===== -->
   <div class="c-complete-main__cart-block" hidden>
@@ -90,8 +110,8 @@
   </div>
 
   <!-- ===== メインアクション（常時表示） ===== -->
-  <div class="c-complete-main__actions c-complete-main__actions--main">
-    <a href="/" class="c-complete-main__btn c-complete-main__btn--top">トップページへ</a>
+  <div class="c-shipping-main__actions">
+    <a href="#" class="c-shipping-main__btn--next">トップページへ</a>
   </div>
 
 </section>

@@ -1,0 +1,367 @@
+<div class="c-confirm-main" id="confirmMain">
+
+  <!-- ===== 2カラムレイアウト（PC） / シングルカラム（SP） ===== -->
+  <div class="c-confirm-main__layout">
+
+    <!-- ===== 左カラム（詳細情報） ===== -->
+    <div class="c-confirm-main__left">
+
+      <!-- ===== お支払い方法エリア ===== -->
+      <section class="c-confirm-main__section" aria-label="お支払い方法">
+        <div class="c-confirm-main__section-header">
+          <h2 class="c-confirm-main__section-heading">お支払い方法</h2>
+          <a href="/order/payment/" class="c-confirm-main__change-btn">変更</a>
+        </div>
+        <div class="c-confirm-main__section-body">
+          <dl class="c-confirm-main__info-list">
+
+            <!-- お支払い名称（全バリエーション共通） -->
+            <div class="c-confirm-main__info-row c-confirm-main__info-row--first">
+              <dt class="c-confirm-main__info-label">お支払い方法</dt>
+              <dd class="c-confirm-main__info-value">代金引換</dd>
+            </div>
+
+            <!-- 手数料（0円以外の場合のみ表示） -->
+            <div class="c-confirm-main__info-row">
+              <dt class="c-confirm-main__info-label">手数料</dt>
+              <!-- 物理名: paymentCommission（※同梱値引とphysical_name重複: 設計資料確認事項） -->
+              <dd class="c-confirm-main__info-value">330円</dd>
+            </div>
+
+            <!-- クレジットカード時のみ: カード番号・支払回数 -->
+            <!--
+            <div class="c-confirm-main__info-row" hidden>
+              <dt class="c-confirm-main__info-label">クレジットカード番号</dt>
+              <dd class="c-confirm-main__info-value">123456********78</dd>
+            </div>
+            <div class="c-confirm-main__info-row" hidden>
+              <dt class="c-confirm-main__info-label">お支払い回数</dt>
+              <dd class="c-confirm-main__info-value">一括払い</dd>
+            </div>
+            -->
+
+            <!-- コンビニ支払い時のみ: コンビニ名・受取人 -->
+            <!--
+            <div class="c-confirm-main__info-row" hidden>
+              <dt class="c-confirm-main__info-label">お支払いコンビニ</dt>
+              <dd class="c-confirm-main__info-value">セブン-イレブン</dd>
+            </div>
+            <div class="c-confirm-main__info-row" hidden>
+              <dt class="c-confirm-main__info-label">受取人</dt>
+              <dd class="c-confirm-main__info-value">山田 太郎</dd>
+            </div>
+            -->
+
+            <!-- クーポンエリア（使用クーポンがある場合） -->
+            <div class="c-confirm-main__info-row">
+              <dt class="c-confirm-main__info-label">クーポン</dt>
+              <dd class="c-confirm-main__info-value">
+                <ul class="c-confirm-main__coupon-list">
+                  <li class="c-confirm-main__coupon-item">
+                    初回限定クーポン<span class="c-confirm-main__coupon-discount">（500円引き）</span>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+      </section>
+
+      <!-- ===== お客様情報エリア ===== -->
+      <section class="c-confirm-main__section" aria-label="お客様情報">
+        <div class="c-confirm-main__section-header">
+          <h2 class="c-confirm-main__section-heading">お客様情報</h2>
+          <!-- 遷移先: 設計資料に未明示のため暫定 href="#"（確認事項1） -->
+          <a href="#" class="c-confirm-main__change-btn">変更</a>
+        </div>
+        <div class="c-confirm-main__section-body">
+          <dl class="c-confirm-main__info-list">
+            <div class="c-confirm-main__info-row c-confirm-main__info-row--first">
+              <dt class="c-confirm-main__info-label">お名前</dt>
+              <!-- lastName + firstName + 様 -->
+              <dd class="c-confirm-main__info-value">山田 太郎 様</dd>
+            </div>
+            <div class="c-confirm-main__info-row">
+              <dt class="c-confirm-main__info-label">メールアドレス</dt>
+              <dd class="c-confirm-main__info-value">yamada@example.com</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ===== お届け先情報エリア ===== -->
+      <section class="c-confirm-main__section" aria-label="お届け先情報">
+        <div class="c-confirm-main__section-header">
+          <h2 class="c-confirm-main__section-heading">
+            <span class="c-confirm-main__section-heading-sub">お届け先：</span>基本住所
+          </h2>
+          <a href="/order/shipping/" class="c-confirm-main__change-btn">変更</a>
+        </div>
+        <div class="c-confirm-main__section-body">
+          <dl class="c-confirm-main__info-list">
+            <div class="c-confirm-main__info-row c-confirm-main__info-row--first">
+              <dt class="c-confirm-main__info-label">お届け先氏名</dt>
+              <!-- addressLastName + addressFirstName + 様 -->
+              <dd class="c-confirm-main__info-value">山田 太郎 様</dd>
+            </div>
+            <div class="c-confirm-main__info-row">
+              <dt class="c-confirm-main__info-label">住所</dt>
+              <!-- postalCode + address1 + address2 + address3 + address4 + address5 -->
+              <dd class="c-confirm-main__info-value">
+                〒123-4567<br>
+                東京都千代田区OOOO<br>
+                OOOOビル101号室
+              </dd>
+            </div>
+            <div class="c-confirm-main__info-row">
+              <dt class="c-confirm-main__info-label">電話番号</dt>
+              <dd class="c-confirm-main__info-value">09012345678</dd>
+            </div>
+            <div class="c-confirm-main__info-row">
+              <dt class="c-confirm-main__info-label">配送方法</dt>
+              <dd class="c-confirm-main__info-value">ヤマト運輸</dd>
+            </div>
+            <div class="c-confirm-main__info-row">
+              <dt class="c-confirm-main__info-label">受取方法</dt>
+              <dd class="c-confirm-main__info-value">通常受取</dd>
+            </div>
+            <!-- 置き配指定（受取方法区分が[1:置き配]の場合のみ表示） -->
+            <!--
+            <div class="c-confirm-main__info-row" hidden>
+              <dt class="c-confirm-main__info-label">置き配指定</dt>
+              <dd class="c-confirm-main__info-value">玄関前</dd>
+            </div>
+            -->
+          </dl>
+        </div>
+      </section>
+
+      <!-- ===== 商品情報エリア（通常購入） ===== -->
+      <section class="c-confirm-main__section" aria-label="商品情報">
+        <div class="c-confirm-main__section-header">
+          <h2 class="c-confirm-main__section-heading">商品情報</h2>
+        </div>
+
+        <!-- お届け日時情報 -->
+        <div class="c-confirm-main__delivery-info">
+          <!-- deliveryAppointedDate: 指定あり=「YYYY年M月DD日（DDD）」, 指定なし=「指定なし（順次発送）」 -->
+          <p class="c-confirm-main__delivery-date">
+            <span class="c-confirm-main__delivery-label">お届け日：</span>2025年11月15日（土）
+          </p>
+          <!-- deliveryAppointedStartTime: 指定あり=「OOOO」, 指定なし=「指定なし」 -->
+          <p class="c-confirm-main__delivery-time">
+            <span class="c-confirm-main__delivery-label">お届け時間：</span>指定なし
+          </p>
+        </div>
+
+        <!-- 商品リスト -->
+        <ul class="c-confirm-main__item-list">
+
+          <!-- 商品行: コンタクトレンズ（右目）例 -->
+          <li class="c-confirm-main__item c-confirm-main__item--first">
+            <div class="c-confirm-main__item-product">
+              <div class="c-confirm-main__item-img-area">
+                <!-- commodityTypeIconType: 右/左/ケア/定期などのバッジ -->
+                <span class="c-confirm-main__item-badge">右</span>
+                <div class="c-confirm-main__item-img-wrap">
+                  <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス（1箱）" class="c-confirm-main__item-img" width="120" height="80">
+                </div>
+              </div>
+              <div class="c-confirm-main__item-detail">
+                <!-- commodityName -->
+                <p class="c-confirm-main__item-name">アキュビュー オアシス（1箱）</p>
+                <!-- standardDetail1Name（規格詳細1） -->
+                <!-- 処方箋情報（コンタクトレンズ商品のみ: BC/P/C/AX/DIA/ADD） -->
+                <p class="c-confirm-main__item-spec">BC : 8.80 / P : -1.00 / C : 0.00 / AX : 0 / DIA : 14.20 / ADD : 0.00</p>
+                <div class="c-confirm-main__item-price-wrap">
+                  <!-- retailPriceNoTax（税込）。軽減税率対象時は末尾に※ -->
+                  <span class="c-confirm-main__item-price">2,150円</span>
+                  <span class="c-confirm-main__item-price-tax">（税込）</span>
+                  <!-- 軽減税率対象時: <span class="c-confirm-main__item-price-tax-mark">※</span> -->
+                </div>
+                <!-- quantity（通常購入のみ表示） -->
+                <p class="c-confirm-main__item-qty">数量：1</p>
+              </div>
+            </div>
+            <!-- subtotal（税込） -->
+            <div class="c-confirm-main__item-subtotal-row">
+              <span class="c-confirm-main__item-subtotal-label">小計</span>
+              <span class="c-confirm-main__item-subtotal">2,150円</span>
+              <span class="c-confirm-main__item-subtotal-tax">（税込）</span>
+            </div>
+          </li>
+
+          <!-- 商品行: コンタクトレンズ（左目）例 -->
+          <li class="c-confirm-main__item">
+            <div class="c-confirm-main__item-product">
+              <div class="c-confirm-main__item-img-area">
+                <span class="c-confirm-main__item-badge">左</span>
+                <div class="c-confirm-main__item-img-wrap">
+                  <img src="../../../files/commonfiles/images/product-sample.png" alt="アキュビュー オアシス（1箱）" class="c-confirm-main__item-img" width="120" height="80">
+                </div>
+              </div>
+              <div class="c-confirm-main__item-detail">
+                <p class="c-confirm-main__item-name">アキュビュー オアシス（1箱）</p>
+                <p class="c-confirm-main__item-spec">BC : 8.80 / P : -0.75 / C : 0.00 / AX : 0 / DIA : 14.20 / ADD : 0.00</p>
+                <div class="c-confirm-main__item-price-wrap">
+                  <span class="c-confirm-main__item-price">2,150円</span>
+                  <span class="c-confirm-main__item-price-tax">（税込）</span>
+                </div>
+                <p class="c-confirm-main__item-qty">数量：1</p>
+              </div>
+            </div>
+            <div class="c-confirm-main__item-subtotal-row">
+              <span class="c-confirm-main__item-subtotal-label">小計</span>
+              <span class="c-confirm-main__item-subtotal">2,150円</span>
+              <span class="c-confirm-main__item-subtotal-tax">（税込）</span>
+            </div>
+          </li>
+
+          <!-- 商品行: ケア用品例 -->
+          <li class="c-confirm-main__item">
+            <div class="c-confirm-main__item-product">
+              <div class="c-confirm-main__item-img-area">
+                <span class="c-confirm-main__item-badge">ケア</span>
+                <div class="c-confirm-main__item-img-wrap">
+                  <img src="../../../files/commonfiles/images/product-sample-05.png" alt="コンプリート ダブルモイスト 360ml" class="c-confirm-main__item-img" width="120" height="80">
+                </div>
+              </div>
+              <div class="c-confirm-main__item-detail">
+                <p class="c-confirm-main__item-name">コンプリート ダブルモイスト 360ml</p>
+                <p class="c-confirm-main__item-spec">360ml</p>
+                <div class="c-confirm-main__item-price-wrap">
+                  <span class="c-confirm-main__item-price">980円</span>
+                  <span class="c-confirm-main__item-price-tax">（税込）</span>
+                  <!-- 軽減税率対象品目 -->
+                  <span class="c-confirm-main__item-price-tax-mark">※</span>
+                </div>
+                <p class="c-confirm-main__item-qty">数量：2</p>
+              </div>
+            </div>
+            <div class="c-confirm-main__item-subtotal-row">
+              <span class="c-confirm-main__item-subtotal-label">小計</span>
+              <span class="c-confirm-main__item-subtotal">1,960円</span>
+              <span class="c-confirm-main__item-subtotal-tax">（税込）</span>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+    </div><!-- /.c-confirm-main__left -->
+
+    <!-- ===== 右カラム（お支払金額パネル） ===== -->
+    <div class="c-confirm-main__right">
+      <div class="c-confirm-main__amount-panel">
+        <h2 class="c-confirm-main__amount-heading">お支払い金額</h2>
+        <dl class="c-confirm-main__amount-list">
+
+          <!-- totalCommodityPrice: 商品合計（税込） -->
+          <div class="c-confirm-main__amount-row c-confirm-main__amount-row--first">
+            <dt class="c-confirm-main__amount-label">商品合計（税込）</dt>
+            <dd class="c-confirm-main__amount-value">6,260円</dd>
+          </div>
+
+          <!-- totalShippingCharge: 送料合計（税込） -->
+          <div class="c-confirm-main__amount-row">
+            <dt class="c-confirm-main__amount-label">送料合計（税込）</dt>
+            <dd class="c-confirm-main__amount-value">660円</dd>
+          </div>
+
+          <!-- useCoupon: クーポン利用（値引き額） -->
+          <div class="c-confirm-main__amount-row">
+            <dt class="c-confirm-main__amount-label">クーポン利用</dt>
+            <dd class="c-confirm-main__amount-value">-500円</dd>
+          </div>
+
+          <!-- bundleDiscount: 同梱値引（税込）
+               ※物理名paymentCommissionと重複: 設計資料確認事項 -->
+          <div class="c-confirm-main__amount-row">
+            <dt class="c-confirm-main__amount-label">同梱値引（税込）</dt>
+            <dd class="c-confirm-main__amount-value">-330円</dd>
+          </div>
+
+          <!-- paymentCommission: 手数料（税込）（0円以外の場合） -->
+          <div class="c-confirm-main__amount-row">
+            <dt class="c-confirm-main__amount-label">手数料（税込）</dt>
+            <dd class="c-confirm-main__amount-value">330円</dd>
+          </div>
+
+          <!-- orderTotalPrice: お支払い合計金額（赤字強調） -->
+          <div class="c-confirm-main__amount-row c-confirm-main__amount-row--total">
+            <dt class="c-confirm-main__amount-label c-confirm-main__amount-label--total">お支払い合計金額</dt>
+            <dd class="c-confirm-main__amount-value c-confirm-main__amount-value--total">6,420円</dd>
+          </div>
+
+          <!-- totalAmountByTaxRate: 消費税率別合計（繰り返し） -->
+          <div class="c-confirm-main__amount-row c-confirm-main__amount-row--tax">
+            <dt class="c-confirm-main__amount-label c-confirm-main__amount-label--tax">（10%対象）</dt>
+            <dd class="c-confirm-main__amount-value c-confirm-main__amount-value--tax">内税 424円</dd>
+          </div>
+          <div class="c-confirm-main__amount-row c-confirm-main__amount-row--tax">
+            <dt class="c-confirm-main__amount-label c-confirm-main__amount-label--tax">（8%対象）</dt>
+            <dd class="c-confirm-main__amount-value c-confirm-main__amount-value--tax">内税 145円</dd>
+          </div>
+
+        </dl>
+
+        <!-- ※は軽減税率対象品目 -->
+        <p class="c-confirm-main__tax-note">※は軽減税率対象品目</p>
+
+        <!-- 非表示: ベリトランス連携用 -->
+        <input type="hidden" name="displaySalesTotalPrice" value="0">
+
+        <!-- 注文確定ボタン（上部・PC右カラム） -->
+        <div class="c-confirm-main__actions">
+          <button type="button" class="c-confirm-main__btn c-confirm-main__btn--primary">
+            注文を確定する
+          </button>
+        </div>
+
+      </div>
+    </div><!-- /.c-confirm-main__right -->
+
+  </div><!-- /.c-confirm-main__layout -->
+
+  <!-- ===== フッターリンク・ボタンエリア ===== -->
+  <div class="c-confirm-main__footer">
+
+    <!-- キャンセル・返品リンク（通常購入: キャンセルおよび返品についてはこちら） -->
+    <p class="c-confirm-main__footer-link-wrap">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="c-confirm-main__footer-link">
+        キャンセルおよび返品についてはこちら
+      </a>
+    </p>
+
+    <!-- 特定商取引法リンク -->
+    <p class="c-confirm-main__footer-link-wrap">
+      <a href="/app/info/compliance/" target="_blank" rel="noopener noreferrer" class="c-confirm-main__footer-link">
+        手続等の詳細は「<span class="c-confirm-main__footer-link-inner">特定商取引法に基づく表記</span>」をご確認ください。
+      </a>
+    </p>
+
+    <!-- らくとく定期便説明文（定期購入時のみ表示） -->
+    <!--
+    <div class="c-confirm-main__regular-notice" hidden>
+      <p class="c-confirm-main__regular-notice-text">「らくとく定期便」は、当社が指定する日までに特段のお申し出をいただいた場合を除き、定期的にお客様より商品のご注文をいただいたものとして取扱うサービスです。休止・解約は、発送予定日の10日前まではいつでも可能です。マイページ内の【らくとく定期便 確認・変更】にて、お手続きください。</p>
+    </div>
+    -->
+
+    <!-- 注文確定ボタン（下部） -->
+    <div class="c-confirm-main__actions">
+      <button type="button" class="c-confirm-main__btn c-confirm-main__btn--primary">
+        注文を確定する
+      </button>
+    </div>
+
+    <!-- 前へ戻るボタン -->
+    <div class="c-confirm-main__actions c-confirm-main__actions--back">
+      <a href="/order/payment/" class="c-confirm-main__btn c-confirm-main__btn--secondary">
+        前へ戻る
+      </a>
+    </div>
+
+  </div><!-- /.c-confirm-main__footer -->
+
+</div><!-- /.c-confirm-main -->

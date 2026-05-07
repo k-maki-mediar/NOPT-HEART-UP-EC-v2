@@ -79,7 +79,8 @@
 @use 'components/cartMain';
 @use 'components/cartRegularMain';
 @use 'components/shippingMain';
-@use 'components/completeMain';
+@use 'components/paymentMain';
+@use 'components/guestMain';
 
 // ========================================
 // Pages（ページ固有スタイル）

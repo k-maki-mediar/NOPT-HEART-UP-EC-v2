@@ -1,0 +1,581 @@
+<section class="c-guest-main" aria-label="お客様情報入力">
+
+  <form action="" method="post" novalidate>
+
+    <!-- ===== 購入者情報部 ===== -->
+    <p class="c-guest-main__required-note"><span class="c-guest-main__required" aria-label="必須">必須</span> は必須入力項目です</p>
+
+    <div class="c-guest-main__form-body">
+      <dl class="c-guest-main__form-table">
+
+        <!-- 氏名 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            氏名<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <input type="text" class="c-guest-main__input" name="ownerName"
+              maxlength="40" placeholder="例）山田　太郎" aria-label="氏名" autocomplete="name">
+          </dd>
+        </div>
+
+        <!-- 氏名カナ -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            氏名カナ<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <input type="text" class="c-guest-main__input" name="ownerNameKana"
+              maxlength="42" placeholder="例）ヤマダ　タロウ" aria-label="氏名カナ">
+          </dd>
+        </div>
+
+        <!-- 郵便番号 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            郵便番号<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <div class="c-guest-main__postal-group">
+              <span class="c-guest-main__postal-mark" aria-hidden="true">〒</span>
+              <input type="text" class="c-guest-main__input c-guest-main__input--postal"
+                name="ownerPostalCode"
+                maxlength="7" inputmode="numeric" placeholder="3306032"
+                aria-label="郵便番号（ハイフンなし7桁）" autocomplete="postal-code">
+              <button type="button" class="c-guest-main__btn c-guest-main__btn--search js-postal-search" data-target="owner">
+                検索
+              </button>
+            </div>
+          </dd>
+        </div>
+
+        <!-- 都道府県 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            都道府県<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--prefecture">
+              <select class="c-detail-unit__select" name="ownerPrefecture" autocomplete="address-level1" aria-label="都道府県">
+                <option value="">選択してください</option>
+                <option value="01">北海道</option>
+                <option value="02">青森県</option>
+                <option value="03">岩手県</option>
+                <option value="04">宮城県</option>
+                <option value="05">秋田県</option>
+                <option value="06">山形県</option>
+                <option value="07">福島県</option>
+                <option value="08">茨城県</option>
+                <option value="09">栃木県</option>
+                <option value="10">群馬県</option>
+                <option value="11">埼玉県</option>
+                <option value="12">千葉県</option>
+                <option value="13">東京都</option>
+                <option value="14">神奈川県</option>
+                <option value="15">新潟県</option>
+                <option value="16">富山県</option>
+                <option value="17">石川県</option>
+                <option value="18">福井県</option>
+                <option value="19">山梨県</option>
+                <option value="20">長野県</option>
+                <option value="21">岐阜県</option>
+                <option value="22">静岡県</option>
+                <option value="23">愛知県</option>
+                <option value="24">三重県</option>
+                <option value="25">滋賀県</option>
+                <option value="26">京都府</option>
+                <option value="27">大阪府</option>
+                <option value="28">兵庫県</option>
+                <option value="29">奈良県</option>
+                <option value="30">和歌山県</option>
+                <option value="31">鳥取県</option>
+                <option value="32">島根県</option>
+                <option value="33">岡山県</option>
+                <option value="34">広島県</option>
+                <option value="35">山口県</option>
+                <option value="36">徳島県</option>
+                <option value="37">香川県</option>
+                <option value="38">愛媛県</option>
+                <option value="39">高知県</option>
+                <option value="40">福岡県</option>
+                <option value="41">佐賀県</option>
+                <option value="42">長崎県</option>
+                <option value="43">熊本県</option>
+                <option value="44">大分県</option>
+                <option value="45">宮崎県</option>
+                <option value="46">鹿児島県</option>
+                <option value="47">沖縄県</option>
+              </select>
+            </div>
+          </dd>
+        </div>
+
+        <!-- 市区郡 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            市区郡<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <input type="text" class="c-guest-main__input c-guest-main__input--address"
+              name="ownerAddress2"
+              maxlength="15" autocomplete="address-level2" placeholder="例）さいたま市" aria-label="市区郡">
+          </dd>
+        </div>
+
+        <!-- 町名 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            町名<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <input type="text" class="c-guest-main__input c-guest-main__input--address"
+              name="ownerAddress3"
+              maxlength="15" autocomplete="address-line1" placeholder="例）中央区新都心11番地2丁目" aria-label="町名">
+          </dd>
+        </div>
+
+        <!-- 番地・ビル名など -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            番地・ビル名など<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <textarea class="c-guest-main__input c-guest-main__input--address"
+              name="ownerAddressBanchi" maxlength="60" autocomplete="address-line2" placeholder="例）中央区新都心11番地2丁目" rows="1"></textarea>
+          </dd>
+        </div>
+
+        <!-- その他 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">その他</dt>
+          <dd class="c-guest-main__field-body">
+            <textarea class="c-guest-main__input c-guest-main__input--address"
+              name="ownerAddress4" maxlength="60" autocomplete="address-line3" placeholder="例）ランド・アクシス・タワー（明治安田生命さいたま新都心ビル）32階" rows="1"></textarea>
+          </dd>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            電話番号<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <div class="c-guest-main__phone-group" role="group" aria-label="電話番号">
+              <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+                name="phoneNumber1"
+                maxlength="6" inputmode="numeric" aria-label="電話番号1（市外局番）" autocomplete="tel-local">
+              <span class="c-guest-main__phone-sep" aria-hidden="true">-</span>
+              <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+                name="phoneNumber2"
+                maxlength="6" inputmode="numeric" aria-label="電話番号2（市内局番）">
+              <span class="c-guest-main__phone-sep" aria-hidden="true">-</span>
+              <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+                name="phoneNumber3"
+                maxlength="6" inputmode="numeric" aria-label="電話番号3（番号）">
+            </div>
+            <p class="c-guest-main__field-note">※自宅電話番号又は携帯電話番号を入力してください。</p>
+          </dd>
+        </div>
+
+        <!-- 生年月日 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            生年月日<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <div class="c-guest-main__birthdate-group" role="group" aria-label="生年月日">
+              <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--year">
+                <select class="c-detail-unit__select" name="birthdateYear" aria-label="生年（西暦）">
+                  <option value="">年</option>
+                  <option value="2006">2006</option>
+                  <option value="2005">2005</option>
+                  <option value="2004">2004</option>
+                  <option value="2003">2003</option>
+                  <option value="2002">2002</option>
+                  <option value="2001">2001</option>
+                  <option value="2000">2000</option>
+                  <option value="1999">1999</option>
+                  <option value="1998">1998</option>
+                  <option value="1997">1997</option>
+                  <option value="1996">1996</option>
+                  <option value="1995">1995</option>
+                  <option value="1994">1994</option>
+                  <option value="1993">1993</option>
+                  <option value="1992">1992</option>
+                  <option value="1991">1991</option>
+                  <option value="1990">1990</option>
+                  <option value="1989">1989</option>
+                  <option value="1988">1988</option>
+                  <option value="1987">1987</option>
+                  <option value="1986">1986</option>
+                  <option value="1985">1985</option>
+                  <option value="1984">1984</option>
+                  <option value="1983">1983</option>
+                  <option value="1982">1982</option>
+                  <option value="1981">1981</option>
+                  <option value="1980">1980</option>
+                  <option value="1979">1979</option>
+                  <option value="1978">1978</option>
+                  <option value="1977">1977</option>
+                  <option value="1976">1976</option>
+                  <option value="1975">1975</option>
+                  <option value="1974">1974</option>
+                  <option value="1973">1973</option>
+                  <option value="1972">1972</option>
+                  <option value="1971">1971</option>
+                  <option value="1970">1970</option>
+                  <option value="1969">1969</option>
+                  <option value="1968">1968</option>
+                  <option value="1967">1967</option>
+                  <option value="1966">1966</option>
+                  <option value="1965">1965</option>
+                  <option value="1960">1960</option>
+                  <option value="1955">1955</option>
+                  <option value="1950">1950</option>
+                </select>
+              </div>
+              <span class="c-guest-main__birthdate-sep" aria-hidden="true">年</span>
+              <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--month">
+                <select class="c-detail-unit__select" name="birthdateMonth" aria-label="月">
+                  <option value="">月</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+              <span class="c-guest-main__birthdate-sep" aria-hidden="true">月</span>
+              <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--day">
+                <select class="c-detail-unit__select" name="birthdateDate" aria-label="日">
+                  <option value="">日</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select>
+              </div>
+              <span class="c-guest-main__birthdate-sep" aria-hidden="true">日</span>
+            </div>
+          </dd>
+        </div>
+
+        <!-- 性別 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            性別<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <div class="c-guest-main__radio-group" role="group" aria-label="性別">
+              <label class="c-guest-main__radio-label">
+                <input type="radio" class="c-guest-main__radio" name="sex" value="0">
+                無回答
+              </label>
+              <label class="c-guest-main__radio-label">
+                <input type="radio" class="c-guest-main__radio" name="sex" value="1">
+                男性
+              </label>
+              <label class="c-guest-main__radio-label">
+                <input type="radio" class="c-guest-main__radio" name="sex" value="2">
+                女性
+              </label>
+            </div>
+          </dd>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            メールアドレス<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <input type="email" class="c-guest-main__input c-guest-main__input--email"
+              name="ownerEmail"
+              maxlength="70" autocomplete="email" placeholder="例）login@example.com" aria-label="メールアドレス">
+          </dd>
+        </div>
+
+        <!-- 確認コード -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">確認コード<span class="c-guest-main__required" aria-label="必須">必須</span></dt>
+          <dd class="c-guest-main__field-body">
+            <div class="c-guest-main__confirm-code-group">
+              <input type="text" class="c-guest-main__input c-guest-main__input--confirm-code"
+                name="confirmCode"
+                maxlength="6" inputmode="numeric" aria-label="確認コード（6桁）">
+              <button type="button" class="c-guest-main__btn c-guest-main__btn--issue js-issue-confirm-code">
+                確認コードを発行する
+              </button>
+            </div>
+            <p class="c-guest-main__field-note">※確認コード発行メールに記載された確認コードを入力します。</p>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 別のお届け先に送る -->
+      <label class="c-guest-main__other-address-check">
+        <input type="checkbox" class="c-guest-main__other-address-input js-other-address-toggle"
+          name="otherAddress" value="true" aria-label="別のお届け先に送る">
+        <span class="c-guest-main__other-address-text">別のお届け先に送る</span>
+      </label>
+
+      <!-- 配送先フォーム（チェックON時のみ表示） -->
+      <div class="c-guest-main__other-address-area js-other-address-area" hidden>
+
+        <div class="c-guest-main__section-header">
+          <h2 class="c-guest-main__section-title">お届け先情報</h2>
+        </div>
+
+        <div class="c-guest-main__form-body">
+          <dl class="c-guest-main__form-table">
+
+            <!-- 氏名（配送先） -->
+            <div class="c-guest-main__field">
+              <dt class="c-guest-main__field-label">
+                氏名<span class="c-guest-main__required" aria-label="必須">必須</span>
+              </dt>
+              <dd class="c-guest-main__field-body">
+                <input type="text" class="c-guest-main__input" name="addressName"
+                  maxlength="40" placeholder="例）山田　太郎" aria-label="配送先氏名">
+              </dd>
+            </div>
+
+            <!-- 氏名カナ（配送先） -->
+            <div class="c-guest-main__field">
+              <dt class="c-guest-main__field-label">
+                氏名カナ<span class="c-guest-main__required" aria-label="必須">必須</span>
+              </dt>
+              <dd class="c-guest-main__field-body">
+                <input type="text" class="c-guest-main__input" name="addressNameKana"
+                  maxlength="42" placeholder="例）ヤマダ　タロウ" aria-label="配送先氏名カナ">
+              </dd>
+            </div>
+
+            <!-- 郵便番号（配送先） -->
+            <div class="c-guest-main__field">
+              <dt class="c-guest-main__field-label">
+                郵便番号<span class="c-guest-main__required" aria-label="必須">必須</span>
+              </dt>
+              <dd class="c-guest-main__field-body">
+                <div class="c-guest-main__postal-group">
+                  <span class="c-guest-main__postal-mark" aria-hidden="true">〒</span>
+                  <input type="text" class="c-guest-main__input c-guest-main__input--postal"
+                    name="addressPostalCode"
+                    maxlength="7" inputmode="numeric" placeholder="3306032"
+                    aria-label="配送先郵便番号（ハイフンなし7桁）">
+                  <button type="button" class="c-guest-main__btn c-guest-main__btn--search js-postal-search" data-target="address">
+                    検索
+                  </button>
+                </div>
+
+              </dd>
+            </div>
+
+            <!-- 都道府県（配送先） -->
+            <div class="c-guest-main__field">
+              <dt class="c-guest-main__field-label">
+                都道府県<span class="c-guest-main__required" aria-label="必須">必須</span>
+              </dt>
+              <dd class="c-guest-main__field-body">
+                <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--prefecture">
+                  <select class="c-detail-unit__select" name="addressPrefecture" aria-label="配送先都道府県">
+                    <option value="">--------</option>
+                    <option value="01">北海道</option><option value="02">青森県</option><option value="03">岩手県</option>
+                    <option value="04">宮城県</option><option value="05">秋田県</option><option value="06">山形県</option>
+                    <option value="07">福島県</option><option value="08">茨城県</option><option value="09">栃木県</option>
+                    <option value="10">群馬県</option><option value="11">埼玉県</option><option value="12">千葉県</option>
+                    <option value="13">東京都</option><option value="14">神奈川県</option><option value="15">新潟県</option>
+                    <option value="16">富山県</option><option value="17">石川県</option><option value="18">福井県</option>
+                    <option value="19">山梨県</option><option value="20">長野県</option><option value="21">岐阜県</option>
+                    <option value="22">静岡県</option><option value="23">愛知県</option><option value="24">三重県</option>
+                    <option value="25">滋賀県</option><option value="26">京都府</option><option value="27">大阪府</option>
+                    <option value="28">兵庫県</option><option value="29">奈良県</option><option value="30">和歌山県</option>
+                    <option value="31">鳥取県</option><option value="32">島根県</option><option value="33">岡山県</option>
+                    <option value="34">広島県</option><option value="35">山口県</option><option value="36">徳島県</option>
+                    <option value="37">香川県</option><option value="38">愛媛県</option><option value="39">高知県</option>
+                    <option value="40">福岡県</option><option value="41">佐賀県</option><option value="42">長崎県</option>
+                    <option value="43">熊本県</option><option value="44">大分県</option><option value="45">宮崎県</option>
+                    <option value="46">鹿児島県</option><option value="47">沖縄県</option>
+                  </select>
+                </div>
+              </dd>
+            </div>
+
+            <!-- 市区郡（配送先） -->
+            <div class="c-guest-main__field">
+              <dt class="c-guest-main__field-label">
+                市区郡<span class="c-guest-main__required" aria-label="必須">必須</span>
+              </dt>
+              <dd class="c-guest-main__field-body">
+                <input type="text" class="c-guest-main__input c-guest-main__input--address"
+                  name="addressAddress2" maxlength="15" placeholder="例）さいたま市" aria-label="配送先市区郡">
+              </dd>
+            </div>
+
+            <!-- 町名（配送先） -->
+            <div class="c-guest-main__field">
+              <dt class="c-guest-main__field-label">
+                町名<span class="c-guest-main__required" aria-label="必須">必須</span>
+              </dt>
+              <dd class="c-guest-main__field-body">
+                <input type="text" class="c-guest-main__input c-guest-main__input--address"
+                  name="addressAddress3" maxlength="15" placeholder="例）中央区新都心11番地2丁目" aria-label="配送先町名">
+              </dd>
+            </div>
+
+            <!-- 番地・ビル名（配送先） -->
+            <div class="c-guest-main__field">
+              <dt class="c-guest-main__field-label">
+                番地・ビル名<span class="c-guest-main__required" aria-label="必須">必須</span>
+              </dt>
+              <dd class="c-guest-main__field-body">
+                <textarea class="c-guest-main__input c-guest-main__input--address"
+                  name="addressBanchi" maxlength="60" placeholder="例）中央区新都心11番地2丁目" rows="1"></textarea>
+              </dd>
+            </div>
+
+            <!-- その他（配送先） -->
+            <div class="c-guest-main__field">
+              <dt class="c-guest-main__field-label">その他</dt>
+              <dd class="c-guest-main__field-body">
+                <textarea class="c-guest-main__input c-guest-main__input--address"
+                  name="addressAddress4" maxlength="60" placeholder="例）ランド・アクシス・タワー（明治安田生命さいたま新都心ビル）32階" rows="1"></textarea>
+              </dd>
+            </div>
+
+            <!-- 電話番号（配送先） -->
+            <div class="c-guest-main__field">
+              <dt class="c-guest-main__field-label">
+                電話番号<span class="c-guest-main__required" aria-label="必須">必須</span>
+              </dt>
+              <dd class="c-guest-main__field-body">
+                <div class="c-guest-main__phone-group" role="group" aria-label="配送先電話番号">
+                  <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+                    name="addressPhoneNumber1" maxlength="6" inputmode="numeric" aria-label="配送先電話番号1">
+                  <span class="c-guest-main__phone-sep" aria-hidden="true">-</span>
+                  <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+                    name="addressPhoneNumber2" maxlength="6" inputmode="numeric" aria-label="配送先電話番号2">
+                  <span class="c-guest-main__phone-sep" aria-hidden="true">-</span>
+                  <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+                    name="addressPhoneNumber3" maxlength="6" inputmode="numeric" aria-label="配送先電話番号3">
+                </div>
+                <p class="c-guest-main__field-note">※自宅電話番号又は携帯電話番号を入力してください。</p>
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <!-- 個人情報のお取り扱いについて -->
+      <div class="c-guest-main__privacy">
+        <h3 class="c-guest-main__privacy-title">個人情報のお取り扱いについて</h3>
+        <div class="c-guest-main__privacy-box" role="region" aria-label="個人情報のお取り扱いについて" tabindex="0">
+          <div class="c-guest-main__privacy-text">
+            <p>株式会社日本オプティカル(以下、「当社」といいます。)は、個人情報(お名前、ご住所、電話番号等の個人を識別することができる情報のことを指し、他の情報と組み合わせて照合することにより個人を識別することができる情報も含まれます。以下、「個人情報」といいます。)が、お客様、採用・募集活動応募者様、取引先様、従業員のプライバシーを構成する重要な情報であることを深く認識します。</p>
+            <p>当社は、以下のとおり個人情報保護方針を定め、安全管理措置の仕組みを構築し、全従業員に対し、個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を推進いたします。</p>
+            <p>１．取得について<br>個人情報の取得は、事前に利用目的などをお知らせし、業務上必要な範囲内で、適正かつ適法な手段により行います。</p>
+            <p>６．個人情報の第三者への開示・提供の禁止<br>当社は、ご本人よりお預かりした個人情報を適切に管理し、次のいずれかに該当する場合を除き、個人情報を第三者に開示・提供いたしません。<br>(1)　ご本人の同意がある場合<br>(2)　生命、身体又は財産の保護のために必要であり、ご本人様のご同意を得ることが困難である場合<br>(3)　利用目的の達成に必要な範囲内で、個人情報の取り扱いの全部、または一部を第三者に委託する場合<br>(4)　法令等により認められている場合</p>
+            <p>７．個人情報の開示・訂正・削除について<br>(1)　ご自身に係る保有個人データについて開示のご請求があった場合には、業務の適正な実施に著しい支障を及ぼすおそれがある場合等を除き、ご本人に対して開示します。<br>(2)　ご自身に係る保有個人データについて内容の訂正、追加または削除のご請求があった場合には、利用目的の達成に必要な範囲内において、必要な調査を行い、訂正等する場合には当該調査結果にもとづき行います。<br>(3)　ご自身に係る保有個人データについて利用の停止もしくは消去または第三者への提供の停止のご請求があった場合において、その求めに正当な理由があることが判明したときは、当該保有個人データの利用停止等を行います。</p>
+            <p>８．マネジメントシステムの継続的改善<br>個人情報保護マネジメントシステムを確立し、実施し、維持し、かつ、継続的改善を行います。</p>
+            <p>９．個人情報取扱事業者名および個人情報保護管理者<br>個人情報取扱事業者：株式会社日本オプティカル<br>代表者：代表取締役社長　前田貴志<br>住　所：愛知県名古屋市西区則武新町二丁目22－７<br>個人情報保護管理責任者：個人情報担当部門　総務部長</p>
+            <p>当社は、本基本方針に則ったウェブサイトの改善を行うため、個人が特定できない状態で、お客様のウェブサイトご利用状況を調査するために、クッキーを利用いたします。<br>なお、当社が広告を配信することを目的として、委託先の発行するクッキーによる行動情報の取得・利用が行われる場合があります。<br>お客様は、全部または一部のクッキーを拒否することもできますが、お客様がクッキーを無効化、または拒否した場合には、ウェブサイトの一部がアクセス不能になるか、または適切に機能しなくなる可能性があることはご留意ください。</p>
+            <p>5.個人情報の第三者提供と個人情報の業務委託<br>当社は、上記の利用目的を達成するため、必要な個人情報のみ開示し業務委託することがありますが、それ以外の目的で業務委託先によって使用されることはありません。</p>
+            <p>カスタマーハラスメントの定義<br>当社は、厚生労働省が定める「カスタマーハラスメント対策企業マニュアル」に基づき、カスタマーハラスメントを次の通り定義いたします。</p>
+            <p>お客様からのクレーム・言動のうち、当該クレーム・言動の内容の妥当性に照らして、当該要求を実現するための手段・態様が社会通念上不相当なものであって、当該手段・態様により、当社の従業員の安全が脅かされ、就業環境が害されるもの。</p>
+            <p>２．対象となる行為例<br>以下の内容は例示であり、これらに限られるものではありません。</p>
+            <p>【身体的・精神的攻撃】<br>暴行、傷害、物を投げる、机を叩く等の威嚇、侮辱、罵倒、人格否定、差別的言動、性的な言動、脅迫、土下座の強要等</p>
+            <p>【過度・不当な要求】<br>実現困難な要求、社会通念上過大な補償・謝罪要求、根拠のない金銭要求、規約・契約を超えた要求等</p>
+            <p>ご協力を賜りますようお願い申し上げます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== 下部ボタンエリア ===== -->
+    <label class="c-guest-main__agree-check">
+      <input type="checkbox" class="c-guest-main__agree-input js-agree-checkbox" name="agree" value="1">
+      <span class="c-guest-main__agree-text">利用規約、個人情報保護方針に同意する</span>
+    </label>
+
+    <div class="c-shipping-main__actions">
+      <button type="submit" class="c-shipping-main__btn--next js-guest-submit" disabled>次へ</button>
+
+      <!-- ステップインジケータ（下部） -->
+      <nav class="c-step-nav" aria-label="購入フロー">
+        <ol class="c-step-nav__list">
+          <li class="c-step-nav__item">
+            <span class="c-step-nav__circle">1</span>
+            <span class="c-step-nav__label">カート</span>
+          </li>
+          <li class="c-step-nav__item c-step-nav__item--active">
+            <span class="c-step-nav__circle">2</span>
+            <span class="c-step-nav__label">ゲスト購入</span>
+          </li>
+          <li class="c-step-nav__item">
+            <span class="c-step-nav__circle">3</span>
+            <span class="c-step-nav__label">お届け先・<br>ラッピング設定</span>
+          </li>
+          <li class="c-step-nav__item">
+            <span class="c-step-nav__circle">4</span>
+            <span class="c-step-nav__label">お支払い<br>方法選択</span>
+          </li>
+          <li class="c-step-nav__item">
+            <span class="c-step-nav__circle">5</span>
+            <span class="c-step-nav__label">注文内容<br>確認</span>
+          </li>
+          <li class="c-step-nav__item">
+            <span class="c-step-nav__circle">6</span>
+            <span class="c-step-nav__label">注文完了</span>
+          </li>
+        </ol>
+      </nav>
+
+      <a href="#" class="c-shipping-main__btn--back">前へ戻る</a>
+    </div>
+
+  </form>
+
+</section>
+
+<!-- リアルタイムバリデーションポップアップ（JS制御） -->
+<div class="c-guest-validation-popup js-validation-popup" role="alert" aria-live="assertive" hidden>
+  <p class="c-guest-validation-popup__message js-validation-popup-message"></p>
+  <div class="c-guest-validation-popup__arrow" aria-hidden="true"></div>
+</div>

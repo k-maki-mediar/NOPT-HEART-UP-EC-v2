@@ -123,6 +123,30 @@
     margin: 0;
     padding: 0;
   }
+
+  > .c-cart-main__item-subtotal-row {
+    margin-top: rem(16);
+    padding: rem(8) rem(12);
+    background-color: $bg-light;
+    min-height: rem(46);
+
+    .c-cart-main__item-subtotal-label {
+      font-size: rem(12);
+      font-weight: $font-weight-medium;
+      color: $primary-color;
+    }
+
+    .c-cart-main__item-subtotal {
+      font-size: rem(24);
+      font-weight: $font-weight-medium;
+      color: $primary-color;
+    }
+
+    .c-cart-main__item-subtotal-tax {
+      font-size: rem(12);
+      color: $primary-color;
+    }
+  }
 }
 
 .c-confirm-main .c-teiki-address {

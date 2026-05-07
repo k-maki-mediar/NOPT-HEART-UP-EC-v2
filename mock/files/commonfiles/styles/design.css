@@ -11523,6 +11523,26 @@
   margin: 0;
   padding: 0;
 }
+.c-confirm-main__section > .c-cart-main__item-subtotal-row {
+  margin-top: 1rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #f4f8fc;
+  min-height: 2.875rem;
+}
+.c-confirm-main__section > .c-cart-main__item-subtotal-row .c-cart-main__item-subtotal-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #00387d;
+}
+.c-confirm-main__section > .c-cart-main__item-subtotal-row .c-cart-main__item-subtotal {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #00387d;
+}
+.c-confirm-main__section > .c-cart-main__item-subtotal-row .c-cart-main__item-subtotal-tax {
+  font-size: 0.75rem;
+  color: #00387d;
+}
 
 .c-confirm-main .c-teiki-address {
   margin-bottom: 2rem;

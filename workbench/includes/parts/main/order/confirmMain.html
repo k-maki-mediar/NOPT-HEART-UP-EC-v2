@@ -7,140 +7,137 @@
     <div class="c-confirm-main__left">
 
       <!-- ===== お支払い方法エリア ===== -->
-      <section class="c-confirm-main__section" aria-label="お支払い方法">
-        <div class="c-confirm-main__section-header">
-          <h2 class="c-confirm-main__section-heading">お支払い方法</h2>
-          <a href="/order/payment/" class="c-confirm-main__change-btn">変更</a>
+      <div class="c-teiki-address">
+        <div class="c-teiki-address__header">
+          <span class="c-teiki-address__header-title">お支払い方法</span>
+          <a href="#" class="c-teiki-amount__section-btn">変更</a>
         </div>
-        <div class="c-confirm-main__section-body">
-          <dl class="c-confirm-main__info-list">
+        <table class="c-teiki-info-table" aria-label="お支払い方法">
+          <tbody>
 
-            <!-- お支払い名称（全バリエーション共通） -->
-            <div class="c-confirm-main__info-row c-confirm-main__info-row--first">
-              <dt class="c-confirm-main__info-label">お支払い方法</dt>
-              <dd class="c-confirm-main__info-value">代金引換</dd>
-            </div>
+              <!-- お支払い名称（全バリエーション共通） -->
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header">お支払い方法</th>
+                <td class="c-teiki-info-table__data">代金引換</td>
+              </tr>
 
-            <!-- 手数料（0円以外の場合のみ表示） -->
-            <div class="c-confirm-main__info-row">
-              <dt class="c-confirm-main__info-label">手数料</dt>
-              <!-- 物理名: paymentCommission（※同梱値引とphysical_name重複: 設計資料確認事項） -->
-              <dd class="c-confirm-main__info-value">330円</dd>
-            </div>
+              <!-- 手数料（0円以外の場合のみ表示） -->
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header">手数料</th>
+                <!-- 物理名: paymentCommission（※同梱値引とphysical_name重複: 設計資料確認事項） -->
+                <td class="c-teiki-info-table__data">330円</td>
+              </tr>
 
-            <!-- クレジットカード時のみ: カード番号・支払回数 -->
-            <!--
-            <div class="c-confirm-main__info-row" hidden>
-              <dt class="c-confirm-main__info-label">クレジットカード番号</dt>
-              <dd class="c-confirm-main__info-value">123456********78</dd>
-            </div>
-            <div class="c-confirm-main__info-row" hidden>
-              <dt class="c-confirm-main__info-label">お支払い回数</dt>
-              <dd class="c-confirm-main__info-value">一括払い</dd>
-            </div>
-            -->
+              <!-- クレジットカード時のみ: カード番号・支払回数 -->
+              <!--
+              <tr class="c-teiki-info-table__row" hidden>
+                <th class="c-teiki-info-table__header">クレジットカード番号</th>
+                <td class="c-teiki-info-table__data">123456********78</td>
+              </tr>
+              <tr class="c-teiki-info-table__row" hidden>
+                <th class="c-teiki-info-table__header">お支払い回数</th>
+                <td class="c-teiki-info-table__data">一括払い</td>
+              </tr>
+              -->
 
-            <!-- コンビニ支払い時のみ: コンビニ名・受取人 -->
-            <!--
-            <div class="c-confirm-main__info-row" hidden>
-              <dt class="c-confirm-main__info-label">お支払いコンビニ</dt>
-              <dd class="c-confirm-main__info-value">セブン-イレブン</dd>
-            </div>
-            <div class="c-confirm-main__info-row" hidden>
-              <dt class="c-confirm-main__info-label">受取人</dt>
-              <dd class="c-confirm-main__info-value">山田 太郎</dd>
-            </div>
-            -->
+              <!-- コンビニ支払い時のみ: コンビニ名・受取人 -->
+              <!--
+              <tr class="c-teiki-info-table__row" hidden>
+                <th class="c-teiki-info-table__header">お支払いコンビニ</th>
+                <td class="c-teiki-info-table__data">セブン-イレブン</td>
+              </tr>
+              <tr class="c-teiki-info-table__row" hidden>
+                <th class="c-teiki-info-table__header">受取人</th>
+                <td class="c-teiki-info-table__data">山田 太郎</td>
+              </tr>
+              -->
 
-            <!-- クーポンエリア（使用クーポンがある場合） -->
-            <div class="c-confirm-main__info-row">
-              <dt class="c-confirm-main__info-label">クーポン</dt>
-              <dd class="c-confirm-main__info-value">
-                <ul class="c-confirm-main__coupon-list">
-                  <li class="c-confirm-main__coupon-item">
-                    初回限定クーポン<span class="c-confirm-main__coupon-discount">（500円引き）</span>
-                  </li>
-                </ul>
-              </dd>
-            </div>
+              <!-- クーポンエリア（使用クーポンがある場合） -->
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header">クーポン</th>
+                <td class="c-teiki-info-table__data">
+                  <ul class="c-confirm-main__coupon-list">
+                    <li class="c-confirm-main__coupon-item">
+                      初回限定クーポン<span class="c-confirm-main__coupon-discount">（500円引き）</span>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
 
-          </dl>
-        </div>
-      </section>
+            </tbody>
+        </table>
+      </div>
 
       <!-- ===== お客様情報エリア ===== -->
-      <section class="c-confirm-main__section" aria-label="お客様情報">
-        <div class="c-confirm-main__section-header">
-          <h2 class="c-confirm-main__section-heading">お客様情報</h2>
-          <!-- 遷移先: 設計資料に未明示のため暫定 href="#"（確認事項1） -->
-          <a href="#" class="c-confirm-main__change-btn">変更</a>
+      <div class="c-teiki-address">
+        <div class="c-teiki-address__header">
+          <span class="c-teiki-address__header-title">お客様情報</span>
+          <a href="#" class="c-teiki-amount__section-btn">変更</a>
         </div>
-        <div class="c-confirm-main__section-body">
-          <dl class="c-confirm-main__info-list">
-            <div class="c-confirm-main__info-row c-confirm-main__info-row--first">
-              <dt class="c-confirm-main__info-label">お名前</dt>
-              <!-- lastName + firstName + 様 -->
-              <dd class="c-confirm-main__info-value">山田 太郎 様</dd>
-            </div>
-            <div class="c-confirm-main__info-row">
-              <dt class="c-confirm-main__info-label">メールアドレス</dt>
-              <dd class="c-confirm-main__info-value">yamada@example.com</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
+        <table class="c-teiki-info-table" aria-label="お客様情報">
+          <tbody>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header">お名前</th>
+                <!-- lastName + firstName + 様 -->
+                <td class="c-teiki-info-table__data">山田 太郎 様</td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header">メールアドレス</th>
+                <td class="c-teiki-info-table__data">yamada@example.com</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
 
       <!-- ===== お届け先情報エリア ===== -->
-      <section class="c-confirm-main__section" aria-label="お届け先情報">
-        <div class="c-confirm-main__section-header">
-          <h2 class="c-confirm-main__section-heading">
-            <span class="c-confirm-main__section-heading-sub">お届け先：</span>基本住所
-          </h2>
-          <a href="/order/shipping/" class="c-confirm-main__change-btn">変更</a>
+      <div class="c-teiki-address">
+        <div class="c-teiki-address__header">
+          <span class="c-teiki-address__header-title">お届け先情報</span>
+          <a href="#" class="c-teiki-amount__section-btn">変更</a>
         </div>
-        <div class="c-confirm-main__section-body">
-          <dl class="c-confirm-main__info-list">
-            <div class="c-confirm-main__info-row c-confirm-main__info-row--first">
-              <dt class="c-confirm-main__info-label">お届け先氏名</dt>
-              <!-- addressLastName + addressFirstName + 様 -->
-              <dd class="c-confirm-main__info-value">山田 太郎 様</dd>
-            </div>
-            <div class="c-confirm-main__info-row">
-              <dt class="c-confirm-main__info-label">住所</dt>
-              <!-- postalCode + address1 + address2 + address3 + address4 + address5 -->
-              <dd class="c-confirm-main__info-value">
-                〒123-4567<br>
-                東京都千代田区OOOO<br>
-                OOOOビル101号室
-              </dd>
-            </div>
-            <div class="c-confirm-main__info-row">
-              <dt class="c-confirm-main__info-label">電話番号</dt>
-              <dd class="c-confirm-main__info-value">09012345678</dd>
-            </div>
-            <div class="c-confirm-main__info-row">
-              <dt class="c-confirm-main__info-label">配送方法</dt>
-              <dd class="c-confirm-main__info-value">ヤマト運輸</dd>
-            </div>
-            <div class="c-confirm-main__info-row">
-              <dt class="c-confirm-main__info-label">受取方法</dt>
-              <dd class="c-confirm-main__info-value">通常受取</dd>
-            </div>
-            <!-- 置き配指定（受取方法区分が[1:置き配]の場合のみ表示） -->
-            <!--
-            <div class="c-confirm-main__info-row" hidden>
-              <dt class="c-confirm-main__info-label">置き配指定</dt>
-              <dd class="c-confirm-main__info-value">玄関前</dd>
-            </div>
-            -->
-          </dl>
-        </div>
-      </section>
+        <table class="c-teiki-info-table" aria-label="お届け先情報">
+          <tbody>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header">お届け先氏名</th>
+                <!-- addressLastName + addressFirstName + 様 -->
+                <td class="c-teiki-info-table__data">山田 太郎 様</td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header">住所</th>
+                <!-- postalCode + address1 + address2 + address3 + address4 + address5 -->
+                <td class="c-teiki-info-table__data">
+                  〒123-4567<br>
+                  東京都千代田区OOOO<br>
+                  OOOOビル101号室
+                </td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header">電話番号</th>
+                <td class="c-teiki-info-table__data">09012345678</td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header">配送方法</th>
+                <td class="c-teiki-info-table__data">ヤマト運輸</td>
+              </tr>
+              <tr class="c-teiki-info-table__row">
+                <th class="c-teiki-info-table__header">受取方法</th>
+                <td class="c-teiki-info-table__data">通常受取</td>
+              </tr>
+              <!-- 置き配指定（受取方法区分が[1:置き配]の場合のみ表示） -->
+              <!--
+              <tr class="c-teiki-info-table__row" hidden>
+                <th class="c-teiki-info-table__header">置き配指定</th>
+                <td class="c-teiki-info-table__data">玄関前</td>
+              </tr>
+              -->
+            </tbody>
+        </table>
+      </div>
 
       <!-- ===== 商品情報エリア（通常購入） ===== -->
       <section class="c-confirm-main__section" aria-label="商品情報">
-        <div class="c-confirm-main__section-header">
-          <h2 class="c-confirm-main__section-heading">商品情報</h2>
+        <div class="c-teiki-address__header">
+          <span class="c-teiki-address__header-title">商品情報</span>
         </div>
 
         <!-- お届け日時情報 -->

@@ -11534,7 +11534,7 @@
   border-bottom: none;
 }
 .c-confirm-main__section > .c-cart-main__item-subtotal-row {
-  margin-top: 1rem;
+  margin-top: 0;
   padding: 0.5rem 0.75rem;
   background-color: #f4f8fc;
   min-height: 2.875rem;

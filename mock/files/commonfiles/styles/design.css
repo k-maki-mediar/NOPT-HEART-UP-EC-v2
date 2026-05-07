@@ -12131,8 +12131,11 @@
 .c-complete-main__mail-note {
   font-size: 0.875rem;
   color: #333;
-  margin: 0;
+  margin: 0 0 0.5rem;
   line-height: 1.75;
+}
+.c-complete-main__mail-note--left {
+  text-align: left;
 }
 
 .c-complete-main__supplement {
@@ -12148,8 +12151,11 @@
   font-size: 0.875rem;
   color: #333;
   line-height: 1.75;
-  margin: 0 0 0.5rem;
+  margin: 0 0 1rem;
   text-align: center;
+}
+.c-complete-main__supplement-text--left {
+  text-align: left;
 }
 
 .c-complete-main__info-box {

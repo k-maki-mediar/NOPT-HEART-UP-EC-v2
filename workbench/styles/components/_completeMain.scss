@@ -100,8 +100,12 @@
 .c-complete-main__mail-note {
   font-size: rem(14);
   color: $text-color;
-  margin: 0;
+  margin: 0 0 rem(8);
   line-height: 1.75;
+
+  &--left {
+    text-align: left;
+  }
 }
 
 // ----------------------------------------
@@ -120,8 +124,12 @@
   font-size: rem(14);
   color: $text-color;
   line-height: 1.75;
-  margin: 0 0 rem(8);
+  margin: 0 0 rem(16);
   text-align: center;
+
+  &--left {
+    text-align: left;
+  }
 }
 
 // ----------------------------------------

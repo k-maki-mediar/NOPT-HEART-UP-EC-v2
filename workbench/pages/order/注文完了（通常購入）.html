@@ -21,9 +21,30 @@
           <div>
             <div class="wsparts-include">
               <div class="c-main">
-                <div class="wsparts-include">
-                  @@include('../../includes/parts/general/guestStepNavComplete.html')
-                </div>
+                <nav class="c-step-nav" aria-label="購入フロー">
+                  <ol class="c-step-nav__list">
+                    <li class="c-step-nav__item">
+                      <span class="c-step-nav__circle">1</span>
+                      <span class="c-step-nav__label">カート</span>
+                    </li>
+                    <li class="c-step-nav__item">
+                      <span class="c-step-nav__circle">2</span>
+                      <span class="c-step-nav__label">お届け先・<br>ラッピング設定</span>
+                    </li>
+                    <li class="c-step-nav__item">
+                      <span class="c-step-nav__circle">3</span>
+                      <span class="c-step-nav__label">お支払い方法<br>選択</span>
+                    </li>
+                    <li class="c-step-nav__item">
+                      <span class="c-step-nav__circle">4</span>
+                      <span class="c-step-nav__label">注文内容確認</span>
+                    </li>
+                    <li class="c-step-nav__item c-step-nav__item--active">
+                      <span class="c-step-nav__circle">5</span>
+                      <span class="c-step-nav__label">注文完了</span>
+                    </li>
+                  </ol>
+                </nav>
                 <div class="wsparts-include">
                   @@include('../../includes/parts/general/messageArea.html')
                 </div>

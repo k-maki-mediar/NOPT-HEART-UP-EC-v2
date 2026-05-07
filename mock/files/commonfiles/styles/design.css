@@ -12068,12 +12068,6 @@
 
 .c-complete-main__thanks-block {
   text-align: center;
-  padding: 2rem 1rem 1.5rem;
-}
-@media (min-width: 768px) {
-  .c-complete-main__thanks-block {
-    padding: 2.5rem 2rem 2rem;
-  }
 }
 
 .c-complete-main__heading {
@@ -12092,25 +12086,28 @@
 }
 
 .c-complete-main__order-info {
-  font-size: 0.875rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
   color: #333;
   line-height: 1.75;
   margin: 0 0 0.5rem;
+  text-align: center;
 }
 
 .c-complete-main__order-no-link {
-  color: #0087cb;
+  color: #00387d;
   text-decoration: underline;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 .c-complete-main__order-no-link:hover {
   text-decoration: none;
 }
 
 .c-complete-main__order-no-label {
-  font-weight: 500;
-  color: #333;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00387d;
 }
 
 .c-complete-main__datetime {
@@ -12125,8 +12122,8 @@
 }
 
 .c-complete-main__mypage-note {
-  font-size: 0.75rem;
-  color: #6B7280;
+  font-size: 0.875rem;
+  color: #333;
   margin: 0 0 0.5rem;
   line-height: 1.75;
 }
@@ -12139,9 +12136,7 @@
 }
 
 .c-complete-main__supplement {
-  padding: 1.5rem 1rem;
-  border-top: 1px solid #e0e0e0;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
 }
 @media (min-width: 768px) {
   .c-complete-main__supplement {
@@ -12153,15 +12148,14 @@
   font-size: 0.875rem;
   color: #333;
   line-height: 1.75;
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
+  text-align: center;
 }
 
 .c-complete-main__info-box {
   background-color: #F7F7F7;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
   padding: 1rem 1.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .c-complete-main__info-box-title {

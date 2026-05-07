@@ -37,11 +37,6 @@
 
 .c-complete-main__thanks-block {
   text-align: center;
-  padding: rem(32) rem(16) rem(24);
-
-  @include tablet-up {
-    padding: rem(40) rem(32) rem(32);
-  }
 }
 
 .c-complete-main__heading {
@@ -59,17 +54,19 @@
 }
 
 .c-complete-main__order-info {
-  font-size: rem(14);
-  font-weight: $font-weight-normal;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
   color: $text-color;
   line-height: 1.75;
   margin: 0 0 rem(8);
+  text-align: center;
 }
 
 .c-complete-main__order-no-link {
-  color: $link-blue;
+  color: $primary-color;
   text-decoration: underline;
-  font-weight: $font-weight-medium;
+  font-size: rem(24);
+  font-weight: $font-weight-bold;
 
   &:hover {
     text-decoration: none;
@@ -77,8 +74,9 @@
 }
 
 .c-complete-main__order-no-label {
-  font-weight: $font-weight-medium;
-  color: $text-color;
+  font-size: rem(24);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
 }
 
 .c-complete-main__datetime {
@@ -93,8 +91,8 @@
 }
 
 .c-complete-main__mypage-note {
-  font-size: rem(12);
-  color: $text-light;
+  font-size: rem(14);
+  color: $text-color;
   margin: 0 0 rem(8);
   line-height: 1.75;
 }
@@ -111,9 +109,7 @@
 // ----------------------------------------
 
 .c-complete-main__supplement {
-  padding: rem(24) rem(16);
-  border-top: 1px solid $border-color;
-  margin-top: rem(8);
+  margin-top: rem(24);
 
   @include tablet-up {
     padding: rem(24) rem(32);
@@ -124,7 +120,8 @@
   font-size: rem(14);
   color: $text-color;
   line-height: 1.75;
-  margin: 0 0 rem(16);
+  margin: 0 0 rem(8);
+  text-align: center;
 }
 
 // ----------------------------------------
@@ -133,10 +130,8 @@
 
 .c-complete-main__info-box {
   background-color: $bg-gray;
-  border: 1px solid $border-color;
-  border-radius: $border-radius-md;
   padding: rem(16) rem(24);
-  margin-top: rem(16);
+  margin-top: rem(24);
 }
 
 .c-complete-main__info-box-title {

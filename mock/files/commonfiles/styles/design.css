@@ -11890,46 +11890,26 @@
 }
 
 .c-confirm-main__btn {
-  flex: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
-  padding: 0.5rem 1rem;
-  border: 0.0625rem solid #00387d;
-  border-radius: 1.4375rem;
-  background-color: #FFFFFF;
-  box-shadow: 0 0.125rem 0 0 #002a5e;
-  font-family: "Noto Sans JP", sans-serif;
+  max-width: 25rem;
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: 1.625rem;
   font-size: 0.875rem;
   font-weight: 500;
-  line-height: 1.75;
-  letter-spacing: 0.035rem;
-  color: #00387d;
-  text-decoration: none;
-  text-align: center;
-  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.c-confirm-main__btn:hover {
-  transform: translateY(0.125rem);
-  box-shadow: 0 0 0 0 #002a5e;
-}
-.c-confirm-main__btn {
-  display: flex;
-  width: 100%;
-  padding: 0.75rem 1.5rem;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   cursor: pointer;
-  box-sizing: border-box;
-  text-align: center;
+  text-decoration: none;
 }
 
 .c-confirm-main__btn--primary {
   background-color: #00387d;
-  border-color: #00387d;
   color: #FFFFFF;
   box-shadow: 0 0.1875rem 0 #002552;
-  font-size: 1rem;
-  font-weight: 500;
 }
 .c-confirm-main__btn--primary:hover {
   transform: translateY(0.125rem);
@@ -11937,14 +11917,14 @@
 }
 
 .c-confirm-main__btn--secondary {
-  background-color: #F7F7F7;
-  border-color: #c2c2c2;
-  color: #6B7280;
-  box-shadow: 0 0.125rem 0 #c2c2c2;
+  background-color: #FFFFFF;
+  border: 1px solid #00387d;
+  color: #00387d;
+  box-shadow: 0 0.125rem 0 #00387d;
 }
 .c-confirm-main__btn--secondary:hover {
-  background-color: #e0e0e0;
-  box-shadow: 0 0 0 #c2c2c2;
+  transform: translateY(0.125rem);
+  box-shadow: 0 0.0625rem 0 #00387d;
 }
 
 @media (min-width: 768px) {

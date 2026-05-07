@@ -545,22 +545,26 @@
 // ----------------------------------------
 
 .c-confirm-main__btn {
-  @include accordion-card-btn;
-  display: flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: rem(400);
   width: 100%;
-  padding: rem(12) rem(24);
+  min-height: rem(52);
+  padding: 0 rem(24);
+  border: none;
+  border-radius: rem(26);
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  font-family: $font-family-base;
   cursor: pointer;
-  box-sizing: border-box;
-  text-align: center;
+  text-decoration: none;
 }
 
 .c-confirm-main__btn--primary {
   background-color: $primary-color;
-  border-color: $primary-color;
   color: $color-white;
   box-shadow: 0 rem(3) 0 $primary-shadow;
-  font-size: rem(16);
-  font-weight: $font-weight-medium;
 
   &:hover {
     transform: translateY(rem(2));
@@ -569,14 +573,14 @@
 }
 
 .c-confirm-main__btn--secondary {
-  background-color: $bg-gray;
-  border-color: $border-color-dark;
-  color: $text-light;
-  box-shadow: 0 rem(2) 0 $border-color-dark;
+  background-color: $color-white;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  box-shadow: 0 rem(2) 0 $primary-color;
 
   &:hover {
-    background-color: $border-color;
-    box-shadow: 0 0 0 $border-color-dark;
+    transform: translateY(rem(2));
+    box-shadow: 0 rem(1) 0 $primary-color;
   }
 }
 

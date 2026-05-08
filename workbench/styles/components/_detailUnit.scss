@@ -766,7 +766,7 @@
   color: $text-color;
   white-space: nowrap;
   flex-shrink: 0;
-  width: rem(44);
+  min-width: rem(140);
 }
 
 .c-detail-unit__eye-card-field .c-detail-unit__select-wrap {
@@ -1089,7 +1089,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-top: 0;
+  margin-top: rem(12);
   padding: rem(8) rem(12);
   background-color: $color-white;
   border-radius: rem(4);

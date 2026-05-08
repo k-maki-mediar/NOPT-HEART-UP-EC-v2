@@ -486,22 +486,23 @@
   display: flex;
   align-items: baseline;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 24PX;
+  height: 24PX;
   color: #FFFFFF;
   filter: none;
   line-height: 1;
+  overflow: hidden;
 }
 
 .c-header__font-size-icon-lg {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20PX;
   font-weight: 400;
 }
 
 .c-header__font-size-icon-sm {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14PX;
   font-weight: 400;
 }
 

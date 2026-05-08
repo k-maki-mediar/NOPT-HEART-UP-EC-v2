@@ -346,22 +346,23 @@
   display: flex;
   align-items: baseline;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 24PX;
+  height: 24PX;
   color: $color-white;
   filter: none;
   line-height: 1;
+  overflow: hidden;
 }
 
 .c-header__font-size-icon-lg {
   font-family: $font-family-heading;
-  font-size: 20px;
+  font-size: 20PX;
   font-weight: $font-weight-normal;
 }
 
 .c-header__font-size-icon-sm {
   font-family: $font-family-heading;
-  font-size: 14px;
+  font-size: 14PX;
   font-weight: $font-weight-normal;
 }
 

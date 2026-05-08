@@ -82,7 +82,7 @@
   padding: rem(24) rem(20);
   margin-bottom: rem(16);
   min-width: 0;
-  overflow: hidden;
+  overflow-x: auto;
 
   &--second {
     display: none;

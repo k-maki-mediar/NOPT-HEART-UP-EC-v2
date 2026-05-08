@@ -2292,7 +2292,7 @@
   padding: 1.5rem 1.25rem;
   margin-bottom: 1rem;
   min-width: 0;
-  overflow: hidden;
+  overflow-x: auto;
 }
 .c-business-calendar__card--second {
   display: none;

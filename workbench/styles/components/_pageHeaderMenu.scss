@@ -48,7 +48,8 @@
 .c-header__left {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
   gap: 8px;
 }
 
@@ -65,6 +66,7 @@
 .c-header__logo-img {
   display: block;
   width: 145px;
+  max-width: 100%;
   height: auto;
 }
 

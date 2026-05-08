@@ -6377,7 +6377,7 @@
   color: #333;
   white-space: nowrap;
   flex-shrink: 0;
-  width: 2.75rem;
+  min-width: 8.75rem;
 }
 
 .c-detail-unit__eye-card-field .c-detail-unit__select-wrap {
@@ -8052,14 +8052,14 @@
     --font-size-switcher-offset-default: rem(180);
   }
 }
-.font-size-switcher {
+.c-font-size-switcher {
   position: relative;
   display: inline-flex;
   align-items: center;
-  z-index: 50;
+  z-index: 90;
 }
 
-.font-size-switcher__trigger {
+.c-font-size-switcher__trigger {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8071,32 +8071,32 @@
   border-radius: 0 22PX 22PX 0;
 }
 @media (min-width: 992px) {
-  .font-size-switcher__trigger {
+  .c-font-size-switcher__trigger {
     padding: 0 0 0 4PX;
     border-radius: 22PX 0 0 22PX;
   }
 }
-.font-size-switcher__trigger {
+.c-font-size-switcher__trigger {
   cursor: pointer;
   transition: background-color 0.2s ease;
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
-.font-size-switcher__trigger:focus-visible {
+.c-font-size-switcher__trigger:focus-visible {
   outline: 2px solid #00387d;
   outline-offset: 2px;
 }
-.font-size-switcher__trigger[aria-expanded=true] {
+.c-font-size-switcher__trigger[aria-expanded=true] {
   border-radius: 0;
 }
 
-.font-size-switcher__icon {
+.c-font-size-switcher__icon {
   font-size: 18PX;
   font-weight: 700;
   color: #FFFFFF;
   line-height: 1;
 }
 
-.font-size-switcher__label {
+.c-font-size-switcher__label {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -8108,7 +8108,7 @@
   border: 0;
 }
 
-.font-size-switcher__menu {
+.c-font-size-switcher__menu {
   position: absolute;
   top: 0;
   left: 100%;
@@ -8123,24 +8123,24 @@
   transform: translateX(-8px);
 }
 @media (min-width: 992px) {
-  .font-size-switcher__menu {
+  .c-font-size-switcher__menu {
     left: auto;
     right: 100%;
     border-radius: 8PX 0 8PX 8PX;
     transform: translateX(8px);
   }
 }
-.font-size-switcher__menu {
+.c-font-size-switcher__menu {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
   z-index: 100;
 }
-.font-size-switcher__menu.is-open {
+.c-font-size-switcher__menu.is-open {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
 }
 
-.font-size-switcher__option {
+.c-font-size-switcher__option {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8155,7 +8155,7 @@
   text-align: center;
   transition: background-color 0.15s ease;
 }
-.font-size-switcher__option::before {
+.c-font-size-switcher__option::before {
   content: "✓";
   font-size: 14PX;
   font-weight: 700;
@@ -8166,46 +8166,46 @@
   top: 50%;
   transform: translateY(-50%);
 }
-.font-size-switcher__option[data-font-size-option=normal] {
+.c-font-size-switcher__option[data-font-size-option=normal] {
   font-size: 16PX;
 }
-.font-size-switcher__option[data-font-size-option=large] {
+.c-font-size-switcher__option[data-font-size-option=large] {
   font-size: 18PX;
 }
-.font-size-switcher__option[data-font-size-option=x-large] {
+.c-font-size-switcher__option[data-font-size-option=x-large] {
   font-size: 20PX;
 }
-.font-size-switcher__option:hover {
+.c-font-size-switcher__option:hover {
   background-color: #f4f8fc;
 }
-.font-size-switcher__option:focus-visible {
+.c-font-size-switcher__option:focus-visible {
   outline: none;
   background-color: #f4f8fc;
 }
-.font-size-switcher__option.is-active {
+.c-font-size-switcher__option.is-active {
   background-color: #f4f8fc;
   color: #00387d;
   font-weight: 500;
 }
-.font-size-switcher__option.is-active::before {
+.c-font-size-switcher__option.is-active::before {
   color: #00387d;
 }
-.font-size-switcher__option:not(:last-child) {
-  border-bottom: 1px solid #e0e0e0;
+.c-font-size-switcher__option + .c-font-size-switcher__option {
+  border-top: 1px solid #e0e0e0;
 }
-.font-size-switcher__option:first-child {
+.c-font-size-switcher__option--first {
   border-radius: 0 6PX 0 0;
 }
 @media (min-width: 992px) {
-  .font-size-switcher__option:first-child {
+  .c-font-size-switcher__option--first {
     border-radius: 6PX 0 0 0;
   }
 }
-.font-size-switcher__option:last-child {
+.c-font-size-switcher__option--last {
   border-radius: 0 0 6PX 6PX;
 }
 
-.font-size-switcher-wrapper {
+.c-font-size-switcher-wrapper {
   position: fixed;
   top: var(--font-size-switcher-offset, var(--font-size-switcher-offset-default));
   left: 0;
@@ -8213,26 +8213,26 @@
   z-index: 98;
 }
 @media (min-width: 992px) {
-  .font-size-switcher-wrapper {
+  .c-font-size-switcher-wrapper {
     left: auto;
     right: 0;
   }
 }
 
 @media (max-width: 767px) {
-  .font-size-switcher__trigger {
+  .c-font-size-switcher__trigger {
     width: 40PX;
     height: 40PX;
   }
-  .font-size-switcher__icon {
+  .c-font-size-switcher__icon {
     font-size: 16PX;
   }
 }
-html[data-font-size=large] {
+.c-html[data-font-size=large] {
   font-size: 112.5%;
 }
 
-html[data-font-size=x-large] {
+.c-html[data-font-size=x-large] {
   font-size: 125%;
 }
 

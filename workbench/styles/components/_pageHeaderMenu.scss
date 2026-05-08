@@ -367,15 +367,16 @@
   position: absolute;
   top: 100%;
   right: 0;
-  min-width: rem(100);
+  min-width: 100PX;
   background-color: $color-white;
-  border-radius: rem(8);
-  box-shadow: 0 rem(4) rem(12) rgba(0, 0, 0, 0.15);
+  border: 2px solid $primary-color;
+  border-radius: 8PX;
+  box-shadow: none;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(rem(-4));
+  transform: translateY(-8px);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-  z-index: 100;
+  z-index: $z-index-header;
   overflow: hidden;
 
   &.is-open {
@@ -389,28 +390,65 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   width: 100%;
-  min-height: rem(40);
-  padding: rem(8) rem(16);
+  padding: 10px 16px 10px 40PX;
   border: none;
   background: none;
   cursor: pointer;
-  font-family: $font-family-heading;
-  font-size: rem(14);
-  color: $text-color;
+  font-family: $font-family-base;
+  color: $primary-color;
+  text-align: center;
   transition: background-color 0.15s ease;
 
+  &::before {
+    content: '✓';
+    font-size: 14PX;
+    font-weight: 700;
+    color: transparent;
+    width: 14PX;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &[data-font-size-option="normal"] {
+    font-size: 16PX;
+  }
+
+  &[data-font-size-option="large"] {
+    font-size: 18PX;
+  }
+
+  &[data-font-size-option="x-large"] {
+    font-size: 20PX;
+  }
+
   &:hover {
-    background-color: $bg-color;
+    background-color: $bg-light;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: $bg-light;
   }
 
   &.is-active {
-    background-color: $bg-color;
+    background-color: $bg-light;
     color: $primary-color;
     font-weight: $font-weight-medium;
+
+    &::before {
+      color: $primary-color;
+    }
   }
 
   & + & {
-    border-top: rem(1) solid $border-color;
+    border-top: 1px solid $border-color;
+  }
+
+  &:last-child {
+    border-radius: 0 0 6PX 6PX;
   }
 }

@@ -44,6 +44,19 @@
           </a>
         </li>
         <li class="c-header__nav-item">
+          <div class="c-header__font-size" data-font-size-switcher>
+            <button type="button" class="c-header__nav-link c-header__nav-link--btn" aria-expanded="false" aria-haspopup="true" aria-label="文字サイズを変更" data-font-size-trigger>
+              <span class="c-header__nav-icon c-header__font-size-icon"><span class="c-header__font-size-icon-lg">A</span><span class="c-header__font-size-icon-sm">a</span></span>
+              <span class="c-header__nav-label">文字サイズ</span>
+            </button>
+            <div class="c-header__font-size-menu" role="menu" data-font-size-menu>
+              <button type="button" class="c-header__font-size-option is-active" role="menuitem" data-font-size-option="normal">標準</button>
+              <button type="button" class="c-header__font-size-option" role="menuitem" data-font-size-option="large">大</button>
+              <button type="button" class="c-header__font-size-option" role="menuitem" data-font-size-option="x-large">特大</button>
+            </div>
+          </div>
+        </li>
+        <li class="c-header__nav-item">
           <a href="../cart/カート.html" class="c-header__nav-link">
             <img src="../../../files/commonfiles/images/icon-cart.svg" alt="" class="c-header__nav-icon" width="25" height="24">
             <span class="c-header__nav-label">カート</span>
@@ -96,7 +109,6 @@
     </ul>
   </div>
 </header>
-@@include('../../../includes/parts/general/fontSizeSwitcher.html')
 <div class="c-user-bar">
   <div class="c-user-bar__inner">
     <span class="c-user-bar__name">ゲスト様</span>

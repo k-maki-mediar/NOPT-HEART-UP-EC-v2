@@ -1717,9 +1717,9 @@ $(function () {
     const menu = document.querySelector('[data-font-size-menu]');
     const options = document.querySelectorAll('[data-font-size-option]');
 
-    if (!switcher || !wrapper || !trigger || !menu || options.length === 0) return;
+    if (!switcher || !trigger || !menu || options.length === 0) return;
 
-    setupSwitcherOffset(header, wrapper);
+    if (wrapper && header) { setupSwitcherOffset(header, wrapper); }
     updateMenuActiveState(getSavedFontSize());
 
     trigger.addEventListener('click', function(e) {

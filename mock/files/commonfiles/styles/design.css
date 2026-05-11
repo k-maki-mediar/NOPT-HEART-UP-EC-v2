@@ -3040,7 +3040,7 @@
   gap: 0.5rem;
   width: 100%;
   min-height: 4rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   background-color: #00387d;
   border: none;
   cursor: pointer;
@@ -3061,6 +3061,8 @@
   line-height: 1.5;
   letter-spacing: 0.04rem;
   color: #FFFFFF;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .c-available-lens__header-toggle {
@@ -3304,7 +3306,7 @@
   gap: 0.5rem;
   width: 100%;
   min-height: 4rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   background-color: #00387d;
   border: none;
   cursor: pointer;
@@ -3325,6 +3327,8 @@
   line-height: 1.5;
   letter-spacing: 0.04rem;
   color: #FFFFFF;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .c-coupon-list__header-toggle {
@@ -3477,7 +3481,7 @@
   gap: 0.5rem;
   width: 100%;
   min-height: 4rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   background-color: #00387d;
   border: none;
   cursor: pointer;
@@ -3498,6 +3502,8 @@
   line-height: 1.5;
   letter-spacing: 0.04rem;
   color: #FFFFFF;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .c-order-history__header-toggle {
@@ -3568,7 +3574,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
   width: 100%;
   padding: 0.75rem 1rem;
   background-color: #d7e7fb;
@@ -3756,7 +3763,7 @@
   gap: 0.5rem;
   width: 100%;
   min-height: 4rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   background-color: #00387d;
   border: none;
   cursor: pointer;
@@ -3777,6 +3784,8 @@
   line-height: 1.5;
   letter-spacing: 0.04rem;
   color: #FFFFFF;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .c-favorite-products__header-toggle {
@@ -12737,7 +12746,7 @@
   gap: 0.5rem;
   width: 100%;
   min-height: 4rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   background-color: #00387d;
   border: none;
   cursor: pointer;
@@ -12752,6 +12761,8 @@
   line-height: 1.5;
   letter-spacing: 0.04rem;
   color: #FFFFFF;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .c-teiki-products__header-toggle {
@@ -14030,7 +14041,7 @@
   gap: 0.5rem;
   width: 100%;
   min-height: 4rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   background-color: #00387d;
   border: none;
   cursor: pointer;
@@ -14045,6 +14056,8 @@
   line-height: 1.5;
   letter-spacing: 0.04rem;
   color: #FFFFFF;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .c-teiki-info-block__header-toggle {
@@ -14204,7 +14217,7 @@
   gap: 0.5rem;
   width: 100%;
   min-height: 4rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   background-color: #00387d;
   border: none;
   cursor: pointer;
@@ -14219,6 +14232,8 @@
   line-height: 1.5;
   letter-spacing: 0.04rem;
   color: #FFFFFF;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .c-teiki-amount-block__header-toggle {
@@ -14421,7 +14436,7 @@
   gap: 0.5rem;
   width: 100%;
   min-height: 4rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   background-color: #00387d;
   border: none;
   cursor: pointer;
@@ -14437,6 +14452,8 @@
   line-height: 1.5;
   letter-spacing: 0.04rem;
   color: #FFFFFF;
+  min-width: 0;
+  word-break: break-word;
   font-size: 0.875rem;
 }
 

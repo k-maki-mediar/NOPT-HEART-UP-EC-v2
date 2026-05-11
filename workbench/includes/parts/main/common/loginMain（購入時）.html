@@ -1,0 +1,110 @@
+<section class="c-login-main" aria-labelledby="login-main-title">
+
+  <div class="c-login-main__card">
+
+    <!-- 画面タイトル -->
+    <h1 class="c-login-main__title" id="login-main-title">ログイン</h1>
+
+    <!-- ===== 通常アカウントログイン部 ===== -->
+    <form action="" method="post" novalidate>
+
+      <div class="c-login-main__form-section">
+        <dl class="c-login-main__form-table">
+
+          <!-- ログインID -->
+          <div class="c-login-main__field">
+            <dt class="c-login-main__label">
+              <label for="loginId">ログインID（会員番号またはメールアドレス）</label>
+              <span class="c-login-main__required" aria-label="必須">必須</span>
+            </dt>
+            <dd class="c-login-main__field-body">
+              <input type="text" class="c-login-main__input js-login-validate" id="loginId" name="loginId"
+                maxlength="256" autocomplete="username" aria-required="true"
+                aria-describedby="loginId-popup">
+              <div class="c-login-validation-popup" id="loginId-popup" hidden role="alert">
+                <p class="c-login-validation-popup__message"></p>
+                <span class="c-login-validation-popup__arrow" aria-hidden="true"></span>
+              </div>
+            </dd>
+          </div>
+
+          <!-- パスワード -->
+          <div class="c-login-main__field">
+            <dt class="c-login-main__label">
+              <label for="password">パスワード</label>
+              <span class="c-login-main__required" aria-label="必須">必須</span>
+            </dt>
+            <dd class="c-login-main__field-body">
+              <input type="password" class="c-login-main__input js-login-validate" id="password" name="password"
+                maxlength="20" autocomplete="current-password" aria-required="true"
+                aria-describedby="password-popup">
+              <div class="c-login-validation-popup" id="password-popup" hidden role="alert">
+                <p class="c-login-validation-popup__message"></p>
+                <span class="c-login-validation-popup__arrow" aria-hidden="true"></span>
+              </div>
+            </dd>
+          </div>
+
+        </dl>
+
+        <!-- ログイン状態を保持する -->
+        <label class="c-login-main__keep-login">
+          <input type="checkbox" class="c-login-main__keep-login-input" name="requestLoginAutomation" value="1" checked>
+          <span class="c-login-main__keep-login-text">ログイン状態を保持する</span>
+        </label>
+
+        <!-- アカウントロック注釈 -->
+        <p class="c-login-main__notice--lock">※一定回数以上、ログインに失敗するとアカウントがロックされます。</p>
+
+        <!-- リンクエリア -->
+        <div class="c-login-main__link-area">
+          <a href="" class="c-login-main__link" name="customerSendpassword">パスワードを忘れたら</a>
+          <!-- 2段階認証リンク（2段階認証機能有効時のみ表示） -->
+          <!-- <a href="" class="c-login-main__link" name="configurableMfa">2段階認証の設定が可能です。詳しくはこちらをご覧ください。</a> -->
+        </div>
+
+      </div>
+
+      <!-- ログインボタン -->
+      <div class="c-login-main__actions">
+        <button type="submit" class="c-login-main__btn c-login-main__btn--submit" name="submitLoginButton">
+          ログイン
+        </button>
+      </div>
+
+    </form>
+
+    <!-- ===== 「または」区切り ===== -->
+    <div class="c-login-main__divider" aria-hidden="true">
+      <span class="c-login-main__divider-line"></span>
+      <span class="c-login-main__divider-text">または</span>
+      <span class="c-login-main__divider-line"></span>
+    </div>
+
+    <!-- ===== LINEログイン部 ===== -->
+    <a href="" class="c-login-main__btn c-login-main__btn--line" name="lineLogin">
+      <svg class="c-login-main__line-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <path fill="#ffffff" d="M19.365 9.863c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.281.63.63 0 .349-.281.63-.63.63h-2.386c-.345 0-.627-.281-.627-.63V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .349-.279.63-.631.63-.346 0-.63-.281-.63-.63V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .349-.282.63-.631.63-.345 0-.627-.281-.627-.63V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.63H4.917c-.345 0-.63-.281-.63-.63V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.285.629.63 0 .349-.281.63-.629.63M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+      </svg>
+      LINEでログイン
+    </a>
+
+    <!-- ===== 新規会員登録部 ===== -->
+    <div class="c-login-main__section">
+      <p class="c-login-main__section-heading">まだ会員登録がお済みで無い方はこちら</p>
+      <a href="" class="c-login-main__btn c-login-main__btn--register" name="customerEditButton">
+        新規会員登録
+      </a>
+    </div>
+
+    <!-- ===== ゲスト購入部（購入時ログインモードのみ） ===== -->
+    <div class="c-login-main__section">
+      <p class="c-login-main__section-heading">今回は会員登録せずに購入する</p>
+      <a href="" class="c-login-main__btn c-login-main__btn--guest" name="guestOrderButton">
+        ゲスト購入する
+      </a>
+    </div>
+
+  </div>
+
+</section>

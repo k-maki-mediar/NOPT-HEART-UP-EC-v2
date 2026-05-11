@@ -2006,6 +2006,74 @@ $(function () {
 })();
 
 /* ========================================
+ * ログイン画面: リアルタイムバリデーション
+ * .js-login-validate クラスを持つ入力欄に適用
+ * ======================================== */
+$(function () {
+  if (!$('.c-login-main').length) { return; }
+
+  const REQUIRED_MSG = '入力してください';
+
+  function showPopup($input, message) {
+    const popupId = $input.attr('aria-describedby');
+    if (!popupId) { return; }
+    const $popup = $('#' + popupId);
+    $popup.find('.c-login-validation-popup__message').text(message);
+    $popup.removeAttr('hidden');
+  }
+
+  function hidePopup($input) {
+    const popupId = $input.attr('aria-describedby');
+    if (!popupId) { return; }
+    $('#' + popupId).attr('hidden', '');
+  }
+
+  function validateField($input) {
+    const val = $input.val();
+    if (val === '') {
+      showPopup($input, REQUIRED_MSG);
+      return false;
+    }
+    hidePopup($input);
+    return true;
+  }
+
+  // フォーカスアウト時にバリデーション
+  $(document).on('blur', '.js-login-validate', function () {
+    validateField($(this));
+  });
+
+  // 入力中にポップアップが表示されていれば即時クリア
+  $(document).on('input', '.js-login-validate', function () {
+    const $input = $(this);
+    if ($input.val() !== '') {
+      hidePopup($input);
+    }
+  });
+
+  // フォーム送信時に全フィールドをバリデーション
+  $(document).on('submit', '.c-login-main form', function (e) {
+    let valid = true;
+    $(this).find('.js-login-validate').each(function () {
+      if (!validateField($(this))) {
+        valid = false;
+      }
+    });
+    if (!valid) {
+      e.preventDefault();
+      // 最初のエラーフィールドにフォーカス
+      $(this).find('.js-login-validate').each(function () {
+        const popupId = $(this).attr('aria-describedby');
+        if (popupId && !$('#' + popupId).attr('hidden')) {
+          $(this).trigger('focus');
+          return false;
+        }
+      });
+    }
+  });
+});
+
+/* ========================================
  * お支払い方法ラジオ選択→詳細展開（支払方法選択）
  * ======================================== */
 (function () {

@@ -12745,13 +12745,13 @@
   box-shadow: 0 0 0 #002a5e;
 }
 .c-login-main__btn--guest {
-  background-color: #FFFFFF;
-  color: #00387d;
-  box-shadow: 0 0.125rem 0 #002a5e;
+  background-color: #00387d;
+  color: #FFFFFF;
+  box-shadow: 0 0.1875rem 0 #002552;
 }
 .c-login-main__btn--guest:hover {
   transform: translateY(0.125rem);
-  box-shadow: 0 0 0 #002a5e;
+  box-shadow: 0 0.0625rem 0 #002552;
 }
 
 .c-login-main__line-icon {
@@ -12821,7 +12821,7 @@
 
 .c-login-main__section-heading {
   font-size: 0.875rem;
-  color: #333;
+  color: #00387d;
   text-align: center;
   margin: 0 0 1rem;
   line-height: 1.6;

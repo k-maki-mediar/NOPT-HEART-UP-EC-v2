@@ -270,15 +270,15 @@
     }
   }
 
-  // ゲスト購入ボタン（アウトライン）
+  // ゲスト購入ボタン（ネイビー塗りつぶし）
   &--guest {
-    background-color: $color-white;
-    color: $primary-color;
-    box-shadow: 0 rem(2) 0 $primary-color-dark;
+    background-color: $primary-color;
+    color: $color-white;
+    box-shadow: 0 rem(3) 0 $primary-shadow;
 
     &:hover {
       transform: translateY(rem(2));
-      box-shadow: 0 0 0 $primary-color-dark;
+      box-shadow: 0 rem(1) 0 $primary-shadow;
     }
   }
 }
@@ -372,7 +372,7 @@
 
 .c-login-main__section-heading {
   font-size: rem(14);
-  color: $text-color;
+  color: $primary-color;
   text-align: center;
   margin: 0 0 rem(16);
   line-height: 1.6;

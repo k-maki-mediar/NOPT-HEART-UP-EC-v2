@@ -781,11 +781,6 @@
   gap: rem(8);
   padding: rem(8) rem(16);
 
-  @include pc {
-    flex-direction: row;
-    align-items: center;
-  }
-
   &:last-child {
     padding-bottom: rem(16);
   }

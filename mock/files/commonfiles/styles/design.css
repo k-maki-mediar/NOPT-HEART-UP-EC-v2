@@ -6573,12 +6573,6 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
 }
-@media (min-width: 992px) {
-  .c-detail-unit__eye-card-field {
-    flex-direction: row;
-    align-items: center;
-  }
-}
 .c-detail-unit__eye-card-field:last-child {
   padding-bottom: 1rem;
 }

@@ -750,9 +750,15 @@
 
 .c-detail-unit__eye-card-field {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: rem(8);
   padding: rem(8) rem(16);
+
+  @include pc {
+    flex-direction: row;
+    align-items: center;
+  }
 
   &:last-child {
     padding-bottom: rem(16);
@@ -771,6 +777,7 @@
 
 .c-detail-unit__eye-card-field .c-detail-unit__select-wrap {
   flex: 1;
+  width: 100%;
 }
 
 .c-detail-unit__eye-card-field-value {

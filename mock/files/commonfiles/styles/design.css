@@ -6533,9 +6533,16 @@
 
 .c-detail-unit__eye-card-field {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__eye-card-field {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .c-detail-unit__eye-card-field:last-child {
   padding-bottom: 1rem;
@@ -6553,6 +6560,7 @@
 
 .c-detail-unit__eye-card-field .c-detail-unit__select-wrap {
   flex: 1;
+  width: 100%;
 }
 
 .c-detail-unit__eye-card-field-value {

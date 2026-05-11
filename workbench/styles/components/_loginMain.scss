@@ -303,6 +303,10 @@
 }
 
 .c-login-main__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: rem(44);
+  padding: rem(6) 0;
   font-size: rem(12);
   color: $link-blue;
   text-decoration: underline;

@@ -50,9 +50,9 @@
   }
 
   @include pc {
-    height: calc(100% + rem(10));
-    width: calc(100vw - (100vw - 100%) / 2);
-    border-radius: 0;
+    height: calc(100% - rem(20));
+    width: 55vw;
+    border-radius: 0 rem(20) rem(20) 0;
   }
 }
 

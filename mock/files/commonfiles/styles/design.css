@@ -4183,9 +4183,9 @@
 }
 @media (min-width: 992px) {
   .c-section-deco__deco-rect {
-    height: calc(100% + 0.625rem);
-    width: calc(100vw - (100vw - 100%) / 2);
-    border-radius: 0;
+    height: calc(100% - 1.25rem);
+    width: 55vw;
+    border-radius: 0 1.25rem 1.25rem 0;
   }
 }
 

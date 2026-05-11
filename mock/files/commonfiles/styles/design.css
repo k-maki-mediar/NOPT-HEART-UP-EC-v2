@@ -12769,6 +12769,10 @@
 }
 
 .c-login-main__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.375rem 0;
   font-size: 0.75rem;
   color: #0087cb;
   text-decoration: underline;

@@ -480,6 +480,67 @@ $(function () {
   });
 
   // ----------------------------------------
+  // SP時 自動スライド再生（4秒間隔）
+  // ----------------------------------------
+  const AUTOPLAY_INTERVAL = 4000;
+  let autoplayTimer = null;
+  let isAutoPlaying = true;
+  const $playToggle = $('.js-detail-play-toggle');
+  const $pauseIcon = $playToggle.find('.js-detail-pause-icon');
+  const $playIcon = $playToggle.find('.js-detail-play-icon');
+
+  function startAutoplay() {
+    if ($slides.length <= 1) return;
+    stopAutoplay();
+    autoplayTimer = setInterval(function () {
+      const total = $slides.length;
+      currentSlide = (currentSlide + 1) % total;
+      showSlide(currentSlide);
+    }, AUTOPLAY_INTERVAL);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  // SP判定（768px未満）で自動再生開始
+  function checkAutoplay() {
+    if (window.innerWidth < 768 && isAutoPlaying && $slides.length > 1) {
+      startAutoplay();
+    } else {
+      stopAutoplay();
+    }
+  }
+
+  $playToggle.on('click', function () {
+    if (isAutoPlaying) {
+      stopAutoplay();
+      $pauseIcon.hide();
+      $playIcon.show();
+      $(this).attr('aria-label', 'スライドショーを再生');
+    } else {
+      startAutoplay();
+      $playIcon.hide();
+      $pauseIcon.show();
+      $(this).attr('aria-label', 'スライドショーを一時停止');
+    }
+    isAutoPlaying = !isAutoPlaying;
+  });
+
+  // ドット・サムネイルクリック時は自動再生リセット
+  $dots.add($thumbBtns).on('click', function () {
+    if (isAutoPlaying && window.innerWidth < 768) {
+      startAutoplay();
+    }
+  });
+
+  checkAutoplay();
+  $(window).on('resize', checkAutoplay);
+
+  // ----------------------------------------
   // 通常注文：左右数量0→ボタン切替（コンタクトレンズ）
   // ----------------------------------------
   const $qRight = $('.js-detail-quantity-right');

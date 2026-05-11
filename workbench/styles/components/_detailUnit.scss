@@ -142,20 +142,46 @@
   max-height: rem(240);
 }
 
+// スライダーコントロール（ドット＋再生/停止）
+.c-detail-unit__image-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(8);
+  margin-top: rem(8);
+
+  @include pc {
+    display: none;
+  }
+}
+
 // スライダードット（v1: SP用インジケーター表示、PC非表示）
 .c-detail-unit__image-dots {
   display: flex;
   justify-content: center;
   gap: rem(8);
-  margin-top: rem(8);
   list-style: none;
   padding: 0;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
+}
 
-  @include pc {
-    display: none;
-  }
+// 再生/停止ボタン
+.c-detail-unit__play-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(20);
+  height: rem(20);
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.c-detail-unit__play-icon {
+  font-size: rem(18);
+  color: $primary-color;
+  line-height: 1;
 }
 
 .c-detail-unit__image-dot {

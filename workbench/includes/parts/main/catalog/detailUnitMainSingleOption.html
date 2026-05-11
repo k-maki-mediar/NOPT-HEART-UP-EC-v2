@@ -59,7 +59,8 @@
             </a>
           </div>
         </div>
-        <!-- スライダードット -->
+        <!-- スライダーコントロール（ドット＋再生/停止） -->
+        <div class="c-detail-unit__image-controls">
         <ul class="c-detail-unit__image-dots js-detail-image-dots" aria-label="画像切替">
           <li class="c-detail-unit__image-dots-item">
             <button class="c-detail-unit__image-dot c-detail-unit__image-dot--active js-detail-image-dot" aria-label="画像1を表示" data-index="0"></button>
@@ -71,6 +72,11 @@
             <button class="c-detail-unit__image-dot js-detail-image-dot" aria-label="画像3を表示" data-index="2"></button>
           </li>
         </ul>
+        <button type="button" class="c-detail-unit__play-toggle js-detail-play-toggle" aria-label="スライドショーを一時停止">
+          <img src="../../../files/commonfiles/images/icon-pause.svg" alt="" class="c-detail-unit__play-icon js-detail-pause-icon" aria-hidden="true" width="13" height="16">
+          <img src="../../../files/commonfiles/images/icon-play.svg" alt="" class="c-detail-unit__play-icon js-detail-play-icon" aria-hidden="true" style="display:none;" width="10" height="16">
+        </button>
+        </div>
         <!-- サムネイル一覧 -->
         <ul class="c-detail-unit__thumbnails js-detail-thumbnails" aria-label="サムネイル">
           <li class="c-detail-unit__thumbnail-item">

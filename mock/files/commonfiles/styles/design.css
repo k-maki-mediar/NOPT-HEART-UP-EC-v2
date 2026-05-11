@@ -5966,20 +5966,44 @@
   max-height: 15rem;
 }
 
+.c-detail-unit__image-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__image-controls {
+    display: none;
+  }
+}
+
 .c-detail-unit__image-dots {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 0.5rem;
   list-style: none;
   padding: 0;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
 }
-@media (min-width: 992px) {
-  .c-detail-unit__image-dots {
-    display: none;
-  }
+
+.c-detail-unit__play-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.c-detail-unit__play-icon {
+  font-size: 1.125rem;
+  color: #00387d;
+  line-height: 1;
 }
 
 .c-detail-unit__image-dot {
@@ -6533,9 +6557,16 @@
 
 .c-detail-unit__eye-card-field {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
+}
+@media (min-width: 992px) {
+  .c-detail-unit__eye-card-field {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .c-detail-unit__eye-card-field:last-child {
   padding-bottom: 1rem;
@@ -6553,6 +6584,7 @@
 
 .c-detail-unit__eye-card-field .c-detail-unit__select-wrap {
   flex: 1;
+  width: 100%;
 }
 
 .c-detail-unit__eye-card-field-value {

@@ -188,5 +188,10 @@
 .c-available-lens__action {
   display: flex;
   justify-content: center;
-  padding: 0 rem(16) rem(16);
+  padding: rem(8) rem(16) rem(16);
+
+  .c-available-lens__btn {
+    max-width: rem(400);
+    width: 100%;
+  }
 }

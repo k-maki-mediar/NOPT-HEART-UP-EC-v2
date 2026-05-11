@@ -57,15 +57,9 @@
           <span class="c-login-main__keep-login-text">ログイン状態を保持する</span>
         </label>
 
-        <!-- アカウントロック注釈 -->
+        <!-- 注釈 -->
+        <p class="c-login-main__notice--lock">※初回パスワードは、会員登録時に設定したパスワードです。</p>
         <p class="c-login-main__notice--lock">※一定回数以上、ログインに失敗するとアカウントがロックされます。</p>
-
-        <!-- リンクエリア -->
-        <div class="c-login-main__link-area">
-          <a href="" class="c-login-main__link" name="customerSendpassword">パスワードを忘れたら</a>
-          <!-- 2段階認証リンク（2段階認証機能有効時のみ表示） -->
-          <!-- <a href="" class="c-login-main__link" name="configurableMfa">2段階認証の設定が可能です。詳しくはこちらをご覧ください。</a> -->
-        </div>
 
       </div>
 
@@ -74,6 +68,10 @@
         <button type="submit" class="c-login-main__btn c-login-main__btn--submit" name="submitLoginButton">
           ログイン
         </button>
+      </div>
+
+      <div class="c-login-main__link-area">
+        <a href="" class="c-login-main__link" name="customerSendpassword">会員番号/パスワードを忘れた方はこちら</a>
       </div>
 
     </form>

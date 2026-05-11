@@ -3284,7 +3284,11 @@
 .c-available-lens__action {
   display: flex;
   justify-content: center;
-  padding: 0 1rem 1rem;
+  padding: 0.5rem 1rem 1rem;
+}
+.c-available-lens__action .c-available-lens__btn {
+  max-width: 25rem;
+  width: 100%;
 }
 
 .c-coupon-list {

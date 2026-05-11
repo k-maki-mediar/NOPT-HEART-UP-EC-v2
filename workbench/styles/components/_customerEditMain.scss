@@ -1,0 +1,161 @@
+// ========================================
+// Customer Edit Main（お客様情報登録フォーム）
+// 格納先HTML: workbench/includes/parts/main/customerEdit/customerEdit1Main.html
+// BEM: .c-customer-edit-main
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// c-guest-main と同一構造・padding
+// ========================================
+
+.c-customer-edit-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 0 rem(48);
+
+  @include pc {
+    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// 氏名・氏名カナ 姓名横並びグループ
+// ========================================
+
+.c-customer-edit-main__name-group {
+  display: flex;
+  gap: rem(16);
+  flex-wrap: wrap;
+
+  @include sp {
+    flex-direction: column;
+    gap: rem(8);
+  }
+}
+
+.c-customer-edit-main__name-sub {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+  flex: 1;
+  min-width: rem(120);
+}
+
+.c-customer-edit-main__name-sub-label {
+  font-size: rem(12);
+  color: $text-light;
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+}
+
+.c-customer-edit-main__input--name {
+  width: 100%;
+}
+
+// ========================================
+// 住所項目ラベル PC/SP 切り替え
+// ========================================
+
+.c-customer-edit-main__label-pc {
+  @include sp {
+    display: none;
+  }
+}
+
+.c-customer-edit-main__label-sp {
+  display: none;
+
+  @include sp {
+    display: inline;
+  }
+}
+
+// ========================================
+// メールアドレス表示行（更新時）
+// ========================================
+
+.c-customer-edit-main__email-display {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(12);
+}
+
+.c-customer-edit-main__email-value {
+  font-size: rem(14);
+  color: $text-color;
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.c-customer-edit-main__change-link {
+  // c-guest-main__btn--search を継承しつつ width を auto に上書き
+  width: auto;
+  white-space: nowrap;
+}
+
+// ========================================
+// 定期便利用者向け案内ブロック（更新時・定期契約中のみ）
+// ========================================
+
+.c-customer-edit-main__regular-sale-notice {
+  margin: rem(16) 0 rem(24);
+  padding: rem(16);
+  background-color: $bg-light;
+  border: 1px solid $border-color;
+  border-left: 3px solid $primary-color;
+  border-radius: $border-radius-sm;
+}
+
+.c-customer-edit-main__regular-sale-notice-text {
+  font-size: rem(13);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0;
+}
+
+// ========================================
+// 会員規約エリア（新規登録時のみ表示）
+// ========================================
+
+.c-customer-edit-main__terms {
+  margin-top: rem(32);
+}
+
+// 規約内リンク（「会員規約」「個人情報取り扱い」）
+.c-customer-edit-main__terms-link {
+  color: $link-blue;
+  text-decoration: underline;
+  text-underline-offset: rem(2);
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $link-blue;
+    outline-offset: rem(2);
+  }
+}
+
+// ========================================
+// フィールド エラー状態（赤枠）
+// ========================================
+
+.c-customer-edit-main__field--error {
+  .c-guest-main__input {
+    border-color: $danger-color;
+    background-color: $bg-danger-light;
+  }
+
+  .c-detail-unit__select {
+    border-color: $danger-color;
+    background-color: $bg-danger-light;
+  }
+}

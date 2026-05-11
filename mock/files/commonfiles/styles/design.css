@@ -12859,6 +12859,125 @@
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
+.c-customer-edit-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 0 0 3rem;
+}
+@media (min-width: 992px) {
+  .c-customer-edit-main {
+    padding: 0 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-customer-edit-main__name-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 767px) {
+  .c-customer-edit-main__name-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.c-customer-edit-main__name-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 7.5rem;
+}
+
+.c-customer-edit-main__name-sub-label {
+  font-size: 0.75rem;
+  color: #6B7280;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.c-customer-edit-main__input--name {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .c-customer-edit-main__label-pc {
+    display: none;
+  }
+}
+
+.c-customer-edit-main__label-sp {
+  display: none;
+}
+@media (max-width: 767px) {
+  .c-customer-edit-main__label-sp {
+    display: inline;
+  }
+}
+
+.c-customer-edit-main__email-display {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.c-customer-edit-main__email-value {
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.c-customer-edit-main__change-link {
+  width: auto;
+  white-space: nowrap;
+}
+
+.c-customer-edit-main__regular-sale-notice {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem;
+  background-color: #f4f8fc;
+  border: 1px solid #e0e0e0;
+  border-left: 3px solid #00387d;
+  border-radius: 4px;
+}
+
+.c-customer-edit-main__regular-sale-notice-text {
+  font-size: 0.8125rem;
+  color: #333;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.c-customer-edit-main__terms {
+  margin-top: 2rem;
+}
+
+.c-customer-edit-main__terms-link {
+  color: #0087cb;
+  text-decoration: underline;
+  text-underline-offset: 0.125rem;
+}
+.c-customer-edit-main__terms-link:hover {
+  text-decoration: none;
+}
+.c-customer-edit-main__terms-link:focus-visible {
+  outline: 2px solid #0087cb;
+  outline-offset: 0.125rem;
+}
+
+.c-customer-edit-main__field--error .c-guest-main__input {
+  border-color: #d42f2f;
+  background-color: #fde8e8;
+}
+.c-customer-edit-main__field--error .c-detail-unit__select {
+  border-color: #d42f2f;
+  background-color: #fde8e8;
+}
+
 .c-main--logged-in .c-campaign-topics__deco-rect {
   background-color: #ffdedd;
 }

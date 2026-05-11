@@ -1,4 +1,4 @@
-<section class="c-customer-edit-main" aria-label="お客様情報登録（基本情報）更新">
+<section class="c-guest-main c-customer-edit-main" aria-label="お客様情報登録（基本情報）更新">
 
   <form action="" method="post" novalidate>
 
@@ -15,67 +15,38 @@
         <!-- 氏名 -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <label id="fullName-label">氏名</label>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            氏名<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <div class="c-customer-edit-main__name-group" role="group" aria-labelledby="fullName-label">
-              <div class="c-customer-edit-main__name-sub">
-                <label class="c-customer-edit-main__name-sub-label" for="lastName">姓</label>
-                <input type="text" class="c-guest-main__input c-customer-edit-main__input--name"
-                  id="lastName" name="lastName"
-                  maxlength="20" placeholder="山田" aria-required="true"
-                  autocomplete="family-name">
-              </div>
-              <div class="c-customer-edit-main__name-sub">
-                <label class="c-customer-edit-main__name-sub-label" for="firstName">名</label>
-                <input type="text" class="c-guest-main__input c-customer-edit-main__input--name"
-                  id="firstName" name="firstName"
-                  maxlength="20" placeholder="太郎" aria-required="true"
-                  autocomplete="given-name">
-              </div>
-            </div>
+            <input type="text" class="c-guest-main__input" name="ownerName"
+              maxlength="40" placeholder="例）山田　太郎" aria-label="氏名" autocomplete="name">
           </dd>
         </div>
 
         <!-- 氏名カナ -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <label id="fullNameKana-label">氏名カナ</label>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            氏名カナ<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <div class="c-customer-edit-main__name-group" role="group" aria-labelledby="fullNameKana-label">
-              <div class="c-customer-edit-main__name-sub">
-                <label class="c-customer-edit-main__name-sub-label" for="lastNameKana">姓</label>
-                <input type="text" class="c-guest-main__input c-customer-edit-main__input--name"
-                  id="lastNameKana" name="lastNameKana"
-                  maxlength="21" placeholder="ヤマダ" aria-required="true">
-              </div>
-              <div class="c-customer-edit-main__name-sub">
-                <label class="c-customer-edit-main__name-sub-label" for="firstNameKana">名</label>
-                <input type="text" class="c-guest-main__input c-customer-edit-main__input--name"
-                  id="firstNameKana" name="firstNameKana"
-                  maxlength="21" placeholder="タロウ" aria-required="true">
-              </div>
-            </div>
+            <input type="text" class="c-guest-main__input" name="ownerNameKana"
+              maxlength="42" placeholder="例）ヤマダ　タロウ" aria-label="氏名カナ">
           </dd>
         </div>
 
         <!-- 郵便番号 -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <label for="postalCode">郵便番号</label>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            郵便番号<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
             <div class="c-guest-main__postal-group">
               <span class="c-guest-main__postal-mark" aria-hidden="true">〒</span>
               <input type="text" class="c-guest-main__input c-guest-main__input--postal"
-                id="postalCode" name="postalCode"
+                name="ownerPostalCode"
                 maxlength="7" inputmode="numeric" placeholder="3306032"
-                aria-label="郵便番号（ハイフンなし7桁）" aria-required="true" autocomplete="postal-code">
-              <button type="button" class="c-guest-main__btn c-guest-main__btn--search js-postal-search" data-target="customer">
+                aria-label="郵便番号（ハイフンなし7桁）" autocomplete="postal-code">
+              <button type="button" class="c-guest-main__btn c-guest-main__btn--search js-postal-search" data-target="owner">
                 検索
               </button>
             </div>
@@ -83,16 +54,14 @@
         </div>
 
         <!-- 都道府県 -->
-        <div class="c-guest-main__field" id="field-address1">
+        <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <label for="address1">都道府県</label>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            都道府県<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
             <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--prefecture">
-              <select class="c-detail-unit__select" id="address1" name="address1"
-                autocomplete="address-level1" aria-required="true">
-                <option value="">--------</option>
+              <select class="c-detail-unit__select" name="ownerPrefecture" autocomplete="address-level1" aria-label="都道府県">
+                <option value="">選択してください</option>
                 <option value="01">北海道</option>
                 <option value="02">青森県</option>
                 <option value="03">岩手県</option>
@@ -145,75 +114,57 @@
           </dd>
         </div>
 
-        <!-- 市区町村 -->
-        <div class="c-guest-main__field" id="field-address2">
+        <!-- 市区郡 -->
+        <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <label for="address2">
-              <span class="c-customer-edit-main__label-pc">市区町村</span>
-              <span class="c-customer-edit-main__label-sp" aria-hidden="true">市区郡</span>
-            </label>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            市区郡<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
             <input type="text" class="c-guest-main__input c-guest-main__input--address"
-              id="address2" name="address2"
-              maxlength="15" autocomplete="address-level2" placeholder="例）さいたま市" aria-required="true">
+              name="ownerAddress2"
+              maxlength="15" autocomplete="address-level2" placeholder="例）さいたま市" aria-label="市区郡">
           </dd>
         </div>
 
-        <!-- 町名・番地 -->
-        <div class="c-guest-main__field" id="field-address3">
+        <!-- 町名 -->
+        <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <label for="address3">
-              <span class="c-customer-edit-main__label-pc">町名・番地</span>
-              <span class="c-customer-edit-main__label-sp" aria-hidden="true">町村</span>
-            </label>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            町名<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
             <input type="text" class="c-guest-main__input c-guest-main__input--address"
-              id="address3" name="address3"
-              maxlength="15" autocomplete="address-line1" placeholder="例）中央区新都心11番地2丁目" aria-required="true">
+              name="ownerAddress3"
+              maxlength="15" autocomplete="address-line1" placeholder="例）中央区新都心11番地2丁目" aria-label="町名">
           </dd>
         </div>
 
-        <!-- アパート・マンション・ビル -->
-        <div class="c-guest-main__field" id="field-address4">
+        <!-- 番地・ビル名など -->
+        <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <label for="address4">
-              <span class="c-customer-edit-main__label-pc">アパート・マンション・ビル</span>
-              <span class="c-customer-edit-main__label-sp" aria-hidden="true">番地・ビル名など</span>
-            </label>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            番地・ビル名など<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <input type="text" class="c-guest-main__input c-guest-main__input--address"
-              id="address4" name="address4"
-              maxlength="15" autocomplete="address-line2"
-              placeholder="例）ランド・アクシス・タワー（明治安田生命さいたま新都心ビル）32階" aria-required="true">
+            <textarea class="c-guest-main__input c-guest-main__input--address"
+              name="ownerAddressBanchi" maxlength="60" autocomplete="address-line2" placeholder="例）中央区新都心11番地2丁目" rows="1"></textarea>
           </dd>
         </div>
 
         <!-- その他 -->
-        <div class="c-guest-main__field" id="field-address5">
-          <dt class="c-guest-main__field-label">
-            <label for="address5">その他</label>
-          </dt>
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">その他</dt>
           <dd class="c-guest-main__field-body">
-            <input type="text" class="c-guest-main__input c-guest-main__input--address"
-              id="address5" name="address5"
-              maxlength="15" autocomplete="address-line3">
+            <textarea class="c-guest-main__input c-guest-main__input--address"
+              name="ownerAddress4" maxlength="60" autocomplete="address-line3" placeholder="例）ランド・アクシス・タワー（明治安田生命さいたま新都心ビル）32階" rows="1"></textarea>
           </dd>
         </div>
 
         <!-- 電話番号 -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <span id="phoneNumber-label">電話番号</span>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            電話番号<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <div class="c-guest-main__phone-group" role="group" aria-labelledby="phoneNumber-label">
+            <div class="c-guest-main__phone-group" role="group" aria-label="電話番号">
               <input type="text" class="c-guest-main__input c-guest-main__input--phone"
                 name="phoneNumber1"
                 maxlength="6" inputmode="numeric" aria-label="電話番号1（市外局番）" autocomplete="tel-local">
@@ -233,11 +184,10 @@
         <!-- 生年月日 -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <span id="birthdate-label">生年月日</span>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            生年月日<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <div class="c-guest-main__birthdate-group" role="group" aria-labelledby="birthdate-label">
+            <div class="c-guest-main__birthdate-group" role="group" aria-label="生年月日">
               <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--year">
                 <select class="c-detail-unit__select" name="birthdate_year" aria-label="生年（西暦）">
                   <option value="">年</option>
@@ -346,11 +296,10 @@
         <!-- 性別 -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <span id="sex-label">性別</span>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            性別<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <div class="c-guest-main__radio-group" role="group" aria-labelledby="sex-label">
+            <div class="c-guest-main__radio-group" role="group" aria-label="性別">
               <label class="c-guest-main__radio-label">
                 <input type="radio" class="c-guest-main__radio" name="sex" value="0" checked>
                 無回答
@@ -370,7 +319,7 @@
         <!-- メールアドレス（更新時: ラベル表示 + 変更ボタン） -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <span>メールアドレス</span>
+            メールアドレス
           </dt>
           <dd class="c-guest-main__field-body">
             <div class="c-customer-edit-main__email-display">
@@ -383,7 +332,7 @@
         </div>
 
         <!-- パスワード変更ボタン（更新時のみ表示） -->
-        <div class="c-guest-main__field c-customer-edit-main__change-btn-row">
+        <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">パスワード</dt>
           <dd class="c-guest-main__field-body">
             <a href="" class="c-guest-main__btn c-guest-main__btn--search">
@@ -395,10 +344,10 @@
         <!-- ハートアップのお得な情報のご案内について -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <span id="requestMailType-label">ハートアップのお得な情報のご案内について</span>
+            ハートアップのお得な情報のご案内について
           </dt>
           <dd class="c-guest-main__field-body">
-            <div class="c-guest-main__radio-group" role="group" aria-labelledby="requestMailType-label">
+            <div class="c-guest-main__radio-group" role="group" aria-label="ハートアップのお得な情報のご案内について">
               <label class="c-guest-main__radio-label">
                 <input type="radio" class="c-guest-main__radio" name="requestMailType" value="0" checked>
                 希望しない
@@ -414,10 +363,10 @@
         <!-- オンラインショップのログインID -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <span id="loginType-label">オンラインショップのログインID</span>
+            オンラインショップのログインID
           </dt>
           <dd class="c-guest-main__field-body">
-            <div class="c-guest-main__radio-group" role="group" aria-labelledby="loginType-label">
+            <div class="c-guest-main__radio-group" role="group" aria-label="オンラインショップのログインID">
               <label class="c-guest-main__radio-label">
                 <input type="radio" class="c-guest-main__radio" name="loginType" value="0" checked>
                 会員番号

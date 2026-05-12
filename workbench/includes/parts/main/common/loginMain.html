@@ -19,33 +19,25 @@
           <div class="c-login-main__field">
             <dt class="c-login-main__label">
               <label for="loginId">ログインID（会員番号またはメールアドレス）</label>
-
             </dt>
             <dd class="c-login-main__field-body">
               <input type="text" class="c-login-main__input js-login-validate" id="loginId" name="loginId"
                 maxlength="256" autocomplete="username" aria-required="true"
-                aria-describedby="loginId-popup">
-              <div class="c-login-validation-popup" id="loginId-popup" hidden role="alert">
-                <p class="c-login-validation-popup__message"></p>
-                <span class="c-login-validation-popup__arrow" aria-hidden="true"></span>
-              </div>
+                data-error-msg="ログインIDを入力してください">
+              <p class="c-field-error js-login-error" role="alert" hidden>ログインIDを入力してください</p>
             </dd>
           </div>
 
           <!-- パスワード -->
           <div class="c-login-main__field">
             <dt class="c-login-main__label">
-              <label for="password">パスワード</label>
-
+              <label for="login-password">パスワード</label>
             </dt>
             <dd class="c-login-main__field-body">
-              <input type="password" class="c-login-main__input js-login-validate" id="password" name="password"
+              <input type="password" class="c-login-main__input js-login-validate" id="login-password" name="password"
                 maxlength="20" autocomplete="current-password" aria-required="true"
-                aria-describedby="password-popup">
-              <div class="c-login-validation-popup" id="password-popup" hidden role="alert">
-                <p class="c-login-validation-popup__message"></p>
-                <span class="c-login-validation-popup__arrow" aria-hidden="true"></span>
-              </div>
+                data-error-msg="パスワードを入力してください">
+              <p class="c-field-error js-login-error" role="alert" hidden>パスワードを入力してください</p>
             </dd>
           </div>
 

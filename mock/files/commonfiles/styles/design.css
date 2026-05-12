@@ -12837,32 +12837,8 @@
   line-height: 1.6;
 }
 
-.c-login-validation-popup {
-  position: absolute;
-  z-index: 1100;
-  min-width: 12.5rem;
-  max-width: 18.75rem;
-  padding: 0.625rem 0.875rem;
-  background-color: #d42f2f;
-  color: #FFFFFF;
-  border-radius: 8px;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-}
-.c-login-validation-popup[hidden] {
-  display: none;
-}
-.c-login-validation-popup__message {
-  margin: 0;
-}
-.c-login-validation-popup__arrow {
-  position: absolute;
-  bottom: -0.5rem;
-  left: 1rem;
-  width: 0.75rem;
-  height: 0.5rem;
-  background-color: #d42f2f;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
+.c-login-main__input.is-error {
+  border-color: #d42f2f;
 }
 
 .c-customer-edit-main {

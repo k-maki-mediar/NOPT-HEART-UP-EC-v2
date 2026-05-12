@@ -2006,49 +2006,43 @@ $(function () {
 })();
 
 /* ========================================
- * ログイン画面: リアルタイムバリデーション
+ * ログイン画面: リアルタイムバリデーション（赤枠 + エラーテキスト）
  * .js-login-validate クラスを持つ入力欄に適用
  * ======================================== */
 $(function () {
   if (!$('.c-login-main').length) { return; }
 
-  const REQUIRED_MSG = '入力してください';
-
-  function showPopup($input, message) {
-    const popupId = $input.attr('aria-describedby');
-    if (!popupId) { return; }
-    const $popup = $('#' + popupId);
-    $popup.find('.c-login-validation-popup__message').text(message);
-    $popup.removeAttr('hidden');
+  function showError($input) {
+    const $dd = $input.closest('.c-login-main__field-body');
+    const $error = $dd.find('.js-login-error');
+    $input.addClass('is-error');
+    $error.removeAttr('hidden');
   }
 
-  function hidePopup($input) {
-    const popupId = $input.attr('aria-describedby');
-    if (!popupId) { return; }
-    $('#' + popupId).attr('hidden', '');
+  function hideError($input) {
+    const $dd = $input.closest('.c-login-main__field-body');
+    const $error = $dd.find('.js-login-error');
+    $input.removeClass('is-error');
+    $error.attr('hidden', '');
   }
 
   function validateField($input) {
-    const val = $input.val();
-    if (val === '') {
-      showPopup($input, REQUIRED_MSG);
+    if ($.trim($input.val()) === '') {
+      showError($input);
       return false;
     }
-    hidePopup($input);
+    hideError($input);
     return true;
   }
 
-  // フォーカスアウト時にバリデーション
-  $(document).on('blur', '.js-login-validate', function () {
+  // フォーカスアウト時にバリデーション（focusoutはバブリングするため委任可能）
+  $(document).on('focusout', '.js-login-validate', function () {
     validateField($(this));
   });
 
-  // 入力中にポップアップが表示されていれば即時クリア
-  $(document).on('input', '.js-login-validate', function () {
-    const $input = $(this);
-    if ($input.val() !== '') {
-      hidePopup($input);
-    }
+  // フォーカス時にエラーをクリア
+  $(document).on('focusin', '.js-login-validate', function () {
+    hideError($(this));
   });
 
   // フォーム送信時に全フィールドをバリデーション
@@ -2061,14 +2055,7 @@ $(function () {
     });
     if (!valid) {
       e.preventDefault();
-      // 最初のエラーフィールドにフォーカス
-      $(this).find('.js-login-validate').each(function () {
-        const popupId = $(this).attr('aria-describedby');
-        if (popupId && !$('#' + popupId).attr('hidden')) {
-          $(this).trigger('focus');
-          return false;
-        }
-      });
+      $(this).find('.js-login-validate.is-error').first().trigger('focus');
     }
   });
 });

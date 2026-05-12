@@ -128,3 +128,18 @@
     font-size: rem(12);
   }
 }
+
+// ========================================
+// ステップナビとページ見出しの余白調整（全画面共通）
+// wsparts-includeで分断されるため隣接セレクタではなく
+// ステップナビを含む親内の見出しを対象にする
+// ========================================
+
+.c-main:has(.c-step-nav) .c-step-nav {
+  margin-bottom: 0;
+}
+
+.c-main:has(.c-step-nav) .c-user-heading {
+  margin-top: rem(8);
+  padding-top: 0;
+}

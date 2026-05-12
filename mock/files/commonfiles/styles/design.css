@@ -8548,6 +8548,15 @@
     font-size: 0.75rem;
   }
 }
+.c-main:has(.c-step-nav) .c-step-nav {
+  margin-bottom: 0;
+}
+
+.c-main:has(.c-step-nav) .c-user-heading {
+  margin-top: 0.5rem;
+  padding-top: 0;
+}
+
 .wsparts-include.c-cart-content-wrap {
   display: block;
   max-width: 70.625rem;
@@ -12850,15 +12859,6 @@
   .c-customer-edit-main {
     padding: 0 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
   }
-}
-
-.c-step-nav:has(+ .c-user-heading) {
-  margin-bottom: 0rem;
-}
-
-.c-step-nav + .c-user-heading {
-  margin-top: 0.5rem;
-  padding-top: 0;
 }
 
 .c-customer-edit-main__name-group {

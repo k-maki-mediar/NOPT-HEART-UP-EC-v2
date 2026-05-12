@@ -21,7 +21,9 @@
           <div>
             <div class="wsparts-include">
               <div class="c-main">
-                @@include('../../includes/parts/general/customerEditStepNavComplete.html')
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/customerEditStepNavComplete.html')
+                </div>
                 <div class="wsparts-include">
                   @@include('../../includes/parts/general/messageArea.html')
                 </div>
@@ -36,10 +38,14 @@
                 <div class="wsparts-include">
                   @@include('../../includes/parts/main/customerEdit/customerCompleteMain.html')
                 </div>
-                @@include('../../includes/parts/general/customerEditStepNavComplete.html')
-                <div class="c-complete-main c-complete-main--actions-only">
-                  <div class="c-shipping-main__actions">
-                    <a href="#" class="c-shipping-main__btn--next">マイページへ戻る</a>
+                <div class="wsparts-include">
+                  @@include('../../includes/parts/general/customerEditStepNavComplete.html')
+                </div>
+                <div class="wsparts-include">
+                  <div class="c-complete-main c-complete-main--actions-only">
+                    <div class="c-shipping-main__actions">
+                      <a href="#" class="c-shipping-main__btn--next">マイページへ戻る</a>
+                    </div>
                   </div>
                 </div>
               </div>

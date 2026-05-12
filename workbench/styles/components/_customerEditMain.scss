@@ -189,12 +189,11 @@
 // 確認メッセージ（「この内容で登録します。よろしいですか？」）
 .c-customer-confirm-main__message {
   font-size: rem(14);
-  color: $text-color;
+  color: $primary-color;
   line-height: 1.75;
   text-align: center;
-  margin: 0 0 rem(24);
-  padding: rem(12) rem(16);
-  background-color: $bg-banner;
+  margin: rem(24) 0 rem(24);
+  padding: 0 rem(16);
   border-radius: $border-radius-sm;
 }
 
@@ -205,5 +204,6 @@
   font-weight: $font-weight-normal;
   line-height: 1.75;
   word-break: break-all;
-  padding: rem(8) 0;
+  padding: rem(8) rem(12);
+  background-color: $bg-light;
 }

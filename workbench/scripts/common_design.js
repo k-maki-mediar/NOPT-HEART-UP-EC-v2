@@ -1060,7 +1060,7 @@ $(function () {
 
   // 同意チェックボックス: 次へボタンの活性/非活性を切り替える
   $(document).on('change', '.js-agree-checkbox', function () {
-    const $btn = $('.js-guest-submit');
+    const $btn = $('.js-guest-submit, .js-customer-edit-submit');
     if (!$btn.length) { return; }
     $btn.prop('disabled', !this.checked);
   });

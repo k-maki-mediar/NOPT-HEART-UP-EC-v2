@@ -16,25 +16,8 @@
             氏名<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <!-- PC: 姓・名横並び -->
-            <div class="c-customer-populate-main__name-group c-customer-populate-main__label-pc">
-              <div class="c-customer-populate-main__name-sub">
-                <span class="c-customer-populate-main__name-sub-label">姓</span>
-                <input type="text" class="c-guest-main__input c-customer-populate-main__input--name"
-                  name="fullNameSei"
-                  maxlength="20" aria-label="氏名（姓）" autocomplete="family-name">
-              </div>
-              <div class="c-customer-populate-main__name-sub">
-                <span class="c-customer-populate-main__name-sub-label">名</span>
-                <input type="text" class="c-guest-main__input c-customer-populate-main__input--name"
-                  name="fullNameMei"
-                  maxlength="20" aria-label="氏名（名）" autocomplete="given-name">
-              </div>
-            </div>
-            <!-- SP: 1テキストボックス（姓と名のスペース区切り） -->
-            <input type="text" class="c-guest-main__input c-customer-populate-main__label-sp"
-              name="fullName"
-              maxlength="20" placeholder="例）山田 太郎" aria-label="氏名（姓と名の間にスペースを入力）" autocomplete="name">
+            <input type="text" class="c-guest-main__input" name="ownerName"
+              maxlength="40" placeholder="例）山田　太郎" aria-label="氏名" autocomplete="name">
           </dd>
         </div>
 
@@ -44,25 +27,8 @@
             氏名カナ<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <!-- PC: 姓・名横並び -->
-            <div class="c-customer-populate-main__name-group c-customer-populate-main__label-pc">
-              <div class="c-customer-populate-main__name-sub">
-                <span class="c-customer-populate-main__name-sub-label">姓</span>
-                <input type="text" class="c-guest-main__input c-customer-populate-main__input--name"
-                  name="fullNameKanaSei"
-                  maxlength="21" aria-label="氏名カナ（姓）">
-              </div>
-              <div class="c-customer-populate-main__name-sub">
-                <span class="c-customer-populate-main__name-sub-label">名</span>
-                <input type="text" class="c-guest-main__input c-customer-populate-main__input--name"
-                  name="fullNameKanaMei"
-                  maxlength="21" aria-label="氏名カナ（名）">
-              </div>
-            </div>
-            <!-- SP: 1テキストボックス -->
-            <input type="text" class="c-guest-main__input c-customer-populate-main__label-sp"
-              name="fullNameKana"
-              maxlength="21" placeholder="例）ヤマダ タロウ" aria-label="氏名カナ（姓と名の間にスペースを入力）">
+            <input type="text" class="c-guest-main__input" name="ownerNameKana"
+              maxlength="42" placeholder="例）ヤマダ　タロウ" aria-label="氏名カナ">
           </dd>
         </div>
 
@@ -146,12 +112,10 @@
           </dd>
         </div>
 
-        <!-- ===== 市区町村（PC）/ 市区郡（SP） ===== -->
+        <!-- ===== 市区郡 ===== -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <span class="c-customer-populate-main__label-pc">市区町村</span>
-            <span class="c-customer-populate-main__label-sp">市区郡</span>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            市区郡<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
             <input type="text" class="c-guest-main__input c-guest-main__input--address"
@@ -161,12 +125,10 @@
           </dd>
         </div>
 
-        <!-- ===== 町名・番地（PC）/ 町村（SP） ===== -->
+        <!-- ===== 町名 ===== -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            <span class="c-customer-populate-main__label-pc">町名・番地</span>
-            <span class="c-customer-populate-main__label-sp">町村</span>
-            <span class="c-guest-main__required" aria-label="必須">必須</span>
+            町名<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
             <input type="text" class="c-guest-main__input c-guest-main__input--address"
@@ -358,54 +320,33 @@
           </dd>
         </div>
 
-        <!-- ===== メールアドレスエリア ===== -->
-        <!-- 現在のメールアドレス（AP-Visionから取得・1件前提で表示） -->
+        <!-- ===== メールアドレス ===== -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            現在のメールアドレス
-          </dt>
-          <dd class="c-guest-main__field-body">
-            <div class="c-customer-populate-main__email-current">
-              <span class="c-customer-populate-main__email-current-value js-email-current-value">main_test@example.jp</span>
-            </div>
-          </dd>
-        </div>
-
-        <!-- 新メールアドレス -->
-        <div class="c-guest-main__field">
-          <dt class="c-guest-main__field-label">
-            新メールアドレス
+            メールアドレス<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
             <div class="c-customer-populate-main__email-new-group">
               <input type="email" class="c-guest-main__input c-guest-main__input--email"
-                name="emailCon"
-                maxlength="70" autocomplete="email" placeholder="例）login@example.com"
-                aria-label="新メールアドレス">
+                name="ownerEmail" value="main_test@example.jp"
+                maxlength="70" autocomplete="email" aria-label="メールアドレス">
+              <div class="c-customer-populate-main__email-item">
+                <label class="c-customer-populate-main__email-label" for="ownerEmailConfirm">メールアドレス確認</label>
+                <input type="email" class="c-guest-main__input c-guest-main__input--email" id="ownerEmailConfirm"
+                  name="ownerEmailConfirm"
+                  maxlength="70" autocomplete="email">
+              </div>
             </div>
           </dd>
         </div>
 
-        <!-- 新メールアドレス確認 -->
+        <!-- ===== パスワード変更 ===== -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            新メールアドレス確認
+            パスワード<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <input type="email" class="c-guest-main__input c-guest-main__input--email"
-              name="emailConConfirm"
-              maxlength="70" autocomplete="email"
-              aria-label="新メールアドレス確認">
-          </dd>
-        </div>
-
-        <!-- ===== パスワード変更確認 ===== -->
-        <div class="c-guest-main__field">
-          <dt class="c-guest-main__field-label">
-            パスワード変更<span class="c-guest-main__required" aria-label="必須">必須</span>
-          </dt>
-          <dd class="c-guest-main__field-body">
-            <div class="c-customer-populate-main__password-change-group" role="group" aria-label="パスワード変更確認">
+            <div class="c-guest-main__radio-group" role="group" aria-label="パスワード変更">
               <label class="c-guest-main__radio-label">
                 <input type="radio" class="c-guest-main__radio js-password-change-radio" name="passwordChangeFlag" value="0" checked>
                 変更しない
@@ -415,34 +356,21 @@
                 変更する
               </label>
             </div>
-          </dd>
-        </div>
-
-        <!-- ===== 新パスワード ===== -->
-        <div class="c-guest-main__field js-password-fields c-customer-populate-main__password-inputs--disabled">
-          <dt class="c-guest-main__field-label">
-            新パスワード<span class="c-guest-main__required js-password-required" aria-label="必須" hidden>必須</span>
-          </dt>
-          <dd class="c-guest-main__field-body">
-            <input type="password" class="c-guest-main__input"
-              name="password"
-              maxlength="20" autocomplete="new-password"
-              aria-label="新パスワード" aria-required="false" disabled>
-            <p class="c-guest-main__field-note c-guest-main__field-note--red">※パスワードは8文字以上で、半角の英字と数字を組み合わせてください。また、「-」「_」「.」も利用可能です。</p>
-          </dd>
-        </div>
-
-        <!-- ===== 新パスワード確認 ===== -->
-        <div class="c-guest-main__field js-password-confirm-field c-customer-populate-main__password-inputs--disabled">
-          <dt class="c-guest-main__field-label">
-            新パスワード確認<span class="c-guest-main__required js-password-confirm-required" aria-label="必須" hidden>必須</span>
-          </dt>
-          <dd class="c-guest-main__field-body">
-            <input type="password" class="c-guest-main__input"
-              name="passwordCon"
-              maxlength="20" autocomplete="new-password"
-              aria-label="新パスワード確認" aria-required="false" disabled>
-            <p class="c-guest-main__field-note">※確認の為、再度ご入力ください。</p>
+            <div class="c-customer-populate-main__password-inputs js-password-fields" hidden>
+              <div class="c-customer-populate-main__password-item">
+                <label class="c-customer-populate-main__password-label" for="password">新しいパスワード</label>
+                <input type="password" class="c-guest-main__input" id="password"
+                  name="password"
+                  maxlength="20" autocomplete="new-password">
+                <p class="c-guest-main__field-note c-guest-main__field-note--red">※パスワードは8文字以上で、半角の英字と数字を組み合わせてください。また、「-」「_」「.」も利用可能です。</p>
+              </div>
+              <div class="c-customer-populate-main__password-item">
+                <label class="c-customer-populate-main__password-label" for="passwordCon">新しいパスワード（確認）</label>
+                <input type="password" class="c-guest-main__input" id="passwordCon"
+                  name="passwordCon"
+                  maxlength="20" autocomplete="new-password">
+              </div>
+            </div>
           </dd>
         </div>
 
@@ -487,17 +415,9 @@
       </dl>
     </div>
 
-    <!-- ===== 同意チェックボックス ===== -->
-    <label class="c-guest-main__agree-check">
-      <input type="checkbox" class="c-guest-main__agree-input js-agree-checkbox js-populate-agree" name="agree" value="1">
-      <span class="c-guest-main__agree-text">
-        「<a href="" class="c-customer-edit-main__terms-link" target="_blank" rel="noopener noreferrer">利用規約 <img src="../../../files/commonfiles/images/icon-external-link.svg" alt="" width="12" height="12"></a>」および「<a href="" class="c-customer-edit-main__terms-link" target="_blank" rel="noopener noreferrer">個人情報保護方針 <img src="../../../files/commonfiles/images/icon-external-link.svg" alt="" width="12" height="12"></a>」に同意する
-      </span>
-    </label>
-
     <!-- ===== ボタンエリア ===== -->
     <div class="c-shipping-main__actions">
-      <button type="submit" class="c-shipping-main__btn--next js-customer-populate-submit" disabled>登録する</button>
+      <button type="submit" class="c-shipping-main__btn--next">登録する</button>
       <a href="" class="c-shipping-main__btn--back">前へ戻る</a>
     </div>
 

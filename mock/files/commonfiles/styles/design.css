@@ -13001,6 +13001,67 @@
   background-color: #fde8e8;
 }
 
+.c-customer-populate-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 0 0 3rem;
+}
+@media (min-width: 992px) {
+  .c-customer-populate-main {
+    padding: 0 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-customer-populate-main__email-new-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.c-customer-populate-main__email-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.c-customer-populate-main__email-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
+}
+
+.c-customer-populate-main__password-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding: 1.25rem;
+  background-color: #eef4fb;
+}
+
+.c-customer-populate-main__password-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.c-customer-populate-main__password-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
+}
+
+.c-customer-populate-main__field--error .c-guest-main__input {
+  border-color: #d42f2f;
+  background-color: #fde8e8;
+}
+.c-customer-populate-main__field--error .c-detail-unit__select {
+  border-color: #d42f2f;
+  background-color: #fde8e8;
+}
+
 .c-main--logged-in .c-campaign-topics__deco-rect {
   background-color: #ffdedd;
 }

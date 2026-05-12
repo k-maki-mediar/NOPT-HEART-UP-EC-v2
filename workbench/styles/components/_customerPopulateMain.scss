@@ -24,112 +24,52 @@
 }
 
 // ========================================
-// 氏名・氏名カナ 姓名横並びグループ
-// ========================================
-
-.c-customer-populate-main__name-group {
-  display: flex;
-  gap: rem(16);
-  flex-wrap: wrap;
-
-  @include sp {
-    flex-direction: column;
-    gap: rem(8);
-  }
-}
-
-.c-customer-populate-main__name-sub {
-  display: flex;
-  flex-direction: column;
-  gap: rem(4);
-  flex: 1;
-  min-width: rem(120);
-}
-
-.c-customer-populate-main__name-sub-label {
-  font-size: rem(12);
-  color: $text-light;
-  font-weight: $font-weight-normal;
-  line-height: 1.5;
-}
-
-.c-customer-populate-main__input--name {
-  width: 100%;
-}
-
-// ========================================
-// 住所項目ラベル PC/SP 切り替え
-// ========================================
-
-.c-customer-populate-main__label-pc {
-  @include sp {
-    display: none;
-  }
-}
-
-.c-customer-populate-main__label-sp {
-  display: none;
-
-  @include sp {
-    display: inline;
-  }
-}
-
-// ========================================
-// 現在のメールアドレス表示行
-// ========================================
-
-.c-customer-populate-main__email-current {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: rem(12);
-}
-
-.c-customer-populate-main__email-current-value {
-  font-size: rem(14);
-  color: $text-color;
-  font-weight: $font-weight-medium;
-  line-height: 1.5;
-  word-break: break-all;
-}
-
-// ========================================
 // メールアドレス入力グループ（新メールアドレス）
 // ========================================
 
 .c-customer-populate-main__email-new-group {
   display: flex;
   flex-direction: column;
-  gap: rem(8);
+  gap: rem(16);
 }
 
-// ========================================
-// パスワード変更ラジオエリア
-// ========================================
-
-.c-customer-populate-main__password-change-group {
+.c-customer-populate-main__email-item {
   display: flex;
-  flex-wrap: wrap;
-  gap: rem(24);
+  flex-direction: column;
+  gap: rem(6);
+}
+
+.c-customer-populate-main__email-label {
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.5;
 }
 
 // ========================================
-// パスワード入力エリア（活性/非活性切り替え）
+// パスワード入力エリア（ラジオ切替で表示）
 // ========================================
 
 .c-customer-populate-main__password-inputs {
   display: flex;
   flex-direction: column;
-  gap: rem(24);
+  gap: rem(16);
+  margin-top: rem(12);
+  padding: rem(20);
+  background-color: #eef4fb;
 }
 
-.c-customer-populate-main__password-inputs--disabled {
-  .c-guest-main__input {
-    background-color: $bg-gray;
-    color: $text-light;
-    cursor: not-allowed;
-  }
+.c-customer-populate-main__password-item {
+  display: flex;
+  flex-direction: column;
+  gap: rem(6);
+}
+
+.c-customer-populate-main__password-label {
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.5;
 }
 
 // ========================================

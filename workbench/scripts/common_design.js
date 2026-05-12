@@ -2074,32 +2074,26 @@ $(function () {
 });
 
 /* ========================================
- * お客様不足情報登録：パスワード変更ラジオ → 入力欄の活性/非活性切り替え
+ * お客様不足情報登録：パスワード変更ラジオ → 入力欄の表示/非表示切り替え
  * ======================================== */
 $(function () {
   const $radios = $('.js-password-change-radio');
   if (!$radios.length) { return; }
 
-  function applyPasswordFieldState() {
+  function togglePasswordFields() {
     const changeSelected = $('input.js-password-change-radio[value="1"]').is(':checked');
-    const $fields = $('.js-password-fields, .js-password-confirm-field');
+    const $fields = $('.js-password-fields');
 
-    $fields.each(function () {
-      const $input = $(this).find('input[type="password"]');
-      if (changeSelected) {
-        $(this).removeClass('c-customer-populate-main__password-inputs--disabled');
-        $input.prop('disabled', false).attr('aria-required', 'true');
-        $(this).find('.js-password-required, .js-password-confirm-required').removeAttr('hidden');
-      } else {
-        $(this).addClass('c-customer-populate-main__password-inputs--disabled');
-        $input.prop('disabled', true).val('').attr('aria-required', 'false');
-        $(this).find('.js-password-required, .js-password-confirm-required').attr('hidden', '');
-      }
-    });
+    if (changeSelected) {
+      $fields.removeAttr('hidden');
+    } else {
+      $fields.attr('hidden', '');
+      $fields.find('input[type="password"]').val('');
+    }
   }
 
-  $radios.on('change', applyPasswordFieldState);
-  applyPasswordFieldState();
+  $radios.on('change', togglePasswordFields);
+  togglePasswordFields();
 });
 
 /* ========================================

@@ -8554,10 +8554,6 @@
     font-size: 0.75rem;
   }
 }
-.c-main:has(.c-step-nav) .c-step-nav {
-  margin-bottom: 0;
-}
-
 .c-main:has(.c-step-nav) .c-user-heading {
   margin-top: 0.5rem;
   padding-top: 0;
@@ -13012,6 +13008,14 @@
   word-break: break-all;
   padding: 0.5rem 0.75rem;
   background-color: #f4f8fc;
+}
+
+.c-complete-main--no-actions {
+  padding-bottom: 1rem;
+}
+
+.c-complete-main--actions-only .c-shipping-main__actions {
+  padding-top: 0;
 }
 
 .c-customer-populate-main {

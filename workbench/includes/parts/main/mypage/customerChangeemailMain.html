@@ -1,0 +1,102 @@
+<div class="c-message-area" role="alert" aria-live="polite">
+  <!-- 完了・エラーメッセージ（JS制御で表示） -->
+</div>
+
+<section class="c-user-heading" aria-label="メールアドレス変更">
+  <div class="c-user-heading__inner">
+    <h1 class="c-user-heading__title">メールアドレス変更</h1>
+  </div>
+  <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
+</section>
+
+<div class="c-customer-changeemail-main">
+
+  <!-- 必須マーク説明 -->
+  <p class="c-guest-main__required-note">
+    <span class="c-guest-main__required" aria-label="必須">必須</span>
+    は必須入力項目です
+  </p>
+
+  <!-- フォーム -->
+  <form action="#" method="post" novalidate>
+
+    <dl class="c-customer-changeemail-main__form-table">
+
+      <!-- 現メールアドレス -->
+      <div class="c-customer-changeemail-main__field">
+        <dt class="c-customer-changeemail-main__field-label">
+          現メールアドレス
+        </dt>
+        <dd class="c-customer-changeemail-main__field-body">
+          <p class="c-customer-changeemail-main__current-email" name="oldEmail">1216_front@sint.co.jp</p>
+        </dd>
+      </div>
+
+      <!-- 新メールアドレス -->
+      <div class="c-customer-changeemail-main__field">
+        <dt class="c-customer-changeemail-main__field-label">
+          新メールアドレス<span class="c-guest-main__required" aria-label="必須">必須</span>
+        </dt>
+        <dd class="c-customer-changeemail-main__field-body">
+          <input
+            type="email"
+            class="c-guest-main__input js-changeemail-field"
+            name="newEmail"
+            maxlength="256"
+            autocomplete="email"
+            placeholder="例）login@example.com"
+            aria-label="新メールアドレス"
+            aria-required="true"
+            data-error-required="新メールアドレスは必ず入力してください"
+            data-error-format="メールアドレスの形式が正しくありません">
+          <p class="c-field-error js-field-error" role="alert" hidden>新メールアドレスは必ず入力してください</p>
+          <p class="c-customer-changeemail-main__field-note">※ログイン時に利用します。</p>
+        </dd>
+      </div>
+
+      <!-- 確認コード -->
+      <div class="c-customer-changeemail-main__field">
+        <dt class="c-customer-changeemail-main__field-label">
+          確認コード<span class="c-guest-main__required" aria-label="必須">必須</span>
+        </dt>
+        <dd class="c-customer-changeemail-main__field-body">
+          <div class="c-guest-main__confirm-code-group">
+            <input
+              type="text"
+              class="c-guest-main__input c-guest-main__input--confirm-code js-changeemail-field"
+              name="confirmCode"
+              maxlength="6"
+              inputmode="numeric"
+              pattern="[0-9]*"
+              autocomplete="one-time-code"
+              aria-label="確認コード（6桁）"
+              aria-required="true"
+              data-error-required="確認コードは必ず入力してください">
+            <button
+              type="button"
+              class="c-guest-main__btn c-guest-main__btn--issue js-issue-confirm-code">
+              確認コードを発行する
+            </button>
+          </div>
+          <p class="c-field-error js-field-error" role="alert" hidden>確認コードは必ず入力してください</p>
+          <p class="c-customer-changeemail-main__field-note">※確認コード発行メールに記載された確認コードを入力します。</p>
+        </dd>
+      </div>
+
+    </dl>
+
+    <!-- ボタンエリア -->
+    <div class="c-customer-changeemail-main__actions">
+      <button
+        type="submit"
+        class="c-guest-main__btn c-guest-main__btn--next c-customer-changeemail-main__btn--next">
+        変更する
+      </button>
+      <a href="#" class="c-guest-main__btn c-guest-main__btn--back c-customer-changeemail-main__btn--back">
+        前へ戻る
+      </a>
+    </div>
+
+  </form>
+
+</div>

@@ -4556,9 +4556,10 @@
   border: 1px solid #e0e0e0;
 }
 .c-message-area__text--complete {
-  background-color: #e0f5f4;
-  color: #333;
-  border: 1px solid #4ECDC4;
+  background-color: #f4f8fc;
+  color: #00387d;
+  border: 1px solid #00387d;
+  border-radius: 0;
 }
 
 .c-filter-panel {
@@ -8553,10 +8554,6 @@
     font-size: 0.75rem;
   }
 }
-.c-main:has(.c-step-nav) .c-step-nav {
-  margin-bottom: 0;
-}
-
 .c-main:has(.c-step-nav) .c-user-heading {
   margin-top: 0.5rem;
   padding-top: 0;
@@ -12982,6 +12979,45 @@
   background-color: #fde8e8;
 }
 
+.c-customer-confirm-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 0 0 3rem;
+}
+@media (min-width: 992px) {
+  .c-customer-confirm-main {
+    padding: 0 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-customer-confirm-main__message {
+  font-size: 0.875rem;
+  color: #00387d;
+  line-height: 1.75;
+  text-align: center;
+  margin: 1.5rem 0 1.5rem;
+  padding: 0 1rem;
+  border-radius: 4px;
+}
+
+.c-customer-confirm-main__value {
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 400;
+  line-height: 1.75;
+  word-break: break-all;
+  padding: 0.5rem 0.75rem;
+  background-color: #f4f8fc;
+}
+
+.c-complete-main--no-actions {
+  padding-bottom: 1rem;
+}
+
+.c-complete-main--actions-only .c-shipping-main__actions {
+  padding-top: 0;
+}
+
 .c-customer-populate-main {
   max-width: 70.625rem;
   margin: 0 auto;
@@ -13131,6 +13167,99 @@
 }
 
 .c-customer-changepassword-main__btn--back {
+  max-width: 25rem;
+  width: 100%;
+  order: 2;
+}
+
+.c-customer-changeemail-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+@media (min-width: 992px) {
+  .c-customer-changeemail-main {
+    padding: 0 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-customer-changeemail-main__form-table {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.c-customer-changeemail-main__field {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0.375rem;
+}
+@media (min-width: 768px) {
+  .c-customer-changeemail-main__field {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+.c-customer-changeemail-main__field-label {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  min-width: 12.5rem;
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .c-customer-changeemail-main__field-label {
+    padding-top: 0.625rem;
+    width: 12.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+.c-customer-changeemail-main__field-body {
+  flex: 1;
+  margin: 0;
+}
+
+.c-customer-changeemail-main__current-email {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  padding: 0.625rem 0;
+  word-break: break-all;
+}
+
+.c-customer-changeemail-main__field-note {
+  font-size: 0.8125rem;
+  color: #6B7280;
+  margin: 0.375rem 0 0;
+  line-height: 1.5;
+}
+
+.c-customer-changeemail-main__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.c-customer-changeemail-main__btn--next {
+  max-width: 25rem;
+  width: 100%;
+  order: 1;
+}
+
+.c-customer-changeemail-main__btn--back {
   max-width: 25rem;
   width: 100%;
   order: 2;

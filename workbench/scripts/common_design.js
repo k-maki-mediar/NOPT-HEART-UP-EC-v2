@@ -2190,6 +2190,104 @@ $(function () {
     if (!valid) {
       e.preventDefault();
       $(this).find('.js-changepassword-field.is-error').first().trigger('focus');
+    } else {
+      e.preventDefault();
+      const $form = $(this);
+      $form.find('.js-changepassword-field').val('');
+      const $messageArea = $('.c-customer-changepassword-main').prevAll('.c-message-area').first();
+      $messageArea.html('<p class="c-message-area__text c-message-area__text--complete">パスワードの更新を完了しました。</p>');
+      setTimeout(function () {
+        document.activeElement.blur();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 0);
+    }
+  });
+});
+
+/* ========================================
+ * メールアドレス変更：リアルタイムバリデーション（赤枠 + エラーテキスト）
+ * .js-changeemail-field クラスを持つ入力欄に適用
+ * ======================================== */
+$(function () {
+  if (!$('.c-customer-changeemail-main').length) { return; }
+
+  function isValidEmail(val) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  }
+
+  function showEmailFieldError($input, msg) {
+    const $dd = $input.closest('.c-customer-changeemail-main__field-body');
+    const $error = $dd.find('.js-field-error');
+    $error.text(msg);
+    $input.addClass('is-error');
+    $error.removeAttr('hidden');
+  }
+
+  function hideEmailFieldError($input) {
+    const $dd = $input.closest('.c-customer-changeemail-main__field-body');
+    const $error = $dd.find('.js-field-error');
+    $input.removeClass('is-error');
+    $error.attr('hidden', '');
+  }
+
+  function validateEmailField($input) {
+    const val = $.trim($input.val());
+    const name = $input.attr('name');
+    if (val === '') {
+      const errMsg = $input.data('error-required') || '必ず入力してください';
+      showEmailFieldError($input, errMsg);
+      return false;
+    }
+    if (name === 'newEmail' && !isValidEmail(val)) {
+      const errMsg = $input.data('error-format') || 'メールアドレスの形式が正しくありません';
+      showEmailFieldError($input, errMsg);
+      return false;
+    }
+    hideEmailFieldError($input);
+    return true;
+  }
+
+  // フォーカスアウト時にバリデーション
+  $(document).on('focusout', '.js-changeemail-field', function () {
+    validateEmailField($(this));
+  });
+
+  // フォーカス時にエラーをクリア
+  $(document).on('focusin', '.js-changeemail-field', function () {
+    hideEmailFieldError($(this));
+  });
+
+  // 確認コードを発行するボタン（デモ用: クリック時にメッセージ表示）
+  $(document).on('click', '.js-issue-confirm-code', function () {
+    const $newEmail = $('[name="newEmail"]');
+    if (!validateEmailField($newEmail)) {
+      $newEmail.trigger('focus');
+      return;
+    }
+    // 実際の送信はPKG側で制御。ここではUI上の即時フィードバックのみ
+  });
+
+  // フォーム送信時に全フィールドをバリデーション
+  $(document).on('submit', '.c-customer-changeemail-main form', function (e) {
+    let valid = true;
+    $(this).find('.js-changeemail-field').each(function () {
+      if (!validateEmailField($(this))) {
+        valid = false;
+      }
+    });
+    if (!valid) {
+      e.preventDefault();
+      $(this).find('.js-changeemail-field.is-error').first().trigger('focus');
+    } else {
+      e.preventDefault();
+      const $form = $(this);
+      $form.find('.js-changeemail-field').val('');
+      const $messageArea = $('.c-customer-changeemail-main').prevAll('.c-message-area').first();
+      $messageArea.html('<p class="c-message-area__text c-message-area__text--complete">メールアドレスの更新を完了しました。</p>');
+      setTimeout(function () {
+        document.activeElement.blur();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 0);
     }
   });
 });

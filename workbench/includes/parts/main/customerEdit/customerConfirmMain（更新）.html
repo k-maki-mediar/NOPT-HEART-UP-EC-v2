@@ -1,0 +1,114 @@
+<section class="c-guest-main c-customer-confirm-main" aria-label="お客様情報登録確認（更新）">
+
+  <form action="" method="post">
+
+    <!-- ===== 確認メッセージ ===== -->
+    <p class="c-customer-confirm-main__message">この内容で登録します。よろしいですか？</p>
+
+    <div class="c-guest-main__form-body">
+      <dl class="c-guest-main__form-table">
+
+        <!-- 氏名 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">氏名</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">山田 太郎</dd>
+        </div>
+
+        <!-- フリガナ -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">フリガナ</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">ヤマダ タロウ</dd>
+        </div>
+
+        <!-- 郵便番号 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">郵便番号</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">〒330-6032</dd>
+        </div>
+
+        <!-- 都道府県 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">都道府県</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">埼玉県</dd>
+        </div>
+
+        <!-- 市区郡 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">市区郡</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">さいたま市</dd>
+        </div>
+
+        <!-- 町村 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">町村</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">中央区新都心</dd>
+        </div>
+
+        <!-- 番地・ビル名など -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">番地・ビル名など</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">11番地2丁目</dd>
+        </div>
+
+        <!-- その他（空値でも行は表示する） -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">その他</dt>
+          <!-- 動的処理時: 値が空の場合も行は表示する（仕様確認済み） -->
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">ランド・アクシス・タワー32階</dd>
+        </div>
+
+        <!-- 主連絡先（電話番号）: ハイフン区切り -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">主連絡先（電話番号）</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">090-1234-5678</dd>
+        </div>
+
+        <!-- 生年月日 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">生年月日</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">1990/04/15</dd>
+        </div>
+
+        <!-- 性別 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">性別</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">女性</dd>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">メールアドレス</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">sample@example.com</dd>
+        </div>
+
+        <!-- パスワード行: 更新時は非表示（HTML上から削除） -->
+
+        <!-- 情報メール（ハートアップのお得な情報のご案内） -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">情報メール</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">希望する</dd>
+        </div>
+
+        <!-- オンラインショップのログインID（顧客属性設定時のみ表示） -->
+        <!-- 動的処理時: 顧客属性設定されていない場合は非表示 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">オンラインショップのログインID</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">メールアドレス</dd>
+        </div>
+
+      </dl>
+    </div>
+
+    <!-- ===== ボタンエリア ===== -->
+    <div class="c-shipping-main__actions">
+      <button type="submit" class="c-shipping-main__btn--next">登録する</button>
+
+      <!-- ステップナビゲーション（ボタン間に表示） -->
+      @@include('../../general/customerEditStepNavConfirm.html')
+
+      <a href="" class="c-shipping-main__btn--back">前へ戻る</a>
+    </div>
+
+  </form>
+
+</section>

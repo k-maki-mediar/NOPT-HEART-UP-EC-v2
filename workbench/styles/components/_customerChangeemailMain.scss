@@ -97,55 +97,6 @@
 }
 
 // ========================================
-// 確認コード横並びラッパー
-// ========================================
-
-.c-customer-changeemail-main__code-wrap {
-  display: flex;
-  align-items: flex-start;
-  gap: rem(12);
-  flex-wrap: wrap;
-}
-
-// ========================================
-// 確認コード入力欄（横幅制限）
-// ========================================
-
-.c-customer-changeemail-main__code-input {
-  max-width: rem(160);
-  flex-shrink: 0;
-}
-
-// ========================================
-// 確認コードを発行するボタン
-// ========================================
-
-.c-customer-changeemail-main__issue-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: rem(10) rem(20);
-  background-color: $primary-color;
-  color: $color-white;
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  border: none;
-  border-radius: rem(4);
-  cursor: pointer;
-  white-space: nowrap;
-  min-height: rem(44);
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: $primary-color-hover;
-  }
-
-  &:active {
-    background-color: $primary-color-active;
-  }
-}
-
-// ========================================
 // 補足テキスト
 // ========================================
 

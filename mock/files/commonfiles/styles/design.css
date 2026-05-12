@@ -13202,41 +13202,6 @@
   word-break: break-all;
 }
 
-.c-customer-changeemail-main__code-wrap {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.c-customer-changeemail-main__code-input {
-  max-width: 10rem;
-  flex-shrink: 0;
-}
-
-.c-customer-changeemail-main__issue-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.625rem 1.25rem;
-  background-color: #00387d;
-  color: #FFFFFF;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  white-space: nowrap;
-  min-height: 2.75rem;
-  transition: background-color 0.2s;
-}
-.c-customer-changeemail-main__issue-btn:hover {
-  background-color: #00509e;
-}
-.c-customer-changeemail-main__issue-btn:active {
-  background-color: #002a5e;
-}
-
 .c-customer-changeemail-main__field-note {
   font-size: 0.8125rem;
   color: #6B7280;

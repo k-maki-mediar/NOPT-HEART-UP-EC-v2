@@ -60,21 +60,21 @@
           確認コード<span class="c-guest-main__required" aria-label="必須">必須</span>
         </dt>
         <dd class="c-customer-changeemail-main__field-body">
-          <div class="c-customer-changeemail-main__code-wrap">
+          <div class="c-guest-main__confirm-code-group">
             <input
               type="text"
-              class="c-guest-main__input c-customer-changeemail-main__code-input js-changeemail-field"
+              class="c-guest-main__input c-guest-main__input--confirm-code js-changeemail-field"
               name="confirmCode"
               maxlength="6"
               inputmode="numeric"
               pattern="[0-9]*"
               autocomplete="one-time-code"
-              aria-label="確認コード"
+              aria-label="確認コード（6桁）"
               aria-required="true"
               data-error-required="確認コードは必ず入力してください">
             <button
               type="button"
-              class="c-customer-changeemail-main__issue-btn js-issue-confirm-code">
+              class="c-guest-main__btn c-guest-main__btn--issue js-issue-confirm-code">
               確認コードを発行する
             </button>
           </div>

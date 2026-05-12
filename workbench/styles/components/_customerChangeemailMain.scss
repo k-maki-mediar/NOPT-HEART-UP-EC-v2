@@ -1,0 +1,187 @@
+// ========================================
+// Customer Changeemail Main（メールアドレス変更フォーム）
+// 格納先HTML: workbench/includes/parts/main/mypage/customerChangeemailMain.html
+// BEM: .c-customer-changeemail-main
+// 参考: .c-customer-changepassword-main
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// c-customer-changepassword-main と同一構造・padding
+// ========================================
+
+.c-customer-changeemail-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 rem(16) rem(48);
+
+  @include pc {
+    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// フォームテーブル（dl / dt / dd 構造）
+// ========================================
+
+.c-customer-changeemail-main__form-table {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+}
+
+// ========================================
+// フォームフィールド行
+// ========================================
+
+.c-customer-changeemail-main__field {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: rem(6);
+
+  @include tablet-up {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: rem(16);
+  }
+}
+
+// ========================================
+// フィールドラベル（dt）
+// ========================================
+
+.c-customer-changeemail-main__field-label {
+  display: flex;
+  align-items: center;
+  gap: rem(6);
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0;
+  min-width: rem(200);
+  flex-shrink: 0;
+
+  @include tablet-up {
+    padding-top: rem(10);
+    width: rem(200);
+    flex-wrap: wrap;
+  }
+}
+
+// ========================================
+// フィールドボディ（dd）
+// ========================================
+
+.c-customer-changeemail-main__field-body {
+  flex: 1;
+  margin: 0;
+}
+
+// ========================================
+// 現メールアドレス（読み取り専用テキスト）
+// ========================================
+
+.c-customer-changeemail-main__current-email {
+  font-size: rem(16);
+  color: $text-color;
+  margin: 0;
+  padding: rem(10) 0;
+  word-break: break-all;
+}
+
+// ========================================
+// 確認コード横並びラッパー
+// ========================================
+
+.c-customer-changeemail-main__code-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: rem(12);
+  flex-wrap: wrap;
+}
+
+// ========================================
+// 確認コード入力欄（横幅制限）
+// ========================================
+
+.c-customer-changeemail-main__code-input {
+  max-width: rem(160);
+  flex-shrink: 0;
+}
+
+// ========================================
+// 確認コードを発行するボタン
+// ========================================
+
+.c-customer-changeemail-main__issue-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(10) rem(20);
+  background-color: $primary-color;
+  color: $color-white;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  border: none;
+  border-radius: rem(4);
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: rem(44);
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $primary-color-hover;
+  }
+
+  &:active {
+    background-color: $primary-color-active;
+  }
+}
+
+// ========================================
+// 補足テキスト
+// ========================================
+
+.c-customer-changeemail-main__field-note {
+  font-size: rem(13);
+  color: $text-light;
+  margin: rem(6) 0 0;
+  line-height: 1.5;
+}
+
+// ========================================
+// ボタンエリア
+// ========================================
+
+.c-customer-changeemail-main__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+  padding-top: rem(32);
+  margin-top: rem(32);
+}
+
+// ========================================
+// ボタン（縦並び・max-width設定）
+// SP: 変更する（上）/ 前へ戻る（下）
+// ========================================
+
+.c-customer-changeemail-main__btn--next {
+  max-width: rem(400);
+  width: 100%;
+  order: 1;
+}
+
+.c-customer-changeemail-main__btn--back {
+  max-width: rem(400);
+  width: 100%;
+  order: 2;
+}

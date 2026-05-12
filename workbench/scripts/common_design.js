@@ -2280,6 +2280,8 @@ $(function () {
       $(this).find('.js-changeemail-field.is-error').first().trigger('focus');
     } else {
       e.preventDefault();
+      const $form = $(this);
+      $form.find('.js-changeemail-field').val('');
       const $messageArea = $('.c-customer-changeemail-main').prevAll('.c-message-area').first();
       $messageArea.html('<p class="c-message-area__text c-message-area__text--complete">メールアドレスの更新を完了しました。</p>');
       setTimeout(function () {

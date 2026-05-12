@@ -2,12 +2,7 @@
 
   <form action="" method="post" novalidate>
 
-    <!-- ===== 定期便利用者向け案内（定期契約中のみ表示） ===== -->
-    <div class="c-customer-edit-main__regular-sale-notice" role="note">
-      <p class="c-customer-edit-main__regular-sale-notice-text">
-        らくとく定期便ご利用中のお客様：住所を変更された場合、定期便のお届け先も変更されます。
-      </p>
-    </div>
+    <p class="c-guest-main__required-note"><span class="c-guest-main__required" aria-label="必須">必須</span> は必須入力項目です</p>
 
     <div class="c-guest-main__form-body">
       <dl class="c-guest-main__form-table">
@@ -335,7 +330,7 @@
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">パスワード</dt>
           <dd class="c-guest-main__field-body">
-            <a href="" class="c-guest-main__btn c-guest-main__btn--search">
+            <a href="" class="c-guest-main__btn c-guest-main__btn--search c-customer-edit-main__change-link">
               パスワード変更
             </a>
           </dd>
@@ -380,6 +375,18 @@
         </div>
 
       </dl>
+
+      <!-- ===== らくとく定期便ご利用中のお客様 ===== -->
+      <div class="c-customer-edit-main__regular-sale-notice">
+        <p class="c-customer-edit-main__regular-sale-notice-title">『らくとく定期便』ご利用中のお客様</p>
+        <p class="c-customer-edit-main__regular-sale-notice-text">らくとく定期便のお届け先はマイページ内の【らくとく定期便 確認・変更】より「お届け先情報」をご確認ください。<br>なお、出荷準備中のお届け先は変更できません。ノプトカスタマーセンターまでお問合せください。</p>
+        <div class="c-complete-main__info-box">
+          <p class="c-complete-main__info-box-title">ノプトカスタマーセンター</p>
+          <p class="c-complete-main__info-box-text">フリーダイヤル　0120-710-158</p>
+          <p class="c-complete-main__info-box-text">営業時間：平日10:00〜13:00、14:00〜18:00</p>
+          <p class="c-complete-main__info-box-note">※土・日・祝日や、ゴールデンウィーク・お盆・年末年始等はお休みさせて頂きます。</p>
+        </div>
+      </div>
     </div>
 
     <!-- ===== ボタンエリア（更新時: 同意チェック不要・次へ活性） ===== -->

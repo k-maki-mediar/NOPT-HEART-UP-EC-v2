@@ -12943,19 +12943,27 @@
 }
 
 .c-customer-edit-main__regular-sale-notice {
-  margin: 1rem 0 1.5rem;
-  padding: 1rem;
-  background-color: #f4f8fc;
-  border: 1px solid #e0e0e0;
-  border-left: 3px solid #00387d;
+  margin: 1.5rem 0;
+  padding: 1.25rem 1rem;
+  border: 2px solid #d7e7fb;
   border-radius: 4px;
+}
+
+.c-customer-edit-main__regular-sale-notice-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #00387d;
+  text-align: center;
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
 }
 
 .c-customer-edit-main__regular-sale-notice-text {
   font-size: 0.8125rem;
   color: #333;
   line-height: 1.75;
-  margin: 0;
+  margin: 0 0 1rem;
+  text-align: center;
 }
 
 .c-customer-edit-main__terms {

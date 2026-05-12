@@ -2097,7 +2097,7 @@ $(function () {
 });
 
 /* ========================================
- * お客様不足情報登録：必須フィールド blur バリデーション（エラー吹き出し表示）
+ * お客様不足情報登録：必須フィールド blur バリデーション（赤枠 + エラーテキスト）
  * ======================================== */
 $(function () {
   var $fields = $('.js-required-field');
@@ -2105,19 +2105,50 @@ $(function () {
 
   $fields.on('blur', function () {
     var $input = $(this);
-    var $anchor = $input.closest('.c-field-error-popup__anchor');
-    var $popup = $anchor.find('.js-field-error');
+    var $dd = $input.closest('.c-guest-main__field-body');
+    var $error = $dd.find('.js-field-error').not('[data-group]');
 
     if ($.trim($input.val()) === '') {
-      $popup.removeAttr('hidden');
+      $input.addClass('is-error');
+      $error.removeAttr('hidden');
     } else {
-      $popup.attr('hidden', '');
+      $input.removeClass('is-error');
+      $error.attr('hidden', '');
     }
   });
 
   $fields.on('focus', function () {
-    var $anchor = $(this).closest('.c-field-error-popup__anchor');
-    $anchor.find('.js-field-error').attr('hidden', '');
+    var $input = $(this);
+    $input.removeClass('is-error');
+    var $dd = $input.closest('.c-guest-main__field-body');
+    $dd.find('.js-field-error').not('[data-group]').attr('hidden', '');
+  });
+
+  // グループフィールド（電話番号など複数入力欄で1つのエラー）
+  var $groupFields = $('.js-required-group-field');
+  $groupFields.on('blur', function () {
+    var group = $(this).data('group');
+    var $dd = $(this).closest('.c-guest-main__field-body');
+    var $error = $dd.find('.js-field-error[data-group="' + group + '"]');
+    var $inputs = $dd.find('.js-required-group-field[data-group="' + group + '"]');
+    var allEmpty = true;
+    $inputs.each(function () {
+      if ($.trim($(this).val()) !== '') { allEmpty = false; }
+    });
+    if (allEmpty) {
+      $inputs.addClass('is-error');
+      $error.removeAttr('hidden');
+    } else {
+      $inputs.removeClass('is-error');
+      $error.attr('hidden', '');
+    }
+  });
+
+  $groupFields.on('focus', function () {
+    var group = $(this).data('group');
+    var $dd = $(this).closest('.c-guest-main__field-body');
+    $dd.find('.js-required-group-field[data-group="' + group + '"]').removeClass('is-error');
+    $dd.find('.js-field-error[data-group="' + group + '"]').attr('hidden', '');
   });
 });
 

@@ -73,80 +73,22 @@
 }
 
 // ========================================
-// バリデーションエラー吹き出し
+// バリデーションエラー（入力欄下テキスト + 赤枠）
 // ========================================
 
-.c-field-error-popup__anchor {
-  position: relative;
-}
-
-.c-field-error-popup[hidden] {
+.c-field-error[hidden] {
   display: none;
 }
 
-.c-field-error-popup {
-  position: absolute;
-  z-index: $z-index-tooltip;
-  bottom: 100%;
-  left: 0;
-  margin-bottom: rem(8);
+.c-field-error {
+  margin: rem(6) 0 0;
   padding: rem(8) rem(12);
   background-color: $bg-danger-light;
-  border: 1px solid $danger-color-dark;
-  color: $danger-color-dark;
+  color: $danger-color;
   font-size: rem(13);
   line-height: 1.5;
-  white-space: nowrap;
 }
 
-.c-field-error-popup__message {
-  margin: 0;
-}
-
-.c-field-error-popup__arrow {
-  position: absolute;
-  bottom: rem(-10);
-  left: rem(16);
-  width: rem(16);
-  height: rem(10);
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-  }
-
-  // 外枠（ボーダー色）
-  &::before {
-    bottom: 0;
-    border-width: rem(10) rem(8) 0;
-    border-color: $danger-color-dark transparent transparent;
-  }
-
-  // 内側（背景色）
-  &::after {
-    bottom: rem(2);
-    border-width: rem(10) rem(8) 0;
-    border-color: $bg-danger-light transparent transparent;
-  }
-}
-
-// ========================================
-// フィールド エラー状態（赤枠）
-// ========================================
-
-.c-customer-populate-main__field--error {
-  .c-guest-main__input {
-    border-color: $danger-color;
-    background-color: $bg-danger-light;
-  }
-
-  .c-detail-unit__select {
-    border-color: $danger-color;
-    background-color: $bg-danger-light;
-  }
+.c-guest-main__input.is-error {
+  border-color: $danger-color;
 }

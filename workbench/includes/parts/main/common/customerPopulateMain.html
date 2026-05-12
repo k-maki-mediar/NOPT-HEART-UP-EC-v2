@@ -15,13 +15,10 @@
           <dt class="c-guest-main__field-label">
             氏名<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
-          <dd class="c-guest-main__field-body c-field-error-popup__anchor">
-            <div class="c-field-error-popup js-field-error" role="alert" hidden>
-              <p class="c-field-error-popup__message">氏名は必ず入力してください</p>
-              <div class="c-field-error-popup__arrow" aria-hidden="true"></div>
-            </div>
+          <dd class="c-guest-main__field-body">
             <input type="text" class="c-guest-main__input js-required-field" name="ownerName"
               maxlength="40" placeholder="例）山田　太郎" aria-label="氏名" autocomplete="name" data-error-msg="氏名は必ず入力してください">
+            <p class="c-field-error js-field-error" role="alert" hidden>氏名は必ず入力してください</p>
           </dd>
         </div>
 
@@ -31,8 +28,9 @@
             氏名カナ<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <input type="text" class="c-guest-main__input" name="ownerNameKana"
-              maxlength="42" placeholder="例）ヤマダ　タロウ" aria-label="氏名カナ">
+            <input type="text" class="c-guest-main__input js-required-field" name="ownerNameKana"
+              maxlength="42" placeholder="例）ヤマダ　タロウ" aria-label="氏名カナ" data-error-msg="氏名カナは必ず入力してください">
+            <p class="c-field-error js-field-error" role="alert" hidden>氏名カナは必ず入力してください</p>
           </dd>
         </div>
 
@@ -44,14 +42,15 @@
           <dd class="c-guest-main__field-body">
             <div class="c-guest-main__postal-group">
               <span class="c-guest-main__postal-mark" aria-hidden="true">〒</span>
-              <input type="text" class="c-guest-main__input c-guest-main__input--postal"
+              <input type="text" class="c-guest-main__input c-guest-main__input--postal js-required-field"
                 name="postalCode"
                 maxlength="7" inputmode="numeric" placeholder="例）3306032"
-                aria-label="郵便番号（ハイフンなし7桁）" autocomplete="postal-code">
+                aria-label="郵便番号（ハイフンなし7桁）" autocomplete="postal-code" data-error-msg="郵便番号は必ず入力してください">
               <button type="button" class="c-guest-main__btn c-guest-main__btn--search js-postal-search" data-target="populate">
                 検索
               </button>
             </div>
+            <p class="c-field-error js-field-error" role="alert" hidden>郵便番号は必ず入力してください</p>
           </dd>
         </div>
 
@@ -122,10 +121,11 @@
             市区郡<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <input type="text" class="c-guest-main__input c-guest-main__input--address"
+            <input type="text" class="c-guest-main__input c-guest-main__input--address js-required-field"
               name="address2"
               maxlength="15" autocomplete="address-level2" placeholder="例）さいたま市"
-              aria-label="市区郡">
+              aria-label="市区郡" data-error-msg="市区郡は必ず入力してください">
+            <p class="c-field-error js-field-error" role="alert" hidden>市区郡は必ず入力してください</p>
           </dd>
         </div>
 
@@ -135,10 +135,11 @@
             町名<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <input type="text" class="c-guest-main__input c-guest-main__input--address"
+            <input type="text" class="c-guest-main__input c-guest-main__input--address js-required-field"
               name="address3"
               maxlength="15" autocomplete="address-line1" placeholder="例）中央区新都心11番地2丁目"
-              aria-label="町村">
+              aria-label="町村" data-error-msg="町名は必ず入力してください">
+            <p class="c-field-error js-field-error" role="alert" hidden>町名は必ず入力してください</p>
           </dd>
         </div>
 
@@ -148,10 +149,11 @@
             番地・ビル名など<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body">
-            <input type="text" class="c-guest-main__input c-guest-main__input--address"
+            <input type="text" class="c-guest-main__input c-guest-main__input--address js-required-field"
               name="address4"
               maxlength="15" autocomplete="address-line2" placeholder="例）ランド・アクシス・タワー（明治安田生命さいたま新都心ビル）32階"
-              aria-label="番地・ビル名など">
+              aria-label="番地・ビル名など" data-error-msg="番地・ビル名などは必ず入力してください">
+            <p class="c-field-error js-field-error" role="alert" hidden>番地・ビル名などは必ず入力してください</p>
           </dd>
         </div>
 
@@ -173,19 +175,20 @@
           </dt>
           <dd class="c-guest-main__field-body">
             <div class="c-guest-main__phone-group" role="group" aria-label="電話番号">
-              <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+              <input type="text" class="c-guest-main__input c-guest-main__input--phone js-required-group-field" data-group="phone"
                 name="phoneNumber1"
                 maxlength="6" inputmode="numeric" aria-label="電話番号1（市外局番）" autocomplete="tel-local">
               <span class="c-guest-main__phone-sep" aria-hidden="true">-</span>
-              <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+              <input type="text" class="c-guest-main__input c-guest-main__input--phone js-required-group-field" data-group="phone"
                 name="phoneNumber2"
                 maxlength="6" inputmode="numeric" aria-label="電話番号2（市内局番）">
               <span class="c-guest-main__phone-sep" aria-hidden="true">-</span>
-              <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+              <input type="text" class="c-guest-main__input c-guest-main__input--phone js-required-group-field" data-group="phone"
                 name="phoneNumber3"
                 maxlength="6" inputmode="numeric" aria-label="電話番号3（番号）">
             </div>
             <p class="c-guest-main__field-note">※自宅電話番号又は携帯電話番号を入力してください。</p>
+            <p class="c-field-error js-field-error" role="alert" hidden data-group="phone">電話番号は必ず入力してください</p>
           </dd>
         </div>
 
@@ -331,14 +334,15 @@
           </dt>
           <dd class="c-guest-main__field-body">
             <div class="c-customer-populate-main__email-new-group">
-              <input type="email" class="c-guest-main__input c-guest-main__input--email"
+              <input type="email" class="c-guest-main__input c-guest-main__input--email js-required-field"
                 name="ownerEmail" value="main_test@example.jp"
-                maxlength="70" autocomplete="email" aria-label="メールアドレス">
+                maxlength="70" autocomplete="email" aria-label="メールアドレス" data-error-msg="メールアドレスは必ず入力してください">
               <input type="email" class="c-guest-main__input c-guest-main__input--email"
                 name="ownerEmailConfirm"
                 maxlength="70" autocomplete="email" placeholder="メールアドレス確認"
                 aria-label="メールアドレス確認">
             </div>
+            <p class="c-field-error js-field-error" role="alert" hidden>メールアドレスは必ず入力してください</p>
           </dd>
         </div>
 

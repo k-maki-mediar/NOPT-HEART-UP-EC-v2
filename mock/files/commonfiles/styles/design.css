@@ -4556,9 +4556,9 @@
   border: 1px solid #e0e0e0;
 }
 .c-message-area__text--complete {
-  background-color: #f0f4fb;
-  color: #1a2a5e;
-  border: 1px solid #1a2a5e;
+  background-color: #f4f8fc;
+  color: #00387d;
+  border: 1px solid #00387d;
   border-radius: 0;
 }
 
@@ -13132,6 +13132,134 @@
 }
 
 .c-customer-changepassword-main__btn--back {
+  max-width: 25rem;
+  width: 100%;
+  order: 2;
+}
+
+.c-customer-changeemail-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+@media (min-width: 992px) {
+  .c-customer-changeemail-main {
+    padding: 0 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-customer-changeemail-main__form-table {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.c-customer-changeemail-main__field {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0.375rem;
+}
+@media (min-width: 768px) {
+  .c-customer-changeemail-main__field {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+.c-customer-changeemail-main__field-label {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  min-width: 12.5rem;
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .c-customer-changeemail-main__field-label {
+    padding-top: 0.625rem;
+    width: 12.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+.c-customer-changeemail-main__field-body {
+  flex: 1;
+  margin: 0;
+}
+
+.c-customer-changeemail-main__current-email {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  padding: 0.625rem 0;
+  word-break: break-all;
+}
+
+.c-customer-changeemail-main__code-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.c-customer-changeemail-main__code-input {
+  max-width: 10rem;
+  flex-shrink: 0;
+}
+
+.c-customer-changeemail-main__issue-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  background-color: #00387d;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: 2.75rem;
+  transition: background-color 0.2s;
+}
+.c-customer-changeemail-main__issue-btn:hover {
+  background-color: #00509e;
+}
+.c-customer-changeemail-main__issue-btn:active {
+  background-color: #002a5e;
+}
+
+.c-customer-changeemail-main__field-note {
+  font-size: 0.8125rem;
+  color: #6B7280;
+  margin: 0.375rem 0 0;
+  line-height: 1.5;
+}
+
+.c-customer-changeemail-main__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.c-customer-changeemail-main__btn--next {
+  max-width: 25rem;
+  width: 100%;
+  order: 1;
+}
+
+.c-customer-changeemail-main__btn--back {
   max-width: 25rem;
   width: 100%;
   order: 2;

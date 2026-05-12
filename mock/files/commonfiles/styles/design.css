@@ -12876,6 +12876,15 @@
   }
 }
 
+.c-step-nav:has(+ .c-user-heading) {
+  margin-bottom: 0rem;
+}
+
+.c-step-nav + .c-user-heading {
+  margin-top: 0.5rem;
+  padding-top: 0;
+}
+
 .c-customer-edit-main__name-group {
   display: flex;
   gap: 1rem;

@@ -4549,6 +4549,7 @@
   background-color: rgb(251.3167330677, 237.1832669323, 237.1832669323);
   color: #d42f2f;
   border: 1px solid #d42f2f;
+  border-radius: 0;
 }
 .c-message-area__text--info {
   background-color: #f4f8fc;
@@ -4560,6 +4561,10 @@
   color: #00387d;
   border: 1px solid #00387d;
   border-radius: 0;
+}
+
+.c-message-area--with-top-space {
+  padding-top: 1.5rem;
 }
 
 .c-filter-panel {
@@ -13280,7 +13285,7 @@
   font-size: 0.875rem;
   color: #333;
   line-height: 1.75;
-  margin: 0 0 1rem;
+  margin: 1.5rem 0 1rem;
 }
 
 .c-customer-sendpassword-main__form-table {
@@ -13343,7 +13348,6 @@
   gap: 1rem;
   padding-top: 2rem;
   margin-top: 2rem;
-  border-top: 1px solid #e0e0e0;
 }
 
 .c-customer-sendpassword-main__btn--send {
@@ -13353,8 +13357,8 @@
 
 .c-customer-sendpassword-main__forgot {
   margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e0e0e0;
+  padding: 1.5rem 1.25rem;
+  border: 0.125rem solid #d7e7fb;
 }
 
 .c-customer-sendpassword-main__forgot-heading {
@@ -13363,6 +13367,7 @@
   color: #00387d;
   margin: 0 0 1rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 .c-customer-sendpassword-main__forgot-text {
@@ -13373,42 +13378,47 @@
 }
 
 .c-customer-sendpassword-main__contact {
-  padding: 1.25rem 1rem;
-  background-color: #f4f8fc;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  background-color: #F7F7F7;
+  text-align: center;
 }
 
 .c-customer-sendpassword-main__contact-name {
   font-size: 0.875rem;
   font-weight: 500;
   color: #00387d;
-  margin: 0 0 0.5rem;
-  line-height: 1.5;
+  margin: 0 0 0.75rem;
+  line-height: 1.75;
 }
 
 .c-customer-sendpassword-main__contact-tel {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #333;
   margin: 0 0 0.5rem;
   line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.c-customer-sendpassword-main__contact-link {
-  color: #0087cb;
-  text-decoration: underline;
-  text-underline-offset: 0.125rem;
-}
-.c-customer-sendpassword-main__contact-link:hover {
-  text-decoration: none;
+.c-customer-sendpassword-main__contact-icon {
+  vertical-align: middle;
 }
 
 .c-customer-sendpassword-main__contact-hours {
   font-size: 0.8125rem;
-  color: #6B7280;
+  color: #333;
   line-height: 1.75;
   margin: 0;
+}
+
+.c-customer-sendpassword-main__contact-note {
+  font-size: 0.75rem;
+  color: #6B7280;
+  line-height: 1.75;
+  margin: 0.75rem 0 0;
 }
 
 .c-main--logged-in .c-campaign-topics__deco-rect {

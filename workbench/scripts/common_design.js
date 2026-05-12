@@ -1060,7 +1060,7 @@ $(function () {
 
   // 同意チェックボックス: 次へボタンの活性/非活性を切り替える
   $(document).on('change', '.js-agree-checkbox', function () {
-    const $btn = $('.js-guest-submit, .js-customer-edit-submit');
+    const $btn = $('.js-guest-submit, .js-customer-edit-submit, .js-customer-populate-submit');
     if (!$btn.length) { return; }
     $btn.prop('disabled', !this.checked);
   });
@@ -2071,6 +2071,35 @@ $(function () {
       });
     }
   });
+});
+
+/* ========================================
+ * お客様不足情報登録：パスワード変更ラジオ → 入力欄の活性/非活性切り替え
+ * ======================================== */
+$(function () {
+  const $radios = $('.js-password-change-radio');
+  if (!$radios.length) { return; }
+
+  function applyPasswordFieldState() {
+    const changeSelected = $('input.js-password-change-radio[value="1"]').is(':checked');
+    const $fields = $('.js-password-fields, .js-password-confirm-field');
+
+    $fields.each(function () {
+      const $input = $(this).find('input[type="password"]');
+      if (changeSelected) {
+        $(this).removeClass('c-customer-populate-main__password-inputs--disabled');
+        $input.prop('disabled', false).attr('aria-required', 'true');
+        $(this).find('.js-password-required, .js-password-confirm-required').removeAttr('hidden');
+      } else {
+        $(this).addClass('c-customer-populate-main__password-inputs--disabled');
+        $input.prop('disabled', true).val('').attr('aria-required', 'false');
+        $(this).find('.js-password-required, .js-password-confirm-required').attr('hidden', '');
+      }
+    });
+  }
+
+  $radios.on('change', applyPasswordFieldState);
+  applyPasswordFieldState();
 });
 
 /* ========================================

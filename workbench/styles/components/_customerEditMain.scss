@@ -207,3 +207,114 @@
   padding: rem(8) rem(12);
   background-color: $bg-light;
 }
+
+
+// ========================================
+// Customer Complete Main（お客様情報登録完了）
+// 格納先HTML: workbench/includes/parts/main/customerEdit/customerCompleteMain.html
+// BEM: .c-customer-complete-main
+// ========================================
+
+.c-customer-complete-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 0 rem(48);
+
+  @include pc {
+    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// 完了メッセージ全体ボックス
+.c-customer-complete-main__message-block {
+  border: rem(2) solid $bg-banner;
+  padding: rem(32) rem(24);
+  margin-top: rem(24);
+  margin-bottom: rem(32);
+  text-align: center;
+
+  @include sp {
+    padding: rem(24) rem(16);
+  }
+}
+
+// メインメッセージ（「お客様情報を登録いたしました。」等）
+.c-customer-complete-main__message {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0 0 rem(16);
+}
+
+// サブメッセージ（「引き続きお買い物をお楽しみください。」）
+.c-customer-complete-main__sub-message {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: rem(16) 0 0;
+}
+
+// クーポンブロック
+.c-customer-complete-main__coupon-block {
+  background-color: $bg-gray;
+  padding: rem(16) rem(24);
+  margin: rem(16) 0;
+
+  @include sp {
+    padding: rem(16);
+  }
+}
+
+.c-customer-complete-main__coupon-label {
+  font-size: rem(12);
+  color: $text-light;
+  margin: 0 0 rem(8);
+  line-height: 1.5;
+}
+
+.c-customer-complete-main__coupon-name {
+  font-size: rem(20);
+  font-weight: $font-weight-bold;
+  color: $text-color;
+  margin: 0 0 rem(8);
+  line-height: 1.4;
+}
+
+.c-customer-complete-main__coupon-detail {
+  font-size: rem(12);
+  color: $text-light;
+  line-height: 1.75;
+  margin: 0;
+}
+
+// ポイントブロック
+.c-customer-complete-main__point-block {
+  background-color: $bg-gray;
+  padding: rem(16) rem(24);
+  margin: rem(16) 0;
+
+  @include sp {
+    padding: rem(16);
+  }
+}
+
+.c-customer-complete-main__point-label {
+  font-size: rem(12);
+  color: $text-light;
+  margin: 0 0 rem(8);
+  line-height: 1.5;
+}
+
+.c-customer-complete-main__point-text {
+  font-size: rem(16);
+  font-weight: $font-weight-bold;
+  color: $text-color;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.c-customer-complete-main__point-value {
+  color: $danger-color;
+  font-size: rem(24);
+  font-weight: $font-weight-bold;
+}

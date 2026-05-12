@@ -2100,13 +2100,13 @@ $(function () {
  * お客様不足情報登録：必須フィールド blur バリデーション（赤枠 + エラーテキスト）
  * ======================================== */
 $(function () {
-  var $fields = $('.js-required-field');
+  const $fields = $('.js-required-field');
   if (!$fields.length) { return; }
 
   $fields.on('blur', function () {
-    var $input = $(this);
-    var $dd = $input.closest('.c-guest-main__field-body');
-    var $error = $dd.find('.js-field-error').not('[data-group]');
+    const $input = $(this);
+    const $dd = $input.closest('.c-guest-main__field-body');
+    const $error = $dd.find('.js-field-error').not('[data-group]');
 
     if ($.trim($input.val()) === '') {
       $input.addClass('is-error');
@@ -2118,20 +2118,20 @@ $(function () {
   });
 
   $fields.on('focus', function () {
-    var $input = $(this);
+    const $input = $(this);
     $input.removeClass('is-error');
-    var $dd = $input.closest('.c-guest-main__field-body');
+    const $dd = $input.closest('.c-guest-main__field-body');
     $dd.find('.js-field-error').not('[data-group]').attr('hidden', '');
   });
 
   // グループフィールド（電話番号など複数入力欄で1つのエラー）
-  var $groupFields = $('.js-required-group-field');
+  const $groupFields = $('.js-required-group-field');
   $groupFields.on('blur', function () {
-    var group = $(this).data('group');
-    var $dd = $(this).closest('.c-guest-main__field-body');
-    var $error = $dd.find('.js-field-error[data-group="' + group + '"]');
-    var $inputs = $dd.find('.js-required-group-field[data-group="' + group + '"]');
-    var allEmpty = true;
+    const group = $(this).data('group');
+    const $dd = $(this).closest('.c-guest-main__field-body');
+    const $error = $dd.find('.js-field-error[data-group="' + group + '"]');
+    const $inputs = $dd.find('.js-required-group-field[data-group="' + group + '"]');
+    let allEmpty = true;
     $inputs.each(function () {
       if ($.trim($(this).val()) !== '') { allEmpty = false; }
     });
@@ -2145,8 +2145,8 @@ $(function () {
   });
 
   $groupFields.on('focus', function () {
-    var group = $(this).data('group');
-    var $dd = $(this).closest('.c-guest-main__field-body');
+    const group = $(this).data('group');
+    const $dd = $(this).closest('.c-guest-main__field-body');
     $dd.find('.js-required-group-field[data-group="' + group + '"]').removeClass('is-error');
     $dd.find('.js-field-error[data-group="' + group + '"]').attr('hidden', '');
   });

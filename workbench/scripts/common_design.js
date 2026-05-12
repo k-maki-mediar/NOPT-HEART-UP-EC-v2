@@ -2190,6 +2190,16 @@ $(function () {
     if (!valid) {
       e.preventDefault();
       $(this).find('.js-changepassword-field.is-error').first().trigger('focus');
+    } else {
+      e.preventDefault();
+      const $form = $(this);
+      $form.find('.js-changepassword-field').val('');
+      const $messageArea = $('.c-customer-changepassword-main').prevAll('.c-message-area').first();
+      $messageArea.html('<p class="c-message-area__text c-message-area__text--complete">パスワードの更新を完了しました。</p>');
+      setTimeout(function () {
+        document.activeElement.blur();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 0);
     }
   });
 });

@@ -39,8 +39,9 @@
   }
 
   &--complete {
-    background-color: #e0f5f4;
-    color: $text-color;
-    border: 1px solid $secondary-color;
+    background-color: #f0f4fb;
+    color: #1a2a5e;
+    border: 1px solid #1a2a5e;
+    border-radius: 0;
   }
 }

@@ -10,12 +10,16 @@
     <div class="c-guest-main__form-body">
       <dl class="c-guest-main__form-table">
 
-        <!-- ===== 氏名 ===== -->
+        <!-- ===== 氏名（バリデーションエラー表示サンプル） ===== -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
             氏名<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
-          <dd class="c-guest-main__field-body">
+          <dd class="c-guest-main__field-body c-field-error-popup__anchor">
+            <div class="c-field-error-popup" role="alert">
+              <p class="c-field-error-popup__message">氏名は必ず入力してください</p>
+              <div class="c-field-error-popup__arrow" aria-hidden="true"></div>
+            </div>
             <input type="text" class="c-guest-main__input" name="ownerName"
               maxlength="40" placeholder="例）山田　太郎" aria-label="氏名" autocomplete="name">
           </dd>
@@ -330,12 +334,10 @@
               <input type="email" class="c-guest-main__input c-guest-main__input--email"
                 name="ownerEmail" value="main_test@example.jp"
                 maxlength="70" autocomplete="email" aria-label="メールアドレス">
-              <div class="c-customer-populate-main__email-item">
-                <label class="c-customer-populate-main__email-label" for="ownerEmailConfirm">メールアドレス確認</label>
-                <input type="email" class="c-guest-main__input c-guest-main__input--email" id="ownerEmailConfirm"
-                  name="ownerEmailConfirm"
-                  maxlength="70" autocomplete="email">
-              </div>
+              <input type="email" class="c-guest-main__input c-guest-main__input--email"
+                name="ownerEmailConfirm"
+                maxlength="70" autocomplete="email" placeholder="メールアドレス確認"
+                aria-label="メールアドレス確認">
             </div>
           </dd>
         </div>
@@ -418,7 +420,6 @@
     <!-- ===== ボタンエリア ===== -->
     <div class="c-shipping-main__actions">
       <button type="submit" class="c-shipping-main__btn--next">登録する</button>
-      <a href="" class="c-shipping-main__btn--back">前へ戻る</a>
     </div>
 
   </form>

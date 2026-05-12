@@ -13053,6 +13053,55 @@
   line-height: 1.5;
 }
 
+.c-field-error-popup__anchor {
+  position: relative;
+}
+
+.c-field-error-popup {
+  position: absolute;
+  z-index: 1100;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #fde8e8;
+  border: 1px solid #c93636;
+  color: #c93636;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.c-field-error-popup__message {
+  margin: 0;
+}
+
+.c-field-error-popup__arrow {
+  position: absolute;
+  bottom: -0.625rem;
+  left: 1rem;
+  width: 1rem;
+  height: 0.625rem;
+}
+.c-field-error-popup__arrow::before, .c-field-error-popup__arrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.c-field-error-popup__arrow::before {
+  bottom: 0;
+  border-width: 0.625rem 0.5rem 0;
+  border-color: #c93636 transparent transparent;
+}
+.c-field-error-popup__arrow::after {
+  bottom: 0.125rem;
+  border-width: 0.625rem 0.5rem 0;
+  border-color: #fde8e8 transparent transparent;
+}
+
 .c-customer-populate-main__field--error .c-guest-main__input {
   border-color: #d42f2f;
   background-color: #fde8e8;

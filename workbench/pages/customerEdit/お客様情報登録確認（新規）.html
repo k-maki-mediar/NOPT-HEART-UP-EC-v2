@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja" class="c-html">
+<head>
+@@include('../../includes/head.html', {"title": "お客様情報登録確認"})
+</head>
+<body class="c-body">
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageHeaderMenu.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageSideNav.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <div class="c-main">
+                @@include('../../includes/parts/general/messageArea.html')
+                @@include('../../includes/parts/general/customerEditStepNavConfirm.html')
+                <section class="c-user-heading" aria-label="お客様情報登録確認">
+                  <div class="c-user-heading__inner">
+                    <h1 class="c-user-heading__title">お客様情報登録確認</h1>
+                  </div>
+                  <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
+                </section>
+                @@include('../../includes/parts/main/customerEdit/customerConfirmMain.html')
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooterCopyright.html')
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

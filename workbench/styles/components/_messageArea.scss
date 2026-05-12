@@ -37,4 +37,10 @@
     color: $text-color;
     border: 1px solid $border-color;
   }
+
+  &--complete {
+    background-color: #e0f5f4;
+    color: $text-color;
+    border: 1px solid $secondary-color;
+  }
 }

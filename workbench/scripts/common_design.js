@@ -2140,6 +2140,61 @@ $(function () {
 });
 
 /* ========================================
+ * パスワード変更：リアルタイムバリデーション（赤枠 + エラーテキスト）
+ * .js-changepassword-field クラスを持つ入力欄に適用
+ * ======================================== */
+$(function () {
+  if (!$('.c-customer-changepassword-main').length) { return; }
+
+  function showFieldError($input) {
+    const $dd = $input.closest('.c-customer-changepassword-main__field-body');
+    const $error = $dd.find('.js-field-error');
+    $input.addClass('is-error');
+    $error.removeAttr('hidden');
+  }
+
+  function hideFieldError($input) {
+    const $dd = $input.closest('.c-customer-changepassword-main__field-body');
+    const $error = $dd.find('.js-field-error');
+    $input.removeClass('is-error');
+    $error.attr('hidden', '');
+  }
+
+  function validateChangepasswordField($input) {
+    if ($.trim($input.val()) === '') {
+      showFieldError($input);
+      return false;
+    }
+    hideFieldError($input);
+    return true;
+  }
+
+  // フォーカスアウト時にバリデーション
+  $(document).on('focusout', '.js-changepassword-field', function () {
+    validateChangepasswordField($(this));
+  });
+
+  // フォーカス時にエラーをクリア
+  $(document).on('focusin', '.js-changepassword-field', function () {
+    hideFieldError($(this));
+  });
+
+  // フォーム送信時に全フィールドをバリデーション
+  $(document).on('submit', '.c-customer-changepassword-main form', function (e) {
+    let valid = true;
+    $(this).find('.js-changepassword-field').each(function () {
+      if (!validateChangepasswordField($(this))) {
+        valid = false;
+      }
+    });
+    if (!valid) {
+      e.preventDefault();
+      $(this).find('.js-changepassword-field.is-error').first().trigger('focus');
+    }
+  });
+});
+
+/* ========================================
  * お支払い方法ラジオ選択→詳細展開（支払方法選択）
  * ======================================== */
 (function () {

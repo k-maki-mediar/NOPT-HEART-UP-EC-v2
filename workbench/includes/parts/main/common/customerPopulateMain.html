@@ -10,18 +10,18 @@
     <div class="c-guest-main__form-body">
       <dl class="c-guest-main__form-table">
 
-        <!-- ===== 氏名（バリデーションエラー表示サンプル） ===== -->
+        <!-- ===== 氏名 ===== -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
             氏名<span class="c-guest-main__required" aria-label="必須">必須</span>
           </dt>
           <dd class="c-guest-main__field-body c-field-error-popup__anchor">
-            <div class="c-field-error-popup" role="alert">
+            <div class="c-field-error-popup js-field-error" role="alert" hidden>
               <p class="c-field-error-popup__message">氏名は必ず入力してください</p>
               <div class="c-field-error-popup__arrow" aria-hidden="true"></div>
             </div>
-            <input type="text" class="c-guest-main__input" name="ownerName"
-              maxlength="40" placeholder="例）山田　太郎" aria-label="氏名" autocomplete="name">
+            <input type="text" class="c-guest-main__input js-required-field" name="ownerName"
+              maxlength="40" placeholder="例）山田　太郎" aria-label="氏名" autocomplete="name" data-error-msg="氏名は必ず入力してください">
           </dd>
         </div>
 

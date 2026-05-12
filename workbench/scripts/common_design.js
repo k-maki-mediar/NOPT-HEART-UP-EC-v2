@@ -2097,6 +2097,31 @@ $(function () {
 });
 
 /* ========================================
+ * お客様不足情報登録：必須フィールド blur バリデーション（エラー吹き出し表示）
+ * ======================================== */
+$(function () {
+  var $fields = $('.js-required-field');
+  if (!$fields.length) { return; }
+
+  $fields.on('blur', function () {
+    var $input = $(this);
+    var $anchor = $input.closest('.c-field-error-popup__anchor');
+    var $popup = $anchor.find('.js-field-error');
+
+    if ($.trim($input.val()) === '') {
+      $popup.removeAttr('hidden');
+    } else {
+      $popup.attr('hidden', '');
+    }
+  });
+
+  $fields.on('focus', function () {
+    var $anchor = $(this).closest('.c-field-error-popup__anchor');
+    $anchor.find('.js-field-error').attr('hidden', '');
+  });
+});
+
+/* ========================================
  * お支払い方法ラジオ選択→詳細展開（支払方法選択）
  * ======================================== */
 (function () {

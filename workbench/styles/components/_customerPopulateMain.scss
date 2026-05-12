@@ -80,6 +80,10 @@
   position: relative;
 }
 
+.c-field-error-popup[hidden] {
+  display: none;
+}
+
 .c-field-error-popup {
   position: absolute;
   z-index: $z-index-tooltip;

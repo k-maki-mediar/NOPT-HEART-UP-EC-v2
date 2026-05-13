@@ -2384,6 +2384,71 @@ $(function () {
 });
 
 /* ========================================
+ * パスワード再発行：リアルタイムバリデーション（赤枠 + エラーテキスト）
+ * .js-initpassword-field クラスを持つ入力欄に適用
+ * ======================================== */
+$(function () {
+  if (!$('.c-customer-initpassword-main').length) { return; }
+
+  function showInitpasswordFieldError($input) {
+    const $dd = $input.closest('.c-customer-initpassword-main__field-body');
+    const $error = $dd.find('.js-field-error');
+    $input.addClass('is-error');
+    $error.removeAttr('hidden');
+  }
+
+  function hideInitpasswordFieldError($input) {
+    const $dd = $input.closest('.c-customer-initpassword-main__field-body');
+    const $error = $dd.find('.js-field-error');
+    $input.removeClass('is-error');
+    $error.attr('hidden', '');
+  }
+
+  function validateInitpasswordField($input) {
+    if ($.trim($input.val()) === '') {
+      showInitpasswordFieldError($input);
+      return false;
+    }
+    hideInitpasswordFieldError($input);
+    return true;
+  }
+
+  // フォーカスアウト時にバリデーション
+  $(document).on('focusout', '.js-initpassword-field', function () {
+    validateInitpasswordField($(this));
+  });
+
+  // フォーカス時にエラーをクリア
+  $(document).on('focusin', '.js-initpassword-field', function () {
+    hideInitpasswordFieldError($(this));
+  });
+
+  // フォーム送信時に全フィールドをバリデーション
+  $(document).on('submit', '.c-customer-initpassword-main form', function (e) {
+    let valid = true;
+    $(this).find('.js-initpassword-field').each(function () {
+      if (!validateInitpasswordField($(this))) {
+        valid = false;
+      }
+    });
+    if (!valid) {
+      e.preventDefault();
+      $(this).find('.js-initpassword-field.is-error').first().trigger('focus');
+    } else {
+      e.preventDefault();
+      const $form = $(this);
+      $form.find('.js-initpassword-field').val('');
+      const $messageArea = $('.c-customer-initpassword-main').prevAll('.c-message-area').first();
+      $messageArea.html('<p class="c-message-area__text c-message-area__text--complete">パスワードを更新しました。</p>');
+      setTimeout(function () {
+        document.activeElement.blur();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 0);
+    }
+  });
+});
+
+/* ========================================
  * お支払い方法ラジオ選択→詳細展開（支払方法選択）
  * ======================================== */
 (function () {

@@ -88,6 +88,8 @@
 @use 'components/customerPopulateMain';
 @use 'components/customerChangepasswordMain';
 @use 'components/customerChangeemailMain';
+@use 'components/customerInitpasswordMain';
+@use 'components/customerSendpasswordMain';
 @use 'components/logoutMain';
 
 // ========================================

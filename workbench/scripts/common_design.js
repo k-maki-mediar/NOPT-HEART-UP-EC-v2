@@ -2293,6 +2293,162 @@ $(function () {
 });
 
 /* ========================================
+ * パスワード再登録URL送信：リアルタイムバリデーション（赤枠 + エラーテキスト）
+ * .js-sendpassword-field クラスを持つ入力欄に適用
+ * ======================================== */
+$(function () {
+  if (!$('.c-customer-sendpassword-main').length) { return; }
+
+  function isValidEmail(val) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  }
+
+  function isDigit(val) {
+    return /^\d+$/.test(val);
+  }
+
+  function showSendpasswordFieldError($input, msg) {
+    const $dd = $input.closest('.c-customer-sendpassword-main__field-body');
+    const $error = $dd.find('.js-field-error');
+    $error.text(msg);
+    $input.addClass('is-error');
+    $error.removeAttr('hidden');
+  }
+
+  function hideSendpasswordFieldError($input) {
+    const $dd = $input.closest('.c-customer-sendpassword-main__field-body');
+    const $error = $dd.find('.js-field-error');
+    $input.removeClass('is-error');
+    $error.attr('hidden', '');
+  }
+
+  function validateSendpasswordField($input) {
+    const val = $.trim($input.val());
+    const name = $input.attr('name');
+
+    if (val === '') {
+      const errMsg = $input.data('error-required') || '必ず入力してください';
+      showSendpasswordFieldError($input, errMsg);
+      return false;
+    }
+
+    if (name === 'customerCode' && !isDigit(val)) {
+      const errMsg = $input.data('error-digit') || '会員番号は数値で入力してください';
+      showSendpasswordFieldError($input, errMsg);
+      return false;
+    }
+
+    if (name === 'email' && !isValidEmail(val)) {
+      const errMsg = $input.data('error-email') || 'メールアドレスは有効なメールアドレスを入力してください';
+      showSendpasswordFieldError($input, errMsg);
+      return false;
+    }
+
+    hideSendpasswordFieldError($input);
+    return true;
+  }
+
+  // フォーカスアウト時にバリデーション
+  $(document).on('focusout', '.js-sendpassword-field', function () {
+    validateSendpasswordField($(this));
+  });
+
+  // フォーカス時にエラーをクリア
+  $(document).on('focusin', '.js-sendpassword-field', function () {
+    hideSendpasswordFieldError($(this));
+  });
+
+  // フォーム送信時に全フィールドをバリデーション
+  $(document).on('submit', '.c-customer-sendpassword-main form', function (e) {
+    let valid = true;
+    $(this).find('.js-sendpassword-field').each(function () {
+      if (!validateSendpasswordField($(this))) {
+        if (valid) {
+          $(this).trigger('focus');
+        }
+        valid = false;
+      }
+    });
+    if (!valid) {
+      e.preventDefault();
+    } else {
+      e.preventDefault();
+      // デモ用: 送信完了メッセージ表示
+      const $messageArea = $('.c-customer-sendpassword-main').prevAll('.c-message-area').first();
+      $messageArea.html('<p class="c-message-area__text c-message-area__text--complete">メールを送信しました。</p>');
+      setTimeout(function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 0);
+    }
+  });
+});
+
+/* ========================================
+ * パスワード再発行：リアルタイムバリデーション（赤枠 + エラーテキスト）
+ * .js-initpassword-field クラスを持つ入力欄に適用
+ * ======================================== */
+$(function () {
+  if (!$('.c-customer-initpassword-main').length) { return; }
+
+  function showInitpasswordFieldError($input) {
+    const $dd = $input.closest('.c-customer-initpassword-main__field-body');
+    const $error = $dd.find('.js-field-error');
+    $input.addClass('is-error');
+    $error.removeAttr('hidden');
+  }
+
+  function hideInitpasswordFieldError($input) {
+    const $dd = $input.closest('.c-customer-initpassword-main__field-body');
+    const $error = $dd.find('.js-field-error');
+    $input.removeClass('is-error');
+    $error.attr('hidden', '');
+  }
+
+  function validateInitpasswordField($input) {
+    if ($.trim($input.val()) === '') {
+      showInitpasswordFieldError($input);
+      return false;
+    }
+    hideInitpasswordFieldError($input);
+    return true;
+  }
+
+  // フォーカスアウト時にバリデーション
+  $(document).on('focusout', '.js-initpassword-field', function () {
+    validateInitpasswordField($(this));
+  });
+
+  // フォーカス時にエラーをクリア
+  $(document).on('focusin', '.js-initpassword-field', function () {
+    hideInitpasswordFieldError($(this));
+  });
+
+  // フォーム送信時に全フィールドをバリデーション
+  $(document).on('submit', '.c-customer-initpassword-main form', function (e) {
+    let valid = true;
+    $(this).find('.js-initpassword-field').each(function () {
+      if (!validateInitpasswordField($(this))) {
+        valid = false;
+      }
+    });
+    if (!valid) {
+      e.preventDefault();
+      $(this).find('.js-initpassword-field.is-error').first().trigger('focus');
+    } else {
+      e.preventDefault();
+      const $form = $(this);
+      $form.find('.js-initpassword-field').val('');
+      const $messageArea = $('.c-customer-initpassword-main').prevAll('.c-message-area').first();
+      $messageArea.html('<p class="c-message-area__text c-message-area__text--complete">パスワードを更新しました。</p>');
+      setTimeout(function () {
+        document.activeElement.blur();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 0);
+    }
+  });
+});
+
+/* ========================================
  * お支払い方法ラジオ選択→詳細展開（支払方法選択）
  * ======================================== */
 (function () {

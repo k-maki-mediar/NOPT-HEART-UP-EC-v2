@@ -11273,6 +11273,9 @@
 .c-guest-main__field-note--red {
   color: #cc4843;
 }
+.c-guest-main__field-note--large {
+  font-size: 0.8125rem;
+}
 
 .c-guest-main__required-note {
   font-size: 0.875rem;

@@ -13689,17 +13689,6 @@
   margin-top: 0;
 }
 
-.c-address-list-main__card-header {
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-@media (max-width: 767px) {
-  .c-address-list-main__card-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 .c-address-list-main__regular-icon {
   display: inline-flex;
   align-items: center;
@@ -13730,13 +13719,6 @@
   gap: 0.5rem;
   align-items: center;
   flex-shrink: 0;
-  margin-left: auto;
-}
-@media (max-width: 767px) {
-  .c-address-list-main__card-actions {
-    margin-left: 0;
-    width: 100%;
-  }
 }
 
 .c-address-list-main__link-basic {

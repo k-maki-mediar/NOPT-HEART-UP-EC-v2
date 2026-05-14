@@ -174,18 +174,8 @@
 // ========================================
 // カードヘッダー（c-teiki-address__header との複合）
 // ========================================
-
-.c-address-list-main__card-header {
-  // c-teiki-address__header のスタイルを継承
-  // ボタンエリアとのレイアウト調整
-  flex-wrap: wrap;
-  gap: rem(8);
-
-  @include sp {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
+// c-teiki-address__header のスタイル（display: flex; align-items: center;
+// justify-content: space-between;）をそのまま使用するため、独自オーバーライドなし
 
 // ========================================
 // ヘッダータイトル内の定期便アイコン
@@ -226,12 +216,8 @@
   gap: rem(8);
   align-items: center;
   flex-shrink: 0;
-  margin-left: auto;
-
-  @include sp {
-    margin-left: 0;
-    width: 100%;
-  }
+  // margin-left: auto は c-teiki-address__header の justify-content: space-between で不要
+  // SP時の width: 100% も参照HTMLに合わせて削除（横並び維持）
 }
 
 // ========================================

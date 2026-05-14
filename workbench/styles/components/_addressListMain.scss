@@ -300,3 +300,20 @@
 // ========================================
 
 // tablet は PC の横並びレイアウトを踏襲するため、追加スタイルなし
+
+// ========================================
+// カードアクション内 削除ボタン: 変更ボタンと高さ・サイズを揃える
+// （_cartMain.scss の c-cart-main__item-delete 本体は変更しない）
+// ========================================
+
+.c-address-list-main__card-actions .c-cart-main__item-delete {
+  min-height: rem(32);
+  height: rem(32);
+  padding: rem(4) rem(12);
+  gap: rem(4);
+}
+
+.c-address-list-main__card-actions .c-cart-main__item-delete-icon {
+  width: rem(10);
+  height: rem(10);
+}

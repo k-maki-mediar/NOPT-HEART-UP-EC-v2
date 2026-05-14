@@ -168,11 +168,14 @@
 // ========================================
 
 .c-address-list-main__msg-no-change {
+  padding: rem(10) rem(12);
+  margin: 0 0 rem(12);
+  background-color: #fdecec;
+  border-radius: rem(4);
   font-size: rem(13);
   font-weight: $font-weight-normal;
   color: $danger-color;
   line-height: 1.6;
-  margin: rem(8) 0 0;
   text-align: center;
 }
 

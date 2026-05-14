@@ -22,12 +22,12 @@
       <div class="c-address-list-main__count-group">
         <!-- 全件数（常時表示） -->
         <p class="c-address-list-main__count">全 2 件</p>
-        <!-- 件数範囲（10件以上時のみ表示 / 10件未満時は hidden 属性で非表示） -->
-        <p class="c-address-list-main__count-range" hidden>
+        <!-- 件数範囲 -->
+        <p class="c-address-list-main__count-range">
           <span class="c-address-list-main__count-from">1</span>件〜<span class="c-address-list-main__count-to">10</span>件を表示
         </p>
-        <!-- 表示件数選択（10件以上時のみ表示 / 10件未満時は hidden 属性で非表示） -->
-        <div class="c-address-list-main__count-select-wrap" hidden>
+        <!-- 表示件数選択 -->
+        <div class="c-address-list-main__count-select-wrap">
           <label for="addressListCountSelect" class="c-address-list-main__count-select-label">表示件数</label>
           <div class="c-address-list-main__select-wrap">
             <select id="addressListCountSelect" name="displayCount" class="c-address-list-main__count-select" aria-label="一覧表示件数選択">
@@ -134,8 +134,8 @@
 
   </ul>
 
-  <!-- ページング（10件以上時のみ表示 / 10件未満時は hidden 属性で非表示） -->
-  <nav class="c-address-list-main__pager" aria-label="ページング" hidden>
+  <!-- ページング -->
+  <nav class="c-address-list-main__pager" aria-label="ページング">
     <ul class="c-pager__list">
       <li class="c-pager__item c-pager__item--prev is-hidden">
         <a href="#" class="c-pager__link c-pager__link--prev" aria-label="前のページへ"></a>

@@ -8,7 +8,7 @@
 
 <section class="c-user-heading" aria-label="クレジットカード情報一覧">
   <div class="c-user-heading__inner">
-    <h1 class="c-user-heading__title">クレジットカード情報一覧</h1>
+    <h1 class="c-user-heading__title c-user-heading__title--flush">クレジットカード情報一覧</h1>
   </div>
   <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
 </section>
@@ -18,7 +18,7 @@
   <!-- ブランドロゴ + 新規登録ボタン行 -->
   <div class="c-card-list-main__top-row">
     <img src="../../../files/commonfiles/images/card_5brand.png" alt="VISA / Mastercard / JCB / AMEX / Diners 対応" class="c-card-list-main__brand-logo" width="170" height="20">
-    <a href="#" class="c-card-list-main__btn-new">
+    <a href="#" class="c-guest-main__btn c-guest-main__btn--back c-card-list-main__btn-new">
       新規カード情報登録
     </a>
   </div>
@@ -26,34 +26,36 @@
   <!-- カード一覧 -->
   <ul class="c-card-list-main__list" aria-label="登録済みクレジットカード一覧">
 
-    <!-- ▼ カードアイテム1: らくとく定期便対象バッジあり -->
+    <!-- ▼ カードアイテム1: らくとく定期便対象バッジあり / メインカード選択中 -->
     <li class="c-card-list-main__item c-card-list-main__item--has-badge">
       <div class="c-card-list-main__card">
-        <!-- らくとく定期便バッジ（1枚目のみ） -->
-        <span class="c-card-list-main__teiki-badge" aria-label="らくとく定期便対象">らくとく定期便対象</span>
-        <!-- カード情報 -->
-        <div class="c-card-list-main__info">
-          <div class="c-card-list-main__info-row">
-            <span class="c-card-list-main__info-label">クレジットカード番号</span>
-            <span class="c-card-list-main__info-value">
-              000000********00
-              <span class="c-card-list-main__info-note">(通常カード)</span>
-            </span>
-          </div>
-          <div class="c-card-list-main__info-row">
-            <span class="c-card-list-main__info-label">有効期限</span>
-            <span class="c-card-list-main__info-value">11/30</span>
-          </div>
+        <!-- メインカードバッジ（1枚目のみ・選択中カードに表示） -->
+        <span class="c-card-list-main__main-badge" aria-label="メインカード">メインカード</span>
+        <!-- カード本体: ラジオ + 情報を横並び -->
+        <label class="c-card-list-main__radio-label" aria-label="メインカードに設定">
+            <input type="radio" name="main-card" value="card-1" class="c-card-list-main__radio" checked>
+          </label>
+        <div class="c-card-list-main__content">
+          <div class="c-card-list-main__info">
+            <div class="c-card-list-main__info-row">
+              <span class="c-card-list-main__info-label">クレジットカード番号</span>
+              <span class="c-card-list-main__info-value">000000********00</span>
+            </div>
+            <div class="c-card-list-main__info-row">
+              <span class="c-card-list-main__info-label">有効期限</span>
+              <span class="c-card-list-main__info-value">11/30</span>
+            </div>
         </div>
         <!-- ボタンエリア -->
         <div class="c-card-list-main__actions">
-          <a href="#" class="c-card-list-main__btn-edit">変更</a>
+          <a href="#" class="c-card-list-main__btn-edit">編集</a>
           <button type="button" class="c-cart-main__item-delete" aria-label="クレジットカードを削除">
             <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
               <path d="M1 1l10 10M11 1L1 11"/>
             </svg>
             削除
           </button>
+        </div>
         </div>
       </div>
     </li>
@@ -61,26 +63,29 @@
     <!-- ▼ カードアイテム2 -->
     <li class="c-card-list-main__item">
       <div class="c-card-list-main__card">
-        <!-- カード情報 -->
-        <div class="c-card-list-main__info">
-          <div class="c-card-list-main__info-row">
-            <span class="c-card-list-main__info-label">クレジットカード番号</span>
-            <span class="c-card-list-main__info-value">000000********01</span>
-          </div>
-          <div class="c-card-list-main__info-row">
-            <span class="c-card-list-main__info-label">有効期限</span>
-            <span class="c-card-list-main__info-value">03/28</span>
-          </div>
+        <label class="c-card-list-main__radio-label" aria-label="メインカードに設定">
+            <input type="radio" name="main-card" value="card-2" class="c-card-list-main__radio">
+          </label>
+        <div class="c-card-list-main__content">
+          <div class="c-card-list-main__info">
+            <div class="c-card-list-main__info-row">
+              <span class="c-card-list-main__info-label">クレジットカード番号</span>
+              <span class="c-card-list-main__info-value">000000********01</span>
+            </div>
+            <div class="c-card-list-main__info-row">
+              <span class="c-card-list-main__info-label">有効期限</span>
+              <span class="c-card-list-main__info-value">03/28</span>
+            </div>
         </div>
-        <!-- ボタンエリア -->
         <div class="c-card-list-main__actions">
-          <a href="#" class="c-card-list-main__btn-edit">変更</a>
+          <a href="#" class="c-card-list-main__btn-edit">編集</a>
           <button type="button" class="c-cart-main__item-delete" aria-label="クレジットカードを削除">
             <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
               <path d="M1 1l10 10M11 1L1 11"/>
             </svg>
             削除
           </button>
+        </div>
         </div>
       </div>
     </li>
@@ -88,20 +93,22 @@
     <!-- ▼ カードアイテム3 -->
     <li class="c-card-list-main__item">
       <div class="c-card-list-main__card">
-        <!-- カード情報 -->
-        <div class="c-card-list-main__info">
-          <div class="c-card-list-main__info-row">
-            <span class="c-card-list-main__info-label">クレジットカード番号</span>
-            <span class="c-card-list-main__info-value">000000********02</span>
-          </div>
-          <div class="c-card-list-main__info-row">
-            <span class="c-card-list-main__info-label">有効期限</span>
-            <span class="c-card-list-main__info-value">07/27</span>
-          </div>
+        <label class="c-card-list-main__radio-label" aria-label="メインカードに設定">
+            <input type="radio" name="main-card" value="card-3" class="c-card-list-main__radio">
+          </label>
+        <div class="c-card-list-main__content">
+          <div class="c-card-list-main__info">
+            <div class="c-card-list-main__info-row">
+              <span class="c-card-list-main__info-label">クレジットカード番号</span>
+              <span class="c-card-list-main__info-value">000000********02</span>
+            </div>
+            <div class="c-card-list-main__info-row">
+              <span class="c-card-list-main__info-label">有効期限</span>
+              <span class="c-card-list-main__info-value">07/27</span>
+            </div>
         </div>
-        <!-- ボタンエリア -->
         <div class="c-card-list-main__actions">
-          <a href="#" class="c-card-list-main__btn-edit">変更</a>
+          <a href="#" class="c-card-list-main__btn-edit">編集</a>
           <button type="button" class="c-cart-main__item-delete" aria-label="クレジットカードを削除">
             <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
               <path d="M1 1l10 10M11 1L1 11"/>
@@ -109,9 +116,22 @@
             削除
           </button>
         </div>
+        </div>
       </div>
     </li>
 
   </ul>
+
+
+  <!-- メインカード設定ボタン + 注意文 -->
+  <div class="c-card-list-main__footer">
+    <button type="button" class="c-guest-main__btn c-guest-main__btn--next c-card-list-main__btn-set">
+      メインカードを設定する
+    </button>
+    <ul class="c-card-list-main__notices">
+      <li class="c-card-list-main__notice">※このページでメインカードを変更する場合は、ラジオボタンにチェックを入れ、「メインカードを設定する」ボタンを押下してください。</li>
+      <li class="c-card-list-main__notice">※らくとく定期便で、お支払方法をクレジットカード払いに設定されている場合は、メインカードに請求いたします。</li>
+    </ul>
+  </div>
 
 </div>

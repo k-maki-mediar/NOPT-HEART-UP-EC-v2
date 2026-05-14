@@ -35,6 +35,12 @@
   margin: 0;
 }
 
+// 左右パディングを削除するモディファイア（クレジットカード情報一覧など、横幅いっぱい使いたい画面用）
+.c-user-heading__title--flush {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .c-user-heading__member-id {
   margin: 0;
   font-family: $font-family-base;

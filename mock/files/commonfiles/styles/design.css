@@ -13653,6 +13653,12 @@
     max-width: 25rem;
   }
 }
+.c-address-list-main__link-basic[aria-disabled=true] {
+  opacity: 0.35;
+  box-shadow: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
 .c-address-list-main__card-actions:has(> .c-address-list-main__link-basic) {
   justify-content: center;
@@ -13663,7 +13669,8 @@
   font-weight: 400;
   color: #d42f2f;
   line-height: 1.6;
-  margin: 0.5rem 1rem 0.75rem;
+  margin: 0.5rem 0 0;
+  text-align: center;
 }
 
 .c-address-list-main__actions {

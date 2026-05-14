@@ -73,12 +73,13 @@
               <th class="c-teiki-info-table__header" scope="row">電話番号</th>
               <td class="c-teiki-info-table__data">090-0000-0000</td>
             </tr>
-            <!-- 最終行：変更ボタン -->
+            <!-- 最終行：変更ボタン（非活性・定期便発送準備中） -->
             <tr class="c-teiki-info-table__row c-address-list-main__actions-row">
               <td class="c-teiki-info-table__data c-address-list-main__actions-cell" colspan="2">
                 <div class="c-address-list-main__card-actions">
-                  <a href="#" class="c-guest-main__btn c-guest-main__btn--back c-address-list-main__link-basic">基本住所の変更はこちら</a>
+                  <span class="c-guest-main__btn c-guest-main__btn--back c-address-list-main__link-basic" aria-disabled="true">基本住所の変更はこちら</span>
                 </div>
+                <p class="c-address-list-main__msg-no-change">発送準備中のため、現在変更できません。</p>
               </td>
             </tr>
           </tbody>

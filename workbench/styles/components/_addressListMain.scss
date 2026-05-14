@@ -149,6 +149,13 @@
   @include pc {
     max-width: rem(400);
   }
+
+  &[aria-disabled='true'] {
+    opacity: 0.35;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
 // 基本住所カードは__link-basic 1個のみなので、card-actions を中央寄せに変更
@@ -165,7 +172,8 @@
   font-weight: $font-weight-normal;
   color: $danger-color;
   line-height: 1.6;
-  margin: rem(8) rem(16) rem(12);
+  margin: rem(8) 0 0;
+  text-align: center;
 }
 
 // ========================================

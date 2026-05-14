@@ -136,6 +136,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: rem(6);
   min-height: rem(32);
   padding: rem(4) rem(16);
   background-color: $color-white;
@@ -158,6 +159,15 @@
     outline: 2px solid $primary-color;
     outline-offset: rem(2);
   }
+}
+
+.c-address-list-main__link-basic-arrow {
+  display: inline-block;
+  width: rem(6);
+  height: rem(6);
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
 }
 
 // ========================================

@@ -335,7 +335,7 @@
             <input type="password" class="c-guest-main__input"
               name="password"
               maxlength="20" autocomplete="new-password" aria-required="true">
-            <p class="c-guest-main__field-note c-guest-main__field-note--red">※パスワードは8文字以上で、半角の英字と数字を組み合わせてください。また、「-」「_」「.」も利用可能です。</p>
+            <p class="c-guest-main__field-note c-guest-main__field-note--red">パスワードは半角8文字以上としてください。<br>数字、英字、記号「-」「_」「.」も利用可能です。</p>
           </dd>
         </div>
 
@@ -352,28 +352,28 @@
           </dd>
         </div>
 
-        <!-- ハートアップのお得な情報のご案内について -->
+        <!-- ハートアップメールマガジンの配信希望について -->
         <div class="c-guest-main__field">
           <dt class="c-guest-main__field-label">
-            ハートアップのお得な情報のご案内について
+            ハートアップメールマガジンの配信希望について
           </dt>
           <dd class="c-guest-main__field-body">
-            <div class="c-guest-main__radio-group" role="group" aria-label="ハートアップのお得な情報のご案内について">
-              <label class="c-guest-main__radio-label">
-                <input type="radio" class="c-guest-main__radio" name="requestMailType" value="0" checked>
-                希望しない
-              </label>
+            <div class="c-guest-main__radio-group" role="group" aria-label="ハートアップメールマガジンの配信希望について">
               <label class="c-guest-main__radio-label">
                 <input type="radio" class="c-guest-main__radio" name="requestMailType" value="1">
                 希望する
+              </label>
+              <label class="c-guest-main__radio-label">
+                <input type="radio" class="c-guest-main__radio" name="requestMailType" value="0" checked>
+                希望しない
               </label>
             </div>
           </dd>
         </div>
 
-        <!-- 確認コード -->
+        <!-- メールアドレス有効性確認 -->
         <div class="c-guest-main__field">
-          <dt class="c-guest-main__field-label">確認コード<span class="c-guest-main__required" aria-label="必須">必須</span></dt>
+          <dt class="c-guest-main__field-label">メールアドレス有効性確認<span class="c-guest-main__required" aria-label="必須">必須</span></dt>
           <dd class="c-guest-main__field-body">
             <div class="c-guest-main__confirm-code-group">
               <input type="text" class="c-guest-main__input c-guest-main__input--confirm-code"
@@ -383,7 +383,7 @@
                 確認コードを発行する
               </button>
             </div>
-            <p class="c-guest-main__field-note">※確認コード発行メールに記載された確認コードを入力します。</p>
+            <p class="c-guest-main__field-note c-guest-main__field-note--large">上記のボタンを押下後、メールが送信されます。<br>メールに記載の確認コードを下記に入力してください。</p>
           </dd>
         </div>
 

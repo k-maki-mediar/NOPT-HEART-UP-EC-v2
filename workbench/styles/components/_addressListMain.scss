@@ -2,7 +2,7 @@
 // Address List Main（アドレス帳一覧）
 // 格納先HTML: workbench/includes/parts/main/mypage/addressListMain.html
 // BEM: .c-address-list-main
-// 参考: .c-customer-changepassword-main / .c-guest-main
+// テーブル部分: .c-teiki-address / .c-teiki-info-table（_regularSaleDetail.scss 定義）
 // ========================================
 
 @use '../foundation/functions' as *;
@@ -135,7 +135,6 @@
 
 .c-address-list-main__btn-new {
   // c-guest-main__btn--next を上書きなしで流用
-  // 幅は固定せず auto（コンテンツ幅）で表示
   width: auto;
   min-width: rem(180);
   white-space: nowrap;
@@ -156,60 +155,43 @@
 // ========================================
 
 .c-address-list-main__item {
-  border-bottom: rem(1) solid $border-color;
-
-  &:first-child {
-    border-top: rem(1) solid $border-color;
+  // c-teiki-address の margin-top を打ち消し、li 間の余白はここで制御
+  & + & {
+    margin-top: rem(16);
   }
 }
 
 // ========================================
-// カード内部ラッパー
+// カード（c-teiki-address との複合）
 // ========================================
 
 .c-address-list-main__card {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: rem(16);
-  padding: rem(20) rem(4);
+  // c-teiki-address のスタイルに乗っかる
+  // margin-top は li + li で制御するためリセット
+  margin-top: 0;
+}
+
+// ========================================
+// カードヘッダー（c-teiki-address__header との複合）
+// ========================================
+
+.c-address-list-main__card-header {
+  // c-teiki-address__header のスタイルを継承
+  // ボタンエリアとのレイアウト調整
+  flex-wrap: wrap;
+  gap: rem(8);
 
   @include sp {
     flex-direction: column;
-    gap: rem(12);
+    align-items: flex-start;
   }
 }
 
 // ========================================
-// カード情報エリア（左カラム）
+// ヘッダータイトル内の定期便アイコン
 // ========================================
 
-.c-address-list-main__card-info {
-  flex: 1;
-  min-width: 0;
-}
-
-// ========================================
-// カードヘッダー（お届け先名 + 定期便アイコン）
-// ========================================
-
-.c-address-list-main__card-header {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: rem(8);
-  margin-bottom: rem(8);
-}
-
-// お届け先名
-.c-address-list-main__alias {
-  font-size: rem(16);
-  font-weight: $font-weight-medium;
-  color: $primary-color;
-  line-height: 1.5;
-}
-
-// 定期便アイコン
+// 定期便アイコン（c-teiki-address__header-title 内に配置）
 .c-address-list-main__regular-icon {
   display: inline-flex;
   align-items: center;
@@ -222,54 +204,32 @@
   color: $primary-color;
   line-height: 1.5;
   white-space: nowrap;
+  vertical-align: middle;
+  margin-left: rem(6);
 }
 
 .c-address-list-main__regular-icon-img {
-  display: block;
+  display: inline-block;
   width: rem(20);
   height: auto;
   flex-shrink: 0;
+  vertical-align: middle;
 }
 
 // ========================================
-// 住所情報テキスト
-// ========================================
-
-.c-address-list-main__name,
-.c-address-list-main__postal,
-.c-address-list-main__address,
-.c-address-list-main__tel {
-  font-size: rem(14);
-  font-weight: $font-weight-normal;
-  color: $text-color;
-  line-height: 1.75;
-  margin: 0;
-  word-break: break-all;
-}
-
-// 変更不可メッセージ
-.c-address-list-main__msg-no-change {
-  font-size: rem(13);
-  font-weight: $font-weight-normal;
-  color: $danger-color;
-  line-height: 1.6;
-  margin: rem(8) 0 0;
-}
-
-// ========================================
-// カードアクションエリア（右カラム）
+// カードアクションエリア（ヘッダー右側のボタン群）
 // ========================================
 
 .c-address-list-main__card-actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: rem(8);
-  align-items: flex-end;
+  align-items: center;
   flex-shrink: 0;
+  margin-left: auto;
 
   @include sp {
-    flex-direction: row;
-    align-items: center;
+    margin-left: 0;
     width: 100%;
   }
 }
@@ -333,6 +293,8 @@
   color: $primary-color;
   text-decoration: underline;
   line-height: 1.5;
+  white-space: nowrap;
+  margin-left: auto;
 
   &:hover {
     text-decoration: none;
@@ -342,6 +304,22 @@
     outline: 2px solid $primary-color;
     outline-offset: rem(2);
   }
+
+  @include sp {
+    margin-left: 0;
+  }
+}
+
+// ========================================
+// 変更不可メッセージ
+// ========================================
+
+.c-address-list-main__msg-no-change {
+  font-size: rem(13);
+  font-weight: $font-weight-normal;
+  color: $danger-color;
+  line-height: 1.6;
+  margin: rem(8) rem(16) rem(12);
 }
 
 // ========================================
@@ -351,11 +329,7 @@
 .c-address-list-main__pager {
   display: flex;
   justify-content: center;
-  margin: rem(16) 0 rem(24);
-
-  .c-pager__list {
-    // _pager.scss の .c-pager__list を継承
-  }
+  margin: rem(24) 0 rem(24);
 }
 
 // ========================================
@@ -386,4 +360,3 @@
 // ========================================
 
 // tablet は PC の横並びレイアウトを踏襲するため、追加スタイルなし
-// カードは flex: row のまま表示

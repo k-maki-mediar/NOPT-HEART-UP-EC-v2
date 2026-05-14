@@ -100,3 +100,31 @@
     }
   }
 }
+
+// ========================================
+// エラー画面専用レイアウト調整
+// ヘッダー・フッターなし構造での縦中央配置
+// ========================================
+
+// .c-main の margin-top（ヘッダー分110px）をエラー画面では無効化
+.c-main:has(.c-error-main) {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+// PC（992px〜）: コンテンツを縦中央配置
+// .c-main:has(.c-error-main) を起点に wrapper/container/row に flex を設定
+// 素タグ（main）への直接スタイル指定を避け、.wrapper からセレクタを組む
+@include pc {
+  .wrapper:has(.c-error-main) {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wrapper:has(.c-error-main) .container {
+    width: 100%;
+  }
+}
+

@@ -38,6 +38,8 @@
 // ========================================
 
 .c-address-list-main__btn-new-wrap {
+  display: flex;
+  justify-content: center;
   margin-top: rem(24);
   margin-bottom: rem(24);
 }
@@ -46,6 +48,10 @@
   width: 100%;
   min-width: 0;
   white-space: nowrap;
+
+  @include pc {
+    max-width: rem(400);
+  }
 }
 
 // ========================================
@@ -136,9 +142,18 @@
 // 基本住所の変更リンク
 // ========================================
 
-// c-guest-main__btn--back を流用しつつ、横幅 100% に拡張
+// c-guest-main__btn--back を流用しつつ、横幅 100% に拡張（PCは最大400px）
 .c-address-list-main__link-basic {
   width: 100%;
+
+  @include pc {
+    max-width: rem(400);
+  }
+}
+
+// 基本住所カードは__link-basic 1個のみなので、card-actions を中央寄せに変更
+.c-address-list-main__card-actions:has(> .c-address-list-main__link-basic) {
+  justify-content: center;
 }
 
 // ========================================

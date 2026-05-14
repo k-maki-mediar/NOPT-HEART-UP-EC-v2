@@ -13576,6 +13576,8 @@
 }
 
 .c-address-list-main__btn-new-wrap {
+  display: flex;
+  justify-content: center;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -13584,6 +13586,11 @@
   width: 100%;
   min-width: 0;
   white-space: nowrap;
+}
+@media (min-width: 992px) {
+  .c-address-list-main__btn-new {
+    max-width: 25rem;
+  }
 }
 
 .c-address-list-main__list {
@@ -13640,6 +13647,15 @@
 
 .c-address-list-main__link-basic {
   width: 100%;
+}
+@media (min-width: 992px) {
+  .c-address-list-main__link-basic {
+    max-width: 25rem;
+  }
+}
+
+.c-address-list-main__card-actions:has(> .c-address-list-main__link-basic) {
+  justify-content: center;
 }
 
 .c-address-list-main__msg-no-change {

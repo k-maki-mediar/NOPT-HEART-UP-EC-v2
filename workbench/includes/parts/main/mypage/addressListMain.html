@@ -21,7 +21,7 @@
       <!-- 件数情報エリア -->
       <div class="c-address-list-main__count-group">
         <!-- 全件数（常時表示） -->
-        <p class="c-address-list-main__count">全 3 件</p>
+        <p class="c-address-list-main__count">全 2 件</p>
         <!-- 件数範囲（10件以上時のみ表示 / 10件未満時は hidden 属性で非表示） -->
         <p class="c-address-list-main__count-range" hidden>
           <span class="c-address-list-main__count-from">1</span>件〜<span class="c-address-list-main__count-to">10</span>件を表示
@@ -86,47 +86,6 @@
       </div>
     </li>
 
-    <!-- ▼ カードパターン2: 通常アドレス（変更・削除ボタンあり） -->
-    <li class="c-address-list-main__item">
-      <div class="c-teiki-address c-address-list-main__card">
-        <div class="c-teiki-address__header c-address-list-main__card-header">
-          <span class="c-teiki-address__header-title">
-            実家
-            <!-- 定期便アイコン（この例では非表示） -->
-          </span>
-          <div class="c-address-list-main__card-actions">
-            <a href="#" class="c-teiki-amount__section-btn">変更<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
-            <button type="button" class="c-cart-main__item-delete">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <path d="M1 1l10 10M11 1L1 11"/>
-              </svg>
-              削除
-            </button>
-          </div>
-        </div>
-        <table class="c-teiki-info-table" aria-label="実家の住所情報">
-          <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">お名前</th>
-              <td class="c-teiki-info-table__data">山田 花子</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">郵便番号</th>
-              <td class="c-teiki-info-table__data">〒530-0001</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">住所</th>
-              <td class="c-teiki-info-table__data">大阪府大阪市北区梅田1-1-1 梅田ビル202</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">電話番号</th>
-              <td class="c-teiki-info-table__data">06-0000-0000</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </li>
-
     <!-- ▼ カードパターン3: 定期便利用中（変更可能）アドレス -->
     <li class="c-address-list-main__item">
       <div class="c-teiki-address c-address-list-main__card">
@@ -170,54 +129,6 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </li>
-
-    <!-- ▼ カードパターン4: 定期便利用中（変更不可）アドレス -->
-    <li class="c-address-list-main__item">
-      <div class="c-teiki-address c-address-list-main__card">
-        <div class="c-teiki-address__header c-address-list-main__card-header">
-          <span class="c-teiki-address__header-title">
-            別宅
-            <!-- 定期便アイコン（定期便利用中：表示） -->
-            <span class="c-address-list-main__regular-icon" aria-label="定期便利用中">
-              <img src="../../../files/commonfiles/images/icon-teikibin.svg" alt="" class="c-address-list-main__regular-icon-img" width="20" height="16">
-              定期便
-            </span>
-          </span>
-          <div class="c-address-list-main__card-actions">
-            <!-- 変更不可：変更ボタン非活性 -->
-            <span class="c-teiki-amount__section-btn c-teiki-amount__section-btn--disabled" aria-disabled="true">変更<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></span>
-            <button type="button" class="c-cart-main__item-delete">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <path d="M1 1l10 10M11 1L1 11"/>
-              </svg>
-              削除
-            </button>
-          </div>
-        </div>
-        <table class="c-teiki-info-table" aria-label="別宅の住所情報">
-          <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">お名前</th>
-              <td class="c-teiki-info-table__data">山田 太郎</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">郵便番号</th>
-              <td class="c-teiki-info-table__data">〒600-8001</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">住所</th>
-              <td class="c-teiki-info-table__data">京都府京都市下京区四条通1-1-1 京都マンション404</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">電話番号</th>
-              <td class="c-teiki-info-table__data">075-000-0000</td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- 変更不可メッセージ -->
-        <p class="c-address-list-main__msg-no-change">発送準備中のため、現在変更できません。</p>
       </div>
     </li>
 

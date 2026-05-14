@@ -1,0 +1,149 @@
+<!-- メッセージエリア（削除完了・エラー表示） -->
+<div class="c-message-area" role="alert" aria-live="polite">
+  <!-- 完了メッセージ例（PKG制御で表示） -->
+  <!-- <p class="c-message-area__text c-message-area__text--complete">アドレス帳の削除を完了しました。</p> -->
+  <!-- エラーメッセージ例（PKG制御で表示） -->
+  <!-- <p class="c-message-area__text c-message-area__text--error">エラーが発生しました。</p> -->
+</div>
+
+<section class="c-user-heading" aria-label="配送先住所一覧">
+  <div class="c-user-heading__inner">
+    <h1 class="c-user-heading__title">配送先住所一覧</h1>
+  </div>
+  <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
+</section>
+
+<div class="c-address-list-main">
+
+  <!-- 上部コントロール行（件数とプルダウンを横並び） -->
+  <div class="c-list-main__control">
+    <p class="c-list-main__count">
+      全<span class="c-list-main__count-total">2</span>件 ｜ <span class="c-list-main__count-range">1件〜10件</span>
+    </p>
+    <div class="c-list-main__control-right">
+      <div class="c-list-main__per-page">
+        <label class="c-list-main__per-page-label" for="addressListCountSelect">表示件数</label>
+        <div class="c-list-main__select-wrap">
+          <select class="c-list-main__select" id="addressListCountSelect" name="displayCount">
+            <option value="10" selected>10件</option>
+            <option value="20">20件</option>
+            <option value="30">30件</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 新規配送先住所登録ボタン（コントロール行とは別行・右寄せ） -->
+  <div class="c-address-list-main__btn-new-wrap">
+    <a href="#" class="c-guest-main__btn c-guest-main__btn--next c-address-list-main__btn-new">
+      新規配送先住所登録
+    </a>
+  </div>
+
+  <!-- アドレス一覧 -->
+  <ul class="c-address-list-main__list" aria-label="配送先住所一覧">
+
+    <!-- ▼ カードパターン1: 基本住所（定期便配送先）-->
+    <li class="c-address-list-main__item">
+      <div class="c-teiki-address c-address-list-main__card">
+        <div class="c-teiki-address__header c-address-list-main__card-header">
+          <span class="c-teiki-address__header-title">基本住所</span>
+          <!-- 定期便配送先ラベル（右寄せ・トラックアイコン付き） -->
+          <span class="c-address-list-main__regular-icon">
+            <img src="../../../files/commonfiles/images/icon-teikibin.svg" alt="" class="c-address-list-main__regular-icon-img" width="20" height="16">
+            定期便配送先
+          </span>
+        </div>
+        <table class="c-teiki-info-table" aria-label="基本住所の住所情報">
+          <tbody>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">お名前</th>
+              <td class="c-teiki-info-table__data">山田 太郎</td>
+            </tr>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">郵便番号</th>
+              <td class="c-teiki-info-table__data">〒100-0001</td>
+            </tr>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">住所</th>
+              <td class="c-teiki-info-table__data">東京都千代田区千代田1-1-1 山田マンション101</td>
+            </tr>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">電話番号</th>
+              <td class="c-teiki-info-table__data">090-0000-0000</td>
+            </tr>
+            <!-- 最終行：変更ボタン -->
+            <tr class="c-teiki-info-table__row c-address-list-main__actions-row">
+              <td class="c-teiki-info-table__data c-address-list-main__actions-cell" colspan="2">
+                <div class="c-address-list-main__card-actions">
+                  <a href="#" class="c-guest-main__btn c-guest-main__btn--back c-address-list-main__link-basic">基本住所の変更はこちら</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+
+    <!-- ▼ カードパターン2: 通常アドレス（定期便配送先ではない） -->
+    <li class="c-address-list-main__item">
+      <div class="c-teiki-address c-address-list-main__card">
+        <div class="c-teiki-address__header c-address-list-main__card-header">
+          <span class="c-teiki-address__header-title">会社</span>
+        </div>
+        <table class="c-teiki-info-table" aria-label="会社の住所情報">
+          <tbody>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">お名前</th>
+              <td class="c-teiki-info-table__data">山田 太郎</td>
+            </tr>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">郵便番号</th>
+              <td class="c-teiki-info-table__data">〒460-0001</td>
+            </tr>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">住所</th>
+              <td class="c-teiki-info-table__data">愛知県名古屋市中区栄1-1-1 ナゴヤビル303</td>
+            </tr>
+            <tr class="c-teiki-info-table__row">
+              <th class="c-teiki-info-table__header" scope="row">電話番号</th>
+              <td class="c-teiki-info-table__data">052-000-0000</td>
+            </tr>
+            <!-- 最終行：変更/削除ボタン -->
+            <tr class="c-teiki-info-table__row c-address-list-main__actions-row">
+              <td class="c-teiki-info-table__data c-address-list-main__actions-cell" colspan="2">
+                <div class="c-address-list-main__card-actions">
+                  <button type="button" class="c-cart-main__item-delete">
+                    <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                      <path d="M1 1l10 10M11 1L1 11"/>
+                    </svg>
+                    削除
+                  </button>
+                  <a href="#" class="c-teiki-amount__section-btn">変更<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+
+  </ul>
+
+  <!-- ページング（商品一覧と同じ js-pager 動的生成） -->
+  <nav class="c-pager c-pager--top js-pager" aria-label="ページナビゲーション" data-total-pages="3" data-current-page="1">
+    <ul class="c-pager__list" aria-busy="true"></ul>
+  </nav>
+
+  <!-- 下部ボタンエリア -->
+  <div class="c-address-list-main__actions">
+    <a href="#" class="c-guest-main__btn c-guest-main__btn--next c-address-list-main__btn-new">
+      新規配送先住所登録
+    </a>
+    <a href="#" class="c-guest-main__btn c-guest-main__btn--back c-address-list-main__btn-back">
+      前へ戻る
+    </a>
+  </div>
+
+</div>

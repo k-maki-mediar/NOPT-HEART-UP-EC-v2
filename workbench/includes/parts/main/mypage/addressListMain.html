@@ -15,30 +15,22 @@
 
 <div class="c-address-list-main">
 
-  <!-- 上部ツールバー -->
-  <div class="c-address-list-main__toolbar">
-    <div class="c-address-list-main__toolbar-row">
-      <!-- 件数情報エリア -->
-      <div class="c-address-list-main__count-group">
-        <!-- 全件数（常時表示） -->
-        <p class="c-address-list-main__count">全 2 件</p>
-        <!-- 件数範囲 -->
-        <p class="c-address-list-main__count-range">
-          <span class="c-address-list-main__count-from">1</span>件〜<span class="c-address-list-main__count-to">10</span>件を表示
-        </p>
-        <!-- 表示件数選択 -->
-        <div class="c-address-list-main__count-select-wrap">
-          <label for="addressListCountSelect" class="c-address-list-main__count-select-label">表示件数</label>
-          <div class="c-address-list-main__select-wrap">
-            <select id="addressListCountSelect" name="displayCount" class="c-address-list-main__count-select" aria-label="一覧表示件数選択">
-              <option value="10">10件</option>
-              <option value="20">20件</option>
-              <option value="30">30件</option>
-            </select>
-          </div>
+  <!-- 上部コントロール行（商品一覧と同じUI構造） -->
+  <div class="c-list-main__control">
+    <p class="c-list-main__count">
+      全<span class="c-list-main__count-total">2</span>件 ｜ <span class="c-list-main__count-range">1件〜10件</span>
+    </p>
+    <div class="c-list-main__control-right">
+      <div class="c-list-main__per-page">
+        <label class="c-list-main__per-page-label" for="addressListCountSelect">表示件数</label>
+        <div class="c-list-main__select-wrap">
+          <select class="c-list-main__select" id="addressListCountSelect" name="displayCount">
+            <option value="10" selected>10件</option>
+            <option value="20">20件</option>
+            <option value="30">30件</option>
+          </select>
         </div>
       </div>
-      <!-- 新規登録ボタン（上部） -->
       <a href="#" class="c-guest-main__btn c-guest-main__btn--next c-address-list-main__btn-new">
         新規アドレス帳登録
       </a>

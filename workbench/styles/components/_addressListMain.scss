@@ -86,14 +86,12 @@
 // justify-content: space-between;）をそのまま使用するため、独自オーバーライドなし
 
 // ========================================
-// ヘッダータイトル内の定期便アイコン
+// ヘッダータイトル内の定期便配送先ラベル
 // ========================================
 
-// 定期便アイコン（c-teiki-address__header-title 内に配置）
 .c-address-list-main__regular-icon {
   display: inline-flex;
   align-items: center;
-  gap: rem(4);
   padding: rem(2) rem(8);
   background-color: $bg-banner;
   border-radius: rem(3);
@@ -104,14 +102,6 @@
   white-space: nowrap;
   vertical-align: middle;
   margin-left: rem(6);
-}
-
-.c-address-list-main__regular-icon-img {
-  display: inline-block;
-  width: rem(20);
-  height: auto;
-  flex-shrink: 0;
-  vertical-align: middle;
 }
 
 // ========================================

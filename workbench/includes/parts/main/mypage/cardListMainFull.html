@@ -1,7 +1,7 @@
 <!-- メッセージエリア -->
 <div class="c-message-area" role="alert" aria-live="polite">
   <!-- 完了メッセージ例（PKG制御で表示） -->
-  <!-- <p class="c-message-area__text c-message-area__text--complete">メインカードを変更しました。</p> -->
+  <!-- <p class="c-message-area__text c-message-area__text--complete">クレジットカードを削除しました。</p> -->
   <!-- エラーメッセージ例（PKG制御で表示） -->
   <!-- <p class="c-message-area__text c-message-area__text--error">エラーが発生しました。</p> -->
 </div>
@@ -15,198 +15,180 @@
 
 <div class="c-card-list-main">
 
-  <!-- ヘッダー行（支払方法名称 + 新規登録ボタン・非活性） -->
-  <div class="c-card-list-main__header">
-    <p class="c-card-list-main__payment-name">クレジットカード</p>
-    <!-- 上限到達：新規登録ボタン非活性（disabled + grayout） -->
-    <a href="#" class="c-guest-main__btn c-guest-main__btn--next c-card-list-main__btn-new" aria-disabled="true" tabindex="-1">
+  <!-- ブランドロゴ + 新規登録ボタン行（上限到達：新規登録ボタン非活性） -->
+  <div class="c-card-list-main__top-row">
+    <img src="../../../files/commonfiles/images/card_5brand.png" alt="VISA / Mastercard / JCB / AMEX / Diners 対応" class="c-card-list-main__brand-logo" width="170" height="20">
+    <a href="#" class="c-card-list-main__btn-new" aria-disabled="true" tabindex="-1">
       新規カード情報登録
     </a>
-  </div>
-
-  <!-- カードブランドロゴ -->
-  <div class="c-card-list-main__brands">
-    <img src="../../../files/commonfiles/images/card_5brand.png" alt="VISA / Mastercard / JCB / AMEX / Diners 対応" class="c-card-list-main__brand-logo" width="260" height="40">
   </div>
 
   <!-- カード一覧（5枚・上限到達） -->
   <ul class="c-card-list-main__list" aria-label="登録済みクレジットカード一覧">
 
-    <!-- ▼ カードアイテム1: メインカード（らくとく定期便使用中） -->
-    <li class="c-card-list-main__item">
-      <div class="c-card-list-main__card c-teiki-address">
-        <div class="c-card-list-main__card-header c-teiki-address__header">
-          <label class="c-card-list-main__radio-label">
-            <input type="radio" name="selectedCard" class="c-card-list-main__radio" value="1" checked>
-            <span class="c-card-list-main__main-badge">メインカード</span>
-          </label>
-          <span class="c-card-list-main__regular-badge" aria-label="らくとく定期便使用中">
-            定期便
-          </span>
-          <div class="c-card-list-main__actions">
-            <button type="button" class="c-cart-main__item-delete" aria-label="削除">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <path d="M1 1l10 10M11 1L1 11"/>
-              </svg>
-              削除
-            </button>
-            <a href="#" class="c-teiki-amount__section-btn">更新<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+    <!-- ▼ カードアイテム1: らくとく定期便対象バッジあり -->
+    <li class="c-card-list-main__item c-card-list-main__item--has-badge">
+      <div class="c-card-list-main__card">
+        <!-- らくとく定期便バッジ（1枚目のみ） -->
+        <span class="c-card-list-main__teiki-badge" aria-label="らくとく定期便対象">らくとく定期便対象</span>
+        <!-- カード情報 -->
+        <div class="c-card-list-main__info">
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">クレジットカード番号</span>
+            <span class="c-card-list-main__info-value">
+              000000********00
+              <span class="c-card-list-main__info-note">(通常カード)</span>
+            </span>
+          </div>
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">有効期限</span>
+            <span class="c-card-list-main__info-value">11/30</span>
+          </div>
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">名義人</span>
+            <span class="c-card-list-main__info-value">Name Name</span>
           </div>
         </div>
-        <table class="c-teiki-info-table" aria-label="クレジットカード情報">
-          <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">カード番号</th>
-              <td class="c-teiki-info-table__data">**** **** **** 1234</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">有効期限</th>
-              <td class="c-teiki-info-table__data">12/2026</td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- 区切り線 -->
+        <hr class="c-card-list-main__divider" aria-hidden="true">
+        <!-- ボタンエリア -->
+        <div class="c-card-list-main__actions">
+          <a href="#" class="c-card-list-main__btn-edit">変更</a>
+          <button type="button" class="c-card-list-main__btn-delete" aria-label="クレジットカードを削除">
+            <svg class="c-card-list-main__btn-delete-icon" aria-hidden="true" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.25 2.5H8.75M4.17 2.5V1.67H5.83V2.5M1.67 2.5L2.08 8.33H7.92L8.33 2.5H1.67Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M3.75 4.17V7.08M6.25 4.17V7.08" stroke="white" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+            </svg>
+            削除
+          </button>
+        </div>
       </div>
     </li>
 
     <!-- ▼ カードアイテム2 -->
     <li class="c-card-list-main__item">
-      <div class="c-card-list-main__card c-teiki-address">
-        <div class="c-card-list-main__card-header c-teiki-address__header">
-          <label class="c-card-list-main__radio-label">
-            <input type="radio" name="selectedCard" class="c-card-list-main__radio" value="2">
-            <span class="c-card-list-main__main-badge">メインカード</span>
-          </label>
-          <div class="c-card-list-main__actions">
-            <button type="button" class="c-cart-main__item-delete" aria-label="削除">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <path d="M1 1l10 10M11 1L1 11"/>
-              </svg>
-              削除
-            </button>
-            <a href="#" class="c-teiki-amount__section-btn">更新<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+      <div class="c-card-list-main__card">
+        <div class="c-card-list-main__info">
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">クレジットカード番号</span>
+            <span class="c-card-list-main__info-value">000000********01</span>
+          </div>
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">有効期限</span>
+            <span class="c-card-list-main__info-value">03/28</span>
+          </div>
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">名義人</span>
+            <span class="c-card-list-main__info-value">Name Name</span>
           </div>
         </div>
-        <table class="c-teiki-info-table" aria-label="クレジットカード情報">
-          <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">カード番号</th>
-              <td class="c-teiki-info-table__data">**** **** **** 5678</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">有効期限</th>
-              <td class="c-teiki-info-table__data">03/2028</td>
-            </tr>
-          </tbody>
-        </table>
+        <hr class="c-card-list-main__divider" aria-hidden="true">
+        <div class="c-card-list-main__actions">
+          <a href="#" class="c-card-list-main__btn-edit">変更</a>
+          <button type="button" class="c-card-list-main__btn-delete" aria-label="クレジットカードを削除">
+            <svg class="c-card-list-main__btn-delete-icon" aria-hidden="true" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.25 2.5H8.75M4.17 2.5V1.67H5.83V2.5M1.67 2.5L2.08 8.33H7.92L8.33 2.5H1.67Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M3.75 4.17V7.08M6.25 4.17V7.08" stroke="white" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+            </svg>
+            削除
+          </button>
+        </div>
       </div>
     </li>
 
     <!-- ▼ カードアイテム3 -->
     <li class="c-card-list-main__item">
-      <div class="c-card-list-main__card c-teiki-address">
-        <div class="c-card-list-main__card-header c-teiki-address__header">
-          <label class="c-card-list-main__radio-label">
-            <input type="radio" name="selectedCard" class="c-card-list-main__radio" value="3">
-            <span class="c-card-list-main__main-badge">メインカード</span>
-          </label>
-          <div class="c-card-list-main__actions">
-            <button type="button" class="c-cart-main__item-delete" aria-label="削除">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <path d="M1 1l10 10M11 1L1 11"/>
-              </svg>
-              削除
-            </button>
-            <a href="#" class="c-teiki-amount__section-btn">更新<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+      <div class="c-card-list-main__card">
+        <div class="c-card-list-main__info">
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">クレジットカード番号</span>
+            <span class="c-card-list-main__info-value">000000********02</span>
+          </div>
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">有効期限</span>
+            <span class="c-card-list-main__info-value">07/27</span>
+          </div>
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">名義人</span>
+            <span class="c-card-list-main__info-value">Name Name</span>
           </div>
         </div>
-        <table class="c-teiki-info-table" aria-label="クレジットカード情報">
-          <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">カード番号</th>
-              <td class="c-teiki-info-table__data">**** **** **** 9012</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">有効期限</th>
-              <td class="c-teiki-info-table__data">07/2027</td>
-            </tr>
-          </tbody>
-        </table>
+        <hr class="c-card-list-main__divider" aria-hidden="true">
+        <div class="c-card-list-main__actions">
+          <a href="#" class="c-card-list-main__btn-edit">変更</a>
+          <button type="button" class="c-card-list-main__btn-delete" aria-label="クレジットカードを削除">
+            <svg class="c-card-list-main__btn-delete-icon" aria-hidden="true" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.25 2.5H8.75M4.17 2.5V1.67H5.83V2.5M1.67 2.5L2.08 8.33H7.92L8.33 2.5H1.67Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M3.75 4.17V7.08M6.25 4.17V7.08" stroke="white" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+            </svg>
+            削除
+          </button>
+        </div>
       </div>
     </li>
 
     <!-- ▼ カードアイテム4 -->
     <li class="c-card-list-main__item">
-      <div class="c-card-list-main__card c-teiki-address">
-        <div class="c-card-list-main__card-header c-teiki-address__header">
-          <label class="c-card-list-main__radio-label">
-            <input type="radio" name="selectedCard" class="c-card-list-main__radio" value="4">
-            <span class="c-card-list-main__main-badge">メインカード</span>
-          </label>
-          <div class="c-card-list-main__actions">
-            <button type="button" class="c-cart-main__item-delete" aria-label="削除">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <path d="M1 1l10 10M11 1L1 11"/>
-              </svg>
-              削除
-            </button>
-            <a href="#" class="c-teiki-amount__section-btn">更新<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+      <div class="c-card-list-main__card">
+        <div class="c-card-list-main__info">
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">クレジットカード番号</span>
+            <span class="c-card-list-main__info-value">000000********03</span>
+          </div>
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">有効期限</span>
+            <span class="c-card-list-main__info-value">09/25</span>
+          </div>
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">名義人</span>
+            <span class="c-card-list-main__info-value">Name Name</span>
           </div>
         </div>
-        <table class="c-teiki-info-table" aria-label="クレジットカード情報">
-          <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">カード番号</th>
-              <td class="c-teiki-info-table__data">**** **** **** 3456</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">有効期限</th>
-              <td class="c-teiki-info-table__data">09/2025</td>
-            </tr>
-          </tbody>
-        </table>
+        <hr class="c-card-list-main__divider" aria-hidden="true">
+        <div class="c-card-list-main__actions">
+          <a href="#" class="c-card-list-main__btn-edit">変更</a>
+          <button type="button" class="c-card-list-main__btn-delete" aria-label="クレジットカードを削除">
+            <svg class="c-card-list-main__btn-delete-icon" aria-hidden="true" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.25 2.5H8.75M4.17 2.5V1.67H5.83V2.5M1.67 2.5L2.08 8.33H7.92L8.33 2.5H1.67Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M3.75 4.17V7.08M6.25 4.17V7.08" stroke="white" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+            </svg>
+            削除
+          </button>
+        </div>
       </div>
     </li>
 
     <!-- ▼ カードアイテム5 -->
     <li class="c-card-list-main__item">
-      <div class="c-card-list-main__card c-teiki-address">
-        <div class="c-card-list-main__card-header c-teiki-address__header">
-          <label class="c-card-list-main__radio-label">
-            <input type="radio" name="selectedCard" class="c-card-list-main__radio" value="5">
-            <span class="c-card-list-main__main-badge">メインカード</span>
-          </label>
-          <div class="c-card-list-main__actions">
-            <button type="button" class="c-cart-main__item-delete" aria-label="削除">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <path d="M1 1l10 10M11 1L1 11"/>
-              </svg>
-              削除
-            </button>
-            <a href="#" class="c-teiki-amount__section-btn">更新<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+      <div class="c-card-list-main__card">
+        <div class="c-card-list-main__info">
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">クレジットカード番号</span>
+            <span class="c-card-list-main__info-value">000000********04</span>
+          </div>
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">有効期限</span>
+            <span class="c-card-list-main__info-value">01/29</span>
+          </div>
+          <div class="c-card-list-main__info-row">
+            <span class="c-card-list-main__info-label">名義人</span>
+            <span class="c-card-list-main__info-value">Name Name</span>
           </div>
         </div>
-        <table class="c-teiki-info-table" aria-label="クレジットカード情報">
-          <tbody>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">カード番号</th>
-              <td class="c-teiki-info-table__data">**** **** **** 7890</td>
-            </tr>
-            <tr class="c-teiki-info-table__row">
-              <th class="c-teiki-info-table__header" scope="row">有効期限</th>
-              <td class="c-teiki-info-table__data">01/2029</td>
-            </tr>
-          </tbody>
-        </table>
+        <hr class="c-card-list-main__divider" aria-hidden="true">
+        <div class="c-card-list-main__actions">
+          <a href="#" class="c-card-list-main__btn-edit">変更</a>
+          <button type="button" class="c-card-list-main__btn-delete" aria-label="クレジットカードを削除">
+            <svg class="c-card-list-main__btn-delete-icon" aria-hidden="true" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.25 2.5H8.75M4.17 2.5V1.67H5.83V2.5M1.67 2.5L2.08 8.33H7.92L8.33 2.5H1.67Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M3.75 4.17V7.08M6.25 4.17V7.08" stroke="white" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+            </svg>
+            削除
+          </button>
+        </div>
       </div>
     </li>
 
   </ul>
-
-  <!-- 「更新する」ボタン（メインカード変更） -->
-  <div class="c-card-list-main__update-wrap">
-    <button type="button" class="c-guest-main__btn c-guest-main__btn--next">
-      更新する
-    </button>
-  </div>
 
 </div>

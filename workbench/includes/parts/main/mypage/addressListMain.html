@@ -1,0 +1,180 @@
+<!-- メッセージエリア（削除完了・エラー表示） -->
+<div class="c-message-area" role="alert" aria-live="polite">
+  <!-- 完了メッセージ例（PKG制御で表示） -->
+  <!-- <p class="c-message-area__text c-message-area__text--complete">アドレス帳の削除を完了しました。</p> -->
+  <!-- エラーメッセージ例（PKG制御で表示） -->
+  <!-- <p class="c-message-area__text c-message-area__text--error">エラーが発生しました。</p> -->
+</div>
+
+<section class="c-user-heading" aria-label="アドレス帳一覧">
+  <div class="c-user-heading__inner">
+    <h1 class="c-user-heading__title">アドレス帳一覧</h1>
+  </div>
+  <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
+</section>
+
+<div class="c-address-list-main">
+
+  <!-- 上部ツールバー -->
+  <div class="c-address-list-main__toolbar">
+    <div class="c-address-list-main__toolbar-row">
+      <!-- 件数情報エリア -->
+      <div class="c-address-list-main__count-group">
+        <!-- 全件数（常時表示） -->
+        <p class="c-address-list-main__count">全 3 件</p>
+        <!-- 件数範囲（10件以上時のみ表示 / 10件未満時は hidden 属性で非表示） -->
+        <p class="c-address-list-main__count-range" hidden>
+          <span class="c-address-list-main__count-from">1</span>件〜<span class="c-address-list-main__count-to">10</span>件を表示
+        </p>
+        <!-- 表示件数選択（10件以上時のみ表示 / 10件未満時は hidden 属性で非表示） -->
+        <div class="c-address-list-main__count-select-wrap" hidden>
+          <label for="addressListCountSelect" class="c-address-list-main__count-select-label">表示件数</label>
+          <div class="c-address-list-main__select-wrap">
+            <select id="addressListCountSelect" name="displayCount" class="c-address-list-main__count-select" aria-label="一覧表示件数選択">
+              <option value="10">10件</option>
+              <option value="20">20件</option>
+              <option value="30">30件</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- 新規登録ボタン（上部） -->
+      <a href="#" class="c-guest-main__btn c-guest-main__btn--next c-address-list-main__btn-new">
+        新規アドレス帳登録
+      </a>
+    </div>
+  </div>
+
+  <!-- アドレス一覧 -->
+  <ul class="c-address-list-main__list" aria-label="アドレス帳一覧">
+
+    <!-- ▼ カードパターン1: 基本住所（変更・削除ボタンなし / 基本住所変更リンクあり） -->
+    <li class="c-address-list-main__item">
+      <div class="c-address-list-main__card">
+        <div class="c-address-list-main__card-info">
+          <div class="c-address-list-main__card-header">
+            <span class="c-address-list-main__alias">基本住所（自宅）</span>
+            <!-- 定期便アイコン（条件付き表示） -->
+            <!-- <span class="c-address-list-main__regular-icon" aria-label="定期便利用中">
+              <img src="../../../files/commonfiles/images/icon-teikibin.svg" alt="" class="c-address-list-main__regular-icon-img" width="20" height="16">
+              定期便
+            </span> -->
+          </div>
+          <p class="c-address-list-main__name">山田 太郎</p>
+          <p class="c-address-list-main__postal">〒100-0001</p>
+          <p class="c-address-list-main__address">東京都千代田区千代田1-1-1 山田マンション101</p>
+          <p class="c-address-list-main__tel">090-0000-0000</p>
+        </div>
+        <div class="c-address-list-main__card-actions">
+          <!-- 基本住所：変更・削除ボタンなし。変更リンクのみ表示 -->
+          <a href="#" class="c-address-list-main__link-basic">基本住所の変更はこちらへ</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- ▼ カードパターン2: 通常アドレス（変更・削除ボタンあり） -->
+    <li class="c-address-list-main__item">
+      <div class="c-address-list-main__card">
+        <div class="c-address-list-main__card-info">
+          <div class="c-address-list-main__card-header">
+            <span class="c-address-list-main__alias">実家</span>
+            <!-- 定期便アイコン（この例では非表示） -->
+          </div>
+          <p class="c-address-list-main__name">山田 花子</p>
+          <p class="c-address-list-main__postal">〒530-0001</p>
+          <p class="c-address-list-main__address">大阪府大阪市北区梅田1-1-1 梅田ビル202</p>
+          <p class="c-address-list-main__tel">06-0000-0000</p>
+        </div>
+        <div class="c-address-list-main__card-actions">
+          <a href="#" class="c-guest-main__btn c-guest-main__btn--secondary c-address-list-main__btn-edit">変更</a>
+          <button type="button" class="c-guest-main__btn c-guest-main__btn--secondary c-address-list-main__btn-delete">削除</button>
+        </div>
+      </div>
+    </li>
+
+    <!-- ▼ カードパターン3: 定期便利用中（変更可能）アドレス -->
+    <li class="c-address-list-main__item">
+      <div class="c-address-list-main__card">
+        <div class="c-address-list-main__card-info">
+          <div class="c-address-list-main__card-header">
+            <span class="c-address-list-main__alias">会社</span>
+            <!-- 定期便アイコン（定期便利用中：表示） -->
+            <span class="c-address-list-main__regular-icon" aria-label="定期便利用中">
+              <img src="../../../files/commonfiles/images/icon-teikibin.svg" alt="" class="c-address-list-main__regular-icon-img" width="20" height="16">
+              定期便
+            </span>
+          </div>
+          <p class="c-address-list-main__name">山田 太郎</p>
+          <p class="c-address-list-main__postal">〒460-0001</p>
+          <p class="c-address-list-main__address">愛知県名古屋市中区栄1-1-1 ナゴヤビル303</p>
+          <p class="c-address-list-main__tel">052-000-0000</p>
+        </div>
+        <div class="c-address-list-main__card-actions">
+          <!-- 変更可能：変更ボタン活性 -->
+          <a href="#" class="c-guest-main__btn c-guest-main__btn--secondary c-address-list-main__btn-edit">変更</a>
+          <button type="button" class="c-guest-main__btn c-guest-main__btn--secondary c-address-list-main__btn-delete">削除</button>
+        </div>
+      </div>
+    </li>
+
+    <!-- ▼ カードパターン4: 定期便利用中（変更不可）アドレス -->
+    <li class="c-address-list-main__item">
+      <div class="c-address-list-main__card">
+        <div class="c-address-list-main__card-info">
+          <div class="c-address-list-main__card-header">
+            <span class="c-address-list-main__alias">別宅</span>
+            <!-- 定期便アイコン（定期便利用中：表示） -->
+            <span class="c-address-list-main__regular-icon" aria-label="定期便利用中">
+              <img src="../../../files/commonfiles/images/icon-teikibin.svg" alt="" class="c-address-list-main__regular-icon-img" width="20" height="16">
+              定期便
+            </span>
+          </div>
+          <p class="c-address-list-main__name">山田 太郎</p>
+          <p class="c-address-list-main__postal">〒600-8001</p>
+          <p class="c-address-list-main__address">京都府京都市下京区四条通1-1-1 京都マンション404</p>
+          <p class="c-address-list-main__tel">075-000-0000</p>
+          <!-- 変更不可メッセージ -->
+          <p class="c-address-list-main__msg-no-change">発送準備中のため、現在変更できません。</p>
+        </div>
+        <div class="c-address-list-main__card-actions">
+          <!-- 変更不可：変更ボタン非活性 -->
+          <span class="c-guest-main__btn c-guest-main__btn--secondary c-address-list-main__btn-edit c-address-list-main__btn-edit--disabled" aria-disabled="true">変更</span>
+          <button type="button" class="c-guest-main__btn c-guest-main__btn--secondary c-address-list-main__btn-delete">削除</button>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
+  <!-- ページング（10件以上時のみ表示 / 10件未満時は hidden 属性で非表示） -->
+  <nav class="c-address-list-main__pager" aria-label="ページング" hidden>
+    <ul class="c-pager__list">
+      <li class="c-pager__item c-pager__item--prev is-hidden">
+        <a href="#" class="c-pager__link c-pager__link--prev" aria-label="前のページへ"></a>
+      </li>
+      <li class="c-pager__item">
+        <span class="c-pager__current" aria-current="page">1</span>
+      </li>
+      <li class="c-pager__item">
+        <a href="#" class="c-pager__link">2</a>
+      </li>
+      <li class="c-pager__item">
+        <a href="#" class="c-pager__link">3</a>
+      </li>
+      <li class="c-pager__item c-pager__item--next">
+        <a href="#" class="c-pager__link c-pager__link--next" aria-label="次のページへ"></a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- 下部ボタンエリア -->
+  <div class="c-address-list-main__actions">
+    <a href="#" class="c-guest-main__btn c-guest-main__btn--next c-address-list-main__btn-new">
+      新規アドレス帳登録
+    </a>
+    <a href="#" class="c-guest-main__btn c-guest-main__btn--back c-address-list-main__btn-back">
+      前へ戻る
+    </a>
+  </div>
+
+</div>

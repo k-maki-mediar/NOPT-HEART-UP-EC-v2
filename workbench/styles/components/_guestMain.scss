@@ -546,3 +546,26 @@
     clip-path: polygon(0 0, 100% 0, 50% 100%);
   }
 }
+
+// ========================================
+// セカンダリボタン（アドレス帳一覧等で使用）
+// ========================================
+
+// c-guest-main__btn--secondary: グレー系アウトラインボタン（変更・削除等）
+.c-guest-main__btn--secondary {
+  background-color: $color-white;
+  color: $text-color;
+  border-color: $border-color-dark;
+  border-radius: rem(22);
+  box-shadow: 0 rem(2) 0 $border-color-dark;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 $border-color-dark;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+}

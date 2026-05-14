@@ -1,0 +1,389 @@
+// ========================================
+// Address List Main（アドレス帳一覧）
+// 格納先HTML: workbench/includes/parts/main/mypage/addressListMain.html
+// BEM: .c-address-list-main
+// 参考: .c-customer-changepassword-main / .c-guest-main
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-address-list-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: 0 rem(16) rem(48);
+
+  @include pc {
+    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// 上部ツールバー
+// ========================================
+
+.c-address-list-main__toolbar {
+  padding: rem(16) 0 rem(8);
+}
+
+.c-address-list-main__toolbar-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: rem(12);
+
+  @include sp {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+// ========================================
+// 件数情報エリア
+// ========================================
+
+.c-address-list-main__count-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(8);
+}
+
+.c-address-list-main__count {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.c-address-list-main__count-range {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.c-address-list-main__count-from,
+.c-address-list-main__count-to {
+  font-weight: $font-weight-medium;
+}
+
+// 件数選択ラッパー
+.c-address-list-main__count-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+}
+
+.c-address-list-main__count-select-label {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  white-space: nowrap;
+}
+
+.c-address-list-main__select-wrap {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: rem(12);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: rem(5) solid transparent;
+    border-right: rem(5) solid transparent;
+    border-top: rem(6) solid $text-color;
+    pointer-events: none;
+  }
+}
+
+.c-address-list-main__count-select {
+  appearance: none;
+  display: block;
+  min-height: rem(44);
+  padding: rem(8) rem(32) rem(8) rem(12);
+  border: rem(1) solid $border-color-dark;
+  border-radius: $border-radius-sm;
+  background-color: $color-white;
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  cursor: pointer;
+
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+}
+
+// ========================================
+// 上部 新規登録ボタン
+// ========================================
+
+.c-address-list-main__btn-new {
+  // c-guest-main__btn--next を上書きなしで流用
+  // 幅は固定せず auto（コンテンツ幅）で表示
+  width: auto;
+  min-width: rem(180);
+  white-space: nowrap;
+}
+
+// ========================================
+// アドレス一覧 ul
+// ========================================
+
+.c-address-list-main__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// ========================================
+// アドレスカード li
+// ========================================
+
+.c-address-list-main__item {
+  border-bottom: rem(1) solid $border-color;
+
+  &:first-child {
+    border-top: rem(1) solid $border-color;
+  }
+}
+
+// ========================================
+// カード内部ラッパー
+// ========================================
+
+.c-address-list-main__card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: rem(16);
+  padding: rem(20) rem(4);
+
+  @include sp {
+    flex-direction: column;
+    gap: rem(12);
+  }
+}
+
+// ========================================
+// カード情報エリア（左カラム）
+// ========================================
+
+.c-address-list-main__card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+// ========================================
+// カードヘッダー（お届け先名 + 定期便アイコン）
+// ========================================
+
+.c-address-list-main__card-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(8);
+  margin-bottom: rem(8);
+}
+
+// お届け先名
+.c-address-list-main__alias {
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+}
+
+// 定期便アイコン
+.c-address-list-main__regular-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  padding: rem(2) rem(8);
+  background-color: $bg-banner;
+  border-radius: rem(3);
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.c-address-list-main__regular-icon-img {
+  display: block;
+  width: rem(20);
+  height: auto;
+  flex-shrink: 0;
+}
+
+// ========================================
+// 住所情報テキスト
+// ========================================
+
+.c-address-list-main__name,
+.c-address-list-main__postal,
+.c-address-list-main__address,
+.c-address-list-main__tel {
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0;
+  word-break: break-all;
+}
+
+// 変更不可メッセージ
+.c-address-list-main__msg-no-change {
+  font-size: rem(13);
+  font-weight: $font-weight-normal;
+  color: $danger-color;
+  line-height: 1.6;
+  margin: rem(8) 0 0;
+}
+
+// ========================================
+// カードアクションエリア（右カラム）
+// ========================================
+
+.c-address-list-main__card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  align-items: flex-end;
+  flex-shrink: 0;
+
+  @include sp {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+// ========================================
+// 変更ボタン（セカンダリ）
+// ========================================
+
+.c-address-list-main__btn-edit {
+  // c-guest-main__btn--secondary を流用
+  min-width: rem(88);
+  font-size: rem(14);
+  padding: rem(8) rem(16);
+
+  @include sp {
+    flex: 1;
+  }
+
+  // 変更不可（非活性）状態
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+// ========================================
+// 削除ボタン（セカンダリ）
+// ========================================
+
+.c-address-list-main__btn-delete {
+  // c-guest-main__btn--secondary を流用
+  min-width: rem(88);
+  font-size: rem(14);
+  padding: rem(8) rem(16);
+  border: none;
+  font-family: $font-family-base;
+  cursor: pointer;
+
+  @include sp {
+    flex: 1;
+  }
+}
+
+// ========================================
+// 基本住所の変更リンク
+// ========================================
+
+.c-address-list-main__link-basic {
+  display: inline-flex;
+  align-items: center;
+  min-height: rem(44);
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $primary-color;
+  text-decoration: underline;
+  line-height: 1.5;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: rem(2);
+  }
+}
+
+// ========================================
+// ページングラッパー
+// ========================================
+
+.c-address-list-main__pager {
+  display: flex;
+  justify-content: center;
+  margin: rem(16) 0 rem(24);
+
+  .c-pager__list {
+    // _pager.scss の .c-pager__list を継承
+  }
+}
+
+// ========================================
+// 下部ボタンエリア
+// ========================================
+
+.c-address-list-main__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+  padding-top: rem(32);
+  margin-top: rem(8);
+
+  .c-guest-main__btn {
+    max-width: rem(400);
+    width: 100%;
+  }
+}
+
+// 下部「前へ戻る」ボタン表示順序（プライマリを上に）
+.c-address-list-main__btn-back {
+  order: 2;
+}
+
+// ========================================
+// Tablet（768px〜991px）: PC準拠（差分なし）
+// ========================================
+
+// tablet は PC の横並びレイアウトを踏襲するため、追加スタイルなし
+// カードは flex: row のまま表示

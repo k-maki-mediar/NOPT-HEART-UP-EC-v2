@@ -13639,41 +13639,7 @@
 }
 
 .c-address-list-main__link-basic {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.375rem;
   width: 100%;
-  min-height: 2rem;
-  padding: 0.25rem 1rem;
-  background-color: #FFFFFF;
-  border: 1px solid #00387d;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #00387d;
-  text-decoration: none;
-  line-height: 1.5;
-  letter-spacing: 0.009375rem;
-  white-space: nowrap;
-}
-.c-address-list-main__link-basic:hover {
-  background-color: #f4f8fc;
-  text-decoration: none;
-}
-.c-address-list-main__link-basic:focus-visible {
-  outline: 2px solid #00387d;
-  outline-offset: 0.125rem;
-}
-
-.c-address-list-main__link-basic-arrow {
-  display: inline-block;
-  width: 0.375rem;
-  height: 0.375rem;
-  margin-left: auto;
-  border-top: 2px solid currentColor;
-  border-right: 2px solid currentColor;
-  transform: rotate(45deg);
 }
 
 .c-address-list-main__msg-no-change {

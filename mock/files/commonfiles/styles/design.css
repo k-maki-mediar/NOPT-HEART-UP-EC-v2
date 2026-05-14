@@ -11647,22 +11647,6 @@
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
-.c-guest-main__btn--secondary {
-  background-color: #FFFFFF;
-  color: #333;
-  border-color: #c2c2c2;
-  border-radius: 1.375rem;
-  box-shadow: 0 0.125rem 0 #c2c2c2;
-}
-.c-guest-main__btn--secondary:hover {
-  transform: translateY(0.125rem);
-  box-shadow: 0 0 0 #c2c2c2;
-}
-.c-guest-main__btn--secondary:focus-visible {
-  outline: 2px solid #00387d;
-  outline-offset: 0.125rem;
-}
-
 .c-confirm-main {
   max-width: 70.625rem;
   margin: 0 auto;
@@ -13755,41 +13739,6 @@
   }
 }
 
-.c-address-list-main__btn-edit {
-  min-width: 5.5rem;
-  font-size: 0.875rem;
-  padding: 0.5rem 1rem;
-}
-@media (max-width: 767px) {
-  .c-address-list-main__btn-edit {
-    flex: 1;
-  }
-}
-.c-address-list-main__btn-edit--disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
-  box-shadow: none;
-}
-.c-address-list-main__btn-edit--disabled:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-.c-address-list-main__btn-delete {
-  min-width: 5.5rem;
-  font-size: 0.875rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  cursor: pointer;
-}
-@media (max-width: 767px) {
-  .c-address-list-main__btn-delete {
-    flex: 1;
-  }
-}
-
 .c-address-list-main__link-basic {
   display: inline-flex;
   align-items: center;
@@ -14520,6 +14469,13 @@
 .c-teiki-amount__section-btn:hover {
   transform: translateY(0.125rem);
   box-shadow: 0 0 0 0 #002552;
+}
+
+.c-teiki-amount__section-btn--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  box-shadow: none;
+  cursor: not-allowed;
 }
 
 .c-teiki-amount__section-btn-arrow {

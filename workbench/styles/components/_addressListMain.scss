@@ -235,52 +235,6 @@
 }
 
 // ========================================
-// 変更ボタン（セカンダリ）
-// ========================================
-
-.c-address-list-main__btn-edit {
-  // c-guest-main__btn--secondary を流用
-  min-width: rem(88);
-  font-size: rem(14);
-  padding: rem(8) rem(16);
-
-  @include sp {
-    flex: 1;
-  }
-
-  // 変更不可（非活性）状態
-  &--disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-    box-shadow: none;
-
-    &:hover {
-      transform: none;
-      box-shadow: none;
-    }
-  }
-}
-
-// ========================================
-// 削除ボタン（セカンダリ）
-// ========================================
-
-.c-address-list-main__btn-delete {
-  // c-guest-main__btn--secondary を流用
-  min-width: rem(88);
-  font-size: rem(14);
-  padding: rem(8) rem(16);
-  border: none;
-  font-family: $font-family-base;
-  cursor: pointer;
-
-  @include sp {
-    flex: 1;
-  }
-}
-
-// ========================================
 // 基本住所の変更リンク
 // ========================================
 

@@ -550,6 +550,13 @@
   }
 }
 
+.c-teiki-amount__section-btn--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 .c-teiki-amount__section-btn-arrow {
   display: none;
 }

@@ -13681,6 +13681,12 @@
   transform: translateY(0.125rem);
   box-shadow: 0 0 0 0 #3f4651;
 }
+.c-address-list-main__card-actions .c-cart-main__item-delete:disabled, .c-address-list-main__card-actions .c-cart-main__item-delete[aria-disabled=true] {
+  opacity: 0.5;
+  box-shadow: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
 .c-address-list-main__card-actions .c-cart-main__item-delete-icon {
   width: 0.625rem;

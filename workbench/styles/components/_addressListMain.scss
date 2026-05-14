@@ -201,6 +201,14 @@
     transform: translateY(rem(2));
     box-shadow: 0 0 0 0 #3f4651;
   }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
 .c-address-list-main__card-actions .c-cart-main__item-delete-icon {

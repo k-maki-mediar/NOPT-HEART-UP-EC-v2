@@ -131,25 +131,9 @@
 
   </ul>
 
-  <!-- ページング -->
-  <nav class="c-address-list-main__pager" aria-label="ページング">
-    <ul class="c-pager__list">
-      <li class="c-pager__item c-pager__item--prev is-hidden">
-        <a href="#" class="c-pager__link c-pager__link--prev" aria-label="前のページへ"></a>
-      </li>
-      <li class="c-pager__item">
-        <span class="c-pager__current" aria-current="page">1</span>
-      </li>
-      <li class="c-pager__item">
-        <a href="#" class="c-pager__link">2</a>
-      </li>
-      <li class="c-pager__item">
-        <a href="#" class="c-pager__link">3</a>
-      </li>
-      <li class="c-pager__item c-pager__item--next">
-        <a href="#" class="c-pager__link c-pager__link--next" aria-label="次のページへ"></a>
-      </li>
-    </ul>
+  <!-- ページング（商品一覧と同じ js-pager 動的生成） -->
+  <nav class="c-pager c-pager--top js-pager" aria-label="ページナビゲーション" data-total-pages="3" data-current-page="1">
+    <ul class="c-pager__list" aria-busy="true"></ul>
   </nav>
 
   <!-- 下部ボタンエリア -->

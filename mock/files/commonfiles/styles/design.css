@@ -13571,6 +13571,10 @@
   }
 }
 
+.c-address-list-main .c-list-main__control-right {
+  width: auto;
+}
+
 .c-address-list-main__btn-new {
   width: auto;
   min-width: 11.25rem;

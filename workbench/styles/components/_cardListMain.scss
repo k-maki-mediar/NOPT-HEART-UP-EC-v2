@@ -104,10 +104,17 @@
   transition: box-shadow $transition-fast;
 }
 
-// 選択中（ラジオがcheckedの）カード: ネイビーの枠線（inset shadow）
-.c-card-list-main__card:has(.c-card-list-main__radio:checked),
-.c-card-list-main__card--selected {
-  box-shadow: inset 0 0 0 1px $primary-color, $shadow-xs;
+// 選択中（ラジオがcheckedの）カード: ネイビーの枠線
+// ::after でバッジより上のレイヤーに枠線を描画（バッジに重なって表示）
+.c-card-list-main__card:has(.c-card-list-main__radio:checked)::after,
+.c-card-list-main__card--selected::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid $primary-color;
+  border-radius: rem(10);
+  pointer-events: none;
+  z-index: 2;
 }
 
 // ========================================
@@ -350,15 +357,21 @@
 }
 
 // ========================================
-// PC: カード幅調整・中央寄せなど
+// PC: 表示エリアを少し狭めて中央寄せ
+// ラッパー .c-card-list-main の中で、上部行・カード一覧・フッターに
+// 共通の max-width を設定し、その幅いっぱいにカードを広げる
 // ========================================
 
 @include pc {
-  .c-card-list-main__card {
-    max-width: rem(600);
+  .c-card-list-main__top-row,
+  .c-card-list-main__list,
+  .c-card-list-main__footer {
+    max-width: rem(640);
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .c-card-list-main__list {
-    align-items: flex-start;
+  .c-card-list-main__card {
+    width: 100%;
   }
 }

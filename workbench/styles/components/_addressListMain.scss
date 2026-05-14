@@ -16,10 +16,10 @@
 .c-address-list-main {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(24) rem(16) rem(48);
+  padding: rem(12) rem(16) rem(48);
 
   @include pc {
-    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+    padding: rem(16) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 

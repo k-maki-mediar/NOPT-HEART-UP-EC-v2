@@ -13563,11 +13563,11 @@
 .c-address-list-main {
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 1.5rem 1rem 3rem;
+  padding: 0.75rem 1rem 3rem;
 }
 @media (min-width: 992px) {
   .c-address-list-main {
-    padding: 2rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+    padding: 1rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
   }
 }
 

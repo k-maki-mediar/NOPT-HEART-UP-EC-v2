@@ -13639,7 +13639,7 @@
   min-height: 2rem;
   padding: 0.25rem 1rem;
   background-color: #FFFFFF;
-  border: 1px solid #00387d;
+  border: none;
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;

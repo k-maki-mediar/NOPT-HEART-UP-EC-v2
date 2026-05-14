@@ -13633,8 +13633,8 @@
   flex-shrink: 0;
 }
 
-.c-address-list-main__actions-cell {
-  padding: 1.25rem 1rem;
+.c-teiki-info-table__data.c-address-list-main__actions-cell {
+  padding: 1.5rem 1rem;
   background-color: #FFFFFF;
 }
 

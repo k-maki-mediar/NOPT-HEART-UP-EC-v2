@@ -126,9 +126,9 @@
   flex-shrink: 0;
 }
 
-// テーブル末尾のアクション行セル
-.c-address-list-main__actions-cell {
-  padding: rem(20) rem(16);
+// テーブル末尾のアクション行セル（c-teiki-info-table__data の後勝ち padding を上書き）
+.c-teiki-info-table__data.c-address-list-main__actions-cell {
+  padding: rem(24) rem(16);
   background-color: $color-white;
 }
 

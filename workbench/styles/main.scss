@@ -88,9 +88,10 @@
 @use 'components/customerPopulateMain';
 @use 'components/customerChangepasswordMain';
 @use 'components/customerChangeemailMain';
-@use 'components/customerInitpasswordMain';
 @use 'components/customerSendpasswordMain';
+@use 'components/customerInitpasswordMain';
 @use 'components/logoutMain';
+@use 'components/addressListMain';
 
 // ========================================
 // Pages（ページ固有スタイル）

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja" class="c-html">
 <head>
-@@include('../../includes/head.html', {"title": "ログイン"})
+@@include('../../includes/head.html', {"title": "配送先住所一覧"})
 </head>
 <body class="c-body">
   <main>
@@ -10,21 +10,19 @@
         <div class="row">
           <div>
             <div class="wsparts-include">
-              @@include('../../includes/parts/general/pageHeaderMenu.html')
+              @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
             </div>
           </div>
           <div>
             <div class="wsparts-include">
-              @@include('../../includes/parts/general/pageSideNav.html')
+              @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
             </div>
           </div>
           <div>
             <div class="wsparts-include">
-              <div class="c-main">
-                @@include('../../includes/parts/main/common/importantNotice.html')
-                @@include('../../includes/parts/main/common/loginBanner.html')
-                @@include('../../includes/parts/general/messageArea.html')
-                @@include('../../includes/parts/main/common/loginMain.html')
+              <div class="c-main c-main--logged-in">
+                @@include('../../includes/parts/general/topicPath.html')
+                @@include('../../includes/parts/main/mypage/addressListMainBasicTeiki.html')
               </div>
             </div>
           </div>
@@ -33,7 +31,7 @@
               @@include('../../includes/parts/general/pageFooter.html')
             </div>
           </div>
-          <div>
+          <div class="c-footer-sticky-wrap">
             <div class="wsparts-include">
               @@include('../../includes/parts/general/pageFooterMenu.html')
             </div>

@@ -311,6 +311,13 @@
   height: rem(32);
   padding: rem(4) rem(12);
   gap: rem(4);
+  box-shadow: 0 rem(2) 0 0 #8a8a8a;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 #8a8a8a;
+  }
 }
 
 .c-address-list-main__card-actions .c-cart-main__item-delete-icon {

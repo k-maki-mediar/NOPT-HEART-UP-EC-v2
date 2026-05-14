@@ -13777,6 +13777,24 @@
   order: 2;
 }
 
+.c-address-list-main__card-actions .c-cart-main__item-delete {
+  min-height: 2rem;
+  height: 2rem;
+  padding: 0.25rem 0.75rem;
+  gap: 0.25rem;
+  box-shadow: 0 0.125rem 0 0 #8a8a8a;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-address-list-main__card-actions .c-cart-main__item-delete:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 0 #8a8a8a;
+}
+
+.c-address-list-main__card-actions .c-cart-main__item-delete-icon {
+  width: 0.625rem;
+  height: 0.625rem;
+}
+
 .c-main--logged-in .c-campaign-topics__deco-rect {
   background-color: #ffdedd;
 }

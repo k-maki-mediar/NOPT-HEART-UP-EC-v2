@@ -13563,16 +13563,23 @@
 .c-address-list-main {
   max-width: 70.625rem;
   margin: 0 auto;
-  padding: 0 1rem 3rem;
+  padding: 1.5rem 1rem 3rem;
 }
 @media (min-width: 992px) {
   .c-address-list-main {
-    padding: 0 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+    padding: 2rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
   }
 }
 
 .c-address-list-main .c-list-main__control-right {
   width: auto;
+}
+
+.c-address-list-main__btn-new-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .c-address-list-main__btn-new {

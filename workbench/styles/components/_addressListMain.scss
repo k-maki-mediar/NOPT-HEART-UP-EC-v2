@@ -16,10 +16,10 @@
 .c-address-list-main {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: 0 rem(16) rem(48);
+  padding: rem(24) rem(16) rem(48);
 
   @include pc {
-    padding: 0 rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
 
@@ -34,8 +34,15 @@
 }
 
 // ========================================
-// 上部 新規登録ボタン（c-list-main__control-right 内に並ぶ）
+// 上部 新規登録ボタン（コントロール行の下・右寄せ別行）
 // ========================================
+
+.c-address-list-main__btn-new-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: rem(8);
+  margin-bottom: rem(8);
+}
 
 .c-address-list-main__btn-new {
   // c-guest-main__btn--next を上書きなしで流用

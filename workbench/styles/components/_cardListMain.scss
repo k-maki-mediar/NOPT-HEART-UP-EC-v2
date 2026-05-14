@@ -203,6 +203,40 @@
 }
 
 // ========================================
+// 削除ボタン（アドレス帳一覧と同じスタイルで上書き）
+// ベースの .c-cart-main__item-delete を 32px高・ライトグレー背景・影で立体化
+// ========================================
+
+.c-card-list-main__actions .c-cart-main__item-delete {
+  min-height: rem(32);
+  height: rem(32);
+  padding: rem(4) rem(12);
+  gap: rem(4);
+  background-color: $text-light;
+  box-shadow: 0 rem(2) 0 0 $delete-shadow;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    background-color: $text-light;
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 $delete-shadow;
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    opacity: 0.35;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.c-card-list-main__actions .c-cart-main__item-delete-icon {
+  width: rem(10);
+  height: rem(10);
+}
+
+// ========================================
 // らくとく定期便バッジ
 // Figma: 左上・右下のみ角丸10px、背景#CC4843、白文字、130×22px
 // カード左上に被せる形（absoluteで配置）

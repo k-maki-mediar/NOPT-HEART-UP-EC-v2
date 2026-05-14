@@ -13722,6 +13722,91 @@
   height: 0.625rem;
 }
 
+.c-error-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 3rem;
+}
+@media (min-width: 992px) {
+  .c-error-main {
+    padding: 2.5rem 2rem 3rem;
+  }
+}
+
+.c-error-main__message {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.75;
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+.c-error-main__error-no {
+  font-size: 0.875rem;
+  color: #6B7280;
+  line-height: 1.6;
+  margin: 1rem 0 0;
+  text-align: center;
+}
+
+.c-error-main__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  margin-top: 1.5rem;
+}
+
+.c-error-main__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  max-width: 25rem;
+  width: 100%;
+  padding: 0.625rem 1.5rem;
+  border: 1px solid #00387d;
+  border-radius: 1.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  line-height: 1.5;
+  box-sizing: border-box;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-error-main__btn--top {
+  background-color: #00387d;
+  color: #FFFFFF;
+  box-shadow: 0 0.125rem 0 #002a5e;
+}
+.c-error-main__btn--top:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 #002a5e;
+  color: #FFFFFF;
+}
+
+.c-main:has(.c-error-main) {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@media (min-width: 992px) {
+  .wrapper:has(.c-error-main) {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper:has(.c-error-main) .container {
+    width: 100%;
+  }
+  .c-main:has(.c-error-main) .c-user-heading {
+    padding: 1.5rem 2rem 0;
+  }
+}
 .c-main--logged-in .c-campaign-topics__deco-rect {
   background-color: #ffdedd;
 }

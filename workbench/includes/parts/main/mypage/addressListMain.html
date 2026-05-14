@@ -48,16 +48,7 @@
     <li class="c-address-list-main__item">
       <div class="c-teiki-address c-address-list-main__card">
         <div class="c-teiki-address__header c-address-list-main__card-header">
-          <span class="c-teiki-address__header-title">
-            基本住所
-            <!-- 定期便アイコン（条件付き表示） -->
-            <!-- <span class="c-address-list-main__regular-icon" aria-label="定期便利用中">
-              <img src="../../../files/commonfiles/images/icon-teikibin.svg" alt="" class="c-address-list-main__regular-icon-img" width="20" height="16">
-              定期便
-            </span> -->
-          </span>
-          <!-- 基本住所：変更・削除ボタンなし。変更リンクのみ表示 -->
-          <a href="#" class="c-address-list-main__link-basic">基本住所の変更はこちら<span class="c-address-list-main__link-basic-arrow" aria-hidden="true"></span></a>
+          <span class="c-teiki-address__header-title">基本住所</span>
         </div>
         <table class="c-teiki-info-table" aria-label="基本住所の住所情報">
           <tbody>
@@ -77,6 +68,14 @@
               <th class="c-teiki-info-table__header" scope="row">電話番号</th>
               <td class="c-teiki-info-table__data">090-0000-0000</td>
             </tr>
+            <!-- 最終行：変更ボタン -->
+            <tr class="c-teiki-info-table__row c-address-list-main__actions-row">
+              <td class="c-teiki-info-table__data c-address-list-main__actions-cell" colspan="2">
+                <div class="c-address-list-main__card-actions">
+                  <a href="#" class="c-address-list-main__link-basic">基本住所の変更はこちら<span class="c-address-list-main__link-basic-arrow" aria-hidden="true"></span></a>
+                </div>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -88,19 +87,12 @@
         <div class="c-teiki-address__header c-address-list-main__card-header">
           <span class="c-teiki-address__header-title">
             会社
-            <!-- 定期便アイコン（定期便利用中：表示） -->
-            <span class="c-address-list-main__regular-icon">定期便配送先</span>
+            <!-- 定期便配送先ラベル（トラックアイコン付き） -->
+            <span class="c-address-list-main__regular-icon">
+              <img src="../../../files/commonfiles/images/icon-teikibin.svg" alt="" class="c-address-list-main__regular-icon-img" width="20" height="16">
+              定期便配送先
+            </span>
           </span>
-          <div class="c-address-list-main__card-actions">
-            <!-- 変更可能：変更ボタン活性 -->
-            <a href="#" class="c-teiki-amount__section-btn">変更<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
-            <button type="button" class="c-cart-main__item-delete">
-              <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <path d="M1 1l10 10M11 1L1 11"/>
-              </svg>
-              削除
-            </button>
-          </div>
         </div>
         <table class="c-teiki-info-table" aria-label="会社の住所情報">
           <tbody>
@@ -119,6 +111,20 @@
             <tr class="c-teiki-info-table__row">
               <th class="c-teiki-info-table__header" scope="row">電話番号</th>
               <td class="c-teiki-info-table__data">052-000-0000</td>
+            </tr>
+            <!-- 最終行：変更/削除ボタン -->
+            <tr class="c-teiki-info-table__row c-address-list-main__actions-row">
+              <td class="c-teiki-info-table__data c-address-list-main__actions-cell" colspan="2">
+                <div class="c-address-list-main__card-actions">
+                  <a href="#" class="c-teiki-amount__section-btn">変更<span class="c-teiki-amount__section-btn-arrow" aria-hidden="true"></span></a>
+                  <button type="button" class="c-cart-main__item-delete">
+                    <svg class="c-cart-main__item-delete-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                      <path d="M1 1l10 10M11 1L1 11"/>
+                    </svg>
+                    削除
+                  </button>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>

@@ -13603,6 +13603,7 @@
 .c-address-list-main__regular-icon {
   display: inline-flex;
   align-items: center;
+  gap: 0.25rem;
   padding: 0.125rem 0.5rem;
   background-color: #d7e7fb;
   border-radius: 0.1875rem;
@@ -13615,12 +13616,26 @@
   margin-left: 0.375rem;
 }
 
+.c-address-list-main__regular-icon-img {
+  display: inline-block;
+  width: 1.25rem;
+  height: auto;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
 .c-address-list-main__card-actions {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   align-items: center;
+  justify-content: flex-end;
   flex-shrink: 0;
+}
+
+.c-address-list-main__actions-cell {
+  padding: 0.75rem 1rem;
+  background-color: #FFFFFF;
 }
 
 .c-address-list-main__link-basic {

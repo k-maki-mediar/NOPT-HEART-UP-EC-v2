@@ -92,6 +92,7 @@
 .c-address-list-main__regular-icon {
   display: inline-flex;
   align-items: center;
+  gap: rem(4);
   padding: rem(2) rem(8);
   background-color: $bg-banner;
   border-radius: rem(3);
@@ -104,8 +105,16 @@
   margin-left: rem(6);
 }
 
+.c-address-list-main__regular-icon-img {
+  display: inline-block;
+  width: rem(20);
+  height: auto;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
 // ========================================
-// カードアクションエリア（ヘッダー右側のボタン群）
+// カードアクションエリア（テーブル最終行のボタン群）
 // ========================================
 
 .c-address-list-main__card-actions {
@@ -113,9 +122,14 @@
   flex-direction: row;
   gap: rem(8);
   align-items: center;
+  justify-content: flex-end;
   flex-shrink: 0;
-  // margin-left: auto は c-teiki-address__header の justify-content: space-between で不要
-  // SP時の width: 100% も参照HTMLに合わせて削除（横並び維持）
+}
+
+// テーブル末尾のアクション行セル
+.c-address-list-main__actions-cell {
+  padding: rem(12) rem(16);
+  background-color: $color-white;
 }
 
 // ========================================

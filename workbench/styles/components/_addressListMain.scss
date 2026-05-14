@@ -135,26 +135,28 @@
 .c-address-list-main__link-basic {
   display: inline-flex;
   align-items: center;
-  min-height: rem(44);
-  font-size: rem(14);
-  font-weight: $font-weight-normal;
+  justify-content: center;
+  min-height: rem(32);
+  padding: rem(4) rem(16);
+  background-color: $color-white;
+  border: 1px solid $primary-color;
+  border-radius: 9999px;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
   color: $primary-color;
-  text-decoration: underline;
+  text-decoration: none;
   line-height: 1.5;
+  letter-spacing: rem(0.15);
   white-space: nowrap;
-  margin-left: auto;
 
   &:hover {
+    background-color: $bg-light;
     text-decoration: none;
   }
 
   &:focus-visible {
     outline: 2px solid $primary-color;
     outline-offset: rem(2);
-  }
-
-  @include sp {
-    margin-left: 0;
   }
 }
 

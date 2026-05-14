@@ -4,10 +4,11 @@
 // BEM: .c-error-main
 // 対象画面:
 //   - アクセスエラー（U2010401）
-//   - ページ遷移エラー（U2010701）
 //   - お探しの商品が見つかりません（U2010501）
-//   - システムエラー（U2010901）
+//   - エラー（U2010601）
+//   - ページ遷移エラー（U2010701）
 //   - javascript無効エラー（U2010801）
+//   - システムエラー（U2010901）
 // ========================================
 
 @use '../foundation/functions' as *;
@@ -24,7 +25,7 @@
   padding: rem(40) rem(16) rem(48);
 
   @include pc {
-    padding: rem(40) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+    padding: rem(40) rem(32) rem(48);
   }
 }
 
@@ -125,6 +126,12 @@
 
   .wrapper:has(.c-error-main) .container {
     width: 100%;
+  }
+
+  // エラー画面はサイドナビなし構造のため、共通見出し（.c-user-heading）の
+  // サイドナビ分オフセットを打ち消して左右対称の中央寄せにする
+  .c-main:has(.c-error-main) .c-user-heading {
+    padding: rem(24) rem(32) 0;
   }
 }
 

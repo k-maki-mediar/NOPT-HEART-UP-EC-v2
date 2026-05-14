@@ -13729,7 +13729,7 @@
 }
 @media (min-width: 992px) {
   .c-error-main {
-    padding: 2.5rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+    padding: 2.5rem 2rem 3rem;
   }
 }
 
@@ -13788,6 +13788,25 @@
   color: #FFFFFF;
 }
 
+.c-main:has(.c-error-main) {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@media (min-width: 992px) {
+  .wrapper:has(.c-error-main) {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper:has(.c-error-main) .container {
+    width: 100%;
+  }
+  .c-main:has(.c-error-main) .c-user-heading {
+    padding: 1.5rem 2rem 0;
+  }
+}
 .c-main--logged-in .c-campaign-topics__deco-rect {
   background-color: #ffdedd;
 }

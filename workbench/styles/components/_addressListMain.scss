@@ -38,16 +38,13 @@
 // ========================================
 
 .c-address-list-main__btn-new-wrap {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: rem(8);
-  margin-bottom: rem(8);
+  margin-top: rem(24);
+  margin-bottom: rem(24);
 }
 
 .c-address-list-main__btn-new {
-  // c-guest-main__btn--next を上書きなしで流用
-  width: auto;
-  min-width: rem(180);
+  width: 100%;
+  min-width: 0;
   white-space: nowrap;
 }
 

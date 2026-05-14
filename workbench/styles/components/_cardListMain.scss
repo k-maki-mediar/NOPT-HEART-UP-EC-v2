@@ -1,0 +1,284 @@
+// ========================================
+// Card List Main（クレジットカード情報一覧）
+// 格納先HTML: workbench/includes/parts/main/mypage/cardListMain.html
+// BEM: .c-card-list-main
+// カード枠: .c-teiki-address / .c-teiki-info-table（_regularSaleDetail.scss 定義）流用
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー（_addressListMain.scss の .c-address-list-main と同構造）
+// ========================================
+
+.c-card-list-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(12) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(16) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// ヘッダー行（支払方法名称 + 新規登録ボタン）
+// ========================================
+
+.c-card-list-main__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(12);
+  margin-bottom: rem(12);
+}
+
+.c-card-list-main__payment-name {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0;
+  line-height: 1.5;
+}
+
+// 新規登録ボタン（c-guest-main__btn--next との複合）
+.c-card-list-main__btn-new {
+  white-space: nowrap;
+  min-width: 0;
+
+  @include sp {
+    font-size: rem(13);
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+  }
+
+  // 非活性（上限到達時）
+  &[aria-disabled='true'],
+  &:disabled {
+    opacity: 0.4;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// ========================================
+// カードブランドロゴ
+// ========================================
+
+.c-card-list-main__brands {
+  margin-bottom: rem(16);
+}
+
+.c-card-list-main__brand-logo {
+  display: block;
+  max-width: rem(260);
+  height: auto;
+
+  @include sp {
+    max-width: rem(200);
+  }
+}
+
+// ========================================
+// カード一覧 ul
+// ========================================
+
+.c-card-list-main__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// ========================================
+// カードアイテム li
+// ========================================
+
+.c-card-list-main__item {
+  & + & {
+    margin-top: rem(16);
+  }
+}
+
+// ========================================
+// カード（c-teiki-address との複合）
+// ========================================
+
+.c-card-list-main__card {
+  // c-teiki-address の margin-top を li+li で制御するためリセット
+  margin-top: 0;
+}
+
+// ========================================
+// カードヘッダー（c-teiki-address__header との複合）
+// display: flex; align-items: center; justify-content: space-between; は継承
+// ========================================
+
+.c-card-list-main__card-header {
+  flex-wrap: wrap;
+  gap: rem(6) rem(8);
+}
+
+// ========================================
+// ラジオラベル（メインカード選択）
+// ========================================
+
+.c-card-list-main__radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(6);
+  cursor: pointer;
+  min-height: rem(44); // タップ領域確保
+}
+
+.c-card-list-main__radio {
+  // ビジュアル非表示・アクセシビリティ有効
+  position: absolute;
+  opacity: 0;
+  width: rem(1);
+  height: rem(1);
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+// ========================================
+// メインカードバッジ（選択中 = checked 状態）
+// ========================================
+
+.c-card-list-main__main-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: rem(5) rem(10);
+  border: rem(2) solid $bg-banner;
+  border-radius: rem(20);
+  font-size: rem(13);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  // ラジオ選択時にメインカードバッジを強調
+  .c-card-list-main__radio:checked + & {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $color-white;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+// ========================================
+// らくとく定期便バッジ
+// ========================================
+
+.c-card-list-main__regular-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  padding: rem(4) rem(8);
+  background-color: $bg-banner;
+  border-radius: rem(3);
+  font-size: rem(11);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+// ========================================
+// 操作ボタン群（カードヘッダー右端）
+// ========================================
+
+.c-card-list-main__actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: rem(8);
+  margin-left: auto;
+}
+
+// ========================================
+// テーブル内アクション行（c-teiki-info-table ラスト行不使用：代わりにヘッダー内に配置）
+// ========================================
+
+// カード内テーブルの最終行ボーダー調整
+.c-card-list-main__card .c-teiki-info-table__row:last-child {
+  .c-teiki-info-table__header,
+  .c-teiki-info-table__data {
+    border-bottom: none;
+  }
+}
+
+// ========================================
+// カードアクション内 削除ボタン
+// c-cart-main__item-delete のサイズを card-list スコープでローカル調整
+// ========================================
+
+.c-card-list-main__actions .c-cart-main__item-delete {
+  min-height: rem(32);
+  height: rem(32);
+  padding: rem(4) rem(12);
+  gap: rem(4);
+  background-color: $text-light;
+  box-shadow: 0 rem(2) 0 0 $delete-shadow;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    background-color: $text-light;
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 0 $delete-shadow;
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    opacity: 0.35;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.c-card-list-main__actions .c-cart-main__item-delete-icon {
+  width: rem(10);
+  height: rem(10);
+}
+
+// ========================================
+// 「お預けカード無し」空状態テキスト
+// ========================================
+
+.c-card-list-main__empty {
+  font-size: rem(14);
+  color: $text-color;
+  text-align: center;
+  padding: rem(32) rem(16);
+  margin: 0;
+  line-height: 1.75;
+}
+
+// ========================================
+// 「更新する」ボタンラップ（メインカード変更）
+// ========================================
+
+.c-card-list-main__update-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: rem(32);
+
+  .c-guest-main__btn {
+    width: 100%;
+
+    @include pc {
+      max-width: rem(400);
+    }
+  }
+}
+
+// ========================================
+// Tablet（768px〜991px）: PC準拠（差分なし）
+// ========================================
+
+// tablet は PC の横並びレイアウトを踏襲するため、追加スタイルなし

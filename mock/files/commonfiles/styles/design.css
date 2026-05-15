@@ -13785,6 +13785,7 @@
   flex-direction: column;
   gap: 1rem;
 }
+
 .c-card-list-main__item {
   position: relative;
 }

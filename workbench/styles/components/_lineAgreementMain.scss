@@ -37,9 +37,7 @@
 
 .c-line-agreement-main__notice {
   border: 1px solid $border-color;
-  border-radius: $border-radius-sm;
   padding: rem(24) rem(20);
-  background-color: $bg-light;
   margin-bottom: rem(24);
 }
 
@@ -83,6 +81,11 @@
   &:hover {
     text-decoration: none;
   }
+}
+
+.c-line-agreement-main__notice-link-icon {
+  vertical-align: text-top;
+  margin-left: rem(2);
 }
 
 // ========================================
@@ -162,8 +165,8 @@
     }
 
     &:disabled {
-      background-color: $text-light;
-      border-color: $text-light;
+      background-color: $color-disabled;
+      border-color: $color-disabled;
       box-shadow: none;
       cursor: not-allowed;
     }

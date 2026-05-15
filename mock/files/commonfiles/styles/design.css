@@ -14119,9 +14119,7 @@
 
 .c-line-agreement-main__notice {
   border: 1px solid #e0e0e0;
-  border-radius: 4px;
   padding: 1.5rem 1.25rem;
-  background-color: #f4f8fc;
   margin-bottom: 1.5rem;
 }
 
@@ -14162,6 +14160,11 @@
 }
 .c-line-agreement-main__notice-link:hover {
   text-decoration: none;
+}
+
+.c-line-agreement-main__notice-link-icon {
+  vertical-align: text-top;
+  margin-left: 0.125rem;
 }
 
 .c-line-agreement-main__agree-area {
@@ -14228,8 +14231,8 @@
   box-shadow: 0 0.0625rem 0 #002552;
 }
 .c-line-agreement-main__btn--submit:disabled {
-  background-color: #6B7280;
-  border-color: #6B7280;
+  background-color: #cccccc;
+  border-color: #cccccc;
   box-shadow: none;
   cursor: not-allowed;
 }

@@ -74,9 +74,6 @@
   flex-direction: column;
   gap: rem(16);
 
-  @include pc {
-    // PC: 縦積み（1列）、カード幅を広げて中央寄せ
-  }
 }
 
 // ========================================
@@ -114,7 +111,7 @@
   border: 1px solid $primary-color;
   border-radius: rem(10);
   pointer-events: none;
-  z-index: 2;
+  z-index: $z-index-above-content;
 }
 
 // ========================================
@@ -274,7 +271,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 1;
+  z-index: $z-index-content;
   display: inline-flex;
   align-items: center;
   justify-content: center;

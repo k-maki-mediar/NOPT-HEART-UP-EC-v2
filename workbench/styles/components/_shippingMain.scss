@@ -430,6 +430,16 @@
   }
 }
 
+// PC でもボタンを縦並び・コンテナ最大幅を制限するパターン
+.c-shipping-main__actions--stacked {
+  @include pc {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: rem(400);
+    margin: 0 auto;
+  }
+}
+
 .c-shipping-main__btn--next {
   display: inline-flex;
   align-items: center;

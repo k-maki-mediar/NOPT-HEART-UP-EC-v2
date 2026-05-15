@@ -10371,6 +10371,15 @@
   }
 }
 
+@media (min-width: 992px) {
+  .c-shipping-main__actions--stacked {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 25rem;
+    margin: 0 auto;
+  }
+}
+
 .c-shipping-main__btn--next {
   display: inline-flex;
   align-items: center;

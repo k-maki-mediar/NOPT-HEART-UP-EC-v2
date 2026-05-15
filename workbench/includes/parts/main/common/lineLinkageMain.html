@@ -1,0 +1,61 @@
+<section class="c-user-heading" aria-label="LINEログイン会員認証">
+  <div class="c-user-heading__inner">
+    <h1 class="c-user-heading__title">LINEログイン会員認証</h1>
+  </div>
+  <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
+</section>
+
+<section class="c-login-main" aria-label="LINEログイン会員認証フォーム">
+
+  <div class="c-login-main__card">
+
+    <form action="" method="post" novalidate>
+
+      <div class="c-login-main__form-section">
+        <dl class="c-login-main__form-table">
+
+          <!-- 会員番号またはメールアドレス -->
+          <div class="c-login-main__field">
+            <dt class="c-login-main__label">
+              <label for="lineLinkageLoginId">会員番号またはメールアドレス</label>
+            </dt>
+            <dd class="c-login-main__field-body">
+              <input type="text" class="c-login-main__input js-login-validate" id="lineLinkageLoginId" name="loginId"
+                maxlength="256" autocomplete="username" aria-required="true"
+                data-error-msg="会員番号またはメールアドレスを入力してください">
+              <p class="c-field-error js-login-error" role="alert" hidden>会員番号またはメールアドレスを入力してください</p>
+            </dd>
+          </div>
+
+          <!-- パスワード -->
+          <div class="c-login-main__field">
+            <dt class="c-login-main__label">
+              <label for="lineLinkagePassword">パスワード</label>
+            </dt>
+            <dd class="c-login-main__field-body">
+              <input type="password" class="c-login-main__input js-login-validate" id="lineLinkagePassword" name="password"
+                maxlength="20" autocomplete="current-password" aria-required="true"
+                data-error-msg="パスワードを入力してください">
+              <p class="c-field-error js-login-error" role="alert" hidden>パスワードを入力してください</p>
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+
+      <!-- LINEと連携ボタン -->
+      <div class="c-login-main__actions">
+        <button type="submit" class="c-login-main__btn c-login-main__btn--submit" name="submitLineLinkageButton">
+          LINEと連携
+        </button>
+      </div>
+
+      <div class="c-login-main__link-area">
+        <a href="#" class="c-login-main__link" name="customerSendpassword">会員番号/パスワードを忘れた方はこちら</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</section>

@@ -1,0 +1,269 @@
+// ========================================
+// Line Agreement Main（LINE連携規約同意）
+// 格納先HTML: workbench/includes/parts/main/common/lineAgreementMain.html
+// BEM: .c-line-agreement-main
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-line-agreement-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// コンテンツカード
+// ========================================
+
+.c-line-agreement-main__card {
+  max-width: rem(600);
+  margin: 0 auto;
+}
+
+// ========================================
+// 注意事項エリア
+// ========================================
+
+.c-line-agreement-main__notice {
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  padding: rem(24) rem(20);
+  background-color: $bg-light;
+  margin-bottom: rem(24);
+}
+
+.c-line-agreement-main__notice-title {
+  font-size: rem(15);
+  font-weight: $font-weight-bold;
+  color: $text-color;
+  margin: 0 0 rem(16);
+  line-height: 1.5;
+}
+
+.c-line-agreement-main__notice-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.c-line-agreement-main__notice-paragraph {
+  font-size: rem(13);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0;
+  padding: rem(12) 0;
+  border-bottom: 1px dashed $border-color;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.c-line-agreement-main__notice-link {
+  color: $link-blue;
+  text-decoration: underline;
+  text-underline-offset: rem(2);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// ========================================
+// 同意チェックボックスエリア
+// ========================================
+
+.c-line-agreement-main__agree-area {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  min-height: rem(48);
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
+  border-radius: $border-radius-sm;
+  margin-bottom: rem(24);
+  cursor: pointer;
+}
+
+.c-line-agreement-main__agree-checkbox {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: $primary-color;
+}
+
+.c-line-agreement-main__agree-label {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+// ========================================
+// ボタンエリア
+// ========================================
+
+.c-line-agreement-main__actions {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+}
+
+// ========================================
+// ボタン
+// ========================================
+
+.c-line-agreement-main__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: rem(400);
+  min-height: rem(44);
+  margin: 0 auto;
+  padding: rem(8) rem(20);
+  border: 1px solid $primary-color;
+  border-radius: rem(22);
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  line-height: 1.5;
+  box-sizing: border-box;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &--submit {
+    background-color: $primary-color;
+    color: $color-white;
+    box-shadow: 0 rem(3) 0 $primary-shadow;
+
+    &:hover:not(:disabled) {
+      transform: translateY(rem(2));
+      box-shadow: 0 rem(1) 0 $primary-shadow;
+    }
+
+    &:disabled {
+      background-color: $text-light;
+      border-color: $text-light;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// ========================================
+// 確認モーダル（別LINEIDで連携実施時）
+// ========================================
+
+.c-line-agreement-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-index-modal;
+  align-items: center;
+  justify-content: center;
+
+  &--open {
+    display: flex;
+  }
+}
+
+.c-line-agreement-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $overlay-dark;
+  cursor: pointer;
+}
+
+.c-line-agreement-modal__dialog {
+  position: relative;
+  z-index: $z-index-content;
+  width: calc(100% - rem(32));
+  max-width: rem(400);
+  background-color: $color-white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  padding: rem(32) rem(24);
+}
+
+.c-line-agreement-modal__body {
+  text-align: center;
+  margin-bottom: rem(24);
+}
+
+.c-line-agreement-modal__message {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.c-line-agreement-modal__actions {
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+}
+
+.c-line-agreement-modal__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: rem(48);
+  padding: rem(10) rem(24);
+  border-radius: rem(24);
+  font-size: rem(14);
+  font-weight: $font-weight-bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+  border: 1px solid $primary-color;
+  background-color: $color-white;
+  color: $primary-color;
+  box-shadow: 0 rem(2) 0 $primary-color-dark;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 $primary-color-dark;
+  }
+
+  &--primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $color-white;
+    box-shadow: 0 rem(2) 0 $primary-color-dark;
+
+    &:hover {
+      transform: translateY(rem(2));
+      box-shadow: 0 0 0 $primary-color-dark;
+      color: $color-white;
+    }
+  }
+}

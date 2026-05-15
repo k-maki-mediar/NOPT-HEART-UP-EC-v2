@@ -1,0 +1,182 @@
+// ========================================
+// Line Account List Main（LINE連携会員選択）
+// 格納先HTML: workbench/includes/parts/main/common/lineAccountListMain.html
+// BEM: .c-line-account-list-main
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-line-account-list-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// コンテンツカード
+// ========================================
+
+.c-line-account-list-main__card {
+  max-width: rem(600);
+  margin: 0 auto;
+}
+
+// ========================================
+// 説明テキスト
+// ========================================
+
+.c-line-account-list-main__description {
+  margin-bottom: rem(24);
+}
+
+.c-line-account-list-main__description-text {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0 0 rem(8);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.c-line-account-list-main__description-note {
+  font-size: rem(13);
+  color: $text-light;
+  line-height: 1.75;
+  margin: rem(12) 0 0;
+  padding-top: rem(12);
+  border-top: 1px solid $border-color;
+}
+
+// ========================================
+// ラジオボタンリスト
+// ========================================
+
+.c-line-account-list-main__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0 0 rem(24);
+  padding: 0;
+  list-style: none;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+}
+
+.c-line-account-list-main__item {
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.c-line-account-list-main__radio-label {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  min-height: rem(56);
+  padding: rem(12) rem(16);
+  cursor: pointer;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $bg-light;
+  }
+}
+
+.c-line-account-list-main__radio {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: $primary-color;
+}
+
+.c-line-account-list-main__member-info {
+  display: flex;
+  flex-direction: column;
+  gap: rem(2);
+}
+
+.c-line-account-list-main__member-code {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.5;
+}
+
+.c-line-account-list-main__member-name {
+  font-size: rem(13);
+  color: $text-light;
+  line-height: 1.5;
+}
+
+// ========================================
+// ボタンエリア
+// ========================================
+
+.c-line-account-list-main__actions {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+}
+
+// ========================================
+// ボタン
+// ========================================
+
+.c-line-account-list-main__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: rem(400);
+  min-height: rem(44);
+  margin: 0 auto;
+  padding: rem(8) rem(20);
+  border: 1px solid $primary-color;
+  border-radius: rem(22);
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  line-height: 1.5;
+  box-sizing: border-box;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &--submit {
+    background-color: $primary-color;
+    color: $color-white;
+    box-shadow: 0 rem(3) 0 $primary-shadow;
+
+    &:hover {
+      transform: translateY(rem(2));
+      box-shadow: 0 rem(1) 0 $primary-shadow;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-white;
+    color: $primary-color;
+    box-shadow: 0 rem(2) 0 $primary-color-dark;
+
+    &:hover {
+      transform: translateY(rem(2));
+      box-shadow: 0 0 0 $primary-color-dark;
+    }
+  }
+}

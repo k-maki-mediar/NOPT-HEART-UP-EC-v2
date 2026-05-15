@@ -1,0 +1,65 @@
+<section class="c-user-heading" aria-label="LINEログイン会員連携規約">
+  <div class="c-user-heading__inner">
+    <h1 class="c-user-heading__title">LINEログイン会員連携規約</h1>
+  </div>
+  <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
+</section>
+
+<div class="c-line-agreement-main">
+
+  <div class="c-line-agreement-main__card">
+
+    <form action="" method="post" novalidate>
+
+      <!-- ===== 注意事項ブロック ===== -->
+      <div class="c-line-agreement-main__notice">
+        <p class="c-line-agreement-main__notice-title">注意事項</p>
+        <div class="c-line-agreement-main__notice-body">
+          <p class="c-line-agreement-main__notice-paragraph">ご利用のサービスがLY Corporationの公式な配布元から提供されていることをご確認ください。公式な配布元以外が提供するサービスを利用して発生したいかなる損害について、本サービス提供者は一切の責任を負いません。</p>
+          <p class="c-line-agreement-main__notice-paragraph">本サービスに提供した個人情報および新たに取得される個人情報は、本サービス提供者の責任において取り扱われます。本サービスの利用規約やプライバシーポリシーについては、本サービス提供者にご確認ください。</p>
+          <p class="c-line-agreement-main__notice-paragraph">プロフィール情報とは、LINEで設定した名前、プロフィール画像（写真・動画）、ステータスメッセージ、LINEヤフー株式会社がサービス提供者ごとに一意に割り当てた内部識別子です。</p>
+          <p class="c-line-agreement-main__notice-paragraph">LINEヤフー共通利用規約に従い、著作権やプライバシーなどの第三者に権利が帰属するコンテンツが、LINEで設定した名前、プロフィール画像（写真・動画）、ステータスメッセージに無許諾で含まれていないことをご確認ください。</p>
+          <p class="c-line-agreement-main__notice-paragraph">権限の解除や編集は[設定]&gt;[アカウント]&gt;[連動アプリ]から行えます。</p>
+          <p class="c-line-agreement-main__notice-paragraph"><a href="#" class="c-line-agreement-main__notice-link">利用規約はこちら</a>、<a href="#" class="c-line-agreement-main__notice-link">プライバシーポリシーはこちら</a>をご覧ください。</p>
+          <p class="c-line-agreement-main__notice-paragraph">サービス提供先が所在する国・地域のパーソナルデータの保護に関する制度に関する情報は<a href="#" class="c-line-agreement-main__notice-link">こちら</a>をご覧ください。</p>
+          <p class="c-line-agreement-main__notice-paragraph">サービス提供者が講じている個人情報の保護措置に関する情報およびLINEヤフー株式会社が確認済みのサービス提供者の国・地域の一覧は<a href="#" class="c-line-agreement-main__notice-link">こちら</a>をご覧ください。</p>
+        </div>
+      </div>
+
+      <!-- ===== 同意チェックボックス ===== -->
+      <label class="c-line-agreement-main__agree-area" for="lineAgreementCheck">
+        <input type="checkbox" class="c-line-agreement-main__agree-checkbox js-line-agreement-check" id="lineAgreementCheck" name="agreementCheck" value="1">
+        <span class="c-line-agreement-main__agree-label">上記に同意する</span>
+      </label>
+
+      <!-- ===== ボタンエリア ===== -->
+      <div class="c-line-agreement-main__actions">
+        <button type="submit" class="c-line-agreement-main__btn c-line-agreement-main__btn--submit js-line-agreement-btn" name="submitAgreementButton" disabled>
+          規約に同意して連携
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- ===== 確認モーダル（別LINEIDで連携実施時のみ表示）===== -->
+<!-- 文言未確定・プレースホルダー -->
+<div class="c-line-agreement-modal js-line-agreement-modal" role="dialog" aria-modal="true" aria-labelledby="lineAgreementModalTitle">
+  <div class="c-line-agreement-modal__overlay js-line-agreement-modal-close" tabindex="-1" aria-label="モーダルを閉じる"></div>
+  <div class="c-line-agreement-modal__dialog">
+    <div class="c-line-agreement-modal__body">
+      <p class="c-line-agreement-modal__message" id="lineAgreementModalTitle">LINEアカウントとの連携を行います。<br>よろしいですか？</p>
+    </div>
+    <div class="c-line-agreement-modal__actions">
+      <button type="button" class="c-line-agreement-modal__btn c-line-agreement-modal__btn--primary js-line-agreement-modal-ok" name="lineModalOk">
+        連携する
+      </button>
+      <button type="button" class="c-line-agreement-modal__btn js-line-agreement-modal-close" name="lineModalCancel">
+        戻る
+      </button>
+    </div>
+  </div>
+</div>

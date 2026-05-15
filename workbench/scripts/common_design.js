@@ -2484,3 +2484,64 @@ $(function () {
     initPaymentMethodToggle();
   }
 })();
+
+// ========================================
+// LINE 連携規約 同意チェックボックス制御（U2011101）
+// ========================================
+(function () {
+  function initLineAgreement() {
+    var checkbox = document.querySelector('.js-line-agreement-check');
+    var submitBtn = document.querySelector('.js-line-agreement-btn');
+    var modal = document.querySelector('.js-line-agreement-modal');
+
+    if (!checkbox || !submitBtn) {
+      return;
+    }
+
+    // チェック状態に応じてボタン活性切替
+    function toggleSubmit() {
+      submitBtn.disabled = !checkbox.checked;
+    }
+
+    checkbox.addEventListener('change', toggleSubmit);
+    // 初期状態適用
+    toggleSubmit();
+
+    // モーダル制御（確認モーダルがある場合）
+    if (!modal) {
+      return;
+    }
+
+    var closeButtons = document.querySelectorAll('.js-line-agreement-modal-close');
+
+    function openModal() {
+      modal.classList.add('c-line-agreement-modal--open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('c-line-agreement-modal--open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    for (var i = 0; i < closeButtons.length; i++) {
+      closeButtons[i].addEventListener('click', closeModal);
+    }
+
+    // フォームsubmit時にモーダルを表示するケースはサーバーサイドで制御するため、
+    // デザイン確認用として手動トリガーを用意（data-modal-trigger 属性があれば開く）
+    var modalTrigger = document.querySelector('[data-modal-trigger="lineAgreement"]');
+    if (modalTrigger) {
+      modalTrigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal();
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLineAgreement);
+  } else {
+    initLineAgreement();
+  }
+})();

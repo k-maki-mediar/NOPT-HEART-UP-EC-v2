@@ -1,0 +1,204 @@
+<section class="c-guest-main c-customer-edit-main" aria-label="配送先住所登録">
+
+  <form action="" method="post" novalidate>
+
+    <!-- ===== 必須説明文 ===== -->
+    <p class="c-guest-main__required-note">
+      <span class="c-guest-main__required" aria-label="必須">必須</span> は必須入力項目です
+    </p>
+
+    <div class="c-guest-main__form-body">
+      <dl class="c-guest-main__form-table">
+
+        <!-- お届け先名 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            お届け先名<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <input type="text" class="c-guest-main__input" name="addressName"
+              maxlength="20" placeholder="例）会社" aria-label="お届け先名">
+          </dd>
+        </div>
+
+        <!-- 氏名 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            氏名<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <input type="text" class="c-guest-main__input" name="addressOwnerName"
+              maxlength="40" placeholder="例）山田　太郎" aria-label="氏名" autocomplete="name">
+          </dd>
+        </div>
+
+        <!-- 氏名カナ -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            氏名カナ<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <input type="text" class="c-guest-main__input" name="addressOwnerNameKana"
+              maxlength="42" placeholder="例）ヤマダ　タロウ" aria-label="氏名カナ">
+          </dd>
+        </div>
+
+        <!-- 郵便番号 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            郵便番号<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <div class="c-guest-main__postal-group">
+              <span class="c-guest-main__postal-mark" aria-hidden="true">〒</span>
+              <input type="text" class="c-guest-main__input c-guest-main__input--postal"
+                name="addressPostalCode"
+                maxlength="7" inputmode="numeric" placeholder="3306032"
+                aria-label="郵便番号（ハイフンなし7桁）" autocomplete="postal-code">
+              <button type="button" class="c-guest-main__btn c-guest-main__btn--search js-postal-search" data-target="address">
+                検索
+              </button>
+            </div>
+          </dd>
+        </div>
+
+        <!-- 都道府県 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            都道府県<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--prefecture">
+              <select class="c-detail-unit__select" name="addressPrefecture" autocomplete="address-level1" aria-label="都道府県">
+                <option value="">--------</option>
+                <option value="01">北海道</option>
+                <option value="02">青森県</option>
+                <option value="03">岩手県</option>
+                <option value="04">宮城県</option>
+                <option value="05">秋田県</option>
+                <option value="06">山形県</option>
+                <option value="07">福島県</option>
+                <option value="08">茨城県</option>
+                <option value="09">栃木県</option>
+                <option value="10">群馬県</option>
+                <option value="11">埼玉県</option>
+                <option value="12">千葉県</option>
+                <option value="13">東京都</option>
+                <option value="14">神奈川県</option>
+                <option value="15">新潟県</option>
+                <option value="16">富山県</option>
+                <option value="17">石川県</option>
+                <option value="18">福井県</option>
+                <option value="19">山梨県</option>
+                <option value="20">長野県</option>
+                <option value="21">岐阜県</option>
+                <option value="22">静岡県</option>
+                <option value="23">愛知県</option>
+                <option value="24">三重県</option>
+                <option value="25">滋賀県</option>
+                <option value="26">京都府</option>
+                <option value="27">大阪府</option>
+                <option value="28">兵庫県</option>
+                <option value="29">奈良県</option>
+                <option value="30">和歌山県</option>
+                <option value="31">鳥取県</option>
+                <option value="32">島根県</option>
+                <option value="33">岡山県</option>
+                <option value="34">広島県</option>
+                <option value="35">山口県</option>
+                <option value="36">徳島県</option>
+                <option value="37">香川県</option>
+                <option value="38">愛媛県</option>
+                <option value="39">高知県</option>
+                <option value="40">福岡県</option>
+                <option value="41">佐賀県</option>
+                <option value="42">長崎県</option>
+                <option value="43">熊本県</option>
+                <option value="44">大分県</option>
+                <option value="45">宮崎県</option>
+                <option value="46">鹿児島県</option>
+                <option value="47">沖縄県</option>
+              </select>
+            </div>
+          </dd>
+        </div>
+
+        <!-- 市区郡 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            市区郡<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <input type="text" class="c-guest-main__input c-guest-main__input--address"
+              name="addressCity"
+              maxlength="15" autocomplete="address-level2" placeholder="例）さいたま市" aria-label="市区郡">
+          </dd>
+        </div>
+
+        <!-- 町村 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            町村<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <input type="text" class="c-guest-main__input c-guest-main__input--address"
+              name="addressTown"
+              maxlength="15" autocomplete="address-line1" placeholder="例）中央区新都心" aria-label="町村">
+          </dd>
+        </div>
+
+        <!-- 番地・ビル名など -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            番地・ビル名など<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <textarea class="c-guest-main__input c-guest-main__input--address"
+              name="addressBanchi" maxlength="60" autocomplete="address-line2" placeholder="例）11番地2丁目" rows="1"></textarea>
+          </dd>
+        </div>
+
+        <!-- その他 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">その他</dt>
+          <dd class="c-guest-main__field-body">
+            <textarea class="c-guest-main__input c-guest-main__input--address"
+              name="addressOther" maxlength="60" autocomplete="address-line3" placeholder="例）ランド・アクシス・タワー（明治安田生命さいたま新都心ビル）32階" rows="1"></textarea>
+          </dd>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">
+            電話番号<span class="c-guest-main__required" aria-label="必須">必須</span>
+          </dt>
+          <dd class="c-guest-main__field-body">
+            <div class="c-guest-main__phone-group" role="group" aria-label="電話番号">
+              <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+                name="addressPhone1"
+                maxlength="6" inputmode="numeric" aria-label="電話番号1（市外局番）" autocomplete="tel-local">
+              <span class="c-guest-main__phone-sep" aria-hidden="true">-</span>
+              <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+                name="addressPhone2"
+                maxlength="6" inputmode="numeric" aria-label="電話番号2（市内局番）">
+              <span class="c-guest-main__phone-sep" aria-hidden="true">-</span>
+              <input type="text" class="c-guest-main__input c-guest-main__input--phone"
+                name="addressPhone3"
+                maxlength="6" inputmode="numeric" aria-label="電話番号3（番号）">
+            </div>
+            <p class="c-guest-main__field-note">※自宅電話番号又は携帯電話番号を入力してください。</p>
+          </dd>
+        </div>
+
+      </dl>
+    </div>
+
+    <!-- ===== ボタンエリア（PCでも縦並び・最大幅400） ===== -->
+    <div class="c-shipping-main__actions c-shipping-main__actions--stacked">
+      <button type="submit" class="c-shipping-main__btn--next">次へ進む</button>
+      <a href="アドレス帳一覧.html" class="c-shipping-main__btn--back">前へ戻る</a>
+    </div>
+
+  </form>
+
+</section>

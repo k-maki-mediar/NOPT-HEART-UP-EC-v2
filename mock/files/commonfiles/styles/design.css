@@ -14300,31 +14300,30 @@
 }
 
 .c-line-account-list-main__description-note {
-  font-size: 0.8125rem;
-  color: #6B7280;
+  font-size: 0.875rem;
+  color: #333;
   line-height: 1.75;
-  margin: 0.75rem 0 0;
-  padding-top: 0.75rem;
-  border-top: 1px solid #e0e0e0;
+  margin: 2rem 0 0;
 }
 
 .c-line-account-list-main__list {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.75rem;
   margin: 0 0 1.5rem;
   padding: 0;
   list-style: none;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  overflow: hidden;
 }
 
 .c-line-account-list-main__item {
-  border-bottom: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  transition: border-color 0.15s ease-in-out;
 }
-.c-line-account-list-main__item:last-child {
-  border-bottom: none;
+.c-line-account-list-main__item:has(.c-line-account-list-main__radio:checked) {
+  border-color: #00387d;
 }
 
 .c-line-account-list-main__radio-label {
@@ -14332,7 +14331,7 @@
   align-items: center;
   gap: 0.75rem;
   min-height: 3.5rem;
-  padding: 0.75rem 1rem;
+  padding: 1rem;
   cursor: pointer;
   transition: background-color 0.15s ease-in-out;
 }

@@ -51,12 +51,10 @@
 }
 
 .c-line-account-list-main__description-note {
-  font-size: rem(13);
-  color: $text-light;
+  font-size: rem(14);
+  color: $text-color;
   line-height: 1.75;
-  margin: rem(12) 0 0;
-  padding-top: rem(12);
-  border-top: 1px solid $border-color;
+  margin: rem(32) 0 0;
 }
 
 // ========================================
@@ -66,20 +64,21 @@
 .c-line-account-list-main__list {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: rem(12);
   margin: 0 0 rem(24);
   padding: 0;
   list-style: none;
-  border: 1px solid $border-color;
-  border-radius: $border-radius-sm;
-  overflow: hidden;
 }
 
 .c-line-account-list-main__item {
-  border-bottom: 1px solid $border-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  background-color: $color-white;
+  overflow: hidden;
+  transition: border-color $transition-fast;
 
-  &:last-child {
-    border-bottom: none;
+  &:has(.c-line-account-list-main__radio:checked) {
+    border-color: $primary-color;
   }
 }
 
@@ -88,7 +87,7 @@
   align-items: center;
   gap: rem(12);
   min-height: rem(56);
-  padding: rem(12) rem(16);
+  padding: rem(16);
   cursor: pointer;
   transition: background-color $transition-fast;
 

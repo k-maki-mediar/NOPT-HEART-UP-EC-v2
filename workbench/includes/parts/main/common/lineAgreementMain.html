@@ -46,20 +46,19 @@
 </div>
 
 <!-- ===== 確認モーダル（別LINEIDで連携実施時のみ表示）===== -->
-<!-- 文言未確定・プレースホルダー -->
-<div class="c-line-agreement-modal js-line-agreement-modal" role="dialog" aria-modal="true" aria-labelledby="lineAgreementModalTitle">
-  <div class="c-line-agreement-modal__overlay js-line-agreement-modal-close" tabindex="-1" aria-label="モーダルを閉じる"></div>
-  <div class="c-line-agreement-modal__dialog">
-    <div class="c-line-agreement-modal__body">
-      <p class="c-line-agreement-modal__message" id="lineAgreementModalTitle">LINEアカウントとの連携を行います。<br>よろしいですか？</p>
+<div class="c-teiki-modal c-teiki-modal--line-confirm js-line-agreement-modal" role="dialog" aria-modal="true" aria-labelledby="lineAgreementModalTitle" hidden>
+  <div class="c-teiki-modal__overlay js-line-agreement-modal-close" aria-label="モーダルを閉じる"></div>
+  <div class="c-teiki-modal__inner c-teiki-modal__inner--line-confirm" tabindex="-1">
+    <button type="button" class="c-teiki-modal__close-btn js-line-agreement-modal-close" aria-label="閉じる">
+      <span class="c-teiki-modal__close-icon" aria-hidden="true"></span>
+    </button>
+    <div class="c-teiki-modal__line-confirm-body" id="lineAgreementModalTitle">
+      <p class="c-teiki-modal__line-confirm-text">連携を行おうとしているLINEアカウントは、ハートアップLINEミニアプリで、連携されているLINEアカウントと異なります。</p>
+      <p class="c-teiki-modal__line-confirm-text">このまま連携を行うと、ハートアップLINEミニアプリのLINEアカウントが変更されます。</p>
     </div>
-    <div class="c-line-agreement-modal__actions">
-      <button type="button" class="c-line-agreement-modal__btn c-line-agreement-modal__btn--primary js-line-agreement-modal-ok" name="lineModalOk">
-        連携する
-      </button>
-      <button type="button" class="c-line-agreement-modal__btn js-line-agreement-modal-close" name="lineModalCancel">
-        戻る
-      </button>
+    <div class="c-teiki-modal__skip-footer c-teiki-modal__skip-footer--line-confirm">
+      <button type="button" class="c-teiki-modal__skip-back-btn js-line-agreement-modal-close" name="lineModalCancel">戻る</button>
+      <button type="button" class="c-teiki-modal__skip-submit-btn js-line-agreement-modal-ok" name="lineModalOk">連携する</button>
     </div>
   </div>
 </div>

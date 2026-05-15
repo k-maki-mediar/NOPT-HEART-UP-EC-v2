@@ -2513,14 +2513,15 @@ $(function () {
     }
 
     var closeButtons = document.querySelectorAll('.js-line-agreement-modal-close');
+    var okButton = document.querySelector('.js-line-agreement-modal-ok');
 
     function openModal() {
-      modal.classList.add('c-line-agreement-modal--open');
+      modal.hidden = false;
       modal.setAttribute('aria-hidden', 'false');
     }
 
     function closeModal() {
-      modal.classList.remove('c-line-agreement-modal--open');
+      modal.hidden = true;
       modal.setAttribute('aria-hidden', 'true');
     }
 
@@ -2528,13 +2529,19 @@ $(function () {
       closeButtons[i].addEventListener('click', closeModal);
     }
 
-    // フォームsubmit時にモーダルを表示するケースはサーバーサイドで制御するため、
-    // デザイン確認用として手動トリガーを用意（data-modal-trigger 属性があれば開く）
-    var modalTrigger = document.querySelector('[data-modal-trigger="lineAgreement"]');
-    if (modalTrigger) {
-      modalTrigger.addEventListener('click', function (e) {
-        e.preventDefault();
-        openModal();
+    // 「規約に同意して連携」ボタン押下時にモーダルを表示
+    submitBtn.addEventListener('click', function (e) {
+      if (submitBtn.disabled) {
+        return;
+      }
+      e.preventDefault();
+      openModal();
+    });
+
+    // モーダル内「連携する」ボタン押下時の挙動（デザイン確認用：モーダルを閉じる）
+    if (okButton) {
+      okButton.addEventListener('click', function () {
+        closeModal();
       });
     }
   }

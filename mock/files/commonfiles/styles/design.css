@@ -14065,11 +14065,27 @@
   margin-top: 0.5rem;
 }
 
+.c-card-add-main .c-payment-main__form-input {
+  height: auto;
+  min-height: 2.75rem;
+  padding: 0.625rem 1rem;
+  font-weight: 500;
+}
+
+.c-card-add-main__security-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
 .c-card-add-main__security-note {
   font-size: 0.75rem;
   color: #6B7280;
   line-height: 1.6;
-  margin: 0.5rem 0 0;
+  margin: 0;
+  flex: 1;
+  min-width: 12.5rem;
 }
 
 .c-card-add-main__regular-notice {

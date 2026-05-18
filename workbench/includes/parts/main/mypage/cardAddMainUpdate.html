@@ -129,15 +129,17 @@
         <span class="c-payment-main__form-required">必須</span>
       </div>
       <div class="c-payment-main__form-field-body">
-        <input type="text"
-               name="securityCode"
-               class="c-payment-main__form-input c-payment-main__form-input--short"
-               maxlength="4"
-               inputmode="numeric"
-               autocomplete="cc-csc"
-               value="123">
-        <!-- セキュリティコード説明文（固定常時表示） -->
-        <p class="c-card-add-main__security-note">※セキュリティコードとは、クレジットカードに記載された3桁もしくは4桁の数字を指します</p>
+        <div class="c-card-add-main__security-row">
+          <input type="text"
+                 name="securityCode"
+                 class="c-payment-main__form-input c-payment-main__form-input--short"
+                 maxlength="4"
+                 inputmode="numeric"
+                 autocomplete="cc-csc"
+                 value="123">
+          <!-- セキュリティコード説明文（固定常時表示） -->
+          <p class="c-card-add-main__security-note">※セキュリティコードとは、クレジットカードに記載された3桁もしくは4桁の数字を指します</p>
+        </div>
       </div>
     </div>
 

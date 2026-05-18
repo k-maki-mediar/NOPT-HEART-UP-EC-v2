@@ -61,15 +61,34 @@
   margin-top: rem(8);
 }
 
+// クレジットカード情報登録の入力欄は guest-main の入力欄と同サイズに揃える
+.c-card-add-main {
+  .c-payment-main__form-input {
+    height: auto;
+    min-height: rem(44);
+    padding: rem(10) rem(16);
+    font-weight: $font-weight-medium;
+  }
+}
+
 // ========================================
-// セキュリティコード説明文（固定常時表示）
+// セキュリティコード（入力欄 + 説明文 を横並び）
 // ========================================
+
+.c-card-add-main__security-row {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  flex-wrap: wrap;
+}
 
 .c-card-add-main__security-note {
   font-size: rem(12);
   color: $text-light;
   line-height: 1.6;
-  margin: rem(8) 0 0;
+  margin: 0;
+  flex: 1;
+  min-width: rem(200);
 }
 
 // ========================================

@@ -1,0 +1,116 @@
+// ========================================
+// Card Add Main（クレジットカード情報登録）
+// 格納先HTML: workbench/includes/parts/main/mypage/cardAddMain.html
+// BEM: .c-card-add-main
+// 入力フォームは _paymentMain.scss の .c-payment-main__form-field 系を流用
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// 全体ラッパー
+// ========================================
+
+.c-card-add-main {
+  max-width: rem(640);
+  margin: 0 auto;
+  padding: 0 0 rem(48);
+}
+
+// ========================================
+// ヘッダー行（支払方法名称 + ブランドロゴ）
+// ========================================
+
+.c-card-add-main__header {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  padding: rem(16) 0 rem(8);
+}
+
+.c-card-add-main__payment-name {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.c-card-add-main__brand-logo {
+  height: rem(20);
+  width: auto;
+}
+
+// ========================================
+// フォームエリア（form-field 系クラスは _paymentMain.scss から流用）
+// ========================================
+
+.c-card-add-main__form {
+  border: 1px solid $border-color-dark;
+  margin-top: rem(8);
+}
+
+// ========================================
+// セキュリティコード説明文（固定常時表示）
+// ========================================
+
+.c-card-add-main__security-note {
+  font-size: rem(12);
+  color: $text-light;
+  line-height: 1.6;
+  margin: rem(8) 0 0;
+}
+
+// ========================================
+// 定期便注意文（更新モード・定期便使用カードのみ）
+// ========================================
+
+.c-card-add-main__regular-notice {
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
+  margin-bottom: rem(8);
+}
+
+.c-card-add-main__regular-notice-text {
+  font-size: rem(12);
+  color: $accent-red;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// ========================================
+// 登録完了モードの確認値テキスト
+// ========================================
+
+.c-card-add-main__confirm-value {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// ========================================
+// フッターボタンエリア
+// ========================================
+
+.c-card-add-main__actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: rem(12);
+  padding: rem(24) 0 rem(8);
+
+  @include tablet-up {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// 完了モード: 中央寄せ（ボタン1つ）
+.c-card-add-main__actions--complete {
+  @include tablet-up {
+    justify-content: center;
+  }
+}

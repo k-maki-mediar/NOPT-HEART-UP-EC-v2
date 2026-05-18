@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja" class="c-html">
+<head>
+@@include('../../includes/head.html', {"title": "クレジットカード情報登録"})
+</head>
+<body class="c-body">
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageHeaderMenuLoggedIn.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageSideNavLoggedIn.html')
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              <div class="c-main c-main--logged-in">
+                @@include('../../includes/parts/general/topicPath.html')
+                @@include('../../includes/parts/main/mypage/cardAddMainUpdate.html')
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooter.html')
+            </div>
+          </div>
+          <div class="c-footer-sticky-wrap">
+            <div class="wsparts-include">
+              @@include('../../includes/parts/general/pageFooterMenu.html')
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

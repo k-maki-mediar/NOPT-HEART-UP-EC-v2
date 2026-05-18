@@ -2631,3 +2631,54 @@ $(function () {
     initLineAccountSelect();
   }
 })();
+
+/* ========================================
+ * クレジットカード情報登録：入力バリデーション
+ * 「登録する」ボタン押下時に未入力項目を c-message-area にエラー表示
+ * （cardAddMain / cardAddMainUpdate のみ対象。完了モードは送信ボタンなしのため対象外）
+ * ======================================== */
+$(function () {
+  const $cardAdd = $('.c-card-add-main');
+  if (!$cardAdd.length) { return; }
+
+  const $submitBtn = $cardAdd.find('.c-guest-main__btn--next');
+  if (!$submitBtn.length) { return; }
+
+  const $messageArea = $cardAdd.prevAll('.c-message-area').first();
+  if (!$messageArea.length) { return; }
+
+  $submitBtn.on('click', function (e) {
+    e.preventDefault();
+
+    const errors = [];
+    const $name = $cardAdd.find('input[name="cardholderName"]');
+    const $cardNo = $cardAdd.find('input[name="cardNo"]');
+    const $monthSel = $cardAdd.find('select[name="cardExpirationMonth"]');
+    const $yearSel = $cardAdd.find('select[name="cardExpirationYear"]');
+    const $sec = $cardAdd.find('input[name="securityCode"]');
+
+    if (!$.trim($name.val() || '')) {
+      errors.push('クレジットカード名義人を入力してください。');
+    }
+    if (!$.trim($cardNo.val() || '')) {
+      errors.push('クレジットカード番号を入力してください。');
+    }
+    if (!$monthSel.val() || !$yearSel.val()) {
+      errors.push('クレジットカードの有効期限を選択してください。');
+    }
+    if (!$.trim($sec.val() || '')) {
+      errors.push('クレジットカードのセキュリティコードを入力してください。');
+    }
+
+    if (errors.length > 0) {
+      const html = '<p class="c-message-area__text c-message-area__text--error">' +
+        errors.join('<br>') + '</p>';
+      $messageArea.html(html);
+      setTimeout(function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 0);
+    } else {
+      $messageArea.empty();
+    }
+  });
+});

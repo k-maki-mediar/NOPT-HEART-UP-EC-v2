@@ -2552,3 +2552,41 @@ $(function () {
     initLineAgreement();
   }
 })();
+
+// ========================================
+// LINE ログイン会員選択 未選択バリデーション（U2011103）
+// ========================================
+(function () {
+  function initLineAccountSelect() {
+    var form = document.querySelector('.js-line-account-form');
+    var errorBox = document.querySelector('.js-line-account-error');
+
+    if (!form || !errorBox) {
+      return;
+    }
+
+    form.addEventListener('submit', function (e) {
+      var checked = form.querySelector('input[name="customerCode"]:checked');
+      if (checked) {
+        errorBox.hidden = true;
+        return;
+      }
+      e.preventDefault();
+      errorBox.hidden = false;
+    });
+
+    // 会員を選択したらエラーを自動で消す
+    var radios = form.querySelectorAll('input[name="customerCode"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function () {
+        errorBox.hidden = true;
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLineAccountSelect);
+  } else {
+    initLineAccountSelect();
+  }
+})();

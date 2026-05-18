@@ -2213,42 +2213,9 @@
 
 // ========================================
 // お届け先選択モーダル
+// 基底 .c-teiki-modal / __overlay / __inner は components/_teikiModal.scss に定義
+// ここではページ固有の中身（タイトル、リスト、住所カード等）のみ定義
 // ========================================
-.c-teiki-modal {
-  position: fixed;
-  inset: 0;
-  z-index: $z-index-modal;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &[hidden] {
-    display: none;
-  }
-}
-
-.c-teiki-modal__overlay {
-  position: absolute;
-  inset: 0;
-  background-color: $overlay-dark;
-  cursor: pointer;
-}
-
-.c-teiki-modal__inner {
-  position: relative;
-  z-index: $z-index-content;
-  background-color: $color-white;
-  border-radius: rem(12);
-  padding: rem(24) rem(20);
-  width: calc(100% - rem(32));
-  max-width: rem(560);
-  max-height: 90vh;
-  overflow-y: auto;
-
-  @include pc {
-    padding: rem(32) rem(32);
-  }
-}
 
 .c-teiki-modal__title {
   font-size: rem(18);
@@ -2401,47 +2368,7 @@
   border-radius: rem(8);
 }
 
-.c-teiki-modal__close-btn {
-  position: absolute;
-  top: rem(6);
-  right: rem(6);
-  width: rem(44);
-  height: rem(44);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.c-teiki-modal__close-icon {
-  position: relative;
-  display: block;
-  width: rem(16);
-  height: rem(16);
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: rem(16);
-    height: rem(1.5);
-    background-color: $primary-color;
-    border-radius: rem(1);
-  }
-
-  &::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-
-  &::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-}
+// .c-teiki-modal__close-btn / __close-icon は components/_teikiModal.scss に移管
 
 .c-teiki-modal__skip-title {
   font-size: rem(16);
@@ -2483,58 +2410,7 @@
   margin: 0;
 }
 
-.c-teiki-modal__skip-footer {
-  display: flex;
-  flex-direction: column;
-  gap: rem(12);
-  max-width: rem(297);
-  margin: 0 auto;
-}
-
-.c-teiki-modal__skip-submit-btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: rem(46);
-  background-color: $accent-red;
-  color: $color-white;
-  border: none;
-  border-radius: rem(23);
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  letter-spacing: rem(0.56);
-  cursor: pointer;
-  box-shadow: 0 rem(2) 0 0 $accent-red-dark;
-  transition: box-shadow $transition-fast;
-
-  &:hover {
-    box-shadow: 0 0 0 0 $accent-red-dark;
-  }
-}
-
-.c-teiki-modal__skip-back-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: rem(46);
-  background-color: $color-white;
-  color: $accent-red;
-  border: 1px solid $accent-red;
-  border-radius: rem(23);
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  letter-spacing: rem(0.56);
-  cursor: pointer;
-  box-shadow: 0 rem(2) 0 0 $accent-red;
-  transition: box-shadow $transition-fast;
-
-  &:hover {
-    box-shadow: 0 0 0 0 $accent-red;
-  }
-}
+// .c-teiki-modal__skip-footer / __skip-submit-btn / __skip-back-btn は components/_teikiModal.scss に移管
 
 /* ========================================
  * 休止・解約理由アンケートモーダル

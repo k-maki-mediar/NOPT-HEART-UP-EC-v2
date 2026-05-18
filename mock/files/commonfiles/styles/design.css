@@ -14075,10 +14075,16 @@
 
 .c-favorite-list-main__actions {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   gap: 0.5rem;
-  align-items: center;
+  align-items: stretch;
   padding: 0 0.875rem 0.875rem;
+}
+@media (min-width: 992px) {
+  .c-favorite-list-main__actions {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .c-favorite-list-main__btn-detail {

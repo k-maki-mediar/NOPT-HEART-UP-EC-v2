@@ -81,10 +81,15 @@
 
 .c-favorite-list-main__actions {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   gap: rem(8);
-  align-items: center;
+  align-items: stretch;
   padding: 0 rem(14) rem(14);
+
+  @include pc {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 // ========================================

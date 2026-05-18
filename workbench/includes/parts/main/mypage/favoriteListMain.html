@@ -10,8 +10,8 @@
   <!-- コントロール行 -->
   <div class="c-favorite-list-main__control">
     <p class="c-list-main__count">
-      全<span class="c-list-main__count-total">5</span>件
-      ｜ <span class="c-list-main__count-range">1件〜5件</span>
+      全<span class="c-list-main__count-total">8</span>件
+      ｜ <span class="c-list-main__count-range">1件〜8件</span>
     </p>
     <div class="c-favorite-list-main__control-right">
       <p class="c-list-main__tax-note">※は軽減税率対象品目</p>
@@ -36,7 +36,7 @@
   <!-- 商品グリッド -->
   <ul class="c-list-main__grid" aria-label="お気に入り商品一覧">
 
-    <!-- ▼ 商品行パターン1: 通常在庫あり（価格 + 在庫コメント + 削除 + 詳細） -->
+    <!-- 商品カード 1 -->
     <li class="c-list-main__grid-item">
       <article class="c-product-card">
         <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
@@ -44,32 +44,129 @@
             class="c-product-card__img"
             onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
             src="../../../files/commonfiles/images/product-sample-01.png"
-            alt="サンプル商品A（在庫あり）"
+            alt="ロート1DAYフレッシュビューエアリッチ 乱視用"
             width="164"
             height="123"
           >
         </a>
         <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">乱視用</span>
+            </li>
+          </ul>
           <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <p class="c-product-card__brand">ロート</p>
           <h2 class="c-product-card__name">
-            <a href="#" class="c-product-card__name-link">サンプル商品A（在庫あり）</a>
+            <a href="#" class="c-product-card__name-link">ロート1DAYフレッシュビューエアリッチ 乱視用</a>
           </h2>
+          <p class="c-product-card__desc">高含水レンズで1日中快適なつけ心地を実現した乱視矯正コンタクトレンズです。</p>
           <div class="c-product-card__price-area">
             <p class="c-product-card__price">
               <span class="c-product-card__price-value">1,234</span>
-              <span class="c-product-card__price-unit">円(税込)</span>
+              <span class="c-product-card__price-unit">円</span>
             </p>
           </div>
-          <p class="c-favorite-list-main__stock">在庫あり</p>
         </div>
         <div class="c-favorite-list-main__actions">
-          <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Aをお気に入りから削除">削除</button>
+          <button type="button" class="c-cart-main__item-delete" aria-label="ロート1DAYフレッシュビューエアリッチ 乱視用をお気に入りから削除">削除</button>
           <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
         </div>
       </article>
     </li>
 
-    <!-- ▼ 商品行パターン2: 在庫なし（価格 + 在庫なしバッジ + 削除のみ） -->
+    <!-- 商品カード 2（特別価格パターン） -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+            src="../../../files/commonfiles/images/product-sample-02.png"
+            alt="ワンデーアキュビュー モイスト 乱視用"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">らくとく</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <p class="c-product-card__brand">ジョンソン＆ジョンソン</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">ワンデーアキュビュー モイスト 乱視用</a>
+          </h2>
+          <p class="c-product-card__desc">独自のLAGRILACH技術で瞳の乾燥を防ぎ、快適な装用感を1日中キープします。</p>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price c-product-card__price--strike">
+              <span class="c-product-card__price-value">2,500</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+            <p class="c-product-card__price c-product-card__price--special">
+              <span class="c-product-card__price-value">1,980</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+          </div>
+        </div>
+        <div class="c-favorite-list-main__actions">
+          <button type="button" class="c-cart-main__item-delete" aria-label="ワンデーアキュビュー モイスト 乱視用をお気に入りから削除">削除</button>
+          <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 3 -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+            src="../../../files/commonfiles/images/product-sample-03.png"
+            alt="メニコン1DAY メニフォーカル"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">遠近両用</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <p class="c-product-card__brand">メニコン</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">メニコン1DAY メニフォーカル</a>
+          </h2>
+          <p class="c-product-card__desc">遠近両用コンタクトレンズ。手元から遠くまで自然な見え方を実現します。</p>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">3,200</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+          </div>
+        </div>
+        <div class="c-favorite-list-main__actions">
+          <button type="button" class="c-cart-main__item-delete" aria-label="メニコン1DAY メニフォーカルをお気に入りから削除">削除</button>
+          <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 4（在庫なし・詳細ボタンなし） -->
     <li class="c-list-main__grid-item">
       <article class="c-product-card">
         <div class="c-product-card__img-link">
@@ -78,31 +175,37 @@
             class="c-product-card__img"
             onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
             src="../../../files/commonfiles/images/product-sample-04.png"
-            alt="サンプル商品B（在庫なし）"
+            alt="シード1dayPure EDOF"
             width="164"
             height="123"
           >
         </div>
         <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+          </ul>
           <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <p class="c-product-card__brand">シード</p>
           <h2 class="c-product-card__name">
-            <a href="#" class="c-product-card__name-link">サンプル商品B（在庫なし）</a>
+            <a href="#" class="c-product-card__name-link">シード1dayPure EDOF</a>
           </h2>
+          <p class="c-product-card__desc">拡張焦点深度型コンタクトレンズで、広い焦点範囲と快適な装用感を両立します。</p>
           <div class="c-product-card__price-area">
             <p class="c-product-card__price">
-              <span class="c-product-card__price-value">2,980</span>
-              <span class="c-product-card__price-unit">円(税込)</span>
+              <span class="c-product-card__price-value">2,800</span>
+              <span class="c-product-card__price-unit">円</span>
             </p>
           </div>
-          <p class="c-favorite-list-main__stock c-favorite-list-main__stock--out-of-stock">在庫切れ</p>
         </div>
         <div class="c-favorite-list-main__actions">
-          <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Bをお気に入りから削除">削除</button>
+          <button type="button" class="c-cart-main__item-delete" aria-label="シード1dayPure EDOFをお気に入りから削除">削除</button>
         </div>
       </article>
     </li>
 
-    <!-- ▼ 商品行パターン3: 販売停止中（お知らせラベル + 削除のみ・価格非表示） -->
+    <!-- 商品カード 5 -->
     <li class="c-list-main__grid-item">
       <article class="c-product-card">
         <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
@@ -110,90 +213,155 @@
             class="c-product-card__img"
             onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
             src="../../../files/commonfiles/images/product-sample-05.png"
-            alt="サンプル商品C（販売停止中）"
+            alt="バイオトゥルー ワンデー 乱視用"
             width="164"
             height="123"
           >
         </a>
         <div class="c-product-card__body">
-          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true">
-            <li class="c-product-card__notice-label">[販売停止中]</li>
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
           </ul>
-          <h2 class="c-product-card__name">
-            <a href="#" class="c-product-card__name-link">サンプル商品C（販売停止中）</a>
-          </h2>
-        </div>
-        <div class="c-favorite-list-main__actions">
-          <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Cをお気に入りから削除">削除</button>
-        </div>
-      </article>
-    </li>
-
-    <!-- ▼ 商品行パターン4: 特別価格（通常価格打ち消し + 特別価格 + 削除 + 詳細） -->
-    <li class="c-list-main__grid-item">
-      <article class="c-product-card">
-        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
-          <img
-            class="c-product-card__img"
-            onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
-            src="../../../files/commonfiles/images/product-sample-02.png"
-            alt="サンプル商品D（特別価格）"
-            width="164"
-            height="123"
-          >
-        </a>
-        <div class="c-product-card__body">
           <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <p class="c-product-card__brand">ボシュロム</p>
           <h2 class="c-product-card__name">
-            <a href="#" class="c-product-card__name-link">サンプル商品D（特別価格）</a>
+            <a href="#" class="c-product-card__name-link">バイオトゥルー ワンデー 乱視用</a>
           </h2>
+          <p class="c-product-card__desc">ヒアルロン酸を配合した高含水素材で終日潤いを保ちます。</p>
           <div class="c-product-card__price-area">
-            <p class="c-product-card__price c-product-card__price--strike">
-              <span class="c-product-card__price-value">2,500</span>
-              <span class="c-product-card__price-unit">円(税込)</span>
-            </p>
-            <p class="c-product-card__price c-product-card__price--special">
-              <span class="c-product-card__price-value">1,980</span>
-              <span class="c-product-card__price-unit">円(税込)</span>
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">2,100</span>
+              <span class="c-product-card__price-unit">円</span>
             </p>
           </div>
-          <p class="c-favorite-list-main__stock">在庫あり</p>
         </div>
         <div class="c-favorite-list-main__actions">
-          <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Dをお気に入りから削除">削除</button>
+          <button type="button" class="c-cart-main__item-delete" aria-label="バイオトゥルー ワンデー 乱視用をお気に入りから削除">削除</button>
           <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
         </div>
       </article>
     </li>
 
-    <!-- ▼ 商品行パターン5: 軽減税率対象（税区分末尾に「※」付与） -->
+    <!-- 商品カード 6 -->
     <li class="c-list-main__grid-item">
       <article class="c-product-card">
         <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
           <img
             class="c-product-card__img"
             onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
-            src="../../../files/commonfiles/images/product-sample-03.png"
-            alt="サンプル商品E（軽減税率対象）"
+            src="../../../files/commonfiles/images/product-sample-06.jpg"
+            alt="デイリーズ アクア コンフォートプラス 乱視用"
             width="164"
             height="123"
           >
         </a>
         <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">乱視用</span>
+            </li>
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">らくとく</span>
+            </li>
+          </ul>
           <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <p class="c-product-card__brand">アルコン</p>
           <h2 class="c-product-card__name">
-            <a href="#" class="c-product-card__name-link">サンプル商品E（軽減税率対象）</a>
+            <a href="#" class="c-product-card__name-link">デイリーズ アクア コンフォートプラス 乱視用</a>
           </h2>
+          <p class="c-product-card__desc">独自のSmartSurface技術で常に潤いに満ちた快適な装用感を実現。</p>
           <div class="c-product-card__price-area">
             <p class="c-product-card__price">
-              <span class="c-product-card__price-value">980</span>
-              <span class="c-product-card__price-unit">円(税込 軽減税率8%)※</span>
+              <span class="c-product-card__price-value">2,380</span>
+              <span class="c-product-card__price-unit">円</span>
             </p>
           </div>
-          <p class="c-favorite-list-main__stock">在庫あり</p>
         </div>
         <div class="c-favorite-list-main__actions">
-          <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Eをお気に入りから削除">削除</button>
+          <button type="button" class="c-cart-main__item-delete" aria-label="デイリーズ アクア コンフォートプラス 乱視用をお気に入りから削除">削除</button>
+          <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 7 -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+            src="../../../files/commonfiles/images/product-sample-07.png"
+            alt="クーパービジョン マイデイ"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <p class="c-product-card__brand">クーパービジョン</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">クーパービジョン マイデイ</a>
+          </h2>
+          <p class="c-product-card__desc">水分を豊富に保持するSmart Water Technology搭載のシリコーンハイドロゲルレンズ。</p>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">3,600</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+          </div>
+        </div>
+        <div class="c-favorite-list-main__actions">
+          <button type="button" class="c-cart-main__item-delete" aria-label="クーパービジョン マイデイをお気に入りから削除">削除</button>
+          <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
+        </div>
+      </article>
+    </li>
+
+    <!-- 商品カード 8 -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
+            onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
+            src="../../../files/commonfiles/images/product-sample-08.png"
+            alt="ファインUV プラス"
+            width="164"
+            height="123"
+          >
+        </a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__icons" aria-label="商品アイコン">
+            <li class="c-product-card__icon-item">
+              <span class="c-product-card__icon">1DAY</span>
+            </li>
+          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <p class="c-product-card__brand">シード</p>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">ファインUV プラス</a>
+          </h2>
+          <p class="c-product-card__desc">UV吸収剤配合で紫外線をカット。日常的なUVケアを手軽に行えるコンタクトレンズ。</p>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">1,800</span>
+              <span class="c-product-card__price-unit">円</span>
+            </p>
+          </div>
+        </div>
+        <div class="c-favorite-list-main__actions">
+          <button type="button" class="c-cart-main__item-delete" aria-label="ファインUV プラスをお気に入りから削除">削除</button>
           <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
         </div>
       </article>

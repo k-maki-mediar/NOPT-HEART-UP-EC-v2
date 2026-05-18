@@ -14069,6 +14069,10 @@
   font-weight: 500;
 }
 
+.c-favorite-list-main .c-product-card__sold-out-badge--stopped {
+  background-color: #d42f2f;
+}
+
 .c-favorite-list-main__actions {
   display: flex;
   flex-direction: row;

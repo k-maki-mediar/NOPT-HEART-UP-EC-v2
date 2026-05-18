@@ -14131,22 +14131,6 @@
   box-shadow: 0 0.0625rem 0 #3f4651;
 }
 
-.c-favorite-list-main__footer {
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-  margin-top: 0.5rem;
-}
-
-.c-favorite-list-main__btn-back {
-  width: 100%;
-}
-@media (min-width: 992px) {
-  .c-favorite-list-main__btn-back {
-    max-width: 25rem;
-  }
-}
-
 .c-card-add-main {
   max-width: 70.625rem;
   margin: 0 auto;

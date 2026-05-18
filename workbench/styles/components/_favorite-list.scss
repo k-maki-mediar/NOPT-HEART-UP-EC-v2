@@ -147,21 +147,3 @@
   }
 }
 
-// ========================================
-// 下部フッター（前へ戻るボタン）
-// ========================================
-
-.c-favorite-list-main__footer {
-  display: flex;
-  justify-content: center;
-  padding-top: rem(32);
-  margin-top: rem(8);
-}
-
-.c-favorite-list-main__btn-back {
-  width: 100%;
-
-  @include pc {
-    max-width: rem(400);
-  }
-}

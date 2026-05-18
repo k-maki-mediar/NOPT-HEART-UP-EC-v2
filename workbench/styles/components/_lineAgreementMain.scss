@@ -209,5 +209,10 @@
     flex: 1;
     width: auto;
     border-radius: rem(6);
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      transform: translateY(rem(2));
+    }
   }
 }

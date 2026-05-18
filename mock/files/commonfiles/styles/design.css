@@ -14744,6 +14744,165 @@
   box-shadow: 0 0 0 #002a5e;
 }
 
+.c-prescription-edit-main__desc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #333;
+  margin: 1rem 1rem 0.5rem;
+}
+@media (min-width: 768px) {
+  .c-prescription-edit-main__desc {
+    margin: 1rem 2rem 0.5rem;
+  }
+}
+
+.c-prescription-edit-main__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0 1rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .c-prescription-edit-main__links {
+    margin: 0 2rem 1.5rem;
+  }
+}
+
+.c-prescription-edit-main__link {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #0087cb;
+  text-decoration: underline;
+  min-height: 2.75rem;
+  line-height: 2.75rem;
+}
+.c-prescription-edit-main__link:hover {
+  text-decoration: none;
+}
+
+.c-prescription-edit-main__upload-area {
+  margin: 0 1rem 1.5rem;
+  padding: 1rem;
+  background-color: #f4f8fc;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+@media (min-width: 768px) {
+  .c-prescription-edit-main__upload-area {
+    margin: 0 2rem 1.5rem;
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+.c-prescription-edit-main__upload-desc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #333;
+  margin: 0 0 0.5rem;
+}
+
+.c-prescription-edit-main__upload-required {
+  margin: 0 0 0.75rem;
+}
+
+.c-prescription-edit-main__upload-control {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.c-prescription-edit-main__upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
+  border: 2px solid #00387d;
+  border-radius: 1.375rem;
+  background-color: #FFFFFF;
+  color: #00387d;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.c-prescription-edit-main__upload-btn:hover {
+  background-color: #00387d;
+  color: #FFFFFF;
+}
+
+.c-prescription-edit-main__file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c-prescription-edit-main__file-none {
+  font-size: 0.875rem;
+  color: #999;
+  margin: 0;
+}
+
+.c-prescription-edit-main__file-name {
+  font-size: 0.875rem;
+  color: #333;
+  word-break: break-all;
+  margin: 0;
+}
+
+.c-prescription-edit-main__enquete {
+  margin: 0 1rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .c-prescription-edit-main__enquete {
+    margin: 0 2rem 1.5rem;
+  }
+}
+
+.c-prescription-edit-main__enquete-desc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #333;
+  margin: 0 0 1rem;
+}
+
+.c-prescription-edit-main__enquete-item {
+  margin-bottom: 1.25rem;
+}
+.c-prescription-edit-main__enquete-item:last-child {
+  margin-bottom: 0;
+}
+
+.c-prescription-edit-main__enquete-question {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 0.5rem;
+}
+
+.c-prescription-confirm-main__enquete {
+  margin-top: 0.5rem;
+}
+
+.c-prescription-confirm-main__enquete-desc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #333;
+  margin: 0 1rem 0.5rem;
+}
+@media (min-width: 768px) {
+  .c-prescription-confirm-main__enquete-desc {
+    margin: 0 2rem 0.5rem;
+  }
+}
+
 .c-main--logged-in .c-campaign-topics__deco-rect {
   background-color: #ffdedd;
 }

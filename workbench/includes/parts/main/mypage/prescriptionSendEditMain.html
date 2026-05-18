@@ -1,0 +1,152 @@
+<section class="c-guest-main c-prescription-edit-main" aria-label="処方箋送信フォーム入力">
+
+  <form action="" method="post" novalidate>
+
+    <!-- ===== 概要説明 ===== -->
+    <p class="c-prescription-edit-main__desc">
+      処方箋をアップロードしてください。<br>
+      ※ご登録の会員情報を元に処方箋を送信します。内容に変更がある場合は「会員登録内容変更」よりご変更ください。
+    </p>
+
+    <!-- ===== リンク群 ===== -->
+    <div class="c-prescription-edit-main__links">
+      <a href="#" class="c-prescription-edit-main__link">会員登録内容変更</a>
+      <a href="#" class="c-prescription-edit-main__link">処方箋の登録方法について</a>
+    </div>
+
+    <!-- ===== 会員情報表示エリア（読み取り専用） ===== -->
+    <div class="c-guest-main__form-body">
+      <dl class="c-guest-main__form-table">
+
+        <!-- お名前 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">お名前</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">山田 太郎</dd>
+        </div>
+
+        <!-- お名前（フリガナ） -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">お名前（フリガナ）</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">ヤマダ タロウ</dd>
+        </div>
+
+        <!-- 郵便番号 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">郵便番号</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">〒330-6032</dd>
+        </div>
+
+        <!-- 住所 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">住所</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">埼玉県さいたま市中央区新都心11番地2丁目</dd>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">電話番号</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">090-1234-5678</dd>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">メールアドレス</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">yamada.taro@example.com</dd>
+        </div>
+
+        <!-- 性別 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">性別</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">男性</dd>
+        </div>
+
+        <!-- 生年月日 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">生年月日</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">1980年1月1日</dd>
+        </div>
+
+      </dl>
+    </div>
+
+    <!-- ===== 処方箋ファイル添付エリア ===== -->
+    <div class="c-prescription-edit-main__upload-area">
+      <p class="c-prescription-edit-main__upload-desc">
+        処方箋のファイルを添付してください。<br>
+        ※対応ファイル形式：PDF、GIF、JPEG、PNG（最大25MB）
+      </p>
+      <p class="c-prescription-edit-main__upload-required">
+        <span class="c-guest-main__required" aria-label="必須">必須</span>
+      </p>
+      <div class="c-prescription-edit-main__upload-control">
+        <label class="c-prescription-edit-main__upload-btn" for="prescriptionFile">
+          処方箋ファイル添付
+          <input type="file"
+                 id="prescriptionFile"
+                 name="prescriptionFile"
+                 accept=".pdf,.gif,.jpg,.jpeg,.png"
+                 class="c-prescription-edit-main__file-input"
+                 aria-label="処方箋ファイル添付">
+        </label>
+        <!-- 未アップロード時（初期表示） -->
+        <p class="c-prescription-edit-main__file-none js-prescription-file-none">選択されていません</p>
+        <!-- アップロード後（初期非表示） -->
+        <p class="c-prescription-edit-main__file-name js-prescription-file-name" hidden>（ファイル名）</p>
+      </div>
+    </div>
+
+    <!-- ===== アンケートエリア ===== -->
+    <!-- アンケート設問・選択肢はDB管理（SEメンテ）。以下はダミーテキストで実装。 -->
+    <div class="c-prescription-edit-main__enquete">
+      <p class="c-prescription-edit-main__enquete-desc">
+        以下のアンケートにご回答ください。（任意）
+      </p>
+
+      <!-- アンケート1 -->
+      <div class="c-prescription-edit-main__enquete-item">
+        <p class="c-prescription-edit-main__enquete-question">（アンケート設問1のテキストがここに入ります）</p>
+        <div class="c-guest-main__radio-group" role="group" aria-label="アンケート1の回答">
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete1" value="0" checked>
+            回答しない
+          </label>
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete1" value="1">
+            選択肢1
+          </label>
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete1" value="2">
+            選択肢2
+          </label>
+        </div>
+      </div>
+
+      <!-- アンケート2 -->
+      <div class="c-prescription-edit-main__enquete-item">
+        <p class="c-prescription-edit-main__enquete-question">（アンケート設問2のテキストがここに入ります）</p>
+        <div class="c-guest-main__radio-group" role="group" aria-label="アンケート2の回答">
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete2" value="0" checked>
+            回答しない
+          </label>
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete2" value="1">
+            選択肢1
+          </label>
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete2" value="2">
+            選択肢2
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== ボタンエリア ===== -->
+    <div class="c-shipping-main__actions c-shipping-main__actions--stacked">
+      <button type="submit" class="c-shipping-main__btn--next js-prescription-submit">確認ページへ</button>
+    </div>
+
+  </form>
+
+</section>

@@ -1,0 +1,213 @@
+// ========================================
+// Prescription Send Main（処方箋送信フォーム）
+// 格納先HTML:
+//   workbench/includes/parts/main/mypage/prescriptionSendEditMain.html
+//   workbench/includes/parts/main/mypage/prescriptionSendConfirmMain.html
+//   workbench/includes/parts/main/mypage/prescriptionSendCompleteMain.html
+// BEM: .c-prescription-edit-main / .c-prescription-confirm-main / .c-prescription-complete-main
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ----------------------------------------
+// 入力画面ラッパー
+// ----------------------------------------
+
+.c-prescription-edit-main {
+  // c-guest-main と同寸法・余白体系を踏襲（個別overrideなし）
+}
+
+// ----------------------------------------
+// 概要説明テキスト
+// ----------------------------------------
+
+.c-prescription-edit-main__desc {
+  font-size: rem(14);
+  line-height: 1.75;
+  color: $text-color;
+  margin: rem(16) rem(16) rem(8);
+
+  @include tablet-up {
+    margin: rem(16) rem(32) rem(8);
+  }
+}
+
+// ----------------------------------------
+// リンク群（会員登録内容変更・処方箋の登録方法について）
+// ----------------------------------------
+
+.c-prescription-edit-main__links {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  margin: 0 rem(16) rem(24);
+
+  @include tablet-up {
+    margin: 0 rem(32) rem(24);
+  }
+}
+
+.c-prescription-edit-main__link {
+  display: inline-block;
+  font-size: rem(14);
+  color: $link-blue;
+  text-decoration: underline;
+  min-height: rem(44);
+  line-height: rem(44);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// ----------------------------------------
+// ファイルアップロードエリア
+// ----------------------------------------
+
+.c-prescription-edit-main__upload-area {
+  margin: 0 rem(16) rem(24);
+  padding: rem(16);
+  background-color: $bg-light;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-md;
+
+  @include tablet-up {
+    margin: 0 rem(32) rem(24);
+    padding: rem(20) rem(24);
+  }
+}
+
+.c-prescription-edit-main__upload-desc {
+  font-size: rem(14);
+  line-height: 1.75;
+  color: $text-color;
+  margin: 0 0 rem(8);
+}
+
+.c-prescription-edit-main__upload-required {
+  margin: 0 0 rem(12);
+}
+
+.c-prescription-edit-main__upload-control {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(8);
+}
+
+// ファイル選択ボタン（label で input[type=file] を内包）
+.c-prescription-edit-main__upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(44);
+  padding: 0 rem(20);
+  border: 2px solid $primary-color;
+  border-radius: rem(22);
+  background-color: $color-white;
+  color: $primary-color;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $color-white;
+  }
+}
+
+// input[type=file] は視覚的に隠してlabelに委任
+.c-prescription-edit-main__file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// 「選択されていません」テキスト
+.c-prescription-edit-main__file-none {
+  font-size: rem(14);
+  color: $text-muted;
+  margin: 0;
+}
+
+// アップロード済みファイル名
+.c-prescription-edit-main__file-name {
+  font-size: rem(14);
+  color: $text-color;
+  word-break: break-all;
+  margin: 0;
+}
+
+// ----------------------------------------
+// アンケートエリア（入力画面）
+// ----------------------------------------
+
+.c-prescription-edit-main__enquete {
+  margin: 0 rem(16) rem(24);
+
+  @include tablet-up {
+    margin: 0 rem(32) rem(24);
+  }
+}
+
+.c-prescription-edit-main__enquete-desc {
+  font-size: rem(14);
+  line-height: 1.75;
+  color: $text-color;
+  margin: 0 0 rem(16);
+}
+
+.c-prescription-edit-main__enquete-item {
+  margin-bottom: rem(20);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.c-prescription-edit-main__enquete-question {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  margin: 0 0 rem(8);
+}
+
+// ----------------------------------------
+// 確認画面ラッパー
+// ----------------------------------------
+
+.c-prescription-confirm-main {
+  // c-guest-main の構造を流用（追加overrideなし）
+}
+
+.c-prescription-confirm-main__enquete {
+  margin-top: rem(8);
+}
+
+.c-prescription-confirm-main__enquete-desc {
+  font-size: rem(14);
+  line-height: 1.75;
+  color: $text-color;
+  margin: 0 rem(16) rem(8);
+
+  @include tablet-up {
+    margin: 0 rem(32) rem(8);
+  }
+}
+
+// ----------------------------------------
+// 完了画面ラッパー
+// ----------------------------------------
+
+.c-prescription-complete-main {
+  // c-complete-main の構造を流用（追加overrideなし）
+}

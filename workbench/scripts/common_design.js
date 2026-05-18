@@ -2697,3 +2697,59 @@ $(function () {
   });
 });
 
+
+// ========================================
+// 処方箋送信フォーム（prescriptionSendEditMain）
+// ========================================
+$(function () {
+  var $fileInput = $('#prescriptionFile');
+  if (!$fileInput.length) return;
+
+  var $fileNone = $('.js-prescription-file-none');
+  var $fileName = $('.js-prescription-file-name');
+  var MAX_SIZE_MB = 25;
+  var MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
+  var ACCEPTED_TYPES = ['application/pdf', 'image/gif', 'image/jpeg', 'image/png'];
+  var ACCEPTED_EXTS = /\.(pdf|gif|jpg|jpeg|png)$/i;
+
+  // ファイル選択時: 表示切り替え＋バリデーション
+  $fileInput.on('change', function () {
+    var file = this.files[0];
+
+    if (!file) {
+      $fileNone.removeAttr('hidden');
+      $fileName.attr('hidden', true).text('');
+      return;
+    }
+
+    // 拡張子チェック
+    if (!ACCEPTED_EXTS.test(file.name)) {
+      alert(file.name + ' は指定できない拡張子です。PDF、GIF、JPEG、PNGいずれかのファイルを指定してください。');
+      $fileInput.val('');
+      $fileNone.removeAttr('hidden');
+      $fileName.attr('hidden', true).text('');
+      return;
+    }
+
+    // ファイルサイズチェック
+    if (file.size > MAX_SIZE_BYTES) {
+      alert('アップロードサイズが上限を超えているか、形式が不正です。');
+      $fileInput.val('');
+      $fileNone.removeAttr('hidden');
+      $fileName.attr('hidden', true).text('');
+      return;
+    }
+
+    // 正常: ファイル名表示
+    $fileNone.attr('hidden', true);
+    $fileName.removeAttr('hidden').text(file.name);
+  });
+
+  // 確認ページへボタン: 必須チェック
+  $('.js-prescription-submit').on('click', function (e) {
+    if (!$fileInput[0].files || !$fileInput[0].files[0]) {
+      e.preventDefault();
+      alert('ファイルを選択してください。');
+    }
+  });
+});

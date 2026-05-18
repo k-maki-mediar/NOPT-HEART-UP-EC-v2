@@ -14,6 +14,7 @@
 </section>
 
 <div class="c-card-add-main">
+  <div class="c-card-add-main__inner">
 
   <!-- 必須入力案内 -->
   <p class="c-payment-main__required-note">
@@ -80,42 +81,46 @@
         <span class="c-payment-main__form-required">必須</span>
       </div>
       <div class="c-payment-main__form-field-body">
-        <div class="c-payment-main__expiry-row">
-          <select name="cardExpirationMonth"
-                  class="c-payment-main__form-select"
-                  aria-label="有効期限 月"
-                  autocomplete="cc-exp-month">
-            <option value="">---</option>
-            <option value="01">01</option>
-            <option value="02">02</option>
-            <option value="03">03</option>
-            <option value="04">04</option>
-            <option value="05">05</option>
-            <option value="06">06</option>
-            <option value="07">07</option>
-            <option value="08">08</option>
-            <option value="09">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-          </select>
-          <span class="c-payment-main__expiry-sep" aria-hidden="true">/</span>
-          <select name="cardExpirationYear"
-                  class="c-payment-main__form-select"
-                  aria-label="有効期限 年"
-                  autocomplete="cc-exp-year">
-            <option value="">----</option>
-            <option value="2026">2026</option>
-            <option value="2027">2027</option>
-            <option value="2028">2028</option>
-            <option value="2029">2029</option>
-            <option value="2030">2030</option>
-            <option value="2031">2031</option>
-            <option value="2032">2032</option>
-            <option value="2033">2033</option>
-            <option value="2034">2034</option>
-            <option value="2035">2035</option>
-          </select>
+        <div class="c-guest-main__birthdate-group" role="group" aria-label="有効期限">
+          <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--month">
+            <select class="c-detail-unit__select"
+                    name="cardExpirationMonth"
+                    aria-label="有効期限（月）"
+                    autocomplete="cc-exp-month">
+              <option value="">月</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          <span class="c-guest-main__birthdate-sep" aria-hidden="true">/</span>
+          <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--year">
+            <select class="c-detail-unit__select"
+                    name="cardExpirationYear"
+                    aria-label="有効期限（年）"
+                    autocomplete="cc-exp-year">
+              <option value="">年</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+              <option value="2031">2031</option>
+              <option value="2032">2032</option>
+              <option value="2033">2033</option>
+              <option value="2034">2034</option>
+              <option value="2035">2035</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
@@ -170,4 +175,5 @@
     </button>
   </div>
 
+  </div>
 </div>

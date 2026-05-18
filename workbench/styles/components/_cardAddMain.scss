@@ -14,9 +14,19 @@
 // ========================================
 
 .c-card-add-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(12) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(16) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// 内側コンテナ（PC時もサイドナビ分のオフセット内で中央寄せ）
+.c-card-add-main__inner {
   max-width: rem(640);
   margin: 0 auto;
-  padding: 0 0 rem(48);
 }
 
 // ========================================
@@ -48,7 +58,6 @@
 // ========================================
 
 .c-card-add-main__form {
-  border: 1px solid $border-color-dark;
   margin-top: rem(8);
 }
 
@@ -98,19 +107,17 @@
 .c-card-add-main__actions {
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
   gap: rem(12);
   padding: rem(24) 0 rem(8);
 
-  @include tablet-up {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  .c-guest-main__btn {
+    width: 100%;
+    max-width: rem(400);
   }
 }
 
-// 完了モード: 中央寄せ（ボタン1つ）
+// 完了モード: ボタン1つ（縦flexで自然に中央表示）
 .c-card-add-main__actions--complete {
-  @include tablet-up {
-    justify-content: center;
-  }
+  flex-direction: column;
 }

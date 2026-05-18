@@ -14026,9 +14026,19 @@
   }
 }
 .c-card-add-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem 3rem;
+}
+@media (min-width: 992px) {
+  .c-card-add-main {
+    padding: 1rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-card-add-main__inner {
   max-width: 40rem;
   margin: 0 auto;
-  padding: 0 0 3rem;
 }
 
 .c-card-add-main__header {
@@ -14052,7 +14062,6 @@
 }
 
 .c-card-add-main__form {
-  border: 1px solid #c2c2c2;
   margin-top: 0.5rem;
 }
 
@@ -14086,21 +14095,17 @@
 .c-card-add-main__actions {
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
   gap: 0.75rem;
   padding: 1.5rem 0 0.5rem;
 }
-@media (min-width: 768px) {
-  .c-card-add-main__actions {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+.c-card-add-main__actions .c-guest-main__btn {
+  width: 100%;
+  max-width: 25rem;
 }
 
-@media (min-width: 768px) {
-  .c-card-add-main__actions--complete {
-    justify-content: center;
-  }
+.c-card-add-main__actions--complete {
+  flex-direction: column;
 }
 
 .c-error-main {

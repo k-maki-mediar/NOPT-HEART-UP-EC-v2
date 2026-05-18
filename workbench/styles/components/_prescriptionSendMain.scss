@@ -280,19 +280,50 @@
   // c-guest-main の構造を流用（追加overrideなし）
 }
 
-.c-prescription-confirm-main__enquete {
-  margin-top: rem(8);
-}
-
-.c-prescription-confirm-main__enquete-desc {
+// 確認画面の冒頭案内文
+.c-prescription-confirm-main__intro {
   font-size: rem(14);
   line-height: 1.75;
   color: $text-color;
-  margin: 0 rem(16) rem(8);
+  margin: rem(16) 0 rem(24);
+}
 
-  @include tablet-up {
-    margin: 0 rem(32) rem(8);
+// アンケート確認エリア
+.c-prescription-confirm-main__enquete {
+  background-color: $bg-light;
+  padding: rem(24);
+  margin: rem(24) 0;
+}
+
+.c-prescription-confirm-main__enquete-title {
+  font-size: rem(15);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  line-height: 1.5;
+  margin: 0 0 rem(20);
+}
+
+.c-prescription-confirm-main__enquete-item {
+  margin-bottom: rem(20);
+
+  &:last-of-type {
+    margin-bottom: 0;
   }
+}
+
+.c-prescription-confirm-main__enquete-question {
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.5;
+  margin: 0 0 rem(8);
+}
+
+.c-prescription-confirm-main__enquete-answer {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.5;
+  margin: 0 0 0 rem(32);
 }
 
 // ----------------------------------------

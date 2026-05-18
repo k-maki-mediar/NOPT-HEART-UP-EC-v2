@@ -14958,20 +14958,47 @@
   border-top: 1px solid #e0e0e0;
 }
 
-.c-prescription-confirm-main__enquete {
-  margin-top: 0.5rem;
-}
-
-.c-prescription-confirm-main__enquete-desc {
+.c-prescription-confirm-main__intro {
   font-size: 0.875rem;
   line-height: 1.75;
   color: #333;
-  margin: 0 1rem 0.5rem;
+  margin: 1rem 0 1.5rem;
 }
-@media (min-width: 768px) {
-  .c-prescription-confirm-main__enquete-desc {
-    margin: 0 2rem 0.5rem;
-  }
+
+.c-prescription-confirm-main__enquete {
+  background-color: #f4f8fc;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.c-prescription-confirm-main__enquete-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #00387d;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+}
+
+.c-prescription-confirm-main__enquete-item {
+  margin-bottom: 1.25rem;
+}
+.c-prescription-confirm-main__enquete-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.c-prescription-confirm-main__enquete-question {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+}
+
+.c-prescription-confirm-main__enquete-answer {
+  font-size: 0.875rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0 0 0 2rem;
 }
 
 .c-main--logged-in .c-campaign-topics__deco-rect {

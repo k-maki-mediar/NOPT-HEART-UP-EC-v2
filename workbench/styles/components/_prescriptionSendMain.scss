@@ -27,39 +27,70 @@
   font-size: rem(14);
   line-height: 1.75;
   color: $text-color;
-  margin: rem(16) rem(16) rem(8);
-
-  @include tablet-up {
-    margin: rem(16) rem(32) rem(8);
-  }
+  margin: rem(16) 0 rem(16);
 }
 
 // ----------------------------------------
-// リンク群（会員登録内容変更・処方箋の登録方法について）
+// 説明文内インラインリンク（会員登録内容変更）
 // ----------------------------------------
 
-.c-prescription-edit-main__links {
-  display: flex;
-  flex-direction: column;
-  gap: rem(8);
-  margin: 0 rem(16) rem(24);
-
-  @include tablet-up {
-    margin: 0 rem(32) rem(24);
-  }
-}
-
-.c-prescription-edit-main__link {
-  display: inline-block;
-  font-size: rem(14);
+.c-prescription-edit-main__inline-link {
   color: $link-blue;
   text-decoration: underline;
-  min-height: rem(44);
-  line-height: rem(44);
 
   &:hover {
     text-decoration: none;
   }
+}
+
+// ----------------------------------------
+// 処方箋の登録方法について（ヘルプボタン） ネイビー枠・白背景
+// ----------------------------------------
+
+.c-prescription-edit-main__help-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(6);
+  max-width: rem(240);
+  min-height: rem(36);
+  padding: 0 rem(16);
+  border: 1px solid $primary-color;
+  border-radius: rem(18);
+  background-color: $color-white;
+  box-shadow: 0 rem(2) 0 $primary-color;
+  font-size: rem(12);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+  margin: 0 0 rem(24);
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 $border-color-dark;
+  }
+}
+
+.c-prescription-edit-main__help-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(14);
+  height: rem(14);
+  border-radius: 50%;
+  background-color: $primary-color;
+  color: $color-white;
+  font-size: rem(10);
+  font-weight: $font-weight-bold;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.c-prescription-edit-main__help-text {
+  line-height: 1.4;
 }
 
 // ----------------------------------------
@@ -77,7 +108,7 @@
   display: flex;
   align-items: center;
   gap: rem(8);
-  margin: 0 0 rem(8);
+  margin: 0 0 rem(16);
 }
 
 .c-prescription-edit-main__upload-title {
@@ -91,7 +122,7 @@
 .c-prescription-edit-main__upload-notes {
   background-color: $bg-gray;
   padding: rem(14) rem(16);
-  margin: 0 0 rem(12);
+  margin: 0 0 rem(20);
 }
 
 .c-prescription-edit-main__upload-list {
@@ -126,7 +157,7 @@
   text-align: center;
   cursor: pointer;
   transition: transform $transition-fast, box-shadow $transition-fast;
-  margin: 0 auto rem(8);
+  margin: 0 auto rem(16);
 
   &:hover {
     transform: translateY(rem(2));

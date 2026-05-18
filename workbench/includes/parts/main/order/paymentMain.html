@@ -13,7 +13,7 @@
       <div class="c-payment-main__coupon-code-box">
         <p class="c-shipping-main__row-label">クーポンコードを入力する</p>
         <div class="c-payment-main__coupon-input-row">
-          <input type="text" class="c-payment-main__coupon-input" name="couponCode" placeholder="クーポンコードを入力">
+          <input type="text" class="c-payment-main__coupon-input" name="couponCode" placeholder="クーポンコードを入力" aria-label="クーポンコード">
           <button type="button" class="c-payment-main__coupon-issue-btn">発行</button>
         </div>
         <p class="c-payment-main__coupon-note">※大文字小文字を区別します。</p>
@@ -145,7 +145,7 @@
                 <span class="c-payment-main__form-required">必須</span>
               </div>
               <div class="c-payment-main__form-field-body">
-                <input type="text" name="cardholderName" class="c-payment-main__form-input" maxlength="45" autocomplete="cc-name">
+                <input type="text" name="cardholderName" class="c-payment-main__form-input" maxlength="45" autocomplete="cc-name" aria-label="クレジットカード名義人（半角ローマ字）">
               </div>
             </div>
 
@@ -156,7 +156,7 @@
                 <span class="c-payment-main__form-required">必須</span>
               </div>
               <div class="c-payment-main__form-field-body">
-                <input type="text" name="cardNo" class="c-payment-main__form-input" maxlength="16" autocomplete="cc-number" inputmode="numeric">
+                <input type="text" name="cardNo" class="c-payment-main__form-input" maxlength="16" autocomplete="cc-number" inputmode="numeric" aria-label="クレジットカード番号">
               </div>
             </div>
 
@@ -194,7 +194,7 @@
                 <span class="c-payment-main__form-required">必須</span>
               </div>
               <div class="c-payment-main__form-field-body">
-                <input type="text" name="securityCode" class="c-payment-main__form-input c-payment-main__form-input--short" maxlength="4" inputmode="numeric" autocomplete="cc-csc">
+                <input type="text" name="securityCode" class="c-payment-main__form-input c-payment-main__form-input--short" maxlength="4" inputmode="numeric" autocomplete="cc-csc" aria-label="セキュリティコード">
               </div>
             </div>
 

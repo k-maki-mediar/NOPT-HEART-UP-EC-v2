@@ -71,40 +71,39 @@
 
     <!-- ===== 処方箋ファイル添付エリア ===== -->
     <div class="c-prescription-edit-main__upload-area">
-      <p class="c-prescription-edit-main__upload-desc">
-        処方箋のファイルを添付してください。<br>
-        ※対応ファイル形式：PDF、GIF、JPEG、PNG（最大25MB）
-      </p>
-      <p class="c-prescription-edit-main__upload-required">
+      <div class="c-prescription-edit-main__upload-header">
+        <h3 class="c-prescription-edit-main__upload-title">処方箋ファイル添付</h3>
         <span class="c-guest-main__required" aria-label="必須">必須</span>
-      </p>
-      <div class="c-prescription-edit-main__upload-control">
-        <label class="c-prescription-edit-main__upload-btn" for="prescriptionFile">
-          処方箋ファイル添付
-          <input type="file"
-                 id="prescriptionFile"
-                 name="prescriptionFile"
-                 accept=".pdf,.gif,.jpg,.jpeg,.png"
-                 class="c-prescription-edit-main__file-input"
-                 aria-label="処方箋ファイル添付">
-        </label>
-        <!-- 未アップロード時（初期表示） -->
-        <p class="c-prescription-edit-main__file-none js-prescription-file-none">選択されていません</p>
-        <!-- アップロード後（初期非表示） -->
-        <p class="c-prescription-edit-main__file-name js-prescription-file-name" hidden>（ファイル名）</p>
       </div>
+      <div class="c-prescription-edit-main__upload-notes">
+        <ul class="c-prescription-edit-main__upload-list">
+          <li>デジカメ300万画素以上</li>
+          <li>スキャナー300万ピクセル以上</li>
+          <li>文字・数字が読める画像に限る</li>
+        </ul>
+      </div>
+      <label class="c-prescription-edit-main__upload-btn" for="prescriptionFile">
+        ファイルを添付
+        <input type="file"
+               id="prescriptionFile"
+               name="prescriptionFile"
+               accept=".pdf,.gif,.jpg,.jpeg,.png"
+               class="c-prescription-edit-main__file-input"
+               aria-label="処方箋ファイル添付">
+      </label>
+      <!-- 未アップロード時（初期表示） -->
+      <p class="c-prescription-edit-main__file-none js-prescription-file-none">処方箋.jpg</p>
+      <!-- アップロード後（初期非表示） -->
+      <p class="c-prescription-edit-main__file-name js-prescription-file-name" hidden>処方箋.jpg</p>
     </div>
 
     <!-- ===== アンケートエリア ===== -->
-    <!-- アンケート設問・選択肢はDB管理（SEメンテ）。以下はダミーテキストで実装。 -->
     <div class="c-prescription-edit-main__enquete">
-      <p class="c-prescription-edit-main__enquete-desc">
-        以下のアンケートにご回答ください。（任意）
-      </p>
+      <h3 class="c-prescription-edit-main__enquete-title">らくとく定期便（コンタクトレンズ）をご利用の方へのアンケート</h3>
 
       <!-- アンケート1 -->
       <div class="c-prescription-edit-main__enquete-item">
-        <p class="c-prescription-edit-main__enquete-question">（アンケート設問1のテキストがここに入ります）</p>
+        <p class="c-prescription-edit-main__enquete-question">1.らくとく定期便の申込商品について、今回登録する商品に変更を希望されますか？</p>
         <div class="c-guest-main__radio-group" role="group" aria-label="アンケート1の回答">
           <label class="c-guest-main__radio-label">
             <input type="radio" class="c-guest-main__radio" name="enquete1" value="0" checked>
@@ -112,18 +111,18 @@
           </label>
           <label class="c-guest-main__radio-label">
             <input type="radio" class="c-guest-main__radio" name="enquete1" value="1">
-            選択肢1
+            変更を希望する
           </label>
           <label class="c-guest-main__radio-label">
             <input type="radio" class="c-guest-main__radio" name="enquete1" value="2">
-            選択肢2
+            変更しない
           </label>
         </div>
       </div>
 
       <!-- アンケート2 -->
       <div class="c-prescription-edit-main__enquete-item">
-        <p class="c-prescription-edit-main__enquete-question">（アンケート設問2のテキストがここに入ります）</p>
+        <p class="c-prescription-edit-main__enquete-question">2.今回登録する商品について、すぐに発送を希望されますか？</p>
         <div class="c-guest-main__radio-group" role="group" aria-label="アンケート2の回答">
           <label class="c-guest-main__radio-label">
             <input type="radio" class="c-guest-main__radio" name="enquete2" value="0" checked>
@@ -131,14 +130,16 @@
           </label>
           <label class="c-guest-main__radio-label">
             <input type="radio" class="c-guest-main__radio" name="enquete2" value="1">
-            選択肢1
+            準備ができ次第発送を希望
           </label>
           <label class="c-guest-main__radio-label">
             <input type="radio" class="c-guest-main__radio" name="enquete2" value="2">
-            選択肢2
+            自分でサイトから設定する
           </label>
         </div>
       </div>
+
+      <p class="c-prescription-edit-main__enquete-note">※アンケートの回答は必須でなく、未回答のまま送信可能で結構です</p>
 
     </div>
 

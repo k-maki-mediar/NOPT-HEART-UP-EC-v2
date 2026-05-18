@@ -67,55 +67,74 @@
 // ----------------------------------------
 
 .c-prescription-edit-main__upload-area {
-  margin: 0 rem(16) rem(24);
-  padding: rem(16);
-  background-color: $bg-light;
-  border: 1px solid $border-color;
-  border-radius: $border-radius-md;
-
-  @include tablet-up {
-    margin: 0 rem(32) rem(24);
-    padding: rem(20) rem(24);
-  }
+  border: rem(2) solid $bg-banner;
+  padding: rem(24);
+  margin: 0 0 rem(24);
 }
 
-.c-prescription-edit-main__upload-desc {
-  font-size: rem(14);
-  line-height: 1.75;
-  color: $text-color;
+// 見出し行（タイトル + 必須バッジ）
+.c-prescription-edit-main__upload-header {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
   margin: 0 0 rem(8);
 }
 
-.c-prescription-edit-main__upload-required {
+.c-prescription-edit-main__upload-title {
+  font-size: rem(15);
+  font-weight: $font-weight-bold;
+  color: $text-color;
+  margin: 0;
+}
+
+// 注意事項ボックス（グレー背景 + 箇条書き）
+.c-prescription-edit-main__upload-notes {
+  background-color: $bg-gray;
+  padding: rem(14) rem(16);
   margin: 0 0 rem(12);
 }
 
-.c-prescription-edit-main__upload-control {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: rem(8);
+.c-prescription-edit-main__upload-list {
+  list-style: disc;
+  padding-left: rem(20);
+  margin: 0;
+
+  li {
+    font-size: rem(14);
+    line-height: 1.75;
+    color: $text-color;
+  }
 }
 
-// ファイル選択ボタン（label で input[type=file] を内包）
+// ファイル選択ボタン（label で input[type=file] を内包） ネイビー枠・白背景の共通スタイル
 .c-prescription-edit-main__upload-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-height: rem(44);
-  padding: 0 rem(20);
-  border: 2px solid $primary-color;
-  border-radius: rem(22);
+  min-width: rem(160);
+  max-width: rem(400);
+  width: 100%;
+  min-height: rem(52);
+  padding: 0 rem(24);
+  border: 1px solid $primary-color;
+  border-radius: rem(26);
   background-color: $color-white;
-  color: $primary-color;
+  box-shadow: 0 rem(2) 0 $primary-color;
   font-size: rem(14);
   font-weight: $font-weight-medium;
+  color: $primary-color;
+  text-align: center;
   cursor: pointer;
-  white-space: nowrap;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+  margin: 0 auto rem(8);
 
   &:hover {
-    background-color: $primary-color;
-    color: $color-white;
+    transform: translateY(rem(2));
+    box-shadow: 0 0 0 $border-color-dark;
+  }
+
+  @include sp {
+    min-width: 100%;
   }
 }
 
@@ -152,25 +171,45 @@
 // ----------------------------------------
 
 .c-prescription-edit-main__enquete {
-  margin: 0 rem(16) rem(24);
+  background-color: $bg-light;
+  padding: rem(24);
+  margin: 0 0 rem(24);
 
-  @include tablet-up {
-    margin: 0 rem(32) rem(24);
+  // ラジオボタンを他ページ（shippingMain等）と同サイズに揃える
+  .c-guest-main__radio {
+    width: rem(18);
+    height: rem(18);
+  }
+
+  // ラベル文字を一段小さく
+  .c-guest-main__radio-label {
+    font-size: rem(14);
+  }
+
+  // ラジオ間の余白を詰める / SPでは縦並び表示
+  .c-guest-main__radio-group {
+    gap: rem(12);
+
+    @include sp {
+      flex-direction: column;
+      gap: rem(4);
+    }
   }
 }
 
-.c-prescription-edit-main__enquete-desc {
-  font-size: rem(14);
-  line-height: 1.75;
-  color: $text-color;
-  margin: 0 0 rem(16);
+.c-prescription-edit-main__enquete-title {
+  font-size: rem(15);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  line-height: 1.5;
+  margin: 0 0 rem(20);
 }
 
 .c-prescription-edit-main__enquete-item {
   margin-bottom: rem(20);
 
-  &:last-child {
-    margin-bottom: 0;
+  &:last-of-type {
+    margin-bottom: rem(20);
   }
 }
 
@@ -178,7 +217,17 @@
   font-size: rem(14);
   font-weight: $font-weight-medium;
   color: $text-color;
+  line-height: 1.5;
   margin: 0 0 rem(8);
+}
+
+.c-prescription-edit-main__enquete-note {
+  font-size: rem(13);
+  color: $text-color;
+  line-height: 1.5;
+  margin: rem(16) 0 0;
+  padding-top: rem(16);
+  border-top: 1px solid $border-color;
 }
 
 // ----------------------------------------

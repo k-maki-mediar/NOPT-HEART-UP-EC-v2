@@ -76,6 +76,15 @@
   }
 }
 
+.c-pc-only {
+  display: none;
+}
+@media (min-width: 992px) {
+  .c-pc-only {
+    display: initial;
+  }
+}
+
 .u-text-xs {
   font-size: var(--font-size-xs);
 }

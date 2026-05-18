@@ -13,6 +13,15 @@
   }
 }
 
+// PC時のみ表示（SP時非表示）
+.c-pc-only {
+  display: none;
+
+  @include pc {
+    display: initial;
+  }
+}
+
 // テキストサイズ
 .u-text-xs { font-size: var(--font-size-xs); }
 .u-text-sm { font-size: var(--font-size-sm); }

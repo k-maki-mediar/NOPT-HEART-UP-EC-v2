@@ -1,0 +1,149 @@
+// ========================================
+// Favorite List Main（お気に入り商品一覧）
+// 格納先HTML: workbench/includes/parts/main/mypage/favoriteListMain.html
+// BEM: .c-favorite-list-main
+// ※ グリッド・カードは .c-list-main / .c-product-card を流用し
+//   お気に入り固有のスタイルのみここに定義する
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-favorite-list-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(12) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(16) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// コントロール行（件数 + 右側: 軽減税率注釈 + 表示件数）
+// ========================================
+
+.c-favorite-list-main__control {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: rem(8);
+  margin-bottom: rem(16);
+}
+
+.c-favorite-list-main__control-right {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: rem(4);
+
+  @include pc {
+    flex-direction: row;
+    align-items: center;
+    gap: rem(12);
+  }
+}
+
+// ========================================
+// 在庫コメント（c-product-card 内に追加）
+// ========================================
+
+.c-favorite-list-main__stock {
+  font-size: rem($font-size-xs);
+  color: $text-light;
+  margin: rem(4) 0 0;
+
+  // 在庫なし / 販売停止中（赤文字）
+  &--out-of-stock,
+  &--stopped {
+    color: $danger-color;
+    font-weight: $font-weight-medium;
+  }
+}
+
+// ========================================
+// 販売停止中バッジ（c-product-card__sold-out-badge を赤に上書き）
+// ========================================
+
+.c-favorite-list-main .c-product-card__sold-out-badge--stopped {
+  background-color: $danger-color;
+}
+
+// ========================================
+// ボタンエリア（カード下部・削除 + 詳細の横並び）
+// ========================================
+
+.c-favorite-list-main__actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: rem(8);
+  align-items: stretch;
+  padding: 0 rem(14) rem(14);
+
+  @include pc {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+// ========================================
+// 詳細ボタン（c-card-list-main__btn-edit 同等・32px高・青）
+// ========================================
+
+.c-favorite-list-main__btn-detail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: rem(44);
+  padding: 0 rem(8);
+  background-color: $primary-color;
+  border: none;
+  border-radius: rem(8);
+  box-shadow: 0 rem(3) 0 $primary-shadow;
+  font-size: rem($font-size-xs);
+  font-weight: $font-weight-medium;
+  color: $color-white;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(rem(2));
+    box-shadow: 0 rem(1) 0 $primary-shadow;
+  }
+
+  &:focus-visible {
+    outline: rem(2) solid $primary-color;
+    outline-offset: rem(2);
+  }
+}
+
+// ========================================
+// 削除ボタン（c-cart-main__item-delete を .c-favorite-list-main__actions 内で上書き）
+// ========================================
+
+.c-favorite-list-main__actions .c-cart-main__item-delete {
+  flex: 1;
+  min-width: 0;
+  min-height: rem(44);
+  height: auto;
+  padding: 0 rem(8);
+  background-color: $text-light;
+  box-shadow: 0 rem(3) 0 $delete-shadow;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    background-color: $text-light;
+    transform: translateY(rem(2));
+    box-shadow: 0 rem(1) 0 $delete-shadow;
+  }
+}
+

@@ -9,6 +9,13 @@
 //   - ページ遷移エラー（U2010701）
 //   - javascript無効エラー（U2010801）
 //   - システムエラー（U2010901）
+//   - (店頭)エラー（U3010601）
+//   - (店頭)invalid accessエラー（U3010701）
+//   - (店頭)access failedエラー（U3010401）
+//   - (店頭)商品未存在エラー（U3010501）
+//   - (店頭)システムエラー（U3010901）
+//   - (店頭)javascript無効エラー（U3010801）
+//   - (店頭)顧客不正エラー（U3011001）
 // ========================================
 
 @use '../foundation/functions' as *;
@@ -113,10 +120,11 @@
   padding-top: 0;
 }
 
-// PC（992px〜）: コンテンツを縦中央配置
+// Tablet（768px〜）以上: コンテンツを縦中央配置
 // .c-main:has(.c-error-main) を起点に wrapper/container/row に flex を設定
 // 素タグ（main）への直接スタイル指定を避け、.wrapper からセレクタを組む
-@include pc {
+// ★ tablet-up を使用することでTablet(768〜991px)とPC(992px〜)の両方に対応
+@include tablet-up {
   .wrapper:has(.c-error-main) {
     min-height: 100vh;
     display: flex;

@@ -14290,7 +14290,7 @@
   padding-top: 0;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .wrapper:has(.c-error-main) {
     min-height: 100vh;
     display: flex;

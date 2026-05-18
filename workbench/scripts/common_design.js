@@ -2484,3 +2484,150 @@ $(function () {
     initPaymentMethodToggle();
   }
 })();
+
+// ========================================
+// LINE 連携規約 同意チェックボックス制御（U2011101）
+// ========================================
+(function () {
+  const FOCUSABLE_SELECTOR = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+  function initLineAgreement() {
+    const checkbox = document.querySelector('.js-line-agreement-check');
+    const submitBtn = document.querySelector('.js-line-agreement-btn');
+    const modal = document.querySelector('.js-line-agreement-modal');
+
+    if (!checkbox || !submitBtn) {
+      return;
+    }
+
+    // チェック状態に応じてボタン活性切替
+    function toggleSubmit() {
+      submitBtn.disabled = !checkbox.checked;
+    }
+
+    checkbox.addEventListener('change', toggleSubmit);
+    // 初期状態適用
+    toggleSubmit();
+
+    // モーダル制御（確認モーダルがある場合）
+    if (!modal) {
+      return;
+    }
+
+    const closeButtons = document.querySelectorAll('.js-line-agreement-modal-close');
+    const okButton = document.querySelector('.js-line-agreement-modal-ok');
+    let lastFocusedEl = null;
+
+    function getFocusable() {
+      return modal.querySelectorAll(FOCUSABLE_SELECTOR);
+    }
+
+    function openModal() {
+      lastFocusedEl = document.activeElement;
+      modal.hidden = false;
+      modal.setAttribute('aria-hidden', 'false');
+      const focusables = getFocusable();
+      if (focusables.length) {
+        focusables[0].focus();
+      }
+      document.addEventListener('keydown', handleKeydown);
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      modal.setAttribute('aria-hidden', 'true');
+      document.removeEventListener('keydown', handleKeydown);
+      if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
+        lastFocusedEl.focus();
+      }
+    }
+
+    function handleKeydown(e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeModal();
+        return;
+      }
+      if (e.key !== 'Tab') {
+        return;
+      }
+      const focusables = getFocusable();
+      if (!focusables.length) {
+        return;
+      }
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    for (let i = 0; i < closeButtons.length; i++) {
+      closeButtons[i].addEventListener('click', closeModal);
+    }
+
+    // 「規約に同意して連携」ボタン押下時にモーダルを表示
+    submitBtn.addEventListener('click', function (e) {
+      if (submitBtn.disabled) {
+        return;
+      }
+      e.preventDefault();
+      openModal();
+    });
+
+    // モーダル内「連携する」ボタン押下時の挙動（デザイン確認用：モーダルを閉じる）
+    if (okButton) {
+      okButton.addEventListener('click', function () {
+        closeModal();
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLineAgreement);
+  } else {
+    initLineAgreement();
+  }
+})();
+
+// ========================================
+// LINE ログイン会員選択 未選択バリデーション（U2011103）
+// ========================================
+(function () {
+  function initLineAccountSelect() {
+    const form = document.querySelector('.js-line-account-form');
+    const errorBox = document.querySelector('.js-line-account-error');
+
+    if (!form || !errorBox) {
+      return;
+    }
+
+    form.addEventListener('submit', function (e) {
+      const checked = form.querySelector('input[name="customerCode"]:checked');
+      if (checked) {
+        errorBox.hidden = true;
+        return;
+      }
+      e.preventDefault();
+      errorBox.hidden = false;
+    });
+
+    // 会員を選択したらエラーを自動で消す
+    const radios = form.querySelectorAll('input[name="customerCode"]');
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function () {
+        errorBox.hidden = true;
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLineAccountSelect);
+  } else {
+    initLineAccountSelect();
+  }
+})();

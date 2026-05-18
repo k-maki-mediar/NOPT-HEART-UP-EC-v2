@@ -1,0 +1,67 @@
+<!-- ===== エラーメッセージ（未選択でログイン押下時に表示） ===== -->
+<div class="c-message-area c-message-area--with-top-space js-line-account-error" role="alert" aria-live="polite" hidden>
+  <p class="c-message-area__text c-message-area__text--error">ログインする会員を選択してください。</p>
+</div>
+
+<section class="c-user-heading" aria-label="ログイン会員選択">
+  <div class="c-user-heading__inner">
+    <h1 class="c-user-heading__title">ログイン会員選択</h1>
+  </div>
+  <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
+</section>
+
+<div class="c-line-account-list-main">
+
+  <div class="c-line-account-list-main__card">
+
+    <form action="" method="post" novalidate class="js-line-account-form">
+
+      <!-- ===== 説明テキスト ===== -->
+      <div class="c-line-account-list-main__description">
+        <p class="c-line-account-list-main__description-text">ご利用のLINEアカウントは、ハートアップLINEミニアプリで複数の会員番号が紐づけされています。</p>
+        <p class="c-line-account-list-main__description-text">今回ハートアップオンラインショップでご利用される会員番号をお選びください。</p>
+        <p class="c-line-account-list-main__description-note">本画面は、ハートアップLINEミニアプリを複数の会員様で利用されている場合、毎回表示されます。</p>
+      </div>
+
+      <!-- ===== 会員ラジオボタンリスト ===== -->
+      <ul class="c-line-account-list-main__list" role="radiogroup" aria-label="会員選択">
+
+        <!-- 会員1件目（ダミーデータ） -->
+        <li class="c-line-account-list-main__item">
+          <label class="c-line-account-list-main__radio-label" for="lineAccountCode1">
+            <input type="radio" class="c-line-account-list-main__radio" id="lineAccountCode1" name="customerCode" value="1234567">
+            <span class="c-line-account-list-main__member-info">
+              <span class="c-line-account-list-main__member-code">1234567</span>
+              <span class="c-line-account-list-main__member-name">ハートアップ 太郎</span>
+            </span>
+          </label>
+        </li>
+
+        <!-- 会員2件目（ダミーデータ） -->
+        <li class="c-line-account-list-main__item">
+          <label class="c-line-account-list-main__radio-label" for="lineAccountCode2">
+            <input type="radio" class="c-line-account-list-main__radio" id="lineAccountCode2" name="customerCode" value="7654321">
+            <span class="c-line-account-list-main__member-info">
+              <span class="c-line-account-list-main__member-code">7654321</span>
+              <span class="c-line-account-list-main__member-name">ハートアップ 花子</span>
+            </span>
+          </label>
+        </li>
+
+      </ul>
+
+      <!-- ===== ボタンエリア ===== -->
+      <div class="c-line-account-list-main__actions">
+        <button type="submit" class="c-line-account-list-main__btn c-line-account-list-main__btn--submit" name="submitLoginButton">
+          ログイン
+        </button>
+        <a href="#" class="c-line-account-list-main__btn c-line-account-list-main__btn--secondary" name="backToTop">
+          TOPに戻る
+        </a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

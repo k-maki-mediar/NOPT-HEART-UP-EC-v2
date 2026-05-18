@@ -1,0 +1,174 @@
+<!-- メッセージエリア（登録完了メッセージを最初から表示） -->
+<div class="c-message-area" role="alert" aria-live="polite">
+  <p class="c-message-area__text c-message-area__text--complete">クレジットカード情報の登録を完了しました。</p>
+</div>
+
+<section class="c-user-heading" aria-label="クレジットカード情報登録">
+  <div class="c-user-heading__inner">
+    <h1 class="c-user-heading__title c-user-heading__title--flush">クレジットカード情報登録</h1>
+  </div>
+  <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
+</section>
+
+<div class="c-card-add-main c-card-add-main--demo-complete">
+  <div class="c-card-add-main__inner">
+
+  <!-- 必須入力案内 -->
+  <p class="c-payment-main__required-note">
+    <span class="c-payment-main__form-required">必須</span>
+    必須入力項目です
+  </p>
+
+  <!-- 支払方法名称 + ブランドロゴ -->
+  <div class="c-card-add-main__header">
+    <p class="c-card-add-main__payment-name">クレジット支払い</p>
+    <img src="../../../files/commonfiles/images/card_5brand.png"
+         alt="VISA / Mastercard / JCB / AMEX / Diners 対応"
+         class="c-card-add-main__brand-logo"
+         width="170" height="20">
+  </div>
+
+  <!-- フォーム本体 -->
+  <div class="c-card-add-main__form">
+
+    <!-- クレジットカード名義人（半角ローマ字） -->
+    <div class="c-payment-main__form-field">
+      <div class="c-payment-main__form-field-header">
+        <span class="c-payment-main__form-field-title">クレジットカード名義人</span>
+        <span class="c-payment-main__form-required">必須</span>
+      </div>
+      <div class="c-payment-main__form-field-body">
+        <input type="text"
+               name="cardholderName"
+               class="c-payment-main__form-input"
+               maxlength="25"
+               autocomplete="cc-name"
+               aria-label="クレジットカード名義人"
+               value="TARO YAMADA">
+      </div>
+    </div>
+
+    <!-- クレジットカード番号（先頭4桁のみ表示） -->
+    <div class="c-payment-main__form-field">
+      <div class="c-payment-main__form-field-header">
+        <span class="c-payment-main__form-field-title">クレジットカード番号</span>
+        <span class="c-payment-main__form-required">必須</span>
+      </div>
+      <div class="c-payment-main__form-field-body">
+        <input type="text"
+               name="cardNo"
+               class="c-payment-main__form-input"
+               maxlength="16"
+               autocomplete="cc-number"
+               inputmode="numeric"
+               aria-label="クレジットカード番号"
+               value="4111">
+      </div>
+    </div>
+
+    <!-- 有効期限（月/年） -->
+    <div class="c-payment-main__form-field">
+      <div class="c-payment-main__form-field-header">
+        <span class="c-payment-main__form-field-title">有効期限（月/年）</span>
+        <span class="c-payment-main__form-required">必須</span>
+      </div>
+      <div class="c-payment-main__form-field-body">
+        <div class="c-guest-main__birthdate-group" role="group" aria-label="有効期限">
+          <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--month">
+            <select class="c-detail-unit__select"
+                    name="cardExpirationMonth"
+                    aria-label="有効期限（月）"
+                    autocomplete="cc-exp-month">
+              <option value="">月</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12" selected>12</option>
+            </select>
+          </div>
+          <span class="c-guest-main__birthdate-sep" aria-hidden="true">/</span>
+          <div class="c-detail-unit__select-wrap c-guest-main__select-wrap--year">
+            <select class="c-detail-unit__select"
+                    name="cardExpirationYear"
+                    aria-label="有効期限（年）"
+                    autocomplete="cc-exp-year">
+              <option value="">年</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028" selected>2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+              <option value="2031">2031</option>
+              <option value="2032">2032</option>
+              <option value="2033">2033</option>
+              <option value="2034">2034</option>
+              <option value="2035">2035</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- セキュリティコード -->
+    <div class="c-payment-main__form-field">
+      <div class="c-payment-main__form-field-header">
+        <span class="c-payment-main__form-field-title">セキュリティコード</span>
+        <span class="c-payment-main__form-required">必須</span>
+      </div>
+      <div class="c-payment-main__form-field-body">
+        <div class="c-card-add-main__security-row">
+          <input type="text"
+                 name="securityCode"
+                 class="c-payment-main__form-input c-payment-main__form-input--short"
+                 maxlength="4"
+                 inputmode="numeric"
+                 autocomplete="cc-csc"
+                 aria-label="セキュリティコード"
+                 value="123">
+          <!-- セキュリティコード説明文（固定常時表示） -->
+          <p class="c-card-add-main__security-note">※セキュリティコードとは、クレジットカードに記載された3桁もしくは4桁の数字を指します</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- メインカードに設定する -->
+    <div class="c-payment-main__form-field">
+      <div class="c-payment-main__form-field-header">
+        <span class="c-payment-main__form-field-title">メインカードに設定する</span>
+      </div>
+      <div class="c-payment-main__form-field-body">
+        <label class="c-payment-main__checkbox-label">
+          <input type="checkbox"
+                 class="c-payment-main__checkbox-input"
+                 name="defaultCard"
+                 value="1"
+                 checked>
+          <span>メインカードに設定する</span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- フッターボタン -->
+  <div class="c-card-add-main__actions">
+    <!-- 前へ戻る（クレジットカード情報一覧へ遷移。リンク先はPKG設定） -->
+    <button type="button" class="c-guest-main__btn c-guest-main__btn--back">
+      前へ戻る
+    </button>
+    <!-- 完了モードでもラベルは「登録する」 -->
+    <button type="button" class="c-guest-main__btn c-guest-main__btn--next">
+      登録する
+    </button>
+  </div>
+
+  </div>
+</div>

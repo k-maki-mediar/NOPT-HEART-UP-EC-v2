@@ -14804,6 +14804,13 @@
   line-height: 1.4;
 }
 
+.c-prescription-edit-main__upload-intro {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #333;
+  margin: 1.5rem 0 1.5rem;
+}
+
 .c-prescription-edit-main__upload-area {
   border: 0.125rem solid #d7e7fb;
   padding: 1.5rem;

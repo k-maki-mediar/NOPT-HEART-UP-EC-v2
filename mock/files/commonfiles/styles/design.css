@@ -14085,13 +14085,6 @@
   margin: 0;
 }
 
-.c-card-add-main__confirm-value {
-  font-size: 0.875rem;
-  color: #333;
-  line-height: 1.6;
-  margin: 0;
-}
-
 .c-card-add-main__actions {
   display: flex;
   flex-direction: column-reverse;
@@ -14102,10 +14095,6 @@
 .c-card-add-main__actions .c-guest-main__btn {
   width: 100%;
   max-width: 25rem;
-}
-
-.c-card-add-main__actions--complete {
-  flex-direction: column;
 }
 
 .c-error-main {

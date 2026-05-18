@@ -2633,9 +2633,12 @@ $(function () {
 })();
 
 /* ========================================
- * クレジットカード情報登録：入力バリデーション
- * 「登録する」ボタン押下時に未入力項目を c-message-area にエラー表示
- * （cardAddMain / cardAddMainUpdate のみ対象。完了モードは送信ボタンなしのため対象外）
+ * クレジットカード情報登録：「登録する」ボタン押下時の表示切り替え
+ * モード別の挙動はデザインモック用に modifier クラスで固定化:
+ *   - .c-card-add-main--demo-complete: 押下時に完了メッセージを表示
+ *   - .c-card-add-main--demo-error   : 押下時に固定のエラーメッセージを表示
+ *   - modifier なし（新規登録）       : 入力バリデーション
+ * 状態と動作の対応づけはシステム組み込み側で行う想定。
  * ======================================== */
 $(function () {
   const $cardAdd = $('.c-card-add-main');
@@ -2647,38 +2650,50 @@ $(function () {
   const $messageArea = $cardAdd.prevAll('.c-message-area').first();
   if (!$messageArea.length) { return; }
 
+  const ERROR_TEXTS = [
+    'クレジットカード名義人を入力してください。',
+    'クレジットカード番号を入力してください。',
+    'クレジットカードの有効期限を選択してください。',
+    'クレジットカードのセキュリティコードを入力してください。'
+  ];
+  const COMPLETE_TEXT = 'クレジットカード情報の登録を完了しました。';
+
   $submitBtn.on('click', function (e) {
     e.preventDefault();
 
-    const errors = [];
-    const $name = $cardAdd.find('input[name="cardholderName"]');
-    const $cardNo = $cardAdd.find('input[name="cardNo"]');
-    const $monthSel = $cardAdd.find('select[name="cardExpirationMonth"]');
-    const $yearSel = $cardAdd.find('select[name="cardExpirationYear"]');
-    const $sec = $cardAdd.find('input[name="securityCode"]');
+    let html = '';
 
-    if (!$.trim($name.val() || '')) {
-      errors.push('クレジットカード名義人を入力してください。');
-    }
-    if (!$.trim($cardNo.val() || '')) {
-      errors.push('クレジットカード番号を入力してください。');
-    }
-    if (!$monthSel.val() || !$yearSel.val()) {
-      errors.push('クレジットカードの有効期限を選択してください。');
-    }
-    if (!$.trim($sec.val() || '')) {
-      errors.push('クレジットカードのセキュリティコードを入力してください。');
-    }
-
-    if (errors.length > 0) {
-      const html = '<p class="c-message-area__text c-message-area__text--error">' +
-        errors.join('<br>') + '</p>';
-      $messageArea.html(html);
-      setTimeout(function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 0);
+    if ($cardAdd.hasClass('c-card-add-main--demo-complete')) {
+      html = '<p class="c-message-area__text c-message-area__text--complete">' + COMPLETE_TEXT + '</p>';
+    } else if ($cardAdd.hasClass('c-card-add-main--demo-error')) {
+      html = '<p class="c-message-area__text c-message-area__text--error">' + ERROR_TEXTS.join('<br>') + '</p>';
     } else {
-      $messageArea.empty();
+      // 新規登録: 入力バリデーション
+      const errors = [];
+      if (!$.trim($cardAdd.find('input[name="cardholderName"]').val() || '')) {
+        errors.push(ERROR_TEXTS[0]);
+      }
+      if (!$.trim($cardAdd.find('input[name="cardNo"]').val() || '')) {
+        errors.push(ERROR_TEXTS[1]);
+      }
+      if (!$cardAdd.find('select[name="cardExpirationMonth"]').val() ||
+          !$cardAdd.find('select[name="cardExpirationYear"]').val()) {
+        errors.push(ERROR_TEXTS[2]);
+      }
+      if (!$.trim($cardAdd.find('input[name="securityCode"]').val() || '')) {
+        errors.push(ERROR_TEXTS[3]);
+      }
+      if (errors.length > 0) {
+        html = '<p class="c-message-area__text c-message-area__text--error">' + errors.join('<br>') + '</p>';
+      } else {
+        html = '<p class="c-message-area__text c-message-area__text--complete">' + COMPLETE_TEXT + '</p>';
+      }
     }
+
+    $messageArea.html(html);
+    setTimeout(function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 0);
   });
 });
+

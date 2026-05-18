@@ -11,7 +11,7 @@
   <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
 </section>
 
-<div class="c-card-add-main">
+<div class="c-card-add-main c-card-add-main--demo-error">
   <div class="c-card-add-main__inner">
 
   <!-- 必須入力案内 -->
@@ -49,7 +49,7 @@
                class="c-payment-main__form-input"
                maxlength="25"
                autocomplete="cc-name"
-               placeholder="">
+               value="TARO YAMADA">
       </div>
     </div>
 
@@ -96,7 +96,7 @@
               <option value="09">09</option>
               <option value="10">10</option>
               <option value="11">11</option>
-              <option value="12">12</option>
+              <option value="12" selected>12</option>
             </select>
           </div>
           <span class="c-guest-main__birthdate-sep" aria-hidden="true">/</span>
@@ -108,7 +108,7 @@
               <option value="">年</option>
               <option value="2026">2026</option>
               <option value="2027">2027</option>
-              <option value="2028">2028</option>
+              <option value="2028" selected>2028</option>
               <option value="2029">2029</option>
               <option value="2030">2030</option>
               <option value="2031">2031</option>
@@ -134,7 +134,8 @@
                class="c-payment-main__form-input c-payment-main__form-input--short"
                maxlength="4"
                inputmode="numeric"
-               autocomplete="cc-csc">
+               autocomplete="cc-csc"
+               value="123">
         <!-- セキュリティコード説明文（固定常時表示） -->
         <p class="c-card-add-main__security-note">※セキュリティコードとは、クレジットカードに記載された3桁もしくは4桁の数字を指します</p>
       </div>

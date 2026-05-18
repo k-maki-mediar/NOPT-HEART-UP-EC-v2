@@ -28,155 +28,181 @@
     </div>
   </div>
 
-  <!-- 商品一覧 -->
-  <ul class="c-favorite-list-main__list" aria-label="お気に入り商品一覧">
+  <!-- ページャー（上部） -->
+  <nav class="c-pager c-pager--top js-pager" aria-label="ページナビゲーション（上部）" data-total-pages="2" data-current-page="1">
+    <ul class="c-pager__list" aria-busy="true"></ul>
+  </nav>
+
+  <!-- 商品グリッド -->
+  <ul class="c-list-main__grid" aria-label="お気に入り商品一覧">
 
     <!-- ▼ 商品行パターン1: 通常在庫あり（価格 + 在庫コメント + 削除 + 詳細） -->
-    <li class="c-favorite-list-main__item">
-      <div class="c-favorite-list-main__no" aria-label="No">1</div>
-      <div class="c-favorite-list-main__sp-row">
-        <a href="#" class="c-favorite-list-main__img-link">
-          <img class="c-favorite-list-main__img"
-            src="../../../files/commonfiles/images/noPhoto.png"
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
             onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
-            alt="サンプル商品A" width="80" height="80">
+            src="../../../files/commonfiles/images/noPhoto.png"
+            alt="サンプル商品A（在庫あり）"
+            width="164"
+            height="123"
+          >
         </a>
-        <div class="c-favorite-list-main__info">
-          <h2 class="c-favorite-list-main__name">
-            <a href="#" class="c-favorite-list-main__name-link">サンプル商品A（在庫あり）</a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">サンプル商品A（在庫あり）</a>
           </h2>
-          <div class="c-favorite-list-main__price-area">
-            <p class="c-favorite-list-main__price">
-              <span class="c-favorite-list-main__price-value">1,234</span>
-              <span class="c-favorite-list-main__price-unit">円(税込)</span>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">1,234</span>
+              <span class="c-product-card__price-unit">円(税込)</span>
             </p>
           </div>
           <p class="c-favorite-list-main__stock">在庫あり</p>
         </div>
-      </div>
-      <div class="c-favorite-list-main__actions">
-        <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Aをお気に入りから削除">削除</button>
-        <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
-      </div>
+        <div class="c-favorite-list-main__actions">
+          <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Aをお気に入りから削除">削除</button>
+          <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
+        </div>
+      </article>
     </li>
 
-    <!-- ▼ 商品行パターン2: 在庫なし（価格 + 在庫無コメント赤 + 削除のみ） -->
-    <li class="c-favorite-list-main__item">
-      <div class="c-favorite-list-main__no" aria-label="No">2</div>
-      <div class="c-favorite-list-main__sp-row">
-        <a href="#" class="c-favorite-list-main__img-link">
-          <img class="c-favorite-list-main__img"
-            src="../../../files/commonfiles/images/noPhoto.png"
+    <!-- ▼ 商品行パターン2: 在庫なし（価格 + 在庫なしバッジ + 削除のみ） -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <div class="c-product-card__img-link">
+          <span class="c-product-card__sold-out-badge">在庫なし</span>
+          <img
+            class="c-product-card__img"
             onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
-            alt="サンプル商品B" width="80" height="80">
-        </a>
-        <div class="c-favorite-list-main__info">
-          <h2 class="c-favorite-list-main__name">
-            <a href="#" class="c-favorite-list-main__name-link">サンプル商品B（在庫なし）</a>
+            src="../../../files/commonfiles/images/noPhoto.png"
+            alt="サンプル商品B（在庫なし）"
+            width="164"
+            height="123"
+          >
+        </div>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">サンプル商品B（在庫なし）</a>
           </h2>
-          <div class="c-favorite-list-main__price-area">
-            <p class="c-favorite-list-main__price">
-              <span class="c-favorite-list-main__price-value">2,980</span>
-              <span class="c-favorite-list-main__price-unit">円(税込)</span>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">2,980</span>
+              <span class="c-product-card__price-unit">円(税込)</span>
             </p>
           </div>
           <p class="c-favorite-list-main__stock c-favorite-list-main__stock--out-of-stock">在庫切れ</p>
         </div>
-      </div>
-      <div class="c-favorite-list-main__actions">
-        <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Bをお気に入りから削除">削除</button>
-      </div>
+        <div class="c-favorite-list-main__actions">
+          <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Bをお気に入りから削除">削除</button>
+        </div>
+      </article>
     </li>
 
-    <!-- ▼ 商品行パターン3: 販売停止中（「販売停止中」赤 + 削除のみ） -->
-    <li class="c-favorite-list-main__item">
-      <div class="c-favorite-list-main__no" aria-label="No">3</div>
-      <div class="c-favorite-list-main__sp-row">
-        <a href="#" class="c-favorite-list-main__img-link">
-          <img class="c-favorite-list-main__img"
-            src="../../../files/commonfiles/images/noPhoto.png"
+    <!-- ▼ 商品行パターン3: 販売停止中（お知らせラベル + 削除のみ・価格非表示） -->
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
             onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
-            alt="サンプル商品C" width="80" height="80">
+            src="../../../files/commonfiles/images/noPhoto.png"
+            alt="サンプル商品C（販売停止中）"
+            width="164"
+            height="123"
+          >
         </a>
-        <div class="c-favorite-list-main__info">
-          <h2 class="c-favorite-list-main__name">
-            <a href="#" class="c-favorite-list-main__name-link">サンプル商品C（販売停止中）</a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true">
+            <li class="c-product-card__notice-label">[販売停止中]</li>
+          </ul>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">サンプル商品C（販売停止中）</a>
           </h2>
-          <p class="c-favorite-list-main__stock c-favorite-list-main__stock--stopped">販売停止中</p>
         </div>
-      </div>
-      <div class="c-favorite-list-main__actions">
-        <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Cをお気に入りから削除">削除</button>
-      </div>
+        <div class="c-favorite-list-main__actions">
+          <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Cをお気に入りから削除">削除</button>
+        </div>
+      </article>
     </li>
 
     <!-- ▼ 商品行パターン4: 特別価格（通常価格打ち消し + 特別価格 + 削除 + 詳細） -->
-    <li class="c-favorite-list-main__item">
-      <div class="c-favorite-list-main__no" aria-label="No">4</div>
-      <div class="c-favorite-list-main__sp-row">
-        <a href="#" class="c-favorite-list-main__img-link">
-          <img class="c-favorite-list-main__img"
-            src="../../../files/commonfiles/images/noPhoto.png"
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
             onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
-            alt="サンプル商品D" width="80" height="80">
+            src="../../../files/commonfiles/images/noPhoto.png"
+            alt="サンプル商品D（特別価格）"
+            width="164"
+            height="123"
+          >
         </a>
-        <div class="c-favorite-list-main__info">
-          <h2 class="c-favorite-list-main__name">
-            <a href="#" class="c-favorite-list-main__name-link">サンプル商品D（特別価格）</a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">サンプル商品D（特別価格）</a>
           </h2>
-          <div class="c-favorite-list-main__price-area">
-            <p class="c-favorite-list-main__price c-favorite-list-main__price--strike">
-              <span class="c-favorite-list-main__price-value">2,500</span>
-              <span class="c-favorite-list-main__price-unit">円(税込)</span>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price c-product-card__price--strike">
+              <span class="c-product-card__price-value">2,500</span>
+              <span class="c-product-card__price-unit">円(税込)</span>
             </p>
-            <p class="c-favorite-list-main__price c-favorite-list-main__price--special">
-              <span class="c-favorite-list-main__price-label">[特別価格]</span>
-              <span class="c-favorite-list-main__price-value">1,980</span>
-              <span class="c-favorite-list-main__price-unit">円(税込)</span>
+            <p class="c-product-card__price c-product-card__price--special">
+              <span class="c-product-card__price-value">1,980</span>
+              <span class="c-product-card__price-unit">円(税込)</span>
             </p>
           </div>
           <p class="c-favorite-list-main__stock">在庫あり</p>
         </div>
-      </div>
-      <div class="c-favorite-list-main__actions">
-        <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Dをお気に入りから削除">削除</button>
-        <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
-      </div>
+        <div class="c-favorite-list-main__actions">
+          <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Dをお気に入りから削除">削除</button>
+          <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
+        </div>
+      </article>
     </li>
 
     <!-- ▼ 商品行パターン5: 軽減税率対象（税区分末尾に「※」付与） -->
-    <li class="c-favorite-list-main__item">
-      <div class="c-favorite-list-main__no" aria-label="No">5</div>
-      <div class="c-favorite-list-main__sp-row">
-        <a href="#" class="c-favorite-list-main__img-link">
-          <img class="c-favorite-list-main__img"
-            src="../../../files/commonfiles/images/noPhoto.png"
+    <li class="c-list-main__grid-item">
+      <article class="c-product-card">
+        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+          <img
+            class="c-product-card__img"
             onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
-            alt="サンプル商品E" width="80" height="80">
+            src="../../../files/commonfiles/images/noPhoto.png"
+            alt="サンプル商品E（軽減税率対象）"
+            width="164"
+            height="123"
+          >
         </a>
-        <div class="c-favorite-list-main__info">
-          <h2 class="c-favorite-list-main__name">
-            <a href="#" class="c-favorite-list-main__name-link">サンプル商品E（軽減税率対象）</a>
+        <div class="c-product-card__body">
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
+          <h2 class="c-product-card__name">
+            <a href="#" class="c-product-card__name-link">サンプル商品E（軽減税率対象）</a>
           </h2>
-          <div class="c-favorite-list-main__price-area">
-            <p class="c-favorite-list-main__price">
-              <span class="c-favorite-list-main__price-value">980</span>
-              <span class="c-favorite-list-main__price-unit">円(税込 軽減税率8%)※</span>
+          <div class="c-product-card__price-area">
+            <p class="c-product-card__price">
+              <span class="c-product-card__price-value">980</span>
+              <span class="c-product-card__price-unit">円(税込 軽減税率8%)※</span>
             </p>
           </div>
           <p class="c-favorite-list-main__stock">在庫あり</p>
         </div>
-      </div>
-      <div class="c-favorite-list-main__actions">
-        <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Eをお気に入りから削除">削除</button>
-        <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
-      </div>
+        <div class="c-favorite-list-main__actions">
+          <button type="button" class="c-cart-main__item-delete" aria-label="サンプル商品Eをお気に入りから削除">削除</button>
+          <a href="#" class="c-favorite-list-main__btn-detail">詳細</a>
+        </div>
+      </article>
     </li>
 
   </ul>
 
-  <!-- ページャー（js-pager で動的生成） -->
-  <nav class="c-pager js-pager" aria-label="ページナビゲーション" data-total-pages="2" data-current-page="1">
+  <!-- ページャー（下部） -->
+  <nav class="c-pager c-pager--bottom js-pager" aria-label="ページナビゲーション（下部）" data-total-pages="2" data-current-page="1">
     <ul class="c-pager__list" aria-busy="true"></ul>
   </nav>
 

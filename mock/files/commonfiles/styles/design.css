@@ -14025,6 +14025,115 @@
     width: 100%;
   }
 }
+.c-favorite-list-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem 3rem;
+}
+@media (min-width: 992px) {
+  .c-favorite-list-main {
+    padding: 1rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-favorite-list-main__control {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.c-favorite-list-main__control-right {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+@media (min-width: 992px) {
+  .c-favorite-list-main__control-right {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.c-favorite-list-main__stock {
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin: 0.25rem 0 0;
+}
+.c-favorite-list-main__stock--out-of-stock, .c-favorite-list-main__stock--stopped {
+  color: #d42f2f;
+  font-weight: 500;
+}
+
+.c-favorite-list-main__actions {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0 0.875rem 0.875rem;
+}
+
+.c-favorite-list-main__btn-detail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 2.75rem;
+  padding: 0 0.5rem;
+  background-color: #00387d;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.1875rem 0 #002552;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-favorite-list-main__btn-detail:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0.0625rem 0 #002552;
+}
+.c-favorite-list-main__btn-detail:focus-visible {
+  outline: 0.125rem solid #00387d;
+  outline-offset: 0.125rem;
+}
+
+.c-favorite-list-main__actions .c-cart-main__item-delete {
+  flex: 1;
+  min-height: 2.75rem;
+  height: auto;
+  padding: 0 0.5rem;
+  box-shadow: 0 0.125rem 0 #3f4651;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-favorite-list-main__actions .c-cart-main__item-delete:hover {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0 0 #3f4651;
+}
+
+.c-favorite-list-main__footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  margin-top: 0.5rem;
+}
+
+.c-favorite-list-main__btn-back {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .c-favorite-list-main__btn-back {
+    max-width: 25rem;
+  }
+}
+
 .c-card-add-main {
   max-width: 70.625rem;
   margin: 0 auto;

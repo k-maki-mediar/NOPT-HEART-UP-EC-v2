@@ -2,6 +2,8 @@
 // Favorite List Main（お気に入り商品一覧）
 // 格納先HTML: workbench/includes/parts/main/mypage/favoriteListMain.html
 // BEM: .c-favorite-list-main
+// ※ グリッド・カードは .c-list-main / .c-product-card を流用し
+//   お気に入り固有のスタイルのみここに定義する
 // ========================================
 
 @use '../foundation/functions' as *;
@@ -49,177 +51,7 @@
 }
 
 // ========================================
-// 商品一覧 ul
-// ========================================
-
-.c-favorite-list-main__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-// ========================================
-// 商品行 li（PCはグリッド4列 / SPは縦積み）
-// ========================================
-
-.c-favorite-list-main__item {
-  display: grid;
-  grid-template-columns: rem(32) rem(88) 1fr rem(88);
-  gap: rem(12);
-  align-items: center;
-  padding: rem(12) rem(8);
-  border-bottom: 1px solid $border-color;
-
-  @include sp {
-    grid-template-columns: 1fr;
-    padding: rem(16) 0;
-    gap: rem(8);
-  }
-}
-
-// ========================================
-// SP行レイアウト補助（画像+情報の横並び）
-// ========================================
-
-.c-favorite-list-main__sp-row {
-  display: contents;
-
-  @include sp {
-    display: flex;
-    align-items: flex-start;
-    gap: rem(12);
-  }
-}
-
-// ========================================
-// No（連番）
-// ========================================
-
-.c-favorite-list-main__no {
-  font-size: rem($font-size-xs);
-  color: $text-light;
-  text-align: center;
-  line-height: 1.5;
-
-  @include sp {
-    text-align: left;
-    margin-bottom: rem(4);
-  }
-}
-
-// ========================================
-// 商品画像（リンク）
-// ========================================
-
-.c-favorite-list-main__img-link {
-  display: block;
-  line-height: 0;
-  flex-shrink: 0;
-}
-
-.c-favorite-list-main__img {
-  display: block;
-  width: rem(80);
-  height: rem(80);
-  object-fit: contain;
-
-  @include sp {
-    width: rem(100);
-    height: rem(100);
-  }
-}
-
-// ========================================
-// 商品情報列（商品名 + 価格 + 在庫コメント）
-// ========================================
-
-.c-favorite-list-main__info {
-  min-width: 0;
-}
-
-.c-favorite-list-main__name {
-  font-size: rem($font-size-sm);
-  font-weight: $font-weight-medium;
-  line-height: 1.6;
-  margin: 0 0 rem(6);
-}
-
-.c-favorite-list-main__name-link {
-  color: $text-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $primary-color;
-    text-decoration: underline;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $primary-color;
-    outline-offset: rem(2);
-  }
-}
-
-// ========================================
-// 価格エリア
-// ========================================
-
-.c-favorite-list-main__price-area {
-  margin: rem(4) 0;
-}
-
-.c-favorite-list-main__price {
-  display: flex;
-  align-items: baseline;
-  gap: rem(2);
-  margin: 0;
-  line-height: 1.5;
-
-  // 通常価格（打ち消し線）
-  &--strike {
-    .c-favorite-list-main__price-value {
-      text-decoration: line-through;
-      color: $text-light;
-      font-size: rem($font-size-xs);
-      font-weight: $font-weight-normal;
-    }
-
-    .c-favorite-list-main__price-unit {
-      color: $text-light;
-    }
-  }
-
-  // 特別価格（赤・太字）
-  &--special {
-    .c-favorite-list-main__price-value {
-      color: $price-color;
-      font-weight: $font-weight-bold;
-    }
-
-    .c-favorite-list-main__price-unit {
-      color: $price-color;
-    }
-  }
-}
-
-.c-favorite-list-main__price-label {
-  font-size: rem($font-size-xs);
-  color: $price-color;
-  white-space: nowrap;
-}
-
-.c-favorite-list-main__price-value {
-  font-size: rem($font-size-base);
-  font-weight: $font-weight-medium;
-  color: $price-color;
-}
-
-.c-favorite-list-main__price-unit {
-  font-size: rem($font-size-xs);
-  color: $price-color;
-}
-
-// ========================================
-// 在庫コメント
+// 在庫コメント（c-product-card 内に追加）
 // ========================================
 
 .c-favorite-list-main__stock {
@@ -236,32 +68,28 @@
 }
 
 // ========================================
-// ボタン列（削除 + 詳細）
+// ボタンエリア（カード下部・削除 + 詳細の横並び）
 // ========================================
 
 .c-favorite-list-main__actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: rem(8);
-  align-items: stretch;
-
-  @include sp {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
+  align-items: center;
+  padding: 0 rem(14) rem(14);
 }
 
 // ========================================
-// 詳細ボタン（c-card-list-main__btn-edit 同スタイル・32px高）
+// 詳細ボタン（c-card-list-main__btn-edit 同等・32px高・青）
 // ========================================
 
 .c-favorite-list-main__btn-detail {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: rem(74);
-  height: rem(32);
-  padding: 0;
+  flex: 1;
+  min-height: rem(44);
+  padding: 0 rem(8);
   background-color: $primary-color;
   border: none;
   border-radius: rem(8);
@@ -280,20 +108,20 @@
   }
 
   &:focus-visible {
-    outline: 2px solid $primary-color;
+    outline: rem(2) solid $primary-color;
     outline-offset: rem(2);
   }
 }
 
 // ========================================
-// 削除ボタンサイズ調整（c-cart-main__item-delete を32px高に縮小）
+// 削除ボタン（c-cart-main__item-delete を .c-favorite-list-main__actions 内で上書き）
 // ========================================
 
 .c-favorite-list-main__actions .c-cart-main__item-delete {
-  width: rem(74);
-  min-height: rem(32);
-  height: rem(32);
-  padding: 0 rem(10);
+  flex: 1;
+  min-height: rem(44);
+  height: auto;
+  padding: 0 rem(8);
   box-shadow: 0 rem(2) 0 $delete-shadow;
   transition: transform $transition-fast, box-shadow $transition-fast;
 

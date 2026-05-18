@@ -13,11 +13,8 @@
 
 // ----------------------------------------
 // 入力画面ラッパー
+// c-guest-main と同寸法・余白体系を踏襲（個別overrideなし）
 // ----------------------------------------
-
-.c-prescription-edit-main {
-  // c-guest-main と同寸法・余白体系を踏襲（個別overrideなし）
-}
 
 // ----------------------------------------
 // 概要説明テキスト
@@ -140,12 +137,12 @@
   list-style: disc;
   padding-left: rem(20);
   margin: 0;
+}
 
-  li {
-    font-size: rem(14);
-    line-height: 1.75;
-    color: $text-color;
-  }
+.c-prescription-edit-main__upload-item {
+  font-size: rem(14);
+  line-height: 1.75;
+  color: $text-color;
 }
 
 // ファイル選択ボタン（label で input[type=file] を内包） ネイビー枠・白背景の共通スタイル
@@ -183,10 +180,10 @@
 // input[type=file] は視覚的に隠してlabelに委任
 .c-prescription-edit-main__file-input {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: rem(1);
+  height: rem(1);
   padding: 0;
-  margin: -1px;
+  margin: rem(-1);
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -249,10 +246,6 @@
 
 .c-prescription-edit-main__enquete-item {
   margin-bottom: rem(20);
-
-  &:last-of-type {
-    margin-bottom: rem(20);
-  }
 }
 
 .c-prescription-edit-main__enquete-question {
@@ -274,11 +267,8 @@
 
 // ----------------------------------------
 // 確認画面ラッパー
+// c-guest-main の構造を流用（追加overrideなし）
 // ----------------------------------------
-
-.c-prescription-confirm-main {
-  // c-guest-main の構造を流用（追加overrideなし）
-}
 
 // 確認画面の冒頭案内文
 .c-prescription-confirm-main__intro {
@@ -304,11 +294,11 @@
 }
 
 .c-prescription-confirm-main__enquete-item {
-  margin-bottom: rem(20);
+  // 2件目以降に margin-top を付与（順序非依存）
+}
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
+.c-prescription-confirm-main__enquete-item + .c-prescription-confirm-main__enquete-item {
+  margin-top: rem(20);
 }
 
 .c-prescription-confirm-main__enquete-question {
@@ -328,9 +318,6 @@
 
 // ----------------------------------------
 // 完了画面ラッパー
+// c-complete-main の構造を流用（heading/mail-note を使用、追加overrideなし）
 // ----------------------------------------
-
-.c-prescription-complete-main {
-  // c-complete-main の構造を流用（heading/mail-note を使用）
-}
 

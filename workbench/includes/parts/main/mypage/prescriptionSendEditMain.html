@@ -1,4 +1,4 @@
-<section class="c-guest-main c-prescription-edit-main" aria-label="処方箋送信フォーム">
+<section class="c-guest-main c-prescription-edit-main" aria-label="処方箋送信フォーム入力">
 
   <form action="" method="post" novalidate>
 
@@ -84,18 +84,17 @@
       </div>
       <div class="c-prescription-edit-main__upload-notes">
         <ul class="c-prescription-edit-main__upload-list">
-          <li>デジカメ300万画素以上</li>
-          <li>スキャナー300万ピクセル以上</li>
-          <li>文字・数字が読める画像に限る</li>
+          <li class="c-prescription-edit-main__upload-item">デジカメ300万画素以上</li>
+          <li class="c-prescription-edit-main__upload-item">スキャナー300万ピクセル以上</li>
+          <li class="c-prescription-edit-main__upload-item">文字・数字が読める画像に限る</li>
         </ul>
       </div>
-      <label class="c-prescription-edit-main__upload-btn" for="prescriptionFile">
+      <label class="c-prescription-edit-main__upload-btn">
         ファイルを添付
         <input type="file"
-               id="prescriptionFile"
                name="prescriptionFile"
                accept=".pdf,.gif,.jpg,.jpeg,.png"
-               class="c-prescription-edit-main__file-input"
+               class="c-prescription-edit-main__file-input js-prescription-file-input"
                aria-label="処方箋ファイル添付">
       </label>
       <!-- 未アップロード時（初期表示） -->

@@ -2702,19 +2702,18 @@ $(function () {
 // 処方箋送信フォーム（prescriptionSendEditMain）
 // ========================================
 $(function () {
-  var $fileInput = $('#prescriptionFile');
+  const $fileInput = $('.js-prescription-file-input');
   if (!$fileInput.length) return;
 
-  var $fileNone = $('.js-prescription-file-none');
-  var $fileName = $('.js-prescription-file-name');
-  var MAX_SIZE_MB = 25;
-  var MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
-  var ACCEPTED_TYPES = ['application/pdf', 'image/gif', 'image/jpeg', 'image/png'];
-  var ACCEPTED_EXTS = /\.(pdf|gif|jpg|jpeg|png)$/i;
+  const $fileNone = $('.js-prescription-file-none');
+  const $fileName = $('.js-prescription-file-name');
+  const MAX_SIZE_MB = 25;
+  const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
+  const ACCEPTED_EXTS = /\.(pdf|gif|jpg|jpeg|png)$/i;
 
   // ファイル選択時: 表示切り替え＋バリデーション
   $fileInput.on('change', function () {
-    var file = this.files[0];
+    const file = this.files[0];
 
     if (!file) {
       $fileNone.removeAttr('hidden');

@@ -51,6 +51,7 @@
                class="c-payment-main__form-input"
                maxlength="25"
                autocomplete="cc-name"
+               aria-label="クレジットカード名義人（半角ローマ字）"
                placeholder="">
       </div>
     </div>
@@ -70,6 +71,7 @@
                maxlength="16"
                autocomplete="cc-number"
                inputmode="numeric"
+               aria-label="クレジットカード番号"
                value="">
       </div>
     </div>
@@ -138,7 +140,8 @@
                  class="c-payment-main__form-input c-payment-main__form-input--short"
                  maxlength="4"
                  inputmode="numeric"
-                 autocomplete="cc-csc">
+                 autocomplete="cc-csc"
+                 aria-label="セキュリティコード">
           <!-- セキュリティコード説明文（固定常時表示） -->
           <p class="c-card-add-main__security-note">※セキュリティコードとは、クレジットカードに記載された3桁もしくは4桁の数字を指します</p>
         </div>

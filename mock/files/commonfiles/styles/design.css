@@ -14110,10 +14110,12 @@
   min-height: 2.75rem;
   height: auto;
   padding: 0 0.5rem;
+  background-color: #6B7280;
   box-shadow: 0 0.125rem 0 #3f4651;
   transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .c-favorite-list-main__actions .c-cart-main__item-delete:hover {
+  background-color: #6B7280;
   transform: translateY(0.125rem);
   box-shadow: 0 0 0 #3f4651;
 }

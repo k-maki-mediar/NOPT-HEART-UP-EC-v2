@@ -122,10 +122,12 @@
   min-height: rem(44);
   height: auto;
   padding: 0 rem(8);
+  background-color: $text-light;
   box-shadow: 0 rem(2) 0 $delete-shadow;
   transition: transform $transition-fast, box-shadow $transition-fast;
 
   &:hover {
+    background-color: $text-light;
     transform: translateY(rem(2));
     box-shadow: 0 0 0 $delete-shadow;
   }

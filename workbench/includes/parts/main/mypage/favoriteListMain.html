@@ -207,7 +207,8 @@
     <!-- 商品カード 5（販売停止中パターン） -->
     <li class="c-list-main__grid-item">
       <article class="c-product-card">
-        <a href="#" class="c-product-card__img-link" tabindex="-1" aria-hidden="true">
+        <div class="c-product-card__img-link">
+          <span class="c-product-card__sold-out-badge">販売停止中</span>
           <img
             class="c-product-card__img"
             onerror="this.onerror=null;this.src='../../../files/commonfiles/images/noPhoto.png';"
@@ -216,16 +217,14 @@
             width="164"
             height="123"
           >
-        </a>
+        </div>
         <div class="c-product-card__body">
           <ul class="c-product-card__icons" aria-label="商品アイコン">
             <li class="c-product-card__icon-item">
               <span class="c-product-card__icon">1DAY</span>
             </li>
           </ul>
-          <ul class="c-product-card__notice-labels" aria-label="お知らせ">
-            <li class="c-product-card__notice-label">[販売停止中]</li>
-          </ul>
+          <ul class="c-product-card__notice-labels" aria-label="お知らせ" aria-busy="true"></ul>
           <p class="c-product-card__brand">ボシュロム</p>
           <h2 class="c-product-card__name">
             <a href="#" class="c-product-card__name-link">バイオトゥルー ワンデー 乱視用</a>

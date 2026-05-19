@@ -15584,11 +15584,11 @@
   margin: 0;
   padding-left: 1.25rem;
 }
-.c-guide-detail-main__ordered-list li {
+.c-guide-detail-main__ordered-list .c-guide-detail-main__ordered-item {
   margin-bottom: 0.375rem;
   line-height: 1.75;
 }
-.c-guide-detail-main__ordered-list li:last-of-type {
+.c-guide-detail-main__ordered-list .c-guide-detail-main__ordered-item:last-child {
   margin-bottom: 0;
 }
 
@@ -15597,11 +15597,11 @@
   padding-left: 0;
   list-style: none;
 }
-.c-guide-detail-main__sub-list li {
+.c-guide-detail-main__sub-list .c-guide-detail-main__sub-item {
   margin-bottom: 0.25rem;
   line-height: 1.75;
 }
-.c-guide-detail-main__sub-list li:last-of-type {
+.c-guide-detail-main__sub-list .c-guide-detail-main__sub-item:last-child {
   margin-bottom: 0;
 }
 

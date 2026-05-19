@@ -285,12 +285,12 @@
   margin: 0;
   padding-left: rem(20);
 
-  li {
+  .c-guide-detail-main__ordered-item {
     margin-bottom: rem(6);
     line-height: 1.75;
   }
 
-  li:last-of-type {
+  .c-guide-detail-main__ordered-item:last-child {
     margin-bottom: 0;
   }
 }
@@ -304,12 +304,12 @@
   padding-left: 0;
   list-style: none;
 
-  li {
+  .c-guide-detail-main__sub-item {
     margin-bottom: rem(4);
     line-height: 1.75;
   }
 
-  li:last-of-type {
+  .c-guide-detail-main__sub-item:last-child {
     margin-bottom: 0;
   }
 }

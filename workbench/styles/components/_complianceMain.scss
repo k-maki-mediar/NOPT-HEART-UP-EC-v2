@@ -52,6 +52,7 @@
   }
 
   // SP時はラベルと値を縦1列で表示（スタックレイアウト）
+  // rowにborderを集約し、内部セルのborderは消して重なりを防ぐ
   @include sp {
     display: block;
     width: 100%;
@@ -64,18 +65,25 @@
     .c-teiki-info-table__row {
       display: block;
       width: 100%;
+      border: 1px solid $bg-banner;
+      border-bottom: none;
+    }
+
+    .c-teiki-info-table__row:last-of-type {
+      border-bottom: 1px solid $bg-banner;
     }
 
     .c-teiki-info-table__header {
       display: block;
       width: 100%;
-      border-bottom: none;
+      border: none;
     }
 
     .c-teiki-info-table__data {
       display: block;
       width: 100%;
-      border-top: none;
+      border: none;
+      border-top: 1px solid $bg-banner;
     }
   }
 }

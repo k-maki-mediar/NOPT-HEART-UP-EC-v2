@@ -14875,16 +14875,22 @@
   .c-shopinfo-main__table .c-teiki-info-table__row {
     display: block;
     width: 100%;
+    border: 1px solid #d7e7fb;
+    border-bottom: none;
+  }
+  .c-shopinfo-main__table .c-teiki-info-table__row:last-of-type {
+    border-bottom: 1px solid #d7e7fb;
   }
   .c-shopinfo-main__table .c-teiki-info-table__header {
     display: block;
     width: 100%;
-    border-bottom: none;
+    border: none;
   }
   .c-shopinfo-main__table .c-teiki-info-table__data {
     display: block;
     width: 100%;
-    border-top: none;
+    border: none;
+    border-top: 1px solid #d7e7fb;
   }
 }
 
@@ -14924,16 +14930,22 @@
   .c-compliance-main__table .c-teiki-info-table__row {
     display: block;
     width: 100%;
+    border: 1px solid #d7e7fb;
+    border-bottom: none;
+  }
+  .c-compliance-main__table .c-teiki-info-table__row:last-of-type {
+    border-bottom: 1px solid #d7e7fb;
   }
   .c-compliance-main__table .c-teiki-info-table__header {
     display: block;
     width: 100%;
-    border-bottom: none;
+    border: none;
   }
   .c-compliance-main__table .c-teiki-info-table__data {
     display: block;
     width: 100%;
-    border-top: none;
+    border: none;
+    border-top: 1px solid #d7e7fb;
   }
 }
 

@@ -82,12 +82,12 @@
 .c-shipping-schedule-main__holiday-text {
   font-size: rem(15);
   font-weight: $font-weight-medium;
-  color: $text-color;
+  color: $primary-color;
   line-height: 1.6;
   margin: 0 0 rem(12);
   padding: rem(12) rem(16);
   background-color: $bg-light;
-  border-left: rem(3) solid $primary-color;
+  border: rem(1) solid $primary-color;
 
   @include sp {
     font-size: rem(13);
@@ -126,6 +126,15 @@
 
   @include sp {
     font-size: rem(11);
+  }
+}
+
+// 強調表示（赤）
+.c-shipping-schedule-main__note-item--alert {
+  color: $danger-color;
+
+  &::before {
+    color: $danger-color;
   }
 }
 
@@ -187,15 +196,9 @@
   }
 }
 
-// 交互行の背景色（ガイドライン: nth-child禁止のためclass付与で実現）
-.c-shipping-schedule-main__tr--even {
-  background-color: $bg-light;
-}
-
-// 休業期間行の強調
-.c-shipping-schedule-main__tr--holiday {
-  background-color: $bg-banner;
-  font-weight: $font-weight-medium;
+// 休業期間に該当するセルのハイライト（薄い青背景）
+.c-shipping-schedule-main__td--highlight {
+  background-color: $bg-password-area;
 }
 
 // ========================================
@@ -244,12 +247,6 @@
 // 区切り線
 // ========================================
 
-.c-shipping-schedule-main__divider {
-  border: none;
-  border-top: 1px solid $border-color;
-  margin: rem(24) 0;
-}
-
 // ========================================
 // 配送確認セクション
 // ========================================
@@ -272,6 +269,12 @@
   @include sp {
     font-size: rem(13);
   }
+}
+
+// 強調表示（ネイビー）
+.c-shipping-schedule-main__delivery-text--emphasis {
+  color: $primary-color;
+  font-weight: $font-weight-medium;
 }
 
 .c-shipping-schedule-main__delivery-link {

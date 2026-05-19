@@ -15642,12 +15642,12 @@
 .c-shipping-schedule-main__holiday-text {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: #333;
+  color: #00387d;
   line-height: 1.6;
   margin: 0 0 0.75rem;
   padding: 0.75rem 1rem;
   background-color: #f4f8fc;
-  border-left: 0.1875rem solid #00387d;
+  border: 0.0625rem solid #00387d;
 }
 @media (max-width: 767px) {
   .c-shipping-schedule-main__holiday-text {
@@ -15683,6 +15683,13 @@
   .c-shipping-schedule-main__note-item {
     font-size: 0.6875rem;
   }
+}
+
+.c-shipping-schedule-main__note-item--alert {
+  color: #d42f2f;
+}
+.c-shipping-schedule-main__note-item--alert::before {
+  color: #d42f2f;
 }
 
 .c-shipping-schedule-main__table-wrap {
@@ -15741,13 +15748,8 @@
   }
 }
 
-.c-shipping-schedule-main__tr--even {
-  background-color: #f4f8fc;
-}
-
-.c-shipping-schedule-main__tr--holiday {
-  background-color: #d7e7fb;
-  font-weight: 500;
+.c-shipping-schedule-main__td--highlight {
+  background-color: #eef4fb;
 }
 
 .c-shipping-schedule-main__bullet-list {
@@ -15786,12 +15788,6 @@
   color: #d42f2f;
 }
 
-.c-shipping-schedule-main__divider {
-  border: none;
-  border-top: 1px solid #e0e0e0;
-  margin: 1.5rem 0;
-}
-
 .c-shipping-schedule-main__delivery-info {
   padding: 1rem;
   background-color: #f4f8fc;
@@ -15810,6 +15806,11 @@
   .c-shipping-schedule-main__delivery-text {
     font-size: 0.8125rem;
   }
+}
+
+.c-shipping-schedule-main__delivery-text--emphasis {
+  color: #00387d;
+  font-weight: 500;
 }
 
 .c-shipping-schedule-main__delivery-link {

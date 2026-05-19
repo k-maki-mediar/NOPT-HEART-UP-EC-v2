@@ -24,35 +24,46 @@
 }
 
 // ========================================
-// インナー（コンテンツ幅制御）
+// インナー（PC: 2カラムグリッド / SP: 1カラム）
+// gap で各セクション間の余白を管理する
 // ========================================
 
 .c-sitemap-main__inner {
   max-width: rem(900);
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(24);
+
+  @include pc {
+    grid-template-columns: 1fr 1fr;
+    gap: rem(24) rem(32);
+    align-items: start;
+  }
 }
 
 // ========================================
-// セクション（縦1列・PC/SP共通）
+// セクション（グリッドセル）
 // ========================================
 
 .c-sitemap-main__section {
-  margin-bottom: rem(32);
+  // 余白は .c-sitemap-main__inner の gap で管理
 }
 
 // ========================================
-// セクション見出し（赤背景・白文字）
+// セクション見出し（既存パーツ統一配色: $bg-banner 背景・$primary-color テキスト）
+// 参考: c-guest-main__section-title / c-cart-main__section-title / c-shipping-main__section-title
 // ========================================
 
 .c-sitemap-main__section-title {
   font-family: $font-family-base;
   font-size: rem(16);
   font-weight: $font-weight-medium;
-  color: $color-white;
-  background-color: $accent-red;
+  color: $primary-color;
+  background-color: $bg-banner;
   line-height: 1.5;
   letter-spacing: rem(0.64);
-  margin: 0 0 0;
+  margin: 0;
   padding: rem(10) rem(14);
 
   @include sp {
@@ -111,8 +122,8 @@
     display: block;
     width: rem(6);
     height: rem(6);
-    border-top: 1px solid $accent-red;
-    border-right: 1px solid $accent-red;
+    border-top: 1px solid $primary-color;
+    border-right: 1px solid $primary-color;
     transform: rotate(45deg);
     flex-shrink: 0;
   }

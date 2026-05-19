@@ -2700,17 +2700,15 @@ $(function () {
 
 /* ========================================
  * お知らせ一覧（newsListMain）
- * 年度アコーディオン: 初期全展開 → クリックでトグル
+ * お知らせアイテム アコーディオン: クリックで個別トグル
  * ======================================== */
 $(function () {
-  // 初期表示時は全展開（HTMLで --open クラス付与済み）
-  // クリックでトグル
-  $(document).on('click', '.js-news-year-toggle', function () {
+  $(document).on('click', '.js-news-item-toggle', function () {
     var $toggle = $(this);
-    var $section = $toggle.closest('.c-news-list-main__year-section');
-    var isOpen = $section.hasClass('c-news-list-main__year-section--open');
+    var $item = $toggle.closest('.c-news-list-main__item');
+    var isOpen = $item.hasClass('c-news-list-main__item--open');
 
-    $section.toggleClass('c-news-list-main__year-section--open', !isOpen);
+    $item.toggleClass('c-news-list-main__item--open', !isOpen);
     $toggle.attr('aria-expanded', !isOpen);
   });
 });

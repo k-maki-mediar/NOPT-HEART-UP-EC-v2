@@ -6,7 +6,6 @@
 // ========================================
 
 @use '../foundation/functions' as *;
-@use 'sass:color';
 @use '../foundation/variables' as *;
 @use '../foundation/mixins' as *;
 
@@ -17,16 +16,12 @@
 .c-news-list-main {
   max-width: rem(1130);
   margin: 0 auto;
-  padding: rem(24) rem(16) rem(48);
+  padding: rem(16) rem(12) rem(48);
 
   @include pc {
-    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+    padding: rem(16) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
   }
 }
-
-// ========================================
-// インナー（コンテンツ幅制御）
-// ========================================
 
 .c-news-list-main__inner {
   max-width: rem(900);
@@ -34,149 +29,114 @@
 }
 
 // ========================================
-// 年度アコーディオン（年ごとにグルーピング）
-// 初期表示: 全展開 (--open クラス付き)
+// 見出し（件数併記）
 // ========================================
 
-.c-news-list-main__year-section {
-  margin-bottom: rem(16);
-  border: 1px solid $border-color;
-  border-radius: $border-radius-sm;
-  overflow: hidden;
-}
-
-// ========================================
-// 年度ヘッダー（アコーディオントグルボタン）
-// ========================================
-
-.c-news-list-main__year-toggle {
+.c-news-list-main__heading {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: rem(8);
-  width: 100%;
-  min-height: rem(48);
-  padding: rem(12) rem(16);
-  background-color: $bg-banner;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  transition: background-color $transition-fast;
-
-  &:hover {
-    background-color: color.adjust($bg-banner, $lightness: -5%);
-  }
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: rem(12);
 }
 
-.c-news-list-main__year-label {
-  font-family: $font-family-heading;
-  font-size: rem(15);
-  font-weight: $font-weight-medium;
-  color: $primary-color;
-  line-height: 1.5;
-  margin: 0;
-}
+.c-news-list-main__heading-total {
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  letter-spacing: rem(0.4);
 
-// アイコン（プラス/マイナス）
-.c-news-list-main__year-icon {
-  position: relative;
-  width: rem(16);
-  height: rem(16);
-  flex-shrink: 0;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    background-color: $primary-color;
-    transition: transform $transition-fast, opacity $transition-fast;
+  @include sp {
+    font-size: rem(13);
   }
-
-  // 横棒
-  &::before {
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: rem(2);
-    transform: translateY(-50%);
-  }
-
-  // 縦棒（閉じているときのみ表示）
-  &::after {
-    top: 0;
-    left: 50%;
-    width: rem(2);
-    height: 100%;
-    transform: translateX(-50%);
-    opacity: 1;
-  }
-}
-
-// 開いているとき: 縦棒を非表示
-.c-news-list-main__year-section--open .c-news-list-main__year-icon::after {
-  opacity: 0;
 }
 
 // ========================================
-// 年度コンテンツ（アコーディオン本体）
-// デフォルト: 表示（初期全展開）
-// ========================================
-
-.c-news-list-main__year-body {
-  display: block;
-  background-color: $color-white;
-}
-
-.c-news-list-main__year-section:not(.c-news-list-main__year-section--open) .c-news-list-main__year-body {
-  display: none;
-}
-
-// ========================================
-// お知らせリスト
+// リスト
 // ========================================
 
 .c-news-list-main__list {
   list-style: none;
   margin: 0;
   padding: 0;
+  border-top: rem(1) solid $primary-color;
 }
-
-// ========================================
-// お知らせ行アイテム
-// ========================================
 
 .c-news-list-main__item {
-  border-bottom: 1px solid $border-color;
-
-  &:last-of-type {
-    border-bottom: none;
-  }
+  border-bottom: rem(1) solid $primary-color;
 }
 
 // ========================================
-// お知らせリンク（行全体タップ領域）
+// 見出し行（トグルボタン）
 // ========================================
 
-.c-news-list-main__link {
+.c-news-list-main__toggle {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: rem(12);
-  padding: rem(14) rem(16);
-  min-height: rem(48);
+  width: 100%;
+  min-height: rem(64);
+  padding: rem(14) rem(12);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
   color: $text-color;
-  text-decoration: none;
-  transition: background-color $transition-fast;
+  transition: background-color 0.2s ease;
 
   &:hover {
     background-color: $bg-light;
-    color: $primary-color;
   }
 
   @include sp {
-    flex-direction: column;
-    gap: rem(6);
-    padding: rem(12) rem(12);
+    gap: rem(10);
+    padding: rem(12) rem(8);
   }
+}
+
+.c-news-list-main__head {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: rem(6);
+}
+
+// 1行目: バッジ + 日付（バッジは重要時のみ）
+.c-news-list-main__meta {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+}
+
+// ========================================
+// 重要バッジ（重要のみ表示）
+// ========================================
+
+.c-news-list-main__badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(2) rem(12);
+  font-size: rem(11);
+  font-weight: $font-weight-bold;
+  line-height: 1.5;
+  color: $color-white;
+  background-color: $danger-color;
+  border-radius: rem(9999);
+  letter-spacing: rem(0.5);
+
+  @include sp {
+    font-size: rem(10);
+    padding: rem(2) rem(10);
+  }
+}
+
+// modifierとして残すが、現状は同じ（重要のみ表示前提）
+.c-news-list-main__badge--important {
+  background-color: $danger-color;
 }
 
 // ========================================
@@ -185,55 +145,17 @@
 
 .c-news-list-main__date {
   flex-shrink: 0;
-  font-size: rem(13);
+  font-family: $font-family-base;
+  font-size: rem(14);
+  font-weight: $font-weight-normal;
   color: $text-light;
   line-height: 1.5;
-  min-width: rem(100);
-  padding-top: rem(2);
-
-  @include sp {
-    font-size: rem(12);
-    min-width: auto;
-  }
-}
-
-// ========================================
-// カテゴリバッジ
-// ========================================
-
-.c-news-list-main__category {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: rem(80);
-  height: rem(22);
-  padding: 0 rem(8);
-  background-color: $primary-color;
-  color: $color-white;
-  font-size: rem(11);
-  font-weight: $font-weight-medium;
-  line-height: 1;
-  border-radius: rem(3);
+  letter-spacing: rem(0.4);
   white-space: nowrap;
-  margin-top: rem(2);
 
   @include sp {
-    margin-top: 0;
+    font-size: rem(13);
   }
-}
-
-// カテゴリ別カラー
-.c-news-list-main__category--important {
-  background-color: $danger-color;
-}
-
-.c-news-list-main__category--campaign {
-  background-color: $accent-red;
-}
-
-.c-news-list-main__category--maintenance {
-  background-color: $text-light;
 }
 
 // ========================================
@@ -242,36 +164,109 @@
 
 .c-news-list-main__title {
   flex: 1;
+  min-width: rem(160);
   font-size: rem(14);
-  line-height: 1.6;
-  word-break: break-word;
-}
-
-// ========================================
-// 矢印アイコン
-// ========================================
-
-.c-news-list-main__arrow {
-  flex-shrink: 0;
-  width: rem(6);
-  height: rem(6);
-  border-top: 1px solid $border-color-dark;
-  border-right: 1px solid $border-color-dark;
-  transform: rotate(45deg);
-  margin-top: rem(6);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
 
   @include sp {
-    display: none;
+    font-size: rem(13);
+    min-width: rem(120);
   }
 }
 
 // ========================================
-// データなし状態
+// 開閉矢印
 // ========================================
 
-.c-news-list-main__empty {
-  padding: rem(40) rem(16);
-  text-align: center;
-  color: $text-light;
+.c-news-list-main__arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(20);
+  height: rem(20);
+  margin-left: auto;
+  transition: transform 0.2s ease;
+
+  &::before {
+    content: '';
+    display: block;
+    width: rem(8);
+    height: rem(8);
+    border-right: rem(2) solid $primary-color;
+    border-bottom: rem(2) solid $primary-color;
+    transform: rotate(45deg);
+    margin-top: rem(-4);
+  }
+}
+
+.c-news-list-main__item--open .c-news-list-main__arrow {
+  transform: rotate(180deg);
+}
+
+// ========================================
+// アコーディオン本文
+// ========================================
+
+.c-news-list-main__body {
+  display: none;
+  padding: rem(8) rem(12) rem(20);
+  border-top: rem(1) dotted $primary-color;
+
+  @include sp {
+    padding: rem(8) rem(8) rem(16);
+  }
+}
+
+.c-news-list-main__item--open .c-news-list-main__body {
+  display: block;
+}
+
+.c-news-list-main__excerpt {
   font-size: rem(14);
+  color: $text-color;
+  line-height: 1.85;
+  margin: 0 0 rem(12);
+
+  &:last-of-type {
+    margin-bottom: rem(12);
+  }
+
+  @include sp {
+    font-size: rem(13);
+  }
+}
+
+// ========================================
+// 詳しくはこちらリンク
+// ========================================
+
+.c-news-list-main__detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $link-blue;
+  text-decoration: underline;
+  text-underline-offset: rem(3);
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @include sp {
+    font-size: rem(13);
+  }
+}
+
+.c-news-list-main__detail-icon {
+  display: inline-block;
+  width: rem(12);
+  height: rem(12);
+  flex-shrink: 0;
+  vertical-align: middle;
 }

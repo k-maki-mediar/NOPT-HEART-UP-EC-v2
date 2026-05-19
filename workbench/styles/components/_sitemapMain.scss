@@ -1,0 +1,154 @@
+// ========================================
+// Sitemap Main（サイトマップ）
+// 格納先HTML: workbench/includes/parts/main/shop/sitemapMain.html
+// BEM: .c-sitemap-main
+// 参考: c-line-agreement-main（ラッパー）、c-guest-main（セクション見出し）
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-sitemap-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// インナー（PC: 2カラムグリッド / SP: 1カラム）
+// gap で各セクション間の余白を管理する
+// ========================================
+
+.c-sitemap-main__inner {
+  max-width: rem(900);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(24);
+
+  @include pc {
+    grid-template-columns: 1fr 1fr;
+    gap: rem(24) rem(32);
+    align-items: start;
+  }
+}
+
+// ========================================
+// セクション（グリッドセル）
+// ========================================
+
+.c-sitemap-main__section {
+  // 余白は .c-sitemap-main__inner の gap で管理
+}
+
+// ========================================
+// セクション見出し（既存パーツ統一配色: $bg-banner 背景・$primary-color テキスト）
+// 参考: c-guest-main__section-title / c-cart-main__section-title / c-shipping-main__section-title
+// ========================================
+
+.c-sitemap-main__section-title {
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  background-color: $bg-banner;
+  line-height: 1.5;
+  letter-spacing: rem(0.64);
+  margin: 0;
+  padding: rem(10) rem(14);
+
+  @include sp {
+    font-size: rem(14);
+    padding: rem(8) rem(12);
+  }
+}
+
+// ========================================
+// リンクリスト（縦1列・PC/SP共通）
+// 全体をborder囲み・白背景
+// ========================================
+
+.c-sitemap-main__link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: $color-white;
+  border: 1px solid $border-color;
+  border-top: none;
+}
+
+// ========================================
+// リンクアイテム
+// 各行を区切り線で分ける（border-topで上境界線）
+// --first: 先頭アイテムはborder-top除去
+// ========================================
+
+.c-sitemap-main__link-item {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $border-color;
+
+  &--first {
+    border-top: none;
+  }
+}
+
+// ========================================
+// リンク（行全体タップ領域）
+// ========================================
+
+.c-sitemap-main__link {
+  display: flex;
+  align-items: center;
+  gap: rem(6);
+  color: $text-color;
+  text-decoration: none;
+  font-size: rem(14);
+  line-height: 1.5;
+  padding: rem(12) rem(16);
+  min-height: rem(44);
+  width: 100%;
+  transition: opacity 0.2s ease;
+
+  &::before {
+    content: '';
+    display: block;
+    width: rem(6);
+    height: rem(6);
+    border-top: 1px solid $primary-color;
+    border-right: 1px solid $primary-color;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  @include sp {
+    font-size: rem(13);
+    padding: rem(10) rem(12);
+  }
+}
+
+// ========================================
+// 外部リンクアイコン
+// ========================================
+
+.c-sitemap-main__external-icon {
+  display: inline-block;
+  width: rem(12);
+  height: rem(12);
+  flex-shrink: 0;
+  vertical-align: middle;
+  margin-left: rem(4);
+}

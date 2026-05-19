@@ -14744,256 +14744,411 @@
   box-shadow: 0 0 0 #002a5e;
 }
 
-.c-prescription-edit-main__desc {
-  font-size: 0.875rem;
-  line-height: 1.75;
-  color: #333;
-  margin: 1rem 0 1rem;
+.c-sitemap-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
 }
-
-.c-prescription-edit-main__inline-link {
-  color: #0087cb;
-  text-decoration: underline;
-}
-.c-prescription-edit-main__inline-link:hover {
-  text-decoration: none;
-}
-
-.c-prescription-edit-main__help-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.375rem;
-  max-width: 15rem;
-  min-height: 2.25rem;
-  padding: 0 1rem;
-  border: 1px solid #00387d;
-  border-radius: 1.125rem;
-  background-color: #FFFFFF;
-  box-shadow: 0 0.125rem 0 #00387d;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #00387d;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  margin: 0 0 1.5rem;
-}
-.c-prescription-edit-main__help-btn:hover {
-  transform: translateY(0.125rem);
-  box-shadow: 0 0 0 #c2c2c2;
-}
-
-.c-prescription-edit-main__help-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 0.875rem;
-  height: 0.875rem;
-  border-radius: 50%;
-  background-color: #00387d;
-  color: #FFFFFF;
-  font-size: 0.625rem;
-  font-weight: 700;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.c-prescription-edit-main__help-text {
-  line-height: 1.4;
-}
-
-.c-prescription-edit-main__upload-intro {
-  font-size: 0.875rem;
-  line-height: 1.75;
-  color: #333;
-  margin: 1.5rem 0 1.5rem;
-}
-
-.c-prescription-edit-main__upload-area {
-  border: 0.125rem solid #d7e7fb;
-  padding: 1.5rem;
-  margin: 0 0 1.5rem;
-}
-
-.c-prescription-edit-main__upload-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0 0 1rem;
-}
-
-.c-prescription-edit-main__upload-title {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: #333;
-  margin: 0;
-}
-
-.c-prescription-edit-main__upload-notes {
-  background-color: #F7F7F7;
-  padding: 0.875rem 1rem;
-  margin: 0 0 1.25rem;
-}
-
-.c-prescription-edit-main__upload-list {
-  list-style: disc;
-  padding-left: 1.25rem;
-  margin: 0;
-}
-
-.c-prescription-edit-main__upload-item {
-  font-size: 0.875rem;
-  line-height: 1.75;
-  color: #333;
-}
-
-.c-prescription-edit-main__upload-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 10rem;
-  max-width: 25rem;
-  width: 100%;
-  min-height: 3.25rem;
-  padding: 0 1.5rem;
-  border: 1px solid #00387d;
-  border-radius: 1.625rem;
-  background-color: #FFFFFF;
-  box-shadow: 0 0.125rem 0 #00387d;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #00387d;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  margin: 0 auto 1rem;
-}
-.c-prescription-edit-main__upload-btn:hover {
-  transform: translateY(0.125rem);
-  box-shadow: 0 0 0 #c2c2c2;
-}
-@media (max-width: 767px) {
-  .c-prescription-edit-main__upload-btn {
-    min-width: 100%;
+@media (min-width: 992px) {
+  .c-sitemap-main {
+    padding: 2rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
   }
 }
 
-.c-prescription-edit-main__file-input {
-  position: absolute;
-  width: 0.0625rem;
-  height: 0.0625rem;
+.c-sitemap-main__inner {
+  max-width: 56.25rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 992px) {
+  .c-sitemap-main__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+    align-items: start;
+  }
+}
+
+.c-sitemap-main__section-title {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #00387d;
+  background-color: #d7e7fb;
+  line-height: 1.5;
+  letter-spacing: 0.04rem;
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+}
+@media (max-width: 767px) {
+  .c-sitemap-main__section-title {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.c-sitemap-main__link-list {
+  list-style: none;
+  margin: 0;
   padding: 0;
-  margin: -0.0625rem;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  background-color: #FFFFFF;
+  border: 1px solid #e0e0e0;
+  border-top: none;
 }
 
-.c-prescription-edit-main__file-none {
-  font-size: 0.875rem;
-  color: #999;
-  margin: 0;
-}
-
-.c-prescription-edit-main__file-name {
-  font-size: 0.875rem;
-  color: #333;
-  word-break: break-all;
-  margin: 0;
-}
-
-.c-prescription-edit-main__enquete {
-  background-color: #f4f8fc;
-  padding: 1.5rem;
-  margin: 0 0 1.5rem;
-}
-.c-prescription-edit-main__enquete .c-guest-main__radio {
-  width: 1.125rem;
-  height: 1.125rem;
-}
-.c-prescription-edit-main__enquete .c-guest-main__radio-label {
-  font-size: 0.875rem;
-}
-.c-prescription-edit-main__enquete .c-guest-main__radio-group {
-  gap: 0.75rem;
-}
-@media (max-width: 767px) {
-  .c-prescription-edit-main__enquete .c-guest-main__radio-group {
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-}
-
-.c-prescription-edit-main__enquete-title {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: #00387d;
-  line-height: 1.5;
-  margin: 0 0 1.25rem;
-}
-
-.c-prescription-edit-main__enquete-item {
-  margin-bottom: 1.25rem;
-}
-
-.c-prescription-edit-main__enquete-question {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #333;
-  line-height: 1.5;
-  margin: 0 0 0.5rem;
-}
-
-.c-prescription-edit-main__enquete-note {
-  font-size: 0.8125rem;
-  color: #333;
-  line-height: 1.5;
-  margin: 1rem 0 0;
-  padding-top: 1rem;
+.c-sitemap-main__link-item {
+  display: flex;
+  align-items: center;
   border-top: 1px solid #e0e0e0;
 }
+.c-sitemap-main__link-item--first {
+  border-top: none;
+}
 
-.c-prescription-confirm-main__intro {
+.c-sitemap-main__link {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: #333;
+  text-decoration: none;
   font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.75rem 1rem;
+  min-height: 2.75rem;
+  width: 100%;
+  transition: opacity 0.2s ease;
+}
+.c-sitemap-main__link::before {
+  content: "";
+  display: block;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-top: 1px solid #00387d;
+  border-right: 1px solid #00387d;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+.c-sitemap-main__link:hover {
+  opacity: 0.6;
+}
+@media (max-width: 767px) {
+  .c-sitemap-main__link {
+    font-size: 0.8125rem;
+    padding: 0.625rem 0.75rem;
+  }
+}
+
+.c-sitemap-main__external-icon {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  flex-shrink: 0;
+  vertical-align: middle;
+  margin-left: 0.25rem;
+}
+
+.c-shopinfo-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+@media (min-width: 992px) {
+  .c-shopinfo-main {
+    padding: 2rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-shopinfo-main__inner {
+  max-width: 43.75rem;
+  margin: 0 auto;
+}
+
+.c-shopinfo-main__table .c-teiki-info-table__data {
+  word-break: break-all;
+}
+@media (max-width: 767px) {
+  .c-shopinfo-main__table {
+    display: block;
+    width: 100%;
+  }
+  .c-shopinfo-main__table tbody {
+    display: block;
+    width: 100%;
+  }
+  .c-shopinfo-main__table .c-teiki-info-table__row {
+    display: block;
+    width: 100%;
+    border: 1px solid #d7e7fb;
+    border-bottom: none;
+  }
+  .c-shopinfo-main__table .c-teiki-info-table__row:last-of-type {
+    border-bottom: 1px solid #d7e7fb;
+  }
+  .c-shopinfo-main__table .c-teiki-info-table__header {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+  .c-shopinfo-main__table .c-teiki-info-table__data {
+    display: block;
+    width: 100%;
+    border: none;
+    border-top: 1px solid #d7e7fb;
+  }
+}
+
+.c-compliance-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+@media (min-width: 992px) {
+  .c-compliance-main {
+    padding: 2rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-compliance-main__inner {
+  max-width: 43.75rem;
+  margin: 0 auto;
+}
+
+.c-compliance-main__table .c-teiki-info-table__header {
+  word-break: break-all;
+  vertical-align: top;
+}
+.c-compliance-main__table .c-teiki-info-table__data {
+  word-break: break-all;
+  vertical-align: top;
+}
+@media (max-width: 767px) {
+  .c-compliance-main__table {
+    display: block;
+    width: 100%;
+  }
+  .c-compliance-main__table tbody {
+    display: block;
+    width: 100%;
+  }
+  .c-compliance-main__table .c-teiki-info-table__row {
+    display: block;
+    width: 100%;
+    border: 1px solid #d7e7fb;
+    border-bottom: none;
+  }
+  .c-compliance-main__table .c-teiki-info-table__row:last-of-type {
+    border-bottom: 1px solid #d7e7fb;
+  }
+  .c-compliance-main__table .c-teiki-info-table__header {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+  .c-compliance-main__table .c-teiki-info-table__data {
+    display: block;
+    width: 100%;
+    border: none;
+    border-top: 1px solid #d7e7fb;
+  }
+}
+
+.c-ruletouse-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+@media (min-width: 992px) {
+  .c-ruletouse-main {
+    padding: 2rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-ruletouse-main__inner {
+  max-width: 56.25rem;
+  margin: 0 auto;
+}
+
+.c-ruletouse-main__table .c-teiki-info-table__header {
+  width: 13.75rem;
+  word-break: break-all;
+  vertical-align: top;
+}
+.c-ruletouse-main__table .c-teiki-info-table__data {
+  vertical-align: top;
+}
+@media (max-width: 767px) {
+  .c-ruletouse-main__table {
+    display: block;
+    width: 100%;
+  }
+  .c-ruletouse-main__table tbody {
+    display: block;
+    width: 100%;
+  }
+  .c-ruletouse-main__table .c-teiki-info-table__row {
+    display: block;
+    width: 100%;
+    border: 1px solid #d7e7fb;
+    border-bottom: none;
+  }
+  .c-ruletouse-main__table .c-teiki-info-table__row:last-of-type {
+    border-bottom: 1px solid #d7e7fb;
+  }
+  .c-ruletouse-main__table .c-teiki-info-table__header {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+  .c-ruletouse-main__table .c-teiki-info-table__data {
+    display: block;
+    width: 100%;
+    border: none;
+    border-top: 1px solid #d7e7fb;
+  }
+}
+
+.c-ruletouse-main__ordered-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+.c-ruletouse-main__ordered-list li {
+  margin-bottom: 0.375rem;
   line-height: 1.75;
-  color: #333;
-  margin: 1rem 0 1.5rem;
+}
+.c-ruletouse-main__ordered-list li:last-of-type {
+  margin-bottom: 0;
 }
 
-.c-prescription-confirm-main__enquete {
-  background-color: #f4f8fc;
-  padding: 1.5rem;
-  margin: 1.5rem 0;
+.c-ruletouse-main__sub-list {
+  margin: 0.375rem 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+.c-ruletouse-main__sub-list li {
+  margin-bottom: 0.25rem;
+  line-height: 1.75;
+}
+.c-ruletouse-main__sub-list li:last-of-type {
+  margin-bottom: 0;
 }
 
-.c-prescription-confirm-main__enquete-title {
-  font-size: 0.9375rem;
+.c-ruletouse-main__date {
+  font-size: 0.75rem;
+  color: #6B7280;
+  text-align: right;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.c-regular-agreement-main {
+  max-width: 70.625rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+@media (min-width: 992px) {
+  .c-regular-agreement-main {
+    padding: 2rem 2rem 3rem calc(var(--side-nav-content-offset) + 2rem);
+  }
+}
+
+.c-regular-agreement-main__inner {
+  max-width: 56.25rem;
+  margin: 0 auto;
+}
+
+.c-regular-agreement-main__table .c-teiki-info-table__header {
+  width: 15rem;
+  word-break: break-all;
+  vertical-align: top;
+}
+.c-regular-agreement-main__table .c-teiki-info-table__data {
+  vertical-align: top;
+}
+@media (max-width: 767px) {
+  .c-regular-agreement-main__table {
+    display: block;
+    width: 100%;
+  }
+  .c-regular-agreement-main__table tbody {
+    display: block;
+    width: 100%;
+  }
+  .c-regular-agreement-main__table .c-teiki-info-table__row {
+    display: block;
+    width: 100%;
+    border: 1px solid #d7e7fb;
+    border-bottom: none;
+  }
+  .c-regular-agreement-main__table .c-teiki-info-table__row:last-of-type {
+    border-bottom: 1px solid #d7e7fb;
+  }
+  .c-regular-agreement-main__table .c-teiki-info-table__header {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+  .c-regular-agreement-main__table .c-teiki-info-table__data {
+    display: block;
+    width: 100%;
+    border: none;
+    border-top: 1px solid #d7e7fb;
+  }
+}
+
+.c-regular-agreement-main__ordered-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+.c-regular-agreement-main__ordered-list li {
+  margin-bottom: 0.375rem;
+  line-height: 1.75;
+}
+.c-regular-agreement-main__ordered-list li:last-of-type {
+  margin-bottom: 0;
+}
+
+.c-regular-agreement-main__sub-list {
+  margin: 0.375rem 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+.c-regular-agreement-main__sub-list li {
+  margin-bottom: 0.25rem;
+  line-height: 1.75;
+}
+.c-regular-agreement-main__sub-list li:last-of-type {
+  margin-bottom: 0;
+}
+
+.c-regular-agreement-main__sub-heading {
   font-weight: 700;
+  margin: 0.5rem 0 0.25rem;
+  line-height: 1.5;
+}
+
+.c-regular-agreement-main__sub-text {
+  margin: 0 0 0.25rem;
+  line-height: 1.75;
+}
+
+.c-regular-agreement-main__link {
   color: #00387d;
-  line-height: 1.5;
-  margin: 0 0 1.25rem;
+  text-decoration: underline;
+  word-break: break-all;
+  transition: opacity 0.2s ease;
+}
+.c-regular-agreement-main__link:hover {
+  opacity: 0.6;
 }
 
-.c-prescription-confirm-main__enquete-item + .c-prescription-confirm-main__enquete-item {
-  margin-top: 1.25rem;
-}
-
-.c-prescription-confirm-main__enquete-question {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #333;
-  line-height: 1.5;
-  margin: 0 0 0.5rem;
-}
-
-.c-prescription-confirm-main__enquete-answer {
-  font-size: 0.875rem;
-  color: #333;
-  line-height: 1.5;
-  margin: 0 0 0 2rem;
+.c-regular-agreement-main__note {
+  font-size: 0.75rem;
+  color: #6B7280;
+  line-height: 1.75;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .c-main--logged-in .c-campaign-topics__deco-rect {

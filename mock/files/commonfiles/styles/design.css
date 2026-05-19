@@ -14863,6 +14863,30 @@
 .c-shopinfo-main__table .c-teiki-info-table__data {
   word-break: break-all;
 }
+@media (max-width: 767px) {
+  .c-shopinfo-main__table {
+    display: block;
+    width: 100%;
+  }
+  .c-shopinfo-main__table tbody {
+    display: block;
+    width: 100%;
+  }
+  .c-shopinfo-main__table .c-teiki-info-table__row {
+    display: block;
+    width: 100%;
+  }
+  .c-shopinfo-main__table .c-teiki-info-table__header {
+    display: block;
+    width: 100%;
+    border-bottom: none;
+  }
+  .c-shopinfo-main__table .c-teiki-info-table__data {
+    display: block;
+    width: 100%;
+    border-top: none;
+  }
+}
 
 .c-compliance-main {
   max-width: 70.625rem;
@@ -14887,6 +14911,30 @@
 .c-compliance-main__table .c-teiki-info-table__data {
   word-break: break-all;
   vertical-align: top;
+}
+@media (max-width: 767px) {
+  .c-compliance-main__table {
+    display: block;
+    width: 100%;
+  }
+  .c-compliance-main__table tbody {
+    display: block;
+    width: 100%;
+  }
+  .c-compliance-main__table .c-teiki-info-table__row {
+    display: block;
+    width: 100%;
+  }
+  .c-compliance-main__table .c-teiki-info-table__header {
+    display: block;
+    width: 100%;
+    border-bottom: none;
+  }
+  .c-compliance-main__table .c-teiki-info-table__data {
+    display: block;
+    width: 100%;
+    border-top: none;
+  }
 }
 
 .c-ruletouse-main {

@@ -41,4 +41,32 @@
   .c-teiki-info-table__data {
     word-break: break-all;
   }
+
+  // SP時はラベルと値を縦1列で表示（スタックレイアウト）
+  @include sp {
+    display: block;
+    width: 100%;
+
+    tbody {
+      display: block;
+      width: 100%;
+    }
+
+    .c-teiki-info-table__row {
+      display: block;
+      width: 100%;
+    }
+
+    .c-teiki-info-table__header {
+      display: block;
+      width: 100%;
+      border-bottom: none;
+    }
+
+    .c-teiki-info-table__data {
+      display: block;
+      width: 100%;
+      border-top: none;
+    }
+  }
 }

@@ -15795,8 +15795,6 @@
 .c-shipping-schedule-main__delivery-info {
   padding: 1rem;
   background-color: #f4f8fc;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
 }
 
 .c-shipping-schedule-main__delivery-text {
@@ -15988,31 +15986,11 @@
   width: auto;
 }
 
-.c-payment-guide-main__section-conbi-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #543e90;
-  text-align: center;
-  margin: 0 0 0.25rem;
-  line-height: 1.2;
-  letter-spacing: 0.0625rem;
-}
-@media (max-width: 767px) {
-  .c-payment-guide-main__section-conbi-title {
-    font-size: 1.5rem;
-  }
-}
-
-.c-payment-guide-main__section-conbi-mark {
+.c-payment-guide-main__score-logo {
   display: inline-block;
-  font-size: 2.125rem;
-  vertical-align: middle;
-  margin-right: 0.125rem;
-}
-@media (max-width: 767px) {
-  .c-payment-guide-main__section-conbi-mark {
-    font-size: 1.875rem;
-  }
+  height: auto;
+  max-width: 6.875rem;
+  width: auto;
 }
 
 .c-payment-guide-main__section-subtitle {

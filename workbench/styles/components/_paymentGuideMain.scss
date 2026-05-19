@@ -197,30 +197,11 @@ $_conbi-color: #543e90;                // 紫
   width: auto;
 }
 
-// セクションタイトル（@払い）
-.c-payment-guide-main__section-conbi-title {
-  font-size: rem(28);
-  font-weight: $font-weight-bold;
-  color: $_conbi-color;
-  text-align: center;
-  margin: 0 0 rem(4);
-  line-height: 1.2;
-  letter-spacing: rem(1);
-
-  @include sp {
-    font-size: rem(24);
-  }
-}
-
-.c-payment-guide-main__section-conbi-mark {
+.c-payment-guide-main__score-logo {
   display: inline-block;
-  font-size: rem(34);
-  vertical-align: middle;
-  margin-right: rem(2);
-
-  @include sp {
-    font-size: rem(30);
-  }
+  height: auto;
+  max-width: rem(110);
+  width: auto;
 }
 
 // セクションサブタイトル（ご利用方法）

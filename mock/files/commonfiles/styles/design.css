@@ -14800,6 +14800,10 @@
 .c-sitemap-main__link-item {
   display: flex;
   align-items: center;
+  border-top: 1px solid #e0e0e0;
+}
+.c-sitemap-main__link-item--first {
+  border-top: none;
 }
 
 .c-sitemap-main__link {

@@ -1,9 +1,6 @@
 <section class="c-user-heading" aria-label="お知らせ一覧">
   <div class="c-user-heading__inner">
-    <h1 class="c-user-heading__title c-news-list-main__heading">
-      <span class="c-news-list-main__heading-text">お知らせ一覧</span>
-      <span class="c-news-list-main__heading-total">全15件</span>
-    </h1>
+    <h1 class="c-user-heading__title">お知らせ一覧</h1>
   </div>
   <img src="../../../files/commonfiles/images/line-heading.svg" alt="" class="c-user-heading__line" width="393" height="1">
 </section>
@@ -11,10 +8,12 @@
 <div class="c-news-list-main">
   <div class="c-news-list-main__inner">
 
+    <p class="c-news-list-main__total">全15件</p>
+
     <ul class="c-news-list-main__list">
 
-      <li class="c-news-list-main__item c-news-list-main__item--open">
-        <button class="c-news-list-main__toggle js-news-item-toggle" type="button" aria-expanded="true">
+      <li class="c-news-list-main__item">
+        <button class="c-news-list-main__toggle js-news-item-toggle" type="button" aria-expanded="false">
           <span class="c-news-list-main__head">
             <span class="c-news-list-main__meta">
               <span class="c-news-list-main__date">2025/06/24</span>
@@ -108,11 +107,6 @@
       </li>
 
     </ul>
-
-    <!-- ===== ページャー ===== -->
-    <nav class="c-pager js-pager" aria-label="ページナビゲーション" data-total-pages="3" data-current-page="1">
-      <ul class="c-pager__list" aria-busy="true"></ul>
-    </nav>
 
   </div>
 </div>

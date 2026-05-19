@@ -1,0 +1,47 @@
+// ========================================
+// Shopinfo Main（サイト情報）
+// 格納先HTML: workbench/includes/parts/main/shop/shopinfoMain.html
+// BEM: .c-shopinfo-main
+// テーブルスタイルは既存 .c-teiki-info-table を流用（_regularSaleDetail.scss）
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-shopinfo-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// インナー（コンテンツ幅制御）
+// ========================================
+
+.c-shopinfo-main__inner {
+  max-width: rem(700);
+  margin: 0 auto;
+}
+
+// ========================================
+// テーブル上書き（リンク色）
+// テーブル構造は .c-teiki-info-table のまま流用
+// ========================================
+
+.c-shopinfo-main__table {
+  // .c-teiki-info-table の幅継承
+  // tdのリンクにスタイルを付与（テーブルデータセル内）
+  .c-teiki-info-table__data {
+    // word-break for long texts（URL等）
+    word-break: break-all;
+  }
+}

@@ -88,18 +88,11 @@
 
 // ========================================
 // リンクアイテム
-// 各行を区切り線で分ける（border-topで上境界線）
-// --first: 先頭アイテムはborder-top除去
 // ========================================
 
 .c-sitemap-main__link-item {
   display: flex;
   align-items: center;
-  border-top: 1px solid $border-color;
-
-  &--first {
-    border-top: none;
-  }
 }
 
 // ========================================

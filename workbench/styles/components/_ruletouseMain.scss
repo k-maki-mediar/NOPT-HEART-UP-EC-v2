@@ -56,17 +56,17 @@
 
 .c-ruletouse-main__chapter-title {
   font-family: $font-family-heading;
-  font-size: rem(17);
+  font-size: rem(15);
   font-weight: $font-weight-bold;
   color: $primary-color;
   background-color: $bg-banner;
   margin: 0 0 rem(16);
   padding: rem(10) rem(14);
   line-height: 1.5;
-  letter-spacing: rem(0.68);
+  letter-spacing: rem(0.6);
 
   @include sp {
-    font-size: rem(15);
+    font-size: rem(13);
     padding: rem(8) rem(10);
   }
 }
@@ -87,15 +87,15 @@
 
 .c-ruletouse-main__article-title {
   font-family: $font-family-base;
-  font-size: rem(15);
+  font-size: rem(13);
   font-weight: $font-weight-bold;
   color: $primary-color;
   margin: 0 0 rem(8);
   line-height: 1.5;
-  letter-spacing: rem(0.6);
+  letter-spacing: rem(0.52);
 
   @include sp {
-    font-size: rem(14);
+    font-size: rem(12);
   }
 }
 

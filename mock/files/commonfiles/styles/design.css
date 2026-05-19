@@ -14978,18 +14978,18 @@
 
 .c-ruletouse-main__chapter-title {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 1.0625rem;
+  font-size: 0.9375rem;
   font-weight: 700;
   color: #00387d;
   background-color: #d7e7fb;
   margin: 0 0 1rem;
   padding: 0.625rem 0.875rem;
   line-height: 1.5;
-  letter-spacing: 0.0425rem;
+  letter-spacing: 0.0375rem;
 }
 @media (max-width: 767px) {
   .c-ruletouse-main__chapter-title {
-    font-size: 0.9375rem;
+    font-size: 0.8125rem;
     padding: 0.5rem 0.625rem;
   }
 }
@@ -15002,16 +15002,16 @@
 
 .c-ruletouse-main__article-title {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   color: #00387d;
   margin: 0 0 0.5rem;
   line-height: 1.5;
-  letter-spacing: 0.0375rem;
+  letter-spacing: 0.0325rem;
 }
 @media (max-width: 767px) {
   .c-ruletouse-main__article-title {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 }
 

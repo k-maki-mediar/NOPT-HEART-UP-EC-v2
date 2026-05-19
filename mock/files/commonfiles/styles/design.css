@@ -15964,7 +15964,7 @@
   text-align: center;
   margin: 0 0 1.25rem;
   padding-bottom: 0.75rem;
-  border-bottom: 0.0625rem solid currentColor;
+  border-bottom: 0.0625rem dashed currentColor;
   line-height: 1.4;
 }
 @media (max-width: 767px) {
@@ -16007,7 +16007,7 @@
   text-align: center;
   margin: 0 0 1.25rem;
   padding-bottom: 0.75rem;
-  border-bottom: 0.0625rem solid currentColor;
+  border-bottom: 0.0625rem dashed currentColor;
   line-height: 1.4;
 }
 @media (max-width: 767px) {

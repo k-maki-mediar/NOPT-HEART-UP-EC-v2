@@ -160,7 +160,7 @@ $_conbi-color: #543e90;                // 紫
   text-align: center;
   margin: 0 0 rem(20);
   padding-bottom: rem(12);
-  border-bottom: rem(1) solid currentColor;
+  border-bottom: rem(1) dashed currentColor;
   line-height: 1.4;
 
   @include sp {
@@ -204,7 +204,7 @@ $_conbi-color: #543e90;                // 紫
   text-align: center;
   margin: 0 0 rem(20);
   padding-bottom: rem(12);
-  border-bottom: rem(1) solid currentColor;
+  border-bottom: rem(1) dashed currentColor;
   line-height: 1.4;
 
   @include sp {

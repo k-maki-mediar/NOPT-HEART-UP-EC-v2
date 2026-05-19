@@ -14830,8 +14830,6 @@
 }
 .c-sitemap-main__link:hover {
   background-color: #f4f8fc;
-  text-decoration: underline;
-  text-underline-offset: 0.125rem;
 }
 @media (max-width: 767px) {
   .c-sitemap-main__link {

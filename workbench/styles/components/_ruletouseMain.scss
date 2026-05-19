@@ -1,8 +1,9 @@
 // ========================================
-// Ruletouse Main（会員規約）
+// Ruletouse Main（ハートアップ会員規約）
 // 格納先HTML: workbench/includes/parts/main/shop/ruletouseMain.html
 // BEM: .c-ruletouse-main
-// 参考: c-line-agreement-main（ラッパー・notice構造）
+// テーブルスタイルは既存 .c-teiki-info-table を流用（_regularSaleDetail.scss）
+// 構造・SP overrideは .c-shopinfo-main / .c-compliance-main と統一
 // ========================================
 
 @use '../foundation/functions' as *;
@@ -28,107 +29,108 @@
 // ========================================
 
 .c-ruletouse-main__inner {
-  max-width: rem(700);
+  max-width: rem(900);
   margin: 0 auto;
-  border: 1px solid $border-color;
-  padding: rem(24) rem(20);
+}
 
+// ========================================
+// テーブル上書き
+// ========================================
+
+.c-ruletouse-main__table {
+  .c-teiki-info-table__header {
+    width: rem(220);
+    word-break: break-all;
+    vertical-align: top;
+  }
+
+  .c-teiki-info-table__data {
+    vertical-align: top;
+  }
+
+  // SP時はラベルと値を縦1列で表示（スタックレイアウト）
+  // rowにborderを集約し、内部セルのborderは消して重なりを防ぐ
   @include sp {
-    padding: rem(16) rem(12);
+    display: block;
+    width: 100%;
+
+    tbody {
+      display: block;
+      width: 100%;
+    }
+
+    .c-teiki-info-table__row {
+      display: block;
+      width: 100%;
+      border: 1px solid $bg-banner;
+      border-bottom: none;
+    }
+
+    .c-teiki-info-table__row:last-of-type {
+      border-bottom: 1px solid $bg-banner;
+    }
+
+    .c-teiki-info-table__header {
+      display: block;
+      width: 100%;
+      border: none;
+    }
+
+    .c-teiki-info-table__data {
+      display: block;
+      width: 100%;
+      border: none;
+      border-top: 1px solid $bg-banner;
+    }
   }
 }
 
 // ========================================
-// コンテンツ（article ラッパー）
+// 番号付きリスト（条文内の項番）
 // ========================================
 
-.c-ruletouse-main__content {
-  // articleのスタイルリセット
-}
-
-// ========================================
-// チャプター（第1章 等）
-// ========================================
-
-.c-ruletouse-main__chapter {
-  margin-bottom: rem(32);
-}
-
-.c-ruletouse-main__chapter-title {
-  font-family: $font-family-heading;
-  font-size: rem(15);
-  font-weight: $font-weight-bold;
-  color: $primary-color;
-  background-color: $bg-banner;
-  margin: 0 0 rem(16);
-  padding: rem(10) rem(14);
-  line-height: 1.5;
-  letter-spacing: rem(0.6);
-
-  @include sp {
-    font-size: rem(13);
-    padding: rem(8) rem(10);
-  }
-}
-
-// ========================================
-// 条項セクション
-// ========================================
-
-.c-ruletouse-main__article {
-  margin-bottom: rem(20);
-  padding-bottom: rem(20);
-  border-bottom: 1px dashed $border-color;
-}
-
-.c-ruletouse-main__article:last-of-type {
-  margin-bottom: 0;
-}
-
-// ========================================
-// 条項見出し
-// ========================================
-
-.c-ruletouse-main__article-title {
-  font-family: $font-family-base;
-  font-size: rem(13);
-  font-weight: $font-weight-bold;
-  color: $primary-color;
-  margin: 0 0 rem(8);
-  line-height: 1.5;
-  letter-spacing: rem(0.52);
-
-  @include sp {
-    font-size: rem(12);
-  }
-}
-
-// ========================================
-// 条項本文
-// ========================================
-
-.c-ruletouse-main__article-body {
-  font-size: rem(13);
-  color: $text-color;
-  line-height: 1.85;
+.c-ruletouse-main__ordered-list {
   margin: 0;
-  white-space: pre-line;
+  padding-left: rem(20);
 
-  @include sp {
-    font-size: rem(12);
+  li {
+    margin-bottom: rem(6);
     line-height: 1.75;
   }
+
+  li:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 // ========================================
-// 制定日・改定日
+// 入れ子リスト（(1)(2)... の項目）
+// ========================================
+
+.c-ruletouse-main__sub-list {
+  margin: rem(6) 0 0;
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: rem(4);
+    line-height: 1.75;
+  }
+
+  li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// ========================================
+// 改定日（テーブル外・右寄せ）
 // ========================================
 
 .c-ruletouse-main__date {
   font-size: rem(12);
   color: $text-light;
   text-align: right;
-  margin-top: 0;
+  margin-top: rem(16);
   margin-bottom: 0;
   line-height: 1.5;
 }

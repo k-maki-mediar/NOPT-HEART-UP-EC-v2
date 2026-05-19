@@ -2,7 +2,7 @@
 // Sitemap Main（サイトマップ）
 // 格納先HTML: workbench/includes/parts/main/shop/sitemapMain.html
 // BEM: .c-sitemap-main
-// 参考: c-line-agreement-main（ラッパー）、c-guest-main（セクション見出し）、c-topic-path（リンク）
+// 参考: c-line-agreement-main（ラッパー）、c-guest-main（セクション見出し）
 // ========================================
 
 @use '../foundation/functions' as *;
@@ -33,23 +33,7 @@
 }
 
 // ========================================
-// PC 2カラムグリッド
-// ========================================
-
-.c-sitemap-main__grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-
-  @include pc {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 rem(32);
-  }
-}
-
-// ========================================
-// セクション
+// セクション（縦1列・PC/SP共通）
 // ========================================
 
 .c-sitemap-main__section {
@@ -57,19 +41,18 @@
 }
 
 // ========================================
-// セクション見出し（$bg-banner背景・$primary-color文字）
-// 参考: c-guest-main__section-title
+// セクション見出し（赤背景・白文字）
 // ========================================
 
 .c-sitemap-main__section-title {
   font-family: $font-family-base;
   font-size: rem(16);
   font-weight: $font-weight-medium;
-  color: $primary-color;
-  background-color: $bg-banner;
+  color: $color-white;
+  background-color: $accent-red;
   line-height: 1.5;
   letter-spacing: rem(0.64);
-  margin: 0 0 rem(12);
+  margin: 0 0 0;
   padding: rem(10) rem(14);
 
   @include sp {
@@ -79,148 +62,82 @@
 }
 
 // ========================================
-// リンクリスト
-// SP: 縦並び、各アイテムに区切り線（リスト全体を border-top で始める）
-// PC: 横並び flex-wrap（gap で間隔管理）
+// リンクリスト（縦1列・PC/SP共通）
+// 全体をborder囲み・白背景
 // ========================================
 
 .c-sitemap-main__link-list {
   list-style: none;
   margin: 0;
   padding: 0;
-
-  @include sp {
-    border-top: 1px solid $border-color;
-  }
-
-  @include pc {
-    display: flex;
-    flex-wrap: wrap;
-    gap: rem(4) rem(16);
-  }
+  background-color: $color-white;
+  border: 1px solid $border-color;
+  border-top: none;
 }
 
 // ========================================
 // リンクアイテム
-// SP: 行全体タップ領域・区切り線（border-bottom）
-// PC: インライン
+// 各行を区切り線で分ける（border-topで上境界線）
 // ========================================
 
 .c-sitemap-main__link-item {
   display: flex;
   align-items: center;
+  border-top: 1px solid $border-color;
 
-  @include sp {
-    min-height: rem(44);
-    border-bottom: 1px solid $border-color;
-    justify-content: space-between;
-  }
-
-  @include pc {
-    align-items: center;
-  }
-}
-
-// リンク + すべてを見るボタンが並ぶアイテム
-.c-sitemap-main__link-item--with-btn {
-  @include sp {
-    flex-wrap: nowrap;
-    gap: rem(8);
-    min-height: rem(48);
-    padding: rem(4) 0;
-  }
-
-  @include pc {
-    flex-direction: row;
-    gap: rem(6);
+  &.c-sitemap-main__link-item--first {
+    border-top: none;
   }
 }
 
 // ========================================
-// リンク
+// リンク（行全体タップ領域）
 // ========================================
 
 .c-sitemap-main__link {
-  color: $primary-color;
+  display: flex;
+  align-items: center;
+  gap: rem(6);
+  color: $text-color;
   text-decoration: none;
   font-size: rem(14);
   line-height: 1.5;
-  padding: rem(8) rem(4) rem(8) rem(8);
+  padding: rem(12) rem(16);
   min-height: rem(44);
-  display: flex;
-  align-items: center;
-  flex: 1;
+  width: 100%;
+
+  &::before {
+    content: '';
+    display: block;
+    width: rem(6);
+    height: rem(6);
+    border-top: 1px solid $accent-red;
+    border-right: 1px solid $accent-red;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
 
   &:hover {
+    background-color: $bg-light;
     text-decoration: underline;
     text-underline-offset: rem(2);
   }
 
   @include sp {
-    padding-left: rem(4);
     font-size: rem(13);
+    padding: rem(10) rem(12);
   }
 }
 
 // ========================================
-// SPシェブロン（右矢印）
-// 通常アイテム内のリンクにシェブロン表示
+// 外部リンクアイコン
 // ========================================
 
-.c-sitemap-main__link-item > .c-sitemap-main__link {
-  @include sp {
-    &::after {
-      content: '';
-      display: block;
-      width: rem(7);
-      height: rem(7);
-      border-top: 1px solid $primary-color;
-      border-right: 1px solid $primary-color;
-      transform: rotate(45deg);
-      flex-shrink: 0;
-      margin-left: rem(8);
-    }
-  }
-}
-
-// with-btnアイテム内のリンクはシェブロン非表示
-.c-sitemap-main__link-item--with-btn > .c-sitemap-main__link {
-  @include sp {
-    &::after {
-      display: none;
-    }
-  }
-}
-
-// ========================================
-// すべてを見るボタン
-// ========================================
-
-.c-sitemap-main__all-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: rem(36);
-  padding: rem(6) rem(12);
-  border: 1px solid $primary-color;
-  border-radius: rem(18);
-  background-color: $color-white;
-  color: $primary-color;
-  font-size: rem(12);
-  font-weight: $font-weight-medium;
-  text-decoration: none;
-  white-space: nowrap;
+.c-sitemap-main__external-icon {
+  display: inline-block;
+  width: rem(12);
+  height: rem(12);
   flex-shrink: 0;
-  transition: background-color 0.2s ease, color 0.2s ease;
-
-  &:hover {
-    background-color: $primary-color;
-    color: $color-white;
-  }
-
-  @include sp {
-    min-height: rem(36);
-    font-size: rem(12);
-    padding: rem(6) rem(10);
-  }
+  vertical-align: middle;
+  margin-left: rem(4);
 }

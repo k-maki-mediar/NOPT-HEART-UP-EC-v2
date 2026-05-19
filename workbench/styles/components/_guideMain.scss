@@ -5,6 +5,7 @@
 //   workbench/includes/parts/main/shop/guideDetailMain.html（詳細モード）
 // BEM: .c-guide-list-main / .c-guide-detail-main
 // 設計書: specs/20_画面設計書（フロント）/01_ページ/05_ショップ/U2050801_ご利用ガイド.xlsx
+// デザイン: サイトマップ（c-sitemap-main）と同一スタイルを踏襲
 // ========================================
 
 @use '../foundation/functions' as *;
@@ -25,27 +26,43 @@
   }
 }
 
+// ========================================
+// インナー（PC: 2カラムグリッド / SP: 1カラム）
+// サイトマップに合わせ、gap で各セクション間の余白を管理
+// ========================================
+
 .c-guide-list-main__inner {
   max-width: rem(900);
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(24);
+
+  @include pc {
+    grid-template-columns: 1fr 1fr;
+    gap: rem(24) rem(32);
+    align-items: start;
+  }
 }
 
 // ========================================
 // 一覧モード: カテゴリセクション
+// 余白は __inner の gap で管理
 // ========================================
 
 .c-guide-list-main__section {
-  margin-bottom: rem(32);
+  // 余白は .c-guide-list-main__inner の gap で管理
 }
 
 .c-guide-list-main__section-title {
-  font-family: $font-family-heading;
+  font-family: $font-family-base;
   font-size: rem(16);
   font-weight: $font-weight-medium;
   color: $primary-color;
   background-color: $bg-banner;
   line-height: 1.5;
-  margin: 0 0 rem(0);
+  letter-spacing: rem(0.64);
+  margin: 0;
   padding: rem(10) rem(14);
 
   @include sp {
@@ -62,30 +79,28 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  background-color: $color-white;
   border: 1px solid $border-color;
   border-top: none;
-  background-color: $color-white;
 }
 
 .c-guide-list-main__link-item {
-  border-bottom: 1px solid $border-color;
-
-  &:last-of-type {
-    border-bottom: none;
-  }
+  display: flex;
+  align-items: center;
 }
 
 .c-guide-list-main__link {
   display: flex;
   align-items: center;
-  gap: rem(8);
-  padding: rem(14) rem(16);
-  min-height: rem(48);
-  color: $primary-color;
+  gap: rem(6);
+  color: $text-color;
   text-decoration: none;
   font-size: rem(14);
-  line-height: 1.6;
-  transition: background-color $transition-fast;
+  line-height: 1.5;
+  padding: rem(12) rem(16);
+  min-height: rem(44);
+  width: 100%;
+  transition: opacity 0.2s ease;
 
   &::before {
     content: '';
@@ -99,14 +114,26 @@
   }
 
   &:hover {
-    background-color: $bg-light;
-    text-decoration: underline;
+    opacity: 0.6;
   }
 
   @include sp {
-    padding: rem(12) rem(12);
     font-size: rem(13);
+    padding: rem(10) rem(12);
   }
+}
+
+// ========================================
+// 一覧モード: 外部リンクアイコン
+// ========================================
+
+.c-guide-list-main__external-icon {
+  display: inline-block;
+  width: rem(12);
+  height: rem(12);
+  flex-shrink: 0;
+  vertical-align: middle;
+  margin-left: rem(4);
 }
 
 // ========================================
@@ -129,173 +156,161 @@
 }
 
 // ========================================
-// 詳細モード: カテゴリ大見出し
+// 詳細モード: コンテンツラッパー（全体をグレー枠で囲む）
 // ========================================
 
-.c-guide-detail-main__category-heading {
-  font-family: $font-family-heading;
-  font-size: rem(18);
-  font-weight: $font-weight-medium;
+.c-guide-detail-main__content {
+  border: rem(1) solid $border-color;
+  background-color: $color-white;
+  padding: rem(28) rem(32);
+
+  @include sp {
+    padding: rem(20) rem(16);
+  }
+}
+
+// ========================================
+// 詳細モード: 項目タイトル（1. 会員規約 等）
+// 薄い青背景の四角で囲む
+// ========================================
+
+.c-guide-detail-main__item-title {
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $font-weight-bold;
   color: $primary-color;
   background-color: $bg-banner;
-  margin: 0 0 rem(24);
-  padding: rem(12) rem(16);
-
-  @include sp {
-    font-size: rem(15);
-    padding: rem(10) rem(12);
-  }
-}
-
-// ========================================
-// 詳細モード: Q&Aブロック
-// ========================================
-
-.c-guide-detail-main__qa-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c-guide-detail-main__qa-item {
-  margin-bottom: rem(20);
-  border: 1px solid $border-color;
-  border-radius: $border-radius-sm;
-  overflow: hidden;
-}
-
-// 質問行
-.c-guide-detail-main__question {
-  display: flex;
-  align-items: flex-start;
-  gap: rem(12);
-  padding: rem(14) rem(16);
-  background-color: $bg-light;
-  font-size: rem(14);
-  font-weight: $font-weight-medium;
-  color: $text-color;
-  line-height: 1.6;
-
-  @include sp {
-    padding: rem(12) rem(12);
-    gap: rem(8);
-    font-size: rem(13);
-  }
-}
-
-.c-guide-detail-main__question-label {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: rem(28);
-  height: rem(28);
-  background-color: $primary-color;
-  color: $color-white;
-  font-size: rem(13);
-  font-weight: $font-weight-bold;
-  border-radius: 50%;
-  line-height: 1;
-  margin-top: rem(1);
-}
-
-.c-guide-detail-main__question-text {
-  flex: 1;
-}
-
-// 回答行
-.c-guide-detail-main__answer {
-  display: flex;
-  align-items: flex-start;
-  gap: rem(12);
-  padding: rem(14) rem(16);
-  background-color: $color-white;
-  font-size: rem(14);
-  color: $text-color;
-  line-height: 1.75;
-  border-top: 1px solid $border-color;
-
-  @include sp {
-    padding: rem(12) rem(12);
-    gap: rem(8);
-    font-size: rem(13);
-  }
-}
-
-.c-guide-detail-main__answer-label {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: rem(28);
-  height: rem(28);
-  background-color: $color-white;
-  color: $primary-color;
-  font-size: rem(13);
-  font-weight: $font-weight-bold;
-  border: 1px solid $primary-color;
-  border-radius: 50%;
-  line-height: 1;
-  margin-top: rem(1);
-}
-
-.c-guide-detail-main__answer-text {
-  flex: 1;
-}
-
-// ========================================
-// 詳細モード: セクション見出し（Q&Aグループのタイトル）
-// ========================================
-
-.c-guide-detail-main__section-heading {
-  font-family: $font-family-heading;
-  font-size: rem(15);
-  font-weight: $font-weight-medium;
-  color: $primary-color;
-  border-left: rem(4) solid $primary-color;
-  padding: rem(6) rem(12);
-  margin: rem(32) 0 rem(16);
   line-height: 1.5;
+  letter-spacing: rem(0.64);
+  margin: 0 0 rem(24);
+  padding: rem(10) rem(14);
+
+  &:not(:first-of-type) {
+    margin-top: rem(32);
+  }
 
   @include sp {
     font-size: rem(14);
-    margin: rem(24) 0 rem(12);
+    margin: 0 0 rem(20);
+    padding: rem(8) rem(12);
+
+    &:not(:first-of-type) {
+      margin-top: rem(28);
+    }
   }
 }
 
 // ========================================
-// 詳細モード: 戻るリンク
+// 詳細モード: 章タイトル（第1章 総則 等）
+// 上に点線区切りを置く
 // ========================================
 
-.c-guide-detail-main__back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: rem(6);
-  margin-top: rem(32);
-  padding: rem(10) rem(20);
-  min-height: rem(44);
-  border: 1px solid $primary-color;
-  border-radius: rem(22);
+.c-guide-detail-main__chapter-title {
+  font-family: $font-family-base;
+  font-size: rem(15);
+  font-weight: $font-weight-bold;
   color: $primary-color;
+  line-height: 1.5;
+  margin: rem(28) 0 rem(20);
+  padding-top: rem(20);
+  border-top: rem(1) dashed $border-color-dark;
+
+  &:first-of-type {
+    border-top: none;
+    margin-top: rem(8);
+    padding-top: 0;
+  }
+
+  @include sp {
+    font-size: rem(14);
+    margin: rem(24) 0 rem(16);
+    padding-top: rem(16);
+  }
+}
+
+// ========================================
+// 詳細モード: 条文ブロック（枠囲みなし・テキスト並び）
+// ========================================
+
+.c-guide-detail-main__article {
+  margin-bottom: rem(20);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include sp {
+    margin-bottom: rem(16);
+  }
+}
+
+// ========================================
+// 詳細モード: 条文タイトル（第N条…）
+// 小さめのネイビーテキスト
+// ========================================
+
+.c-guide-detail-main__article-title {
+  font-family: $font-family-base;
   font-size: rem(14);
-  text-decoration: none;
-  transition: background-color $transition-fast;
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  line-height: 1.5;
+  margin: 0 0 rem(8);
 
-  &::before {
-    content: '';
-    display: block;
-    width: rem(6);
-    height: rem(6);
-    border-top: 1px solid $primary-color;
-    border-left: 1px solid $primary-color;
-    transform: rotate(-45deg);
+  @include sp {
+    font-size: rem(13);
+    margin: 0 0 rem(6);
   }
+}
 
-  &:hover {
-    background-color: $bg-light;
-  }
+// ========================================
+// 詳細モード: 条文本文
+// ========================================
+
+.c-guide-detail-main__article-body {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
 
   @include sp {
     font-size: rem(13);
   }
 }
+
+// ========================================
+// 詳細モード: 番号付きリスト（条文内の項番）
+// ========================================
+
+.c-guide-detail-main__ordered-list {
+  margin: 0;
+  padding-left: rem(20);
+
+  li {
+    margin-bottom: rem(6);
+    line-height: 1.75;
+  }
+
+  li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// ========================================
+// 詳細モード: 入れ子リスト（(1)(2)... の項目）
+// ========================================
+
+.c-guide-detail-main__sub-list {
+  margin: rem(6) 0 0;
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: rem(4);
+    line-height: 1.75;
+  }
+
+  li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+

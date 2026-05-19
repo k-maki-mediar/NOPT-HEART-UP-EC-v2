@@ -1,0 +1,169 @@
+// ========================================
+// Regular Agreement Main（らくとく定期便ご利用規約）
+// 格納先HTML: workbench/includes/parts/main/shop/regularAgreementMain.html
+// BEM: .c-regular-agreement-main
+// テーブルスタイルは既存 .c-teiki-info-table を流用（_regularSaleDetail.scss）
+// 構造・SP overrideは .c-ruletouse-main / .c-shopinfo-main / .c-compliance-main と統一
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-regular-agreement-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// インナー（コンテンツ幅制御）
+// ========================================
+
+.c-regular-agreement-main__inner {
+  max-width: rem(900);
+  margin: 0 auto;
+}
+
+// ========================================
+// テーブル上書き
+// ========================================
+
+.c-regular-agreement-main__table {
+  .c-teiki-info-table__header {
+    width: rem(240);
+    word-break: break-all;
+    vertical-align: top;
+  }
+
+  .c-teiki-info-table__data {
+    vertical-align: top;
+  }
+
+  // SP時はラベルと値を縦1列で表示（スタックレイアウト）
+  // rowにborderを集約し、内部セルのborderは消して重なりを防ぐ
+  @include sp {
+    display: block;
+    width: 100%;
+
+    tbody {
+      display: block;
+      width: 100%;
+    }
+
+    .c-teiki-info-table__row {
+      display: block;
+      width: 100%;
+      border: 1px solid $bg-banner;
+      border-bottom: none;
+    }
+
+    .c-teiki-info-table__row:last-of-type {
+      border-bottom: 1px solid $bg-banner;
+    }
+
+    .c-teiki-info-table__header {
+      display: block;
+      width: 100%;
+      border: none;
+    }
+
+    .c-teiki-info-table__data {
+      display: block;
+      width: 100%;
+      border: none;
+      border-top: 1px solid $bg-banner;
+    }
+  }
+}
+
+// ========================================
+// 番号付きリスト（条文内の項番）
+// ========================================
+
+.c-regular-agreement-main__ordered-list {
+  margin: 0;
+  padding-left: rem(20);
+
+  li {
+    margin-bottom: rem(6);
+    line-height: 1.75;
+  }
+
+  li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// ========================================
+// 入れ子リスト（(1)(2)... の項目）
+// ========================================
+
+.c-regular-agreement-main__sub-list {
+  margin: rem(6) 0 0;
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: rem(4);
+    line-height: 1.75;
+  }
+
+  li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// ========================================
+// 補助見出し（【個人情報の取り扱い】等）
+// ========================================
+
+.c-regular-agreement-main__sub-heading {
+  font-weight: $font-weight-bold;
+  margin: rem(8) 0 rem(4);
+  line-height: 1.5;
+}
+
+// ========================================
+// 補助本文
+// ========================================
+
+.c-regular-agreement-main__sub-text {
+  margin: 0 0 rem(4);
+  line-height: 1.75;
+}
+
+// ========================================
+// リンク（提供先プライバシーポリシー等）
+// ========================================
+
+.c-regular-agreement-main__link {
+  color: $primary-color;
+  text-decoration: underline;
+  word-break: break-all;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+// ========================================
+// 注釈（※注1 など）
+// ========================================
+
+.c-regular-agreement-main__note {
+  font-size: rem(12);
+  color: $text-light;
+  line-height: 1.75;
+  margin-top: rem(16);
+  margin-bottom: 0;
+}

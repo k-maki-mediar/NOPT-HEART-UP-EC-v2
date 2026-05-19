@@ -1,0 +1,80 @@
+// ========================================
+// Shopinfo Main（サイト情報）
+// 格納先HTML: workbench/includes/parts/main/shop/shopinfoMain.html
+// BEM: .c-shopinfo-main
+// テーブルスタイルは既存 .c-teiki-info-table を流用（_regularSaleDetail.scss）
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-shopinfo-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// インナー（コンテンツ幅制御）
+// ========================================
+
+.c-shopinfo-main__inner {
+  max-width: rem(700);
+  margin: 0 auto;
+}
+
+// ========================================
+// テーブル上書き
+// テーブル構造は .c-teiki-info-table のまま流用
+// ========================================
+
+.c-shopinfo-main__table {
+  .c-teiki-info-table__data {
+    word-break: break-all;
+  }
+
+  // SP時はラベルと値を縦1列で表示（スタックレイアウト）
+  // rowにborderを集約し、内部セルのborderは消して重なりを防ぐ
+  @include sp {
+    display: block;
+    width: 100%;
+
+    tbody {
+      display: block;
+      width: 100%;
+    }
+
+    .c-teiki-info-table__row {
+      display: block;
+      width: 100%;
+      border: 1px solid $bg-banner;
+      border-bottom: none;
+    }
+
+    .c-teiki-info-table__row:last-of-type {
+      border-bottom: 1px solid $bg-banner;
+    }
+
+    .c-teiki-info-table__header {
+      display: block;
+      width: 100%;
+      border: none;
+    }
+
+    .c-teiki-info-table__data {
+      display: block;
+      width: 100%;
+      border: none;
+      border-top: 1px solid $bg-banner;
+    }
+  }
+}

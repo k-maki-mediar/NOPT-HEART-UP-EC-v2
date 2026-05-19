@@ -2704,9 +2704,9 @@ $(function () {
  * ======================================== */
 $(function () {
   $(document).on('click', '.js-news-item-toggle', function () {
-    var $toggle = $(this);
-    var $item = $toggle.closest('.c-news-list-main__item');
-    var isOpen = $item.hasClass('c-news-list-main__item--open');
+    const $toggle = $(this);
+    const $item = $toggle.closest('.c-news-list-main__item');
+    const isOpen = $item.hasClass('c-news-list-main__item--open');
 
     $item.toggleClass('c-news-list-main__item--open', !isOpen);
     $toggle.attr('aria-expanded', !isOpen);

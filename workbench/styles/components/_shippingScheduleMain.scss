@@ -1,0 +1,288 @@
+// ========================================
+// Shipping Schedule Main（長期休業配送予定）
+// 格納先HTML: workbench/includes/parts/main/shop/shippingScheduleMain.html
+// BEM: .c-shipping-schedule-main
+// 設計書: specs/20_画面設計書（フロント）/01_ページ/05_ショップ/U2050904_長期休業配送予定.xlsx
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-shipping-schedule-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// インナー（コンテンツ幅制御）
+// ========================================
+
+.c-shipping-schedule-main__inner {
+  max-width: rem(800);
+  margin: 0 auto;
+}
+
+// ========================================
+// リードテキスト
+// ========================================
+
+.c-shipping-schedule-main__lead {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0 0 rem(24);
+
+  @include sp {
+    font-size: rem(13);
+  }
+}
+
+// ========================================
+// セクション
+// ========================================
+
+.c-shipping-schedule-main__section {
+  margin-bottom: rem(32);
+}
+
+// ========================================
+// セクション見出し
+// ========================================
+
+.c-shipping-schedule-main__section-heading {
+  font-family: $font-family-heading;
+  font-size: rem(15);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  background-color: $bg-banner;
+  margin: 0 0 rem(12);
+  padding: rem(10) rem(14);
+  line-height: 1.5;
+
+  @include sp {
+    font-size: rem(14);
+    padding: rem(8) rem(12);
+  }
+}
+
+// ========================================
+// 休業日テキスト（強調）
+// ========================================
+
+.c-shipping-schedule-main__holiday-text {
+  font-size: rem(15);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.6;
+  margin: 0 0 rem(12);
+  padding: rem(12) rem(16);
+  background-color: $bg-light;
+  border-left: rem(3) solid $primary-color;
+
+  @include sp {
+    font-size: rem(13);
+    padding: rem(10) rem(12);
+  }
+}
+
+// ========================================
+// 注釈リスト
+// ========================================
+
+.c-shipping-schedule-main__note-list {
+  list-style: none;
+  margin: rem(8) 0 0;
+  padding: 0;
+}
+
+.c-shipping-schedule-main__note-item {
+  font-size: rem(12);
+  color: $text-light;
+  line-height: 1.75;
+  padding-left: rem(14);
+  position: relative;
+  margin-bottom: rem(4);
+
+  &::before {
+    content: '※';
+    position: absolute;
+    left: 0;
+    color: $text-light;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include sp {
+    font-size: rem(11);
+  }
+}
+
+// ========================================
+// 配送スケジュールテーブル
+// c-teiki-info-table を流用
+// ========================================
+
+.c-shipping-schedule-main__table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c-shipping-schedule-main__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: rem(14);
+
+  @include sp {
+    font-size: rem(13);
+  }
+}
+
+.c-shipping-schedule-main__thead {
+  background-color: $primary-color;
+  color: $color-white;
+}
+
+.c-shipping-schedule-main__th {
+  padding: rem(10) rem(16);
+  text-align: center;
+  font-weight: $font-weight-medium;
+  font-size: rem(13);
+  border: 1px solid $primary-color;
+  white-space: nowrap;
+
+  @include sp {
+    padding: rem(8) rem(10);
+    font-size: rem(12);
+  }
+}
+
+.c-shipping-schedule-main__tbody {
+  background-color: $color-white;
+}
+
+.c-shipping-schedule-main__tr {
+  border-bottom: 1px solid $border-color;
+}
+
+.c-shipping-schedule-main__td {
+  padding: rem(10) rem(16);
+  text-align: center;
+  border: 1px solid $border-color;
+  line-height: 1.5;
+
+  @include sp {
+    padding: rem(8) rem(10);
+  }
+}
+
+// 交互行の背景色（ガイドライン: nth-child禁止のためclass付与で実現）
+.c-shipping-schedule-main__tr--even {
+  background-color: $bg-light;
+}
+
+// 休業期間行の強調
+.c-shipping-schedule-main__tr--holiday {
+  background-color: $bg-banner;
+  font-weight: $font-weight-medium;
+}
+
+// ========================================
+// 箇条書きセクション
+// ========================================
+
+.c-shipping-schedule-main__bullet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-shipping-schedule-main__bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: rem(8);
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin-bottom: rem(10);
+
+  &::before {
+    content: '●';
+    flex-shrink: 0;
+    color: $primary-color;
+    font-size: rem(10);
+    margin-top: rem(4);
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include sp {
+    font-size: rem(13);
+  }
+}
+
+// 強調テキスト
+.c-shipping-schedule-main__bullet-item--emphasis {
+  font-weight: $font-weight-medium;
+  color: $danger-color;
+}
+
+// ========================================
+// 区切り線
+// ========================================
+
+.c-shipping-schedule-main__divider {
+  border: none;
+  border-top: 1px solid $border-color;
+  margin: rem(24) 0;
+}
+
+// ========================================
+// 配送確認セクション
+// ========================================
+
+.c-shipping-schedule-main__delivery-info {
+  padding: rem(16);
+  background-color: $bg-light;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+}
+
+.c-shipping-schedule-main__delivery-text {
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  margin: 0 0 rem(10);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include sp {
+    font-size: rem(13);
+  }
+}
+
+.c-shipping-schedule-main__delivery-link {
+  color: $primary-color;
+  text-decoration: underline;
+  word-break: break-all;
+  transition: opacity $transition-fast;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

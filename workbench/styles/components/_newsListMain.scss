@@ -1,0 +1,277 @@
+// ========================================
+// News List Main（お知らせ一覧）
+// 格納先HTML: workbench/includes/parts/main/shop/newsListMain.html
+// BEM: .c-news-list-main
+// 設計書: specs/20_画面設計書（フロント）/01_ページ/05_ショップ/U2050701_お知らせ一覧.xlsx
+// ========================================
+
+@use '../foundation/functions' as *;
+@use 'sass:color';
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-news-list-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// インナー（コンテンツ幅制御）
+// ========================================
+
+.c-news-list-main__inner {
+  max-width: rem(900);
+  margin: 0 auto;
+}
+
+// ========================================
+// 年度アコーディオン（年ごとにグルーピング）
+// 初期表示: 全展開 (--open クラス付き)
+// ========================================
+
+.c-news-list-main__year-section {
+  margin-bottom: rem(16);
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+}
+
+// ========================================
+// 年度ヘッダー（アコーディオントグルボタン）
+// ========================================
+
+.c-news-list-main__year-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(8);
+  width: 100%;
+  min-height: rem(48);
+  padding: rem(12) rem(16);
+  background-color: $bg-banner;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: color.adjust($bg-banner, $lightness: -5%);
+  }
+}
+
+.c-news-list-main__year-label {
+  font-family: $font-family-heading;
+  font-size: rem(15);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  line-height: 1.5;
+  margin: 0;
+}
+
+// アイコン（プラス/マイナス）
+.c-news-list-main__year-icon {
+  position: relative;
+  width: rem(16);
+  height: rem(16);
+  flex-shrink: 0;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: $primary-color;
+    transition: transform $transition-fast, opacity $transition-fast;
+  }
+
+  // 横棒
+  &::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: rem(2);
+    transform: translateY(-50%);
+  }
+
+  // 縦棒（閉じているときのみ表示）
+  &::after {
+    top: 0;
+    left: 50%;
+    width: rem(2);
+    height: 100%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+}
+
+// 開いているとき: 縦棒を非表示
+.c-news-list-main__year-section--open .c-news-list-main__year-icon::after {
+  opacity: 0;
+}
+
+// ========================================
+// 年度コンテンツ（アコーディオン本体）
+// デフォルト: 表示（初期全展開）
+// ========================================
+
+.c-news-list-main__year-body {
+  display: block;
+  background-color: $color-white;
+}
+
+.c-news-list-main__year-section:not(.c-news-list-main__year-section--open) .c-news-list-main__year-body {
+  display: none;
+}
+
+// ========================================
+// お知らせリスト
+// ========================================
+
+.c-news-list-main__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// ========================================
+// お知らせ行アイテム
+// ========================================
+
+.c-news-list-main__item {
+  border-bottom: 1px solid $border-color;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+// ========================================
+// お知らせリンク（行全体タップ領域）
+// ========================================
+
+.c-news-list-main__link {
+  display: flex;
+  align-items: flex-start;
+  gap: rem(12);
+  padding: rem(14) rem(16);
+  min-height: rem(48);
+  color: $text-color;
+  text-decoration: none;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $bg-light;
+    color: $primary-color;
+  }
+
+  @include sp {
+    flex-direction: column;
+    gap: rem(6);
+    padding: rem(12) rem(12);
+  }
+}
+
+// ========================================
+// 日付
+// ========================================
+
+.c-news-list-main__date {
+  flex-shrink: 0;
+  font-size: rem(13);
+  color: $text-light;
+  line-height: 1.5;
+  min-width: rem(100);
+  padding-top: rem(2);
+
+  @include sp {
+    font-size: rem(12);
+    min-width: auto;
+  }
+}
+
+// ========================================
+// カテゴリバッジ
+// ========================================
+
+.c-news-list-main__category {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(80);
+  height: rem(22);
+  padding: 0 rem(8);
+  background-color: $primary-color;
+  color: $color-white;
+  font-size: rem(11);
+  font-weight: $font-weight-medium;
+  line-height: 1;
+  border-radius: rem(3);
+  white-space: nowrap;
+  margin-top: rem(2);
+
+  @include sp {
+    margin-top: 0;
+  }
+}
+
+// カテゴリ別カラー
+.c-news-list-main__category--important {
+  background-color: $danger-color;
+}
+
+.c-news-list-main__category--campaign {
+  background-color: $accent-red;
+}
+
+.c-news-list-main__category--maintenance {
+  background-color: $text-light;
+}
+
+// ========================================
+// タイトル
+// ========================================
+
+.c-news-list-main__title {
+  flex: 1;
+  font-size: rem(14);
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+// ========================================
+// 矢印アイコン
+// ========================================
+
+.c-news-list-main__arrow {
+  flex-shrink: 0;
+  width: rem(6);
+  height: rem(6);
+  border-top: 1px solid $border-color-dark;
+  border-right: 1px solid $border-color-dark;
+  transform: rotate(45deg);
+  margin-top: rem(6);
+
+  @include sp {
+    display: none;
+  }
+}
+
+// ========================================
+// データなし状態
+// ========================================
+
+.c-news-list-main__empty {
+  padding: rem(40) rem(16);
+  text-align: center;
+  color: $text-light;
+  font-size: rem(14);
+}

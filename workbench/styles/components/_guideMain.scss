@@ -1,0 +1,301 @@
+// ========================================
+// Guide Main（ご利用ガイド）
+// 格納先HTML:
+//   workbench/includes/parts/main/shop/guideListMain.html（一覧モード）
+//   workbench/includes/parts/main/shop/guideDetailMain.html（詳細モード）
+// BEM: .c-guide-list-main / .c-guide-detail-main
+// 設計書: specs/20_画面設計書（フロント）/01_ページ/05_ショップ/U2050801_ご利用ガイド.xlsx
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// 一覧モード: ラッパー
+// ========================================
+
+.c-guide-list-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+.c-guide-list-main__inner {
+  max-width: rem(900);
+  margin: 0 auto;
+}
+
+// ========================================
+// 一覧モード: カテゴリセクション
+// ========================================
+
+.c-guide-list-main__section {
+  margin-bottom: rem(32);
+}
+
+.c-guide-list-main__section-title {
+  font-family: $font-family-heading;
+  font-size: rem(16);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  background-color: $bg-banner;
+  line-height: 1.5;
+  margin: 0 0 rem(0);
+  padding: rem(10) rem(14);
+
+  @include sp {
+    font-size: rem(14);
+    padding: rem(8) rem(12);
+  }
+}
+
+// ========================================
+// 一覧モード: リンクリスト
+// ========================================
+
+.c-guide-list-main__link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid $border-color;
+  border-top: none;
+  background-color: $color-white;
+}
+
+.c-guide-list-main__link-item {
+  border-bottom: 1px solid $border-color;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.c-guide-list-main__link {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  padding: rem(14) rem(16);
+  min-height: rem(48);
+  color: $primary-color;
+  text-decoration: none;
+  font-size: rem(14);
+  line-height: 1.6;
+  transition: background-color $transition-fast;
+
+  &::before {
+    content: '';
+    display: block;
+    width: rem(6);
+    height: rem(6);
+    border-top: 1px solid $primary-color;
+    border-right: 1px solid $primary-color;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background-color: $bg-light;
+    text-decoration: underline;
+  }
+
+  @include sp {
+    padding: rem(12) rem(12);
+    font-size: rem(13);
+  }
+}
+
+// ========================================
+// 詳細モード: ラッパー
+// ========================================
+
+.c-guide-detail-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+.c-guide-detail-main__inner {
+  max-width: rem(900);
+  margin: 0 auto;
+}
+
+// ========================================
+// 詳細モード: カテゴリ大見出し
+// ========================================
+
+.c-guide-detail-main__category-heading {
+  font-family: $font-family-heading;
+  font-size: rem(18);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  background-color: $bg-banner;
+  margin: 0 0 rem(24);
+  padding: rem(12) rem(16);
+
+  @include sp {
+    font-size: rem(15);
+    padding: rem(10) rem(12);
+  }
+}
+
+// ========================================
+// 詳細モード: Q&Aブロック
+// ========================================
+
+.c-guide-detail-main__qa-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-guide-detail-main__qa-item {
+  margin-bottom: rem(20);
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+}
+
+// 質問行
+.c-guide-detail-main__question {
+  display: flex;
+  align-items: flex-start;
+  gap: rem(12);
+  padding: rem(14) rem(16);
+  background-color: $bg-light;
+  font-size: rem(14);
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  line-height: 1.6;
+
+  @include sp {
+    padding: rem(12) rem(12);
+    gap: rem(8);
+    font-size: rem(13);
+  }
+}
+
+.c-guide-detail-main__question-label {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(28);
+  height: rem(28);
+  background-color: $primary-color;
+  color: $color-white;
+  font-size: rem(13);
+  font-weight: $font-weight-bold;
+  border-radius: 50%;
+  line-height: 1;
+  margin-top: rem(1);
+}
+
+.c-guide-detail-main__question-text {
+  flex: 1;
+}
+
+// 回答行
+.c-guide-detail-main__answer {
+  display: flex;
+  align-items: flex-start;
+  gap: rem(12);
+  padding: rem(14) rem(16);
+  background-color: $color-white;
+  font-size: rem(14);
+  color: $text-color;
+  line-height: 1.75;
+  border-top: 1px solid $border-color;
+
+  @include sp {
+    padding: rem(12) rem(12);
+    gap: rem(8);
+    font-size: rem(13);
+  }
+}
+
+.c-guide-detail-main__answer-label {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(28);
+  height: rem(28);
+  background-color: $color-white;
+  color: $primary-color;
+  font-size: rem(13);
+  font-weight: $font-weight-bold;
+  border: 1px solid $primary-color;
+  border-radius: 50%;
+  line-height: 1;
+  margin-top: rem(1);
+}
+
+.c-guide-detail-main__answer-text {
+  flex: 1;
+}
+
+// ========================================
+// 詳細モード: セクション見出し（Q&Aグループのタイトル）
+// ========================================
+
+.c-guide-detail-main__section-heading {
+  font-family: $font-family-heading;
+  font-size: rem(15);
+  font-weight: $font-weight-medium;
+  color: $primary-color;
+  border-left: rem(4) solid $primary-color;
+  padding: rem(6) rem(12);
+  margin: rem(32) 0 rem(16);
+  line-height: 1.5;
+
+  @include sp {
+    font-size: rem(14);
+    margin: rem(24) 0 rem(12);
+  }
+}
+
+// ========================================
+// 詳細モード: 戻るリンク
+// ========================================
+
+.c-guide-detail-main__back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(6);
+  margin-top: rem(32);
+  padding: rem(10) rem(20);
+  min-height: rem(44);
+  border: 1px solid $primary-color;
+  border-radius: rem(22);
+  color: $primary-color;
+  font-size: rem(14);
+  text-decoration: none;
+  transition: background-color $transition-fast;
+
+  &::before {
+    content: '';
+    display: block;
+    width: rem(6);
+    height: rem(6);
+    border-top: 1px solid $primary-color;
+    border-left: 1px solid $primary-color;
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    background-color: $bg-light;
+  }
+
+  @include sp {
+    font-size: rem(13);
+  }
+}

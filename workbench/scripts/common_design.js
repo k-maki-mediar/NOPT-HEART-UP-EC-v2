@@ -2697,3 +2697,20 @@ $(function () {
   });
 });
 
+
+/* ========================================
+ * お知らせ一覧（newsListMain）
+ * 年度アコーディオン: 初期全展開 → クリックでトグル
+ * ======================================== */
+$(function () {
+  // 初期表示時は全展開（HTMLで --open クラス付与済み）
+  // クリックでトグル
+  $(document).on('click', '.js-news-year-toggle', function () {
+    var $toggle = $(this);
+    var $section = $toggle.closest('.c-news-list-main__year-section');
+    var isOpen = $section.hasClass('c-news-list-main__year-section--open');
+
+    $section.toggleClass('c-news-list-main__year-section--open', !isOpen);
+    $toggle.attr('aria-expanded', !isOpen);
+  });
+});

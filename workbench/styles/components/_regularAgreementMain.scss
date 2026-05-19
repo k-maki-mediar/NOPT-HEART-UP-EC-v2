@@ -1,0 +1,142 @@
+// ========================================
+// Regular Agreement Main（定期購入会員規約）
+// 格納先HTML: workbench/includes/parts/main/shop/regularAgreementMain.html
+// BEM: .c-regular-agreement-main
+// .c-ruletouse-main と同一構造（セクションタイトル追加）
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-regular-agreement-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// インナー（コンテンツ幅制御）
+// ========================================
+
+.c-regular-agreement-main__inner {
+  max-width: rem(700);
+  margin: 0 auto;
+  border: 1px solid $border-color;
+  padding: rem(24) rem(20);
+
+  @include sp {
+    padding: rem(16) rem(12);
+  }
+}
+
+// ========================================
+// セクション（規約セクション単位）
+// ========================================
+
+.c-regular-agreement-main__section {
+  margin-bottom: rem(32);
+}
+
+// ========================================
+// セクション見出し（大見出し）
+// ========================================
+
+.c-regular-agreement-main__section-title {
+  font-family: $font-family-heading;
+  font-size: rem(17);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  background-color: $bg-banner;
+  margin: 0 0 rem(16);
+  padding: rem(10) rem(14);
+  line-height: 1.5;
+  letter-spacing: rem(0.68);
+
+  @include sp {
+    font-size: rem(15);
+    padding: rem(8) rem(10);
+  }
+}
+
+// ========================================
+// 条項セクション
+// ========================================
+
+.c-regular-agreement-main__article {
+  margin-bottom: rem(20);
+  padding-bottom: rem(20);
+  border-bottom: 1px dashed $border-color;
+}
+
+// ========================================
+// 条項見出し
+// ========================================
+
+.c-regular-agreement-main__article-title {
+  font-family: $font-family-base;
+  font-size: rem(15);
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+  margin: 0 0 rem(8);
+  line-height: 1.5;
+  letter-spacing: rem(0.6);
+
+  @include sp {
+    font-size: rem(14);
+  }
+}
+
+// ========================================
+// 条項本文
+// ========================================
+
+.c-regular-agreement-main__article-body {
+  font-size: rem(13);
+  color: $text-color;
+  line-height: 1.85;
+  margin: 0;
+  white-space: pre-line;
+
+  @include sp {
+    font-size: rem(12);
+    line-height: 1.75;
+  }
+}
+
+// ========================================
+// 注記テキスト（※注1 等）
+// ========================================
+
+.c-regular-agreement-main__note {
+  font-size: rem(12);
+  color: $text-light;
+  line-height: 1.75;
+  margin-top: rem(16);
+  margin-bottom: 0;
+
+  @include sp {
+    font-size: rem(11);
+  }
+}
+
+// ========================================
+// 附則・改訂日
+// ========================================
+
+.c-regular-agreement-main__date {
+  font-size: rem(12);
+  color: $text-light;
+  text-align: right;
+  margin-top: rem(16);
+  margin-bottom: 0;
+  line-height: 1.5;
+}

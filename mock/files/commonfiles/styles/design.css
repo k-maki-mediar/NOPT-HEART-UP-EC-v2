@@ -15000,6 +15000,10 @@
   border-bottom: 1px dashed #e0e0e0;
 }
 
+.c-ruletouse-main__article:last-of-type {
+  margin-bottom: 0;
+}
+
 .c-ruletouse-main__article-title {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 0.8125rem;

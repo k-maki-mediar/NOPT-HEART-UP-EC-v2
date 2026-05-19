@@ -15885,18 +15885,26 @@
   width: 100%;
   min-height: 4rem;
   padding: 0.75rem 0.5rem;
+  border: 0.0625rem solid #00387d;
   border-radius: 0.5rem;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #00387d;
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.0375rem;
   text-decoration: none;
   text-align: center;
   line-height: 1.2;
-  transition: opacity 0.2s ease;
+  box-shadow: 0 0.1875rem 0 #002552;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .c-payment-guide-main__anchor:hover {
-  opacity: 0.85;
+  transform: translateY(0.125rem);
+  box-shadow: 0 0.0625rem 0 #002552;
+}
+.c-payment-guide-main__anchor:active {
+  transform: translateY(0.1875rem);
+  box-shadow: 0 0 0 #002552;
 }
 @media (max-width: 767px) {
   .c-payment-guide-main__anchor {
@@ -15905,28 +15913,12 @@
   }
 }
 
-.c-payment-guide-main__anchor--credit {
-  background-color: #0b6bc0;
-}
-
-.c-payment-guide-main__anchor--cod {
-  background-color: #ec9a23;
-}
-
-.c-payment-guide-main__anchor--paypay {
-  background-color: #e61c37;
-}
-
-.c-payment-guide-main__anchor--conbi {
-  background-color: #543e90;
-}
-
 .c-payment-guide-main__anchor-arrow {
   display: block;
   width: 0.625rem;
   height: 0.625rem;
-  border-right: 0.125rem solid #FFFFFF;
-  border-bottom: 0.125rem solid #FFFFFF;
+  border-right: 0.125rem solid #00387d;
+  border-bottom: 0.125rem solid #00387d;
   transform: rotate(45deg);
 }
 

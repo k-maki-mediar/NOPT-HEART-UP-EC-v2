@@ -74,18 +74,27 @@ $_conbi-color: #543e90;                // 紫
   width: 100%;
   min-height: rem(64);
   padding: rem(12) rem(8);
+  border: rem(1) solid $primary-color;
   border-radius: rem(8);
-  color: $color-white;
+  background-color: $color-white;
+  color: $primary-color;
   font-size: rem(14);
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-medium;
   letter-spacing: rem(0.6);
   text-decoration: none;
   text-align: center;
   line-height: 1.2;
-  transition: opacity 0.2s ease;
+  box-shadow: 0 rem(3) 0 $primary-shadow;
+  transition: transform $transition-fast, box-shadow $transition-fast;
 
   &:hover {
-    opacity: 0.85;
+    transform: translateY(rem(2));
+    box-shadow: 0 rem(1) 0 $primary-shadow;
+  }
+
+  &:active {
+    transform: translateY(rem(3));
+    box-shadow: 0 0 0 $primary-shadow;
   }
 
   @include sp {
@@ -94,28 +103,12 @@ $_conbi-color: #543e90;                // 紫
   }
 }
 
-.c-payment-guide-main__anchor--credit {
-  background-color: $_credit-color;
-}
-
-.c-payment-guide-main__anchor--cod {
-  background-color: $_cod-color;
-}
-
-.c-payment-guide-main__anchor--paypay {
-  background-color: $_paypay-color;
-}
-
-.c-payment-guide-main__anchor--conbi {
-  background-color: $_conbi-color;
-}
-
 .c-payment-guide-main__anchor-arrow {
   display: block;
   width: rem(10);
   height: rem(10);
-  border-right: rem(2) solid $color-white;
-  border-bottom: rem(2) solid $color-white;
+  border-right: rem(2) solid $primary-color;
+  border-bottom: rem(2) solid $primary-color;
   transform: rotate(45deg);
 }
 

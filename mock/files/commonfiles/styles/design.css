@@ -15924,7 +15924,7 @@
   padding: 1.5rem 1.25rem 1.75rem;
   margin-bottom: 1.75rem;
   border: 0.0625rem solid #e0e0e0;
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 6.25rem;
 }
 .c-payment-guide-main__section:last-of-type {
   margin-bottom: 0;
@@ -15932,6 +15932,7 @@
 @media (max-width: 767px) {
   .c-payment-guide-main__section {
     padding: 1.25rem 1rem 1.5rem;
+    scroll-margin-top: 10rem;
   }
 }
 

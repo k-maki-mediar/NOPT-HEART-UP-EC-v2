@@ -131,7 +131,7 @@ $_conbi-color: #543e90;                // 紫
   padding: rem(24) rem(20) rem(28);
   margin-bottom: rem(28);
   border: rem(1) solid $border-color;
-  scroll-margin-top: rem(80);
+  scroll-margin-top: rem(100);
 
   &:last-of-type {
     margin-bottom: 0;
@@ -139,6 +139,7 @@ $_conbi-color: #543e90;                // 紫
 
   @include sp {
     padding: rem(20) rem(16) rem(24);
+    scroll-margin-top: rem(160);
   }
 }
 

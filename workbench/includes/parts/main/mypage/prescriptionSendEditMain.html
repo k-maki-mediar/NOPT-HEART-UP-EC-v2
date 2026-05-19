@@ -1,0 +1,159 @@
+<section class="c-guest-main c-prescription-edit-main" aria-label="処方箋送信フォーム入力">
+
+  <form action="" method="post" novalidate>
+
+    <!-- ===== 概要説明 ===== -->
+    <p class="c-prescription-edit-main__desc">
+      下記の登録内容で間違いないことを確認していただき、処方箋画像を送信してください。<br>
+      ※下記登録内容が間違っている場合、<a href="#" class="c-prescription-edit-main__inline-link">会員登録内容変更</a>で変更をお願いいたします。
+    </p>
+
+    <!-- ===== 処方箋の登録方法について（ヘルプボタン） ===== -->
+    <a href="#" class="c-prescription-edit-main__help-btn">
+      <span class="c-prescription-edit-main__help-icon" aria-hidden="true">?</span>
+      <span class="c-prescription-edit-main__help-text">処方箋の登録方法について</span>
+    </a>
+
+    <!-- ===== 会員情報表示エリア（読み取り専用） ===== -->
+    <div class="c-guest-main__form-body">
+      <dl class="c-guest-main__form-table">
+
+        <!-- お名前 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">お名前</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">山田 太郎</dd>
+        </div>
+
+        <!-- お名前（フリガナ） -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">お名前（フリガナ）</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">ヤマダ タロウ</dd>
+        </div>
+
+        <!-- 郵便番号 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">郵便番号</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">〒330-6032</dd>
+        </div>
+
+        <!-- 住所 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">住所</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">埼玉県さいたま市中央区新都心11番地2丁目</dd>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">電話番号</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">090-1234-5678</dd>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">メールアドレス</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">yamada.taro@example.com</dd>
+        </div>
+
+        <!-- 性別 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">性別</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">男性</dd>
+        </div>
+
+        <!-- 生年月日 -->
+        <div class="c-guest-main__field">
+          <dt class="c-guest-main__field-label">生年月日</dt>
+          <dd class="c-guest-main__field-body c-customer-confirm-main__value">1980年1月1日</dd>
+        </div>
+
+      </dl>
+    </div>
+
+    <!-- ===== 処方箋添付前の案内文 ===== -->
+    <p class="c-prescription-edit-main__upload-intro">
+      下記より処方箋画像を選択し、【確認ページへ】ボタンをクリックしてください。<br>
+      ※添付する処方箋画像の容量が大きい場合は、送信が完了するまでに時間がかかる可能性があります。<br>
+      ブラウザがタイムアウトした場合はもう一度アップロードしてください。
+    </p>
+
+    <!-- ===== 処方箋ファイル添付エリア ===== -->
+    <div class="c-prescription-edit-main__upload-area">
+      <div class="c-prescription-edit-main__upload-header">
+        <h3 class="c-prescription-edit-main__upload-title">処方箋ファイル添付</h3>
+        <span class="c-guest-main__required" aria-label="必須">必須</span>
+      </div>
+      <div class="c-prescription-edit-main__upload-notes">
+        <ul class="c-prescription-edit-main__upload-list">
+          <li class="c-prescription-edit-main__upload-item">デジカメ300万画素以上</li>
+          <li class="c-prescription-edit-main__upload-item">スキャナー300万ピクセル以上</li>
+          <li class="c-prescription-edit-main__upload-item">文字・数字が読める画像に限る</li>
+        </ul>
+      </div>
+      <label class="c-prescription-edit-main__upload-btn">
+        ファイルを添付
+        <input type="file"
+               name="prescriptionFile"
+               accept=".pdf,.gif,.jpg,.jpeg,.png"
+               class="c-prescription-edit-main__file-input js-prescription-file-input"
+               aria-label="処方箋ファイル添付">
+      </label>
+      <!-- 未アップロード時（初期表示） -->
+      <p class="c-prescription-edit-main__file-none js-prescription-file-none">処方箋.jpg</p>
+      <!-- アップロード後（初期非表示） -->
+      <p class="c-prescription-edit-main__file-name js-prescription-file-name" hidden>処方箋.jpg</p>
+    </div>
+
+    <!-- ===== アンケートエリア ===== -->
+    <div class="c-prescription-edit-main__enquete">
+      <h3 class="c-prescription-edit-main__enquete-title">らくとく定期便（コンタクトレンズ）をご利用の方へのアンケート</h3>
+
+      <!-- アンケート1 -->
+      <div class="c-prescription-edit-main__enquete-item">
+        <p class="c-prescription-edit-main__enquete-question">1.らくとく定期便の申込商品について、今回登録する商品に変更を希望されますか？</p>
+        <div class="c-guest-main__radio-group" role="group" aria-label="アンケート1の回答">
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete1" value="0" checked>
+            回答しない
+          </label>
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete1" value="1">
+            変更を希望する
+          </label>
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete1" value="2">
+            変更しない
+          </label>
+        </div>
+      </div>
+
+      <!-- アンケート2 -->
+      <div class="c-prescription-edit-main__enquete-item">
+        <p class="c-prescription-edit-main__enquete-question">2.今回登録する商品について、すぐに発送を希望されますか？</p>
+        <div class="c-guest-main__radio-group" role="group" aria-label="アンケート2の回答">
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete2" value="0" checked>
+            回答しない
+          </label>
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete2" value="1">
+            準備ができ次第発送を希望
+          </label>
+          <label class="c-guest-main__radio-label">
+            <input type="radio" class="c-guest-main__radio" name="enquete2" value="2">
+            自分でサイトから設定する
+          </label>
+        </div>
+      </div>
+
+      <p class="c-prescription-edit-main__enquete-note">※アンケートの回答は必須でなく、未回答のまま送信可能で結構です</p>
+
+    </div>
+
+    <!-- ===== ボタンエリア ===== -->
+    <div class="c-shipping-main__actions c-shipping-main__actions--stacked">
+      <button type="submit" class="c-shipping-main__btn--next js-prescription-submit">確認ページへ</button>
+    </div>
+
+  </form>
+
+</section>

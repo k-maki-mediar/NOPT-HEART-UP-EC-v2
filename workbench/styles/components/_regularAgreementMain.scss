@@ -1,8 +1,9 @@
 // ========================================
-// Regular Agreement Main（定期購入会員規約）
+// Regular Agreement Main（らくとく定期便ご利用規約）
 // 格納先HTML: workbench/includes/parts/main/shop/regularAgreementMain.html
 // BEM: .c-regular-agreement-main
-// .c-ruletouse-main と同一構造（セクションタイトル追加）
+// テーブルスタイルは既存 .c-teiki-info-table を流用（_regularSaleDetail.scss）
+// 構造・SP overrideは .c-ruletouse-main / .c-shopinfo-main / .c-compliance-main と統一
 // ========================================
 
 @use '../foundation/functions' as *;
@@ -28,92 +29,135 @@
 // ========================================
 
 .c-regular-agreement-main__inner {
-  max-width: rem(700);
+  max-width: rem(900);
   margin: 0 auto;
-  border: 1px solid $border-color;
-  padding: rem(24) rem(20);
+}
 
+// ========================================
+// テーブル上書き
+// ========================================
+
+.c-regular-agreement-main__table {
+  .c-teiki-info-table__header {
+    width: rem(240);
+    word-break: break-all;
+    vertical-align: top;
+  }
+
+  .c-teiki-info-table__data {
+    vertical-align: top;
+  }
+
+  // SP時はラベルと値を縦1列で表示（スタックレイアウト）
+  // rowにborderを集約し、内部セルのborderは消して重なりを防ぐ
   @include sp {
-    padding: rem(16) rem(12);
+    display: block;
+    width: 100%;
+
+    tbody {
+      display: block;
+      width: 100%;
+    }
+
+    .c-teiki-info-table__row {
+      display: block;
+      width: 100%;
+      border: 1px solid $bg-banner;
+      border-bottom: none;
+    }
+
+    .c-teiki-info-table__row:last-of-type {
+      border-bottom: 1px solid $bg-banner;
+    }
+
+    .c-teiki-info-table__header {
+      display: block;
+      width: 100%;
+      border: none;
+    }
+
+    .c-teiki-info-table__data {
+      display: block;
+      width: 100%;
+      border: none;
+      border-top: 1px solid $bg-banner;
+    }
   }
 }
 
 // ========================================
-// セクション（規約セクション単位）
+// 番号付きリスト（条文内の項番）
 // ========================================
 
-.c-regular-agreement-main__section {
-  margin-bottom: rem(32);
-}
-
-// ========================================
-// セクション見出し（大見出し）
-// ========================================
-
-.c-regular-agreement-main__section-title {
-  font-family: $font-family-heading;
-  font-size: rem(15);
-  font-weight: $font-weight-bold;
-  color: $primary-color;
-  background-color: $bg-banner;
-  margin: 0 0 rem(16);
-  padding: rem(10) rem(14);
-  line-height: 1.5;
-  letter-spacing: rem(0.6);
-
-  @include sp {
-    font-size: rem(13);
-    padding: rem(8) rem(10);
-  }
-}
-
-// ========================================
-// 条項セクション
-// ========================================
-
-.c-regular-agreement-main__article {
-  margin-bottom: rem(20);
-  padding-bottom: rem(20);
-  border-bottom: 1px dashed $border-color;
-}
-
-// ========================================
-// 条項見出し
-// ========================================
-
-.c-regular-agreement-main__article-title {
-  font-family: $font-family-base;
-  font-size: rem(13);
-  font-weight: $font-weight-bold;
-  color: $primary-color;
-  margin: 0 0 rem(8);
-  line-height: 1.5;
-  letter-spacing: rem(0.52);
-
-  @include sp {
-    font-size: rem(12);
-  }
-}
-
-// ========================================
-// 条項本文
-// ========================================
-
-.c-regular-agreement-main__article-body {
-  font-size: rem(13);
-  color: $text-color;
-  line-height: 1.85;
+.c-regular-agreement-main__ordered-list {
   margin: 0;
-  white-space: pre-line;
+  padding-left: rem(20);
 
-  @include sp {
-    font-size: rem(12);
+  li {
+    margin-bottom: rem(6);
     line-height: 1.75;
   }
+
+  li:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 // ========================================
-// 注記テキスト（※注1 等）
+// 入れ子リスト（(1)(2)... の項目）
+// ========================================
+
+.c-regular-agreement-main__sub-list {
+  margin: rem(6) 0 0;
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: rem(4);
+    line-height: 1.75;
+  }
+
+  li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// ========================================
+// 補助見出し（【個人情報の取り扱い】等）
+// ========================================
+
+.c-regular-agreement-main__sub-heading {
+  font-weight: $font-weight-bold;
+  margin: rem(8) 0 rem(4);
+  line-height: 1.5;
+}
+
+// ========================================
+// 補助本文
+// ========================================
+
+.c-regular-agreement-main__sub-text {
+  margin: 0 0 rem(4);
+  line-height: 1.75;
+}
+
+// ========================================
+// リンク（提供先プライバシーポリシー等）
+// ========================================
+
+.c-regular-agreement-main__link {
+  color: $primary-color;
+  text-decoration: underline;
+  word-break: break-all;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+// ========================================
+// 注釈（※注1 など）
 // ========================================
 
 .c-regular-agreement-main__note {
@@ -122,21 +166,4 @@
   line-height: 1.75;
   margin-top: rem(16);
   margin-bottom: 0;
-
-  @include sp {
-    font-size: rem(11);
-  }
-}
-
-// ========================================
-// 附則・改訂日
-// ========================================
-
-.c-regular-agreement-main__date {
-  font-size: rem(12);
-  color: $text-light;
-  text-align: right;
-  margin-top: rem(16);
-  margin-bottom: 0;
-  line-height: 1.5;
 }

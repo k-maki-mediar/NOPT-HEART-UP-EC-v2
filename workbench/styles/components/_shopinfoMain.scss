@@ -2,7 +2,6 @@
 // Shopinfo Main（サイト情報）
 // 格納先HTML: workbench/includes/parts/main/shop/shopinfoMain.html
 // BEM: .c-shopinfo-main
-// テーブルスタイルは既存 .c-teiki-info-table を流用（_regularSaleDetail.scss）
 // ========================================
 
 @use '../foundation/functions' as *;
@@ -28,20 +27,90 @@
 // ========================================
 
 .c-shopinfo-main__inner {
-  max-width: rem(700);
+  max-width: rem(900);
   margin: 0 auto;
 }
 
 // ========================================
-// テーブル上書き（リンク色）
-// テーブル構造は .c-teiki-info-table のまま流用
+// リスト（dl）外枠で囲む
 // ========================================
 
-.c-shopinfo-main__table {
-  // .c-teiki-info-table の幅継承
-  // tdのリンクにスタイルを付与（テーブルデータセル内）
-  .c-teiki-info-table__data {
-    // word-break for long texts（URL等）
-    word-break: break-all;
+.c-shopinfo-main__list {
+  margin: 0;
+  padding: rem(24) rem(28);
+  border: 1px solid $border-color;
+  background-color: $color-white;
+
+  @include sp {
+    padding: rem(16) rem(18);
+  }
+}
+
+// ========================================
+// 各項目
+// ========================================
+
+.c-shopinfo-main__item {
+  padding: rem(16) 0;
+  border-bottom: 1px dotted $border-color;
+
+  &.c-shopinfo-main__item--last,
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &.c-shopinfo-main__item--first,
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  @include sp {
+    padding: rem(12) 0;
+  }
+}
+
+// ========================================
+// ラベル
+// ========================================
+
+.c-shopinfo-main__label {
+  font-size: rem(15);
+  font-weight: $font-weight-bold;
+  color: $text-color;
+  line-height: 1.5;
+  margin: 0 0 rem(8) 0;
+
+  @include sp {
+    font-size: rem(14);
+  }
+}
+
+// ========================================
+// 値
+// ========================================
+
+.c-shopinfo-main__value {
+  font-size: rem(15);
+  font-weight: $font-weight-normal;
+  color: $text-color;
+  line-height: 1.6;
+  margin: 0;
+
+  @include sp {
+    font-size: rem(14);
+  }
+}
+
+// ========================================
+// リンク（電話番号など）
+// ========================================
+
+.c-shopinfo-main__link {
+  color: $text-color;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.6;
   }
 }

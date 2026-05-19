@@ -14856,12 +14856,71 @@
 }
 
 .c-shopinfo-main__inner {
-  max-width: 43.75rem;
+  max-width: 56.25rem;
   margin: 0 auto;
 }
 
-.c-shopinfo-main__table .c-teiki-info-table__data {
-  word-break: break-all;
+.c-shopinfo-main__list {
+  margin: 0;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid #e0e0e0;
+  background-color: #FFFFFF;
+}
+@media (max-width: 767px) {
+  .c-shopinfo-main__list {
+    padding: 1rem 1.125rem;
+  }
+}
+
+.c-shopinfo-main__item {
+  padding: 1rem 0;
+  border-bottom: 1px dotted #e0e0e0;
+}
+.c-shopinfo-main__item.c-shopinfo-main__item--last, .c-shopinfo-main__item:last-of-type {
+  border-bottom: none;
+}
+.c-shopinfo-main__item.c-shopinfo-main__item--first, .c-shopinfo-main__item:first-of-type {
+  padding-top: 0;
+}
+@media (max-width: 767px) {
+  .c-shopinfo-main__item {
+    padding: 0.75rem 0;
+  }
+}
+
+.c-shopinfo-main__label {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.5;
+  margin: 0 0 0.5rem 0;
+}
+@media (max-width: 767px) {
+  .c-shopinfo-main__label {
+    font-size: 0.875rem;
+  }
+}
+
+.c-shopinfo-main__value {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .c-shopinfo-main__value {
+    font-size: 0.875rem;
+  }
+}
+
+.c-shopinfo-main__link {
+  color: #333;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.c-shopinfo-main__link:hover {
+  opacity: 0.6;
 }
 
 .c-compliance-main {

@@ -1,0 +1,53 @@
+// ========================================
+// Compliance Main（特定商取引法に基づく表記）
+// 格納先HTML: workbench/includes/parts/main/shop/complianceMain.html
+// BEM: .c-compliance-main
+// .c-shopinfo-main と同一構造。ラベル幅のみ上書き。
+// テーブルスタイルは既存 .c-teiki-info-table を流用（_regularSaleDetail.scss）
+// ========================================
+
+@use '../foundation/functions' as *;
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+// ========================================
+// ラッパー
+// ========================================
+
+.c-compliance-main {
+  max-width: rem(1130);
+  margin: 0 auto;
+  padding: rem(24) rem(16) rem(48);
+
+  @include pc {
+    padding: rem(32) rem(32) rem(48) calc(var(--side-nav-content-offset) + rem(32));
+  }
+}
+
+// ========================================
+// インナー（コンテンツ幅制御）
+// ========================================
+
+.c-compliance-main__inner {
+  max-width: rem(700);
+  margin: 0 auto;
+}
+
+// ========================================
+// テーブル上書き
+// ユーザー指示: 「ラベル幅は他のテーブルと同じ実装」→ rem(130) のまま
+// 長いラベルは word-break で対応
+// ========================================
+
+.c-compliance-main__table {
+  .c-teiki-info-table__header {
+    // 既存 rem(130) を維持。長ラベルはword-breakで折り返し
+    word-break: break-all;
+    vertical-align: top;
+  }
+
+  .c-teiki-info-table__data {
+    word-break: break-all;
+    vertical-align: top;
+  }
+}

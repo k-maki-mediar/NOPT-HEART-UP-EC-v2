@@ -8,89 +8,131 @@
 <div class="c-payment-guide-main">
   <div class="c-payment-guide-main__inner">
 
-    <p class="c-payment-guide-main__lead">ハートアップ オンラインショップでは、お客様のご都合に合わせて4種類のお支払い方法からお選びいただけます。</p>
+    <!-- ===== アンカーボタン ===== -->
+    <nav class="c-payment-guide-main__anchor-nav" aria-label="決済方法ナビゲーション">
+      <ul class="c-payment-guide-main__anchor-list">
+        <li class="c-payment-guide-main__anchor-item">
+          <a href="#payment-credit" class="c-payment-guide-main__anchor c-payment-guide-main__anchor--credit">
+            <span class="c-payment-guide-main__anchor-text">クレジットカード</span>
+            <span class="c-payment-guide-main__anchor-arrow" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li class="c-payment-guide-main__anchor-item">
+          <a href="#payment-cod" class="c-payment-guide-main__anchor c-payment-guide-main__anchor--cod">
+            <span class="c-payment-guide-main__anchor-text">代金引換</span>
+            <span class="c-payment-guide-main__anchor-arrow" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li class="c-payment-guide-main__anchor-item">
+          <a href="#payment-paypay" class="c-payment-guide-main__anchor c-payment-guide-main__anchor--paypay">
+            <span class="c-payment-guide-main__anchor-text">PayPay</span>
+            <span class="c-payment-guide-main__anchor-arrow" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li class="c-payment-guide-main__anchor-item">
+          <a href="#payment-conbi" class="c-payment-guide-main__anchor c-payment-guide-main__anchor--conbi">
+            <span class="c-payment-guide-main__anchor-text">コンビニ後払い</span>
+            <span class="c-payment-guide-main__anchor-arrow" aria-hidden="true"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-    <ul class="c-payment-guide-main__grid">
+    <!-- ===== クレジットカード払い ===== -->
+    <section id="payment-credit" class="c-payment-guide-main__section c-payment-guide-main__section--credit">
+      <h2 class="c-payment-guide-main__section-title">クレジットカード払い</h2>
+      <dl class="c-payment-guide-main__info">
+        <div class="c-payment-guide-main__info-row">
+          <dt class="c-payment-guide-main__info-label">取扱い<br>カード</dt>
+          <dd class="c-payment-guide-main__info-content">
+            <p class="c-payment-guide-main__info-text">JCB・VISA・MASTER・AMEX<br>をご利用いただけます。</p>
+            <img src="../../../files/commonfiles/images/card_5brand.png" alt="VISA・Mastercard・JCB・AMEX" class="c-payment-guide-main__brand-logo" width="200" height="30">
+          </dd>
+        </div>
+        <div class="c-payment-guide-main__info-row">
+          <dt class="c-payment-guide-main__info-label">支払い<br>回数</dt>
+          <dd class="c-payment-guide-main__info-content">
+            <p class="c-payment-guide-main__info-text">一括払い、分割払い（3回・6回）<br>がご利用いただけます。</p>
+            <p class="c-payment-guide-main__info-note">※分割払い手数料はお客様のご負担となります。</p>
+          </dd>
+        </div>
+      </dl>
+    </section>
 
-      <!-- ===== クレジットカード ===== -->
-      <li class="c-payment-guide-main__card">
-        <div class="c-payment-guide-main__card-header">
-          <span class="c-payment-guide-main__card-icon" aria-hidden="true">1</span>
-          <h2 class="c-payment-guide-main__card-title">クレジットカード払い</h2>
+    <!-- ===== 代金引換 ===== -->
+    <section id="payment-cod" class="c-payment-guide-main__section c-payment-guide-main__section--cod">
+      <h2 class="c-payment-guide-main__section-title">代金引換</h2>
+      <dl class="c-payment-guide-main__info">
+        <div class="c-payment-guide-main__info-row">
+          <dt class="c-payment-guide-main__info-label">手数料</dt>
+          <dd class="c-payment-guide-main__info-content">
+            <p class="c-payment-guide-main__info-text">全国一律：330円（税込）</p>
+          </dd>
         </div>
-        <div class="c-payment-guide-main__card-body">
-          <div class="c-payment-guide-main__logo-area">
-            <img src="../../../files/commonfiles/images/card_5brand.png" alt="VISA・Mastercard・JCB・AMERICAN EXPRESS・Diners Club" class="c-payment-guide-main__logo" width="200" height="30">
-          </div>
-          <p class="c-payment-guide-main__description">注文時にクレジットカード情報を入力するだけでお支払いが完結します。お手持ちのカードをご利用いただけます。</p>
-          <ul class="c-payment-guide-main__condition-list">
-            <li class="c-payment-guide-main__condition-item">ご利用可能ブランド：VISA・Mastercard・JCB・AMERICAN EXPRESS・Diners Club</li>
-            <li class="c-payment-guide-main__condition-item">クレジットカードの会員様ご本人のカードに限ります</li>
-            <li class="c-payment-guide-main__condition-item">セキュリティコード（CVV/CVC）の入力が必要です</li>
-            <li class="c-payment-guide-main__condition-item">分割払い・リボ払いはカード会社の規定によります</li>
-          </ul>
+        <div class="c-payment-guide-main__info-row">
+          <dt class="c-payment-guide-main__info-label">支払い<br>回数</dt>
+          <dd class="c-payment-guide-main__info-content">
+            <p class="c-payment-guide-main__info-text">現金のみでのお支払いとなります。<br>配送業者（日本郵便）に<br>代金をお支払いください。</p>
+          </dd>
         </div>
-      </li>
+      </dl>
+    </section>
 
-      <!-- ===== 代金引換 ===== -->
-      <li class="c-payment-guide-main__card">
-        <div class="c-payment-guide-main__card-header">
-          <span class="c-payment-guide-main__card-icon" aria-hidden="true">2</span>
-          <h2 class="c-payment-guide-main__card-title">代金引換払い</h2>
-        </div>
-        <div class="c-payment-guide-main__card-body">
-          <p class="c-payment-guide-main__description">配達員がお届けした際に、商品と引き換えに代金をお支払いいただく方法です。カード不要で現金でお支払いいただけます。</p>
-          <ul class="c-payment-guide-main__condition-list">
-            <li class="c-payment-guide-main__condition-item">代引き手数料：330円（税込）</li>
-            <li class="c-payment-guide-main__condition-item">現金のみのお支払いとなります</li>
-            <li class="c-payment-guide-main__condition-item">不在の場合はお受け取りいただけません。宅配便の不在票をご確認ください</li>
-            <li class="c-payment-guide-main__condition-item">※5,500円（税込）以上のご購入で手数料無料（らくとく定期便は送料・後払手数料無料）</li>
-          </ul>
-        </div>
-      </li>
+    <!-- ===== PayPay ===== -->
+    <section id="payment-paypay" class="c-payment-guide-main__section c-payment-guide-main__section--paypay">
+      <div class="c-payment-guide-main__section-logo">
+        <img src="../../../files/commonfiles/images/paypay_logo.png" alt="PayPay" class="c-payment-guide-main__paypay-logo" width="130" height="40">
+      </div>
+      <h2 class="c-payment-guide-main__section-subtitle">ご利用方法</h2>
+      <ol class="c-payment-guide-main__steps">
+        <li class="c-payment-guide-main__step">
+          <span class="c-payment-guide-main__step-badge"><span class="c-payment-guide-main__step-badge-label">STEP</span><span class="c-payment-guide-main__step-badge-num">1</span></span>
+          <p class="c-payment-guide-main__step-text">ショッピングカート内で「PayPay決済」を選択し、注文手続きを進めてください。</p>
+        </li>
+        <li class="c-payment-guide-main__step-arrow" aria-hidden="true"></li>
+        <li class="c-payment-guide-main__step">
+          <span class="c-payment-guide-main__step-badge"><span class="c-payment-guide-main__step-badge-label">STEP</span><span class="c-payment-guide-main__step-badge-num">2</span></span>
+          <p class="c-payment-guide-main__step-text">「この内容で注文する」を押下すると、PayPayアプリまたは WEBサイトへ移動します。PayPayにログインしてください。</p>
+        </li>
+        <li class="c-payment-guide-main__step-arrow" aria-hidden="true"></li>
+        <li class="c-payment-guide-main__step">
+          <span class="c-payment-guide-main__step-badge"><span class="c-payment-guide-main__step-badge-label">STEP</span><span class="c-payment-guide-main__step-badge-num">3</span></span>
+          <p class="c-payment-guide-main__step-text">お支払い内容をご確認いただき、「支払う」ボタンを押してください。</p>
+        </li>
+      </ol>
+    </section>
 
-      <!-- ===== コンビニ後払い ===== -->
-      <li class="c-payment-guide-main__card">
-        <div class="c-payment-guide-main__card-header">
-          <span class="c-payment-guide-main__card-icon" aria-hidden="true">3</span>
-          <h2 class="c-payment-guide-main__card-title">コンビニ後払い</h2>
+    <!-- ===== @払い（コンビニ後払い） ===== -->
+    <section id="payment-conbi" class="c-payment-guide-main__section c-payment-guide-main__section--conbi">
+      <h2 class="c-payment-guide-main__section-conbi-title">
+        <span class="c-payment-guide-main__section-conbi-mark">＠</span>払い
+      </h2>
+      <h3 class="c-payment-guide-main__section-subtitle">ご利用方法</h3>
+      <ol class="c-payment-guide-main__steps">
+        <li class="c-payment-guide-main__step">
+          <span class="c-payment-guide-main__step-badge"><span class="c-payment-guide-main__step-badge-label">STEP</span><span class="c-payment-guide-main__step-badge-num">1</span></span>
+          <p class="c-payment-guide-main__step-text">ショッピングカート内で「コンビニ後払い」を選択し、注文手続きを進めてください。</p>
+        </li>
+        <li class="c-payment-guide-main__step-arrow" aria-hidden="true"></li>
+        <li class="c-payment-guide-main__step">
+          <span class="c-payment-guide-main__step-badge"><span class="c-payment-guide-main__step-badge-label">STEP</span><span class="c-payment-guide-main__step-badge-num">2</span></span>
+          <p class="c-payment-guide-main__step-text">商品が届いてから、商品とは別に「株式会社SCORE」より請求書が郵送されます。</p>
+        </li>
+        <li class="c-payment-guide-main__step-arrow" aria-hidden="true"></li>
+        <li class="c-payment-guide-main__step">
+          <span class="c-payment-guide-main__step-badge"><span class="c-payment-guide-main__step-badge-label">STEP</span><span class="c-payment-guide-main__step-badge-num">3</span></span>
+          <p class="c-payment-guide-main__step-text">請求書発行から14日以内に、コンビニでお支払いください。</p>
+        </li>
+      </ol>
+      <dl class="c-payment-guide-main__info">
+        <div class="c-payment-guide-main__info-row">
+          <dt class="c-payment-guide-main__info-label">手数料</dt>
+          <dd class="c-payment-guide-main__info-content">
+            <p class="c-payment-guide-main__info-text">全国一律：220円（税込）</p>
+          </dd>
         </div>
-        <div class="c-payment-guide-main__card-body">
-          <p class="c-payment-guide-main__description">商品受け取り後、お手元に届いた払込票を使ってコンビニエンスストアでお支払いいただける方法です。</p>
-          <ul class="c-payment-guide-main__condition-list">
-            <li class="c-payment-guide-main__condition-item">後払い手数料：220円（税込）</li>
-            <li class="c-payment-guide-main__condition-item">払込票発行後14日以内にお支払いください</li>
-            <li class="c-payment-guide-main__condition-item">期限を過ぎると回収事務手数料297円（税込）が発生します（最大3回・計891円）</li>
-            <li class="c-payment-guide-main__condition-item">ご利用可能コンビニ：セブン-イレブン・ローソン・ファミリーマート・ミニストップ等</li>
-            <li class="c-payment-guide-main__condition-item">後払い審査が必要な場合があります</li>
-            <li class="c-payment-guide-main__condition-item">※5,500円（税込）以上のご購入で手数料無料（らくとく定期便は送料・後払手数料無料）</li>
-          </ul>
-          <p class="c-payment-guide-main__note">※コンビニ後払いに関するご不明点は、後払い決済会社（GMOペイメントサービス）にお問い合わせください。</p>
-        </div>
-      </li>
-
-      <!-- ===== PayPay ===== -->
-      <li class="c-payment-guide-main__card">
-        <div class="c-payment-guide-main__card-header">
-          <span class="c-payment-guide-main__card-icon" aria-hidden="true">4</span>
-          <h2 class="c-payment-guide-main__card-title">PayPay</h2>
-        </div>
-        <div class="c-payment-guide-main__card-body">
-          <div class="c-payment-guide-main__logo-area">
-            <img src="../../../files/commonfiles/images/paypay_logo.png" alt="PayPay" class="c-payment-guide-main__logo" width="130" height="40">
-          </div>
-          <p class="c-payment-guide-main__description">PayPayアプリを使ってキャッシュレスでお支払いいただける方法です。ポイント・残高をご利用いただけます。</p>
-          <ul class="c-payment-guide-main__condition-list">
-            <li class="c-payment-guide-main__condition-item">PayPayアプリのダウンロードが必要です</li>
-            <li class="c-payment-guide-main__condition-item">PayPay残高またはPayPayクレジットでお支払いいただけます</li>
-            <li class="c-payment-guide-main__condition-item">PayPay手数料は無料です</li>
-            <li class="c-payment-guide-main__condition-item">ご注文確認後、PayPayの決済画面に遷移します</li>
-          </ul>
-          <p class="c-payment-guide-main__note">※PayPayに関するご不明点は、<a href="https://paypay.ne.jp/help/" target="_blank" rel="noopener noreferrer" class="c-payment-guide-main__emphasis">PayPayカスタマーサポート</a>にお問い合わせください。</p>
-        </div>
-      </li>
-
-    </ul>
+      </dl>
+    </section>
 
   </div>
 </div>

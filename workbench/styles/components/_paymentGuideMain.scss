@@ -17,16 +17,9 @@
 // ========================================
 
 $_credit-color: #0b6bc0;               // 青
-$_credit-bg: #e7f1fa;
-
 $_cod-color: #ec9a23;                  // 黄（オレンジ寄り）
-$_cod-bg: #fdf4e6;
-
 $_paypay-color: #e61c37;               // 赤
-$_paypay-bg: #fde8eb;
-
 $_conbi-color: #543e90;                // 紫
-$_conbi-bg: #ede9f4;
 
 // ========================================
 // ラッパー
@@ -137,7 +130,7 @@ $_conbi-bg: #ede9f4;
 .c-payment-guide-main__section {
   padding: rem(24) rem(20) rem(28);
   margin-bottom: rem(28);
-  border-radius: rem(8);
+  border: rem(1) solid $border-color;
   scroll-margin-top: rem(80);
 
   &:last-of-type {
@@ -149,20 +142,21 @@ $_conbi-bg: #ede9f4;
   }
 }
 
+// 各セクション外枠ボーダー色を決済方法カラーに合わせる
 .c-payment-guide-main__section--credit {
-  background-color: $_credit-bg;
+  border-color: $_credit-color;
 }
 
 .c-payment-guide-main__section--cod {
-  background-color: $_cod-bg;
+  border-color: $_cod-color;
 }
 
 .c-payment-guide-main__section--paypay {
-  background-color: $_paypay-bg;
+  border-color: $_paypay-color;
 }
 
 .c-payment-guide-main__section--conbi {
-  background-color: $_conbi-bg;
+  border-color: $_conbi-color;
 }
 
 // セクションタイトル（クレジット・代金引換）
@@ -266,14 +260,12 @@ $_conbi-bg: #ede9f4;
 
 .c-payment-guide-main__info-row {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: rem(12);
   background-color: $color-white;
-  border-radius: rem(6);
-  padding: rem(12);
+  padding: rem(8) 0;
 
   @include sp {
-    padding: rem(10);
     gap: rem(10);
   }
 }
@@ -283,9 +275,9 @@ $_conbi-bg: #ede9f4;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: rem(72);
-  padding: rem(8);
-  border-radius: rem(4);
+  width: rem(64);
+  height: rem(64);
+  padding: rem(4);
   color: $color-white;
   font-size: rem(13);
   font-weight: $font-weight-bold;
@@ -294,9 +286,9 @@ $_conbi-bg: #ede9f4;
   margin: 0;
 
   @include sp {
-    width: rem(60);
+    width: rem(56);
+    height: rem(56);
     font-size: rem(12);
-    padding: rem(6);
   }
 }
 
@@ -367,14 +359,12 @@ $_conbi-bg: #ede9f4;
 
 .c-payment-guide-main__step {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: rem(12);
   background-color: $color-white;
-  border-radius: rem(6);
-  padding: rem(12);
+  padding: rem(8) 0;
 
   @include sp {
-    padding: rem(10);
     gap: rem(10);
   }
 }
@@ -385,16 +375,16 @@ $_conbi-bg: #ede9f4;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: rem(56);
-  padding: rem(8) rem(4);
-  border-radius: rem(4);
+  width: rem(64);
+  height: rem(64);
+  padding: rem(4);
   color: $color-white;
   line-height: 1.1;
   text-align: center;
 
   @include sp {
-    width: rem(48);
-    padding: rem(6) rem(4);
+    width: rem(56);
+    height: rem(56);
   }
 }
 

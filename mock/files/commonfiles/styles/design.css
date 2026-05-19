@@ -14813,6 +14813,7 @@
   padding: 0.75rem 1rem;
   min-height: 2.75rem;
   width: 100%;
+  transition: opacity 0.2s ease;
 }
 .c-sitemap-main__link::before {
   content: "";
@@ -14825,7 +14826,7 @@
   flex-shrink: 0;
 }
 .c-sitemap-main__link:hover {
-  background-color: #f4f8fc;
+  opacity: 0.6;
 }
 @media (max-width: 767px) {
   .c-sitemap-main__link {
